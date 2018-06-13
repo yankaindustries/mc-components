@@ -1,0 +1,56 @@
+{
+  "name": "mc-components",
+  "version": "0.1.10",
+  "main": "./lib/components/index.js",
+  "author": "Bernabe Gonzalez <gobernabe@gmail.com>",
+  "homepage": "https://bernabe9.github.io/mc-components",
+  "dependencies": {
+    "@masterclass/mastersass": "yankaindustries/mastersass",
+    "classnames": "^2.2.5",
+    "mc-sass-lib": "https://github.com/jesseocon/mc-sass-lib"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "prebuild": "rimraf lib",
+    "build": "npm run build:js && npm run build:scss",
+    "build:js": "NODE_ENV=production babel ./src --out-dir ./lib --ignore spec.js,test.js,stories.js",
+    "build:scss": "cpx -p './src/styles/**/*.scss' ./lib/styles",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src --color"
+  },
+  "devDependencies": {
+    "@storybook/addon-backgrounds": "^3.4.5",
+    "@storybook/addon-info": "^3.4.5",
+    "@storybook/react": "^3.4.5",
+    "@storybook/storybook-deployer": "^2.3.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "8.2.3",
+    "cpx": "^1.5.0",
+    "css-loader": "^0.28.11",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-react": "7.7.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": "commonjs"
+        }
+      ],
+      "react-app"
+    ]
+  }
+}

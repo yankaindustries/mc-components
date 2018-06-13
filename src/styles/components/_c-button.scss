@@ -1,0 +1,57 @@
+.c-button--with-icon {
+  @extend %flex-centered;
+
+  span {
+    margin-left: 1.3rem;
+  }
+}
+
+.c-button--full-width {
+  width: 100%;
+}
+
+.c-button--text {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: .15rem;
+  color: rgba($black, .5);
+  padding: 0;
+  background-color: transparent;
+
+  &:hover {
+    color: rgba($black, .8);
+  }
+}
+
+.c-button--facebook {
+  @include button-variant($facebook-blue, $facebook-blue)
+}
+
+.c-button--loading {
+  position: relative;
+  pointer-events: none;
+
+  span {
+    opacity: 0;
+  }
+
+  .loader {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.loader {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+
+  svg {
+    height: 12px;
+  }
+}
