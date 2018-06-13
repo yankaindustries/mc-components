@@ -1,0 +1,10 @@
+@import '../src/styles/index';
+
+html {
+  font-size: 10px;
+}
+
+body {
+  // overwrite mc-sass-lib default body black background
+  background-color: transparent !important;
+}
