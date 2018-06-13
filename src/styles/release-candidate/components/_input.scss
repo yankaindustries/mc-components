@@ -64,7 +64,7 @@
   &__label {
     position: absolute;
     z-index: 1;
-    top: .3rem;
+    bottom: 2.5rem;
     left: $padding-vertical;
     font-size: 1.1rem;
     pointer-events: none;
@@ -81,5 +81,6 @@
     font-size: 1.5rem;
     color: $error-color;
     margin: 0 0 .5rem;
+    text-align: left;
   }
 }

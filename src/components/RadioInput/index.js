@@ -14,16 +14,12 @@ export default class RadioInput extends PureComponent {
     checked: false,
   }
 
-  handleInputChange = (e) => {
-    const { onChange } = this.props
-    onChange(e.target.checked)
-  }
-
   render () {
     const {
       checked,
       label,
       style,
+      onChange,
       ...props
     } = this.props
     const classNames = cn(
@@ -32,18 +28,18 @@ export default class RadioInput extends PureComponent {
     )
 
     return (
-      <div style={style} className='radio-input'>
+      <div
+        style={style}
+        className='radio-input'
+        onClick={onChange}
+      >
         <input
           className='radio-input__input'
           checked={checked}
           type='radio'
-          onChange={this.handleInputChange}
           {...props}
         />
-        <div
-          onClick={this.handleInputChange}
-          className={classNames}
-        />
+        <div className={classNames} />
         <label className='radio-input__label'>
           {label}
         </label>

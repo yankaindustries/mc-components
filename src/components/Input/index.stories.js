@@ -60,6 +60,13 @@ storiesOf('Input', module)
       <Input placeholder='My email' error='Email is required' />,
     ),
   )
+  .add('with error and label',
+    withInfo({
+      ...infoProps,
+    })(() =>
+      <Input placeholder='My email' label='My email' error='Email is required' />,
+    ),
+  )
   .add('without placeholder',
     withInfo({
       ...infoProps,

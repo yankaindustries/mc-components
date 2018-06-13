@@ -1,9 +1,19 @@
-@import 'mc-sass-lib/src/stylesheets/mc-sass-lib.scss';
+// Abstracts
 @import './abstract/variables';
 @import './abstract/placeholders/flex';
 @import './abstract/mixins/animations';
+@import './abstract/mixins/breakpoints';
+@import './abstract/mixins/buttons';
+@import './abstract/mixins/gradient';
+@import './abstract/mixins/box-shadow';
+@import './abstract/mixins/hover';
+@import './abstract/mixins/transition';
+@import './abstract/functions';
 
-// components
+@import './base/typography';
+@import './base/base';
+
+// Components
 @import './components/input';
 @import './components/rounded-box';
 @import './components/c-button';
