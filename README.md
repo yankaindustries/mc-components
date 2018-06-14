@@ -29,3 +29,10 @@ const Container = () =>
 1. Clone the repository
 2. Install dependencies: `yarn`
 3. Start the storybook: `yarn storybook`
+
+## Documentation
+All documentation is handled in storybook.  To deploy a new version of the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
+
+```
+npm run deploy-storybook
+```
