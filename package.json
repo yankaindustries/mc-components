@@ -5,9 +5,8 @@
   "author": "Bernabe Gonzalez <gobernabe@gmail.com>",
   "homepage": "https://bernabe9.github.io/mc-components",
   "dependencies": {
-    "@masterclass/mastersass": "yankaindustries/mastersass",
-    "classnames": "^2.2.5",
-    "mc-sass-lib": "https://github.com/jesseocon/mc-sass-lib"
+    "bootstrap": "^4.1.1",
+    "classnames": "^2.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,9 +47,9 @@
     "postcss-cli": "^5.0.0",
     "prettier-eslint-cli": "^4.7.1",
     "file-loader": "^1.1.11",
+    "node-sass": "^4.9.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
