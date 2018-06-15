@@ -103,4 +103,13 @@ Object.defineProperty(exports, 'TextArea', {
   }
 });
 
+var _Footer = require('./Footer');
+
+Object.defineProperty(exports, 'Footer', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Footer).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
