@@ -1,6 +1,7 @@
 .radio-input {
   display: flex;
   padding: 0 .6rem;
+  align-items: center;
 
   &:not(:last-child) {
     margin-bottom: 1.6rem;
