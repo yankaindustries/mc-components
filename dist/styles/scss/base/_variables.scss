@@ -1,0 +1,38 @@
+// Naming Convention
+//
+// Prefixed all variables with mc
+// mc-font, mc-color, mc-contain, mc-asset
+
+// Fonts
+$mc-font-default: "Lato", "Helvetica", "Arial", sans-serif !default; // Should be used in most cases
+
+// Colors
+$mc-color-primary:           #c83232 !default;
+$mc-color-primary-hover:     #d63636 !default;
+$mc-color-primary-active:    #b22b2b !default;
+
+$mc-color-secondary:         #232325 !default;
+$mc-color-secondary-hover:   #2c2c2e !default;
+$mc-color-secondary-active:  #1f1f21 !default;
+
+$mc-color-tertiary:          #75787f !default;
+$mc-color-tertiary-hover:    #90949d !default;
+
+// Animations
+$mc-default-ease: cubic-bezier(0.25, 0.1, 0.25, 1) !default;
+
+// // Breakpoints
+$mc-bp-xs:     0 !default;
+$mc-bp-sm:     576px !default;
+$mc-bp-md:     768px !default;
+$mc-bp-lg:     992px !default;
+$mc-bp-xl:     1200px !default;
+
+// Z-indexes
+$mc-zindex-dropdown:          1000 !default;
+$mc-zindex-sticky:            1020 !default;
+$mc-zindex-fixed:             1030 !default;
+$mc-zindex-modal-backdrop:    1040 !default;
+$mc-zindex-modal:             1050 !default;
+$mc-zindex-popover:           1060 !default;
+$mc-zindex-tooltip:           1070 !default;
