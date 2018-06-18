@@ -5,6 +5,9 @@ node_modules
 # Source folder
 src
 
+# Dist folder
+dist
+
 # Storybook folder
 .storybook
 
