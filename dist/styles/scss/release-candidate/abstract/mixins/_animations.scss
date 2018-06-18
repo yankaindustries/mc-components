@@ -1,0 +1,9 @@
+@mixin fade-in-background-animation($from, $to, $time: 250ms) {
+  @keyframes backgroundFadeIn {
+    from { background-color: $from }
+      to { background-color: $to }
+  }
+
+  animation: backgroundFadeIn $time;
+  animation-timing-function: ease;
+}

@@ -1,0 +1,19 @@
+.modal-header__header {
+  color: $black;
+  font-weight: 700;
+  line-height: 3.4rem;
+  font-size: 2.4rem;
+  letter-spacing: .1rem;
+  margin: 1.6rem 0;
+  text-align: center;
+}
+
+.modal-header__subheader {
+  color: rgba(#4D5768, .3);
+  font-weight: 700;
+  line-height: 2rem;
+  font-size: 1.4rem;
+  letter-spacing: .2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
