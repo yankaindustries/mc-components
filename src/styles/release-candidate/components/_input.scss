@@ -8,9 +8,9 @@
 
   &__input {
     padding: $padding-horizontal $padding-vertical;
-    font-family: 'Lato', sans-serif;
-    border-radius: .4rem;
-    border: .1rem solid rgba($text-color,0.2);
+    font-family: "Lato", sans-serif;
+    border-radius: 0.4rem;
+    border: 0.1rem solid rgba($text-color, 0.2);
     font-weight: 400;
     font-size: 1.5rem;
     color: $text-color;
@@ -23,11 +23,11 @@
     }
 
     &::placeholder {
-      color: rgba($text-color, .5);
+      color: rgba($text-color, 0.5);
     }
 
     &--with-label {
-      padding: 1.8rem $padding-vertical .8rem;
+      padding: 1.8rem $padding-vertical 0.8rem;
     }
 
     &--full-width {
@@ -35,7 +35,7 @@
     }
 
     &--error {
-      border: .1rem solid $error-color;
+      border: 0.1rem solid $error-color;
 
       &:focus {
         border-color: $error-color;
@@ -47,17 +47,17 @@
     }
 
     &--disabled {
-      opacity: .5;
+      opacity: 0.5;
     }
 
-    &[type=text],
-    &[type=password],
-    &[type=file],
-    &[type=search],
-    &[type=tel],
-    &[type=email],
-    &[type=submit] {
-      border-radius: .4rem
+    &[type="text"],
+    &[type="password"],
+    &[type="file"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="email"],
+    &[type="submit"] {
+      border-radius: 0.4rem;
     }
   }
 
@@ -80,7 +80,7 @@
     display: block;
     font-size: 1.5rem;
     color: $error-color;
-    margin: 0 0 .5rem;
+    margin: 0 0 0.5rem;
     text-align: left;
   }
 }
