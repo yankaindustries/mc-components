@@ -1,7 +1,3 @@
-// Code that isn't truly approved yet
-// but needs to be implemented to try
-@import "./release-candidate/index.scss";
-
 // External libraries first
 @import "./libraries/libraries";
 
@@ -10,3 +6,7 @@
 @import "./components/components";
 @import "./icons/icons";
 @import "./typography/typography";
+
+// Code that isn't truly approved yet
+// but needs to be implemented to try
+@import './release-candidate/index.scss';
