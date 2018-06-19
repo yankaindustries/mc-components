@@ -4,8 +4,8 @@ html {
 }
 
 *,
-::after,
-::before {
+:after,
+:before {
   box-sizing: inherit;
   padding: 0;
   margin: 0;

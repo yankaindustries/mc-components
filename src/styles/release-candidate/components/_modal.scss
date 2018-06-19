@@ -3,14 +3,14 @@
 
   @include fade-in-background-animation(
     rgba($black, 0),
-    rgba($black, .8)
+    rgba($black, 0.8)
   );
 
   @include media-breakpoint-down(sm) {
     align-items: flex-start;
   }
 
-  background-color: rgba($black, .8);
+  background-color: rgba($black, 0.8);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -64,7 +64,7 @@
     padding: 1rem;
 
     svg {
-      opacity: .3;
+      opacity: 0.3;
     }
 
     path {
@@ -81,8 +81,8 @@
     font-size: 1.6rem;
     line-height: 2.4rem;
     text-align: center;
-    letter-spacing: .02rem;
-    color: rgba($text-color, .8);
+    letter-spacing: 0.02rem;
+    color: rgba($text-color, 0.8);
   }
 
   &__body--open {
