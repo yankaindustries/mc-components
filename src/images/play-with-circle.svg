@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="41px" viewBox="0 0 40 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Canvas</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.75">
+        <g id="Canvas" transform="translate(1.000000, 1.000000)">
+            <g id="Group">
+                <g id="Oval-2" stroke="#FFFFFF" stroke-width="2">
+                    <path d="M18.925,38.4125 C29.377,38.4125 37.85,29.8136 37.85,19.2062 C37.85,8.59893 29.377,0 18.925,0 C8.47301,0 0,8.59893 0,19.2062 C0,29.8136 8.47301,38.4125 18.925,38.4125 Z" id="Shape"></path>
+                </g>
+                <g id="media-play" transform="translate(15.000000, 12.000000)" fill="#FFFFFF">
+                    <path d="M11.2894,6.66191 L1.86892,0.951957 C1.59909,0.7880989 1.231247,0.7578189 0.922391,0.8737483 C0.613535,0.989505 0.4175,1.231226 0.4175,1.496133 L0.4175,12.916 C0.4175,13.181 0.613535,13.4227 0.922391,13.5386 C1.0471,13.5853 1.181229,13.6082 1.314685,13.6082 C1.51184,13.6082 1.70788,13.558 1.86892,13.4602 L11.2894,7.75044 C11.506,7.61911 11.6323,7.41857 11.6323,7.20609 C11.6323,6.99378 11.506,6.79307 11.2894,6.66191 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

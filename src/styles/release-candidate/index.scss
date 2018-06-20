@@ -9,6 +9,7 @@
 @import "./abstract/mixins/hover";
 @import "./abstract/mixins/transition";
 @import "./abstract/functions";
+@import "./abstract/mixins/ratios";
 
 // Base
 @import "./base/typography";
@@ -22,6 +23,8 @@
 @import "./components/modal";
 @import "./components/modal-header";
 @import "./components/footer";
+@import "./components/tile";
+@import "./components/overlay-check";
 
 body {
   -webkit-font-smoothing: antialiased;
