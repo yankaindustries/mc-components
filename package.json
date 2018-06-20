@@ -43,13 +43,11 @@
     "eslint": "4.19.1",
     "eslint-plugin-import": "2.11.0",
     "husky": "^0.14.3",
-    "jscodeshift": "^0.5.1",
     "lint-staged": "^7.2.0",
     "postcss": "^6.0.22",
     "postcss-cli": "^5.0.0",
     "prettier-eslint-cli": "^4.7.1",
     "react": "^16.4.0",
-    "react-codemod": "^4.0.0",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4",
     "rimraf": "^2.6.2",
@@ -61,7 +59,6 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "jscodeshift -t node_modules/react-codemod/transforms/sort-comp.js",
       "prettier-eslint --write --log-level error",
       "eslint --fix",
       "git add"
