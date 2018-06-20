@@ -65,7 +65,7 @@
 
     &:hover {
       background: none;
-      color: rgba($black, .8);
+      color: rgba($black, 0.8);
     }
   }
 
@@ -132,7 +132,7 @@
 }
 
 // Future-proof disabling of clicks on `<a>` elements
-a.btn.disabled,
-fieldset:disabled a.btn {
+.btn.disabled,
+fieldset:disabled .btn {
   pointer-events: none;
 }

@@ -4,7 +4,6 @@ import logo from '../../assets/logo.svg'
 import sslBadge from '../../assets/ssl-badge.svg'
 
 export default class Footer extends PureComponent {
-
   render () {
     return (
       <div id='mc-footer'>
