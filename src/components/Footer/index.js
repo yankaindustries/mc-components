@@ -4,7 +4,6 @@ import logo from '../../assets/logo.svg'
 import sslBadge from '../../assets/ssl-badge.svg'
 
 export default class Footer extends PureComponent {
-  infoBlock = React.createRef()
 
   render () {
     return (
