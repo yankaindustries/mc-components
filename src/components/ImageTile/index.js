@@ -23,7 +23,6 @@ export default class ImageTile extends PureComponent {
     backgroundGradient: true,
   }
 
-
   backgroundStyle (imagePath) {
     const { backgroundGradient } = this.props
     let backgroundImageStyle = `url('${imagePath}')`

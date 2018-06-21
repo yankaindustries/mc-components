@@ -1,14 +1,10 @@
 import React, {Component} from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import shondaRhimesThumbnail from '../../images/shonda-rhimes-video.png'
+import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 import CheckTile from '../CheckTile'
-
-const infoProps = {
-  inline: true,
-  header: false,
-};
+import RadioInput from "../RadioInput";
 
 // CheckTile Handler
 class CheckTileHandler extends Component {
@@ -30,6 +26,12 @@ class CheckTileHandler extends Component {
   }
 }
 
+const infoProps = {
+  inline: true,
+  header: false,
+  propTables: [CheckTile],
+  propTablesExclude: [CheckTileHandler],
+}
 
 storiesOf('CheckTile', module)
   .add('CheckTile - 1000x609',
@@ -37,10 +39,12 @@ storiesOf('CheckTile', module)
       <div style={{ maxWidth: '500px' }}>
         <CheckTile
           imageUrl={shondaRhimesThumbnail}
-          checked={true}
+          checked
           aspectRatio='1000x609'
           animationStyle='hover-zoom'
+          onCheck={() => {}}
         >
+          <p>Content</p>
         </CheckTile>
       </div>,
     ),
@@ -52,7 +56,9 @@ storiesOf('CheckTile', module)
           imageUrl={shondaRhimesThumbnail}
           checked={false}
           aspectRatio='1000x609'
+          onCheck={() => {}}
         >
+          <p>Content</p>
         </CheckTile>
       </div>,
     ),
@@ -63,6 +69,7 @@ storiesOf('CheckTile', module)
         imageUrl={shondaRhimesThumbnail}
         aspectRatio='1000x609'
       >
+        <p>Content</p>
       </CheckTileHandler>,
     ),
   )

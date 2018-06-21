@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import shondaRhimesThumbnail from '../../images/shonda-rhimes-video.png'
+import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 import ImageTile from '../ImageTile'
 
@@ -9,7 +9,6 @@ const infoProps = {
   inline: true,
   header: false,
 }
-
 
 storiesOf('ImageTile', module)
   .add('ImageTile 4x3',
@@ -31,7 +30,7 @@ storiesOf('ImageTile', module)
         <ImageTile
           imageUrl={shondaRhimesThumbnail}
           aspectRatio='16x9'
-          backgroundGradient={true}
+          backgroundGradient
         >
           <p>Content</p>
         </ImageTile>

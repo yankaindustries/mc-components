@@ -2,37 +2,13 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import ImageTile from '../ImageTile'
-import CheckImage from '../../images/play-with-circle.svg'
-
-
-class CheckboxOverlay extends PureComponent {
-  static propTypes = {
-    // ChecboxOverlay
-    onCheck: PropTypes.func,
-    children: PropTypes.node,
-  }
-
-  render () {
-    const {
-      onCheck,
-      children,
-    } = this.props
-
-    return (
-      <a className='overlay-check__checkbox-tile-overlay' onClick={onCheck}>
-        {children}
-        <img className='overlay-check__image' src={CheckImage} alt='checkmark' />
-      </a>
-    )
-  }
-}
+import CheckboxOverlay from '../CheckboxOverlay'
 
 export default class CheckTile extends PureComponent {
   static propTypes = {
-    // ChecboxOverlay
     checked: PropTypes.bool,
-    onCheck: PropTypes.func,
-    children: PropTypes.node,
+    onCheck: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired,
   }
 
   render () {
