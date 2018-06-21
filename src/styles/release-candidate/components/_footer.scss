@@ -1,4 +1,4 @@
-#mc-footer {
+.mc-site-footer {
   background: #000;
   border-top: 2px solid rgba(#fff, 0.2);
   // margin-top: 64px; holding off for now..
@@ -8,26 +8,36 @@
   clear: both;
   text-align: center;
 
-  .mc-container { padding: 1em 0; }
-
-  .copyright {
+  &__copyright {
+    display: block;
+    text-align: center;
     font-size: 0.87em;
     margin-bottom: -1em;
     color: rgba(#fff, 0.2);
   }
 
-  .nav-footer {
-    padding: 2em 0;
+  // desired width / 1.513333333
+  &__logo-footer {
+    border-bottom: 1px solid rgba(#fff, 0.2);
+    padding: 1.5em 1em 2.5em;
+    width: 135px;
+    height: 128px;
   }
 
-  .nav-footer-items {
+  &__ssl-badge {
+    display: none;
+    width: 150px;
+  }
+
+  &__links {
     margin: 0 auto;
+    padding: 2em 0;
     max-width: 350px;
 
     a { color: #fff; }
   }
 
-  .nav-footer-item {
+  &__link {
     display: inline-block;
     vertical-align: middle;
     font-size: 0.87em;
@@ -37,31 +47,24 @@
   }
 }
 
-// desired width / 1.513333333
-#logo-footer {
-  border-bottom: 1px solid rgba(#fff, 0.2);
-  padding: 1.5em 1em 2.5em;
-  width: 135px;
-  height: 128px;
-}
-
-#ssl-badge {
-  display: none;
-  width: 150px;
-}
-
-
-@media (min-width: $mc-bp-md) {
-  #mc-footer {
-    .mc-container { padding: 1em; }
-  }
-}
-
 @media (min-width: $mc-bp-lg) {
-  #mc-footer {
+  .mc-site-footer {
     padding: 3em 1em;
 
-    .nav-footer {
+    &__logo-footer {
+      width: 97px;
+      height: 64px;
+      border-bottom: 0;
+      padding: 0;
+    }
+
+    &__logo-footer,
+    &__ssl-badge {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &__links {
       display: inline-block;
       vertical-align: middle;
       border: 1px solid rgba(#fff, 0.2);
@@ -71,30 +74,14 @@
       border-bottom: 0;
     }
   }
-
-  #logo-footer {
-    width: 97px;
-    height: 64px;
-    border-bottom: 0;
-    padding: 0;
-  }
-
-  #logo-footer,
-  #ssl-badge {
-    display: inline-block;
-    vertical-align: middle;
-  }
 }
 
 @media (min-width: $mc-bp-xl) {
-  #mc-footer {
-    .nav-footer-items {
-      max-width: none;
-    }
-
-    .nav-footer {
+  .mc-site-footer {
+    &__links {
       margin: 0 2em;
       padding: 2em 1em;
+      max-width: none;
     }
   }
 }
