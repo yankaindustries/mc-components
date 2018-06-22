@@ -24,7 +24,6 @@
   &:focus,
   &.focus {
     outline: 0;
-    // box-shadow: $btn-focus-box-shadow;
   }
 
   // Disabled comes first so active can properly restyle
@@ -101,6 +100,12 @@
 
   &--primary {
     background-color: $mc-color-primary;
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba($mc-color-primary-hover, 0.25);
+    }
   }
 
   &--small {
@@ -117,6 +122,12 @@
     &:active {
       background: $mc-color-secondary-active;
     }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba($mc-color-secondary-hover, 0.25);
+    }
   }
 
   &--tertiary {
@@ -128,6 +139,12 @@
 
     &:active {
       background: $mc-color-tertiary;
+    }
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba($mc-color-tertiary-hover, 0.25);
     }
   }
 }
