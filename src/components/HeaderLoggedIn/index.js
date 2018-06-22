@@ -7,7 +7,7 @@ import ClickOutside from '../ClickOutside'
 import logo from '../../assets/logo-wordmark.svg'
 import MobileNavButton from '../MobileNavButton'
 import Badge from '../Badge'
-import defaultAvatar from '../../assets/default-avatar@2x.png'
+import defaultAvatar from '../../assets/header/default-avatar@2x.png'
 
 export default class HeaderLoggedIn extends PureComponent {
   static propTypes = {

@@ -20,7 +20,7 @@ const NavBarMenuItem = ({
     <li className={classNames}>
       <a className='navbar-menu__item-link' href={href}>
         {label}
-        {badgeCount && <Badge count={badgeCount} />}
+        {Boolean(badgeCount) && <Badge count={badgeCount} />}
         {helperText &&
           <span className='navbar-menu__item-helper'>
             {helperText}

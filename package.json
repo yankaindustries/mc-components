@@ -12,7 +12,7 @@
     "start": "react-scripts start",
     "prebuild": "rimraf dist",
     "build": "npm run build:js && npm run build:assets && npm run build:styles",
-    "build:assets": "cpx -p './src/assets/*' ./dist/assets",
+    "build:assets": "cpx -p './src/assets/**/*' ./dist/assets",
     "build:js": "NODE_ENV=production babel ./src --out-dir ./dist --ignore spec.js,test.js,stories.js",
     "prebuild:css": "node-sass src/styles/index.scss dist/styles/css/mastersass.css",
     "build:css": "postcss -r dist/styles/css/mastersass.css",
