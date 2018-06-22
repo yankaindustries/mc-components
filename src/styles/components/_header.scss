@@ -1,0 +1,152 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: $black;
+  z-index: 999;
+
+  &__nav {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    text-transform: uppercase;
+    background: $black;
+  }
+
+  &__section {
+    flex: 1;
+
+    &--flex-end {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  &__wordmark {
+    background: transparent;
+    text-decoration: none;
+    display: block;
+    width: 129px;
+    height: 14px;
+    margin: 10px auto;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__arrow--down {
+    margin-left: 6px;
+    transition: transform 350ms ease;
+    width: 13px;
+    height: 6px;
+    background: center/100% auto no-repeat;
+    background-image: url("https://d2y1uetpctfe4a.cloudfront.net/mc-fe-styles/0.2.43/global/arrows/caret/arrow-white-down.svg");
+
+    &-opened {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__info-blurb {
+    align-items: center;
+    display: inline-flex;
+    width: auto;
+    padding: 0;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  &__global-badge {
+    margin: 0 2px 0 10px;
+  }
+
+  &__info-block {
+    display: flex;
+    position: relative;
+    user-select: none;
+    padding: 7px;
+    cursor: pointer;
+
+    &__username {
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 0 10px;
+      color: $white;
+    }
+
+    &__avatar {
+      display: inline-block;
+      vertical-align: middle;
+      float: none;
+      width: 20px;
+      height: 20px;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+
+  // mobile
+  @media (max-width: 768px) {
+    &--mobile-opened {
+      height: 100%;
+      overflow: auto;
+    }
+
+    &__nav {
+      display: block;
+    }
+
+    &__section--flex-end {
+      display: block;
+    }
+
+    &__arrow--down {
+      display: none;
+    }
+
+    &__info-block {
+      display: none;
+
+      &--mobile-opened {
+        display: block;
+        padding: 0;
+        border-top: 1px solid rgba($white, 0.1);
+        opacity: 0;
+
+        @include fade-in-opacity();
+      }
+
+      &__avatar {
+        display: block;
+        float: left;
+        margin: 0 20px 0 0;
+        width: 58px;
+        height: 58px;
+        border-radius: 58px;
+      }
+
+      &__username {
+        display: inline-block;
+        font-size: 17px;
+        letter-spacing: 1.4px;
+        margin: 0 10px 8px 0;
+        color: $white;
+      }
+    }
+
+    &__info-blurb {
+      display: flex;
+      padding: 23px;
+
+      .header__global-badge {
+        display: none;
+      }
+    }
+  }
+}
