@@ -6,19 +6,20 @@
 }
 
 .tile--with-gradient {
-  &::after {
+  &:after {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     content: " ";
-    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, .75) 20%, rgba(0, 0, 0, 0) 40%);
+    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0) 40%);
   }
 }
 
 .tile--hover-zoom {
   overflow: inherit;
+
   @include transition($transition-base);
 
   &:hover {

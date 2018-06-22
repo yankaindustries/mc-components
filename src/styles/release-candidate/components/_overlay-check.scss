@@ -5,7 +5,7 @@
   }
 
   &__checkbox-tile-overlay {
-    &::before {
+    &:before {
       position: absolute;
       top: 0;
       left: 0;
@@ -13,14 +13,15 @@
       width: 100%;
       height: 100%;
       content: " ";
+
       @include transition($transition-base);
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, .0001), rgba(0, 0, 0, .9));
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
       opacity: 1;
     }
   }
 
   &:hover &__checkbox-tile-overlay {
-    &::before {
+    &:before {
       opacity: 0;
     }
   }
@@ -52,7 +53,7 @@
   box-shadow: 0 0 0 2px $gray-500;
 
   .overlay-check__checkbox-tile-overlay {
-    &::before {
+    &:before {
       opacity: 0;
     }
   }
