@@ -32,8 +32,9 @@ storiesOf('VideoPlayer', module)
     'ambient video',
     withInfo({
       ...infoProps,
-    })(() => <VideoPlayer isMuted
-isLooped
-hasControls={false}
-             />),
+    })(() => <VideoPlayer
+      isMuted
+      isLooped
+      hasControls={false}
+    />),
   )
