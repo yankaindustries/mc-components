@@ -7,3 +7,16 @@
   animation: backgroundFadeIn $time;
   animation-timing-function: ease;
 }
+
+@mixin fade-in-opacity {
+  @keyframes mcAnimateFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  animation-name: mcAnimateFadeIn;
+  animation-duration: 350ms;
+  animation-iteration-count: once;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
