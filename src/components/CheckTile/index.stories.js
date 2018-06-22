@@ -1,10 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 import CheckTile from '../CheckTile'
-import RadioInput from "../RadioInput";
 
 // CheckTile Handler
 class CheckTileHandler extends Component {
@@ -19,8 +18,7 @@ class CheckTileHandler extends Component {
           {...this.props}
           checked={checked}
           onCheck={() => this.setState({ checked: !checked })}
-        >
-        </CheckTile>
+        />
       </div>
     )
   }
@@ -34,8 +32,9 @@ const infoProps = {
 }
 
 storiesOf('CheckTile', module)
-  .add('CheckTile - 1000x609',
-    withInfo({ ...infoProps })(() =>
+  .add(
+    'CheckTile - 1000x609',
+    withInfo({ ...infoProps })(() => (
       <div style={{ maxWidth: '500px' }}>
         <CheckTile
           imageUrl={shondaRhimesThumbnail}
@@ -46,11 +45,12 @@ storiesOf('CheckTile', module)
         >
           <p>Content</p>
         </CheckTile>
-      </div>,
-    ),
+      </div>
+    )),
   )
-  .add('CheckTile - 1000x609 - no animation',
-    withInfo({ ...infoProps })(() =>
+  .add(
+    'CheckTile - 1000x609 - no animation',
+    withInfo({ ...infoProps })(() => (
       <div style={{ maxWidth: '500px' }}>
         <CheckTile
           imageUrl={shondaRhimesThumbnail}
@@ -60,16 +60,17 @@ storiesOf('CheckTile', module)
         >
           <p>Content</p>
         </CheckTile>
-      </div>,
-    ),
+      </div>
+    )),
   )
-  .add('with handler',
-    withInfo({ ...infoProps })(() =>
+  .add(
+    'with handler',
+    withInfo({ ...infoProps })(() => (
       <CheckTileHandler
         imageUrl={shondaRhimesThumbnail}
         aspectRatio='1000x609'
       >
         <p>Content</p>
-      </CheckTileHandler>,
-    ),
+      </CheckTileHandler>
+    )),
   )

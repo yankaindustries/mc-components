@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 export default class ImageTile extends PureComponent {
   static propTypes = {
@@ -23,7 +24,7 @@ export default class ImageTile extends PureComponent {
     backgroundGradient: true,
   }
 
-  backgroundStyle (imagePath) {
+  backgroundStyle = (imagePath) => {
     const { backgroundGradient } = this.props
     let backgroundImageStyle = `url('${imagePath}')`
     if (backgroundGradient) {
@@ -37,7 +38,7 @@ export default class ImageTile extends PureComponent {
     }
   }
 
-  animationStyles (style) {
+  animationStyles = (style) => {
     switch (style) {
       case 'hover-zoom':
         return 'tile--hover-zoom'
@@ -54,13 +55,20 @@ export default class ImageTile extends PureComponent {
       children,
       imageUrl,
     } = this.props
+    const classNames = cn(
+      'tile',
+      `tile--${aspectRatio}`,
+      this.animationStyles(animationStyle),
+      { [className]: Boolean(className) },
+    )
 
     return (
-      <div className={`tile tile--${aspectRatio} ${className} ${this.animationStyles(animationStyle)}`}>
-        <div className={'background'} style={this.backgroundStyle(imageUrl)}/>
+      <div className={classNames}>
+        <div className={'background'}
+style={this.backgroundStyle(imageUrl)}
+        />
         <div className={'content'}>{children}</div>
       </div>
     )
   }
 }
-
