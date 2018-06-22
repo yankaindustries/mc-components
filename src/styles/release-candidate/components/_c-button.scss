@@ -24,7 +24,7 @@
   &:focus,
   &.focus {
     outline: 0;
-    // box-shadow: $btn-focus-box-shadow;
+    box-shadow: 0 0 0 0.2rem rgba($mc-color-primary-hover, 0.25);
   }
 
   // Disabled comes first so active can properly restyle
