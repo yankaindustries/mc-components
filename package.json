@@ -63,9 +63,6 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "prettier-eslint --write --log-level error",
-      "eslint --fix",
-      "git add"
     ],
     "src/**/*.scss": [
       "stylelint --fix",
