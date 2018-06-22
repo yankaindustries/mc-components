@@ -64,8 +64,9 @@ export default class ImageTile extends PureComponent {
 
     return (
       <div className={classNames}>
-        <div className={'background'}
-style={this.backgroundStyle(imageUrl)}
+        <div
+          className={'background'}
+          style={this.backgroundStyle(imageUrl)}
         />
         <div className={'content'}>{children}</div>
       </div>
