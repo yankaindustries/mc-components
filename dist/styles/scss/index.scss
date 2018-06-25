@@ -1,12 +1,12 @@
 // External libraries first
-@import "./libraries/libraries";
+@import "libraries/libraries";
+
+// mc-release mixins
+@import "mixins/mixins";
 
 // masterSass
-@import "./base/base";
-@import "./components/components";
-@import "./icons/icons";
-@import "./typography/typography";
-
-// Code that isn't truly approved yet
-// but needs to be implemented to try
-@import "./release-candidate/index.scss";
+@import "base/base";
+@import "functions/functions";
+@import "components/components";
+@import "icons/icons";
+@import "typography/typography";

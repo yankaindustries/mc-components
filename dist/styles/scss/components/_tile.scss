@@ -1,0 +1,47 @@
+.tile {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  backface-visibility: hidden;
+}
+
+.tile--with-gradient {
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0) 40%);
+  }
+}
+
+.tile--hover-zoom {
+  overflow: inherit;
+
+  @include transition($transition-base);
+
+  &:hover {
+    overflow: inherit;
+    box-shadow: 0 0 0 2px #d8d8d8;
+    transform: scale(1.01);
+  }
+}
+
+.tile--4x3,
+.tile--video {
+  @include aspect-ratio(4, 3);
+}
+.tile--16x9,
+.tile--widescreen-video {
+  @include aspect-ratio(16, 9);
+}
+
+.tile--1000x609,
+.tile--site {
+  @include aspect-ratio(1000, 609);
+}
+.tile--519x187 {
+  @include aspect-ratio(519, 187);
+}

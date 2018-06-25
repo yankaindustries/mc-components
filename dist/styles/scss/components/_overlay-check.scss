@@ -1,0 +1,75 @@
+.overlay-check {
+  &__image {
+    display: none;
+    height: 3.7rem;
+  }
+
+  &__checkbox-tile-overlay {
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: $check-tile-tile-overlay-index;
+      width: 100%;
+      height: 100%;
+      content: " ";
+
+      @include transition($transition-base);
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
+      opacity: 1;
+    }
+  }
+
+  &:hover &__checkbox-tile-overlay {
+    &:before {
+      opacity: 0;
+    }
+  }
+
+  .tile-caption--horizontal-centered {
+    .tile-caption__title {
+      color: $gray-400;
+    }
+
+    .tile-caption__subtitle {
+      color: $gray-200;
+    }
+  }
+
+  &:hover {
+    .tile-caption--horizontal-centered {
+      .tile-caption__title {
+        color: $white;
+      }
+
+      .tile-caption__subtitle {
+        color: $gray-300;
+      }
+    }
+  }
+}
+
+.overlay-check--checked {
+  box-shadow: 0 0 0 2px $gray-500;
+
+  .overlay-check__checkbox-tile-overlay {
+    &:before {
+      opacity: 0;
+    }
+  }
+  .overlay-check__image {
+    display: inline-block;
+    float: right;
+    margin: 1.8rem 1.8rem 0 0;
+  }
+
+  .tile-caption--horizontal-centered {
+    .tile-caption__title {
+      color: $white;
+    }
+
+    .tile-caption__subtitle {
+      color: $gray-300;
+    }
+  }
+}

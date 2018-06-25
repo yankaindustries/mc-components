@@ -112,4 +112,13 @@ Object.defineProperty(exports, 'Footer', {
   }
 });
 
+var _HeaderLoggedIn = require('./HeaderLoggedIn');
+
+Object.defineProperty(exports, 'HeaderLoggedIn', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_HeaderLoggedIn).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
