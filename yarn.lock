@@ -78,9 +78,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@masterclass/eslint-config@yankaindustries/eslint-config-masterclass#1.0.1":
-  version "1.0.1"
-  resolved "https://codeload.github.com/yankaindustries/eslint-config-masterclass/tar.gz/e07e78409b5b0b67253cefb0de20adea6f7c4997"
+"@masterclass/eslint-config@yankaindustries/eslint-config-masterclass#1.0.2":
+  version "1.0.2"
+  resolved "https://codeload.github.com/yankaindustries/eslint-config-masterclass/tar.gz/a3733c6472c7f8c84e66528e934f417caf2a555d"
   dependencies:
     eslint-config-airbnb "^16.1.0"
     eslint-plugin-react "^7.9.1"
