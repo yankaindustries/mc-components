@@ -1,0 +1,8 @@
+.grid-example {
+  &-block {
+    background: $mc-color-primary;
+    width: 100%;
+    height: 64px;
+    border: 1px solid $mc-color-primary-hover;
+  }
+}
