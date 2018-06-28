@@ -4,17 +4,6 @@ import PropTypes from 'prop-types'
 import ReplayIcon from '../icons/ReplayIcon'
 
 export default class VideoPlayer extends React.PureComponent {
-  static defaultProps = {
-    playerId: 'rkcQq7gAe',
-    videoId: '5450137526001',
-    theme: 'default',
-    isLooped: false,
-    isMuted: false,
-    hasAutoplay: true,
-    hasControls: true,
-    hasBreakpoints: false,
-  }
-
   static propTypes = {
     playerId: PropTypes.string.isRequired,
     videoId: PropTypes.string.isRequired,
@@ -43,18 +32,23 @@ export default class VideoPlayer extends React.PureComponent {
     onError: PropTypes.func,
   }
 
-  state = { endscreenOpen: false }
+  static defaultProps = {
+    playerId: 'rkcQq7gAe',
+    videoId: '5450137526001',
+    theme: 'default',
+    isLooped: false,
+    isMuted: false,
+    hasAutoplay: true,
+    hasControls: true,
+    hasBreakpoints: false,
+  }
 
   constructor (props) {
     super(props)
     this.playerRef = React.createRef()
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (this.props.videoId !== nextProps.videoId) {
-      this.replaceWith(nextProps.videoId)
-    }
-  }
+  state = { endscreenOpen: false }
 
   componentDidMount () {
     if (window.bc && window.videojs) {
@@ -66,8 +60,16 @@ export default class VideoPlayer extends React.PureComponent {
     }
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (this.props.videoId !== nextProps.videoId) {
+      this.replaceWith(nextProps.videoId)
+    }
+  }
+
   handlePlayerReady = () => {
-    const { onPlay, onPause, onVideoReady, onPlayerReady } = this.props
+    const {
+      onPlay, onPause, onVideoReady, onPlayerReady,
+    } = this.props
 
     if (onPlay) {
       this.video.on('play', () => {
