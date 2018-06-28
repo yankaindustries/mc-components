@@ -1,0 +1,42 @@
+.tile-caption {
+  color: $white;
+  text-transform: uppercase;
+
+  &__title {
+    color: $white;
+    font-size: 2rem;
+    font-weight: $font-weight-light;
+    line-height: 2.2rem;
+    letter-spacing: 1px;
+  }
+
+  &__subtitle {
+    font-size: 1.3rem;
+    font-weight: $font-weight-heavy;
+    line-height: 2.2rem;
+    color: $mc-color-tertiary;
+    letter-spacing: 1px;
+  }
+}
+
+.tile-caption--horizontal-centered {
+  position: absolute;
+  bottom: 2rem;
+  z-index: $tile-caption-index;
+  width: 100%;
+  text-align: center;
+}
+
+.tile-caption--below-centered {
+  position: relative;
+  bottom: 0;
+  z-index: 4;
+  width: 100%;
+  text-align: center;
+  background-color: $black;
+  padding: 1.3rem 0;
+}
+
+.tile-caption--animated {
+  transition: bottom 0.2s;
+}

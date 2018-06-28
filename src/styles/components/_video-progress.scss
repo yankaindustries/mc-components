@@ -1,0 +1,12 @@
+.video-progress {
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  height: 0.4rem;
+  position: absolute;
+  width: 100%;
+
+  &__completed {
+    height: 0.4rem;
+    background-color: #c83232;
+  }
+}
