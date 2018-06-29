@@ -129,11 +129,9 @@ $transition-fade:             opacity 0.15s linear !default;
 $transition-collapse:         height 0.35s ease !default;
 
 // Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
+$enable-grid-classes:         true !default;
 $grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
-$gutter-vertical:             30px !default;
+$grid-gutter-width:           32px !default;
 
 // Font Weights
 $font-weight-light:  200 !default;
@@ -167,16 +165,6 @@ $container-max-widths: (
   lg: 960px,
   xl: 1200px,
 ) !default;
-
-// Grid columns
-//
-// Set the number of columns and specify the width of the gutters.
-
-$grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
-
-// Feature flags
-$enable-grid-classes:       true !default;
 
 // Modal
 $modal-width: 48rem !default;
