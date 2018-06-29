@@ -80,15 +80,18 @@ var HeaderLoggedIn = function (_PureComponent) {
 
       _this.setState({ isMobileMenuOpened: !isMobileMenuOpened });
     }, _this.renderLeft = function () {
-      var left = _this.props.left;
+      var _this$props$left = _this.props.left,
+          action = _this$props$left.action,
+          label = _this$props$left.label,
+          type = _this$props$left.type;
 
 
-      if (left.type === 'back') {
+      if (type === 'back') {
         return _react2.default.createElement(
           'button',
           {
             className: 'header__left-button',
-            onClick: typeof left.action === 'function' && left.action
+            onClick: Boolean(action) && action
           },
           _react2.default.createElement('img', {
             src: _backArrow2.default,
@@ -97,7 +100,7 @@ var HeaderLoggedIn = function (_PureComponent) {
           _react2.default.createElement(
             'span',
             { className: 'header__left-button__label' },
-            left.label
+            label
           )
         );
       }
@@ -115,7 +118,8 @@ var HeaderLoggedIn = function (_PureComponent) {
       var _props = this.props,
           menuLinks = _props.menuLinks,
           name = _props.name,
-          avatar = _props.avatar;
+          avatar = _props.avatar,
+          left = _props.left;
 
 
       var headerClassNames = (0, _classnames2.default)('header', {
@@ -146,7 +150,7 @@ var HeaderLoggedIn = function (_PureComponent) {
           _react2.default.createElement(
             'div',
             { className: 'header__section' },
-            this.props.left && this.renderLeft()
+            left && this.renderLeft()
           ),
           _react2.default.createElement(
             'div',

@@ -70,13 +70,27 @@ var ImageTile = function (_PureComponent) {
           aspectRatio = _props.aspectRatio,
           className = _props.className,
           children = _props.children,
-          imageUrl = _props.imageUrl;
+          imageUrl = _props.imageUrl,
+          width = _props.width;
 
       var classNames = (0, _classnames2.default)('tile', 'tile--' + aspectRatio, this.animationStyles(animationStyle), _defineProperty({}, className, Boolean(className)));
 
+      var style = width ? {
+        width: width + 'px',
+        height: function () {
+          var aspectRatioArr = aspectRatio.split('x');
+          var widthRatio = aspectRatioArr[0];
+          var heigthRatio = aspectRatioArr[1];
+
+          return width * heigthRatio / widthRatio;
+        }()
+      } : null;
+
       return _react2.default.createElement(
         'div',
-        { className: classNames },
+        {
+          className: classNames,
+          style: style },
         _react2.default.createElement('div', {
           className: 'background',
           style: this.backgroundStyle(imageUrl)
@@ -99,7 +113,8 @@ ImageTile.propTypes = {
   className: _propTypes2.default.string,
   children: _propTypes2.default.node,
   imageUrl: _propTypes2.default.string.isRequired,
-  backgroundGradient: _propTypes2.default.bool
+  backgroundGradient: _propTypes2.default.bool,
+  width: _propTypes2.default.number
 };
 ImageTile.defaultProps = {
   aspectRatio: '16x9',

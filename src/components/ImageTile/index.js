@@ -16,6 +16,7 @@ export default class ImageTile extends PureComponent {
     children: PropTypes.node,
     imageUrl: PropTypes.string.isRequired,
     backgroundGradient: PropTypes.bool,
+    width: PropTypes.number,
   }
 
   static defaultProps = {
@@ -54,6 +55,7 @@ export default class ImageTile extends PureComponent {
       className,
       children,
       imageUrl,
+      width,
     } = this.props
     const classNames = cn(
       'tile',
@@ -62,8 +64,21 @@ export default class ImageTile extends PureComponent {
       { [className]: Boolean(className) },
     )
 
+    const style = width ? {
+      width: `${width}px`,
+      height: (() => {
+        const aspectRatioArr = aspectRatio.split('x')
+        const widthRatio = aspectRatioArr[0]
+        const heigthRatio = aspectRatioArr[1]
+
+        return (width * heigthRatio) / widthRatio
+      })(),
+    } : null
+
     return (
-      <div className={classNames}>
+      <div
+      className={classNames}
+      style={style}>
         <div
           className={'background'}
           style={this.backgroundStyle(imageUrl)}
