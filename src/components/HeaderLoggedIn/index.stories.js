@@ -17,7 +17,7 @@ const menuLinks = [
   { label: 'Sign out', href: '/sign_out' },
 ]
 
-storiesOf('react|HeaderLoggedIn', module)
+storiesOf('components|HeaderLoggedIn', module)
   .add(
     'default',
     withInfo({ ...infoProps })(() => <HeaderLoggedIn menuLinks={menuLinks} />),

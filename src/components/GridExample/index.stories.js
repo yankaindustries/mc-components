@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info'
 
 import GridExample from '../GridExample'
 
-storiesOf('static|GridExample', module)
+storiesOf('foundation|GridExample', module)
   .add(
     'default',
     withInfo()(() =>

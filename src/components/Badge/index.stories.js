@@ -9,7 +9,7 @@ const infoProps = {
   header: false,
 }
 
-storiesOf('react|Badge', module)
+storiesOf('components|Badge', module)
   .add(
     'default',
     withInfo({ ...infoProps })(() =>

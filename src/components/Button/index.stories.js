@@ -35,7 +35,7 @@ const FacebookIcon = () => (
   </svg>
 )
 
-storiesOf('react|Button', module)
+storiesOf('components|Button', module)
   .add(
     'primary',
     withInfo({ ...infoProps })(() => (
