@@ -1,0 +1,126 @@
+.navbar-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 260px;
+  height: auto;
+  background: $black;
+  border: 1px solid rgba($white, 0.1);
+  margin: 0;
+  transform: translateY(0);
+  transition: transform 350ms ease;
+  z-index: -1;
+
+  &--open {
+    transform: translateY(100%);
+  }
+
+  &__item {
+    border-bottom: 1px solid rgba($white, 0.1);
+
+    .badge {
+      float: right;
+      font-size: 14px;
+      transition: transform 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    &:hover {
+      .navbar-menu__item-link {
+        padding-left: 24px;
+      }
+
+      .badge {
+        transform: scale(1.1);
+      }
+
+      .navbar-menu__item-helper {
+        color: rgba($white, 0.4);
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__item--centered {
+    .navbar-menu__item-link {
+      text-align: center;
+      color: rgba($white, 0.5);
+      padding: 15px 16px;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    &:hover {
+      .navbar-menu__item-link {
+        padding-left: 16px;
+      }
+    }
+  }
+
+  &__item-link {
+    text-decoration: none;
+    font-size: 14px;
+    transition: padding 150ms cubic-bezier(0.25, 0.1, 0.25, 1), opacity 150ms ease;
+    display: block;
+    padding: 20px 16px;
+    letter-spacing: 1px;
+    text-transform: none;
+    color: $white;
+    text-align: left;
+  }
+
+  &__item-helper {
+    color: rgba($white, 0);
+    float: right;
+    transition: color 250ms ease;
+  }
+
+  // mobile
+  @media (max-width: 768px) {
+    position: static;
+    width: 100%;
+
+    &__item {
+      opacity: 0;
+
+      @include fade-in-opacity();
+
+      @for $i from 1 through 15 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 100}ms;
+        }
+      }
+
+      .badge {
+        font-size: 17px;
+      }
+
+      &:hover {
+        .navbar-menu__item-link {
+          padding: 20px 16px;
+        }
+      }
+    }
+
+    &__item--centered {
+      .navbar-menu__item-link {
+        padding: 20px 16px;
+      }
+    }
+
+    &__item-link {
+      padding: 20px 16px;
+      font-size: 17px;
+      letter-spacing: 1px;
+      text-transform: none;
+    }
+
+    &__item-helper {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}

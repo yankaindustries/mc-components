@@ -1,5 +1,15 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: $mc-font-default;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba($black, 0.01) 0 0 1px;
+  text-size-adjust: 100%;
 }
 
 a {

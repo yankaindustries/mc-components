@@ -40,97 +40,110 @@ var Footer = function (_PureComponent) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { id: 'mc-footer' },
+        { className: 'mc-site-footer' },
         _react2.default.createElement(
           'div',
           { className: 'mc-container mc-contain-inner' },
-          _react2.default.createElement('img', { src: _logo2.default, alt: 'Logo wordmark', id: 'logo-footer' }),
+          _react2.default.createElement('img', {
+            src: _logo2.default,
+            alt: 'Logo wordmark',
+            className: 'mc-site-footer__logo-footer'
+          }),
           _react2.default.createElement(
-            'div',
-            { className: 'nav-footer' },
+            'ul',
+            { className: 'mc-site-footer__links' },
             _react2.default.createElement(
-              'ul',
-              { className: 'nav-footer-items' },
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '/#now-available' },
-                  'Browse Classes'
-                )
-              ),
+                'a',
+                { href: '/#now-available' },
+                'Browse Classes'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '/all-access-pass' },
-                  'All-Access'
-                )
-              ),
+                'a',
+                { href: '/all-access-pass' },
+                'All-Access'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '/gift' },
-                  'Gifts'
-                )
-              ),
+                'a',
+                { href: '/gift' },
+                'Gifts'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { target: ' _blank', href: 'https://masterclasshelp.zendesk.com/hc/en-us' },
-                  'Help Center'
-                )
-              ),
+                'a',
+                {
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  href: 'https://masterclasshelp.zendesk.com/hc/en-us'
+                },
+                'Help Center'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { target: ' _blank', href: 'https://masterclasshelp.zendesk.com/hc/en-us/articles/205081248' },
-                  'Contact Us'
-                )
-              ),
+                'a',
+                {
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  href: 'https://masterclasshelp.zendesk.com/hc/en-us/articles/205081248'
+                },
+                'Contact Us'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '/privacy' },
-                  'Privacy'
-                )
-              ),
+                'a',
+                { href: '/privacy' },
+                'Privacy'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '/terms' },
-                  'Terms'
-                )
-              ),
+                'a',
+                { href: '/terms' },
+                'Terms'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              { className: 'mc-site-footer__link' },
               _react2.default.createElement(
-                'li',
-                { className: 'nav-footer-item' },
-                _react2.default.createElement(
-                  'a',
-                  { href: 'http://careers.masterclass.com' },
-                  'Careers'
-                )
+                'a',
+                { href: 'http://careers.masterclass.com' },
+                'Careers'
               )
             ),
             _react2.default.createElement(
               'p',
-              { className: 'copyright' },
+              { className: 'mc-site-footer__copyright' },
               'Copyright \xA9 2018 MasterClass'
             )
           ),
-          _react2.default.createElement('img', { src: _sslBadge2.default, alt: 'Secured by Expedited SSL', className: 'undefined', id: 'ssl-badge', name: 'ssl-badge' })
+          _react2.default.createElement('img', {
+            src: _sslBadge2.default,
+            alt: 'Secured by Expedited SSL',
+            className: 'mc-site-footer__ssl-badge',
+            name: 'ssl-badge'
+          })
         )
       );
     }

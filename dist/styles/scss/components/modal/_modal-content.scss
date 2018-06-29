@@ -1,5 +1,7 @@
 .modal {
-  @extend %flex-centered;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 
   @include fade-in-background-animation(
     rgba($black, 0),

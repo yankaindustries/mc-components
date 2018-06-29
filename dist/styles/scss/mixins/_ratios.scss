@@ -1,0 +1,51 @@
+// Creates container with aspect
+// ratio for the many types of tiles on our site
+// that use text or element overlays over an image
+// that covers the background
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+    content: "";
+  }
+
+  /* Todo - Make sure this is deprecated and use fill instead */
+
+  > .background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $i-tile-background-index;
+    background-repeat: cover;
+    background-size: cover;
+  }
+
+  .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    &:after {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      content: " ";
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $i-tile-content-index;
+  }
+}

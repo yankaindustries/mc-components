@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { arrayOf, shape, string } from 'prop-types'
+import { arrayOf, shape, string, func } from 'prop-types'
 import cn from 'classnames'
 
 import NavBarMenu from '../NavBarMenu'
@@ -8,6 +8,7 @@ import logo from '../../assets/logo-wordmark.svg'
 import MobileNavButton from '../MobileNavButton'
 import Badge from '../Badge'
 import defaultAvatar from '../../assets/header/default-avatar@2x.png'
+import backArrow from '../../assets/header/back-arrow.svg'
 
 export default class HeaderLoggedIn extends PureComponent {
   static propTypes = {
@@ -20,6 +21,11 @@ export default class HeaderLoggedIn extends PureComponent {
     ).isRequired,
     name: string,
     avatar: string,
+    left: shape({
+      type: string.isRequired,
+      label: string,
+      action: func,
+    }),
   }
 
   static defaultProps = {
@@ -46,9 +52,36 @@ export default class HeaderLoggedIn extends PureComponent {
     this.setState({ isMobileMenuOpened: !isMobileMenuOpened })
   }
 
+  renderLeft = () => {
+    const { action, label, type } = this.props.left
+
+    if (type === 'back') {
+      return (
+        <button
+          className='header__left-button'
+          onClick={Boolean(action) && action}
+        >
+          <img
+            src={backArrow}
+            className='header__left-button__icon'
+          />
+          <span className='header__left-button__label'>{label}</span>
+        </button>
+      )
+    }
+
+    return null
+  }
+
+
   render () {
     const { isDropdownOpened, isMobileMenuOpened } = this.state
-    const { menuLinks, name, avatar } = this.props
+    const {
+      menuLinks,
+      name,
+      avatar,
+      left,
+    } = this.props
 
     const headerClassNames = cn('header', {
       'header--mobile-opened': isMobileMenuOpened,
@@ -73,8 +106,9 @@ export default class HeaderLoggedIn extends PureComponent {
           onClick={this.toggleMobileMenu}
         />
         <nav className='header__nav'>
-          <div className='header__section'>{/* TODO: breadcrumbs */}</div>
-
+        <div className='header__section'>
+          { left && this.renderLeft() }
+        </div>
           <div className='header__section'>
             <a className='header__wordmark'href='/'>
               <img src={logo} alt='Logo wordmark' />
