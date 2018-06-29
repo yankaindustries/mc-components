@@ -37,6 +37,6 @@ storiesOf('components|VideoPlayer', module)
         isMuted
         isLooped
         hasControls={false}
-      />
+      />,
     ),
   )

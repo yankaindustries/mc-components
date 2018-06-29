@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
 
 import RadioInput from '../RadioInput'
 
@@ -35,6 +36,7 @@ storiesOf('components|RadioInput', module)
     withInfo({ ...infoProps })(() =>
       <RadioInput
         label='My radio input'
+        onChange={action('clicked')}
       />,
     ),
   )
@@ -42,6 +44,7 @@ storiesOf('components|RadioInput', module)
     withInfo({ ...infoProps })(() =>
       <RadioInput
         label='My radio input'
+        onChange={action('clicked')}
         checked
       />,
     ),
