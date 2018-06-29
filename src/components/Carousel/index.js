@@ -45,6 +45,10 @@ export default class Carousel extends Component {
     this.slider.current.slickPrev()
   }
 
+  slideTo = (index) => {
+    this.slider.current.slickGoTo(index)
+  }
+
   renderSlide = item => (
     <ImageTile
       className='mc-carousel__slide'

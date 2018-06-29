@@ -71,6 +71,8 @@ var Carousel = function (_Component) {
       _this.slider.current.slickNext();
     }, _this.handlePrevious = function () {
       _this.slider.current.slickPrev();
+    }, _this.slideTo = function (index) {
+      _this.slider.current.slickGoTo(index);
     }, _this.renderSlide = function (item) {
       return _react2.default.createElement(
         _ImageTile2.default,
