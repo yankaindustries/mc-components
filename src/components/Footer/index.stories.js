@@ -9,7 +9,7 @@ const infoProps = {
   header: false,
 }
 
-storiesOf('Footer', module)
+storiesOf('react|Footer', module)
   .add('default',
     withInfo({ ...infoProps })(() =>
       <Footer />,

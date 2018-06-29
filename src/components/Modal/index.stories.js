@@ -37,7 +37,7 @@ const infoProps = {
   propTablesExclude: [ModalHandler],
 }
 
-storiesOf('Modal', module)
+storiesOf('react|Modal', module)
   .add('default',
     withInfo({
       ...infoProps,

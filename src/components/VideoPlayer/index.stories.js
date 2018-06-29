@@ -10,7 +10,7 @@ const infoProps = {
   propTables: [VideoPlayer],
 }
 
-storiesOf('VideoPlayer', module)
+storiesOf('react|VideoPlayer', module)
   .add(
     'default',
     withInfo({

@@ -30,7 +30,7 @@ const infoProps = {
   propTablesExclude: [RadioInputHandler],
 }
 
-storiesOf('RadioInput', module)
+storiesOf('react|RadioInput', module)
   .add('default',
     withInfo({ ...infoProps })(() =>
       <RadioInput

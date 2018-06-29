@@ -9,7 +9,7 @@ const infoProps = {
   header: false,
 }
 
-storiesOf('RoundedBox', module)
+storiesOf('react|RoundedBox', module)
   .add('default',
     withInfo({ ...infoProps })(() =>
       <RoundedBox>

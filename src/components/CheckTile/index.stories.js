@@ -31,7 +31,7 @@ const infoProps = {
   propTablesExclude: [CheckTileHandler],
 }
 
-storiesOf('CheckTile', module)
+storiesOf('react|CheckTile', module)
   .add(
     'CheckTile - 1000x609',
     withInfo({ ...infoProps })(() => (
