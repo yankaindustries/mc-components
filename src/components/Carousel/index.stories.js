@@ -26,7 +26,7 @@ const carouselDataSource = [
   { id: 7, image: 'https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082' },
 ]
 
-storiesOf('Carousel', module)
+storiesOf('components|Carousel', module)
   .add(
     'default',
     withInfo({ ...infoProps })(() => (

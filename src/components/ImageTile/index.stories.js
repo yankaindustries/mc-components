@@ -10,7 +10,7 @@ const infoProps = {
   header: false,
 }
 
-storiesOf('ImageTile', module)
+storiesOf('components|ImageTile', module)
   .add(
     'ImageTile 4x3',
     withInfo({ ...infoProps })(() => (

@@ -1,7 +1,13 @@
 import { configure, addDecorator } from '@storybook/react';
-
+import { setOptions } from '@storybook/addon-options';
 import { backgrounds, StoryWrapper } from './decorators'
 import './styles.scss'
+
+// Option defaults:
+setOptions({
+  hierarchySeparator: null,
+  hierarchyRootSeparator: /\|/,
+});
 
 // load global decorators
 addDecorator(backgrounds)
