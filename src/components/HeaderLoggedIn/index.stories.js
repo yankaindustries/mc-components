@@ -1,6 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
 
 import HeaderLoggedIn from '../HeaderLoggedIn'
 
@@ -39,6 +40,19 @@ storiesOf('HeaderLoggedIn', module)
           { label: 'Profile', href: '/profile', badgeCount: 1 },
           { label: 'Sign out', href: '/sign_out' },
         ]}
+      />
+    )),
+  )
+  .add(
+    'with backButton',
+    withInfo({ ...infoProps })(() => (
+      <HeaderLoggedIn
+        menuLinks={menuLinks}
+        left={{
+          action: action('clicked'),
+          label: 'Back',
+          type: 'back',
+        }}
       />
     )),
   )

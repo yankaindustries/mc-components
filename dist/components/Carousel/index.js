@@ -67,13 +67,13 @@ var Carousel = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call.apply(_ref, [this].concat(args))), _this), _this.slider = _react2.default.createRef(), _this.handleNext = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call.apply(_ref, [this].concat(args))), _this), _this.handleNext = function () {
       _this.slider.current.slickNext();
     }, _this.handlePrevious = function () {
       _this.slider.current.slickPrev();
     }, _this.slideTo = function (index) {
       _this.slider.current.slickGoTo(index);
-    }, _this.renderSlide = function (item) {
+    }, _this.slider = _react2.default.createRef(), _this.renderSlide = function (item) {
       return _react2.default.createElement(
         _ImageTile2.default,
         {

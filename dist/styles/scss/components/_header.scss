@@ -53,6 +53,27 @@
     }
   }
 
+  &__left-button {
+    display: flex;
+    position: relative;
+    user-select: none;
+    padding: 7px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    align-items: center;
+
+    &__label {
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin: 0 10px;
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+
   &__info-blurb {
     align-items: center;
     display: inline-flex;

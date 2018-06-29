@@ -30,7 +30,6 @@ export default class VideoPlayer extends React.PureComponent {
     onEnd: PropTypes.func,
     onTimeChange: PropTypes.func,
     onError: PropTypes.func,
-    accountId: PropTypes.string,
   }
 
   static defaultProps = {
@@ -42,7 +41,6 @@ export default class VideoPlayer extends React.PureComponent {
     hasAutoplay: true,
     hasControls: true,
     hasBreakpoints: false,
-    accountId: '5344802162001',
   }
 
   constructor (props) {
@@ -54,16 +52,11 @@ export default class VideoPlayer extends React.PureComponent {
 
   componentDidMount () {
     if (window.bc && window.videojs) {
-      this.setupVideo()
-    } else {
-      const { playerId, accountId } = this.props
-
-      const bcScript = document.createElement('script')
-      bcScript.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
-
-      document.body.appendChild(bcScript)
-      // Call a function to play the video once player's JavaScropt loaded
-      bcScript.onload = this.setupVideo
+      window.bc(this.playerRef.current, {
+        playbackRates: [0.5, 1, 1.5, 2],
+      })
+      this.video = window.videojs(this.playerRef.current)
+      this.video.ready(this.handlePlayerReady)
     }
   }
 
@@ -71,14 +64,6 @@ export default class VideoPlayer extends React.PureComponent {
     if (this.props.videoId !== nextProps.videoId) {
       this.replaceWith(nextProps.videoId)
     }
-  }
-
-  setupVideo = () => {
-    window.bc(this.playerRef.current, {
-      playbackRates: [0.5, 1, 1.5, 2],
-    })
-    this.video = window.videojs(this.playerRef.current)
-    this.video.ready(this.handlePlayerReady)
   }
 
   handlePlayerReady = () => {
@@ -187,7 +172,6 @@ export default class VideoPlayer extends React.PureComponent {
       hasAutoplay,
       hasControls,
       isMuted,
-      accountId,
     } = this.props
 
     return (
@@ -210,7 +194,7 @@ export default class VideoPlayer extends React.PureComponent {
             data-embed='default'
             data-video-id={videoId}
             data-player-id={playerId}
-            data-account={accountId}
+            data-account='5344802162001'
             autoPlay={hasAutoplay ? 'autoplay' : ''}
             muted={isMuted ? 'muted' : ''}
             controls={hasControls ? 'controls' : ''}

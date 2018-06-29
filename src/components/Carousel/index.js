@@ -35,8 +35,6 @@ export default class Carousel extends Component {
 
   static Arrow = CarouselArrow;
 
-  slider = React.createRef()
-
   handleNext = () => {
     this.slider.current.slickNext()
   }
@@ -48,6 +46,8 @@ export default class Carousel extends Component {
   slideTo = (index) => {
     this.slider.current.slickGoTo(index)
   }
+
+  slider = React.createRef()
 
   renderSlide = item => (
     <ImageTile

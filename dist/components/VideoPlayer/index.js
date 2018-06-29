@@ -40,14 +40,6 @@ var VideoPlayer = function (_React$PureComponent) {
 
     _this.state = { endscreenOpen: false };
 
-    _this.setupVideo = function () {
-      window.bc(_this.playerRef.current, {
-        playbackRates: [0.5, 1, 1.5, 2]
-      });
-      _this.video = window.videojs(_this.playerRef.current);
-      _this.video.ready(_this.handlePlayerReady);
-    };
-
     _this.handlePlayerReady = function () {
       var _this$props = _this.props,
           onPlay = _this$props.onPlay,
@@ -101,6 +93,14 @@ var VideoPlayer = function (_React$PureComponent) {
       _this.setState({
         endscreenOpen: false
       });
+    };
+
+    _this.setupVideo = function () {
+      window.bc(_this.playerRef.current, {
+        playbackRates: [0.5, 1, 1.5, 2]
+      });
+      _this.video = window.videojs(_this.playerRef.current);
+      _this.video.ready(_this.handlePlayerReady);
     };
 
     _this.replaceWith = function (videoId) {

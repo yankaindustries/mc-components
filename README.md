@@ -14,8 +14,14 @@ mc-components aims to provide primitive components to build user interfaces in M
 
 - Import MasterClass Components Stylesheet in your styles.scss file
 ```scss
-@import '../node_modules/mc-components/lib/styles/index';
+@import '../node_modules/mc-components/dist/styles/scss/index';
 ```
+
+- Import Vendor Stylesheet in your styles.scss file
+```scss
+@import '../node_modules/mc-components/dist/styles/css/vendor.css';
+```
+
 - Import a component
 ```javascript
 import { Button } from 'mc-components'
@@ -29,6 +35,10 @@ const Container = () =>
 1. Clone the repository
 2. Install dependencies: `yarn`
 3. Start the storybook: `yarn storybook`
+
+## Libraries
+
+The file `src/styles/libraries/_libraries/` handle all external css libraries. Once you build the project, all libraries will be available in `dist/styles/css/vendor.css`
 
 ## Documentation
 All documentation is handled in storybook.  To deploy a new version of the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:

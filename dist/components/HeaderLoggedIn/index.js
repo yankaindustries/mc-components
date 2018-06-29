@@ -40,6 +40,10 @@ var _defaultAvatar2x = require('../../assets/header/default-avatar@2x.png');
 
 var _defaultAvatar2x2 = _interopRequireDefault(_defaultAvatar2x);
 
+var _backArrow = require('../../assets/header/back-arrow.svg');
+
+var _backArrow2 = _interopRequireDefault(_backArrow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -75,6 +79,33 @@ var HeaderLoggedIn = function (_PureComponent) {
       var isMobileMenuOpened = _this.state.isMobileMenuOpened;
 
       _this.setState({ isMobileMenuOpened: !isMobileMenuOpened });
+    }, _this.renderLeft = function () {
+      var _this$props$left = _this.props.left,
+          action = _this$props$left.action,
+          label = _this$props$left.label,
+          type = _this$props$left.type;
+
+
+      if (type === 'back') {
+        return _react2.default.createElement(
+          'button',
+          {
+            className: 'header__left-button',
+            onClick: Boolean(action) && action
+          },
+          _react2.default.createElement('img', {
+            src: _backArrow2.default,
+            className: 'header__left-button__icon'
+          }),
+          _react2.default.createElement(
+            'span',
+            { className: 'header__left-button__label' },
+            label
+          )
+        );
+      }
+
+      return null;
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -87,7 +118,8 @@ var HeaderLoggedIn = function (_PureComponent) {
       var _props = this.props,
           menuLinks = _props.menuLinks,
           name = _props.name,
-          avatar = _props.avatar;
+          avatar = _props.avatar,
+          left = _props.left;
 
 
       var headerClassNames = (0, _classnames2.default)('header', {
@@ -115,7 +147,11 @@ var HeaderLoggedIn = function (_PureComponent) {
         _react2.default.createElement(
           'nav',
           { className: 'header__nav' },
-          _react2.default.createElement('div', { className: 'header__section' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'header__section' },
+            left && this.renderLeft()
+          ),
           _react2.default.createElement(
             'div',
             { className: 'header__section' },
@@ -185,7 +221,12 @@ HeaderLoggedIn.propTypes = {
     helperText: _propTypes.string
   })).isRequired,
   name: _propTypes.string,
-  avatar: _propTypes.string
+  avatar: _propTypes.string,
+  left: (0, _propTypes.shape)({
+    type: _propTypes.string.isRequired,
+    label: _propTypes.string,
+    action: _propTypes.func
+  })
 };
 HeaderLoggedIn.defaultProps = {
   name: 'set up your profile'
