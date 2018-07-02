@@ -17,7 +17,7 @@ const defaultSettings = {
 
 export default class Carousel extends Component {
   static propTypes = {
-    data: PropTypes.arrayOf(PropTypes.shape({})),
+    slidesDataSource: PropTypes.arrayOf(PropTypes.shape({})),
     children: PropTypes.element,
     onSlideClick: PropTypes.func,
     settings: PropTypes.shape({}),
@@ -66,7 +66,7 @@ export default class Carousel extends Component {
       hasArrows,
       settings,
       className,
-      data,
+      slidesDataSource,
     } = this.props
 
     const carouselSettings = {
@@ -94,7 +94,7 @@ export default class Carousel extends Component {
           {...carouselSettings}
           ref={this.slider}
         >
-          {this.props.children || data.map(renderSlide)}
+          {this.props.children || slidesDataSource.map(renderSlide)}
         </Slider>
         { hasArrows &&
           <CarouselArrow

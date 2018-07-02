@@ -31,7 +31,7 @@ storiesOf('components|Carousel', module)
     'default',
     withInfo({ ...infoProps })(() => (
       <Carousel
-        data={carouselDataSource}
+        slidesDataSource={carouselDataSource}
         settings={defaultSettings}
       />
     )),
