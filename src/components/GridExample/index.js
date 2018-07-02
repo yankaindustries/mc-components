@@ -1,4 +1,5 @@
 import React from 'react'
+
 const styles = {
   background: '#ccc',
   width: '100%',
