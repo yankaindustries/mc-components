@@ -1,0 +1,17 @@
+// We need to support responsive gutter sizing, so this
+// override file sets the gutter sizing from mobile to
+// desktop.
+
+@media only screen and (max-width: $mc-bp-sm) {
+  .container {
+    padding: 0 ($grid-gutter-sm-width / 2);
+  }
+
+  .row {
+    margin: 0 ($grid-gutter-sm-width / -2);
+  }
+
+  div [class^="col"] {
+    padding: 0 ($grid-gutter-sm-width / 2);
+  }
+}
