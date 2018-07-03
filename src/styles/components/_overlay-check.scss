@@ -9,7 +9,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      z-index: $check-tile-tile-overlay-index;
+      z-index: 3;
       width: 100%;
       height: 100%;
       content: " ";
@@ -28,29 +28,29 @@
 
   .tile-caption--horizontal-centered {
     .tile-caption__title {
-      color: $gray-400;
+      color: $mc-gray-400;
     }
 
     .tile-caption__subtitle {
-      color: $gray-200;
+      color: $mc-gray-200;
     }
   }
 
   &:hover {
     .tile-caption--horizontal-centered {
       .tile-caption__title {
-        color: $white;
+        color: $mc-light;
       }
 
       .tile-caption__subtitle {
-        color: $gray-300;
+        color: $mc-gray-300;
       }
     }
   }
 }
 
 .overlay-check--checked {
-  box-shadow: 0 0 0 2px $gray-500;
+  box-shadow: 0 0 0 2px $mc-gray-500;
 
   .overlay-check__checkbox-tile-overlay {
     &:before {
@@ -65,11 +65,11 @@
 
   .tile-caption--horizontal-centered {
     .tile-caption__title {
-      color: $white;
+      color: $mc-light;
     }
 
     .tile-caption__subtitle {
-      color: $gray-300;
+      color: $mc-gray-300;
     }
   }
 }

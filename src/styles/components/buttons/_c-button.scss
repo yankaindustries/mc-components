@@ -59,13 +59,13 @@
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 0.15rem;
-    color: rgba($black, 0.5);
+    color: rgba($mc-dark, 0.5);
     padding: 0;
     background-color: transparent;
 
     &:hover {
       background: none;
-      color: rgba($black, 0.8);
+      color: rgba($mc-dark, 0.8);
     }
   }
 
