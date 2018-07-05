@@ -1,33 +1,32 @@
 .input-field {
-  $padding-vertical: 1.6rem;
-  $padding-horizontal: 1.3rem;
+  $padding-y: 1.6rem;
+  $padding-x: 1.3rem;
 
   position: relative;
   line-height: 2rem;
   margin: 1.2rem 0;
 
   &__input {
-    padding: $padding-horizontal $padding-vertical;
-    font-family: "Lato", sans-serif;
+    padding: $padding-y $padding-x;
     border-radius: 0.4rem;
-    border: 0.1rem solid rgba($text-color, 0.2);
+    border: 0.1rem solid rgba($mc-gray-200, 0.2);
     font-weight: 400;
     font-size: 1.5rem;
-    color: $text-color;
+    color: $mc-gray-200;
     transition: border 350ms cubic-bezier(0.25, 0.1, 0.25, 1);
     line-height: inherit;
 
     &:focus {
-      border-color: $text-color;
+      border-color: $mc-gray-200;
       outline: 0;
     }
 
     &::placeholder {
-      color: rgba($text-color, 0.5);
+      color: rgba($mc-gray-200, 0.5);
     }
 
     &--with-label {
-      padding: 1.8rem $padding-vertical 0.8rem;
+      padding: 1.8rem $padding-x 0.8rem;
     }
 
     &--full-width {
@@ -65,7 +64,7 @@
     position: absolute;
     z-index: 1;
     bottom: 2.5rem;
-    left: $padding-vertical;
+    left: $padding-x;
     font-size: 1.1rem;
     pointer-events: none;
     transition: all 350ms cubic-bezier(0.25, 0.1, 0.25, 1);

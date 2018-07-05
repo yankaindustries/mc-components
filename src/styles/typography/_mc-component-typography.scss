@@ -7,6 +7,14 @@ body {
   background-color: $mc-dark;
 }
 
+// Reset form elements
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
 .heading-primary {
   font-size: 2.5rem;
   font-weight: 400;
