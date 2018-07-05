@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots VideoPlayer ambient video 1`] = `
+exports[`Storyshots components|VideoPlayer ambient video 1`] = `
 <div
   style={
     Object {
@@ -702,7 +702,7 @@ exports[`Storyshots VideoPlayer ambient video 1`] = `
 </div>
 `;
 
-exports[`Storyshots VideoPlayer chapter video 1`] = `
+exports[`Storyshots components|VideoPlayer chapter video 1`] = `
 <div
   style={
     Object {
@@ -1446,7 +1446,7 @@ exports[`Storyshots VideoPlayer chapter video 1`] = `
 </div>
 `;
 
-exports[`Storyshots VideoPlayer default 1`] = `
+exports[`Storyshots components|VideoPlayer default 1`] = `
 <div
   style={
     Object {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots ImageTile ImageTile - 16x9 - backgroundGradient 1`] = `
+exports[`Storyshots components|ImageTile ImageTile - 16x9 - backgroundGradient 1`] = `
 <div
   style={
     Object {
@@ -626,7 +626,7 @@ exports[`Storyshots ImageTile ImageTile - 16x9 - backgroundGradient 1`] = `
 </div>
 `;
 
-exports[`Storyshots ImageTile ImageTile - 16x9 - with animation 1`] = `
+exports[`Storyshots components|ImageTile ImageTile - 16x9 - with animation 1`] = `
 <div
   style={
     Object {
@@ -1279,7 +1279,7 @@ exports[`Storyshots ImageTile ImageTile - 16x9 - with animation 1`] = `
 </div>
 `;
 
-exports[`Storyshots ImageTile ImageTile 4x3 1`] = `
+exports[`Storyshots components|ImageTile ImageTile 4x3 1`] = `
 <div
   style={
     Object {

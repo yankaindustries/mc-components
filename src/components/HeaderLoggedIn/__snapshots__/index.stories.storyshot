@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots HeaderLoggedIn default 1`] = `
+exports[`Storyshots components|HeaderLoggedIn default 1`] = `
 <div
   style={
     Object {
@@ -642,7 +642,7 @@ exports[`Storyshots HeaderLoggedIn default 1`] = `
 </div>
 `;
 
-exports[`Storyshots HeaderLoggedIn with avatar 1`] = `
+exports[`Storyshots components|HeaderLoggedIn with avatar 1`] = `
 <div
   style={
     Object {
@@ -1311,7 +1311,7 @@ exports[`Storyshots HeaderLoggedIn with avatar 1`] = `
 </div>
 `;
 
-exports[`Storyshots HeaderLoggedIn with backButton 1`] = `
+exports[`Storyshots components|HeaderLoggedIn with backButton 1`] = `
 <div
   style={
     Object {
@@ -2062,7 +2062,7 @@ exports[`Storyshots HeaderLoggedIn with backButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots HeaderLoggedIn with badges 1`] = `
+exports[`Storyshots components|HeaderLoggedIn with badges 1`] = `
 <div
   style={
     Object {

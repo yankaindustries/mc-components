@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots RadioInput checked 1`] = `
+exports[`Storyshots components|RadioInput checked 1`] = `
 <div
   style={
     Object {
@@ -361,7 +361,7 @@ exports[`Storyshots RadioInput checked 1`] = `
 </div>
 `;
 
-exports[`Storyshots RadioInput default 1`] = `
+exports[`Storyshots components|RadioInput default 1`] = `
 <div
   style={
     Object {
@@ -714,7 +714,7 @@ exports[`Storyshots RadioInput default 1`] = `
 </div>
 `;
 
-exports[`Storyshots RadioInput with handler 1`] = `
+exports[`Storyshots components|RadioInput with handler 1`] = `
 <div
   style={
     Object {

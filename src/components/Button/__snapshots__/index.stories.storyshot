@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button full width 1`] = `
+exports[`Storyshots components|Button full width 1`] = `
 <div
   style={
     Object {
@@ -689,7 +689,7 @@ exports[`Storyshots Button full width 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button loading 1`] = `
+exports[`Storyshots components|Button loading 1`] = `
 <div
   style={
     Object {
@@ -1359,7 +1359,7 @@ exports[`Storyshots Button loading 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button primary 1`] = `
+exports[`Storyshots components|Button primary 1`] = `
 <div
   style={
     Object {
@@ -1930,7 +1930,7 @@ exports[`Storyshots Button primary 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button secondary 1`] = `
+exports[`Storyshots components|Button secondary 1`] = `
 <div
   style={
     Object {
@@ -2501,7 +2501,7 @@ exports[`Storyshots Button secondary 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button tertiary 1`] = `
+exports[`Storyshots components|Button tertiary 1`] = `
 <div
   style={
     Object {
@@ -3072,7 +3072,7 @@ exports[`Storyshots Button tertiary 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button text button 1`] = `
+exports[`Storyshots components|Button text button 1`] = `
 <div
   style={
     Object {
@@ -3643,7 +3643,7 @@ exports[`Storyshots Button text button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button with icon 1`] = `
+exports[`Storyshots components|Button with icon 1`] = `
 <div
   style={
     Object {

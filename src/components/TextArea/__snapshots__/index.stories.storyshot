@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots TextArea default 1`] = `
+exports[`Storyshots components|TextArea default 1`] = `
 <div
   style={
     Object {
@@ -447,7 +447,7 @@ exports[`Storyshots TextArea default 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextArea fixed width 1`] = `
+exports[`Storyshots components|TextArea fixed width 1`] = `
 <div
   style={
     Object {
@@ -974,7 +974,7 @@ exports[`Storyshots TextArea fixed width 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextArea with error 1`] = `
+exports[`Storyshots components|TextArea with error 1`] = `
 <div
   style={
     Object {
@@ -1453,7 +1453,7 @@ exports[`Storyshots TextArea with error 1`] = `
 </div>
 `;
 
-exports[`Storyshots TextArea without placeholder 1`] = `
+exports[`Storyshots components|TextArea without placeholder 1`] = `
 <div
   style={
     Object {
