@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots GridExample default 1`] = `
+exports[`Storyshots foundation|GridExample default 1`] = `
 <div
   style={
     Object {
@@ -387,7 +387,7 @@ exports[`Storyshots GridExample default 1`] = `
                 }
               }
             >
-              GridExample
+              foundation|GridExample
             </h1>
             <h2
               style={

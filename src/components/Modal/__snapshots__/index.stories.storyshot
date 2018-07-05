@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Modal default 1`] = `
+exports[`Storyshots components|Modal default 1`] = `
 <div
   style={
     Object {
@@ -446,7 +446,7 @@ exports[`Storyshots Modal default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Modal with header 1`] = `
+exports[`Storyshots components|Modal with header 1`] = `
 <div
   style={
     Object {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Footer default 1`] = `
+exports[`Storyshots components|Footer default 1`] = `
 <div
   style={
     Object {
