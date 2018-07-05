@@ -20,3 +20,6 @@ yarn-error.log*
 
 # lib folder
 lib
+
+# we use yarn
+package-lock.json
