@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Carousel default 1`] = `
+exports[`Storyshots components|Carousel default 1`] = `
 <div
   style={
     Object {
@@ -908,7 +908,7 @@ exports[`Storyshots Carousel default 1`] = `
                     <span
                       style={Object {}}
                     >
-                      data
+                      slidesDataSource
                     </span>
                     <span>
                       =
@@ -1346,7 +1346,7 @@ exports[`Storyshots Carousel default 1`] = `
                   <td
                     className="css-1ygfcef"
                   >
-                    data
+                    slidesDataSource
                   </td>
                   <td
                     className="css-1ygfcef"

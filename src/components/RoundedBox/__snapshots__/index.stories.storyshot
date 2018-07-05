@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots RoundedBox default 1`] = `
+exports[`Storyshots components|RoundedBox default 1`] = `
 <div
   style={
     Object {
@@ -420,7 +420,7 @@ exports[`Storyshots RoundedBox default 1`] = `
 </div>
 `;
 
-exports[`Storyshots RoundedBox with header 1`] = `
+exports[`Storyshots components|RoundedBox with header 1`] = `
 <div
   style={
     Object {

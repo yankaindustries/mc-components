@@ -15,3 +15,9 @@ storiesOf('components|Footer', module)
       <Footer />,
     ),
   )
+
+  .add('minimal',
+    withInfo({ ...infoProps })(() =>
+      <Footer isMinimal />,
+    ),
+  )

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots CheckTile CheckTile - 1000x609 - no animation 1`] = `
+exports[`Storyshots components|CheckTile CheckTile - 1000x609 - no animation 1`] = `
 <div
   style={
     Object {
@@ -601,7 +601,7 @@ exports[`Storyshots CheckTile CheckTile - 1000x609 - no animation 1`] = `
 </div>
 `;
 
-exports[`Storyshots CheckTile CheckTile - 1000x609 1`] = `
+exports[`Storyshots components|CheckTile CheckTile - 1000x609 1`] = `
 <div
   style={
     Object {
@@ -1214,7 +1214,7 @@ exports[`Storyshots CheckTile CheckTile - 1000x609 1`] = `
 </div>
 `;
 
-exports[`Storyshots CheckTile with handler 1`] = `
+exports[`Storyshots components|CheckTile with handler 1`] = `
 <div
   style={
     Object {
