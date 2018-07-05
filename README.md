@@ -8,7 +8,7 @@
 mc-components aims to provide primitive components to build user interfaces in MasterClass.
 
 ## mc-components in your project
-These components are most easily imported as a dependency.  You can use `yarn` or `npm` to bring it in to your project.  This ensures all required `js` and styles are included.
+This component library is most easily imported as a dependency.  You can use `yarn` or `npm` to bring it in to your project.  This ensures all required `js` and styles are included.
 
 `yarn add mc-components` or `npm install mc-components --save`
 
@@ -37,13 +37,13 @@ const Container = () =>
 # Contributing
 
 1. Clone the repository
-2. Install dependencies with `yarn`
-3. Start storybook: `yarn storybook`
+2. Install dependencies with `yarn install`
+3. Start storybook: `yarn start`
 
-All your changes are hot-reloaded and you'll be able to see components being modified live as you work.
+All changes are hot-reloaded and you'll be able to see components being modified live as you work.
 
 ## Linting
-Your code will be linted before a commit is allowed, (it runs automatically when you try to commit), but if you'd like to run the linter manually, you can use the following commands.
+Your code will be linted automatically when you make a commit.  If you'd like to run the linter manually, you can use the following commands.
 
 - `yarn lint:style` (runs style linter only)
 - `yarn lint:js` (runs JS linter only)
