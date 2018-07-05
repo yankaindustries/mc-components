@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { arrayOf, shape, string, func } from 'prop-types'
+import { arrayOf, shape, string, func, bool } from 'prop-types'
 import cn from 'classnames'
 
 import NavBarMenu from '../NavBarMenu'
@@ -18,7 +18,7 @@ export default class HeaderLoggedIn extends PureComponent {
         href: string.isRequired,
         helperText: string,
       }),
-    ).isRequired,
+    ),
     name: string,
     avatar: string,
     left: shape({
@@ -26,31 +26,34 @@ export default class HeaderLoggedIn extends PureComponent {
       label: string,
       action: func,
     }),
+    isMinimal: bool,
   }
 
   static defaultProps = {
     name: 'set up your profile',
+    isMinimal: false,
   }
 
   state = {
     isDropdownOpened: false,
     isMobileMenuOpened: false,
   }
-  infoBlock = React.createRef()
 
-  toggleDropdown = () => {
+  handleToggleDropdown = () => {
     const { isDropdownOpened } = this.state
     this.setState({ isDropdownOpened: !isDropdownOpened })
   }
 
-  closeDropdown = () => {
+  handleCloseDropdown = () => {
     this.setState({ isDropdownOpened: false })
   }
 
-  toggleMobileMenu = () => {
+  handleToggleMobileMenu = () => {
     const { isMobileMenuOpened } = this.state
     this.setState({ isMobileMenuOpened: !isMobileMenuOpened })
   }
+
+  infoBlock = React.createRef()
 
   renderLeft = () => {
     const { action, label, type } = this.props.left
@@ -81,6 +84,7 @@ export default class HeaderLoggedIn extends PureComponent {
       name,
       avatar,
       left,
+      isMinimal,
     } = this.props
 
     const headerClassNames = cn('header', {
@@ -93,7 +97,7 @@ export default class HeaderLoggedIn extends PureComponent {
       'header__info-block--mobile-opened': isMobileMenuOpened,
     })
 
-    const badgeGlobalCount = menuLinks
+    const badgeGlobalCount = !isMinimal && menuLinks
       .reduce(
         (total, { badgeCount }) => (badgeCount ? total + badgeCount : total),
         0,
@@ -103,51 +107,55 @@ export default class HeaderLoggedIn extends PureComponent {
       <div className={headerClassNames}>
         <MobileNavButton
           isOpen={isMobileMenuOpened}
-          onClick={this.toggleMobileMenu}
+          onClick={this.handleToggleMobileMenu}
         />
         <nav className='header__nav'>
-        <div className='header__section'>
-          { left && this.renderLeft() }
-        </div>
+          {!isMinimal &&
+            <div className='header__section'>
+              { left && this.renderLeft() }
+            </div>
+          }
           <div className='header__section'>
             <a className='header__wordmark'href='/'>
               <img src={logo} alt='Logo wordmark' />
             </a>
           </div>
 
-          <div className='header__section header__section--flex-end'>
-            <ClickOutside
-              divRef={this.infoBlock}
-              onClickOutside={this.closeDropdown}
-            >
-              <div
-                className={infoBlockClassNames}
-                ref={this.infoBlock}
-                onClick={this.toggleDropdown}
+          {!isMinimal &&
+            <div className='header__section header__section--flex-end'>
+              <ClickOutside
+                divRef={this.infoBlock}
+                onClickOutside={this.handleCloseDropdown}
               >
-                <div className='header__info-blurb'>
-                  <img
-                    src={avatar || defaultAvatar}
-                    className='header__info-block__avatar'
-                  />
-                  <span>
-                    <span className='header__info-block__username'>{name}</span>
-                  </span>
-                  {Boolean(badgeGlobalCount) &&
-                    <Badge
-                      className='header__global-badge'
-                      count={badgeGlobalCount}
+                <div
+                  className={infoBlockClassNames}
+                  ref={this.infoBlock}
+                  onClick={this.handleToggleDropdown}
+                >
+                  <div className='header__info-blurb'>
+                    <img
+                      src={avatar || defaultAvatar}
+                      className='header__info-block__avatar'
                     />
-                  }
-                  <span className={arrowClassNames} />
+                    <span>
+                      <span className='header__info-block__username'>{name}</span>
+                    </span>
+                    {Boolean(badgeGlobalCount) &&
+                      <Badge
+                        className='header__global-badge'
+                        count={badgeGlobalCount}
+                      />
+                    }
+                    <span className={arrowClassNames} />
+                  </div>
+                  <NavBarMenu
+                    isOpen={isDropdownOpened}
+                    menuLinks={menuLinks}
+                  />
                 </div>
-                <NavBarMenu
-                  isOpen={isDropdownOpened}
-                  menuLinks={menuLinks}
-                />
-              </div>
-            </ClickOutside>
-          </div>
+              </ClickOutside>
+            </div>
+          }
         </nav>
       </div>
     )

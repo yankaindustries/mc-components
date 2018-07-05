@@ -23,6 +23,10 @@ storiesOf('components|HeaderLoggedIn', module)
     withInfo({ ...infoProps })(() => <HeaderLoggedIn menuLinks={menuLinks} />),
   )
   .add(
+    'minimal',
+    withInfo({ ...infoProps })(() => <HeaderLoggedIn isMinimal />),
+  )
+  .add(
     'with avatar',
     withInfo({ ...infoProps })(() => (
       <HeaderLoggedIn
