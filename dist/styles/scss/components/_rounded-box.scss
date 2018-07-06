@@ -1,5 +1,5 @@
 .rounded-box {
-  background-color: $white;
+  background-color: $mc-light;
   border-radius: 0.4rem;
   padding: 4rem;
 
@@ -12,7 +12,7 @@
     line-height: 3.4rem;
     font-size: 2.4rem;
     letter-spacing: 0.05rem;
-    color: $black;
+    color: $mc-dark;
     margin: 0 0 2rem 0;
   }
 
@@ -20,7 +20,7 @@
     font-weight: 400;
     line-height: 2.4rem;
     font-size: 1.6rem;
-    color: rgba($black, 0.5);
+    color: rgba($mc-dark, 0.5);
     margin: 0;
   }
 }

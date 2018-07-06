@@ -1,44 +1,14 @@
 .c-button {
-  display: inline-flex;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 24px;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.230769231;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  color: #fff;
-  transition: background 250ms ease;
-
-  &:hover {
-    background: $mc-color-primary-hover;
-  }
-
-  &:active {
-    background: $mc-color-primary-active;
-  }
-
-  &:focus,
-  &.focus {
-    outline: 0;
-  }
-
-  // Disabled comes first so active can properly restyle
-  &.disabled,
-  &:disabled {
-    opacity: 0.7;
-  }
-
-  // Opinionated: add "hand" cursor to non-disabled .btn elements
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
+  &--small {
+    padding: 12px 16px;
   }
 
   &--wide {
     min-width: 27.5rem;
+  }
+
+  &--full-width {
+    width: 100%;
   }
 
   &--with-icon {
@@ -51,26 +21,22 @@
     }
   }
 
-  &--full-width {
-    width: 100%;
-  }
-
   &--text {
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 0.15rem;
-    color: rgba($black, 0.5);
+    color: rgba($mc-dark, 0.5);
     padding: 0;
     background-color: transparent;
 
     &:hover {
       background: none;
-      color: rgba($black, 0.8);
+      color: rgba($mc-dark, 0.8);
     }
   }
 
   &--facebook {
-    @include button-variant($facebook-blue, $facebook-blue);
+    @include button-variant(#4267b2, #4267b2);
   }
 
   &--loading {
@@ -108,10 +74,6 @@
     }
   }
 
-  &--small {
-    padding: 12px 16px;
-  }
-
   &--secondary {
     background: $mc-color-secondary;
 
@@ -147,10 +109,4 @@
       box-shadow: 0 0 0 0.2rem rgba($mc-color-tertiary-hover, 0.25);
     }
   }
-}
-
-// Future-proof disabling of clicks on `<a>` elements
-.btn.disabled,
-fieldset:disabled .btn {
-  pointer-events: none;
 }

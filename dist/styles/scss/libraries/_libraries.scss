@@ -6,5 +6,6 @@
 // Bootstrap Grid
 @import "../base/variables";
 @import "node_modules/bootstrap/scss/bootstrap-grid";
+@import "bootstrap-overrides/grid";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
