@@ -1,6 +1,6 @@
 {
   "name": "mc-components",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "main": "./dist/components/index.js",
   "author": "Masterclass <engineering@masterclass.com>",
   "homepage": "https://github.com/yankaindustries/mc-components",

@@ -3,15 +3,23 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.7;
-  color: $grey;
-  background-color: $black;
+  color: #777;
+  background-color: $mc-dark;
+}
+
+// Reset form elements
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
 }
 
 .heading-primary {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3rem;
-  color: $white;
+  color: $mc-light;
   text-transform: none;
   backface-visibility: hidden;
   letter-spacing: 1px;
@@ -20,7 +28,7 @@ body {
 .paragraph {
   font-size: 1.4rem;
   line-height: 1.7rem;
-  color: $gray-300;
+  color: $mc-gray-300;
 
   &:not(:last-child) {
     margin-bottom: 3rem;
@@ -29,7 +37,7 @@ body {
 
 .nav-text {
   font-weight: 400;
-  color: $gray-300;
+  color: $mc-gray-300;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;

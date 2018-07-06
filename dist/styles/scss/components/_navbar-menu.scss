@@ -4,8 +4,8 @@
   right: 0;
   width: 260px;
   height: auto;
-  background: $black;
-  border: 1px solid rgba($white, 0.1);
+  background: $mc-dark;
+  border: 1px solid rgba($mc-light, 0.1);
   margin: 0;
   transform: translateY(0);
   transition: transform 350ms ease;
@@ -16,7 +16,7 @@
   }
 
   &__item {
-    border-bottom: 1px solid rgba($white, 0.1);
+    border-bottom: 1px solid rgba($mc-light, 0.1);
 
     .badge {
       float: right;
@@ -34,7 +34,7 @@
       }
 
       .navbar-menu__item-helper {
-        color: rgba($white, 0.4);
+        color: rgba($mc-light, 0.4);
       }
     }
 
@@ -46,11 +46,11 @@
   &__item--centered {
     .navbar-menu__item-link {
       text-align: center;
-      color: rgba($white, 0.5);
+      color: rgba($mc-light, 0.5);
       padding: 15px 16px;
 
       &:hover {
-        color: $white;
+        color: $mc-light;
       }
     }
 
@@ -69,12 +69,12 @@
     padding: 20px 16px;
     letter-spacing: 1px;
     text-transform: none;
-    color: $white;
+    color: $mc-light;
     text-align: left;
   }
 
   &__item-helper {
-    color: rgba($white, 0);
+    color: rgba($mc-light, 0);
     float: right;
     transition: color 250ms ease;
   }

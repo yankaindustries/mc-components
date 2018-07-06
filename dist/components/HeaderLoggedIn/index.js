@@ -69,17 +69,17 @@ var HeaderLoggedIn = function (_PureComponent) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeaderLoggedIn.__proto__ || Object.getPrototypeOf(HeaderLoggedIn)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       isDropdownOpened: false,
       isMobileMenuOpened: false
-    }, _this.infoBlock = _react2.default.createRef(), _this.toggleDropdown = function () {
+    }, _this.handleToggleDropdown = function () {
       var isDropdownOpened = _this.state.isDropdownOpened;
 
       _this.setState({ isDropdownOpened: !isDropdownOpened });
-    }, _this.closeDropdown = function () {
+    }, _this.handleCloseDropdown = function () {
       _this.setState({ isDropdownOpened: false });
-    }, _this.toggleMobileMenu = function () {
+    }, _this.handleToggleMobileMenu = function () {
       var isMobileMenuOpened = _this.state.isMobileMenuOpened;
 
       _this.setState({ isMobileMenuOpened: !isMobileMenuOpened });
-    }, _this.renderLeft = function () {
+    }, _this.infoBlock = _react2.default.createRef(), _this.renderLeft = function () {
       var _this$props$left = _this.props.left,
           action = _this$props$left.action,
           label = _this$props$left.label,
@@ -119,7 +119,8 @@ var HeaderLoggedIn = function (_PureComponent) {
           menuLinks = _props.menuLinks,
           name = _props.name,
           avatar = _props.avatar,
-          left = _props.left;
+          left = _props.left,
+          isMinimal = _props.isMinimal;
 
 
       var headerClassNames = (0, _classnames2.default)('header', {
@@ -132,7 +133,7 @@ var HeaderLoggedIn = function (_PureComponent) {
         'header__info-block--mobile-opened': isMobileMenuOpened
       });
 
-      var badgeGlobalCount = menuLinks.reduce(function (total, _ref2) {
+      var badgeGlobalCount = !isMinimal && menuLinks.reduce(function (total, _ref2) {
         var badgeCount = _ref2.badgeCount;
         return badgeCount ? total + badgeCount : total;
       }, 0);
@@ -142,12 +143,12 @@ var HeaderLoggedIn = function (_PureComponent) {
         { className: headerClassNames },
         _react2.default.createElement(_MobileNavButton2.default, {
           isOpen: isMobileMenuOpened,
-          onClick: this.toggleMobileMenu
+          onClick: this.handleToggleMobileMenu
         }),
         _react2.default.createElement(
           'nav',
           { className: 'header__nav' },
-          _react2.default.createElement(
+          !isMinimal && _react2.default.createElement(
             'div',
             { className: 'header__section' },
             left && this.renderLeft()
@@ -161,21 +162,21 @@ var HeaderLoggedIn = function (_PureComponent) {
               _react2.default.createElement('img', { src: _logoWordmark2.default, alt: 'Logo wordmark' })
             )
           ),
-          _react2.default.createElement(
+          !isMinimal && _react2.default.createElement(
             'div',
             { className: 'header__section header__section--flex-end' },
             _react2.default.createElement(
               _ClickOutside2.default,
               {
                 divRef: this.infoBlock,
-                onClickOutside: this.closeDropdown
+                onClickOutside: this.handleCloseDropdown
               },
               _react2.default.createElement(
                 'div',
                 {
                   className: infoBlockClassNames,
                   ref: this.infoBlock,
-                  onClick: this.toggleDropdown
+                  onClick: this.handleToggleDropdown
                 },
                 _react2.default.createElement(
                   'div',
@@ -219,16 +220,18 @@ HeaderLoggedIn.propTypes = {
     label: _propTypes.string.isRequired,
     href: _propTypes.string.isRequired,
     helperText: _propTypes.string
-  })).isRequired,
+  })),
   name: _propTypes.string,
   avatar: _propTypes.string,
   left: (0, _propTypes.shape)({
     type: _propTypes.string.isRequired,
     label: _propTypes.string,
     action: _propTypes.func
-  })
+  }),
+  isMinimal: _propTypes.bool
 };
 HeaderLoggedIn.defaultProps = {
-  name: 'set up your profile'
+  name: 'set up your profile',
+  isMinimal: false
 };
 exports.default = HeaderLoggedIn;
