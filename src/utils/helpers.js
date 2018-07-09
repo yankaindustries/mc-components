@@ -7,3 +7,7 @@ export const parseInputErrors = (error) => {
   }
   return error
 }
+
+export const NumberToPX = value => (
+  typeof value === 'number' ? `${value}px` : value
+)
