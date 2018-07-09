@@ -13,7 +13,7 @@ This component library is most easily imported as a dependency.  You can use `ya
 `yarn add mc-components` or `npm install mc-components --save`
 
 ### Standalone styles
-If your project doesn't use npm for dependencies and you're only looking for masterclass css / style files, they can be imported manually!  This will give you access to styles for buttons, the grid, typography, and more.
+If your project doesn't use npm for dependencies and you're only looking for masterclass css / style files, they can be imported manually by downloading the repository on github.  This will give you access to styles for buttons, the grid, typography, and more.
 
 ```scss
 @import '../node_modules/mc-components/dist/styles/scss/index';
@@ -49,6 +49,15 @@ Your code will be linted automatically when you make a commit.  If you'd like to
 - `yarn lint:js` (runs JS linter only)
 - `yarn lint` (runs both JS and CSS linter)
 
+## Versioning
+All work is done on the `develop` branch! When a new version is ready to be pushed, the release manager will run `npm version` on their up to date local develop branch. `npm version` will:
+- Run the test suite
+- Build the `dist` folder / files
+- Version the `package.json file`
+- Push a release tag to the `develop` branch on github
+- Publish this release to `npmjs.org`
+
+Once a version has been tagged on develop, the release manager will create a PR with formatted release notes that is then released to `master`.
 
 ## Documentation
 Storybook provides a living version of the documentation for all components.  To update the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
