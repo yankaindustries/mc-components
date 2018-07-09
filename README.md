@@ -50,14 +50,16 @@ Your code will be linted automatically when you make a commit.  If you'd like to
 - `yarn lint` (runs both JS and CSS linter)
 
 ## Versioning
-All work is done on the `develop` branch! When a new version is ready to be pushed, the release manager will run `npm version` on their up to date local develop branch. `npm version` will:
+All work is done on the `develop` branch!
+
+When a new version is ready to be pushed, the release manager will run `npm version` on their up to date local develop branch. `npm version` will:
 - Run the test suite
 - Build the `dist` folder / files
 - Version the `package.json file`
 - Push a release tag to the `develop` branch on github
 - Publish this release to `npmjs.org`
 
-Once a version has been tagged on develop, the release manager will create a PR with formatted release notes that is then released to `master`.
+Once a version has been tagged on develop, the release manager will create a PR with formatted release notes that is then released to `master`. When merging into master, do _not_ squash and merge.
 
 ## Documentation
 Storybook provides a living version of the documentation for all components.  To update the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
