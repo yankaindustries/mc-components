@@ -116,7 +116,7 @@ export default class HeaderLoggedIn extends PureComponent {
             </div>
           }
           <div className='header__section'>
-            <a className='header__wordmark'href='/'>
+            <a className='header__wordmark' href='/'>
               <img src={logo} alt='Logo wordmark' />
             </a>
           </div>
