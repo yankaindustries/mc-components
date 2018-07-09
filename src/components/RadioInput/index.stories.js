@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
 
 import RadioInput from '../RadioInput'
 
@@ -30,11 +31,12 @@ const infoProps = {
   propTablesExclude: [RadioInputHandler],
 }
 
-storiesOf('RadioInput', module)
+storiesOf('components|RadioInput', module)
   .add('default',
     withInfo({ ...infoProps })(() =>
       <RadioInput
         label='My radio input'
+        onChange={action('clicked')}
       />,
     ),
   )
@@ -42,6 +44,7 @@ storiesOf('RadioInput', module)
     withInfo({ ...infoProps })(() =>
       <RadioInput
         label='My radio input'
+        onChange={action('clicked')}
         checked
       />,
     ),

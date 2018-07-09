@@ -1,0 +1,62 @@
+.mobile-nav-button {
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  z-index: 30;
+
+  &__lines {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $white;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $white;
+      transform-origin: center center;
+      transition: top 125ms ease 125ms, transform 125ms ease 0ms;
+    }
+
+    &:before { top: -6px; }
+    &:after { top: 6px; }
+  }
+
+  &--opened {
+    .mobile-nav-button__lines {
+      top: 50%;
+      left: 0;
+      background: none;
+      transition: background 0ms 125ms ease;
+
+      &:before,
+      &:after {
+        transition: top 125ms ease, transform 125ms ease 125ms;
+      }
+
+      &:before {
+        top: 50%;
+        transform: rotate(-45deg);
+      }
+
+      &:after {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

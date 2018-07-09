@@ -1,0 +1,44 @@
+.c-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.230769231;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  color: $mc-light;
+  transition: background 250ms ease;
+
+  &:hover {
+    background: $mc-color-primary-hover;
+  }
+
+  &:active {
+    background: $mc-color-primary-active;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: 0.7;
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+.btn.disabled,
+fieldset:disabled .btn {
+  pointer-events: none;
+}
