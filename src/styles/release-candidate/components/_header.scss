@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   text-align: center;
-  background: $black;
+  background: $mc-dark;
   z-index: 999;
 
   &__nav {
@@ -14,7 +14,7 @@
     max-width: 1200px;
     margin: auto;
     text-transform: uppercase;
-    background: $black;
+    background: $mc-dark;
   }
 
   &__section {
