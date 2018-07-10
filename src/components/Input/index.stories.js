@@ -81,3 +81,10 @@ storiesOf('components|Input', module)
       <Input placeholder='My email' disabled />,
     ),
   )
+  .add('with MailCheck',
+    withInfo({
+      ...infoProps,
+    })(() =>
+      <Input placeholder='My email' shouldUseMailcheck />,
+    ),
+  )
