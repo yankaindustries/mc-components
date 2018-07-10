@@ -105,10 +105,12 @@ export default class HeaderLoggedIn extends PureComponent {
 
     return (
       <div className={headerClassNames}>
-        <MobileNavButton
-          isOpen={isMobileMenuOpened}
-          onClick={this.handleToggleMobileMenu}
-        />
+        {!isMinimal &&
+          <MobileNavButton
+            isOpen={isMobileMenuOpened}
+            onClick={this.handleToggleMobileMenu}
+          />
+        }
         <nav className='header__nav'>
           {!isMinimal &&
             <div className='header__section'>
