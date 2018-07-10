@@ -33,7 +33,6 @@ const Container = () =>
   <Button primary>Hello</Button>
 ```
 
-
 # Contributing
 
 1. Clone the repository
@@ -64,6 +63,10 @@ When a new version is ready to be released, run `npm version` from the current `
 - Publish this release to `npmjs.org`
 
 Once complete, please manually create a PR from `develop` to `master` with these new changes, and publish a "release" with notes.
+
+##Note##
+
+In order to reproduce videos using the BrightcoveVideo component, we need to provide two environment variables: `BRIGHTCOVE_ACCOUNT_ID`, `BRIGHTCOVE_PLAYER_ID`. Without this variables the video will not appear.
 
 ## Documentation
 Storybook provides a living version of the documentation for all components.  To update the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:

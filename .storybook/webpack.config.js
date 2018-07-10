@@ -1,6 +1,15 @@
 const path = require("path");
+const webpack = require('webpack');
+
+const GLOBALS = {
+  'process.env.BRIGHTCOVE_ACCOUNT_ID': JSON.stringify('5344802162001'),
+  'process.env.BRIGHTCOVE_PLAYER_ID': JSON.stringify('rkcQq7gAe'),
+};
 
 module.exports = {
+  plugins: [
+    new webpack.DefinePlugin(GLOBALS),
+  ],
   module: {
     rules: [
       {

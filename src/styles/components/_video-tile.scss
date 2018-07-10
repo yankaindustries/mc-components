@@ -1,0 +1,22 @@
+.video-tile {
+  @include transition($transition-base);
+  position: relative;
+  background-color: $black;
+  box-shadow: 0 0 2rem $black;
+
+  &--hover {
+    z-index: 99;
+  }
+
+  &--zoom {
+    overflow: inherit;
+    position: absolute;
+    width: calc(100% - #{$grid-gutter-width});
+  }
+
+  .c-button {
+    @include absolute-center;
+
+    z-index: 100;
+  }
+}

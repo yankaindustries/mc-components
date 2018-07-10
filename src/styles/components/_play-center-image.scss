@@ -1,0 +1,7 @@
+.play-center-image {
+  $image-size: 6.4rem;
+
+  @include absolute-center;
+  width: $image-size;
+  height: $image-size;
+}

@@ -1,0 +1,23 @@
+.chapter-info {
+  margin-top: 1.2rem;
+  padding-bottom: 1rem;
+
+  &__chapter-title {
+    color: $mc-color-tertiary;
+    font-size: 15px;
+    letter-spacing: 0.015em;
+  }
+
+  &__course-title {
+    @extend .heading-secondary;
+    margin-left: 0.75%;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    line-height: normal;
+    left: 0.75%;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
