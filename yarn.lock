@@ -6217,6 +6217,10 @@ lru-cache@^4.0.1, lru-cache@^4.1.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
+mailcheck@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/mailcheck/-/mailcheck-1.1.1.tgz#d87cf6ba0b64ba512199dbf93f1489f479591e34"
+
 make-dir@^1.0.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
@@ -8179,6 +8183,12 @@ react-is@^16.4.1:
 react-lifecycles-compat@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-mailcheck@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-mailcheck/-/react-mailcheck-1.2.0.tgz#b7315d2b2c91c32a56d9c28d2bc49ac96f98d325"
+  dependencies:
+    mailcheck "^1.1.1"
 
 react-modal@^3.3.2:
   version "3.4.5"

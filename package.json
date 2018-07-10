@@ -10,6 +10,7 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "classnames": "^2.2.5",
+    "react-mailcheck": "^1.2.0",
     "react-slick": "^0.23.1",
     "slick-carousel": "^1.8.1"
   },
