@@ -23,15 +23,7 @@ class BrightCoveVideoHandler extends Component {
     const { startLoadingVideo, videoReady } = this.state
 
     return (
-      <div
-        style={{
-          position: 'relative',
-          width: 350,
-          height: 214,
-          margin: 'auto',
-        }}
-        onMouseEnter={this.onMouseEnter}
-      >
+      <div onMouseEnter={this.onMouseEnter}>
         <BrightcoveVideo
           {...this.props}
           show={videoReady}
@@ -50,7 +42,7 @@ const infoProps = {
   propTablesExclude: [BrightCoveVideoHandler],
 }
 
-storiesOf('BrightCove', module)
+storiesOf('components|BrightCove', module)
   .add('BrightCove',
     withInfo({ ...infoProps })(() =>
       <BrightCoveVideoHandler

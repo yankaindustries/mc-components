@@ -58,11 +58,18 @@ $mc-zindex-modal-backdrop:    1040 !default;
 $mc-zindex-modal:             1050 !default;
 $mc-zindex-popover:           1060 !default;
 $mc-zindex-tooltip:           1070 !default;
+$mc-tile-caption-index:          1080 !default;
 
 // Font Sizes
 $default-font-size:  1.6rem !default;
 $btn-font-size-base: 1.4rem !default;
 $btn-line-height:    2rem !default;
+
+// Font Weights
+$font-weight-light:  200 !default;
+$font-weight-normal: 300 !default;
+$font-weight-heavy:  400 !default;
+$font-weight-bold:   600 !default;
 
 $default-btn-line-height: 2rem !default;
 

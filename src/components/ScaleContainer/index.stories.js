@@ -8,26 +8,19 @@ const infoProps = {
   header: false,
 }
 
-storiesOf('ScaleContainer', module)
-  .add('ScaleContainer',
+storiesOf('components|ScaleContainer', module)
+  .add('default',
     withInfo({ ...infoProps })(() =>
-      <div style={{
-        position: 'relative',
-        width: 350,
-        height: 214,
-        margin: 'auto',
-      }}>
-        <ScaleContainer
-          className='video-tile'
-          hoverClass='video-tile--hover'
-          zoomClass='video-tile--zoom'
-        >
-          {() =>
-            <div style={{ backgroundColor: 'blue' }}>
-              <p>Content</p>
-            </div>
-          }
-        </ScaleContainer>
-      </div>,
+      <ScaleContainer
+        className='video-tile'
+        hoverClass='video-tile--hover'
+        zoomClass='video-tile--zoom'
+      >
+        {() =>
+          <div style={{ backgroundColor: 'blue' }}>
+            <p>Content</p>
+          </div>
+        }
+      </ScaleContainer>,
     ),
   )
