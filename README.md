@@ -33,39 +33,16 @@ const Container = () =>
   <Button primary>Hello</Button>
 ```
 
-
 # Contributing
-
 1. Clone the repository
 2. Install dependencies with `yarn install`
 3. Start storybook: `yarn start`
 
 All changes are hot-reloaded and you'll be able to see components being modified live as you work.
 
-## Linting
-Your code will be linted automatically when you make a commit.  If you'd like to run the linter manually, you can use the following commands.
+For further information on linting, versioning, and releasing, please see the [wiki for documentation](https://github.com/yankaindustries/mc-components/wiki/Contributing)
 
-- `yarn lint:style` (runs style linter only)
-- `yarn lint:js` (runs JS linter only)
-- `yarn lint` (runs both JS and CSS linter)
-
-## Versioning
-### If you're a developer
-  - Create a branch off `develop`
-  - Create a PR with your changes
-  - Get the PR approved, and it will be merged into develop to be release with the next version bump.
-
-### If you're a release manager
-When a new version is ready to be released, run `npm version` from the current `develop` branch (make sure to pull all changes!).  When run, `npm version` will:
-- Run the test suite
-- Build all necessary files for distribution
-- Version the `package.json file`
-- Push a release tag to the `develop` branch on github
-- Publish this release to `npmjs.org`
-
-Once complete, please manually create a PR from `develop` to `master` with these new changes, and publish a "release" with notes.
-
-## Documentation
+## Storybook
 Storybook provides a living version of the documentation for all components.  To update the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
 
 ```
