@@ -690,14 +690,6 @@ exports[`Storyshots components|HeaderLoggedIn minimal 1`] = `
       <div
         className="header"
       >
-        <div
-          className="mobile-nav-button"
-          onClick={[Function]}
-        >
-          <span
-            className="mobile-nav-button__lines"
-          />
-        </div>
         <nav
           className="header__nav"
         >
