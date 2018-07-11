@@ -47,6 +47,7 @@ export default class Input extends PureComponent {
       { 'input-field__input--with-label': showLabel },
       { 'input-field__input--full-width': fullWidth },
       { 'input-field__input--error': error },
+      { 'input-field__input--warning': warning },
       { 'input-field__input--disabled': disabled },
     )
     const labelClassNames = cn(
@@ -63,7 +64,7 @@ export default class Input extends PureComponent {
           <span className='input-field__error'>{error}</span>
         }
         {warning &&
-          <span className='input-field__error'>{warning}</span>
+          <span className='input-field__warning'>{warning}</span>
         }
         <input
           className={inputClassNames}
