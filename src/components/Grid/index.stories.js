@@ -5,9 +5,7 @@ import { withInfo } from '@storybook/addon-info'
 import './_styles.css';
 
 storiesOf('foundation|Grid', module)
-  .add(
-    'examples',
-    withInfo()(() => (
+  .add('columns', withInfo()(() => (
       <div className='container'>
         <div className='row'>
           <div className='col-xs-6'>

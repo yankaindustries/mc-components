@@ -4,6 +4,7 @@ import { setDefaults } from '@storybook/addon-info';
 import { backgrounds, StoryWrapper } from './decorators'
 
 import './styles.scss'
+import 'highlight.js/styles/github-gist.css'
 
 // Option Defaults
 setOptions({

@@ -33,13 +33,17 @@ const FacebookIcon = () => (
   </svg>
 )
 
+const handleClick = (event) => {
+  console.log(event)
+}
+
 storiesOf('components|Buttons', module)
   .add('Button', () => (
     <div className="container">
       <Section title="Props">
         <Example
           name="style"
-          type="string"
+          type="String"
         >
           <Button primary>Primary</Button>
           <Button secondary>Secondary</Button>
@@ -53,14 +57,17 @@ storiesOf('components|Buttons', module)
           name="icon"
           type="Component"
         >
-          <Button className='c-button--facebook' Icon={<FacebookIcon />}>
+          <Button
+            className='c-button--facebook'
+            Icon={<FacebookIcon />}
+          >
             Connected
           </Button>
         </Example>
 
         <Example
           name="loading"
-          type="boolean"
+          type="Boolean"
         >
           <Button primary loading>
             Button
@@ -69,7 +76,7 @@ storiesOf('components|Buttons', module)
 
         <Example
           name="fullWidth"
-          type="boolean"
+          type="Boolean"
         >
           <Button primary fullWidth>
             Button
