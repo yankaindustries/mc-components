@@ -22,8 +22,6 @@ export default class Definition extends PureComponent {
       ? children.map(toString).join('\n')
       : toString(children)
 
-    console.log(code.replace(/\n/, ''))
-
     return (
       <div className="example--definition">
         <div className="row">
@@ -43,15 +41,15 @@ export default class Definition extends PureComponent {
           </div>
         </div>
 
+        <div className="example--render">
+          {children}
+        </div>
+
         {this.state.showCode && (
           <Highlight language="html">
             {code}
           </Highlight>
         )}
-
-        <div className="example--render">
-          {children}
-        </div>
       </div>
     )
   }

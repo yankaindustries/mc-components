@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|Input default 1`] = `
+exports[`Storyshots components|Forms/Input default 1`] = `
 <div
   style={
     Object {
@@ -471,7 +471,7 @@ exports[`Storyshots components|Input default 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|Input disabled 1`] = `
+exports[`Storyshots components|Forms/Input disabled 1`] = `
 <div
   style={
     Object {
@@ -950,7 +950,7 @@ exports[`Storyshots components|Input disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|Input fixed width 1`] = `
+exports[`Storyshots components|Forms/Input fixed width 1`] = `
 <div
   style={
     Object {
@@ -1501,7 +1501,7 @@ exports[`Storyshots components|Input fixed width 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|Input with error 1`] = `
+exports[`Storyshots components|Forms/Input with error 1`] = `
 <div
   style={
     Object {
@@ -2004,7 +2004,7 @@ exports[`Storyshots components|Input with error 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|Input with error and label 1`] = `
+exports[`Storyshots components|Forms/Input with error and label 1`] = `
 <div
   style={
     Object {
@@ -2539,7 +2539,7 @@ exports[`Storyshots components|Input with error and label 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|Input with label 1`] = `
+exports[`Storyshots components|Forms/Input with label 1`] = `
 <div
   style={
     Object {
@@ -3042,7 +3042,7 @@ exports[`Storyshots components|Input with label 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|Input without placeholder 1`] = `
+exports[`Storyshots components|Forms/Input without placeholder 1`] = `
 <div
   style={
     Object {
