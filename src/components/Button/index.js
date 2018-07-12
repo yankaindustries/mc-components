@@ -12,6 +12,8 @@ const Button = ({
   tertiary,
   fullWidth,
   text,
+  link,
+  linkMuted,
   loading,
   Icon,
   ...props
@@ -26,6 +28,8 @@ const Button = ({
       'c-button--with-icon': Boolean(Icon),
       'c-button--full-width': fullWidth,
       'c-button--text': text,
+      'c-button--link': link,
+      'c-button--link-muted': linkMuted,
       'c-button--loading': loading,
     },
   )
@@ -58,6 +62,8 @@ Button.propTypes = {
   tertiary: bool,
   fullWidth: bool,
   text: bool,
+  link: bool,
+  linkMuted: bool,
   loading: bool,
   Icon: node,
 }
@@ -70,6 +76,8 @@ Button.defaultProps = {
   tertiary: false,
   fullWidth: false,
   text: false,
+  link: false,
+  linkMuted: false,
   loading: false,
 }
 
