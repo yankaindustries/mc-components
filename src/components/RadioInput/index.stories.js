@@ -25,15 +25,13 @@ class RadioInputHandler extends Component {
 }
 
 const infoProps = {
-  inline: true,
-  header: false,
   propTables: [RadioInput],
   propTablesExclude: [RadioInputHandler],
 }
 
 storiesOf('components|Forms/RadioInput', module)
   .add('default',
-    withInfo()(() =>
+    withInfo(infoProps)(() =>
       <RadioInput
         label='My radio input'
         onChange={action('clicked')}
