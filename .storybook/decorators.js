@@ -3,8 +3,8 @@ import addonBackgrounds from "@storybook/addon-backgrounds"
 
 // background decorator
 export const backgrounds = addonBackgrounds([
-  { name: 'white', value: '#fff', default: true },
-  { name: 'black', value: '#000' },
+  { name: 'white', value: '#fff'},
+  { name: 'black', value: '#000', default: true },
 ])
 
 // wrapper decorator
