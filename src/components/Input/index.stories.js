@@ -81,3 +81,10 @@ storiesOf('components|Input', module)
       <Input placeholder='My email' disabled />,
     ),
   )
+  .add('with warning',
+    withInfo({
+      ...infoProps,
+    })(() =>
+      <Input placeholder='My email' warning='Did you mean johndoe@gmail.com?' />,
+    ),
+  )
