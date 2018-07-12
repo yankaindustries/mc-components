@@ -3215,12 +3215,12 @@ exports[`Storyshots components|Input with warning 1`] = `
           className="input-field"
         >
           <span
-            className="input-field__error"
+            className="input-field__warning"
           >
             Did you mean johndoe@gmail.com?
           </span>
           <input
-            className="input-field__input input-field__input--full-width"
+            className="input-field__input input-field__input--full-width input-field__input--warning"
             disabled={false}
             onChange={[Function]}
             placeholder="My email"
