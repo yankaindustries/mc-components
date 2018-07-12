@@ -9,11 +9,12 @@ const InputReduxForm = ({
   input,
   label,
   placeholder,
-  meta: { touched, error },
+  meta: { touched, error, warning },
   type = 'text',
 }) => {
   const parsedError = parseInputErrors(error)
   const showError = touched && parsedError
+  const showWarning = touched && warning
 
   return (
     <Input
@@ -21,6 +22,7 @@ const InputReduxForm = ({
       type={type}
       placeholder={placeholder}
       error={showError ? parsedError : ''}
+      warning={showWarning ? warning : ''}
       {...input}
     />
   )

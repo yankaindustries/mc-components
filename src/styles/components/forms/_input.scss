@@ -41,6 +41,14 @@
       }
     }
 
+    &--warning {
+      border: 0.1rem solid $warning-color;
+
+      &:focus {
+        border-color: $warning-color;
+      }
+    }
+
     &--no-resize {
       resize: none;
     }
@@ -76,6 +84,14 @@
   }
 
   &__error {
+    display: block;
+    font-size: 1.5rem;
+    color: $error-color;
+    margin: 0 0 0.5rem;
+    text-align: left;
+  }
+
+  &__warning {
     display: block;
     font-size: 1.5rem;
     color: $error-color;
