@@ -31,9 +31,9 @@
     "lint:style": "stylelint \"src/styles/**/*.scss\" || echo \"Style lint failed.\"",
     "lint": "yarn lint:js && yarn lint:style",
     "precommit": "lint-staged",
-    "preversion": "yarn test && yarn build && git add -A . ",
-    "version": "git push origin develop && git push origin develop --tags",
-    "postversion": "npm publish"
+    "preversion": "yarn test",
+    "version": "yarn build && git add -A .",
+    "postversion": "git push origin develop && git push origin develop --tags && npm publish"
   },
   "devDependencies": {
     "@masterclass/eslint-config": "yankaindustries/eslint-config-masterclass#1.0.2",
