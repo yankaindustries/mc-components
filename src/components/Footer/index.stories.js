@@ -9,15 +9,15 @@ const infoProps = {
   header: false,
 }
 
-storiesOf('components|Footer', module)
+storiesOf('components|Structure/Footer', module)
   .add('default',
-    withInfo({ ...infoProps })(() =>
+    withInfo()(() =>
       <Footer />,
     ),
   )
 
   .add('minimal',
-    withInfo({ ...infoProps })(() =>
+    withInfo()(() =>
       <Footer isMinimal />,
     ),
   )

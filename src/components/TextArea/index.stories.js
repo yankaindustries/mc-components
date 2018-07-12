@@ -31,7 +31,7 @@ const infoProps = {
   propTablesExclude: [TextArea],
 }
 
-storiesOf('components|TextArea', module)
+storiesOf('components|Forms/TextArea', module)
   .add('default',
     withInfo({
       ...infoProps,

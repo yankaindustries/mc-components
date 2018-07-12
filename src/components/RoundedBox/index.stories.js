@@ -11,14 +11,14 @@ const infoProps = {
 
 storiesOf('components|RoundedBox', module)
   .add('default',
-    withInfo({ ...infoProps })(() =>
+    withInfo()(() =>
       <RoundedBox>
         <p>Content</p>
       </RoundedBox>,
     ),
   )
   .add('with header',
-    withInfo({ ...infoProps })(() =>
+    withInfo()(() =>
       <RoundedBox
         header='Header'
         subheader='Sub header'

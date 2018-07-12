@@ -29,7 +29,7 @@ const carouselDataSource = [
 storiesOf('components|Carousel', module)
   .add(
     'default',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <Carousel
         slidesDataSource={carouselDataSource}
         settings={defaultSettings}
