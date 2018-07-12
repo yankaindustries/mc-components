@@ -33,17 +33,13 @@ const FacebookIcon = () => (
   </svg>
 )
 
-const handleClick = (event) => {
-  console.log(event)
-}
-
 storiesOf('components|Buttons', module)
   .add('Button', () => (
     <div className="container">
       <Section title="Props">
         <Example
-          name="style"
-          type="String"
+          name="primary | secondary | tertiary | text"
+          type="Boolean"
         >
           <Button primary>Primary</Button>
           <Button secondary>Secondary</Button>

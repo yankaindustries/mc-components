@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|HeaderLoggedIn default 1`] = `
+exports[`Storyshots components|Structure/HeaderLoggedIn default 1`] = `
 <div
   style={
     Object {
@@ -675,7 +675,7 @@ exports[`Storyshots components|HeaderLoggedIn default 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|HeaderLoggedIn minimal 1`] = `
+exports[`Storyshots components|Structure/HeaderLoggedIn minimal 1`] = `
 <div
   style={
     Object {
@@ -1020,7 +1020,7 @@ exports[`Storyshots components|HeaderLoggedIn minimal 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|HeaderLoggedIn with avatar 1`] = `
+exports[`Storyshots components|Structure/HeaderLoggedIn with avatar 1`] = `
 <div
   style={
     Object {
@@ -1722,7 +1722,7 @@ exports[`Storyshots components|HeaderLoggedIn with avatar 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|HeaderLoggedIn with backButton 1`] = `
+exports[`Storyshots components|Structure/HeaderLoggedIn with backButton 1`] = `
 <div
   style={
     Object {
@@ -2506,7 +2506,7 @@ exports[`Storyshots components|HeaderLoggedIn with backButton 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|HeaderLoggedIn with badges 1`] = `
+exports[`Storyshots components|Structure/HeaderLoggedIn with badges 1`] = `
 <div
   style={
     Object {

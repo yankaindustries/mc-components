@@ -1,6 +1,15 @@
 @import '../src/styles/libraries/libraries';
 @import '../src/styles/index';
 
+
+pre {
+  font-family: monospace;
+}
+
+.hljs {
+  border-radius: 6px;
+}
+
 .example--definition-name {
   font-weight: 900;
 }
@@ -14,9 +23,10 @@
 }
 
 .example--render {
+  margin-bottom: 1em;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.025);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 3px;
 }
 
@@ -27,9 +37,4 @@
   color: #000;
   font-family: monospace;
   font-size: 0.9em;
-}
-
-
-.hljs {
-  border-radius: 6px;
 }
