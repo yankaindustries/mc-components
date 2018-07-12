@@ -5,10 +5,6 @@ import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 import ImageTile from '../ImageTile'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
 
 storiesOf('components|Tiles/ImageTile', module)
   .add(

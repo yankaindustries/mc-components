@@ -5,10 +5,6 @@ import { action } from '@storybook/addon-actions'
 
 import HeaderLoggedIn from '../HeaderLoggedIn'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
 
 const menuLinks = [
   { label: 'My Classes', href: '/', helperText: '3 Classes' },

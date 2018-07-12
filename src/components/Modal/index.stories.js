@@ -37,15 +37,15 @@ const infoProps = {
   propTablesExclude: [ModalHandler],
 }
 
-storiesOf('components|Modal', module)
-  .add('default',
+storiesOf('components|Modals', module)
+  .add('ModalHandler',
     withInfo({
       ...infoProps,
     })(() =>
       <ModalHandler />,
     ),
   )
-  .add('with header',
+  .add('ModalHeader',
     withInfo({
       ...infoProps,
     })(() =>

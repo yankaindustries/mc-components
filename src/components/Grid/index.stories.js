@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
-import './_styles.css';
+import './_styles.css'
 
 storiesOf('foundation|Grid', module)
   .add('columns', withInfo()(() => (
@@ -67,6 +67,4 @@ storiesOf('foundation|Grid', module)
           </div>
         </div>
       </div>
-    ),
-  )
-)
+  )))

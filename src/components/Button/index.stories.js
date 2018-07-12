@@ -1,7 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { withInfo } from '@storybook/addon-info'
 
 import Section from '../../utils/Section'
 import Example from '../../utils/Example'
@@ -35,11 +33,11 @@ const FacebookIcon = () => (
 
 storiesOf('components|Buttons', module)
   .add('Button', () => (
-    <div className="container">
-      <Section title="Props">
+    <div className='container'>
+      <Section title='Props'>
         <Example
-          name="primary | secondary | tertiary | text"
-          type="Boolean"
+          name='primary | secondary | tertiary | text'
+          type='Boolean'
         >
           <Button primary>Primary</Button>
           <Button secondary>Secondary</Button>
@@ -50,8 +48,8 @@ storiesOf('components|Buttons', module)
         </Example>
 
         <Example
-          name="icon"
-          type="Component"
+          name='icon'
+          type='Component'
         >
           <Button
             className='c-button--facebook'
@@ -62,8 +60,8 @@ storiesOf('components|Buttons', module)
         </Example>
 
         <Example
-          name="loading"
-          type="Boolean"
+          name='loading'
+          type='Boolean'
         >
           <Button primary loading>
             Button
@@ -71,8 +69,8 @@ storiesOf('components|Buttons', module)
         </Example>
 
         <Example
-          name="fullWidth"
-          type="Boolean"
+          name='fullWidth'
+          type='Boolean'
         >
           <Button primary fullWidth>
             Button

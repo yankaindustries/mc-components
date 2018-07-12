@@ -21,7 +21,7 @@ const ClassCardProps = {
   height: 300,
 }
 
-storiesOf('components|ClassCard', module)
+storiesOf('components|Tiles/ClassCard', module)
   .add('default',
     withInfo({ ...infoProps })(() => <ClassCard {...ClassCardProps} />),
   )

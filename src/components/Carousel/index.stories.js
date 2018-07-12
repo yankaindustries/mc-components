@@ -4,11 +4,6 @@ import { withInfo } from '@storybook/addon-info'
 
 import Carousel from '../Carousel'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
-
 const defaultSettings = {
   variableWidth: false,
   slidesToShow: 3,

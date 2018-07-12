@@ -9,7 +9,7 @@ const infoProps = {
   header: false,
 }
 
-storiesOf('components|HeaderLoggedOut', module)
+storiesOf('components|Structure/HeaderLoggedOut', module)
   .add(
     'default',
     withInfo({ ...infoProps })(() => <HeaderLoggedOut />),
