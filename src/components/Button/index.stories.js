@@ -3,12 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info'
 
+import Section from '../../utils/Section'
+import Example from '../../utils/Example'
 import Button from '../Button'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
 
 const FacebookIcon = () => (
   <svg
@@ -35,85 +33,49 @@ const FacebookIcon = () => (
   </svg>
 )
 
-storiesOf('components|Button', module)
-  .add(
-    'primary',
-    withInfo({ ...infoProps })(() => (
-      <Button
-        onClick={action('clicked')}
-        primary
-      >
-        Button
-      </Button>
-    )),
-  )
-  .add(
-    'secondary',
-    withInfo({ ...infoProps })(() => (
-      <Button
-        onClick={action('clicked')}
-        secondary
-      >
-        Button
-      </Button>
-    )),
-  )
-  .add(
-    'tertiary',
-    withInfo({ ...infoProps })(() => (
-      <Button
-        onClick={action('clicked')}
-        tertiary
-      >
-        Button
-      </Button>
-    )),
-  )
-  .add(
-    'text button',
-    withInfo({ ...infoProps })(() => (
-      <Button
-        onClick={action('clicked')}
-        text
-      >
-        Button
-      </Button>
-    )),
-  )
-  .add(
-    'with icon',
-    withInfo({ ...infoProps })(() => (
-      <Button
-        className='c-button--facebook'
-        Icon={<FacebookIcon />}
-      >
-        CONNECTED
-      </Button>
-    )),
-  )
-  .add(
-    'loading',
-    withInfo({ ...infoProps })(() => (
-      <Button
-        onClick={action('clicked')}
-        primary
-        loading
-      >
-        Button
-      </Button>
-    )),
-  )
-  .add(
-    'full width',
-    withInfo({ ...infoProps })(() => (
-      <div style={{ width: '500px' }}>
-        <Button
-          onClick={action('clicked')}
-          primary
-          fullWidth
+storiesOf('components|Buttons', module)
+  .add('Button', () => (
+    <div className="container">
+      <Section title="Props">
+        <Example
+          name="style"
+          type="string"
         >
-          Button
-        </Button>
-      </div>
-    )),
-  )
+          <Button>Button</Button>
+          <Button primary>Primary</Button>
+          <Button secondary>Secondary</Button>
+          <Button tertiary>Tertiary</Button>
+          <Button text>Text</Button>
+        </Example>
+
+        <Example
+          name="icon"
+          type="Component"
+        >
+          <Button className='c-button--facebook' Icon={<FacebookIcon />}>
+            Connected
+          </Button>
+        </Example>
+
+        <Example
+          name="loading"
+          type="boolean"
+        >
+          <Button primary loading>
+            Button
+          </Button>
+        </Example>
+
+        <Example
+          name="fullWidth"
+          type="boolean"
+        >
+          <Button primary fullWidth>
+            Button
+          </Button>
+        </Example>
+      </Section>
+    </div>
+  ))
+  .add('ButtonGroup', () => (<div />))
+  .add('ButtonDropdown', () => (<div />))

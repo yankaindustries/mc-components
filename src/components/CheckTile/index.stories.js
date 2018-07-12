@@ -24,17 +24,11 @@ class CheckTileHandler extends Component {
   }
 }
 
-const infoProps = {
-  inline: true,
-  header: false,
-  propTables: [CheckTile],
-  propTablesExclude: [CheckTileHandler],
-}
 
-storiesOf('components|CheckTile', module)
+storiesOf('components|Tiles/CheckTile', module)
   .add(
     'CheckTile - 1000x609',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <div style={{ maxWidth: '500px' }}>
         <CheckTile
           imageUrl={shondaRhimesThumbnail}
@@ -50,7 +44,7 @@ storiesOf('components|CheckTile', module)
   )
   .add(
     'CheckTile - 1000x609 - no animation',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <div style={{ maxWidth: '500px' }}>
         <CheckTile
           imageUrl={shondaRhimesThumbnail}
@@ -65,7 +59,7 @@ storiesOf('components|CheckTile', module)
   )
   .add(
     'with handler',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <CheckTileHandler
         imageUrl={shondaRhimesThumbnail}
         aspectRatio='1000x609'
