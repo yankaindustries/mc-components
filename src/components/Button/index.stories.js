@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Section from '../../utils/Section'
-import Example from '../../utils/Example'
+import DocSection from '../../utils/DocSection'
+import PropExample from '../../utils/PropExample'
 import Button from '../Button'
 
 
@@ -34,8 +34,8 @@ const FacebookIcon = () => (
 storiesOf('components|Buttons', module)
   .add('Button', () => (
     <div className='container'>
-      <Section title='Props'>
-        <Example
+      <DocSection title='Props'>
+        <PropExample
           name='primary | secondary | tertiary | text'
           type='Boolean'
         >
@@ -45,9 +45,9 @@ storiesOf('components|Buttons', module)
           <Button link>Link</Button>
           <Button linkMuted>Link Muted</Button>
           <Button text>Text</Button>
-        </Example>
+        </PropExample>
 
-        <Example
+        <PropExample
           name='icon'
           type='Component'
         >
@@ -57,25 +57,25 @@ storiesOf('components|Buttons', module)
           >
             Connected
           </Button>
-        </Example>
+        </PropExample>
 
-        <Example
+        <PropExample
           name='loading'
           type='Boolean'
         >
           <Button primary loading>
             Button
           </Button>
-        </Example>
+        </PropExample>
 
-        <Example
+        <PropExample
           name='fullWidth'
           type='Boolean'
         >
           <Button primary fullWidth>
             Button
           </Button>
-        </Example>
-      </Section>
+        </PropExample>
+      </DocSection>
     </div>
   ))
