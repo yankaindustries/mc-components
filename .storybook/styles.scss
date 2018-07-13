@@ -1,20 +1,37 @@
 @import '../src/styles/libraries/libraries';
 @import '../src/styles/index';
 
-html {
-  font-size: 10px;
+pre {
+  font-family: monospace;
 }
 
-body {
-  // overwrite mc-sass-lib default body black background
-  background-color: transparent !important;
+.hljs {
+  border-radius: 6px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.example--definition-name {
+  font-weight: 900;
+}
+
+.example--definition-type {
+  font-family: monospace;
+}
+
+.example--definition {
+  margin-bottom: 2em;
+}
+
+.example--render {
+  margin-bottom: 1em;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+
+.example--code {
+  padding: 10px;
   color: #000;
+  font-family: monospace;
+  font-size: 0.9em;
 }

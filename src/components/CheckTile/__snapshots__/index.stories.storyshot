@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|CheckTile CheckTile - 1000x609 - no animation 1`] = `
+exports[`Storyshots components|Tiles/CheckTile CheckTile - 1000x609 - no animation 1`] = `
 <div
   style={
     Object {
@@ -601,7 +601,7 @@ exports[`Storyshots components|CheckTile CheckTile - 1000x609 - no animation 1`]
 </div>
 `;
 
-exports[`Storyshots components|CheckTile CheckTile - 1000x609 1`] = `
+exports[`Storyshots components|Tiles/CheckTile CheckTile - 1000x609 1`] = `
 <div
   style={
     Object {
@@ -1214,7 +1214,7 @@ exports[`Storyshots components|CheckTile CheckTile - 1000x609 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|CheckTile with handler 1`] = `
+exports[`Storyshots components|Tiles/CheckTile with handler 1`] = `
 <div
   style={
     Object {
@@ -1528,119 +1528,12 @@ exports[`Storyshots components|CheckTile with handler 1`] = `
               }
             >
               "
-              CheckTile
+              CheckTileHandler
               " Component
             </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    checked
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    onCheck
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    yes
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    children
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    yes
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
+            <small>
+              No propTypes defined!
+            </small>
           </div>
         </div>
       </div>

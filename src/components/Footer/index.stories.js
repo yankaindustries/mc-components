@@ -4,20 +4,16 @@ import { withInfo } from '@storybook/addon-info'
 
 import Footer from '../Footer'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
 
-storiesOf('components|Footer', module)
+storiesOf('components|Structure/Footer', module)
   .add('default',
-    withInfo({ ...infoProps })(() =>
+    withInfo()(() =>
       <Footer />,
     ),
   )
 
   .add('minimal',
-    withInfo({ ...infoProps })(() =>
+    withInfo()(() =>
       <Footer isMinimal />,
     ),
   )

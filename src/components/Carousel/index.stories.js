@@ -4,11 +4,6 @@ import { withInfo } from '@storybook/addon-info'
 
 import Carousel from '../Carousel'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
-
 const defaultSettings = {
   variableWidth: false,
   slidesToShow: 3,
@@ -29,7 +24,7 @@ const carouselDataSource = [
 storiesOf('components|Carousel', module)
   .add(
     'default',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <Carousel
         slidesDataSource={carouselDataSource}
         settings={defaultSettings}
