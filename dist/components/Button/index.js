@@ -33,9 +33,11 @@ var Button = function Button(_ref) {
       tertiary = _ref.tertiary,
       fullWidth = _ref.fullWidth,
       text = _ref.text,
+      link = _ref.link,
+      linkMuted = _ref.linkMuted,
       loading = _ref.loading,
       Icon = _ref.Icon,
-      props = _objectWithoutProperties(_ref, ['children', 'className', 'onClick', 'primary', 'secondary', 'tertiary', 'fullWidth', 'text', 'loading', 'Icon']);
+      props = _objectWithoutProperties(_ref, ['children', 'className', 'onClick', 'primary', 'secondary', 'tertiary', 'fullWidth', 'text', 'link', 'linkMuted', 'loading', 'Icon']);
 
   var classNames = (0, _classnames2.default)('c-button', _defineProperty({}, className, Boolean(className)), {
     'c-button--primary': primary,
@@ -44,6 +46,8 @@ var Button = function Button(_ref) {
     'c-button--with-icon': Boolean(Icon),
     'c-button--full-width': fullWidth,
     'c-button--text': text,
+    'c-button--link': link,
+    'c-button--link-muted': linkMuted,
     'c-button--loading': loading
   });
 
@@ -72,6 +76,8 @@ Button.propTypes = {
   tertiary: _propTypes.bool,
   fullWidth: _propTypes.bool,
   text: _propTypes.bool,
+  link: _propTypes.bool,
+  linkMuted: _propTypes.bool,
   loading: _propTypes.bool,
   Icon: _propTypes.node
 };
@@ -84,6 +90,8 @@ Button.defaultProps = {
   tertiary: false,
   fullWidth: false,
   text: false,
+  link: false,
+  linkMuted: false,
   loading: false
 };
 

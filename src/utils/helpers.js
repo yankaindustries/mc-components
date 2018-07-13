@@ -11,3 +11,13 @@ export const parseInputErrors = (error) => {
 export const NumberToPX = value => (
   typeof value === 'number' ? `${value}px` : value
 )
+
+export const FormatClassTitle = (title = '', instructorName = '') => {
+  if (title.toLowerCase().indexOf(instructorName.toLowerCase()) === -1) {
+    return title
+  }
+  return title
+    .trim()
+    .slice(instructorName.length)
+    .trim()
+}

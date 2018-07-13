@@ -157,4 +157,13 @@ Object.defineProperty(exports, 'VideoPlayer', {
   }
 });
 
+var _CheckTile = require('./CheckTile');
+
+Object.defineProperty(exports, 'CheckTile', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_CheckTile).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

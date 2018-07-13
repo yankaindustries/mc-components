@@ -141,7 +141,7 @@ var HeaderLoggedIn = function (_PureComponent) {
       return _react2.default.createElement(
         'div',
         { className: headerClassNames },
-        _react2.default.createElement(_MobileNavButton2.default, {
+        !isMinimal && _react2.default.createElement(_MobileNavButton2.default, {
           isOpen: isMobileMenuOpened,
           onClick: this.handleToggleMobileMenu
         }),
