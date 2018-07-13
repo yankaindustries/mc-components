@@ -5,10 +5,6 @@ import { action } from '@storybook/addon-actions'
 
 import HeaderLoggedIn from '../HeaderLoggedIn'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
 
 const menuLinks = [
   { label: 'My Classes', href: '/', helperText: '3 Classes' },
@@ -17,18 +13,18 @@ const menuLinks = [
   { label: 'Sign out', href: '/sign_out' },
 ]
 
-storiesOf('components|HeaderLoggedIn', module)
+storiesOf('components|Structure/HeaderLoggedIn', module)
   .add(
     'default',
-    withInfo({ ...infoProps })(() => <HeaderLoggedIn menuLinks={menuLinks} />),
+    withInfo()(() => <HeaderLoggedIn menuLinks={menuLinks} />),
   )
   .add(
     'minimal',
-    withInfo({ ...infoProps })(() => <HeaderLoggedIn isMinimal />),
+    withInfo()(() => <HeaderLoggedIn isMinimal />),
   )
   .add(
     'with avatar',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <HeaderLoggedIn
         menuLinks={menuLinks}
         avatar='https://graph.facebook.com/10156122473642900/picture?height=300&width=300'
@@ -37,7 +33,7 @@ storiesOf('components|HeaderLoggedIn', module)
   )
   .add(
     'with badges',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <HeaderLoggedIn
         menuLinks={[
           ...menuLinks,
@@ -49,7 +45,7 @@ storiesOf('components|HeaderLoggedIn', module)
   )
   .add(
     'with backButton',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <HeaderLoggedIn
         menuLinks={menuLinks}
         left={{

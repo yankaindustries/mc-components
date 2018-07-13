@@ -5,15 +5,11 @@ import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 import ImageTile from '../ImageTile'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
 
-storiesOf('components|ImageTile', module)
+storiesOf('components|Tiles/ImageTile', module)
   .add(
     'ImageTile 4x3',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <div style={{ maxWidth: '500px' }}>
         <ImageTile
           imageUrl={shondaRhimesThumbnail}
@@ -27,7 +23,7 @@ storiesOf('components|ImageTile', module)
   )
   .add(
     'ImageTile - 16x9 - backgroundGradient',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <div style={{ maxWidth: '500px' }}>
         <ImageTile
           imageUrl={shondaRhimesThumbnail}
@@ -41,7 +37,7 @@ storiesOf('components|ImageTile', module)
   )
   .add(
     'ImageTile - 16x9 - with animation',
-    withInfo({ ...infoProps })(() => (
+    withInfo()(() => (
       <div style={{ maxWidth: '500px' }}>
         <ImageTile
           imageUrl={shondaRhimesThumbnail}

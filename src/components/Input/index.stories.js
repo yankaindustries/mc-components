@@ -31,7 +31,7 @@ const infoProps = {
   propTablesExclude: [Input],
 }
 
-storiesOf('components|Input', module)
+storiesOf('components|Forms/Input', module)
   .add('default',
     withInfo({
       ...infoProps,
