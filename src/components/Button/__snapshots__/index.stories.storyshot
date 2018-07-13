@@ -35,7 +35,7 @@ exports[`Storyshots components|Buttons Button 1`] = `
               <span
                 className="example--definition-type"
               >
-                 &lt;
+                 &lt;
                 Boolean
                 &gt;
               </span>
@@ -122,7 +122,7 @@ exports[`Storyshots components|Buttons Button 1`] = `
               <span
                 className="example--definition-type"
               >
-                 &lt;
+                 &lt;
                 Component
                 &gt;
               </span>
@@ -191,7 +191,7 @@ exports[`Storyshots components|Buttons Button 1`] = `
               <span
                 className="example--definition-type"
               >
-                 &lt;
+                 &lt;
                 Boolean
                 &gt;
               </span>
@@ -329,7 +329,7 @@ exports[`Storyshots components|Buttons Button 1`] = `
               <span
                 className="example--definition-type"
               >
-                 &lt;
+                 &lt;
                 Boolean
                 &gt;
               </span>
