@@ -692,6 +692,40 @@ exports[`Storyshots components|VideoPlayer ambient video 1`] = `
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    accountId
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      5344802162001
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1436,6 +1470,40 @@ exports[`Storyshots components|VideoPlayer chapter video 1`] = `
                     className="css-d52hbj"
                   />
                 </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    accountId
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      5344802162001
+                    </span>
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
               </tbody>
             </table>
           </div>
@@ -2089,6 +2157,40 @@ exports[`Storyshots components|VideoPlayer default 1`] = `
                     className="css-d52hbj"
                   >
                     -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    accountId
+                  </td>
+                  <td
+                    className="css-1ygfcef"
+                  >
+                    <span />
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    -
+                  </td>
+                  <td
+                    className="css-d52hbj"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "color": "#22a",
+                          "wordBreak": "break-word",
+                        }
+                      }
+                    >
+                      5344802162001
+                    </span>
                   </td>
                   <td
                     className="css-d52hbj"
