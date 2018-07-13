@@ -34,7 +34,7 @@ export default class Definition extends PureComponent {
               <span className='example--definition-name'>{name}</span>
               {type &&
                 <span className='example--definition-type'>
-                  &lt;{type}&gt;
+                  &nbsp;&lt;{type}&gt;
                 </span>
               }
             </h5>
