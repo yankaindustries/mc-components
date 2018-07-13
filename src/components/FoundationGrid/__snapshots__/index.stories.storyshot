@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots foundation|GridExample default 1`] = `
+exports[`Storyshots foundation|Grid default 1`] = `
 <div
   style={
     Object {
@@ -257,7 +257,7 @@ exports[`Storyshots foundation|GridExample default 1`] = `
           className="row align-items-center"
         >
           <div
-            className="col-6"
+            className="col-sm-6"
           >
             <div
               className="grid-example-block"
@@ -272,7 +272,7 @@ exports[`Storyshots foundation|GridExample default 1`] = `
             />
           </div>
           <div
-            className="col-6"
+            className="col-sm-6"
           >
             <div
               className="grid-example-block"
@@ -387,7 +387,7 @@ exports[`Storyshots foundation|GridExample default 1`] = `
                 }
               }
             >
-              foundation|GridExample
+              foundation|Grid
             </h1>
             <h2
               style={
