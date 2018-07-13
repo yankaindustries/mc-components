@@ -35,9 +35,14 @@ const Container = () =>
 # Contributing
 1. Clone the repository
 2. Install dependencies with `yarn install`
-3. Start storybook: `yarn start`
+3. Create a branch off `develop`
+4. Start storybook: `yarn start`
 
 All changes are hot-reloaded and you'll be able to see components being modified live as you work.
+
+## Submit your code
+  - Create a PR with your changes
+  - Once approved, it will be merged into develop and released with the next version bump.
 
 For further information on linting, versioning, and releasing, please see the [wiki for documentation](https://github.com/yankaindustries/mc-components/wiki/Contributing)
 
