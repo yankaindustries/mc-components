@@ -28,17 +28,20 @@ var InputReduxForm = function InputReduxForm(_ref) {
       _ref$meta = _ref.meta,
       touched = _ref$meta.touched,
       error = _ref$meta.error,
+      warning = _ref$meta.warning,
       _ref$type = _ref.type,
       type = _ref$type === undefined ? 'text' : _ref$type;
 
   var parsedError = (0, _helpers.parseInputErrors)(error);
   var showError = touched && parsedError;
+  var showWarning = touched && warning;
 
   return _react2.default.createElement(_Input2.default, Object.assign({
     label: label,
     type: type,
     placeholder: placeholder,
-    error: showError ? parsedError : ''
+    error: showError ? parsedError : '',
+    warning: showWarning ? warning : ''
   }, input));
 };
 
