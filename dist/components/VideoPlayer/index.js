@@ -95,6 +95,14 @@ var VideoPlayer = function (_React$PureComponent) {
       });
     };
 
+    _this.setupVideo = function () {
+      window.bc(_this.playerRef.current, {
+        playbackRates: [0.5, 1, 1.5, 2]
+      });
+      _this.video = window.videojs(_this.playerRef.current);
+      _this.video.ready(_this.handlePlayerReady);
+    };
+
     _this.replaceWith = function (videoId) {
       if (_this.video.customOverlay) {
         _this.video.customOverlay.close();
@@ -151,11 +159,19 @@ var VideoPlayer = function (_React$PureComponent) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (window.bc && window.videojs) {
-        window.bc(this.playerRef.current, {
-          playbackRates: [0.5, 1, 1.5, 2]
-        });
-        this.video = window.videojs(this.playerRef.current);
-        this.video.ready(this.handlePlayerReady);
+        this.setupVideo();
+      } else {
+        var _props = this.props,
+            playerId = _props.playerId,
+            accountId = _props.accountId;
+
+
+        var bcScript = document.createElement('script');
+        bcScript.src = '//players.brightcove.net/' + accountId + '/' + playerId + '_default/index.min.js';
+
+        document.body.appendChild(bcScript);
+        // Call a function to play the video once player's JavaScropt loaded
+        bcScript.onload = this.setupVideo;
       }
     }
   }, {
@@ -168,15 +184,16 @@ var VideoPlayer = function (_React$PureComponent) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          endscreenComponent = _props.endscreenComponent,
-          hasBreakpoints = _props.hasBreakpoints,
-          theme = _props.theme,
-          videoId = _props.videoId,
-          playerId = _props.playerId,
-          hasAutoplay = _props.hasAutoplay,
-          hasControls = _props.hasControls,
-          isMuted = _props.isMuted;
+      var _props2 = this.props,
+          endscreenComponent = _props2.endscreenComponent,
+          hasBreakpoints = _props2.hasBreakpoints,
+          theme = _props2.theme,
+          videoId = _props2.videoId,
+          playerId = _props2.playerId,
+          hasAutoplay = _props2.hasAutoplay,
+          hasControls = _props2.hasControls,
+          isMuted = _props2.isMuted,
+          accountId = _props2.accountId;
 
 
       return _react2.default.createElement(
@@ -198,7 +215,7 @@ var VideoPlayer = function (_React$PureComponent) {
             'data-embed': 'default',
             'data-video-id': videoId,
             'data-player-id': playerId,
-            'data-account': '5344802162001',
+            'data-account': accountId,
             autoPlay: hasAutoplay ? 'autoplay' : '',
             muted: isMuted ? 'muted' : '',
             controls: hasControls ? 'controls' : ''
@@ -236,7 +253,8 @@ VideoPlayer.propTypes = {
   onPause: _propTypes2.default.func,
   onEnd: _propTypes2.default.func,
   onTimeChange: _propTypes2.default.func,
-  onError: _propTypes2.default.func
+  onError: _propTypes2.default.func,
+  accountId: _propTypes2.default.string
 };
 VideoPlayer.defaultProps = {
   playerId: 'rkcQq7gAe',
@@ -246,6 +264,7 @@ VideoPlayer.defaultProps = {
   isMuted: false,
   hasAutoplay: true,
   hasControls: true,
-  hasBreakpoints: false
+  hasBreakpoints: false,
+  accountId: '5344802162001'
 };
 exports.default = VideoPlayer;

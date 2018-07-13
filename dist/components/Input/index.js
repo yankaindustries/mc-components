@@ -61,10 +61,11 @@ var Input = function (_PureComponent) {
           error = _props.error,
           disabled = _props.disabled,
           onChange = _props.onChange,
-          props = _objectWithoutProperties(_props, ['value', 'type', 'placeholder', 'label', 'style', 'fullWidth', 'error', 'disabled', 'onChange']);
+          warning = _props.warning,
+          props = _objectWithoutProperties(_props, ['value', 'type', 'placeholder', 'label', 'style', 'fullWidth', 'error', 'disabled', 'onChange', 'warning']);
 
       var showLabel = label && placeholder && value;
-      var inputClassNames = (0, _classnames2.default)('input-field__input', { 'input-field__input--with-label': showLabel }, { 'input-field__input--full-width': fullWidth }, { 'input-field__input--error': error }, { 'input-field__input--disabled': disabled });
+      var inputClassNames = (0, _classnames2.default)('input-field__input', { 'input-field__input--with-label': showLabel }, { 'input-field__input--full-width': fullWidth }, { 'input-field__input--error': error }, { 'input-field__input--warning': warning }, { 'input-field__input--disabled': disabled });
       var labelClassNames = (0, _classnames2.default)('input-field__label', { 'input-field__label--hide': !showLabel });
 
       return _react2.default.createElement(
@@ -79,6 +80,11 @@ var Input = function (_PureComponent) {
           'span',
           { className: 'input-field__error' },
           error
+        ),
+        warning && _react2.default.createElement(
+          'span',
+          { className: 'input-field__warning' },
+          warning
         ),
         _react2.default.createElement('input', Object.assign({
           className: inputClassNames,
@@ -104,7 +110,8 @@ Input.propTypes = {
   fullWidth: _propTypes.bool,
   style: _propTypes.object,
   error: _propTypes.string,
-  disabled: _propTypes.bool
+  disabled: _propTypes.bool,
+  warning: _propTypes.string
 };
 Input.defaultProps = {
   type: 'text',
