@@ -81,6 +81,28 @@ storiesOf('components|Button', module)
     )),
   )
   .add(
+    'link button',
+    withInfo({ ...infoProps })(() => (
+      <Button
+        onClick={action('clicked')}
+        link
+      >
+        Button
+      </Button>
+    )),
+  )
+  .add(
+    'link muted button',
+    withInfo({ ...infoProps })(() => (
+      <Button
+        onClick={action('clicked')}
+        linkMuted
+      >
+        Button
+      </Button>
+    )),
+  )
+  .add(
     'with icon',
     withInfo({ ...infoProps })(() => (
       <Button

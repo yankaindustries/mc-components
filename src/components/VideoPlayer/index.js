@@ -30,6 +30,7 @@ export default class VideoPlayer extends React.PureComponent {
     onEnd: PropTypes.func,
     onTimeChange: PropTypes.func,
     onError: PropTypes.func,
+    accountId: PropTypes.string,
   }
 
   static defaultProps = {
@@ -41,6 +42,7 @@ export default class VideoPlayer extends React.PureComponent {
     hasAutoplay: true,
     hasControls: true,
     hasBreakpoints: false,
+    accountId: '5344802162001',
   }
 
   constructor (props) {
@@ -52,11 +54,16 @@ export default class VideoPlayer extends React.PureComponent {
 
   componentDidMount () {
     if (window.bc && window.videojs) {
-      window.bc(this.playerRef.current, {
-        playbackRates: [0.5, 1, 1.5, 2],
-      })
-      this.video = window.videojs(this.playerRef.current)
-      this.video.ready(this.handlePlayerReady)
+      this.setupVideo()
+    } else {
+      const { playerId, accountId } = this.props
+
+      const bcScript = document.createElement('script')
+      bcScript.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
+
+      document.body.appendChild(bcScript)
+      // Call a function to play the video once player's JavaScropt loaded
+      bcScript.onload = this.setupVideo
     }
   }
 
@@ -118,6 +125,14 @@ export default class VideoPlayer extends React.PureComponent {
     })
   }
 
+  setupVideo = () => {
+    window.bc(this.playerRef.current, {
+      playbackRates: [0.5, 1, 1.5, 2],
+    })
+    this.video = window.videojs(this.playerRef.current)
+    this.video.ready(this.handlePlayerReady)
+  }
+
   replaceWith = (videoId) => {
     if (this.video.customOverlay) {
       this.video.customOverlay.close()
@@ -172,6 +187,7 @@ export default class VideoPlayer extends React.PureComponent {
       hasAutoplay,
       hasControls,
       isMuted,
+      accountId,
     } = this.props
 
     return (
@@ -194,7 +210,7 @@ export default class VideoPlayer extends React.PureComponent {
             data-embed='default'
             data-video-id={videoId}
             data-player-id={playerId}
-            data-account='5344802162001'
+            data-account={accountId}
             autoPlay={hasAutoplay ? 'autoplay' : ''}
             muted={isMuted ? 'muted' : ''}
             controls={hasControls ? 'controls' : ''}

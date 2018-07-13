@@ -13,6 +13,7 @@ export default class Input extends PureComponent {
     style: object,
     error: string,
     disabled: bool,
+    warning: string,
   }
 
   static defaultProps = {
@@ -37,6 +38,7 @@ export default class Input extends PureComponent {
       error,
       disabled,
       onChange,
+      warning,
       ...props
     } = this.props
     const showLabel = label && placeholder && value
@@ -45,6 +47,7 @@ export default class Input extends PureComponent {
       { 'input-field__input--with-label': showLabel },
       { 'input-field__input--full-width': fullWidth },
       { 'input-field__input--error': error },
+      { 'input-field__input--warning': warning },
       { 'input-field__input--disabled': disabled },
     )
     const labelClassNames = cn(
@@ -59,6 +62,9 @@ export default class Input extends PureComponent {
         }
         {error &&
           <span className='input-field__error'>{error}</span>
+        }
+        {warning &&
+          <span className='input-field__warning'>{warning}</span>
         }
         <input
           className={inputClassNames}
