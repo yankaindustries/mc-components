@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import DocSection from '../../utils/DocSection'
+import PropsTable from '../../utils/PropsTable'
 import PropExample from '../../utils/PropExample'
 import Button from '../Button'
 
@@ -34,7 +35,9 @@ const FacebookIcon = () => (
 storiesOf('components|Buttons', module)
   .add('Button', () => (
     <div className='container'>
-      <DocSection title='Props'>
+      <h2>Button</h2>
+
+      <DocSection title='Variations'>
         <PropExample
           name='primary | secondary | tertiary | text'
           type='Boolean'
@@ -76,6 +79,14 @@ storiesOf('components|Buttons', module)
             Button
           </Button>
         </PropExample>
+      </DocSection>
+
+      <DocSection title='Properties'>
+        <div className='row'>
+          <div className='col-lg-6 col-md-9'>
+            <PropsTable component={Button} />
+          </div>
+        </div>
       </DocSection>
     </div>
   ))

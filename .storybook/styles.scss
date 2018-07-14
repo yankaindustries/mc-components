@@ -35,3 +35,29 @@ pre {
   font-family: monospace;
   font-size: 0.9em;
 }
+
+.example--table {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-collapse: collapse;
+  text-align: left;
+
+  tbody {
+    tr {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    tr:nth-child(2n +1) {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  th {
+    font-weight: 900;
+  }
+
+  th, td {
+    padding: 5px 10px;
+  }
+}
