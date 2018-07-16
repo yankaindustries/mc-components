@@ -14,6 +14,9 @@
 
   &:hover {
     background: $mc-color-primary-hover;
+    // Needed to override old previously defined
+    // hover color in masterclass repo
+    color: $mc-light;
   }
 
   &:active {
