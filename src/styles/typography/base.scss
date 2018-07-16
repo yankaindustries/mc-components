@@ -6,7 +6,9 @@ body {
   font-family: $mc-font-default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
   font-variant-ligatures: none;
+  color: #777;
   text-rendering: optimizeLegibility;
   text-shadow: rgba($mc-dark, 0.01) 0 0 1px;
   text-size-adjust: 100%;
