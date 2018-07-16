@@ -152,6 +152,7 @@ var VideoPlayer = function (_React$PureComponent) {
     };
 
     _this.playerRef = _react2.default.createRef();
+    _this.currentTime = 0;
     return _this;
   }
 
