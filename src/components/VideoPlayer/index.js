@@ -48,6 +48,7 @@ export default class VideoPlayer extends React.PureComponent {
   constructor (props) {
     super(props)
     this.playerRef = React.createRef()
+    this.currentTime = 0
   }
 
   state = { endscreenOpen: false }
