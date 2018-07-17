@@ -9,11 +9,11 @@ export default class PropsTable extends PureComponent {
   }
 
   render () {
-    const {
-      component,
-    } = this.props
-
-    const docgenInfo = '__docgenInfo'
+    const { component } = this.props
+    const docgenKey = '__docgenInfo'
+    const props = component[docgenKey]
+      ? component[docgenKey].props
+      : []
 
     return (
       <table className='example--table'>
@@ -27,7 +27,7 @@ export default class PropsTable extends PureComponent {
         </thead>
 
         <tbody>
-          {map(component[docgenInfo].props, (prop, key) =>
+          {map(props, (prop, key) =>
               <tr>
                 <th>{key}</th>
                 <td>{prop.type.name}</td>
