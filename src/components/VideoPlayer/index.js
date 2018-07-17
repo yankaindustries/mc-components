@@ -31,6 +31,7 @@ export default class VideoPlayer extends React.PureComponent {
     onTimeChange: PropTypes.func,
     onError: PropTypes.func,
     accountId: PropTypes.string,
+    progress: PropTypes.number,
   }
 
   static defaultProps = {
@@ -65,6 +66,10 @@ export default class VideoPlayer extends React.PureComponent {
       document.body.appendChild(bcScript)
       // Call a function to play the video once player's JavaScropt loaded
       bcScript.onload = this.setupVideo
+    }
+
+    if (this.props.progress) {
+      this.playerRef.current.currentTime = this.props.progress
     }
   }
 
