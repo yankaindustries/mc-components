@@ -11,11 +11,14 @@ exports[`Storyshots components|Buttons Button 1`] = `
   <div
     className="container"
   >
+    <h2>
+      Button
+    </h2>
     <div
       className="example--section"
     >
       <h4>
-        Props
+        Variations
       </h4>
       <div
         className="example--definition"
@@ -356,6 +359,42 @@ exports[`Storyshots components|Buttons Button 1`] = `
               Button
             </span>
           </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Properties
+      </h4>
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-6 col-md-9"
+        >
+          <table
+            className="example--table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Type
+                </th>
+                <th>
+                  Required?
+                </th>
+                <th>
+                  Default?
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
         </div>
       </div>
     </div>
