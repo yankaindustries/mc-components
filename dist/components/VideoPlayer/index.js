@@ -174,6 +174,10 @@ var VideoPlayer = function (_React$PureComponent) {
         // Call a function to play the video once player's JavaScropt loaded
         bcScript.onload = this.setupVideo;
       }
+
+      if (this.props.progress) {
+        this.playerRef.current.currentTime = this.props.progress;
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -255,7 +259,8 @@ VideoPlayer.propTypes = {
   onEnd: _propTypes2.default.func,
   onTimeChange: _propTypes2.default.func,
   onError: _propTypes2.default.func,
-  accountId: _propTypes2.default.string
+  accountId: _propTypes2.default.string,
+  progress: _propTypes2.default.number
 };
 VideoPlayer.defaultProps = {
   playerId: 'rkcQq7gAe',
