@@ -1,6 +1,10 @@
 @import '../src/styles/libraries/libraries';
 @import '../src/styles/index';
 
+body {
+  background: $black;
+}
+
 pre {
   font-family: monospace;
 }

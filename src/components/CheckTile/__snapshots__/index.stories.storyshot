@@ -20,17 +20,13 @@ exports[`Storyshots components|Tiles/CheckTile CheckTile - 1000x609 - no animati
         }
       >
         <div
-          className="tile tile--1000x609 tile--no-hover overlay-check overlay-check--unchecked"
-          style={null}
+          className="tile tile--1000x609 overlay-check overlay-check--unchecked"
         >
           <div
             className="background"
             style={
               Object {
-                "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('')
-      ",
+                "backgroundImage": "url('')",
               }
             }
           />
@@ -621,17 +617,13 @@ exports[`Storyshots components|Tiles/CheckTile CheckTile - 1000x609 1`] = `
         }
       >
         <div
-          className="tile tile--1000x609 tile--hover-zoom overlay-check overlay-check--checked"
-          style={null}
+          className="tile tile--1000x609 overlay-check overlay-check--checked"
         >
           <div
             className="background"
             style={
               Object {
-                "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('')
-      ",
+                "backgroundImage": "url('')",
               }
             }
           />
@@ -1234,17 +1226,13 @@ exports[`Storyshots components|Tiles/CheckTile with handler 1`] = `
         }
       >
         <div
-          className="tile tile--1000x609 tile--no-hover overlay-check overlay-check--unchecked"
-          style={null}
+          className="tile tile--1000x609 overlay-check overlay-check--unchecked"
         >
           <div
             className="background"
             style={
               Object {
-                "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('')
-      ",
+                "backgroundImage": "url('')",
               }
             }
           />

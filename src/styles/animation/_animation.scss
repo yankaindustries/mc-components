@@ -1,0 +1,42 @@
+.animation {
+  position: relative;
+
+  &.animation--animating {
+    z-index: 99999;
+  }
+
+  &.animation--cropped {
+    overflow: hidden;
+  }
+
+  &.animation--zoom {
+    > * {
+      transform: scale(1);
+      transition: transform 0.75s cubic-bezier(0.29, 1.185, 1, 1);
+    }
+
+    &.animation--animating > * {
+      transform: scale(1.1);
+    }
+  }
+
+  &.animation--ken-burns {
+    > * {
+      transform: scale(1);
+      transition: transform 8s ease;
+    }
+
+    &.animation--animating > * {
+      transform: scale(1.1);
+      transition: transform 15s cubic-bezier(0.02, 0.075, 0.42, 1);
+    }
+  }
+
+  &.animation--lift {
+    transition: transform 0.75s cubic-bezier(0.29, 1.185, 1, 1);
+
+    &.animation--animating {
+      transform: translateY(-0.75em);
+    }
+  }
+}

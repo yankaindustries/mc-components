@@ -5,13 +5,15 @@ import jsxToString from 'jsx-to-string'
 
 
 const toString = node =>
-  jsxToString(node, { shortBooleanSyntax: true })
+  jsxToString(node, {
+    shortBooleanSyntax: true,
+  })
 
 
 export default class Definition extends PureComponent {
   static propTypes = {
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    type: PropTypes.string,
     children: PropTypes.node.isRequired,
   }
 
