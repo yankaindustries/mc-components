@@ -127,9 +127,10 @@ var VideoPlayer = function (_React$PureComponent) {
       if (_this.props.onTimeChange) {
         _this.video.on('timeupdate', function () {
           var currentTime = Math.floor(_this.video.currentTime());
+          var remainingTime = Math.floor(_this.video.remainingTime());
           if (_this.currentTime < currentTime) {
             _this.currentTime = currentTime;
-            _this.props.onTimeChange(currentTime);
+            _this.props.onTimeChange(currentTime, remainingTime);
           }
         });
       }
