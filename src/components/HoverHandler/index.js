@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default class HoverHandler extends PureComponent {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    children: PropTypes.func.isRequired,
   }
 
   state = {

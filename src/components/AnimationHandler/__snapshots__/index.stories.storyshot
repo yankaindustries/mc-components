@@ -62,7 +62,7 @@ exports[`Storyshots components|Utilities/AnimationHandler default 1`] = `
             onMouseLeave={[Function]}
           >
             <div
-              className="animation animation--zoom  "
+              className="mc-animation mc-animation--zoom "
             >
               <button
                 className="c-button c-button--primary"
@@ -79,7 +79,7 @@ exports[`Storyshots components|Utilities/AnimationHandler default 1`] = `
             onMouseLeave={[Function]}
           >
             <div
-              className="animation animation--lift  "
+              className="mc-animation mc-animation--lift "
             >
               <button
                 className="c-button c-button--secondary"
@@ -96,7 +96,7 @@ exports[`Storyshots components|Utilities/AnimationHandler default 1`] = `
             onMouseLeave={[Function]}
           >
             <div
-              className="animation animation--ken-burns  "
+              className="mc-animation mc-animation--ken-burns "
             >
               <button
                 className="c-button c-button--tertiary"
@@ -158,7 +158,7 @@ exports[`Storyshots components|Utilities/AnimationHandler default 1`] = `
             >
               <div>
                 <div
-                  className="animation animation--ken-burns  animation--cropped"
+                  className="mc-animation mc-animation--ken-burns "
                 >
                   <div
                     className="tile tile--4x3"
@@ -177,7 +177,7 @@ exports[`Storyshots components|Utilities/AnimationHandler default 1`] = `
                   </div>
                 </div>
                 <div
-                  className="animation animation--lift  "
+                  className="mc-animation mc-animation--lift "
                 >
                   <div
                     className="tile__caption imate-tile__caption--above"

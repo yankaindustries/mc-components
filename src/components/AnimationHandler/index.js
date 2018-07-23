@@ -10,7 +10,7 @@ export default class AnimationHandler extends PureComponent {
       'lift',
     ]),
     animating: PropTypes.bool,
-    children: PropTypes.node,
+    children: PropTypes.func,
   }
 
   static defaultProps = {
