@@ -5,10 +5,6 @@
     z-index: 99999;
   }
 
-  &.animation--cropped {
-    overflow: hidden;
-  }
-
   &.animation--zoom {
     > * {
       transform: scale(1);
@@ -21,6 +17,8 @@
   }
 
   &.animation--ken-burns {
+    overflow: hidden;
+
     > * {
       transform: scale(1);
       transition: transform 8s ease;

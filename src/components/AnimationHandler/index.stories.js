@@ -60,7 +60,6 @@ storiesOf('components|Utilities/AnimationHandler', module)
                     <AnimationHandler
                       animation='ken-burns'
                       animating={hovering}
-                      cropped={true}
                     >
                         <ImageTile
                           imageUrl={shondaRhimesThumbnail}

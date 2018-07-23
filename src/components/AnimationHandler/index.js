@@ -10,7 +10,6 @@ export default class AnimationHandler extends PureComponent {
       'lift',
     ]),
     animating: PropTypes.bool,
-    cropped: PropTypes.bool,
     children: PropTypes.node,
   }
 
@@ -22,7 +21,6 @@ export default class AnimationHandler extends PureComponent {
     const {
       animating,
       animation,
-      cropped,
       children,
     } = this.props
 
@@ -30,7 +28,6 @@ export default class AnimationHandler extends PureComponent {
       'animation',
       `animation--${animation}`,
       animating ? 'animation--animating' : '',
-      cropped ? 'animation--cropped' : '',
     ].join(' ')
 
     return (
