@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import ImageTile from '../ImageTile'
-import CheckboxOverlay from '../CheckboxOverlay'
+import CheckOverlay from '../CheckOverlay'
 
 export default class CheckTile extends PureComponent {
   static propTypes = {
@@ -23,11 +23,11 @@ export default class CheckTile extends PureComponent {
     ].join(' ')
 
     return (
-      <ImageTile className={classNames} {...this.props}>
-        <CheckboxOverlay {...this.props}>
+      <CheckOverlay {...this.props}>
+        <ImageTile className={classNames} {...this.props}>
           {children}
-        </CheckboxOverlay>
-      </ImageTile>
+        </ImageTile>
+      </CheckOverlay>
     )
   }
 }
