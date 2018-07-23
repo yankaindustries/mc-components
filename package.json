@@ -85,6 +85,7 @@
       "yarn lint:js"
     ],
     "src/**/*.scss": [
+      "yarn lint:style",
       "stylelint --fix",
       "git add"
     ]
