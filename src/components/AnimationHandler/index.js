@@ -25,9 +25,9 @@ export default class AnimationHandler extends PureComponent {
     } = this.props
 
     const classes = [
-      'animation',
-      `animation--${animation}`,
-      animating ? 'animation--animating' : '',
+      'mc-animation',
+      `mc-animation--${animation}`,
+      animating ? 'mc-animation--animating' : '',
     ].join(' ')
 
     return (
