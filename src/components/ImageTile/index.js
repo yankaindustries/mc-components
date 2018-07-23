@@ -21,10 +21,6 @@ export default class ImageTile extends PureComponent {
     className: '',
   }
 
-  backgroundStyle = (url) => {
-    return
-  }
-
   render () {
     const {
       aspectRatio,

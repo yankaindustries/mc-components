@@ -4,24 +4,27 @@ import PropTypes from 'prop-types'
 
 export default class ImageTileCaption extends PureComponent {
   static propTypes = {
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
     position: PropTypes.oneOf(['above', 'below']),
+    children: PropTypes.node,
   }
 
   static defaultProps = {
-    position: 'above'
+    position: 'above',
   }
 
-  render() {
+  render () {
     const {
       title,
       subtitle,
       position,
-      children
+      children,
     } = this.props
 
     const classNames = [
       'tile__caption',
-      `imate-tile__caption--${position}`
+      `imate-tile__caption--${position}`,
     ].join(' ')
 
     return (

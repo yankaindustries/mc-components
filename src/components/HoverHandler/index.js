@@ -1,7 +1,12 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 
 
 export default class HoverHandler extends PureComponent {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+  }
+
   state = {
     hovering: false,
   }
@@ -14,7 +19,7 @@ export default class HoverHandler extends PureComponent {
     this.setState({ hovering: false })
   }
 
-  render() {
+  render () {
     const { children } = this.props
     const { hovering } = this.state
 

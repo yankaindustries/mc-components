@@ -11,13 +11,14 @@ export default class AnimationHandler extends PureComponent {
     ]),
     animating: PropTypes.bool,
     cropped: PropTypes.bool,
+    children: PropTypes.node,
   }
 
   static defaultProps = {
     animation: 'zoom',
   }
 
-  render() {
+  render () {
     const {
       animating,
       animation,
@@ -29,7 +30,7 @@ export default class AnimationHandler extends PureComponent {
       'animation',
       `animation--${animation}`,
       animating ? 'animation--animating' : '',
-      cropped ? 'animation--cropped' : ''
+      cropped ? 'animation--cropped' : '',
     ].join(' ')
 
     return (

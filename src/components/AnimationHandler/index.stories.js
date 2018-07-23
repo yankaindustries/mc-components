@@ -17,7 +17,7 @@ import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 storiesOf('components|Utilities/AnimationHandler', module)
   .add('default',
     () => (
-      <div className="container">
+      <div className='container'>
         <h2>AnimationHandler</h2>
 
         <DocSection title='Variations'>
@@ -58,7 +58,7 @@ storiesOf('components|Utilities/AnimationHandler', module)
                 {({ hovering }) =>
                   <div>
                     <AnimationHandler
-                      animation="ken-burns"
+                      animation='ken-burns'
                       animating={hovering}
                       cropped={true}
                     >
@@ -69,7 +69,7 @@ storiesOf('components|Utilities/AnimationHandler', module)
                     </AnimationHandler>
 
                     <AnimationHandler
-                      animation="lift"
+                      animation='lift'
                       animating={hovering}
                     >
                       <ImageTileCaption

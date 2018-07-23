@@ -11,7 +11,7 @@ import Button from '../Button'
 
 storiesOf('components|Utilities/HoverHandler', module)
   .add('default', () => (
-    <div className="container">
+    <div className='container'>
       <h2>HoverHandler</h2>
 
       <DocSection title='Variations'>
