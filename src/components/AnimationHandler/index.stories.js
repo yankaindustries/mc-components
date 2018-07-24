@@ -14,7 +14,7 @@ import ImageTileCaption from '../ImageTileCaption'
 import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 
-storiesOf('components|Utilities/AnimationHandler', module)
+storiesOf('utilities|AnimationHandler', module)
   .add('default',
     () => (
       <div className='container'>

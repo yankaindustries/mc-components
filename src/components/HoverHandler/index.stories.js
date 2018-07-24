@@ -9,7 +9,7 @@ import HoverHandler from './index'
 import Button from '../Button'
 
 
-storiesOf('components|Utilities/HoverHandler', module)
+storiesOf('utilities|HoverHandler', module)
   .add('default', () => (
     <div className='container'>
       <h2>HoverHandler</h2>
