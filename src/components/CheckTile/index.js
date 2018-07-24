@@ -11,6 +11,13 @@ export default class CheckTile extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func,
     checked: PropTypes.bool,
+    aspectRatio: PropTypes.oneOf([
+      '4x3',
+      '16x9',
+      '100x65',
+      '1000x609',
+      '519x187',
+    ]),
     imageUrl: PropTypes.string.isRequired,
     children: PropTypes.element,
   }

@@ -5,7 +5,7 @@ import ToggleHandler from './index'
 import Button from '../Button'
 
 
-storiesOf('components|Utilities/ToggleHandler', module)
+storiesOf('utilities|ToggleHandler', module)
   .add('default', () =>
     <ToggleHandler>
       {({ toggled }) =>
