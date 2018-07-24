@@ -1,33 +1,53 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { noop } from 'lodash'
+
+import { renderChildren } from '../../utils/helpers'
 
 import ImageTile from '../ImageTile'
-import CheckOverlay from '../CheckOverlay'
+import ToggleHandler from '../ToggleHandler'
 
 export default class CheckTile extends PureComponent {
   static propTypes = {
+    onCheck: PropTypes.func,
     checked: PropTypes.bool,
-    onCheck: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    children: PropTypes.element,
+  }
+
+  static defaultProps = {
+    onCheck: noop,
+    checked: false,
+    children: noop,
   }
 
   render () {
     const {
+      onCheck,
       checked,
+      imageUrl,
       children,
     } = this.props
 
     const classNames = [
-      'overlay-check',
-      checked ? 'overlay-check--checked' : 'overlay-check--unchecked',
+      'check-tile',
+      checked ? 'check-tile--checked' : 'check-tile--unchecked',
     ].join(' ')
 
     return (
-      <CheckOverlay {...this.props}>
-        <ImageTile className={classNames} {...this.props}>
-          {children}
-        </ImageTile>
-      </CheckOverlay>
+      <ToggleHandler toggled={checked} onToggle={onCheck}>
+        {({ toggled }) =>
+          <div className={classNames}>
+            <h3 className='check-tile__check'>
+              {toggled ? '√' : 'o'}
+            </h3>
+
+            <ImageTile imageUrl={imageUrl}>
+              {renderChildren(children, { checked: toggled })}
+            </ImageTile>
+          </div>
+        }
+      </ToggleHandler>
     )
   }
 }

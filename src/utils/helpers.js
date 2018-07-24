@@ -1,3 +1,6 @@
+import { Children, cloneElement } from 'react'
+import { isFunction } from 'lodash'
+
 export const parseInputErrors = (error) => {
   if (!error) {
     return undefined
@@ -20,4 +23,12 @@ export const FormatClassTitle = (title = '', instructorName = '') => {
     .trim()
     .slice(instructorName.length)
     .trim()
+}
+
+export const renderChildren = (children, props) => {
+  if (isFunction(children)) {
+    return children(props)
+  }
+
+  return Children.map(children, child => cloneElement(child, props))
 }
