@@ -9,21 +9,21 @@ import ToggleHandler from '../ToggleHandler'
 
 export default class CheckTile extends PureComponent {
   static propTypes = {
-    onCheck: PropTypes.func,
+    onChange: PropTypes.func,
     checked: PropTypes.bool,
     imageUrl: PropTypes.string.isRequired,
     children: PropTypes.element,
   }
 
   static defaultProps = {
-    onCheck: noop,
+    onChange: noop,
     checked: false,
     children: noop,
   }
 
   render () {
     const {
-      onCheck,
+      onChange,
       checked,
       imageUrl,
       children,
@@ -35,7 +35,10 @@ export default class CheckTile extends PureComponent {
     ].join(' ')
 
     return (
-      <ToggleHandler toggled={checked} onToggle={onCheck}>
+      <ToggleHandler
+        toggled={checked}
+        onChange={onChange}
+      >
         {({ toggled }) =>
           <div className={classNames}>
             <h3 className='check-tile__check'>
