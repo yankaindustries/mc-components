@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots utilities|ToggleHandler default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <a
+    onClick={[Function]}
+  >
+    <button
+      className="c-button c-button--tertiary"
+      onClick={[Function]}
+    >
+      <span>
+        Off
+      </span>
+    </button>
+  </a>
+</div>
+`;

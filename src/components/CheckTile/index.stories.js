@@ -1,70 +1,62 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { action } from '@storybook/addon-actions'
+
+import DocSection from '../../utils/DocSection'
+import PropsTable from '../../utils/PropsTable'
+
+import CheckTile from './index'
+import AnimationHandler from '../AnimationHandler'
+import ImageTile from '../ImageTile'
 import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
-
-import CheckTile from '../CheckTile'
-
-// CheckTile Handler
-class CheckTileHandler extends Component {
-  state = { checked: false }
-
-  render () {
-    const { checked } = this.state
-
-    return (
-      <div style={{ maxWidth: '500px' }}>
-        <CheckTile
-          {...this.props}
-          checked={checked}
-          onCheck={() => this.setState({ checked: !checked })}
-        />
-      </div>
-    )
-  }
-}
 
 
 storiesOf('components|Tiles/CheckTile', module)
-  .add(
-    'CheckTile - 1000x609',
-    withInfo()(() => (
-      <div style={{ maxWidth: '500px' }}>
-        <CheckTile
-          imageUrl={shondaRhimesThumbnail}
-          checked
-          aspectRatio='1000x609'
-          animationStyle='hover-zoom'
-          onCheck={() => {}}
-        >
-          <p>Content</p>
-        </CheckTile>
-      </div>
-    )),
-  )
-  .add(
-    'CheckTile - 1000x609 - no animation',
-    withInfo()(() => (
-      <div style={{ maxWidth: '500px' }}>
-        <CheckTile
-          imageUrl={shondaRhimesThumbnail}
-          checked={false}
-          aspectRatio='1000x609'
-          onCheck={() => {}}
-        >
-          <p>Content</p>
-        </CheckTile>
-      </div>
-    )),
-  )
-  .add(
-    'with handler',
-    withInfo()(() => (
-      <CheckTileHandler
-        imageUrl={shondaRhimesThumbnail}
-        aspectRatio='1000x609'
-      >
-        <p>Content</p>
-      </CheckTileHandler>
-    )),
+  .add('default', () =>
+    <div className='container'>
+      <h2>CheckTile</h2>
+
+      <DocSection title='Examples'>
+        <div className='row'>
+          <div className='col-sm-4'>
+            <CheckTile onChange={action('onChange:1')}>
+              {({ checked }) =>
+                <AnimationHandler animation='zoom' animating={checked}>
+                  <ImageTile imageUrl={shondaRhimesThumbnail} />
+                </AnimationHandler>
+              }
+
+            </CheckTile>
+          </div>
+          <div className='col-sm-4'>
+            <CheckTile onChange={action('onChange:1')}>
+              {({ checked }) =>
+                <AnimationHandler animation='zoom' animating={checked}>
+                  <ImageTile imageUrl={shondaRhimesThumbnail} />
+                </AnimationHandler>
+              }
+
+            </CheckTile>
+          </div>
+          <div className='col-sm-4'>
+            <CheckTile onChange={action('onChange:1')}>
+              {({ checked }) =>
+                <AnimationHandler animation='zoom' animating={checked}>
+                  <ImageTile imageUrl={shondaRhimesThumbnail} />
+                </AnimationHandler>
+              }
+
+            </CheckTile>
+          </div>
+        </div>
+      </DocSection>
+
+      <DocSection title='Properties'>
+        <div className='row'>
+          <div className='col-lg-6 col-md-9'>
+            <PropsTable component={CheckTile} />
+          </div>
+        </div>
+      </DocSection>
+    </div>,
   )
