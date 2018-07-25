@@ -2206,7 +2206,7 @@ exports[`Storyshots components|Structure/HeaderLoggedIn with backButton 1`] = `
                               }
                             }
                           >
-                            clicked()
+                            clicked
                           </span>
                           ,
                           <span>

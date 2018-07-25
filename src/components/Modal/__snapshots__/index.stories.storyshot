@@ -429,7 +429,7 @@ exports[`Storyshots components|Modals ModalHandler 1`] = `
                         }
                       }
                     >
-                      ModalHeader()
+                      ModalHeader
                     </span>
                   </td>
                   <td
@@ -701,7 +701,7 @@ exports[`Storyshots components|Modals ModalHeader 1`] = `
                                 }
                               }
                             >
-                              onClose()
+                              onClose
                             </span>
                             }
                           </span>
@@ -1274,7 +1274,7 @@ exports[`Storyshots components|Modals ModalHeader 1`] = `
                         }
                       }
                     >
-                      ModalHeader()
+                      ModalHeader
                     </span>
                   </td>
                   <td

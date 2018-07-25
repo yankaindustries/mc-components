@@ -7,6 +7,8 @@ import { renderChildren } from '../../utils/helpers'
 import ImageTile from '../ImageTile'
 import ToggleHandler from '../ToggleHandler'
 
+import Check from '../../assets/check-circle.svg'
+
 export default class CheckTile extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func,
@@ -51,9 +53,8 @@ export default class CheckTile extends PureComponent {
       >
         {({ toggled }) =>
           <div className={classNames}>
-            <h3 className='check-tile__check'>
-              {toggled ? '√' : 'o'}
-            </h3>
+            <img className='check-tile__check' src={toggled ? Check : null} />
+
 
             <ImageTile imageUrl={imageUrl}>
               {renderChildren(children, { checked: toggled })}
