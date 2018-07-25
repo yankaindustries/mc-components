@@ -14,7 +14,6 @@ storiesOf('components|Tiles/ImageTile', module)
         <ImageTile
           imageUrl={shondaRhimesThumbnail}
           aspectRatio='4x3'
-          backgroundGradient={false}
         >
           <p>Content</p>
         </ImageTile>
@@ -28,21 +27,6 @@ storiesOf('components|Tiles/ImageTile', module)
         <ImageTile
           imageUrl={shondaRhimesThumbnail}
           aspectRatio='16x9'
-          backgroundGradient
-        >
-          <p>Content</p>
-        </ImageTile>
-      </div>
-    )),
-  )
-  .add(
-    'ImageTile - 16x9 - with animation',
-    withInfo()(() => (
-      <div style={{ maxWidth: '500px' }}>
-        <ImageTile
-          imageUrl={shondaRhimesThumbnail}
-          aspectRatio='16x9'
-          animationStyle='hover-zoom'
         >
           <p>Content</p>
         </ImageTile>

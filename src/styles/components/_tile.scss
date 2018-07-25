@@ -45,3 +45,17 @@
 .tile--519x187 {
   @include aspect-ratio(519, 187);
 }
+
+
+.tile__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 20px;
+  z-index: 10;
+
+  &.tile__caption--below {
+    bottom: auto;
+    top: 100%;
+  }
+}

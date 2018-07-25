@@ -10,6 +10,8 @@ import 'highlight.js/styles/tomorrow-night.css'
 setOptions({
   hierarchySeparator: /\//,
   hierarchyRootSeparator: /\|/,
+  // addonPanelInRight: true,
+  sortStoriesByKind: true,
 });
 
 // Info Defaults

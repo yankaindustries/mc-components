@@ -73,17 +73,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -118,17 +114,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -163,17 +155,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -209,17 +197,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -255,17 +239,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -301,17 +281,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -347,17 +323,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -393,17 +365,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -439,17 +407,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -485,17 +449,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -530,17 +490,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -575,17 +531,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -620,17 +572,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -665,17 +613,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -710,17 +654,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -755,17 +695,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />
@@ -800,17 +736,13 @@ exports[`Storyshots components|Carousel default 1`] = `
               >
                 <div>
                   <div
-                    className="tile tile--16x9 tile--no-hover mc-carousel__slide"
-                    style={null}
+                    className="tile tile--16x9 mc-carousel__slide"
                   >
                     <div
                       className="background"
                       style={
                         Object {
-                          "backgroundImage": "
-        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
-        url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')
-      ",
+                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                         }
                       }
                     />

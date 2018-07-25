@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components|Utilities/HoverHandler default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    className="container"
+  >
+    <h2>
+      HoverHandler
+    </h2>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Variations
+      </h4>
+      <div
+        className="example--definition"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                children
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                RenderProp
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+        </div>
+        <div
+          className="example--render"
+        >
+          <div
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              className="c-button c-button--primary"
+              onClick={[Function]}
+            >
+              <span>
+                Normal
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Properties
+      </h4>
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-6 col-md-9"
+        >
+          <table
+            className="example--table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Type
+                </th>
+                <th>
+                  Required?
+                </th>
+                <th>
+                  Default?
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots utilities|HoverHandler default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    className="container"
+  >
+    <h2>
+      HoverHandler
+    </h2>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Variations
+      </h4>
+      <div
+        className="example--definition"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                children
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                RenderProp
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+        </div>
+        <div
+          className="example--render"
+        >
+          <div
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              className="c-button c-button--primary"
+              onClick={[Function]}
+            >
+              <span>
+                Normal
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Properties
+      </h4>
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-6 col-md-9"
+        >
+          <table
+            className="example--table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Type
+                </th>
+                <th>
+                  Required?
+                </th>
+                <th>
+                  Default?
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
