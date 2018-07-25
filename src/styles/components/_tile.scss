@@ -1,7 +1,6 @@
 .mc-tile,
 .tile {
   position: relative;
-  overflow: hidden;
   cursor: pointer;
   backface-visibility: hidden;
 
@@ -50,7 +49,6 @@
 
 .mc-check-tile {
   cursor: pointer;
-  overflow: visible;
 
   &__check {
     position: absolute;
