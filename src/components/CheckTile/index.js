@@ -39,12 +39,13 @@ export default class CheckTile extends PureComponent {
       onChange,
     } = this.props
 
-    const classNames = [
-      'mc-tile',
-      `mc-tile--${aspectRatio}`,
-      'mc-check-tile',
-      checked ? 'mc-check-tile--checked' : 'mc-check-tile--unchecked',
-    ].join(' ')
+    const classNames = toggled =>
+      [
+        'mc-tile',
+        `mc-tile--${aspectRatio}`,
+        'mc-check-tile',
+        toggled ? 'mc-check-tile--checked' : 'mc-check-tile--unchecked',
+      ].join(' ')
 
     return (
       <ToggleHandler
@@ -52,7 +53,7 @@ export default class CheckTile extends PureComponent {
         onChange={onChange}
       >
         {({ toggled }) =>
-          <div className={classNames}>
+          <div className={classNames(checked)}>
             <img className='mc-check-tile__check' src={toggled ? Check : null} />
             {children &&
               <div className='content'>

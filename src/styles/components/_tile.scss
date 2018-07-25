@@ -48,9 +48,9 @@
 }
 
 
-
 .mc-check-tile {
   cursor: pointer;
+  overflow: visible;
 
   &__check {
     position: absolute;
