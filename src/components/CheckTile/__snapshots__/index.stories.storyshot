@@ -15,12 +15,17 @@ exports[`Storyshots components|Tiles/CheckTile default 1`] = `
       CheckTile
     </h2>
     <div
+<<<<<<< HEAD
       className="example--section"
+=======
+      className="tile tile--1000x609 overlay-check overlay-check--unchecked"
+>>>>>>> lint/test
     >
       <h4>
         Examples
       </h4>
       <div
+<<<<<<< HEAD
         className="row"
       >
         <div
@@ -140,6 +145,127 @@ exports[`Storyshots components|Tiles/CheckTile default 1`] = `
             </div>
           </a>
         </div>
+=======
+        className="background"
+        style={
+          Object {
+            "backgroundImage": "url('')",
+          }
+        }
+      />
+      <div
+        className="content"
+      >
+        <a
+          className="overlay-check__checkbox-tile-overlay"
+          onClick={[Function]}
+        >
+          <p>
+            Content
+          </p>
+          <img
+            alt="checkmark"
+            className="overlay-check__image"
+            src=""
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components|Tiles/CheckTile CheckTile - 1000x609 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "maxWidth": "500px",
+      }
+    }
+  >
+    <div
+      className="tile tile--1000x609 overlay-check overlay-check--checked"
+    >
+      <div
+        className="background"
+        style={
+          Object {
+            "backgroundImage": "url('')",
+          }
+        }
+      />
+      <div
+        className="content"
+      >
+        <a
+          className="overlay-check__checkbox-tile-overlay"
+          onClick={[Function]}
+        >
+          <p>
+            Content
+          </p>
+          <img
+            alt="checkmark"
+            className="overlay-check__image"
+            src=""
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components|Tiles/CheckTile with handler 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "maxWidth": "500px",
+      }
+    }
+  >
+    <div
+      className="tile tile--1000x609 overlay-check overlay-check--unchecked"
+    >
+      <div
+        className="background"
+        style={
+          Object {
+            "backgroundImage": "url('')",
+          }
+        }
+      />
+      <div
+        className="content"
+      >
+        <a
+          className="overlay-check__checkbox-tile-overlay"
+          onClick={[Function]}
+        >
+          <p>
+            Content
+          </p>
+          <img
+            alt="checkmark"
+            className="overlay-check__image"
+            src=""
+          />
+        </a>
+>>>>>>> lint/test
       </div>
     </div>
   </div>

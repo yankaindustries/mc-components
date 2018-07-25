@@ -30,7 +30,7 @@ styles.header = {
 
 export default class PropsTable extends PureComponent {
   static propTypes = {
-    component: PropTypes.object,
+    component: PropTypes.func,
   }
 
   static defaultProps = {

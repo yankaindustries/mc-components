@@ -78,6 +78,23 @@ exports[`Storyshots utilities|HoverHandler default 1`] = `
         </div>
       </div>
     </div>
+<<<<<<< HEAD
+=======
+    <div
+      className="example--section"
+    >
+      <h4>
+        Properties
+      </h4>
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-6 col-md-9"
+        />
+      </div>
+    </div>
+>>>>>>> lint/test
   </div>
 </div>
 `;
