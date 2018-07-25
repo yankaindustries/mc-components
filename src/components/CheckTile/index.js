@@ -19,7 +19,10 @@ export default class CheckTile extends PureComponent {
       '519x187',
     ]),
     imageUrl: PropTypes.string.isRequired,
-    children: PropTypes.element,
+    children: PropTypes.oneOfType([
+      PropTypes.element,
+      PropTypes.func,
+    ]),
   }
 
   static defaultProps = {

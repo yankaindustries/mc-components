@@ -1206,6 +1206,99 @@ exports[`Storyshots components|Tiles/CheckTile CheckTile - 1000x609 1`] = `
 </div>
 `;
 
+exports[`Storyshots components|Tiles/CheckTile default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    className="container"
+  >
+    <h2>
+      CheckTile
+    </h2>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Example
+      </h4>
+      <a
+        onClick={[Function]}
+      >
+        <div
+          className="check-tile check-tile--unchecked"
+        >
+          <h3
+            className="check-tile__check"
+          >
+            o
+          </h3>
+          <div
+            className="tile tile--16x9 tile--no-hover"
+            style={null}
+          >
+            <div
+              className="background"
+              style={
+                Object {
+                  "backgroundImage": "
+        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),
+        url('')
+      ",
+                }
+              }
+            />
+            <div
+              className="content"
+            />
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Properties
+      </h4>
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-6 col-md-9"
+        >
+          <table
+            className="example--table"
+          >
+            <thead>
+              <tr>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Type
+                </th>
+                <th>
+                  Required?
+                </th>
+                <th>
+                  Default?
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots components|Tiles/CheckTile with handler 1`] = `
 <div
   style={
