@@ -1,11 +1,11 @@
 .mc-animation {
   position: relative;
 
-  &.mc-animation--animating {
+  &--animating {
     z-index: 99999;
   }
 
-  &.mc-animation--zoom {
+  &--zoom {
     > * {
       transform: scale(1);
       transition: transform 0.75s cubic-bezier(0.29, 1.185, 1, 1);
@@ -16,7 +16,7 @@
     }
   }
 
-  &.mc-animation--ken-burns {
+  &--ken-burns {
     overflow: hidden;
 
     > * {
@@ -30,7 +30,7 @@
     }
   }
 
-  &.mc-animation--lift {
+  &--lift {
     transition: transform 0.75s cubic-bezier(0.29, 1.185, 1, 1);
 
     &.mc-animation--animating {
