@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
+import { withProps } from '../../utils/addon-props'
 
 import RadioInput from '../RadioInput'
 
@@ -24,33 +24,23 @@ class RadioInputHandler extends Component {
   }
 }
 
-const infoProps = {
-  propTables: [RadioInput],
-  propTablesExclude: [RadioInputHandler],
-}
 
 storiesOf('components|Forms/RadioInput', module)
-  .add('default',
-    withInfo(infoProps)(() =>
-      <RadioInput
-        label='My radio input'
-        onChange={action('clicked')}
-      />,
-    ),
-  )
-  .add('checked',
-    withInfo()(() =>
-      <RadioInput
-        label='My radio input'
-        onChange={action('clicked')}
-        checked
-      />,
-    ),
-  )
-  .add('with handler',
-    withInfo()(() =>
-      <RadioInputHandler
-        label='My radio input'
-      />,
-    ),
-  )
+  .add('default', withProps(RadioInput)(() =>
+    <RadioInput
+      label='My radio input'
+      onChange={action('clicked')}
+    />,
+  ))
+  .add('checked', withProps(RadioInput)(() =>
+    <RadioInput
+      label='My radio input'
+      onChange={action('clicked')}
+      checked
+    />,
+  ))
+  .add('with handler', withProps(RadioInput)(() =>
+    <RadioInputHandler
+      label='My radio input'
+    />,
+  ))

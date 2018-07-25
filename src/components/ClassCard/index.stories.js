@@ -1,16 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
 import { action } from '@storybook/addon-actions'
+import { withProps } from '../../utils/addon-props'
 
 import ClassCard from '../ClassCard'
 import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
-const infoProps = {
-  inline: true,
-  header: false,
-  propTables: [ClassCard],
-}
 
 const ClassCardProps = {
   teacherName: 'John Doe',
@@ -22,44 +17,38 @@ const ClassCardProps = {
 }
 
 storiesOf('components|Tiles/ClassCard', module)
-  .add('default',
-    withInfo({ ...infoProps })(() => <ClassCard {...ClassCardProps} />),
-  )
-  .add('with action',
-    withInfo({ ...infoProps })(() => (
+  .add('default', withProps(ClassCard)(() =>
+    <ClassCard {...ClassCardProps} />,
+  ))
+  .add('with action', withProps(ClassCard)(() => (
+    <ClassCard
+      action={action('clicked')}
+      {...ClassCardProps}
+    />
+  )))
+  .add('with href', withProps(ClassCard)(() => (
+    <ClassCard
+      href='#'
+      {...ClassCardProps}
+    />
+  )))
+  .add('with custom trigger', withProps(ClassCard)(() => {
+    const renderLinkComponent = ({ className, children }) => (
+      <button
+        onClick={action('clicked')}
+        className={className}
+        styles={{ display: 'block' }}
+      >
+        {children}
+      </button>
+    )
+
+    renderLinkComponent.propTypes = ClassCard.renderTriggerComponentPropTypes
+
+    return (
       <ClassCard
-        action={action('clicked')}
+        renderLinkComponent={renderLinkComponent}
         {...ClassCardProps}
       />
-    )),
-  )
-  .add('with href',
-    withInfo({ ...infoProps })(() => (
-      <ClassCard
-        href='#'
-        {...ClassCardProps}
-      />
-    )),
-  )
-  .add('with custom trigger',
-    withInfo({ ...infoProps })(() => {
-      const renderLinkComponent = ({ className, children }) => (
-        <button
-          onClick={action('clicked')}
-          className={className}
-          styles={{ display: 'block' }}
-        >
-          {children}
-        </button>
-      )
-
-      renderLinkComponent.propTypes = ClassCard.renderTriggerComponentPropTypes
-
-      return (
-        <ClassCard
-          renderLinkComponent={renderLinkComponent}
-          {...ClassCardProps}
-        />
-      )
-    }),
-  )
+    )
+  }))

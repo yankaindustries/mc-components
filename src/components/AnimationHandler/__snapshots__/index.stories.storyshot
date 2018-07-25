@@ -46,6 +46,11 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
           </div>
           <div
             className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
           >
             <a
               onClick={[Function]}
@@ -53,59 +58,59 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
               &lt;/&gt;
             </a>
           </div>
-        </div>
-        <div
-          className="example--render"
-        >
           <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
+            className="example--render"
           >
             <div
-              className="mc-animation mc-animation--zoom "
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
-              <button
-                className="c-button c-button--primary"
-                onClick={[Function]}
+              <div
+                className="mc-animation mc-animation--zoom "
               >
-                <span>
-                  Zoom
-                </span>
-              </button>
+                <button
+                  className="c-button c-button--primary"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Zoom
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
             <div
-              className="mc-animation mc-animation--lift "
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
-              <button
-                className="c-button c-button--secondary"
-                onClick={[Function]}
+              <div
+                className="mc-animation mc-animation--lift "
               >
-                <span>
-                  Lift
-                </span>
-              </button>
+                <button
+                  className="c-button c-button--secondary"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Lift
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
             <div
-              className="mc-animation mc-animation--ken-burns "
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
-              <button
-                className="c-button c-button--tertiary"
-                onClick={[Function]}
+              <div
+                className="mc-animation mc-animation--ken-burns "
               >
-                <span>
-                  Ken Burns
-                </span>
-              </button>
+                <button
+                  className="c-button c-button--tertiary"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Ken Burns
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -134,6 +139,11 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
           </div>
           <div
             className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
           >
             <a
               onClick={[Function]}
@@ -141,98 +151,62 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
               &lt;/&gt;
             </a>
           </div>
-        </div>
-        <div
-          className="example--render"
-        >
           <div
-            style={
-              Object {
-                "width": "500px",
-              }
-            }
+            className="example--render"
           >
             <div
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "width": "500px",
+                }
+              }
             >
-              <div>
-                <div
-                  className="mc-animation mc-animation--ken-burns "
-                >
+              <div
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <div>
                   <div
-                    className="tile tile--4x3"
+                    className="mc-animation mc-animation--ken-burns "
                   >
                     <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('')",
+                      className="tile tile--4x3"
+                    >
+                      <div
+                        className="background"
+                        style={
+                          Object {
+                            "backgroundImage": "url('')",
+                          }
                         }
-                      }
-                    />
-                    <div
-                      className="content"
-                    />
+                      />
+                      <div
+                        className="content"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  className="mc-animation mc-animation--lift "
-                >
                   <div
-                    className="tile__caption imate-tile__caption--above"
+                    className="mc-animation mc-animation--lift "
                   >
-                    <h2
-                      className="tile__caption__title"
+                    <div
+                      className="tile__caption imate-tile__caption--above"
                     >
-                      Jane Doe
-                    </h2>
-                    <h3
-                      className="tile__caption__subtitle"
-                    >
-                      Teaches Something
-                    </h3>
+                      <h2
+                        className="tile__caption__title"
+                      >
+                        Jane Doe
+                      </h2>
+                      <h3
+                        className="tile__caption__subtitle"
+                      >
+                        Teaches Something
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="example--section"
-    >
-      <h4>
-        Properties
-      </h4>
-      <div
-        className="row"
-      >
-        <div
-          className="col-lg-6 col-md-9"
-        >
-          <table
-            className="example--table"
-          >
-            <thead>
-              <tr>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Type
-                </th>
-                <th>
-                  Required?
-                </th>
-                <th>
-                  Default?
-                </th>
-              </tr>
-            </thead>
-            <tbody />
-          </table>
         </div>
       </div>
     </div>

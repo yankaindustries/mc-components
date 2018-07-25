@@ -1,19 +1,19 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withProps } from '../../utils/addon-props'
 
 import Footer from '../Footer'
 
 
 storiesOf('components|Structure/Footer', module)
   .add('default',
-    withInfo()(() =>
+    withProps(Footer)(() =>
       <Footer />,
     ),
   )
 
   .add('minimal',
-    withInfo()(() =>
+    withProps(Footer)(() =>
       <Footer isMinimal />,
     ),
   )

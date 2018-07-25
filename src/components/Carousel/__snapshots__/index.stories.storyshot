@@ -8,1536 +8,770 @@ exports[`Storyshots components|Carousel default 1`] = `
     }
   }
 >
-  <div>
+  <div
+    className="mc-carousel"
+  >
+    <button
+      className="mc-carousel-arrow mc-carousel__arrow mc-carousel__arrow--left mc-carousel-arrow--left"
+      onClick={[Function]}
+      style={null}
+    >
+      <img
+        className="mc-carousel-arrow__image"
+        src=""
+      />
+    </button>
     <div
-      style={Object {}}
+      className="slick-slider slick-initialized"
+      dir="ltr"
     >
       <div
-        className="mc-carousel"
+        className="slick-list"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={null}
+        onMouseMove={null}
+        onMouseUp={[Function]}
+        onTouchCancel={null}
+        onTouchEnd={[Function]}
+        onTouchMove={null}
+        onTouchStart={[Function]}
+        style={Object {}}
       >
-        <button
-          className="mc-carousel-arrow mc-carousel__arrow mc-carousel__arrow--left mc-carousel-arrow--left"
-          onClick={[Function]}
-          style={null}
-        >
-          <img
-            className="mc-carousel-arrow__image"
-            src=""
-          />
-        </button>
         <div
-          className="slick-slider slick-initialized"
-          dir="ltr"
+          className="slick-track"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "WebkitTransform": "translate3d(0px, 0px, 0px)",
+              "WebkitTransition": "",
+              "msTransform": "translateX(0px)",
+              "opacity": 1,
+              "transform": "translate3d(0px, 0px, 0px)",
+              "transition": "",
+            }
+          }
         >
           <div
-            className="slick-list"
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={-3}
             onClick={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={null}
-            onMouseMove={null}
-            onMouseUp={[Function]}
-            onTouchCancel={null}
-            onTouchEnd={[Function]}
-            onTouchMove={null}
-            onTouchStart={[Function]}
-            style={Object {}}
-          >
-            <div
-              className="slick-track"
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              onMouseOver={[Function]}
-              style={
-                Object {
-                  "WebkitTransform": "translate3d(0px, 0px, 0px)",
-                  "WebkitTransition": "",
-                  "msTransform": "translateX(0px)",
-                  "opacity": 1,
-                  "transform": "translate3d(0px, 0px, 0px)",
-                  "transition": "",
-                }
-              }
-            >
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={-3}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={-2}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={-1}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={false}
-                className="slick-slide slick-active slick-current"
-                data-index={0}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "outline": "none",
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={false}
-                className="slick-slide slick-active"
-                data-index={1}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "outline": "none",
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={false}
-                className="slick-slide slick-active"
-                data-index={2}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "outline": "none",
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide"
-                data-index={3}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "outline": "none",
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide"
-                data-index={4}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "outline": "none",
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide"
-                data-index={5}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "outline": "none",
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide"
-                data-index={6}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "outline": "none",
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={7}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={8}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={9}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={10}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={11}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={12}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden={true}
-                className="slick-slide slick-cloned"
-                data-index={13}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "width": 0,
-                  }
-                }
-                tabIndex="-1"
-              >
-                <div>
-                  <div
-                    className="tile tile--16x9 mc-carousel__slide"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    >
-                      <a
-                        className="mc-play-button mc-carousel__slide__play"
-                        onClick={[Function]}
-                      >
-                        <img
-                          alt="Play"
-                          className="mc-play-button__image"
-                          src=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          className="mc-carousel-arrow mc-carousel__arrow mc-carousel__arrow--right mc-carousel-arrow--right"
-          onClick={[Function]}
-          style={null}
-        >
-          <img
-            className="mc-carousel-arrow__image"
-            src=""
-          />
-        </button>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
             style={
               Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
+                "width": 0,
               }
             }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
+            tabIndex="-1"
           >
             <div>
               <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  Carousel
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      slidesDataSource
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          [
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  id
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                1
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  image
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'https://d21zaivk6zzt6k.cloudfront.net/images/1605/…'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  id
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                2
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  image
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'https://d21zaivk6zzt6k.cloudfront.net/images/1605/…'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  id
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#a11",
-                                  }
-                                }
-                              >
-                                3
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  image
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'https://d21zaivk6zzt6k.cloudfront.net/images/1605/…'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            …
-                          </span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          ]
-                        </span>
-                        }
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      settings
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          {
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              variableWidth
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
-                          >
-                            false
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              slidesToShow
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
-                          >
-                            3
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              slidesToScroll
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style={
-                              Object {
-                                "color": "#a11",
-                              }
-                            }
-                          >
-                            1
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            …
-                          </span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          }
-                        </span>
-                        }
-                      </span>
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
-            >
-              <div
-                className="css-kv47nt"
+                className="tile tile--16x9 mc-carousel__slide"
               >
                 <div
+                  className="background"
                   style={
                     Object {
-                      "marginBottom": 6,
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
                     }
                   }
+                />
+                <div
+                  className="content"
                 >
-                  Copied!
-                </div>
-                <div>
-                  Copy
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
                 </div>
               </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={-2}
+            onClick={[Function]}
             style={
               Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
+                "width": 0,
               }
             }
+            tabIndex="-1"
           >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={-1}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
               }
-            >
-              "
-              Carousel
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={false}
+            className="slick-slide slick-active slick-current"
+            data-index={0}
+            onClick={[Function]}
+            style={
+              Object {
+                "outline": "none",
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={false}
+            className="slick-slide slick-active"
+            data-index={1}
+            onClick={[Function]}
+            style={
+              Object {
+                "outline": "none",
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={false}
+            className="slick-slide slick-active"
+            data-index={2}
+            onClick={[Function]}
+            style={
+              Object {
+                "outline": "none",
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide"
+            data-index={3}
+            onClick={[Function]}
+            style={
+              Object {
+                "outline": "none",
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide"
+            data-index={4}
+            onClick={[Function]}
+            style={
+              Object {
+                "outline": "none",
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    slidesDataSource
-                  </td>
-                  <td
-                    className="css-1ygfcef"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide"
+            data-index={5}
+            onClick={[Function]}
+            style={
+              Object {
+                "outline": "none",
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide"
+            data-index={6}
+            onClick={[Function]}
+            style={
+              Object {
+                "outline": "none",
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={7}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={8}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    children
-                  </td>
-                  <td
-                    className="css-1ygfcef"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={9}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={10}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={11}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={12}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    onSlideClick
-                  </td>
-                  <td
-                    className="css-1ygfcef"
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden={true}
+            className="slick-slide slick-cloned"
+            data-index={13}
+            onClick={[Function]}
+            style={
+              Object {
+                "width": 0,
+              }
+            }
+            tabIndex="-1"
+          >
+            <div>
+              <div
+                className="tile tile--16x9 mc-carousel__slide"
+              >
+                <div
+                  className="background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('https://d21zaivk6zzt6k.cloudfront.net/images/1605/original/1523379082-Slide_Thumb.jpg?1523379082')",
+                    }
+                  }
+                />
+                <div
+                  className="content"
+                >
+                  <a
+                    className="mc-play-button mc-carousel__slide__play"
+                    onClick={[Function]}
                   >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    settings
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    className
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    slideWidth
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    hasSlideGradient
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    hasFaders
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    hasArrows
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      true
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    renderSlide
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
+                    <img
+                      alt="Play"
+                      className="mc-play-button__image"
+                      src=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <button
+      className="mc-carousel-arrow mc-carousel__arrow mc-carousel__arrow--right mc-carousel-arrow--right"
+      onClick={[Function]}
+      style={null}
+    >
+      <img
+        className="mc-carousel-arrow__image"
+        src=""
+      />
+    </button>
   </div>
 </div>
 `;

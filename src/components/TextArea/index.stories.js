@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withProps } from '../../utils/addon-props'
 
 import TextAreaComponent from '../TextArea'
 
@@ -23,40 +23,17 @@ class TextArea extends Component {
   }
 }
 
-const infoProps = {
-  source: true,
-  inline: true,
-  header: false,
-  propTables: [TextAreaComponent],
-  propTablesExclude: [TextArea],
-}
 
 storiesOf('components|Forms/TextArea', module)
-  .add('default',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <TextArea placeholder='My text area' />,
-    ),
-  )
-  .add('fixed width',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <TextArea placeholder='My text area' fullWidth={false} style={{ width: '200px' }} />,
-    ),
-  )
-  .add('with error',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <TextArea placeholder='My text area' error='This text area is required' />,
-    ),
-  )
-  .add('without placeholder',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <TextArea />,
-    ),
-  )
+  .add('default', withProps(TextAreaComponent)(() =>
+    <TextArea placeholder='My text area' />,
+  ))
+  .add('fixed width', withProps(TextAreaComponent)(() =>
+    <TextArea placeholder='My text area' fullWidth={false} style={{ width: '200px' }} />,
+  ))
+  .add('with error', withProps(TextAreaComponent)(() =>
+    <TextArea placeholder='My text area' error='This text area is required' />,
+  ))
+  .add('without placeholder', withProps(TextArea)(() =>
+    <TextArea />,
+  ))

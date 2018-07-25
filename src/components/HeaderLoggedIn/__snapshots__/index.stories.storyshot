@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|Structure/HeaderLoggedIn default 1`] = `
+exports[`Storyshots components|Structure/Header/LoggedIn default 1`] = `
 <div
   style={
     Object {
@@ -8,2505 +8,118 @@ exports[`Storyshots components|Structure/HeaderLoggedIn default 1`] = `
     }
   }
 >
-  <div>
+  <div
+    className="header"
+  >
     <div
-      style={Object {}}
+      className="mobile-nav-button"
+      onClick={[Function]}
+    >
+      <span
+        className="mobile-nav-button__lines"
+      />
+    </div>
+    <nav
+      className="header__nav"
     >
       <div
-        className="header"
+        className="header__section"
+      />
+      <div
+        className="header__section"
+      >
+        <a
+          className="header__wordmark"
+          href="/"
+        >
+          <img
+            alt="Logo wordmark"
+            src=""
+          />
+        </a>
+      </div>
+      <div
+        className="header__section header__section--flex-end"
       >
         <div
-          className="mobile-nav-button"
+          className="header__info-block"
           onClick={[Function]}
         >
-          <span
-            className="mobile-nav-button__lines"
-          />
-        </div>
-        <nav
-          className="header__nav"
-        >
           <div
-            className="header__section"
-          />
-          <div
-            className="header__section"
+            className="header__info-blurb"
           >
-            <a
-              className="header__wordmark"
-              href="/"
-            >
-              <img
-                alt="Logo wordmark"
-                src=""
-              />
-            </a>
-          </div>
-          <div
-            className="header__section header__section--flex-end"
-          >
-            <div
-              className="header__info-block"
-              onClick={[Function]}
-            >
-              <div
-                className="header__info-blurb"
-              >
-                <img
-                  className="header__info-block__avatar"
-                  src=""
-                />
-                <span>
-                  <span
-                    className="header__info-block__username"
-                  >
-                    set up your profile
-                  </span>
-                </span>
-                <span
-                  className="header__arrow--down"
-                />
-              </div>
-              <ul
-                className="navbar-menu"
-              >
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    My Classes
-                    <span
-                      className="navbar-menu__item-helper"
-                    >
-                      3 Classes
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/notifications"
-                  >
-                    Notifications
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    The hub
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item navbar-menu__item--centered"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/sign_out"
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  HeaderLoggedIn
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      menuLinks
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          [
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'My Classes'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  helperText
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '3 Classes'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Notifications'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/notifications'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'The hub'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            …
-                          </span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          ]
-                        </span>
-                        }
-                      </span>
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
-            >
-              <div
-                className="css-kv47nt"
-              >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              HeaderLoggedIn
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    menuLinks
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    name
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      set up your profile
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    avatar
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    left
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    isMinimal
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Structure/HeaderLoggedIn minimal 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div>
-    <div
-      style={Object {}}
-    >
-      <div
-        className="header"
-      >
-        <nav
-          className="header__nav"
-        >
-          <div
-            className="header__section"
-          >
-            <a
-              className="header__wordmark"
-              href="/"
-            >
-              <img
-                alt="Logo wordmark"
-                src=""
-              />
-            </a>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  HeaderLoggedIn
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      isMinimal
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
-            >
-              <div
-                className="css-kv47nt"
-              >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              HeaderLoggedIn
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    menuLinks
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    name
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      set up your profile
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    avatar
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    left
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    isMinimal
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Structure/HeaderLoggedIn with avatar 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div>
-    <div
-      style={Object {}}
-    >
-      <div
-        className="header"
-      >
-        <div
-          className="mobile-nav-button"
-          onClick={[Function]}
-        >
-          <span
-            className="mobile-nav-button__lines"
-          />
-        </div>
-        <nav
-          className="header__nav"
-        >
-          <div
-            className="header__section"
-          />
-          <div
-            className="header__section"
-          >
-            <a
-              className="header__wordmark"
-              href="/"
-            >
-              <img
-                alt="Logo wordmark"
-                src=""
-              />
-            </a>
-          </div>
-          <div
-            className="header__section header__section--flex-end"
-          >
-            <div
-              className="header__info-block"
-              onClick={[Function]}
-            >
-              <div
-                className="header__info-blurb"
-              >
-                <img
-                  className="header__info-block__avatar"
-                  src="https://graph.facebook.com/10156122473642900/picture?height=300&width=300"
-                />
-                <span>
-                  <span
-                    className="header__info-block__username"
-                  >
-                    set up your profile
-                  </span>
-                </span>
-                <span
-                  className="header__arrow--down"
-                />
-              </div>
-              <ul
-                className="navbar-menu"
-              >
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    My Classes
-                    <span
-                      className="navbar-menu__item-helper"
-                    >
-                      3 Classes
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/notifications"
-                  >
-                    Notifications
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    The hub
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item navbar-menu__item--centered"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/sign_out"
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  HeaderLoggedIn
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      menuLinks
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          [
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'My Classes'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  helperText
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '3 Classes'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Notifications'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/notifications'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'The hub'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            …
-                          </span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          ]
-                        </span>
-                        }
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      avatar
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        "
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          https://graph.facebook.com/10156122473642900/pictu…
-                        </span>
-                        "
-                      </span>
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
-            >
-              <div
-                className="css-kv47nt"
-              >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              HeaderLoggedIn
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    menuLinks
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    name
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      set up your profile
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    avatar
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    left
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    isMinimal
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Structure/HeaderLoggedIn with backButton 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div>
-    <div
-      style={Object {}}
-    >
-      <div
-        className="header"
-      >
-        <div
-          className="mobile-nav-button"
-          onClick={[Function]}
-        >
-          <span
-            className="mobile-nav-button__lines"
-          />
-        </div>
-        <nav
-          className="header__nav"
-        >
-          <div
-            className="header__section"
-          >
-            <button
-              className="header__left-button"
-              onClick={[Function]}
-            >
-              <img
-                className="header__left-button__icon"
-                src=""
-              />
+            <img
+              className="header__info-block__avatar"
+              src=""
+            />
+            <span>
               <span
-                className="header__left-button__label"
+                className="header__info-block__username"
               >
-                Back
+                set up your profile
               </span>
-            </button>
+            </span>
+            <span
+              className="header__arrow--down"
+            />
           </div>
-          <div
-            className="header__section"
+          <ul
+            className="navbar-menu"
           >
-            <a
-              className="header__wordmark"
-              href="/"
+            <li
+              className="navbar-menu__item"
             >
-              <img
-                alt="Logo wordmark"
-                src=""
-              />
-            </a>
-          </div>
-          <div
-            className="header__section header__section--flex-end"
-          >
-            <div
-              className="header__info-block"
-              onClick={[Function]}
-            >
-              <div
-                className="header__info-blurb"
+              <a
+                className="navbar-menu__item-link"
+                href="/"
               >
-                <img
-                  className="header__info-block__avatar"
-                  src=""
-                />
-                <span>
-                  <span
-                    className="header__info-block__username"
-                  >
-                    set up your profile
-                  </span>
-                </span>
+                My Classes
                 <span
-                  className="header__arrow--down"
-                />
-              </div>
-              <ul
-                className="navbar-menu"
-              >
-                <li
-                  className="navbar-menu__item"
+                  className="navbar-menu__item-helper"
                 >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    My Classes
-                    <span
-                      className="navbar-menu__item-helper"
-                    >
-                      3 Classes
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/notifications"
-                  >
-                    Notifications
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    The hub
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item navbar-menu__item--centered"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/sign_out"
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  HeaderLoggedIn
+                  3 Classes
                 </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      menuLinks
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          [
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'My Classes'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  helperText
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '3 Classes'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Notifications'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/notifications'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'The hub'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            …
-                          </span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          ]
-                        </span>
-                        }
-                      </span>
-                    </span>
-                  </span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      left
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          {
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              action
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style={
-                              Object {
-                                "color": "#170",
-                              }
-                            }
-                          >
-                            clicked()
-                          </span>
-                          ,
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              label
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            'Back'
-                          </span>
-                          ,
-                          <span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              type
-                            </span>
-                          </span>
-                          : 
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            'back'
-                          </span>
-                          }
-                        </span>
-                        }
-                      </span>
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
             >
-              <div
-                className="css-kv47nt"
+              <a
+                className="navbar-menu__item-link"
+                href="/notifications"
               >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
+                Notifications
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
             >
-              "
-              HeaderLoggedIn
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
+              <a
+                className="navbar-menu__item-link"
+                href="/"
+              >
+                The hub
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item navbar-menu__item--centered"
             >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    menuLinks
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    name
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      set up your profile
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    avatar
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    left
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    isMinimal
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
+              <a
+                className="navbar-menu__item-link"
+                href="/sign_out"
+              >
+                Sign out
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
   </div>
 </div>
 `;
 
-exports[`Storyshots components|Structure/HeaderLoggedIn with badges 1`] = `
+exports[`Storyshots components|Structure/Header/LoggedIn minimal 1`] = `
 <div
   style={
     Object {
@@ -2514,699 +127,428 @@ exports[`Storyshots components|Structure/HeaderLoggedIn with badges 1`] = `
     }
   }
 >
-  <div>
-    <div
-      style={Object {}}
+  <div
+    className="header"
+  >
+    <nav
+      className="header__nav"
     >
       <div
-        className="header"
+        className="header__section"
+      >
+        <a
+          className="header__wordmark"
+          href="/"
+        >
+          <img
+            alt="Logo wordmark"
+            src=""
+          />
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components|Structure/Header/LoggedIn with avatar 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    className="header"
+  >
+    <div
+      className="mobile-nav-button"
+      onClick={[Function]}
+    >
+      <span
+        className="mobile-nav-button__lines"
+      />
+    </div>
+    <nav
+      className="header__nav"
+    >
+      <div
+        className="header__section"
+      />
+      <div
+        className="header__section"
+      >
+        <a
+          className="header__wordmark"
+          href="/"
+        >
+          <img
+            alt="Logo wordmark"
+            src=""
+          />
+        </a>
+      </div>
+      <div
+        className="header__section header__section--flex-end"
       >
         <div
-          className="mobile-nav-button"
+          className="header__info-block"
           onClick={[Function]}
         >
-          <span
-            className="mobile-nav-button__lines"
-          />
+          <div
+            className="header__info-blurb"
+          >
+            <img
+              className="header__info-block__avatar"
+              src="https://graph.facebook.com/10156122473642900/picture?height=300&width=300"
+            />
+            <span>
+              <span
+                className="header__info-block__username"
+              >
+                set up your profile
+              </span>
+            </span>
+            <span
+              className="header__arrow--down"
+            />
+          </div>
+          <ul
+            className="navbar-menu"
+          >
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/"
+              >
+                My Classes
+                <span
+                  className="navbar-menu__item-helper"
+                >
+                  3 Classes
+                </span>
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/notifications"
+              >
+                Notifications
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/"
+              >
+                The hub
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item navbar-menu__item--centered"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/sign_out"
+              >
+                Sign out
+              </a>
+            </li>
+          </ul>
         </div>
-        <nav
-          className="header__nav"
+      </div>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components|Structure/Header/LoggedIn with backButton 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    className="header"
+  >
+    <div
+      className="mobile-nav-button"
+      onClick={[Function]}
+    >
+      <span
+        className="mobile-nav-button__lines"
+      />
+    </div>
+    <nav
+      className="header__nav"
+    >
+      <div
+        className="header__section"
+      >
+        <button
+          className="header__left-button"
+          onClick={[Function]}
+        >
+          <img
+            className="header__left-button__icon"
+            src=""
+          />
+          <span
+            className="header__left-button__label"
+          >
+            Back
+          </span>
+        </button>
+      </div>
+      <div
+        className="header__section"
+      >
+        <a
+          className="header__wordmark"
+          href="/"
+        >
+          <img
+            alt="Logo wordmark"
+            src=""
+          />
+        </a>
+      </div>
+      <div
+        className="header__section header__section--flex-end"
+      >
+        <div
+          className="header__info-block"
+          onClick={[Function]}
         >
           <div
-            className="header__section"
-          />
-          <div
-            className="header__section"
+            className="header__info-blurb"
           >
-            <a
-              className="header__wordmark"
-              href="/"
-            >
-              <img
-                alt="Logo wordmark"
-                src=""
-              />
-            </a>
-          </div>
-          <div
-            className="header__section header__section--flex-end"
-          >
-            <div
-              className="header__info-block"
-              onClick={[Function]}
-            >
-              <div
-                className="header__info-blurb"
+            <img
+              className="header__info-block__avatar"
+              src=""
+            />
+            <span>
+              <span
+                className="header__info-block__username"
               >
-                <img
-                  className="header__info-block__avatar"
-                  src=""
-                />
-                <span>
-                  <span
-                    className="header__info-block__username"
-                  >
-                    set up your profile
-                  </span>
-                </span>
+                set up your profile
+              </span>
+            </span>
+            <span
+              className="header__arrow--down"
+            />
+          </div>
+          <ul
+            className="navbar-menu"
+          >
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/"
+              >
+                My Classes
                 <span
-                  className="badge header__global-badge"
+                  className="navbar-menu__item-helper"
+                >
+                  3 Classes
+                </span>
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/notifications"
+              >
+                Notifications
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/"
+              >
+                The hub
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item navbar-menu__item--centered"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/sign_out"
+              >
+                Sign out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components|Structure/Header/LoggedIn with badges 1`] = `
+<div
+  style={
+    Object {
+      "margin": "30px",
+    }
+  }
+>
+  <div
+    className="header"
+  >
+    <div
+      className="mobile-nav-button"
+      onClick={[Function]}
+    >
+      <span
+        className="mobile-nav-button__lines"
+      />
+    </div>
+    <nav
+      className="header__nav"
+    >
+      <div
+        className="header__section"
+      />
+      <div
+        className="header__section"
+      >
+        <a
+          className="header__wordmark"
+          href="/"
+        >
+          <img
+            alt="Logo wordmark"
+            src=""
+          />
+        </a>
+      </div>
+      <div
+        className="header__section header__section--flex-end"
+      >
+        <div
+          className="header__info-block"
+          onClick={[Function]}
+        >
+          <div
+            className="header__info-blurb"
+          >
+            <img
+              className="header__info-block__avatar"
+              src=""
+            />
+            <span>
+              <span
+                className="header__info-block__username"
+              >
+                set up your profile
+              </span>
+            </span>
+            <span
+              className="badge header__global-badge"
+            >
+              1
+            </span>
+            <span
+              className="header__arrow--down"
+            />
+          </div>
+          <ul
+            className="navbar-menu"
+          >
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/"
+              >
+                My Classes
+                <span
+                  className="navbar-menu__item-helper"
+                >
+                  3 Classes
+                </span>
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/notifications"
+              >
+                Notifications
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/"
+              >
+                The hub
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/sign_out"
+              >
+                Sign out
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item"
+            >
+              <a
+                className="navbar-menu__item-link"
+                href="/profile"
+              >
+                Profile
+                <span
+                  className="badge"
                 >
                   1
                 </span>
-                <span
-                  className="header__arrow--down"
-                />
-              </div>
-              <ul
-                className="navbar-menu"
-              >
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    My Classes
-                    <span
-                      className="navbar-menu__item-helper"
-                    >
-                      3 Classes
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/notifications"
-                  >
-                    Notifications
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/"
-                  >
-                    The hub
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/sign_out"
-                  >
-                    Sign out
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/profile"
-                  >
-                    Profile
-                    <span
-                      className="badge"
-                    >
-                      1
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className="navbar-menu__item navbar-menu__item--centered"
-                >
-                  <a
-                    className="navbar-menu__item-link"
-                    href="/sign_out"
-                  >
-                    Sign out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  HeaderLoggedIn
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      menuLinks
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        {
-                        <span
-                          style={
-                            Object {
-                              "color": "#666",
-                            }
-                          }
-                        >
-                          [
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'My Classes'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  helperText
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '3 Classes'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'Notifications'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/notifications'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            <span
-                              style={
-                                Object {
-                                  "color": "#666",
-                                }
-                              }
-                            >
-                              {
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  label
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                'The hub'
-                              </span>
-                              ,
-                              <span>
-                                <span
-                                  style={
-                                    Object {
-                                      "color": "#666",
-                                    }
-                                  }
-                                >
-                                  href
-                                </span>
-                              </span>
-                              : 
-                              <span
-                                style={
-                                  Object {
-                                    "color": "#22a",
-                                    "wordBreak": "break-word",
-                                  }
-                                }
-                              >
-                                '/'
-                              </span>
-                              }
-                            </span>
-                          </span>
-                          ,
-                          <span>
-                            <span>
-                              <br />
-                                
-                                
-                            </span>
-                            …
-                          </span>
-                          <span>
-                            <br />
-                              
-                          </span>
-                          ]
-                        </span>
-                        }
-                      </span>
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
+              </a>
+            </li>
+            <li
+              className="navbar-menu__item navbar-menu__item--centered"
             >
-              <div
-                className="css-kv47nt"
+              <a
+                className="navbar-menu__item-link"
+                href="/sign_out"
               >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              HeaderLoggedIn
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    menuLinks
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    name
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#22a",
-                          "wordBreak": "break-word",
-                        }
-                      }
-                    >
-                      set up your profile
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    avatar
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    left
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    isMinimal
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                Sign out
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
   </div>
 </div>
 `;

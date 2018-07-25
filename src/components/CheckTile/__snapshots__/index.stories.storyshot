@@ -142,42 +142,6 @@ exports[`Storyshots components|Tiles/CheckTile default 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="example--section"
-    >
-      <h4>
-        Properties
-      </h4>
-      <div
-        className="row"
-      >
-        <div
-          className="col-lg-6 col-md-9"
-        >
-          <table
-            className="example--table"
-          >
-            <thead>
-              <tr>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Type
-                </th>
-                <th>
-                  Required?
-                </th>
-                <th>
-                  Default?
-                </th>
-              </tr>
-            </thead>
-            <tbody />
-          </table>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;

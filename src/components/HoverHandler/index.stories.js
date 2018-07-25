@@ -2,7 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import DocSection from '../../utils/DocSection'
-import PropsTable from '../../utils/PropsTable'
 import PropExample from '../../utils/PropExample'
 
 import HoverHandler from './index'
@@ -27,14 +26,6 @@ storiesOf('utilities|HoverHandler', module)
             }
           </HoverHandler>
         </PropExample>
-      </DocSection>
-
-      <DocSection title='Properties'>
-        <div className='row'>
-          <div className='col-lg-6 col-md-9'>
-            <PropsTable component={HoverHandler} />
-          </div>
-        </div>
       </DocSection>
     </div>
   ))

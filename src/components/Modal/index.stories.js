@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withProps } from '../../utils/addon-props'
 
 import Modal from '../Modal'
 
@@ -29,36 +29,21 @@ class ModalHandler extends Component {
   }
 }
 
-const infoProps = {
-  source: true,
-  inline: true,
-  header: false,
-  propTables: [Modal],
-  propTablesExclude: [ModalHandler],
-}
 
 storiesOf('components|Modals', module)
-  .add('ModalHandler',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <ModalHandler />,
-    ),
-  )
-  .add('ModalHeader',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <div style={{ height: '200px' }}>
-        <div id='modal-root' />
-        <Modal
-          isOpen
-          onClose={() => {}}
-          header='Header'
-          subheader='Subheader'
-        >
-          <p style={{ height: '200px' }}>Content</p>
-        </Modal>
-      </div>,
-    ),
-  )
+  .add('ModalHandler', withProps(Modal)(() =>
+    <ModalHandler />,
+  ))
+  .add('ModalHeader', withProps(Modal)(() =>
+    <div style={{ height: '200px' }}>
+      <div id='modal-root' />
+      <Modal
+        isOpen
+        onClose={() => {}}
+        header='Header'
+        subheader='Subheader'
+      >
+        <p style={{ height: '200px' }}>Content</p>
+      </Modal>
+    </div>,
+  ))

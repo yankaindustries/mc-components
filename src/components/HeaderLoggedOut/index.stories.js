@@ -1,16 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withProps } from '../../utils/addon-props'
 
 import HeaderLoggedOut from '../HeaderLoggedOut'
 
-const infoProps = {
-  inline: true,
-  header: false,
-}
 
-storiesOf('components|Structure/HeaderLoggedOut', module)
-  .add(
-    'default',
-    withInfo({ ...infoProps })(() => <HeaderLoggedOut />),
-  )
+storiesOf('components|Structure/Header/LoggedOut', module)
+  .add('default', withProps(HeaderLoggedOut)(() =>
+    <HeaderLoggedOut />,
+  ))

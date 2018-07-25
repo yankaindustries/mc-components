@@ -8,302 +8,108 @@ exports[`Storyshots components|Structure/Footer default 1`] = `
     }
   }
 >
-  <div>
+  <div
+    className="mc-site-footer"
+  >
     <div
-      style={Object {}}
+      className="mc-container mc-contain-inner"
     >
-      <div
-        className="mc-site-footer"
+      <img
+        alt="Logo wordmark"
+        className="mc-site-footer__logo-footer"
+        src=""
+      />
+      <ul
+        className="mc-site-footer__links"
       >
-        <div
-          className="mc-container mc-contain-inner"
+        <li
+          className="mc-site-footer__link"
         >
-          <img
-            alt="Logo wordmark"
-            className="mc-site-footer__logo-footer"
-            src=""
-          />
-          <ul
-            className="mc-site-footer__links"
+          <a
+            href="/#now-available"
           >
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="/#now-available"
-              >
-                Browse Classes
-              </a>
-            </li>
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="/all-access-pass"
-              >
-                All-Access
-              </a>
-            </li>
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="/gift"
-              >
-                Gifts
-              </a>
-            </li>
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="https://masterclasshelp.zendesk.com/hc/en-us"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Help Center
-              </a>
-            </li>
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="https://masterclasshelp.zendesk.com/hc/en-us/articles/205081248"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Contact Us
-              </a>
-            </li>
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="/privacy"
-              >
-                Privacy
-              </a>
-            </li>
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="/terms"
-              >
-                Terms
-              </a>
-            </li>
-            <li
-              className="mc-site-footer__link"
-            >
-              <a
-                href="http://careers.masterclass.com"
-              >
-                Careers
-              </a>
-            </li>
-            <p
-              className="mc-site-footer__copyright"
-            >
-              Copyright © 2018 MasterClass
-            </p>
-          </ul>
-          <img
-            alt="Secured by Expedited SSL"
-            className="mc-site-footer__ssl-badge"
-            name="ssl-badge"
-            src=""
-          />
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            Browse Classes
+          </a>
+        </li>
+        <li
+          className="mc-site-footer__link"
+        >
+          <a
+            href="/all-access-pass"
           >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
+            All-Access
+          </a>
+        </li>
+        <li
+          className="mc-site-footer__link"
+        >
+          <a
+            href="/gift"
           >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  Footer
-                </span>
-                <span />
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
-            >
-              <div
-                className="css-kv47nt"
-              >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
+            Gifts
+          </a>
+        </li>
+        <li
+          className="mc-site-footer__link"
+        >
+          <a
+            href="https://masterclasshelp.zendesk.com/hc/en-us"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              Footer
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    isMinimal
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+            Help Center
+          </a>
+        </li>
+        <li
+          className="mc-site-footer__link"
+        >
+          <a
+            href="https://masterclasshelp.zendesk.com/hc/en-us/articles/205081248"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Contact Us
+          </a>
+        </li>
+        <li
+          className="mc-site-footer__link"
+        >
+          <a
+            href="/privacy"
+          >
+            Privacy
+          </a>
+        </li>
+        <li
+          className="mc-site-footer__link"
+        >
+          <a
+            href="/terms"
+          >
+            Terms
+          </a>
+        </li>
+        <li
+          className="mc-site-footer__link"
+        >
+          <a
+            href="http://careers.masterclass.com"
+          >
+            Careers
+          </a>
+        </li>
+        <p
+          className="mc-site-footer__copyright"
+        >
+          Copyright © 2018 MasterClass
+        </p>
+      </ul>
+      <img
+        alt="Secured by Expedited SSL"
+        className="mc-site-footer__ssl-badge"
+        name="ssl-badge"
+        src=""
+      />
     </div>
   </div>
 </div>
@@ -317,221 +123,17 @@ exports[`Storyshots components|Structure/Footer minimal 1`] = `
     }
   }
 >
-  <div>
+  <div
+    className="mc-site-footer"
+  >
     <div
-      style={Object {}}
+      className="mc-container mc-contain-inner"
     >
-      <div
-        className="mc-site-footer"
-      >
-        <div
-          className="mc-container mc-contain-inner"
-        >
-          <img
-            alt="Logo wordmark"
-            className=""
-            src=""
-          />
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
-      >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  Footer
-                </span>
-                <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      isMinimal
-                    </span>
-                     
-                  </span>
-                </span>
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
-            >
-              <div
-                className="css-kv47nt"
-              >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              Footer
-              " Component
-            </h2>
-            <table
-              className="css-1ytzlk7"
-            >
-              <thead>
-                <tr>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    property
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    propType
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    required
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    default
-                  </th>
-                  <th
-                    className="css-d52hbj"
-                  >
-                    description
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    isMinimal
-                  </td>
-                  <td
-                    className="css-1ygfcef"
-                  >
-                    <span />
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    -
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#a11",
-                        }
-                      }
-                    >
-                      false
-                    </span>
-                  </td>
-                  <td
-                    className="css-d52hbj"
-                  />
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+      <img
+        alt="Logo wordmark"
+        className=""
+        src=""
+      />
     </div>
   </div>
 </div>

@@ -46,6 +46,11 @@ exports[`Storyshots utilities|HoverHandler default 1`] = `
           </div>
           <div
             className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
           >
             <a
               onClick={[Function]}
@@ -53,59 +58,23 @@ exports[`Storyshots utilities|HoverHandler default 1`] = `
               &lt;/&gt;
             </a>
           </div>
-        </div>
-        <div
-          className="example--render"
-        >
           <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
+            className="example--render"
           >
-            <button
-              className="c-button c-button--primary"
-              onClick={[Function]}
+            <div
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
-              <span>
-                Normal
-              </span>
-            </button>
+              <button
+                className="c-button c-button--primary"
+                onClick={[Function]}
+              >
+                <span>
+                  Normal
+                </span>
+              </button>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="example--section"
-    >
-      <h4>
-        Properties
-      </h4>
-      <div
-        className="row"
-      >
-        <div
-          className="col-lg-6 col-md-9"
-        >
-          <table
-            className="example--table"
-          >
-            <thead>
-              <tr>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Type
-                </th>
-                <th>
-                  Required?
-                </th>
-                <th>
-                  Default?
-                </th>
-              </tr>
-            </thead>
-            <tbody />
-          </table>
         </div>
       </div>
     </div>
