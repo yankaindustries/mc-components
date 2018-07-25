@@ -24,26 +24,30 @@ exports[`Storyshots components|Tiles/CheckTile default 1`] = `
         onClick={[Function]}
       >
         <div
-          className="check-tile check-tile--unchecked"
+          className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
         >
           <img
-            className="check-tile__check"
+            className="mc-check-tile__check"
             src={null}
           />
           <div
-            className="tile tile--16x9"
+            className="content"
           >
             <div
-              className="background"
-              style={
-                Object {
-                  "backgroundImage": "url('')",
+              className="tile tile--16x9"
+            >
+              <div
+                className="background"
+                style={
+                  Object {
+                    "backgroundImage": "url('')",
+                  }
                 }
-              }
-            />
-            <div
-              className="content"
-            />
+              />
+              <div
+                className="content"
+              />
+            </div>
           </div>
         </div>
       </a>

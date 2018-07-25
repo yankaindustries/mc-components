@@ -5,7 +5,8 @@ import { action } from '@storybook/addon-actions'
 import DocSection from '../../utils/DocSection'
 import PropsTable from '../../utils/PropsTable'
 
-import CheckTile from '../CheckTile'
+import CheckTile from './index'
+import ImageTile from '../ImageTile'
 import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 
@@ -14,10 +15,9 @@ storiesOf('components|Tiles/CheckTile', module)
     <div className='container'>
       <h2>CheckTile</h2>
       <DocSection title='Example'>
-        <CheckTile
-          imageUrl={shondaRhimesThumbnail}
-          onChange={action('onChange')}
-        />
+        <CheckTile onChange={action('onChange')}>
+          <ImageTile imageUrl={shondaRhimesThumbnail} />
+        </CheckTile>
       </DocSection>
 
       <DocSection title='Properties'>
