@@ -785,7 +785,7 @@ exports[`Storyshots components|Tiles/ClassCard with action 1`] = `
                             }
                           }
                         >
-                          clicked
+                          clicked()
                         </span>
                         }
                       </span>
@@ -1482,7 +1482,7 @@ exports[`Storyshots components|Tiles/ClassCard with custom trigger 1`] = `
                             }
                           }
                         >
-                          renderLinkComponent
+                          renderLinkComponent()
                         </span>
                         }
                       </span>

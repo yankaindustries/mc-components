@@ -135,7 +135,7 @@ exports[`Storyshots components|Forms/RadioInput checked 1`] = `
                             }
                           }
                         >
-                          clicked
+                          clicked()
                         </span>
                         }
                       </span>
@@ -496,7 +496,7 @@ exports[`Storyshots components|Forms/RadioInput default 1`] = `
                             }
                           }
                         >
-                          clicked
+                          clicked()
                         </span>
                         }
                       </span>
