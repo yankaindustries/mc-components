@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withProps } from '../../utils/addon-props'
 
 import DocSection from '../../utils/DocSection'
-import PropsTable from '../../utils/PropsTable'
 import PropExample from '../../utils/PropExample'
 
 import HoverHandler from './index'
@@ -10,7 +10,7 @@ import Button from '../Button'
 
 
 storiesOf('utilities|HoverHandler', module)
-  .add('default', () => (
+  .add('default', withProps(HoverHandler)(() => (
     <div className='container'>
       <h2>HoverHandler</h2>
 
@@ -28,13 +28,5 @@ storiesOf('utilities|HoverHandler', module)
           </HoverHandler>
         </PropExample>
       </DocSection>
-
-      <DocSection title='Properties'>
-        <div className='row'>
-          <div className='col-lg-6 col-md-9'>
-            <PropsTable component={HoverHandler} />
-          </div>
-        </div>
-      </DocSection>
     </div>
-  ))
+  )))

@@ -1,7 +1,6 @@
 import { configure, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import { setDefaults } from '@storybook/addon-info';
-import { StoryWrapper } from './decorators'
 
 import './styles.scss'
 import 'highlight.js/styles/tomorrow-night.css'
@@ -10,8 +9,8 @@ import 'highlight.js/styles/tomorrow-night.css'
 setOptions({
   hierarchySeparator: /\//,
   hierarchyRootSeparator: /\|/,
-  // addonPanelInRight: true,
-  sortStoriesByKind: true,
+  addonPanelInRight: true,
+  selectedAddonPanel: 'mc/props/panel',
 });
 
 // Info Defaults
@@ -19,9 +18,6 @@ setDefaults({
   header: false,
   inline: true,
 })
-
-// Global Decorators
-addDecorator(StoryWrapper)
 
 const req = require.context('../src/components', true, /\.stories\.js$/)
 

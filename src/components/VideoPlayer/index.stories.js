@@ -1,42 +1,24 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withProps } from '../../utils/addon-props'
+
 import VideoPlayer from './'
 
-const infoProps = {
-  source: true,
-  inline: true,
-  header: false,
-  propTables: [VideoPlayer],
-}
 
 storiesOf('components|VideoPlayer', module)
-  .add(
-    'default',
-    withInfo({
-      ...infoProps,
-    })(() => <VideoPlayer />),
-  )
-  .add(
-    'chapter video',
-    withInfo({
-      ...infoProps,
-    })(() => (
-      <VideoPlayer
-        theme='chapter'
-        endscreenComponent={<p>Endscreen Component</p>}
-      />
-    )),
-  )
-  .add(
-    'ambient video',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <VideoPlayer
-        isMuted
-        isLooped
-        hasControls={false}
-      />,
-    ),
-  )
+  .add('default', withProps(VideoPlayer)(() =>
+    <VideoPlayer />,
+  ))
+  .add('chapter video', withProps(VideoPlayer)(() => (
+    <VideoPlayer
+      theme='chapter'
+      endscreenComponent={<p>Endscreen Component</p>}
+    />
+  )))
+  .add('ambient video', withProps(VideoPlayer)(() => (
+    <VideoPlayer
+      isMuted
+      isLooped
+      hasControls={false}
+    />
+  )))

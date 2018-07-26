@@ -2,57 +2,54 @@
 
 exports[`Storyshots utilities|AnimationHandler default 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="container"
 >
+  <h2>
+    AnimationHandler
+  </h2>
   <div
-    className="container"
+    className="example--section"
   >
-    <h2>
-      AnimationHandler
-    </h2>
+    <h4>
+      Variations
+    </h4>
     <div
-      className="example--section"
+      className="example--definition"
     >
-      <h4>
-        Variations
-      </h4>
       <div
-        className="example--definition"
+        className="row"
       >
         <div
-          className="row"
+          className="col-xs-10"
         >
-          <div
-            className="col-xs-10"
-          >
-            <h5>
-              <span
-                className="example--definition-name"
-              >
-                animation
-              </span>
-              <span
-                className="example--definition-type"
-              >
-                 &lt;
-                String["zoom", "lift", "ken-burns"]
-                &gt;
-              </span>
-            </h5>
-          </div>
-          <div
-            className="col-xs-2 text-right"
-          >
-            <a
-              onClick={[Function]}
+          <h5>
+            <span
+              className="example--definition-name"
             >
-              &lt;/&gt;
-            </a>
-          </div>
+              animation
+            </span>
+            <span
+              className="example--definition-type"
+            >
+               &lt;
+              String["zoom", "lift", "ken-burns"]
+              &gt;
+            </span>
+          </h5>
+        </div>
+        <div
+          className="col-xs-2 text-right"
+        />
+      </div>
+      <div>
+        <div
+          className="text-right"
+        >
+          <a
+            onClick={[Function]}
+          >
+            &lt;/&gt;
+          </a>
         </div>
         <div
           className="example--render"
@@ -111,36 +108,41 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    className="example--section"
+  >
+    <h4>
+      Example
+    </h4>
     <div
-      className="example--section"
+      className="example--definition"
     >
-      <h4>
-        Example
-      </h4>
       <div
-        className="example--definition"
+        className="row"
       >
         <div
-          className="row"
+          className="col-xs-10"
         >
-          <div
-            className="col-xs-10"
+          <h5>
+            <span
+              className="example--definition-name"
+            />
+          </h5>
+        </div>
+        <div
+          className="col-xs-2 text-right"
+        />
+      </div>
+      <div>
+        <div
+          className="text-right"
+        >
+          <a
+            onClick={[Function]}
           >
-            <h5>
-              <span
-                className="example--definition-name"
-              />
-            </h5>
-          </div>
-          <div
-            className="col-xs-2 text-right"
-          >
-            <a
-              onClick={[Function]}
-            >
-              &lt;/&gt;
-            </a>
-          </div>
+            &lt;/&gt;
+          </a>
         </div>
         <div
           className="example--render"
@@ -197,42 +199,6 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="example--section"
-    >
-      <h4>
-        Properties
-      </h4>
-      <div
-        className="row"
-      >
-        <div
-          className="col-lg-6 col-md-9"
-        >
-          <table
-            className="example--table"
-          >
-            <thead>
-              <tr>
-                <th>
-                  Name
-                </th>
-                <th>
-                  Type
-                </th>
-                <th>
-                  Required?
-                </th>
-                <th>
-                  Default?
-                </th>
-              </tr>
-            </thead>
-            <tbody />
-          </table>
         </div>
       </div>
     </div>

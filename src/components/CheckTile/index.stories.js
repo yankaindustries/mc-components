@@ -1,9 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import { withProps } from '../../utils/addon-props'
 
 import DocSection from '../../utils/DocSection'
-import PropsTable from '../../utils/PropsTable'
 
 import CheckTile from './index'
 import AnimationHandler from '../AnimationHandler'
@@ -12,7 +12,7 @@ import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 
 storiesOf('components|Tiles/CheckTile', module)
-  .add('default', () =>
+  .add('default', withProps(CheckTile)(() =>
     <div className='container'>
       <h2>CheckTile</h2>
 
@@ -50,13 +50,5 @@ storiesOf('components|Tiles/CheckTile', module)
           </div>
         </div>
       </DocSection>
-
-      <DocSection title='Properties'>
-        <div className='row'>
-          <div className='col-lg-6 col-md-9'>
-            <PropsTable component={CheckTile} />
-          </div>
-        </div>
-      </DocSection>
     </div>,
-  )
+  ))

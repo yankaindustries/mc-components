@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withProps } from '../../utils/addon-props'
 
 import InputComponent from '../Input'
 
@@ -23,68 +23,29 @@ class Input extends Component {
   }
 }
 
-const infoProps = {
-  source: true,
-  inline: true,
-  header: false,
-  propTables: [InputComponent],
-  propTablesExclude: [Input],
-}
 
 storiesOf('components|Forms/Input', module)
-  .add('default',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input placeholder='My input' />,
-    ),
-  )
-  .add('with label',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input placeholder='My input' label='My input' />,
-    ),
-  )
-  .add('fixed width',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input placeholder='My input' fullWidth={false} style={{ width: '200px' }} />,
-    ),
-  )
-  .add('with error',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input placeholder='My email' error='Email is required' />,
-    ),
-  )
-  .add('with error and label',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input placeholder='My email' label='My email' error='Email is required' />,
-    ),
-  )
-  .add('without placeholder',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input />,
-    ),
-  )
-  .add('disabled',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input placeholder='My email' disabled />,
-    ),
-  )
-  .add('with warning',
-    withInfo({
-      ...infoProps,
-    })(() =>
-      <Input placeholder='My email' warning='Did you mean johndoe@gmail.com?' />,
-    ),
-  )
+  .add('default', withProps(InputComponent)(() =>
+    <Input placeholder='My input' />,
+  ))
+  .add('with label', withProps(InputComponent)(() =>
+    <Input placeholder='My input' label='My input' />,
+  ))
+  .add('fixed width', withProps(InputComponent)(() =>
+    <Input placeholder='My input' fullWidth={false} style={{ width: '200px' }} />,
+  ))
+  .add('with error', withProps(InputComponent)(() =>
+    <Input placeholder='My email' error='Email is required' />,
+  ))
+  .add('with error and label', withProps(InputComponent)(() =>
+    <Input placeholder='My email' label='My email' error='Email is required' />,
+  ))
+  .add('without placeholder', withProps(InputComponent)(() =>
+    <Input />,
+  ))
+  .add('disabled', withProps(InputComponent)(() =>
+    <Input placeholder='My email' disabled />,
+  ))
+  .add('with warning', withProps(InputComponent)(() =>
+    <Input placeholder='My email' warning='Did you mean johndoe@gmail.com?' />,
+  ))

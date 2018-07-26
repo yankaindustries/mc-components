@@ -1,180 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|Structure/HeaderLoggedOut default 1`] = `
+exports[`Storyshots components|Structure/Header/LoggedOut default 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="header-logged-out"
 >
-  <div>
+  <div
+    className="header-logged-out__nav"
+  >
     <div
-      style={Object {}}
+      className="header-logged-out__section"
     >
-      <div
-        className="header-logged-out"
+      <a
+        className="header-logged-out__wordmark"
+        href="/"
       >
-        <div
-          className="header-logged-out__nav"
-        >
-          <div
-            className="header-logged-out__section"
-          >
-            <a
-              className="header-logged-out__wordmark"
-              href="/"
-            >
-              <img
-                alt="Logo wordmark"
-                src=""
-              />
-            </a>
-            <a
-              className="header-logged-out__logo"
-              href="/"
-            >
-              <img
-                alt="Logo"
-                src=""
-              />
-            </a>
-          </div>
-          <div
-            className="header-logged-out__section"
-          >
-            <a
-              className="header-logged-out__login-link mc-modal-login-trigger"
-              href="/#"
-            >
-              Log In
-            </a>
-          </div>
-        </div>
-      </div>
+        <img
+          alt="Logo wordmark"
+          src=""
+        />
+      </a>
+      <a
+        className="header-logged-out__logo"
+        href="/"
+      >
+        <img
+          alt="Logo"
+          src=""
+        />
+      </a>
     </div>
-    <div>
-      <div
-        style={
-          Object {
-            "WebkitFontSmoothing": "antialiased",
-            "backgroundColor": "#fff",
-            "border": "1px solid #eee",
-            "borderRadius": "2px",
-            "boxShadow": "0px 2px 3px rgba(0, 0, 0, 0.05)",
-            "color": "#444",
-            "fontFamily": "-apple-system, \\".SFNSText-Regular\\", \\"San Francisco\\", BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", \\"Lucida Grande\\", \\"Arial\\", sans-serif",
-            "fontSize": "15px",
-            "fontWeight": 300,
-            "lineHeight": 1.45,
-            "marginBottom": "20px",
-            "marginTop": "20px",
-            "padding": "20px 40px 40px",
-          }
-        }
+    <div
+      className="header-logged-out__section"
+    >
+      <a
+        className="header-logged-out__login-link mc-modal-login-trigger"
+        href="/#"
       >
-        
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Story Source
-          </h1>
-          <pre
-            className="css-4akams"
-          >
-            <div>
-              <div
-                style={
-                  Object {
-                    "paddingLeft": 18,
-                    "paddingRight": 3,
-                  }
-                }
-              >
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  &lt;
-                  HeaderLoggedOut
-                </span>
-                <span />
-                <span
-                  style={
-                    Object {
-                      "color": "#777",
-                    }
-                  }
-                >
-                  /&gt;
-                </span>
-              </div>
-            </div>
-            <button
-              className="css-gydez8"
-              onClick={[Function]}
-            >
-              <div
-                className="css-kv47nt"
-              >
-                <div
-                  style={
-                    Object {
-                      "marginBottom": 6,
-                    }
-                  }
-                >
-                  Copied!
-                </div>
-                <div>
-                  Copy
-                </div>
-              </div>
-            </button>
-          </pre>
-        </div>
-        <div>
-          <h1
-            style={
-              Object {
-                "borderBottom": "1px solid #EEE",
-                "fontSize": "25px",
-                "margin": "20px 0 0 0",
-                "padding": "0 0 5px 0",
-              }
-            }
-          >
-            Prop Types
-          </h1>
-          <div>
-            <h2
-              style={
-                Object {
-                  "margin": "20px 0 0 0",
-                }
-              }
-            >
-              "
-              HeaderLoggedOut
-              " Component
-            </h2>
-            <small>
-              No propTypes defined!
-            </small>
-          </div>
-        </div>
-      </div>
+        Log In
+      </a>
     </div>
   </div>
 </div>

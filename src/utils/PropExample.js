@@ -1,13 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Highlight from 'react-highlight'
-import jsxToString from 'jsx-to-string'
 
-
-const toString = node =>
-  jsxToString(node, {
-    shortBooleanSyntax: true,
-  })
+import CodeExample from './CodeExample'
 
 
 export default class Definition extends PureComponent {
@@ -17,16 +11,8 @@ export default class Definition extends PureComponent {
     children: PropTypes.node.isRequired,
   }
 
-  state = {
-    showCode: false,
-  }
-
   render () {
     const { name, type, children } = this.props
-
-    const code = Array.isArray(children)
-      ? children.map(toString).join('\n')
-      : toString(children)
 
     return (
       <div className='example--definition'>
@@ -43,25 +29,12 @@ export default class Definition extends PureComponent {
           </div>
 
           <div className='col-xs-2 text-right'>
-            <a
-              onClick={() => {
-                this.setState({ showCode: !this.state.showCode })
-              }}
-            >
-              &lt;/&gt;
-            </a>
           </div>
         </div>
 
-        <div className='example--render'>
+        <CodeExample>
           {children}
-        </div>
-
-        {this.state.showCode && (
-          <Highlight language='html'>
-            {code}
-          </Highlight>
-        )}
+        </CodeExample>
       </div>
     )
   }

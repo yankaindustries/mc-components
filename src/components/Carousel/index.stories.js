@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info'
+import { withProps } from '../../utils/addon-props'
 
 import Carousel from '../Carousel'
 
@@ -22,12 +22,9 @@ const carouselDataSource = [
 ]
 
 storiesOf('components|Carousel', module)
-  .add(
-    'default',
-    withInfo()(() => (
+  .add('default', withProps(Carousel)(() => (
       <Carousel
         slidesDataSource={carouselDataSource}
         settings={defaultSettings}
       />
-    )),
-  )
+  )))
