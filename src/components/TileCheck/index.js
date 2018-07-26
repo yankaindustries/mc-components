@@ -8,15 +8,8 @@ import ToggleHandler from '../ToggleHandler'
 
 import Check from '../../assets/check-circle.svg'
 
-export default class CheckTile extends PureComponent {
+export default class TileCheck extends PureComponent {
   static propTypes = {
-    aspectRatio: PropTypes.oneOf([
-      '4x3',
-      '16x9',
-      '100x65',
-      '1000x609',
-      '519x187',
-    ]),
     checked: PropTypes.bool,
     children: PropTypes.oneOfType([
       PropTypes.element,
@@ -26,14 +19,12 @@ export default class CheckTile extends PureComponent {
   }
 
   static defaultProps = {
-    aspectRatio: '16x9',
     checked: false,
     onChange: noop,
   }
 
   render () {
     const {
-      aspectRatio,
       checked,
       children,
       onChange,
@@ -41,10 +32,8 @@ export default class CheckTile extends PureComponent {
 
     const classNames = toggled =>
       [
-        'mc-tile',
-        `mc-tile--${aspectRatio}`,
-        'mc-check-tile',
-        toggled ? 'mc-check-tile--checked' : 'mc-check-tile--unchecked',
+        'mc-tile-check',
+        toggled ? 'mc-tile-check--checked' : 'mc-tile-check--unchecked',
       ].join(' ')
 
     return (
@@ -52,15 +41,15 @@ export default class CheckTile extends PureComponent {
         toggled={checked}
         onChange={onChange}
       >
-        {({ toggled }) =>
-          <div className={classNames(checked)}>
-            <img className='mc-check-tile__check' src={toggled ? Check : null} />
+        {({ toggled, onClick }) =>
+          <a className={classNames(checked)} onClick={onClick}>
+            <img className='mc-tile-check__check' src={toggled ? Check : null} />
             {children &&
-              <div className='content'>
+              <div className='mc-tile__content'>
                 {renderChildren(children, { checked: toggled })}
               </div>
             }
-          </div>
+          </a>
         }
       </ToggleHandler>
     )

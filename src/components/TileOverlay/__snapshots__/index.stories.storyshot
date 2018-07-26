@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components|Tiles/TileOverlay TileOverlay 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      TileOverlay
+    </h2>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            Example
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <div
+                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+              />
+              <div
+                className="example__filler"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

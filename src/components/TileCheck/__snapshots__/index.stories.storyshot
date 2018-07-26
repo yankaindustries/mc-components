@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components|Tiles/TileCheck TileCheck 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      TileCheck
+    </h2>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            Example
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <a
+                className="mc-tile-check mc-tile-check--checked"
+                onClick={[Function]}
+              >
+                <img
+                  className="mc-tile-check__check"
+                  src=""
+                />
+              </a>
+              <div
+                className="example__filler"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components|Tiles Summary 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      Tile
+    </h2>
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            Tile (container)
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <div
+                className="example__filler"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            TileImage
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <div
+                className="mc-tile-image "
+              >
+                <div
+                  className="mc-tile-image__image background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('')",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            TileOverlay
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <div
+                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+              />
+              <div
+                className="mc-tile-image "
+              >
+                <div
+                  className="mc-tile-image__image background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('')",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            TileCaption
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <div
+                className="mc-tile-caption "
+              >
+                <div
+                  className="mc-tile-caption__titles"
+                >
+                  <h2
+                    className="mc-tile-caption__title"
+                  >
+                    Shonda Rhimes
+                  </h2>
+                  <h3
+                    className="mc-tile-caption__subtitle"
+                  >
+                    Teaches Writing
+                  </h3>
+                </div>
+              </div>
+              <div
+                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+              />
+              <div
+                className="mc-tile-image "
+              >
+                <div
+                  className="mc-tile-image__image background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('')",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            TileCheck
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <a
+                className="mc-tile-check mc-tile-check--checked"
+                onClick={[Function]}
+              >
+                <img
+                  className="mc-tile-check__check"
+                  src=""
+                />
+              </a>
+              <div
+                className="mc-tile-caption "
+              >
+                <div
+                  className="mc-tile-caption__titles"
+                >
+                  <h2
+                    className="mc-tile-caption__title"
+                  >
+                    Shonda Rhimes
+                  </h2>
+                  <h3
+                    className="mc-tile-caption__subtitle"
+                  >
+                    Teaches Writing
+                  </h3>
+                </div>
+              </div>
+              <div
+                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+              />
+              <div
+                className="mc-tile-image "
+              >
+                <div
+                  className="mc-tile-image__image background"
+                  style={
+                    Object {
+                      "backgroundImage": "url('')",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            w/ Animations
+          </h4>
+          <div
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <div
+              className="mc-tile mc-tile--16x9 "
+            >
+              <div
+                className="mc-tile__content content"
+              >
+                <a
+                  className="mc-tile-check mc-tile-check--unchecked"
+                  onClick={[Function]}
+                >
+                  <img
+                    className="mc-tile-check__check"
+                    src={null}
+                  />
+                  <div
+                    className="mc-tile__content"
+                  >
+                    <div
+                      className="mc-tile-caption mc-animation mc-animation--lift "
+                    >
+                      <div
+                        className="mc-tile-caption__titles"
+                      >
+                        <h2
+                          className="mc-tile-caption__title"
+                        >
+                          Shonda Rhimes
+                        </h2>
+                        <h3
+                          className="mc-tile-caption__subtitle"
+                        >
+                          Teaches Writing
+                        </h3>
+                      </div>
+                    </div>
+                    <div
+                      className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                    />
+                    <div
+                      className="mc-tile-image mc-animation mc-animation--ken-burns "
+                    >
+                      <div
+                        className="mc-tile-image__image background"
+                        style={
+                          Object {
+                            "backgroundImage": "url('')",
+                          }
+                        }
+                      />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
