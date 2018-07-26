@@ -2,46 +2,30 @@
 
 exports[`Storyshots components|RoundedBox default 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="rounded-box"
 >
-  <div
-    className="rounded-box"
-  >
-    <p>
-      Content
-    </p>
-  </div>
+  <p>
+    Content
+  </p>
 </div>
 `;
 
 exports[`Storyshots components|RoundedBox with header 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="rounded-box"
 >
-  <div
-    className="rounded-box"
+  <h4
+    className="rounded-box__subheader"
   >
-    <h4
-      className="rounded-box__subheader"
-    >
-      Sub header
-    </h4>
-    <h2
-      className="rounded-box__header"
-    >
-      Header
-    </h2>
-    <p>
-      Content
-    </p>
-  </div>
+    Sub header
+  </h4>
+  <h2
+    className="rounded-box__header"
+  >
+    Header
+  </h2>
+  <p>
+    Content
+  </p>
 </div>
 `;

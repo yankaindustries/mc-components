@@ -2,18 +2,89 @@
 
 exports[`Storyshots components|Tiles/ClassCard default 1`] = `
 <div
+  className="mc-class-card "
   style={
     Object {
-      "margin": "30px",
+      "height": "300px",
+      "width": "500px",
     }
   }
 >
+  <img
+    alt="Lorem ipsum"
+    className="mc-class-card__image"
+    src=""
+  />
   <div
-    className="mc-class-card "
-    style={
+    className="mc-class-card__caption"
+  >
+    <h2
+      className="mc-class-card__caption__title"
+    >
+      John Doe
+    </h2>
+    <h3
+      className="mc-class-card__caption__subtitle"
+    >
+      Teaches something
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components|Tiles/ClassCard with action 1`] = `
+<div
+  className="mc-class-card "
+  style={
+    Object {
+      "height": "300px",
+      "width": "500px",
+    }
+  }
+>
+  <button
+    className="mc-class-card__trigger mc-class-card__trigger--button"
+    onClick={[Function]}
+  >
+    <img
+      alt="Lorem ipsum"
+      className="mc-class-card__image"
+      src=""
+    />
+    <div
+      className="mc-class-card__caption"
+    >
+      <h2
+        className="mc-class-card__caption__title"
+      >
+        John Doe
+      </h2>
+      <h3
+        className="mc-class-card__caption__subtitle"
+      >
+        Teaches something
+      </h3>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Storyshots components|Tiles/ClassCard with custom trigger 1`] = `
+<div
+  className="mc-class-card "
+  style={
+    Object {
+      "height": "300px",
+      "width": "500px",
+    }
+  }
+>
+  <button
+    className="mc-class-card__trigger"
+    onClick={[Function]}
+    styles={
       Object {
-        "height": "300px",
-        "width": "500px",
+        "display": "block",
       }
     }
   >
@@ -36,146 +107,43 @@ exports[`Storyshots components|Tiles/ClassCard default 1`] = `
         Teaches something
       </h3>
     </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Tiles/ClassCard with action 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div
-    className="mc-class-card "
-    style={
-      Object {
-        "height": "300px",
-        "width": "500px",
-      }
-    }
-  >
-    <button
-      className="mc-class-card__trigger mc-class-card__trigger--button"
-      onClick={[Function]}
-    >
-      <img
-        alt="Lorem ipsum"
-        className="mc-class-card__image"
-        src=""
-      />
-      <div
-        className="mc-class-card__caption"
-      >
-        <h2
-          className="mc-class-card__caption__title"
-        >
-          John Doe
-        </h2>
-        <h3
-          className="mc-class-card__caption__subtitle"
-        >
-          Teaches something
-        </h3>
-      </div>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Tiles/ClassCard with custom trigger 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div
-    className="mc-class-card "
-    style={
-      Object {
-        "height": "300px",
-        "width": "500px",
-      }
-    }
-  >
-    <button
-      className="mc-class-card__trigger"
-      onClick={[Function]}
-      styles={
-        Object {
-          "display": "block",
-        }
-      }
-    >
-      <img
-        alt="Lorem ipsum"
-        className="mc-class-card__image"
-        src=""
-      />
-      <div
-        className="mc-class-card__caption"
-      >
-        <h2
-          className="mc-class-card__caption__title"
-        >
-          John Doe
-        </h2>
-        <h3
-          className="mc-class-card__caption__subtitle"
-        >
-          Teaches something
-        </h3>
-      </div>
-    </button>
-  </div>
+  </button>
 </div>
 `;
 
 exports[`Storyshots components|Tiles/ClassCard with href 1`] = `
 <div
+  className="mc-class-card "
   style={
     Object {
-      "margin": "30px",
+      "height": "300px",
+      "width": "500px",
     }
   }
 >
-  <div
-    className="mc-class-card "
-    style={
-      Object {
-        "height": "300px",
-        "width": "500px",
-      }
-    }
+  <a
+    className="mc-class-card__trigger mc-class-card__trigger--anchor"
+    href="#"
   >
-    <a
-      className="mc-class-card__trigger mc-class-card__trigger--anchor"
-      href="#"
+    <img
+      alt="Lorem ipsum"
+      className="mc-class-card__image"
+      src=""
+    />
+    <div
+      className="mc-class-card__caption"
     >
-      <img
-        alt="Lorem ipsum"
-        className="mc-class-card__image"
-        src=""
-      />
-      <div
-        className="mc-class-card__caption"
+      <h2
+        className="mc-class-card__caption__title"
       >
-        <h2
-          className="mc-class-card__caption__title"
-        >
-          John Doe
-        </h2>
-        <h3
-          className="mc-class-card__caption__subtitle"
-        >
-          Teaches something
-        </h3>
-      </div>
-    </a>
-  </div>
+        John Doe
+      </h2>
+      <h3
+        className="mc-class-card__caption__subtitle"
+      >
+        Teaches something
+      </h3>
+    </div>
+  </a>
 </div>
 `;

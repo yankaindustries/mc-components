@@ -2,50 +2,42 @@
 
 exports[`Storyshots components|Structure/Header/LoggedOut default 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="header-logged-out"
 >
   <div
-    className="header-logged-out"
+    className="header-logged-out__nav"
   >
     <div
-      className="header-logged-out__nav"
+      className="header-logged-out__section"
     >
-      <div
-        className="header-logged-out__section"
+      <a
+        className="header-logged-out__wordmark"
+        href="/"
       >
-        <a
-          className="header-logged-out__wordmark"
-          href="/"
-        >
-          <img
-            alt="Logo wordmark"
-            src=""
-          />
-        </a>
-        <a
-          className="header-logged-out__logo"
-          href="/"
-        >
-          <img
-            alt="Logo"
-            src=""
-          />
-        </a>
-      </div>
-      <div
-        className="header-logged-out__section"
+        <img
+          alt="Logo wordmark"
+          src=""
+        />
+      </a>
+      <a
+        className="header-logged-out__logo"
+        href="/"
       >
-        <a
-          className="header-logged-out__login-link mc-modal-login-trigger"
-          href="/#"
-        >
-          Log In
-        </a>
-      </div>
+        <img
+          alt="Logo"
+          src=""
+        />
+      </a>
+    </div>
+    <div
+      className="header-logged-out__section"
+    >
+      <a
+        className="header-logged-out__login-link mc-modal-login-trigger"
+        href="/#"
+      >
+        Log In
+      </a>
     </div>
   </div>
 </div>

@@ -2,270 +2,136 @@
 
 exports[`Storyshots components|Tiles/CheckTile default 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="container"
 >
+  <h2>
+    CheckTile
+  </h2>
   <div
-    className="container"
+    className="example--section"
   >
-    <h2>
-      CheckTile
-    </h2>
+    <h4>
+      Examples
+    </h4>
     <div
-<<<<<<< HEAD
-      className="example--section"
-=======
-      className="tile tile--1000x609 overlay-check overlay-check--unchecked"
->>>>>>> lint/test
+      className="row"
     >
-      <h4>
-        Examples
-      </h4>
       <div
-<<<<<<< HEAD
-        className="row"
-      >
-        <div
-          className="col-sm-4"
-        >
-          <a
-            onClick={[Function]}
-          >
-            <div
-              className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
-            >
-              <img
-                className="mc-check-tile__check"
-                src={null}
-              />
-              <div
-                className="content"
-              >
-                <div
-                  className="mc-animation mc-animation--zoom "
-                >
-                  <div
-                    className="tile tile--16x9"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div
-          className="col-sm-4"
-        >
-          <a
-            onClick={[Function]}
-          >
-            <div
-              className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
-            >
-              <img
-                className="mc-check-tile__check"
-                src={null}
-              />
-              <div
-                className="content"
-              >
-                <div
-                  className="mc-animation mc-animation--zoom "
-                >
-                  <div
-                    className="tile tile--16x9"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div
-          className="col-sm-4"
-        >
-          <a
-            onClick={[Function]}
-          >
-            <div
-              className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
-            >
-              <img
-                className="mc-check-tile__check"
-                src={null}
-              />
-              <div
-                className="content"
-              >
-                <div
-                  className="mc-animation mc-animation--zoom "
-                >
-                  <div
-                    className="tile tile--16x9"
-                  >
-                    <div
-                      className="background"
-                      style={
-                        Object {
-                          "backgroundImage": "url('')",
-                        }
-                      }
-                    />
-                    <div
-                      className="content"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-=======
-        className="background"
-        style={
-          Object {
-            "backgroundImage": "url('')",
-          }
-        }
-      />
-      <div
-        className="content"
+        className="col-sm-4"
       >
         <a
-          className="overlay-check__checkbox-tile-overlay"
           onClick={[Function]}
         >
-          <p>
-            Content
-          </p>
-          <img
-            alt="checkmark"
-            className="overlay-check__image"
-            src=""
-          />
+          <div
+            className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
+          >
+            <img
+              className="mc-check-tile__check"
+              src={null}
+            />
+            <div
+              className="content"
+            >
+              <div
+                className="mc-animation mc-animation--zoom "
+              >
+                <div
+                  className="tile tile--16x9"
+                >
+                  <div
+                    className="background"
+                    style={
+                      Object {
+                        "backgroundImage": "url('')",
+                      }
+                    }
+                  />
+                  <div
+                    className="content"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </a>
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Tiles/CheckTile CheckTile - 1000x609 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
-  >
-    <div
-      className="tile tile--1000x609 overlay-check overlay-check--checked"
-    >
       <div
-        className="background"
-        style={
-          Object {
-            "backgroundImage": "url('')",
-          }
-        }
-      />
-      <div
-        className="content"
+        className="col-sm-4"
       >
         <a
-          className="overlay-check__checkbox-tile-overlay"
           onClick={[Function]}
         >
-          <p>
-            Content
-          </p>
-          <img
-            alt="checkmark"
-            className="overlay-check__image"
-            src=""
-          />
+          <div
+            className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
+          >
+            <img
+              className="mc-check-tile__check"
+              src={null}
+            />
+            <div
+              className="content"
+            >
+              <div
+                className="mc-animation mc-animation--zoom "
+              >
+                <div
+                  className="tile tile--16x9"
+                >
+                  <div
+                    className="background"
+                    style={
+                      Object {
+                        "backgroundImage": "url('')",
+                      }
+                    }
+                  />
+                  <div
+                    className="content"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </a>
       </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Tiles/CheckTile with handler 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
-  >
-    <div
-      className="tile tile--1000x609 overlay-check overlay-check--unchecked"
-    >
       <div
-        className="background"
-        style={
-          Object {
-            "backgroundImage": "url('')",
-          }
-        }
-      />
-      <div
-        className="content"
+        className="col-sm-4"
       >
         <a
-          className="overlay-check__checkbox-tile-overlay"
           onClick={[Function]}
         >
-          <p>
-            Content
-          </p>
-          <img
-            alt="checkmark"
-            className="overlay-check__image"
-            src=""
-          />
+          <div
+            className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
+          >
+            <img
+              className="mc-check-tile__check"
+              src={null}
+            />
+            <div
+              className="content"
+            >
+              <div
+                className="mc-animation mc-animation--zoom "
+              >
+                <div
+                  className="tile tile--16x9"
+                >
+                  <div
+                    className="background"
+                    style={
+                      Object {
+                        "backgroundImage": "url('')",
+                      }
+                    }
+                  />
+                  <div
+                    className="content"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </a>
->>>>>>> lint/test
       </div>
     </div>
   </div>

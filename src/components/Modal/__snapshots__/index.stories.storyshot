@@ -4,26 +4,18 @@ exports[`Storyshots components|Modals ModalHandler 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "height": "200px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "height": "200px",
-      }
-    }
+    id="modal-root"
+  />
+  <button
+    onClick={[Function]}
   >
-    <div
-      id="modal-root"
-    />
-    <button
-      onClick={[Function]}
-    >
-      Open Modal
-    </button>
-  </div>
+    Open Modal
+  </button>
 </div>
 `;
 
@@ -31,20 +23,12 @@ exports[`Storyshots components|Modals ModalHeader 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "height": "200px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "height": "200px",
-      }
-    }
-  >
-    <div
-      id="modal-root"
-    />
-  </div>
+    id="modal-root"
+  />
 </div>
 `;

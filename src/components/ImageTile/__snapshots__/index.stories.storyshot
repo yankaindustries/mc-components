@@ -4,35 +4,27 @@ exports[`Storyshots components|Tiles/ImageTile ImageTile - 16x9 - backgroundGrad
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="tile tile--16x9"
   >
     <div
-      className="tile tile--16x9"
-    >
-      <div
-        className="background"
-        style={
-          Object {
-            "backgroundImage": "url('')",
-          }
+      className="background"
+      style={
+        Object {
+          "backgroundImage": "url('')",
         }
-      />
-      <div
-        className="content"
-      >
-        <p>
-          Content
-        </p>
-      </div>
+      }
+    />
+    <div
+      className="content"
+    >
+      <p>
+        Content
+      </p>
     </div>
   </div>
 </div>
@@ -42,35 +34,27 @@ exports[`Storyshots components|Tiles/ImageTile ImageTile - 16x9 - with animation
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="tile tile--16x9"
   >
     <div
-      className="tile tile--16x9"
-    >
-      <div
-        className="background"
-        style={
-          Object {
-            "backgroundImage": "url('')",
-          }
+      className="background"
+      style={
+        Object {
+          "backgroundImage": "url('')",
         }
-      />
-      <div
-        className="content"
-      >
-        <p>
-          Content
-        </p>
-      </div>
+      }
+    />
+    <div
+      className="content"
+    >
+      <p>
+        Content
+      </p>
     </div>
   </div>
 </div>
@@ -80,35 +64,27 @@ exports[`Storyshots components|Tiles/ImageTile ImageTile 4x3 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="tile tile--4x3"
   >
     <div
-      className="tile tile--4x3"
-    >
-      <div
-        className="background"
-        style={
-          Object {
-            "backgroundImage": "url('')",
-          }
+      className="background"
+      style={
+        Object {
+          "backgroundImage": "url('')",
         }
-      />
-      <div
-        className="content"
-      >
-        <p>
-          Content
-        </p>
-      </div>
+      }
+    />
+    <div
+      className="content"
+    >
+      <p>
+        Content
+      </p>
     </div>
   </div>
 </div>

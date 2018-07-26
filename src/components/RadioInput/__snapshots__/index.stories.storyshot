@@ -2,38 +2,51 @@
 
 exports[`Storyshots components|Forms/RadioInput checked 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="radio-input"
+  onClick={[Function]}
 >
+  <input
+    checked={true}
+    className="radio-input__input"
+    type="radio"
+  />
   <div
-    className="radio-input"
-    onClick={[Function]}
+    className="radio-input__mock radio-input__mock--checked"
+  />
+  <label
+    className="radio-input__label"
   >
-    <input
-      checked={true}
-      className="radio-input__input"
-      type="radio"
-    />
-    <div
-      className="radio-input__mock radio-input__mock--checked"
-    />
-    <label
-      className="radio-input__label"
-    >
-      My radio input
-    </label>
-  </div>
+    My radio input
+  </label>
 </div>
 `;
 
 exports[`Storyshots components|Forms/RadioInput default 1`] = `
 <div
+  className="radio-input"
+  onClick={[Function]}
+>
+  <input
+    checked={false}
+    className="radio-input__input"
+    type="radio"
+  />
+  <div
+    className="radio-input__mock"
+  />
+  <label
+    className="radio-input__label"
+  >
+    My radio input
+  </label>
+</div>
+`;
+
+exports[`Storyshots components|Forms/RadioInput with handler 1`] = `
+<div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
@@ -54,43 +67,6 @@ exports[`Storyshots components|Forms/RadioInput default 1`] = `
     >
       My radio input
     </label>
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|Forms/RadioInput with handler 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
-  >
-    <div
-      className="radio-input"
-      onClick={[Function]}
-    >
-      <input
-        checked={false}
-        className="radio-input__input"
-        type="radio"
-      />
-      <div
-        className="radio-input__mock"
-      />
-      <label
-        className="radio-input__label"
-      >
-        My radio input
-      </label>
-    </div>
   </div>
 </div>
 `;

@@ -4,29 +4,21 @@ exports[`Storyshots components|Forms/Input default 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
-    >
-      <input
-        className="input-field__input input-field__input--full-width"
-        disabled={false}
-        onChange={[Function]}
-        placeholder="My input"
-        type="text"
-        value=""
-      />
-    </div>
+    <input
+      className="input-field__input input-field__input--full-width"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="My input"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -35,29 +27,21 @@ exports[`Storyshots components|Forms/Input disabled 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
-    >
-      <input
-        className="input-field__input input-field__input--full-width input-field__input--disabled"
-        disabled={true}
-        onChange={[Function]}
-        placeholder="My email"
-        type="text"
-        value=""
-      />
-    </div>
+    <input
+      className="input-field__input input-field__input--full-width input-field__input--disabled"
+      disabled={true}
+      onChange={[Function]}
+      placeholder="My email"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -66,34 +50,26 @@ exports[`Storyshots components|Forms/Input fixed width 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
+    className="input-field"
     style={
       Object {
-        "maxWidth": "500px",
+        "width": "200px",
       }
     }
   >
-    <div
-      className="input-field"
-      style={
-        Object {
-          "width": "200px",
-        }
-      }
-    >
-      <input
-        className="input-field__input"
-        disabled={false}
-        onChange={[Function]}
-        placeholder="My input"
-        type="text"
-        value=""
-      />
-    </div>
+    <input
+      className="input-field__input"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="My input"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -102,34 +78,26 @@ exports[`Storyshots components|Forms/Input with error 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
+    <span
+      className="input-field__error"
     >
-      <span
-        className="input-field__error"
-      >
-        Email is required
-      </span>
-      <input
-        className="input-field__input input-field__input--full-width input-field__input--error"
-        disabled={false}
-        onChange={[Function]}
-        placeholder="My email"
-        type="text"
-        value=""
-      />
-    </div>
+      Email is required
+    </span>
+    <input
+      className="input-field__input input-field__input--full-width input-field__input--error"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="My email"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -138,39 +106,31 @@ exports[`Storyshots components|Forms/Input with error and label 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
+    <label
+      className="input-field__label input-field__label--hide"
     >
-      <label
-        className="input-field__label input-field__label--hide"
-      >
-        My email
-      </label>
-      <span
-        className="input-field__error"
-      >
-        Email is required
-      </span>
-      <input
-        className="input-field__input input-field__input--full-width input-field__input--error"
-        disabled={false}
-        onChange={[Function]}
-        placeholder="My email"
-        type="text"
-        value=""
-      />
-    </div>
+      My email
+    </label>
+    <span
+      className="input-field__error"
+    >
+      Email is required
+    </span>
+    <input
+      className="input-field__input input-field__input--full-width input-field__input--error"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="My email"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -179,34 +139,26 @@ exports[`Storyshots components|Forms/Input with label 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
+    <label
+      className="input-field__label input-field__label--hide"
     >
-      <label
-        className="input-field__label input-field__label--hide"
-      >
-        My input
-      </label>
-      <input
-        className="input-field__input input-field__input--full-width"
-        disabled={false}
-        onChange={[Function]}
-        placeholder="My input"
-        type="text"
-        value=""
-      />
-    </div>
+      My input
+    </label>
+    <input
+      className="input-field__input input-field__input--full-width"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="My input"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -215,34 +167,26 @@ exports[`Storyshots components|Forms/Input with warning 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
+    <span
+      className="input-field__warning"
     >
-      <span
-        className="input-field__warning"
-      >
-        Did you mean johndoe@gmail.com?
-      </span>
-      <input
-        className="input-field__input input-field__input--full-width input-field__input--warning"
-        disabled={false}
-        onChange={[Function]}
-        placeholder="My email"
-        type="text"
-        value=""
-      />
-    </div>
+      Did you mean johndoe@gmail.com?
+    </span>
+    <input
+      className="input-field__input input-field__input--full-width input-field__input--warning"
+      disabled={false}
+      onChange={[Function]}
+      placeholder="My email"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -251,28 +195,20 @@ exports[`Storyshots components|Forms/Input without placeholder 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
-    >
-      <input
-        className="input-field__input input-field__input--full-width"
-        disabled={false}
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
+    <input
+      className="input-field__input input-field__input--full-width"
+      disabled={false}
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;

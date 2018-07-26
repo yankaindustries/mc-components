@@ -1,17 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots components|Badge default 1`] = `
-<div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+<span
+  className="badge"
 >
-  <span
-    className="badge"
-  >
-    2
-  </span>
-</div>
+  2
+</span>
 `;

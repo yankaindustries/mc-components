@@ -4,28 +4,20 @@ exports[`Storyshots components|Forms/TextArea default 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
-    >
-      <textarea
-        className="input-field__input input-field__input--full-width input-field__input--no-resize"
-        onChange={[Function]}
-        placeholder="My text area"
-        type="text"
-        value=""
-      />
-    </div>
+    <textarea
+      className="input-field__input input-field__input--full-width input-field__input--no-resize"
+      onChange={[Function]}
+      placeholder="My text area"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -34,33 +26,25 @@ exports[`Storyshots components|Forms/TextArea fixed width 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
+    className="input-field"
     style={
       Object {
-        "maxWidth": "500px",
+        "width": "200px",
       }
     }
   >
-    <div
-      className="input-field"
-      style={
-        Object {
-          "width": "200px",
-        }
-      }
-    >
-      <textarea
-        className="input-field__input input-field__input--no-resize"
-        onChange={[Function]}
-        placeholder="My text area"
-        type="text"
-        value=""
-      />
-    </div>
+    <textarea
+      className="input-field__input input-field__input--no-resize"
+      onChange={[Function]}
+      placeholder="My text area"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -69,33 +53,25 @@ exports[`Storyshots components|Forms/TextArea with error 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
+    <span
+      className="input-field__error"
     >
-      <span
-        className="input-field__error"
-      >
-        This text area is required
-      </span>
-      <textarea
-        className="input-field__input input-field__input--full-width input-field__input--error input-field__input--no-resize"
-        onChange={[Function]}
-        placeholder="My text area"
-        type="text"
-        value=""
-      />
-    </div>
+      This text area is required
+    </span>
+    <textarea
+      className="input-field__input input-field__input--full-width input-field__input--error input-field__input--no-resize"
+      onChange={[Function]}
+      placeholder="My text area"
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;
@@ -104,27 +80,19 @@ exports[`Storyshots components|Forms/TextArea without placeholder 1`] = `
 <div
   style={
     Object {
-      "margin": "30px",
+      "maxWidth": "500px",
     }
   }
 >
   <div
-    style={
-      Object {
-        "maxWidth": "500px",
-      }
-    }
+    className="input-field"
   >
-    <div
-      className="input-field"
-    >
-      <textarea
-        className="input-field__input input-field__input--full-width input-field__input--no-resize"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
+    <textarea
+      className="input-field__input input-field__input--full-width input-field__input--no-resize"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
   </div>
 </div>
 `;

@@ -2,553 +2,513 @@
 
 exports[`Storyshots components|Structure/Header/LoggedIn default 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="header"
 >
   <div
-    className="header"
+    className="mobile-nav-button"
+    onClick={[Function]}
+  >
+    <span
+      className="mobile-nav-button__lines"
+    />
+  </div>
+  <nav
+    className="header__nav"
   >
     <div
-      className="mobile-nav-button"
-      onClick={[Function]}
+      className="header__section"
+    />
+    <div
+      className="header__section"
     >
-      <span
-        className="mobile-nav-button__lines"
-      />
-    </div>
-    <nav
-      className="header__nav"
-    >
-      <div
-        className="header__section"
-      />
-      <div
-        className="header__section"
+      <a
+        className="header__wordmark"
+        href="/"
       >
-        <a
-          className="header__wordmark"
-          href="/"
-        >
-          <img
-            alt="Logo wordmark"
-            src=""
-          />
-        </a>
-      </div>
+        <img
+          alt="Logo wordmark"
+          src=""
+        />
+      </a>
+    </div>
+    <div
+      className="header__section header__section--flex-end"
+    >
       <div
-        className="header__section header__section--flex-end"
+        className="header__info-block"
+        onClick={[Function]}
       >
         <div
-          className="header__info-block"
-          onClick={[Function]}
+          className="header__info-blurb"
         >
-          <div
-            className="header__info-blurb"
-          >
-            <img
-              className="header__info-block__avatar"
-              src=""
-            />
-            <span>
-              <span
-                className="header__info-block__username"
-              >
-                set up your profile
-              </span>
-            </span>
+          <img
+            className="header__info-block__avatar"
+            src=""
+          />
+          <span>
             <span
-              className="header__arrow--down"
-            />
-          </div>
-          <ul
-            className="navbar-menu"
-          >
-            <li
-              className="navbar-menu__item"
+              className="header__info-block__username"
             >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                My Classes
-                <span
-                  className="navbar-menu__item-helper"
-                >
-                  3 Classes
-                </span>
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/notifications"
-              >
-                Notifications
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                The hub
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item navbar-menu__item--centered"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/sign_out"
-              >
-                Sign out
-              </a>
-            </li>
-          </ul>
+              set up your profile
+            </span>
+          </span>
+          <span
+            className="header__arrow--down"
+          />
         </div>
+        <ul
+          className="navbar-menu"
+        >
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              My Classes
+              <span
+                className="navbar-menu__item-helper"
+              >
+                3 Classes
+              </span>
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/notifications"
+            >
+              Notifications
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              The hub
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item navbar-menu__item--centered"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/sign_out"
+            >
+              Sign out
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </div>
 `;
 
 exports[`Storyshots components|Structure/Header/LoggedIn minimal 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="header"
 >
-  <div
-    className="header"
+  <nav
+    className="header__nav"
   >
-    <nav
-      className="header__nav"
+    <div
+      className="header__section"
     >
-      <div
-        className="header__section"
+      <a
+        className="header__wordmark"
+        href="/"
       >
-        <a
-          className="header__wordmark"
-          href="/"
-        >
-          <img
-            alt="Logo wordmark"
-            src=""
-          />
-        </a>
-      </div>
-    </nav>
-  </div>
+        <img
+          alt="Logo wordmark"
+          src=""
+        />
+      </a>
+    </div>
+  </nav>
 </div>
 `;
 
 exports[`Storyshots components|Structure/Header/LoggedIn with avatar 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="header"
 >
   <div
-    className="header"
+    className="mobile-nav-button"
+    onClick={[Function]}
+  >
+    <span
+      className="mobile-nav-button__lines"
+    />
+  </div>
+  <nav
+    className="header__nav"
   >
     <div
-      className="mobile-nav-button"
-      onClick={[Function]}
+      className="header__section"
+    />
+    <div
+      className="header__section"
     >
-      <span
-        className="mobile-nav-button__lines"
-      />
-    </div>
-    <nav
-      className="header__nav"
-    >
-      <div
-        className="header__section"
-      />
-      <div
-        className="header__section"
+      <a
+        className="header__wordmark"
+        href="/"
       >
-        <a
-          className="header__wordmark"
-          href="/"
-        >
-          <img
-            alt="Logo wordmark"
-            src=""
-          />
-        </a>
-      </div>
+        <img
+          alt="Logo wordmark"
+          src=""
+        />
+      </a>
+    </div>
+    <div
+      className="header__section header__section--flex-end"
+    >
       <div
-        className="header__section header__section--flex-end"
+        className="header__info-block"
+        onClick={[Function]}
       >
         <div
-          className="header__info-block"
-          onClick={[Function]}
+          className="header__info-blurb"
         >
-          <div
-            className="header__info-blurb"
-          >
-            <img
-              className="header__info-block__avatar"
-              src="https://graph.facebook.com/10156122473642900/picture?height=300&width=300"
-            />
-            <span>
-              <span
-                className="header__info-block__username"
-              >
-                set up your profile
-              </span>
-            </span>
+          <img
+            className="header__info-block__avatar"
+            src="https://graph.facebook.com/10156122473642900/picture?height=300&width=300"
+          />
+          <span>
             <span
-              className="header__arrow--down"
-            />
-          </div>
-          <ul
-            className="navbar-menu"
-          >
-            <li
-              className="navbar-menu__item"
+              className="header__info-block__username"
             >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                My Classes
-                <span
-                  className="navbar-menu__item-helper"
-                >
-                  3 Classes
-                </span>
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/notifications"
-              >
-                Notifications
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                The hub
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item navbar-menu__item--centered"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/sign_out"
-              >
-                Sign out
-              </a>
-            </li>
-          </ul>
+              set up your profile
+            </span>
+          </span>
+          <span
+            className="header__arrow--down"
+          />
         </div>
+        <ul
+          className="navbar-menu"
+        >
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              My Classes
+              <span
+                className="navbar-menu__item-helper"
+              >
+                3 Classes
+              </span>
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/notifications"
+            >
+              Notifications
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              The hub
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item navbar-menu__item--centered"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/sign_out"
+            >
+              Sign out
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </div>
 `;
 
 exports[`Storyshots components|Structure/Header/LoggedIn with backButton 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="header"
 >
   <div
-    className="header"
+    className="mobile-nav-button"
+    onClick={[Function]}
+  >
+    <span
+      className="mobile-nav-button__lines"
+    />
+  </div>
+  <nav
+    className="header__nav"
   >
     <div
-      className="mobile-nav-button"
-      onClick={[Function]}
+      className="header__section"
     >
-      <span
-        className="mobile-nav-button__lines"
-      />
+      <button
+        className="header__left-button"
+        onClick={[Function]}
+      >
+        <img
+          className="header__left-button__icon"
+          src=""
+        />
+        <span
+          className="header__left-button__label"
+        >
+          Back
+        </span>
+      </button>
     </div>
-    <nav
-      className="header__nav"
+    <div
+      className="header__section"
+    >
+      <a
+        className="header__wordmark"
+        href="/"
+      >
+        <img
+          alt="Logo wordmark"
+          src=""
+        />
+      </a>
+    </div>
+    <div
+      className="header__section header__section--flex-end"
     >
       <div
-        className="header__section"
-      >
-        <button
-          className="header__left-button"
-          onClick={[Function]}
-        >
-          <img
-            className="header__left-button__icon"
-            src=""
-          />
-          <span
-            className="header__left-button__label"
-          >
-            Back
-          </span>
-        </button>
-      </div>
-      <div
-        className="header__section"
-      >
-        <a
-          className="header__wordmark"
-          href="/"
-        >
-          <img
-            alt="Logo wordmark"
-            src=""
-          />
-        </a>
-      </div>
-      <div
-        className="header__section header__section--flex-end"
+        className="header__info-block"
+        onClick={[Function]}
       >
         <div
-          className="header__info-block"
-          onClick={[Function]}
+          className="header__info-blurb"
         >
-          <div
-            className="header__info-blurb"
-          >
-            <img
-              className="header__info-block__avatar"
-              src=""
-            />
-            <span>
-              <span
-                className="header__info-block__username"
-              >
-                set up your profile
-              </span>
-            </span>
+          <img
+            className="header__info-block__avatar"
+            src=""
+          />
+          <span>
             <span
-              className="header__arrow--down"
-            />
-          </div>
-          <ul
-            className="navbar-menu"
-          >
-            <li
-              className="navbar-menu__item"
+              className="header__info-block__username"
             >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                My Classes
-                <span
-                  className="navbar-menu__item-helper"
-                >
-                  3 Classes
-                </span>
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/notifications"
-              >
-                Notifications
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                The hub
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item navbar-menu__item--centered"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/sign_out"
-              >
-                Sign out
-              </a>
-            </li>
-          </ul>
+              set up your profile
+            </span>
+          </span>
+          <span
+            className="header__arrow--down"
+          />
         </div>
+        <ul
+          className="navbar-menu"
+        >
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              My Classes
+              <span
+                className="navbar-menu__item-helper"
+              >
+                3 Classes
+              </span>
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/notifications"
+            >
+              Notifications
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              The hub
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item navbar-menu__item--centered"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/sign_out"
+            >
+              Sign out
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </div>
 `;
 
 exports[`Storyshots components|Structure/Header/LoggedIn with badges 1`] = `
 <div
-  style={
-    Object {
-      "margin": "30px",
-    }
-  }
+  className="header"
 >
   <div
-    className="header"
+    className="mobile-nav-button"
+    onClick={[Function]}
+  >
+    <span
+      className="mobile-nav-button__lines"
+    />
+  </div>
+  <nav
+    className="header__nav"
   >
     <div
-      className="mobile-nav-button"
-      onClick={[Function]}
+      className="header__section"
+    />
+    <div
+      className="header__section"
     >
-      <span
-        className="mobile-nav-button__lines"
-      />
-    </div>
-    <nav
-      className="header__nav"
-    >
-      <div
-        className="header__section"
-      />
-      <div
-        className="header__section"
+      <a
+        className="header__wordmark"
+        href="/"
       >
-        <a
-          className="header__wordmark"
-          href="/"
-        >
-          <img
-            alt="Logo wordmark"
-            src=""
-          />
-        </a>
-      </div>
+        <img
+          alt="Logo wordmark"
+          src=""
+        />
+      </a>
+    </div>
+    <div
+      className="header__section header__section--flex-end"
+    >
       <div
-        className="header__section header__section--flex-end"
+        className="header__info-block"
+        onClick={[Function]}
       >
         <div
-          className="header__info-block"
-          onClick={[Function]}
+          className="header__info-blurb"
         >
-          <div
-            className="header__info-blurb"
-          >
-            <img
-              className="header__info-block__avatar"
-              src=""
-            />
-            <span>
-              <span
-                className="header__info-block__username"
-              >
-                set up your profile
-              </span>
-            </span>
+          <img
+            className="header__info-block__avatar"
+            src=""
+          />
+          <span>
             <span
-              className="badge header__global-badge"
+              className="header__info-block__username"
             >
-              1
+              set up your profile
             </span>
-            <span
-              className="header__arrow--down"
-            />
-          </div>
-          <ul
-            className="navbar-menu"
+          </span>
+          <span
+            className="badge header__global-badge"
           >
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                My Classes
-                <span
-                  className="navbar-menu__item-helper"
-                >
-                  3 Classes
-                </span>
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/notifications"
-              >
-                Notifications
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/"
-              >
-                The hub
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/sign_out"
-              >
-                Sign out
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/profile"
-              >
-                Profile
-                <span
-                  className="badge"
-                >
-                  1
-                </span>
-              </a>
-            </li>
-            <li
-              className="navbar-menu__item navbar-menu__item--centered"
-            >
-              <a
-                className="navbar-menu__item-link"
-                href="/sign_out"
-              >
-                Sign out
-              </a>
-            </li>
-          </ul>
+            1
+          </span>
+          <span
+            className="header__arrow--down"
+          />
         </div>
+        <ul
+          className="navbar-menu"
+        >
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              My Classes
+              <span
+                className="navbar-menu__item-helper"
+              >
+                3 Classes
+              </span>
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/notifications"
+            >
+              Notifications
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/"
+            >
+              The hub
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/sign_out"
+            >
+              Sign out
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/profile"
+            >
+              Profile
+              <span
+                className="badge"
+              >
+                1
+              </span>
+            </a>
+          </li>
+          <li
+            className="navbar-menu__item navbar-menu__item--centered"
+          >
+            <a
+              className="navbar-menu__item-link"
+              href="/sign_out"
+            >
+              Sign out
+            </a>
+          </li>
+        </ul>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </div>
 `;
