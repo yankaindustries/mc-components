@@ -2,9 +2,13 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import DocSection from '../../utils/DocSection'
+import PropExample from '../../utils/PropExample'
 
 import Tile from '../Tile'
+import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
+
+import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
 
 storiesOf('components|Tiles/TileOverlay', module)
@@ -13,16 +17,21 @@ storiesOf('components|Tiles/TileOverlay', module)
       <div className='container'>
         <h2>TileOverlay</h2>
 
-        <div className='row'>
-          <div className='col-md-6'>
-            <DocSection title='Example'>
-              <Tile>
-                <TileOverlay type='gradient-bottom' />
-                <div className='example__filler' />
-              </Tile>
-            </DocSection>
-          </div>
-        </div>
+        <DocSection title='Props'>
+          <PropExample
+            name='type'
+            type='String["gradient-bottom"]'
+          >
+            <div className='row'>
+              <div className='col-sm-6'>
+                <Tile>
+                  <TileImage imageUrl={shondaRhimesThumbnail} />
+                  <TileOverlay type='gradient-bottom' />
+                </Tile>
+              </div>
+            </div>
+          </PropExample>
+        </DocSection>
       </div>
     </div>
   ))

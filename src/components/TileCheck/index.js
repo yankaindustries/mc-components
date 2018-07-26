@@ -32,6 +32,7 @@ export default class TileCheck extends PureComponent {
 
     const classNames = toggled =>
       [
+        'mc-tile__component',
         'mc-tile-check',
         toggled ? 'mc-tile-check--checked' : 'mc-tile-check--unchecked',
       ].join(' ')

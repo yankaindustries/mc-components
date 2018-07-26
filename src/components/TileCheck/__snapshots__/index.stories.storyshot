@@ -11,35 +11,123 @@ exports[`Storyshots components|Tiles/TileCheck TileCheck 1`] = `
       TileCheck
     </h2>
     <div
-      className="row"
+      className="example--section"
     >
+      <h4>
+        Props
+      </h4>
       <div
-        className="col-md-6"
+        className="example--definition"
       >
         <div
-          className="example--section"
+          className="row"
         >
-          <h4>
-            Example
-          </h4>
           <div
-            className="mc-tile mc-tile--16x9 "
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                checked
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                Boolean
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
           >
             <div
-              className="mc-tile__content content"
+              className="row"
             >
-              <a
-                className="mc-tile-check mc-tile-check--checked"
-                onClick={[Function]}
-              >
-                <img
-                  className="mc-tile-check__check"
-                  src=""
-                />
-              </a>
               <div
-                className="example__filler"
-              />
+                className="col-sm-6"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <a
+                      className="mc-tile__component mc-tile-check mc-tile-check--checked"
+                      onClick={[Function]}
+                    >
+                      <img
+                        className="mc-tile-check__check"
+                        src=""
+                      />
+                      <div
+                        className="mc-tile__content"
+                      >
+                        <div
+                          className="example-placeholder"
+                        >
+                          <div
+                            className="example-placeholder__inner"
+                          >
+                            true
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-sm-6"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <a
+                      className="mc-tile__component mc-tile-check mc-tile-check--unchecked"
+                      onClick={[Function]}
+                    >
+                      <img
+                        className="mc-tile-check__check"
+                        src={null}
+                      />
+                      <div
+                        className="mc-tile__content"
+                      >
+                        <div
+                          className="example-placeholder"
+                        >
+                          <div
+                            className="example-placeholder__inner"
+                          >
+                            false
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

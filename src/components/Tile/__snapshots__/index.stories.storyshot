@@ -20,7 +20,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
           className="example--section"
         >
           <h4>
-            Tile (container)
+            Tile
           </h4>
           <div
             className="mc-tile mc-tile--16x9 "
@@ -29,8 +29,14 @@ exports[`Storyshots components|Tiles Summary 1`] = `
               className="mc-tile__content content"
             >
               <div
-                className="example__filler"
-              />
+                className="example-placeholder"
+              >
+                <div
+                  className="example-placeholder__inner"
+                >
+                  (empty)
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -51,7 +57,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
               className="mc-tile__content content"
             >
               <div
-                className="mc-tile-image "
+                className="mc-tile__component mc-tile-image "
               >
                 <div
                   className="mc-tile-image__image background"
@@ -82,10 +88,10 @@ exports[`Storyshots components|Tiles Summary 1`] = `
               className="mc-tile__content content"
             >
               <div
-                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
               />
               <div
-                className="mc-tile-image "
+                className="mc-tile__component mc-tile-image "
               >
                 <div
                   className="mc-tile-image__image background"
@@ -116,7 +122,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
               className="mc-tile__content content"
             >
               <div
-                className="mc-tile-caption "
+                className="mc-tile__component mc-tile-caption "
               >
                 <div
                   className="mc-tile-caption__titles"
@@ -134,10 +140,10 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                 </div>
               </div>
               <div
-                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
               />
               <div
-                className="mc-tile-image "
+                className="mc-tile__component mc-tile-image "
               >
                 <div
                   className="mc-tile-image__image background"
@@ -168,7 +174,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
               className="mc-tile__content content"
             >
               <a
-                className="mc-tile-check mc-tile-check--checked"
+                className="mc-tile__component mc-tile-check mc-tile-check--checked"
                 onClick={[Function]}
               >
                 <img
@@ -177,7 +183,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                 />
               </a>
               <div
-                className="mc-tile-caption "
+                className="mc-tile__component mc-tile-caption "
               >
                 <div
                   className="mc-tile-caption__titles"
@@ -195,10 +201,10 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                 </div>
               </div>
               <div
-                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
               />
               <div
-                className="mc-tile-image "
+                className="mc-tile__component mc-tile-image "
               >
                 <div
                   className="mc-tile-image__image background"
@@ -233,7 +239,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                 className="mc-tile__content content"
               >
                 <a
-                  className="mc-tile-check mc-tile-check--unchecked"
+                  className="mc-tile__component mc-tile-check mc-tile-check--unchecked"
                   onClick={[Function]}
                 >
                   <img
@@ -244,7 +250,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                     className="mc-tile__content"
                   >
                     <div
-                      className="mc-tile-caption mc-animation mc-animation--lift "
+                      className="mc-tile__component mc-tile-caption mc-animation mc-animation--lift "
                     >
                       <div
                         className="mc-tile-caption__titles"
@@ -262,10 +268,10 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                       </div>
                     </div>
                     <div
-                      className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                      className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
                     />
                     <div
-                      className="mc-tile-image mc-animation mc-animation--ken-burns "
+                      className="mc-tile__component mc-tile-image mc-animation mc-animation--ken-burns "
                     >
                       <div
                         className="mc-tile-image__image background"
@@ -278,6 +284,180 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                     </div>
                   </div>
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots components|Tiles/Tile Tile 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      Tile
+    </h2>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Props
+      </h4>
+      <div
+        className="example--definition"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                aspectRatio
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                String[16x9]
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      >
+                        16x9
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  className="mc-tile mc-tile--4x3 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      >
+                        4x3
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  className="mc-tile mc-tile--100x65 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      >
+                        100x65
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  className="mc-tile mc-tile--1000x609 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      >
+                        1000x609
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  className="mc-tile mc-tile--519x187 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      >
+                        519x187
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

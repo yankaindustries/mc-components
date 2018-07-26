@@ -20,6 +20,7 @@ export default class TileImage extends PureComponent {
     } = this.props
 
     const classes = [
+      'mc-tile__component',
       'mc-tile-image',
       className || '',
     ].join(' ')

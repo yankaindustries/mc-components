@@ -153,7 +153,7 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
                   className="mc-tile__content content"
                 >
                   <div
-                    className="mc-tile-image mc-animation mc-animation--ken-burns "
+                    className="mc-tile__component mc-tile-image mc-animation mc-animation--ken-burns "
                   >
                     <div
                       className="mc-tile-image__image background"
@@ -165,10 +165,10 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
                     />
                   </div>
                   <div
-                    className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                    className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
                   />
                   <div
-                    className="mc-tile-caption mc-animation mc-animation--lift "
+                    className="mc-tile__component mc-tile-caption mc-animation mc-animation--lift "
                   >
                     <div
                       className="mc-tile-caption__titles"

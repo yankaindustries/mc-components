@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import DocSection from '../../utils/DocSection'
+import PropExample from '../../utils/PropExample'
+import Placeholder from '../../utils/Placeholder'
 
 import Tile from '../Tile'
 import TileImage from '../TileImage'
@@ -22,9 +24,11 @@ storiesOf('components|Tiles', module)
 
         <div className='row'>
           <div className='col-lg-4 col-md-6'>
-            <DocSection title='Tile (container)'>
+            <DocSection title='Tile'>
               <Tile>
-                <div className='example__filler' />
+                <Placeholder>
+                  (empty)
+                </Placeholder>
               </Tile>
             </DocSection>
           </div>
@@ -108,6 +112,55 @@ storiesOf('components|Tiles', module)
             </DocSection>
           </div>
         </div>
+      </div>
+    </div>
+  ))
+
+
+storiesOf('components|Tiles/Tile', module)
+  .add('Tile', () => (
+    <div className='container'>
+      <div className='container'>
+        <h2>Tile</h2>
+
+        <DocSection title='Props'>
+          <PropExample
+            name='aspectRatio'
+            type='String[16x9]'
+          >
+            <div className='row'>
+              <div className='col-sm-4'>
+                <Tile aspectRatio='16x9'>
+                  <Placeholder>16x9</Placeholder>
+                </Tile>
+              </div>
+
+              <div className='col-sm-4'>
+                <Tile aspectRatio='4x3'>
+                  <Placeholder>4x3</Placeholder>
+                </Tile>
+              </div>
+
+              <div className='col-sm-4'>
+                <Tile aspectRatio='100x65'>
+                  <Placeholder>100x65</Placeholder>
+                </Tile>
+              </div>
+
+              <div className='col-sm-4'>
+                <Tile aspectRatio='1000x609'>
+                  <Placeholder>1000x609</Placeholder>
+                </Tile>
+              </div>
+
+              <div className='col-sm-4'>
+                <Tile aspectRatio='519x187'>
+                  <Placeholder>519x187</Placeholder>
+                </Tile>
+              </div>
+            </div>
+          </PropExample>
+        </DocSection>
       </div>
     </div>
   ))

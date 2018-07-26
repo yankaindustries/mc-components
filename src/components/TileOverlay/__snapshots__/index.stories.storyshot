@@ -11,29 +11,82 @@ exports[`Storyshots components|Tiles/TileOverlay TileOverlay 1`] = `
       TileOverlay
     </h2>
     <div
-      className="row"
+      className="example--section"
     >
+      <h4>
+        Props
+      </h4>
       <div
-        className="col-md-6"
+        className="example--definition"
       >
         <div
-          className="example--section"
+          className="row"
         >
-          <h4>
-            Example
-          </h4>
           <div
-            className="mc-tile mc-tile--16x9 "
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                type
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                String["gradient-bottom"]
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
           >
             <div
-              className="mc-tile__content content"
+              className="row"
             >
               <div
-                className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
-              />
-              <div
-                className="example__filler"
-              />
+                className="col-sm-6"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="mc-tile__component mc-tile-image "
+                    >
+                      <div
+                        className="mc-tile-image__image background"
+                        style={
+                          Object {
+                            "backgroundImage": "url('')",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
