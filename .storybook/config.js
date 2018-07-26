@@ -11,6 +11,7 @@ setOptions({
   hierarchyRootSeparator: /\|/,
   addonPanelInRight: true,
   selectedAddonPanel: 'mc/props/panel',
+  sortStoriesByKind: true,
 });
 
 // Info Defaults
