@@ -8,8 +8,11 @@ import PropExample from '../../utils/PropExample'
 import AnimationHandler from './index'
 import HoverHandler from '../HoverHandler'
 import Button from '../Button'
-import ImageTile from '../ImageTile'
-import ImageTileCaption from '../ImageTileCaption'
+
+import Tile from '../Tile'
+import TileImage from '../TileImage'
+import TileOverlay from '../TileOverlay'
+import TileCaption from '../TileCaption'
 
 import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
 
@@ -27,25 +30,31 @@ storiesOf('utilities|AnimationHandler', module)
           >
             <HoverHandler>
               {({ hovering }) =>
-                  <AnimationHandler animation='zoom' animating={hovering}>
-                    <Button primary>Zoom</Button>
-                  </AnimationHandler>
+                <AnimationHandler type='zoom' animating={hovering}>
+                  <Button primary>
+                    Zoom
+                  </Button>
+                </AnimationHandler>
               }
             </HoverHandler>
 
             <HoverHandler>
               {({ hovering }) =>
-                  <AnimationHandler animation='lift' animating={hovering}>
-                    <Button secondary>Lift</Button>
-                  </AnimationHandler>
+                <AnimationHandler type='lift' animating={hovering}>
+                  <Button secondary>
+                    Lift
+                  </Button>
+                </AnimationHandler>
               }
             </HoverHandler>
 
             <HoverHandler>
               {({ hovering }) =>
-                  <AnimationHandler animation='ken-burns' animating={hovering}>
-                    <Button tertiary>Ken Burns</Button>
-                  </AnimationHandler>
+                <AnimationHandler type='ken-burns' animating={hovering}>
+                  <Button tertiary>
+                    Ken Burns
+                  </Button>
+                </AnimationHandler>
               }
             </HoverHandler>
           </PropExample>
@@ -53,31 +62,24 @@ storiesOf('utilities|AnimationHandler', module)
 
         <DocSection title='Example'>
           <PropExample>
-            <div style={{ width: '500px' }}>
+            <div style={{ maxWidth: '500px' }}>
               <HoverHandler>
                 {({ hovering }) =>
-                  <div>
-                    <AnimationHandler
-                      animation='ken-burns'
-                      animating={hovering}
-                    >
-                        <ImageTile
-                          imageUrl={shondaRhimesThumbnail}
-                          aspectRatio='4x3'
-                        />
+                  <Tile>
+                    <AnimationHandler type='ken-burns' animating={hovering}>
+                      <TileImage imageUrl={shondaRhimesThumbnail} />
                     </AnimationHandler>
 
-                    <AnimationHandler
-                      animation='lift'
-                      animating={hovering}
-                    >
-                      <ImageTileCaption
-                        title='Jane Doe'
-                        subtitle='Teaches Something'
-                        position={hovering ? 'below' : 'above'}
+                    <TileOverlay type='gradient-bottom' />
+
+                    <AnimationHandler type='lift' animating={hovering}>
+                      <TileCaption
+                        title='Shonda Rhimes'
+                        subtitle='Teaches Writing for Television'
+                        backdrop
                       />
                     </AnimationHandler>
-                  </div>
+                  </Tile>
                 }
               </HoverHandler>
             </div>

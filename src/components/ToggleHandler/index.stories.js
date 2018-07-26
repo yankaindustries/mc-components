@@ -8,10 +8,11 @@ import Button from '../Button'
 storiesOf('utilities|ToggleHandler', module)
   .add('default', () =>
     <ToggleHandler>
-      {({ toggled }) =>
+      {({ toggled, onClick }) =>
         <Button
           primary={toggled}
           tertiary={!toggled}
+          onClick={onClick}
         >
           {toggled ? 'On' : 'Off'}
         </Button>

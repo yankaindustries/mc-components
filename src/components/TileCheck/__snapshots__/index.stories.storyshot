@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|Tiles/CheckTile default 1`] = `
+exports[`Storyshots components|Tile/TileCheck default 1`] = `
 <div
   style={
     Object {
@@ -12,7 +12,7 @@ exports[`Storyshots components|Tiles/CheckTile default 1`] = `
     className="container"
   >
     <h2>
-      CheckTile
+      TileCheck
     </h2>
     <div
       className="example--section"
@@ -26,119 +26,113 @@ exports[`Storyshots components|Tiles/CheckTile default 1`] = `
         <div
           className="col-sm-4"
         >
-          <a
-            onClick={[Function]}
+          <div
+            className="mc-tile mc-tile--16x9"
           >
             <div
-              className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
+              className="mc-tile__content content"
             >
-              <img
-                className="mc-check-tile__check"
-                src={null}
-              />
-              <div
-                className="content"
+              <a
+                className="mc-tile-check mc-tile-check--unchecked"
+                onClick={[Function]}
               >
+                <img
+                  className="mc-tile-check__check"
+                  src={null}
+                />
                 <div
-                  className="mc-animation mc-animation--zoom "
+                  className="mc-tile__content"
                 >
                   <div
-                    className="tile tile--16x9"
+                    className="mc-tile-image mc-animation mc-animation--zoom "
                   >
                     <div
-                      className="background"
+                      className="mc-tile-image__image background"
                       style={
                         Object {
                           "backgroundImage": "url('')",
                         }
                       }
                     />
-                    <div
-                      className="content"
-                    />
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
         <div
           className="col-sm-4"
         >
-          <a
-            onClick={[Function]}
+          <div
+            className="mc-tile mc-tile--16x9"
           >
             <div
-              className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
+              className="mc-tile__content content"
             >
-              <img
-                className="mc-check-tile__check"
-                src={null}
-              />
-              <div
-                className="content"
+              <a
+                className="mc-tile-check mc-tile-check--unchecked"
+                onClick={[Function]}
               >
+                <img
+                  className="mc-tile-check__check"
+                  src={null}
+                />
                 <div
-                  className="mc-animation mc-animation--zoom "
+                  className="mc-tile__content"
                 >
                   <div
-                    className="tile tile--16x9"
+                    className="mc-tile-image mc-animation mc-animation--zoom "
                   >
                     <div
-                      className="background"
+                      className="mc-tile-image__image background"
                       style={
                         Object {
                           "backgroundImage": "url('')",
                         }
                       }
                     />
-                    <div
-                      className="content"
-                    />
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
         <div
           className="col-sm-4"
         >
-          <a
-            onClick={[Function]}
+          <div
+            className="mc-tile mc-tile--16x9"
           >
             <div
-              className="mc-tile mc-tile--16x9 mc-check-tile mc-check-tile--unchecked"
+              className="mc-tile__content content"
             >
-              <img
-                className="mc-check-tile__check"
-                src={null}
-              />
-              <div
-                className="content"
+              <a
+                className="mc-tile-check mc-tile-check--unchecked"
+                onClick={[Function]}
               >
+                <img
+                  className="mc-tile-check__check"
+                  src={null}
+                />
                 <div
-                  className="mc-animation mc-animation--zoom "
+                  className="mc-tile__content"
                 >
                   <div
-                    className="tile tile--16x9"
+                    className="mc-tile-image mc-animation mc-animation--zoom "
                   >
                     <div
-                      className="background"
+                      className="mc-tile-image__image background"
                       style={
                         Object {
                           "backgroundImage": "url('')",
                         }
                       }
                     />
-                    <div
-                      className="content"
-                    />
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>

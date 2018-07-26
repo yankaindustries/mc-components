@@ -61,52 +61,40 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
           >
-            <div
-              className="mc-animation mc-animation--zoom "
+            <button
+              className="c-button mc-animation mc-animation--zoom  c-button--primary"
+              onClick={[Function]}
             >
-              <button
-                className="c-button c-button--primary"
-                onClick={[Function]}
-              >
-                <span>
-                  Zoom
-                </span>
-              </button>
-            </div>
+              <span>
+                Zoom
+              </span>
+            </button>
           </div>
           <div
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
           >
-            <div
-              className="mc-animation mc-animation--lift "
+            <button
+              className="c-button mc-animation mc-animation--lift  c-button--secondary"
+              onClick={[Function]}
             >
-              <button
-                className="c-button c-button--secondary"
-                onClick={[Function]}
-              >
-                <span>
-                  Lift
-                </span>
-              </button>
-            </div>
+              <span>
+                Lift
+              </span>
+            </button>
           </div>
           <div
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
           >
-            <div
-              className="mc-animation mc-animation--ken-burns "
+            <button
+              className="c-button mc-animation mc-animation--ken-burns  c-button--tertiary"
+              onClick={[Function]}
             >
-              <button
-                className="c-button c-button--tertiary"
-                onClick={[Function]}
-              >
-                <span>
-                  Ken Burns
-                </span>
-              </button>
-            </div>
+              <span>
+                Ken Burns
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -148,7 +136,7 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
           <div
             style={
               Object {
-                "width": "500px",
+                "maxWidth": "500px",
               }
             }
           >
@@ -156,42 +144,44 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
             >
-              <div>
+              <div
+                className="mc-tile mc-tile--16x9"
+              >
                 <div
-                  className="mc-animation mc-animation--ken-burns "
+                  className="mc-tile__content content"
                 >
                   <div
-                    className="tile tile--4x3"
+                    className="mc-tile-image mc-animation mc-animation--ken-burns "
                   >
                     <div
-                      className="background"
+                      className="mc-tile-image__image background"
                       style={
                         Object {
                           "backgroundImage": "url('')",
                         }
                       }
                     />
-                    <div
-                      className="content"
-                    />
                   </div>
-                </div>
-                <div
-                  className="mc-animation mc-animation--lift "
-                >
                   <div
-                    className="tile__caption imate-tile__caption--above"
+                    className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                  />
+                  <div
+                    className="mc-tile-caption mc-animation mc-animation--lift "
                   >
-                    <h2
-                      className="tile__caption__title"
+                    <div
+                      className="mc-tile-caption__titles"
                     >
-                      Jane Doe
-                    </h2>
-                    <h3
-                      className="tile__caption__subtitle"
-                    >
-                      Teaches Something
-                    </h3>
+                      <h2
+                        className="mc-tile-caption__title"
+                      >
+                        Shonda Rhimes
+                      </h2>
+                      <h3
+                        className="mc-tile-caption__subtitle"
+                      >
+                        Teaches Writing for Television
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>

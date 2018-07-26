@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { noop } from 'lodash'
 
@@ -39,10 +39,6 @@ export default class CheckOverlay extends PureComponent {
     const { children } = this.props
     const { toggled } = this.state
 
-    return (
-      <a onClick={this.handleClick}>
-        {renderChildren(children, { toggled })}
-      </a>
-    )
+    return renderChildren(children, { toggled, onClick: this.handleClick })
   }
 }
