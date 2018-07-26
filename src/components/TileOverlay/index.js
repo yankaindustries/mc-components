@@ -21,6 +21,7 @@ export default class TileOverlay extends PureComponent {
     } = this.props
 
     const classes = [
+      'mc-tile__component',
       'mc-tile-overlay',
       `mc-tile-overlay--${type}`,
       className || '',

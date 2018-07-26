@@ -19,6 +19,7 @@ export default class TileCaption extends PureComponent {
     } = this.props
 
     const classes = [
+      'mc-tile__component',
       'mc-tile-caption',
       className || '',
     ].join(' ')

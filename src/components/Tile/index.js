@@ -11,7 +11,7 @@ export default class Tile extends PureComponent {
       '1000x609',
       '519x187',
     ]),
-    children: PropTypes.element,
+    children: PropTypes.node,
     className: PropTypes.string,
   }
 

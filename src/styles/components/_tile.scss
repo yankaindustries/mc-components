@@ -33,6 +33,9 @@
     @include tile-aspect-ratio(16, 9);
   }
 
+  &--100x65 {
+    @include tile-aspect-ratio(100, 65);
+  }
   &--1000x609,
   &--site {
     @include tile-aspect-ratio(1000, 609);
@@ -66,12 +69,7 @@
   }
 
   .mc-tile__content {
-    // TODO this should get cleaned up with a single
-    // class that can be applied to "tile parts"
-    > .mc-tile-image,
-    > .mc-tile-overlay,
-    > .mc-tile-caption,
-    > .mc-tile-check {
+    > .mc-tile__component {
       position: absolute;
       width: 100%;
       height: 100%;

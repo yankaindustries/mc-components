@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|Tiles/TileImage TileImage 1`] = `
+exports[`Storyshots components|Tiles/TileCaption TileCaption 1`] = `
 <div
   style={
     Object {
@@ -15,7 +15,7 @@ exports[`Storyshots components|Tiles/TileImage TileImage 1`] = `
       className="container"
     >
       <h2>
-        TileImage
+        TileCaption
       </h2>
       <div
         className="row"
@@ -36,16 +36,22 @@ exports[`Storyshots components|Tiles/TileImage TileImage 1`] = `
                 className="mc-tile__content content"
               >
                 <div
-                  className="mc-tile-image "
+                  className="mc-tile-caption "
                 >
                   <div
-                    className="mc-tile-image__image background"
-                    style={
-                      Object {
-                        "backgroundImage": "url('')",
-                      }
-                    }
-                  />
+                    className="mc-tile-caption__titles"
+                  >
+                    <h2
+                      className="mc-tile-caption__title"
+                    >
+                      Shonda Rhimes
+                    </h2>
+                    <h3
+                      className="mc-tile-caption__subtitle"
+                    >
+                      Teaches Writing
+                    </h3>
+                  </div>
                 </div>
                 <div
                   className="example__filler"

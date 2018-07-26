@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|Tiles/TileImage TileImage 1`] = `
+exports[`Storyshots components|Tiles/TileOverlay TileOverlay 1`] = `
 <div
   style={
     Object {
@@ -15,7 +15,7 @@ exports[`Storyshots components|Tiles/TileImage TileImage 1`] = `
       className="container"
     >
       <h2>
-        TileImage
+        TileOverlay
       </h2>
       <div
         className="row"
@@ -36,17 +36,8 @@ exports[`Storyshots components|Tiles/TileImage TileImage 1`] = `
                 className="mc-tile__content content"
               >
                 <div
-                  className="mc-tile-image "
-                >
-                  <div
-                    className="mc-tile-image__image background"
-                    style={
-                      Object {
-                        "backgroundImage": "url('')",
-                      }
-                    }
-                  />
-                </div>
+                  className="mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                />
                 <div
                   className="example__filler"
                 />

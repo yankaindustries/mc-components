@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import DocSection from '../../utils/DocSection'
+import PropExample from '../../utils/PropExample'
 
 import Tile from '../Tile'
 import TileImage from '../TileImage'
@@ -15,16 +16,20 @@ storiesOf('components|Tiles/TileImage', module)
       <div className='container'>
         <h2>TileImage</h2>
 
-        <div className='row'>
-          <div className='col-md-6'>
-            <DocSection title='Example'>
-              <Tile>
-                <TileImage imageUrl={shondaRhimesThumbnail} />
-                <div className='example__filler' />
-              </Tile>
-            </DocSection>
-          </div>
-        </div>
+        <DocSection title='Props'>
+          <PropExample
+            name='imageUrl'
+            type='String'
+          >
+            <div className='row'>
+              <div className='col-sm-6'>
+                <Tile>
+                  <TileImage imageUrl={shondaRhimesThumbnail} />
+                </Tile>
+              </div>
+            </div>
+          </PropExample>
+        </DocSection>
       </div>
     </div>
   ))

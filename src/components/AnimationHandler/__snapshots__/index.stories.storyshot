@@ -145,7 +145,7 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
               onMouseLeave={[Function]}
             >
               <div
-                className="mc-tile mc-tile--16x9"
+                className="mc-tile mc-tile--16x9 "
               >
                 <div
                   className="mc-tile__content content"
