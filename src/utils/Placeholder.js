@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 
-export default class Filler extends PureComponent {
+export default class Placeholder extends PureComponent {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.node,
   }
 
   render () {
