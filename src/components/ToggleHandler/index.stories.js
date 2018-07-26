@@ -20,9 +20,9 @@ storiesOf('utilities|ToggleHandler', module)
           type='RenderProp'
         >
           <ToggleHandler>
-            {({ hovering }) =>
-              <Button primary>
-                {hovering ? 'Hovering' : 'Normal'}
+            {({ toggled, onClick }) =>
+              <Button onClick={onClick} primary>
+                {toggled ? 'On' : 'Off'}
               </Button>
             }
           </ToggleHandler>

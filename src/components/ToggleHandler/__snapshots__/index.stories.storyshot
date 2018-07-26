@@ -62,7 +62,7 @@ exports[`Storyshots utilities|ToggleHandler default 1`] = `
               onClick={[Function]}
             >
               <span>
-                Normal
+                Off
               </span>
             </button>
           </a>
