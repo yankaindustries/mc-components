@@ -55,43 +55,59 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
           className="example--render"
         >
           <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
+            className="row"
           >
-            <button
-              className="c-button mc-animation mc-animation--zoom  c-button--primary"
-              onClick={[Function]}
+            <div
+              className="col-sm-4"
             >
-              <span>
-                Zoom
-              </span>
-            </button>
-          </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <button
-              className="c-button mc-animation mc-animation--lift  c-button--secondary"
-              onClick={[Function]}
+              <div
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  className="c-button mc-animation mc-animation--zoom  c-button--primary"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Zoom
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div
+              className="col-sm-4"
             >
-              <span>
-                Lift
-              </span>
-            </button>
-          </div>
-          <div
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-          >
-            <button
-              className="c-button mc-animation mc-animation--ken-burns  c-button--tertiary"
-              onClick={[Function]}
+              <div
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  className="c-button mc-animation mc-animation--lift  c-button--secondary"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Lift
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div
+              className="col-sm-4"
             >
-              <span>
-                Ken Burns
-              </span>
-            </button>
+              <div
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  className="c-button mc-animation mc-animation--ken-burns  c-button--tertiary"
+                  onClick={[Function]}
+                >
+                  <span>
+                    Ken Burns
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
