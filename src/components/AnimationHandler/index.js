@@ -1,10 +1,12 @@
-import React, { PureComponent } from 'react'
+import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+
+import { renderChildren } from '../../utils/helpers'
 
 
 export default class AnimationHandler extends PureComponent {
   static propTypes = {
-    animation: PropTypes.oneOf([
+    type: PropTypes.oneOf([
       'zoom',
       'ken-burns',
       'lift',
@@ -17,26 +19,22 @@ export default class AnimationHandler extends PureComponent {
   }
 
   static defaultProps = {
-    animation: 'zoom',
+    type: 'zoom',
   }
 
   render () {
     const {
       animating,
-      animation,
+      type,
       children,
     } = this.props
 
     const classes = [
       'mc-animation',
-      `mc-animation--${animation}`,
+      `mc-animation--${type}`,
       animating ? 'mc-animation--animating' : '',
     ].join(' ')
 
-    return (
-      <div className={classes}>
-        {children}
-      </div>
-    )
+    return renderChildren(children, { className: classes })
   }
 }

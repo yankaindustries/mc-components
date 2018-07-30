@@ -54,18 +54,14 @@ exports[`Storyshots utilities|ToggleHandler default 1`] = `
         <div
           className="example--render"
         >
-          <a
+          <button
+            className="c-button c-button--tertiary"
             onClick={[Function]}
           >
-            <button
-              className="c-button c-button--primary"
-              onClick={[Function]}
-            >
-              <span>
-                Off
-              </span>
-            </button>
-          </a>
+            <span>
+              Off
+            </span>
+          </button>
         </div>
       </div>
     </div>

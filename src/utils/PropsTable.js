@@ -28,6 +28,15 @@ styles.header = {
 }
 
 
+const formatOptions = (type) => {
+  if (type.value) {
+    return type.value.map(({ value, name }) => value || name).join(', ')
+  }
+
+  return null
+}
+
+
 export default class PropsTable extends PureComponent {
   static propTypes = {
     component: PropTypes.func,
@@ -57,20 +66,22 @@ export default class PropsTable extends PureComponent {
 
         <tbody>
           {map(props, (prop, key) =>
-              <tr key={key} style={styles.row}>
-                <th style={styles.header}>{key}</th>
-                <td style={styles.cell}>{prop.type.name}</td>
-                <td style={styles.cell}>
-                  {prop.required
-                    ? 'true'
-                    : '-'}
-                </td>
-                <td style={styles.cell}>
-                  {prop.defaultValue && !isEmpty(prop.defaultValue.value)
-                    ? prop.defaultValue.value
-                    : '-'}
-                </td>
-              </tr>,
+            <tr key={key} style={styles.row}>
+              <th style={styles.header}>{key}</th>
+              <td style={styles.cell} title={formatOptions(prop.type)}>
+                {prop.type.name}
+              </td>
+              <td style={styles.cell}>
+                {prop.required
+                  ? 'true'
+                  : '-'}
+              </td>
+              <td style={styles.cell}>
+                {prop.defaultValue && !isEmpty(prop.defaultValue.value)
+                  ? prop.defaultValue.value
+                  : '-'}
+              </td>
+            </tr>,
           )}
         </tbody>
       </table>

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components|Tiles/TileImage TileImage 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <h2>
+      TileImage
+    </h2>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Props
+      </h4>
+      <div
+        className="example--definition"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                imageUrl
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                String
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-sm-6"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="mc-tile__component mc-tile-image "
+                    >
+                      <div
+                        className="mc-tile-image__image background"
+                        style={
+                          Object {
+                            "backgroundImage": "url('')",
+                          }
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

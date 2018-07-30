@@ -21,7 +21,11 @@ storiesOf('utilities|ToggleHandler', module)
         >
           <ToggleHandler>
             {({ toggled, onClick }) =>
-              <Button onClick={onClick} primary>
+              <Button
+                onClick={onClick}
+                primary={toggled}
+                tertiary={!toggled}
+              >
                 {toggled ? 'On' : 'Off'}
               </Button>
             }

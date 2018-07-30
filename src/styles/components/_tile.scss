@@ -1,24 +1,47 @@
+@mixin tile-aspect-ratio($width, $height) {
+  position: relative;
+
+  &:before {
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+    content: "";
+  }
+
+  .mc-tile__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
 .mc-tile,
 .tile {
   position: relative;
-  cursor: pointer;
   backface-visibility: hidden;
+  cursor: pointer;
 
   &--4x3,
   &--video {
-    @include aspect-ratio(4, 3);
+    @include tile-aspect-ratio(4, 3);
   }
   &--16x9,
   &--widescreen-video {
-    @include aspect-ratio(16, 9);
+    @include tile-aspect-ratio(16, 9);
   }
 
+  &--100x65 {
+    @include tile-aspect-ratio(100, 65);
+  }
   &--1000x609,
   &--site {
-    @include aspect-ratio(1000, 609);
+    @include tile-aspect-ratio(1000, 609);
   }
   &--519x187 {
-    @include aspect-ratio(519, 187);
+    @include tile-aspect-ratio(519, 187);
   }
 
   &--with-gradient {
@@ -44,18 +67,86 @@
       transform: scale(1.01);
     }
   }
+
+  .mc-tile__content {
+    > .mc-tile__component {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
+.mc-tile-image {
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: cover;
+    background-size: cover;
+  }
+}
 
-.mc-check-tile {
+.mc-tile-overlay {
+  z-index: 0;
+  // To ensure the overlay extends just passed the bounds
+  transform: scale(1.01);
+
+  &--gradient-bottom {
+    background:
+      linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0,
+        rgba(0, 0, 0, 0.6) 25%,
+        transparent 45%
+      );
+  }
+}
+
+.mc-tile-caption {
+  z-index: 2;
+
+  &__titles {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 16px;
+    text-shadow: 0 0 10px #000;
+  }
+
+  &__title {
+    font-size: 26px;
+    margin-bottom: 0.3em;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 400;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1em;
+    font-weight: 400;
+  }
+}
+
+.mc-tile-check {
   cursor: pointer;
+  z-index: 3;
 
   &__check {
     position: absolute;
     right: 0;
     top: 0;
-    margin: 1.8rem;
-    height: 3.7rem;
+    margin: 16px;
     z-index: 3;
   }
 }
