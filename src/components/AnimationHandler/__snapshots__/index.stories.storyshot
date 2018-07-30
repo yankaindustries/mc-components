@@ -55,57 +55,137 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
           className="example--render"
         >
           <div
-            className="row"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              className="c-button mc-animation mc-animation--zoom  c-button--primary"
+              onClick={[Function]}
+            >
+              <span>
+                Zoom
+              </span>
+            </button>
+          </div>
+          <div
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              className="c-button mc-animation mc-animation--lift  c-button--secondary"
+              onClick={[Function]}
+            >
+              <span>
+                Lift
+              </span>
+            </button>
+          </div>
+          <div
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              className="c-button mc-animation mc-animation--ken-burns  c-button--tertiary"
+              onClick={[Function]}
+            >
+              <span>
+                Ken Burns
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="example--section"
+  >
+    <h4>
+      Example
+    </h4>
+    <div
+      className="example--definition"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-10"
+        >
+          <h5>
+            <span
+              className="example--definition-name"
+            />
+          </h5>
+        </div>
+        <div
+          className="col-xs-2 text-right"
+        />
+      </div>
+      <div>
+        <div
+          className="text-right"
+        >
+          <a
+            onClick={[Function]}
+          >
+            &lt;/&gt;
+          </a>
+        </div>
+        <div
+          className="example--render"
+        >
+          <div
+            style={
+              Object {
+                "maxWidth": "500px",
+              }
+            }
           >
             <div
-              className="col-sm-4"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
             >
               <div
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
+                className="mc-tile mc-tile--16x9 "
               >
-                <button
-                  className="c-button mc-animation mc-animation--zoom  c-button--primary"
-                  onClick={[Function]}
+                <div
+                  className="mc-tile__content content"
                 >
-                  <span>
-                    Zoom
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div
-              className="col-sm-4"
-            >
-              <div
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              >
-                <button
-                  className="c-button mc-animation mc-animation--lift  c-button--secondary"
-                  onClick={[Function]}
-                >
-                  <span>
-                    Lift
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div
-              className="col-sm-4"
-            >
-              <div
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              >
-                <button
-                  className="c-button mc-animation mc-animation--ken-burns  c-button--tertiary"
-                  onClick={[Function]}
-                >
-                  <span>
-                    Ken Burns
-                  </span>
-                </button>
+                  <div
+                    className="mc-tile__component mc-tile-image mc-animation mc-animation--ken-burns "
+                  >
+                    <div
+                      className="mc-tile-image__image background"
+                      style={
+                        Object {
+                          "backgroundImage": "url('')",
+                        }
+                      }
+                    />
+                  </div>
+                  <div
+                    className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                  />
+                  <div
+                    className="mc-tile__component mc-tile-caption mc-animation mc-animation--lift "
+                  >
+                    <div
+                      className="mc-tile-caption__titles"
+                    >
+                      <h2
+                        className="mc-tile-caption__title"
+                      >
+                        Shonda Rhimes
+                      </h2>
+                      <h3
+                        className="mc-tile-caption__subtitle"
+                      >
+                        Teaches Writing for Television
+                      </h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

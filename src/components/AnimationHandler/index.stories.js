@@ -27,45 +27,60 @@ storiesOf('utilities|AnimationHandler', module)
           name='animation'
           type='String["zoom", "lift", "ken-burns"]'
         >
-          <div className='row'>
-            <div className='col-sm-4'>
-              <HoverHandler>
-                {({ hovering }) =>
-                  <AnimationHandler
-                    type='zoom'
-                    animating={hovering}
-                  >
-                    <Button primary>Zoom</Button>
-                  </AnimationHandler>
-                }
-              </HoverHandler>
-            </div>
+          <HoverHandler>
+            {({ hovering }) =>
+              <AnimationHandler type='zoom' animating={hovering}>
+                <Button primary>
+                  Zoom
+                </Button>
+              </AnimationHandler>
+            }
+          </HoverHandler>
 
-            <div className='col-sm-4'>
-              <HoverHandler>
-                {({ hovering }) =>
-                  <AnimationHandler
-                    type='lift'
-                    animating={hovering}
-                  >
-                    <Button secondary>Lift</Button>
-                  </AnimationHandler>
-                }
-              </HoverHandler>
-            </div>
+          <HoverHandler>
+            {({ hovering }) =>
+              <AnimationHandler type='lift' animating={hovering}>
+                <Button secondary>
+                  Lift
+                </Button>
+              </AnimationHandler>
+            }
+          </HoverHandler>
 
-            <div className='col-sm-4'>
-              <HoverHandler>
-                {({ hovering }) =>
-                  <AnimationHandler
-                    type='ken-burns'
-                    animating={hovering}
-                  >
-                    <Button tertiary>Ken Burns</Button>
+          <HoverHandler>
+            {({ hovering }) =>
+              <AnimationHandler type='ken-burns' animating={hovering}>
+                <Button tertiary>
+                  Ken Burns
+                </Button>
+              </AnimationHandler>
+            }
+          </HoverHandler>
+        </PropExample>
+      </DocSection>
+
+      <DocSection title='Example'>
+        <PropExample>
+          <div style={{ maxWidth: '500px' }}>
+            <HoverHandler>
+              {({ hovering }) =>
+                <Tile>
+                  <AnimationHandler type='ken-burns' animating={hovering}>
+                    <TileImage imageUrl={shondaRhimesThumbnail} />
                   </AnimationHandler>
-                }
-              </HoverHandler>
-            </div>
+
+                  <TileOverlay type='gradient-bottom' />
+
+                  <AnimationHandler type='lift' animating={hovering}>
+                    <TileCaption
+                      title='Shonda Rhimes'
+                      subtitle='Teaches Writing for Television'
+                      backdrop
+                    />
+                  </AnimationHandler>
+                </Tile>
+              }
+            </HoverHandler>
           </div>
         </PropExample>
       </DocSection>
