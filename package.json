@@ -4,6 +4,7 @@
   "main": "./dist/index.js",
   "author": "Masterclass <engineering@masterclass.com>",
   "homepage": "https://github.com/yankaindustries/mc-components",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/yankaindustries/mc-components/issues"
   },

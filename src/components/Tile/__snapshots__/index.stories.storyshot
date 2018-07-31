@@ -48,37 +48,6 @@ exports[`Storyshots components|Tiles Summary 1`] = `
           className="example--section"
         >
           <h4>
-            TileImage
-          </h4>
-          <div
-            className="mc-tile mc-tile--16x9 "
-          >
-            <div
-              className="mc-tile__content content"
-            >
-              <div
-                className="mc-tile__component mc-tile-image "
-              >
-                <div
-                  className="mc-tile-image__image background"
-                  style={
-                    Object {
-                      "backgroundImage": "url('')",
-                    }
-                  }
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="col-lg-4 col-md-6"
-      >
-        <div
-          className="example--section"
-        >
-          <h4>
             TileOverlay
           </h4>
           <div
@@ -91,15 +60,10 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                 className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
               />
               <div
-                className="mc-tile__component mc-tile-image "
+                className="example-placeholder"
               >
                 <div
-                  className="mc-tile-image__image background"
-                  style={
-                    Object {
-                      "backgroundImage": "url('')",
-                    }
-                  }
+                  className="example-placeholder__inner"
                 />
               </div>
             </div>
@@ -140,18 +104,10 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                 </div>
               </div>
               <div
-                className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
-              />
-              <div
-                className="mc-tile__component mc-tile-image "
+                className="example-placeholder"
               >
                 <div
-                  className="mc-tile-image__image background"
-                  style={
-                    Object {
-                      "backgroundImage": "url('')",
-                    }
-                  }
+                  className="example-placeholder__inner"
                 />
               </div>
             </div>
@@ -183,26 +139,31 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                 />
               </a>
               <div
-                className="mc-tile__component mc-tile-caption "
+                className="example-placeholder"
               >
                 <div
-                  className="mc-tile-caption__titles"
-                >
-                  <h2
-                    className="mc-tile-caption__title"
-                  >
-                    Shonda Rhimes
-                  </h2>
-                  <h3
-                    className="mc-tile-caption__subtitle"
-                  >
-                    Teaches Writing
-                  </h3>
-                </div>
+                  className="example-placeholder__inner"
+                />
               </div>
-              <div
-                className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
-              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            TileImage
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
               <div
                 className="mc-tile__component mc-tile-image "
               >
@@ -226,7 +187,56 @@ exports[`Storyshots components|Tiles Summary 1`] = `
           className="example--section"
         >
           <h4>
-            w/ Animations
+            TileVideo
+          </h4>
+          <div
+            className="mc-tile mc-tile--16x9 "
+          >
+            <div
+              className="mc-tile__content content"
+            >
+              <div
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <div
+                  className="mc-tile-video mc-tile__component"
+                >
+                  <a
+                    className="mc-tile-video__mute"
+                    onClick={[Function]}
+                  />
+                  <video
+                    autoPlay={true}
+                    className="mc-tile__component mc-tile-video__video bc-player__video bc-player__video--default mc-tile-video__video video-js "
+                    controls={false}
+                    data-account="5344802162001"
+                    data-embed="default"
+                    data-player-id="rkcQq7gAe"
+                    data-video-id="5450137526001"
+                    loop={true}
+                    muted={true}
+                    videoId="5450137526001"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div
+      class="row"
+    >
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            Animations
           </h4>
           <div
             onMouseEnter={[Function]}
@@ -250,6 +260,21 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                     className="mc-tile__content"
                   >
                     <div
+                      className="mc-tile__component mc-tile-image mc-animation mc-animation--ken-burns "
+                    >
+                      <div
+                        className="mc-tile-image__image background"
+                        style={
+                          Object {
+                            "backgroundImage": "url('')",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                    />
+                    <div
                       className="mc-tile__component mc-tile-caption mc-animation mc-animation--lift "
                     >
                       <div
@@ -267,23 +292,65 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                         </h3>
                       </div>
                     </div>
-                    <div
-                      className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
-                    />
-                    <div
-                      className="mc-tile__component mc-tile-image mc-animation mc-animation--ken-burns "
-                    >
-                      <div
-                        className="mc-tile-image__image background"
-                        style={
-                          Object {
-                            "backgroundImage": "url('')",
-                          }
-                        }
-                      />
-                    </div>
                   </div>
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="example--section"
+        >
+          <h4>
+            Swap
+          </h4>
+          <div
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <div
+              className="mc-tile mc-tile--16x9 mc-animation mc-animation--zoom "
+            >
+              <div
+                className="mc-tile__content content"
+              >
+                <div
+                  className="mc-tile__component mc-tile-image "
+                >
+                  <div
+                    className="mc-tile-image__image background"
+                    style={
+                      Object {
+                        "backgroundImage": "url('')",
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
+                />
+                <div
+                  className="mc-tile__component mc-tile-caption "
+                >
+                  <div
+                    className="mc-tile-caption__titles"
+                  >
+                    <h2
+                      className="mc-tile-caption__title"
+                    >
+                      Shonda Rhimes
+                    </h2>
+                    <h3
+                      className="mc-tile-caption__subtitle"
+                    >
+                      Teaches Writing
+                    </h3>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -39,7 +39,7 @@ const formatOptions = (type) => {
 
 export default class PropsTable extends PureComponent {
   static propTypes = {
-    component: PropTypes.func,
+    component: PropTypes.object,
   }
 
   static defaultProps = {

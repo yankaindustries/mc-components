@@ -84,31 +84,5 @@ storiesOf('utilities|AnimationHandler', module)
           </div>
         </PropExample>
       </DocSection>
-
-      <DocSection title='Example'>
-        <PropExample>
-          <div style={{ maxWidth: '500px' }}>
-            <HoverHandler>
-              {({ hovering }) =>
-                <Tile>
-                  <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl={shondaRhimesThumbnail} />
-                  </AnimationHandler>
-
-                  <TileOverlay type='gradient-bottom' />
-
-                  <AnimationHandler type='lift' animating={hovering}>
-                    <TileCaption
-                      title='Shonda Rhimes'
-                      subtitle='Teaches Writing for Television'
-                      backdrop
-                    />
-                  </AnimationHandler>
-                </Tile>
-              }
-            </HoverHandler>
-          </div>
-        </PropExample>
-      </DocSection>
     </div>
   )))
