@@ -227,7 +227,7 @@ exports[`Storyshots components|Tiles Summary 1`] = `
     </div>
     <hr />
     <div
-      class="row"
+      className="row"
     >
       <div
         className="col-lg-4 col-md-6"

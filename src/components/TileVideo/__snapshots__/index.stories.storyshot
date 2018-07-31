@@ -263,6 +263,87 @@ exports[`Storyshots components|Tiles/TileVideo TileVideo 1`] = `
           </div>
         </div>
       </div>
+      <div
+        className="example--definition"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                muted
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                Boolean
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-sm-6"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="mc-tile-video mc-tile__component"
+                      >
+                        <video
+                          autoPlay={false}
+                          className="mc-tile__component mc-tile-video__video bc-player__video bc-player__video--default mc-tile-video__video video-js "
+                          controls={true}
+                          data-account="5344802162001"
+                          data-embed="default"
+                          data-player-id="rkcQq7gAe"
+                          data-video-id="5450137526001"
+                          loop={false}
+                          muted={true}
+                          videoId="5450137526001"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
