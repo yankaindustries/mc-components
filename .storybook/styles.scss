@@ -3,16 +3,23 @@
 
 body {
   padding: 20px;
-  background: $black;
+  background: $mc-dark;
   font-size: 14px;
-}
-
-.text-right {
-  text-align: right;
 }
 
 pre {
   font-family: monospace;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: $mc-gray-100;
+  margin: 32px 0;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .hljs {
