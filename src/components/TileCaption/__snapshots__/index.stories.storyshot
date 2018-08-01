@@ -303,42 +303,90 @@ exports[`Storyshots components|Tiles/TileCaption TileCaption 1`] = `
                 className="col-sm-4"
               >
                 <div
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
+                  className="mc-tile mc-tile--16x9 "
                 >
                   <div
-                    className="mc-tile mc-tile--16x9 mc-animation mc-animation--zoom "
+                    className="mc-tile__content content"
                   >
                     <div
-                      className="mc-tile__content content"
+                      className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--below "
                     >
                       <div
-                        className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--bottom "
+                        className="mc-tile-caption__titles"
                       >
-                        <div
-                          className="mc-tile-caption__titles"
+                        <h2
+                          className="mc-tile-caption__title"
                         >
-                          <h2
-                            className="mc-tile-caption__title"
-                          >
-                            Shonda Rhimes
-                          </h2>
-                          <h3
-                            className="mc-tile-caption__subtitle"
-                          >
-                            Teaches Writing
-                          </h3>
-                        </div>
-                      </div>
-                      <div
-                        className="example-placeholder"
-                      >
-                        <div
-                          className="example-placeholder__inner"
-                        />
+                          Shonda Rhimes
+                        </h2>
+                        <h3
+                          className="mc-tile-caption__subtitle"
+                        >
+                          Teaches Writing
+                        </h3>
                       </div>
                     </div>
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      />
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="example--section"
+    >
+      <h4>
+        Example
+      </h4>
+      <div
+        className="row"
+      >
+        <div
+          className="col-sm-4"
+        >
+          <div
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <div
+              className="mc-tile mc-tile--16x9 mc-animation mc-animation--zoom "
+            >
+              <div
+                className="mc-tile__content content"
+              >
+                <div
+                  className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--bottom "
+                >
+                  <div
+                    className="mc-tile-caption__titles"
+                  >
+                    <h2
+                      className="mc-tile-caption__title"
+                    >
+                      Shonda Rhimes
+                    </h2>
+                    <h3
+                      className="mc-tile-caption__subtitle"
+                    >
+                      Teaches Writing
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  className="example-placeholder"
+                >
+                  <div
+                    className="example-placeholder__inner"
+                  />
                 </div>
               </div>
             </div>
