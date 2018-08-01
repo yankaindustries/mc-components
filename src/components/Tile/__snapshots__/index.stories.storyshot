@@ -216,7 +216,6 @@ exports[`Storyshots components|Tiles Summary 1`] = `
                     data-video-id="5450137526001"
                     loop={true}
                     muted={true}
-                    videoId="5450137526001"
                   />
                 </div>
               </div>

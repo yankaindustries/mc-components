@@ -10,6 +10,7 @@ export default class TextArea extends PureComponent {
     fullWidth: bool,
     resize: bool,
     style: object,
+    type: string,
     error: string,
   }
 
