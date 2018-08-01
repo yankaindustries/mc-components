@@ -131,10 +131,29 @@
 
   &__titles {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    margin: 16px;
+    padding: 16px;
+    width: 100%;
+    background: rgba($mc-dark, 0);
     text-shadow: 0 0 10px #000;
+    transition: transform 0.2s ease;
+
+    .mc-tile-caption--bottom & {
+      left: 0;
+      top: 100%;
+      transform: translateY(-100%);
+    }
+
+    .mc-tile-caption--below & {
+      left: 0;
+      top: 100%;
+      transform: translateY(0);
+      background: rgba($mc-dark, 1);
+      transition: transform 0.2s ease, background 0.2s ease 0.2s;
+    }
+
+    .mc-tile-caption--center & {
+      text-align: center;
+    }
   }
 
   &__title {

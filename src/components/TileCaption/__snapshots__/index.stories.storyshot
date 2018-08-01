@@ -14,54 +14,54 @@ exports[`Storyshots components|Tiles/TileCaption TileCaption 1`] = `
       className="example--section"
     >
       <h4>
-        Props
+        Variants
       </h4>
       <div
-        className="row"
+        className="example--definition"
       >
         <div
-          className="col-md-6"
+          className="row"
         >
           <div
-            className="example--definition"
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                title
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                String
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
           >
             <div
               className="row"
             >
               <div
-                className="col-xs-10"
-              >
-                <h5>
-                  <span
-                    className="example--definition-name"
-                  >
-                    title
-                  </span>
-                  <span
-                    className="example--definition-type"
-                  >
-                     &lt;
-                    String
-                    &gt;
-                  </span>
-                </h5>
-              </div>
-              <div
-                className="col-xs-2 text-right"
-              />
-            </div>
-            <div>
-              <div
-                className="text-right"
-              >
-                <a
-                  onClick={[Function]}
-                >
-                  &lt;/&gt;
-                </a>
-              </div>
-              <div
-                className="example--render"
+                className="col-sm-4"
               >
                 <div
                   className="mc-tile mc-tile--16x9 "
@@ -70,7 +70,7 @@ exports[`Storyshots components|Tiles/TileCaption TileCaption 1`] = `
                     className="mc-tile__content content"
                   >
                     <div
-                      className="mc-tile__component mc-tile-caption "
+                      className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--bottom "
                     >
                       <div
                         className="mc-tile-caption__titles"
@@ -80,63 +80,68 @@ exports[`Storyshots components|Tiles/TileCaption TileCaption 1`] = `
                         >
                           Shonda Rhimes
                         </h2>
-                        <h3
-                          className="mc-tile-caption__subtitle"
-                        />
                       </div>
                     </div>
                     <div
-                      className="example__filler"
-                    />
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="example--definition"
+      >
         <div
-          className="col-md-6"
+          className="row"
         >
           <div
-            className="example--definition"
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                subtitle
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                String
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
           >
             <div
               className="row"
             >
               <div
-                className="col-xs-10"
-              >
-                <h5>
-                  <span
-                    className="example--definition-name"
-                  >
-                    subtitle
-                  </span>
-                  <span
-                    className="example--definition-type"
-                  >
-                     &lt;
-                    String
-                    &gt;
-                  </span>
-                </h5>
-              </div>
-              <div
-                className="col-xs-2 text-right"
-              />
-            </div>
-            <div>
-              <div
-                className="text-right"
-              >
-                <a
-                  onClick={[Function]}
-                >
-                  &lt;/&gt;
-                </a>
-              </div>
-              <div
-                className="example--render"
+                className="col-sm-4"
               >
                 <div
                   className="mc-tile mc-tile--16x9 "
@@ -145,7 +150,7 @@ exports[`Storyshots components|Tiles/TileCaption TileCaption 1`] = `
                     className="mc-tile__content content"
                   >
                     <div
-                      className="mc-tile__component mc-tile-caption "
+                      className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--bottom "
                     >
                       <div
                         className="mc-tile-caption__titles"
@@ -163,8 +168,176 @@ exports[`Storyshots components|Tiles/TileCaption TileCaption 1`] = `
                       </div>
                     </div>
                     <div
-                      className="example__filler"
-                    />
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="example--definition"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-10"
+          >
+            <h5>
+              <span
+                className="example--definition-name"
+              >
+                position
+              </span>
+              <span
+                className="example--definition-type"
+              >
+                 &lt;
+                String
+                &gt;
+              </span>
+            </h5>
+          </div>
+          <div
+            className="col-xs-2 text-right"
+          />
+        </div>
+        <div>
+          <div
+            className="text-right"
+          >
+            <a
+              onClick={[Function]}
+            >
+              &lt;/&gt;
+            </a>
+          </div>
+          <div
+            className="example--render"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--bottom "
+                    >
+                      <div
+                        className="mc-tile-caption__titles"
+                      >
+                        <h2
+                          className="mc-tile-caption__title"
+                        >
+                          Shonda Rhimes
+                        </h2>
+                        <h3
+                          className="mc-tile-caption__subtitle"
+                        >
+                          Teaches Writing
+                        </h3>
+                      </div>
+                    </div>
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  className="mc-tile mc-tile--16x9 "
+                >
+                  <div
+                    className="mc-tile__content content"
+                  >
+                    <div
+                      className="mc-tile__component mc-tile-caption mc-tile-caption--center mc-tile-caption--bottom "
+                    >
+                      <div
+                        className="mc-tile-caption__titles"
+                      >
+                        <h2
+                          className="mc-tile-caption__title"
+                        >
+                          Shonda Rhimes
+                        </h2>
+                        <h3
+                          className="mc-tile-caption__subtitle"
+                        >
+                          Teaches Writing
+                        </h3>
+                      </div>
+                    </div>
+                    <div
+                      className="example-placeholder"
+                    >
+                      <div
+                        className="example-placeholder__inner"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="col-sm-4"
+              >
+                <div
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <div
+                    className="mc-tile mc-tile--16x9 mc-animation mc-animation--zoom "
+                  >
+                    <div
+                      className="mc-tile__content content"
+                    >
+                      <div
+                        className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--bottom "
+                      >
+                        <div
+                          className="mc-tile-caption__titles"
+                        >
+                          <h2
+                            className="mc-tile-caption__title"
+                          >
+                            Shonda Rhimes
+                          </h2>
+                          <h3
+                            className="mc-tile-caption__subtitle"
+                          >
+                            Teaches Writing
+                          </h3>
+                        </div>
+                      </div>
+                      <div
+                        className="example-placeholder"
+                      >
+                        <div
+                          className="example-placeholder__inner"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

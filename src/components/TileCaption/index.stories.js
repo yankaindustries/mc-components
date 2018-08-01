@@ -8,6 +8,8 @@ import Placeholder from '../../utils/Placeholder'
 
 import Tile from '../Tile'
 import TileCaption from '../TileCaption'
+import AnimationHandler from '../AnimationHandler'
+import HoverHandler from '../HoverHandler'
 
 
 storiesOf('components|Tiles/TileCaption', module)
@@ -59,6 +61,7 @@ storiesOf('components|Tiles/TileCaption', module)
                 <Tile>
                   <TileCaption
                     title='Shonda Rhimes'
+                    subtitle='Teaches Writing'
                     position='left bottom'
                   />
                   <Placeholder />
@@ -69,6 +72,7 @@ storiesOf('components|Tiles/TileCaption', module)
                 <Tile>
                   <TileCaption
                     title='Shonda Rhimes'
+                    subtitle='Teaches Writing'
                     position='center bottom'
                   />
                   <Placeholder />
@@ -76,13 +80,20 @@ storiesOf('components|Tiles/TileCaption', module)
               </div>
 
               <div className='col-sm-4'>
-                <Tile>
-                  <TileCaption
-                    title='Shonda Rhimes'
-                    position='left below'
-                  />
-                  <Placeholder />
-                </Tile>
+                <HoverHandler>
+                  {({ hovering }) =>
+                    <AnimationHandler type='zoom' animating={hovering}>
+                      <Tile>
+                        <TileCaption
+                          title='Shonda Rhimes'
+                          subtitle='Teaches Writing'
+                          position={hovering ? 'left below' : 'left bottom'}
+                        />
+                        <Placeholder />
+                      </Tile>
+                    </AnimationHandler>
+                  }
+                </HoverHandler>
               </div>
             </div>
           </PropExample>

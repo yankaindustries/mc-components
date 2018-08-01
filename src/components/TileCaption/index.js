@@ -29,10 +29,13 @@ export default class TileCaption extends PureComponent {
       title,
     } = this.props
 
+    const positionClasses =
+      position.split(' ').map(pos => `mc-tile-caption--${pos}`)
+
     const classes = [
       'mc-tile__component',
       'mc-tile-caption',
-      `mc-tile-caption--${position.replace(' ', '-')}`,
+      ...positionClasses,
       className || '',
     ].join(' ')
 
