@@ -11,17 +11,19 @@ This component library is most easily imported as a dependency.  You can use `ya
 
 `yarn add mc-components` or `npm install mc-components --save`
 
-### Standalone styles
-If your project doesn't use npm for dependencies and you're only looking for masterclass css / style files, they can be imported manually by downloading the repository on github.  This will give you access to styles for buttons, the grid, typography, and more.
+Our components do **not** contain any styles.  The style library must also be imported manually into your root `scss` file.
 
 ```scss
-@import '../node_modules/mc-components/dist/styles/scss/index';
+@import 'mc-components';
 ```
 
-**Note**: If your project doesn't have asset compilation or sass processing, you can also import the compiled css manually like so:
+### Standalone style usage
+If your project doesn't use yarn or npm for dependencies and you're only looking for masterclass css / style files, they can be imported manually by downloading the repository on github.  This will give you access to styles for buttons, the grid, typography, and more.  Save the contents of the `/dist/styles/scss/` folder to your own project, then import!
 
-```css
-@import '../node_modules/mc-components/dist/styles/css/mastersass.css';
+**Note**: If your project doesn't have sass processing, there is a plain css file you can import here:
+
+```
+/dist/styles/css/mc-components.css
 ```
 
 ### Using a component

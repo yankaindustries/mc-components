@@ -19,8 +19,8 @@
     "build": "yarn build:js && yarn build:assets && yarn build:styles && yarn build:css-vendor",
     "build:assets": "cpx -p './src/assets/**/*' ./dist/assets",
     "build:js": "NODE_ENV=production babel ./src --out-dir ./dist --ignore spec.js,test.js,stories.js",
-    "prebuild:css": "node-sass src/styles/index.scss dist/styles/css/mastersass.css",
-    "build:css": "postcss -r dist/styles/css/mastersass.css",
+    "prebuild:css": "node-sass src/styles/index.scss dist/styles/css/mc-components.css",
+    "build:css": "postcss -r dist/styles/css/mc-components.css",
     "build:css-vendor": "node-sass src/styles/libraries/_libraries.scss dist/styles/css/vendor.css && postcss -r dist/styles/css/vendor.css",
     "build:scss": "cpx -p './src/styles/**/*.scss' ./dist/styles/scss",
     "build:styles": "yarn build:scss && yarn build:css",
@@ -102,6 +102,8 @@
       "react-app"
     ]
   },
+  "style": "dist/styles/mc-components.css",
+  "sass": "src/styles/index.scss",
   "jest": {
     "moduleNameMapper": {
       "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|ico)$": "<rootDir>/__mocks__/fileMock.js",
