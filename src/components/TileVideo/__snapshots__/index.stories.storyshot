@@ -90,7 +90,6 @@ exports[`Storyshots components|Tiles/TileVideo TileVideo 1`] = `
                           data-video-id="5450137526001"
                           loop={false}
                           muted={false}
-                          videoId="5450137526001"
                         />
                       </div>
                     </div>
@@ -171,7 +170,6 @@ exports[`Storyshots components|Tiles/TileVideo TileVideo 1`] = `
                           data-video-id="5450137526001"
                           loop={false}
                           muted={false}
-                          videoId="5450137526001"
                         />
                       </div>
                     </div>
@@ -252,7 +250,6 @@ exports[`Storyshots components|Tiles/TileVideo TileVideo 1`] = `
                           data-video-id="5450137526001"
                           loop={true}
                           muted={false}
-                          videoId="5450137526001"
                         />
                       </div>
                     </div>
@@ -333,7 +330,6 @@ exports[`Storyshots components|Tiles/TileVideo TileVideo 1`] = `
                           data-video-id="5450137526001"
                           loop={false}
                           muted={true}
-                          videoId="5450137526001"
                         />
                       </div>
                     </div>

@@ -59,6 +59,7 @@ export default class TileVideo extends PureComponent {
       className,
       controls,
       videoId,
+      ...restProps
     } = this.props
 
     const {
@@ -94,7 +95,9 @@ export default class TileVideo extends PureComponent {
               data-video-id={videoId}
               data-player-id={PLAYER_ID}
               data-account={ACCOUNT_ID}
-              {...this.props}
+              controls={controls}
+              muted={muted}
+              {...restProps}
             />
 
             {children}

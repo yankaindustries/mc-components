@@ -1,4 +1,4 @@
-import { map, isEmpty } from 'lodash'
+import { map, isEmpty, isArray } from 'lodash'
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
@@ -28,8 +28,18 @@ styles.header = {
 }
 
 
+const formatName = (type) => {
+  if (type) {
+    return type.value && type.value.name
+      ? `${type.name}(${type.value.name})`
+      : type.name
+  }
+
+  return null
+}
+
 const formatOptions = (type) => {
-  if (type.value) {
+  if (type && isArray(type.value)) {
     return type.value.map(({ value, name }) => value || name).join(', ')
   }
 
@@ -69,7 +79,7 @@ export default class PropsTable extends PureComponent {
             <tr key={key} style={styles.row}>
               <th style={styles.header}>{key}</th>
               <td style={styles.cell} title={formatOptions(prop.type)}>
-                {prop.type.name}
+                {formatName(prop.type)}
               </td>
               <td style={styles.cell}>
                 {prop.required
