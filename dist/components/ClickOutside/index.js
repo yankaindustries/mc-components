@@ -34,16 +34,16 @@ var ClickOutside = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ClickOutside.__proto__ || Object.getPrototypeOf(ClickOutside)).call.apply(_ref, [this].concat(args))), _this), _this.box = _react2.default.createRef(), _this.onClickOutside = function (e) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ClickOutside.__proto__ || Object.getPrototypeOf(ClickOutside)).call.apply(_ref, [this].concat(args))), _this), _this.onClickOutside = function (e) {
       var divRef = _this.props.divRef;
 
       var ref = divRef || _this.box;
       if (!ref || !ref.current.contains(e.target)) {
         var onClickOutside = _this.props.onClickOutside;
 
-        onClickOutside();
+        onClickOutside(e);
       }
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.box = _react2.default.createRef(), _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(ClickOutside, [{

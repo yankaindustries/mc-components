@@ -24,6 +24,49 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var styles = {
+  table: {
+    width: '100%',
+    border: '1px solid rgba(255, 255, 255, 0.08)',
+    borderCollapse: 'collapse',
+    fontFamily: 'sans-serif',
+    fontSize: '12px',
+    textAlign: 'left'
+  },
+  row: {
+    borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+    borderBottom: '1px solid rgba(0, 0, 0, 0.08)'
+  },
+  cell: {
+    padding: '5px 10px',
+    fontWeight: 300
+  }
+};
+
+styles.header = Object.assign({}, styles.cell, {
+  fontWeight: 600
+});
+
+var formatName = function formatName(type) {
+  if (type) {
+    return type.value && type.value.name ? type.name + '(' + type.value.name + ')' : type.name;
+  }
+
+  return null;
+};
+
+var formatOptions = function formatOptions(type) {
+  if (type && (0, _lodash.isArray)(type.value)) {
+    return type.value.map(function (_ref) {
+      var value = _ref.value,
+          name = _ref.name;
+      return value || name;
+    }).join(', ');
+  }
+
+  return null;
+};
+
 var PropsTable = function (_PureComponent) {
   _inherits(PropsTable, _PureComponent);
 
@@ -36,14 +79,16 @@ var PropsTable = function (_PureComponent) {
   _createClass(PropsTable, [{
     key: 'render',
     value: function render() {
-      var component = this.props.component;
+      var props = this.props.component.props;
 
-      var docgenKey = '__docgenInfo';
-      var props = component[docgenKey] ? component[docgenKey].props : [];
+
+      if (!props) {
+        return null;
+      }
 
       return _react2.default.createElement(
         'table',
-        { className: 'example--table' },
+        { style: styles.table },
         _react2.default.createElement(
           'thead',
           null,
@@ -52,23 +97,23 @@ var PropsTable = function (_PureComponent) {
             null,
             _react2.default.createElement(
               'th',
-              null,
+              { style: styles.header },
               'Name'
             ),
             _react2.default.createElement(
               'th',
-              null,
+              { style: styles.header },
               'Type'
             ),
             _react2.default.createElement(
               'th',
-              null,
-              'Required?'
+              { style: styles.header },
+              'Req?'
             ),
             _react2.default.createElement(
               'th',
-              null,
-              'Default?'
+              { style: styles.header },
+              'Def'
             )
           )
         ),
@@ -78,25 +123,25 @@ var PropsTable = function (_PureComponent) {
           (0, _lodash.map)(props, function (prop, key) {
             return _react2.default.createElement(
               'tr',
-              null,
+              { key: key, style: styles.row },
               _react2.default.createElement(
                 'th',
-                null,
+                { style: styles.header },
                 key
               ),
               _react2.default.createElement(
                 'td',
-                null,
-                prop.type.name
+                { style: styles.cell, title: formatOptions(prop.type) },
+                formatName(prop.type)
               ),
               _react2.default.createElement(
                 'td',
-                null,
+                { style: styles.cell },
                 prop.required ? 'true' : '-'
               ),
               _react2.default.createElement(
                 'td',
-                null,
+                { style: styles.cell },
                 prop.defaultValue && !(0, _lodash.isEmpty)(prop.defaultValue.value) ? prop.defaultValue.value : '-'
               )
             );
@@ -110,6 +155,9 @@ var PropsTable = function (_PureComponent) {
 }(_react.PureComponent);
 
 PropsTable.propTypes = {
-  component: _propTypes2.default.func.isRequired
+  component: _propTypes2.default.object
+};
+PropsTable.defaultProps = {
+  component: {}
 };
 exports.default = PropsTable;

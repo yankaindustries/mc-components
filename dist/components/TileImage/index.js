@@ -14,10 +14,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _CodeExample = require('./CodeExample');
-
-var _CodeExample2 = _interopRequireDefault(_CodeExample);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26,67 +22,51 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Definition = function (_PureComponent) {
-  _inherits(Definition, _PureComponent);
+var TileImage = function (_PureComponent) {
+  _inherits(TileImage, _PureComponent);
 
-  function Definition() {
-    _classCallCheck(this, Definition);
+  function TileImage() {
+    _classCallCheck(this, TileImage);
 
-    return _possibleConstructorReturn(this, (Definition.__proto__ || Object.getPrototypeOf(Definition)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (TileImage.__proto__ || Object.getPrototypeOf(TileImage)).apply(this, arguments));
   }
 
-  _createClass(Definition, [{
+  _createClass(TileImage, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
-          name = _props.name,
-          type = _props.type,
-          children = _props.children;
+          className = _props.className,
+          children = _props.children,
+          imageUrl = _props.imageUrl;
 
+
+      var classes = ['mc-tile__component', 'mc-tile-image', className || ''].join(' ');
 
       return _react2.default.createElement(
         'div',
-        { className: 'example--definition' },
-        _react2.default.createElement(
+        { className: classes },
+        _react2.default.createElement('div', {
+          className: 'mc-tile-image__image background',
+          style: { backgroundImage: 'url(\'' + imageUrl + '\')' }
+        }),
+        children && _react2.default.createElement(
           'div',
-          { className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-xs-10' },
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'span',
-                { className: 'example--definition-name' },
-                name
-              ),
-              type && _react2.default.createElement(
-                'span',
-                { className: 'example--definition-type' },
-                '\xA0<',
-                type,
-                '>'
-              )
-            )
-          ),
-          _react2.default.createElement('div', { className: 'col-xs-2 text-right' })
-        ),
-        _react2.default.createElement(
-          _CodeExample2.default,
-          null,
+          { className: 'mc-tile__content content' },
           children
         )
       );
     }
   }]);
 
-  return Definition;
+  return TileImage;
 }(_react.PureComponent);
 
-Definition.propTypes = {
-  name: _propTypes2.default.string,
-  type: _propTypes2.default.string,
-  children: _propTypes2.default.node.isRequired
+TileImage.propTypes = {
+  className: _propTypes2.default.string,
+  children: _propTypes2.default.node,
+  imageUrl: _propTypes2.default.string.isRequired
 };
-exports.default = Definition;
+TileImage.defaultProps = {
+  className: ''
+};
+exports.default = TileImage;

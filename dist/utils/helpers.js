@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.renderChildren = exports.FormatClassTitle = exports.NumberToPX = exports.parseInputErrors = undefined;
+
+var _react = require('react');
+
+var _lodash = require('lodash');
+
 var parseInputErrors = exports.parseInputErrors = function parseInputErrors(error) {
   if (!error) {
     return undefined;
@@ -25,4 +31,14 @@ var FormatClassTitle = exports.FormatClassTitle = function FormatClassTitle() {
     return title;
   }
   return title.trim().slice(instructorName.length).trim();
+};
+
+var renderChildren = exports.renderChildren = function renderChildren(children, props) {
+  if ((0, _lodash.isFunction)(children)) {
+    return children(props);
+  }
+
+  return _react.Children.map(children, function (child) {
+    return (0, _react.cloneElement)(child, props);
+  });
 };

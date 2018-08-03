@@ -1,9 +1,9 @@
 // mc-release mixins
 @import "mixins/mixins";
 
-// masterSass
+// mc-components
+@import "animation/animation";
 @import "base/base";
-@import "functions/functions";
 @import "components/components";
-@import "icons/icons";
+@import "functions/functions";
 @import "typography/typography";

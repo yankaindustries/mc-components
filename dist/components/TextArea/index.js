@@ -91,6 +91,7 @@ TextArea.propTypes = {
   fullWidth: _propTypes.bool,
   resize: _propTypes.bool,
   style: _propTypes.object,
+  type: _propTypes.string,
   error: _propTypes.string
 };
 TextArea.defaultProps = {

@@ -8,19 +8,13 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _react = require('react');
 
-var _react2 = _interopRequireDefault(_react);
-
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _ImageTile = require('../ImageTile');
+var _lodash = require('lodash');
 
-var _ImageTile2 = _interopRequireDefault(_ImageTile);
-
-var _CheckboxOverlay = require('../CheckboxOverlay');
-
-var _CheckboxOverlay2 = _interopRequireDefault(_CheckboxOverlay);
+var _helpers = require('../../utils/helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,43 +24,54 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CheckTile = function (_PureComponent) {
-  _inherits(CheckTile, _PureComponent);
+var CheckOverlay = function (_PureComponent) {
+  _inherits(CheckOverlay, _PureComponent);
 
-  function CheckTile() {
-    _classCallCheck(this, CheckTile);
+  function CheckOverlay(props) {
+    _classCallCheck(this, CheckOverlay);
 
-    return _possibleConstructorReturn(this, (CheckTile.__proto__ || Object.getPrototypeOf(CheckTile)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (CheckOverlay.__proto__ || Object.getPrototypeOf(CheckOverlay)).call(this, props));
+
+    _this.handleClick = function () {
+      var onChange = _this.props.onChange;
+      var toggled = _this.state.toggled;
+
+
+      _this.setState(function (_ref) {
+        var toggled = _ref.toggled;
+        return { toggled: !toggled };
+      }, function () {
+        return onChange(!toggled);
+      });
+    };
+
+    _this.state = {
+      toggled: props.toggled
+    };
+    return _this;
   }
 
-  _createClass(CheckTile, [{
+  _createClass(CheckOverlay, [{
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          checked = _props.checked,
-          children = _props.children;
+      var children = this.props.children;
+      var toggled = this.state.toggled;
 
 
-      var classNames = ['overlay-check', checked ? 'overlay-check--checked' : 'overlay-check--unchecked'].join(' ');
-
-      return _react2.default.createElement(
-        _ImageTile2.default,
-        Object.assign({ className: classNames }, this.props),
-        _react2.default.createElement(
-          _CheckboxOverlay2.default,
-          this.props,
-          children
-        )
-      );
+      return (0, _helpers.renderChildren)(children, { toggled: toggled, onClick: this.handleClick });
     }
   }]);
 
-  return CheckTile;
+  return CheckOverlay;
 }(_react.PureComponent);
 
-CheckTile.propTypes = {
-  checked: _propTypes2.default.bool,
-  onCheck: _propTypes2.default.func.isRequired,
-  children: _propTypes2.default.node.isRequired
+CheckOverlay.propTypes = {
+  onChange: _propTypes2.default.func,
+  toggled: _propTypes2.default.bool,
+  children: _propTypes2.default.func.isRequired
 };
-exports.default = CheckTile;
+CheckOverlay.defaultProps = {
+  onChange: _lodash.noop,
+  toggled: false
+};
+exports.default = CheckOverlay;

@@ -32,68 +32,29 @@ var ImageTile = function (_PureComponent) {
   _inherits(ImageTile, _PureComponent);
 
   function ImageTile() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     _classCallCheck(this, ImageTile);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ImageTile.__proto__ || Object.getPrototypeOf(ImageTile)).call.apply(_ref, [this].concat(args))), _this), _this.backgroundStyle = function (imagePath) {
-      var backgroundGradient = _this.props.backgroundGradient;
-
-      var backgroundImageStyle = 'url(\'' + imagePath + '\')';
-      if (backgroundGradient) {
-        backgroundImageStyle = '\n        linear-gradient(to top, #000, rgba(0,0,0,.75) 20%, rgba(0,0,0, 0) 40%),\n        ' + backgroundImageStyle + '\n      ';
-      }
-      return {
-        backgroundImage: backgroundImageStyle
-      };
-    }, _this.animationStyles = function (style) {
-      switch (style) {
-        case 'hover-zoom':
-          return 'tile--hover-zoom';
-        default:
-          return 'tile--no-hover';
-      }
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    return _possibleConstructorReturn(this, (ImageTile.__proto__ || Object.getPrototypeOf(ImageTile)).apply(this, arguments));
   }
 
   _createClass(ImageTile, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
-          animationStyle = _props.animationStyle,
           aspectRatio = _props.aspectRatio,
           className = _props.className,
           children = _props.children,
-          imageUrl = _props.imageUrl,
-          width = _props.width;
+          imageUrl = _props.imageUrl;
 
-      var classNames = (0, _classnames2.default)('tile', 'tile--' + aspectRatio, this.animationStyles(animationStyle), _defineProperty({}, className, Boolean(className)));
 
-      var style = width ? {
-        width: width + 'px',
-        height: function () {
-          var aspectRatioArr = aspectRatio.split('x');
-          var widthRatio = aspectRatioArr[0];
-          var heigthRatio = aspectRatioArr[1];
-
-          return width * heigthRatio / widthRatio;
-        }()
-      } : null;
+      var classNames = (0, _classnames2.default)('tile', 'tile--' + aspectRatio, _defineProperty({}, className, Boolean(className)));
 
       return _react2.default.createElement(
         'div',
-        {
-          className: classNames,
-          style: style },
+        { className: classNames },
         _react2.default.createElement('div', {
           className: 'background',
-          style: this.backgroundStyle(imageUrl)
+          style: { backgroundImage: 'url(\'' + imageUrl + '\')' }
         }),
         _react2.default.createElement(
           'div',
@@ -108,17 +69,13 @@ var ImageTile = function (_PureComponent) {
 }(_react.PureComponent);
 
 ImageTile.propTypes = {
-  animationStyle: _propTypes2.default.string,
   aspectRatio: _propTypes2.default.oneOf(['4x3', '16x9', '100x65', '1000x609', '519x187']),
   className: _propTypes2.default.string,
   children: _propTypes2.default.node,
-  imageUrl: _propTypes2.default.string.isRequired,
-  backgroundGradient: _propTypes2.default.bool,
-  width: _propTypes2.default.number
+  imageUrl: _propTypes2.default.string.isRequired
 };
 ImageTile.defaultProps = {
   aspectRatio: '16x9',
-  className: '',
-  backgroundGradient: true
+  className: ''
 };
 exports.default = ImageTile;

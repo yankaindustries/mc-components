@@ -14,11 +14,9 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _CodeExample = require('./CodeExample');
-
-var _CodeExample2 = _interopRequireDefault(_CodeExample);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -26,67 +24,69 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Definition = function (_PureComponent) {
-  _inherits(Definition, _PureComponent);
+var TileCaption = function (_PureComponent) {
+  _inherits(TileCaption, _PureComponent);
 
-  function Definition() {
-    _classCallCheck(this, Definition);
+  function TileCaption() {
+    _classCallCheck(this, TileCaption);
 
-    return _possibleConstructorReturn(this, (Definition.__proto__ || Object.getPrototypeOf(Definition)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (TileCaption.__proto__ || Object.getPrototypeOf(TileCaption)).apply(this, arguments));
   }
 
-  _createClass(Definition, [{
+  _createClass(TileCaption, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
-          name = _props.name,
-          type = _props.type,
-          children = _props.children;
+          children = _props.children,
+          className = _props.className,
+          position = _props.position,
+          subtitle = _props.subtitle,
+          title = _props.title;
 
+
+      var positionClasses = position.split(' ').map(function (pos) {
+        return 'mc-tile-caption--' + pos;
+      });
+
+      var classes = ['mc-tile__component', 'mc-tile-caption'].concat(_toConsumableArray(positionClasses), [className || '']).join(' ');
 
       return _react2.default.createElement(
         'div',
-        { className: 'example--definition' },
+        { className: classes },
         _react2.default.createElement(
           'div',
-          { className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-xs-10' },
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'span',
-                { className: 'example--definition-name' },
-                name
-              ),
-              type && _react2.default.createElement(
-                'span',
-                { className: 'example--definition-type' },
-                '\xA0<',
-                type,
-                '>'
-              )
-            )
+          { className: 'mc-tile-caption__titles' },
+          title && _react2.default.createElement(
+            'h2',
+            { className: 'mc-tile-caption__title' },
+            title
           ),
-          _react2.default.createElement('div', { className: 'col-xs-2 text-right' })
+          subtitle && _react2.default.createElement(
+            'h3',
+            { className: 'mc-tile-caption__subtitle' },
+            subtitle
+          )
         ),
-        _react2.default.createElement(
-          _CodeExample2.default,
-          null,
+        children && _react2.default.createElement(
+          'div',
+          { className: 'mc-tile-caption__content content' },
           children
         )
       );
     }
   }]);
 
-  return Definition;
+  return TileCaption;
 }(_react.PureComponent);
 
-Definition.propTypes = {
-  name: _propTypes2.default.string,
-  type: _propTypes2.default.string,
-  children: _propTypes2.default.node.isRequired
+TileCaption.propTypes = {
+  children: _propTypes2.default.element,
+  className: _propTypes2.default.string,
+  position: _propTypes2.default.oneOf(['left bottom', 'center bottom', 'left below', 'center below']),
+  subtitle: _propTypes2.default.string,
+  title: _propTypes2.default.string
 };
-exports.default = Definition;
+TileCaption.defaultProps = {
+  position: 'left bottom'
+};
+exports.default = TileCaption;

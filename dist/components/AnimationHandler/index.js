@@ -8,15 +8,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _react = require('react');
 
-var _react2 = _interopRequireDefault(_react);
-
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _playWithCircle = require('../../assets/play-with-circle.svg');
-
-var _playWithCircle2 = _interopRequireDefault(_playWithCircle);
+var _helpers = require('../../utils/helpers');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26,37 +22,39 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var CheckboxOverlay = function (_PureComponent) {
-  _inherits(CheckboxOverlay, _PureComponent);
+var AnimationHandler = function (_PureComponent) {
+  _inherits(AnimationHandler, _PureComponent);
 
-  function CheckboxOverlay() {
-    _classCallCheck(this, CheckboxOverlay);
+  function AnimationHandler() {
+    _classCallCheck(this, AnimationHandler);
 
-    return _possibleConstructorReturn(this, (CheckboxOverlay.__proto__ || Object.getPrototypeOf(CheckboxOverlay)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (AnimationHandler.__proto__ || Object.getPrototypeOf(AnimationHandler)).apply(this, arguments));
   }
 
-  _createClass(CheckboxOverlay, [{
+  _createClass(AnimationHandler, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
-          onCheck = _props.onCheck,
+          animating = _props.animating,
+          type = _props.type,
           children = _props.children;
 
 
-      return _react2.default.createElement(
-        'a',
-        { className: 'overlay-check__checkbox-tile-overlay', onClick: onCheck },
-        children,
-        _react2.default.createElement('img', { className: 'overlay-check__image', src: _playWithCircle2.default, alt: 'checkmark' })
-      );
+      var classes = ['mc-animation', 'mc-animation--' + type, animating ? 'mc-animation--animating' : ''].join(' ');
+
+      return (0, _helpers.renderChildren)(children, { className: classes });
     }
   }]);
 
-  return CheckboxOverlay;
+  return AnimationHandler;
 }(_react.PureComponent);
 
-CheckboxOverlay.propTypes = {
-  onCheck: _propTypes2.default.func.isRequired,
-  children: _propTypes2.default.node.isRequired
+AnimationHandler.propTypes = {
+  type: _propTypes2.default.oneOf(['zoom', 'ken-burns', 'lift']),
+  animating: _propTypes2.default.bool,
+  children: _propTypes2.default.oneOfType([_propTypes2.default.func, _propTypes2.default.element])
 };
-exports.default = CheckboxOverlay;
+AnimationHandler.defaultProps = {
+  type: 'zoom'
+};
+exports.default = AnimationHandler;
