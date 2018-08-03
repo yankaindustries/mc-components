@@ -8,17 +8,6 @@ export default class ClickOutside extends Component {
     divRef: object,
   }
 
-  box = React.createRef();
-
-  onClickOutside = (e) => {
-    const { divRef } = this.props
-    const ref = divRef || this.box
-    if (!ref || !ref.current.contains(e.target)) {
-      const { onClickOutside } = this.props
-      onClickOutside()
-    }
-  }
-
   componentDidMount () {
     document.addEventListener('click', this.onClickOutside, true)
   }
@@ -26,6 +15,17 @@ export default class ClickOutside extends Component {
   componentWillUnmount () {
     document.removeEventListener('click', this.onClickOutside, true)
   }
+
+  onClickOutside = (e) => {
+    const { divRef } = this.props
+    const ref = divRef || this.box
+    if (!ref || !ref.current.contains(e.target)) {
+      const { onClickOutside } = this.props
+      onClickOutside(e)
+    }
+  }
+
+  box = React.createRef()
 
   render () {
     const { children, divRef } = this.props
