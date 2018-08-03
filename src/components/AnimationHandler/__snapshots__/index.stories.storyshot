@@ -168,7 +168,7 @@ exports[`Storyshots utilities|AnimationHandler default 1`] = `
                     className="mc-tile__component mc-tile-overlay mc-tile-overlay--gradient-bottom "
                   />
                   <div
-                    className="mc-tile__component mc-tile-caption mc-animation mc-animation--lift "
+                    className="mc-tile__component mc-tile-caption mc-tile-caption--left mc-tile-caption--bottom mc-animation mc-animation--lift "
                   >
                     <div
                       className="mc-tile-caption__titles"
