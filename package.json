@@ -102,8 +102,8 @@
       "react-app"
     ]
   },
-  "style": "dist/styles/mc-components.css",
-  "sass": "src/styles/index.scss",
+  "style": "dist/styles/css/mc-components.css",
+  "sass": "dist/styles/scss/index.scss",
   "jest": {
     "moduleNameMapper": {
       "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|ico)$": "<rootDir>/__mocks__/fileMock.js",
