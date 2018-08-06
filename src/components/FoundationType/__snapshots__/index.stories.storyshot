@@ -61,7 +61,9 @@ exports[`Storyshots foundation|Type default 1`] = `
         <div
           className="col-md"
         >
-          <h1>
+          <h1
+            className="mc-heading-1"
+          >
             Unlock Every Class with the All‑Access Pass
           </h1>
         </div>
@@ -79,7 +81,9 @@ exports[`Storyshots foundation|Type default 1`] = `
         <div
           className="col-md"
         >
-          <h2>
+          <h2
+            className="mc-heading-2"
+          >
             Lorem Ipsum Sin Dolor
           </h2>
         </div>
@@ -97,7 +101,9 @@ exports[`Storyshots foundation|Type default 1`] = `
         <div
           className="col-md"
         >
-          <h3>
+          <h3
+            className="mc-heading-3"
+          >
             All-Access Pass
           </h3>
         </div>
@@ -115,7 +121,9 @@ exports[`Storyshots foundation|Type default 1`] = `
         <div
           className="col-md"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             NOW AVAILABLE
           </h4>
         </div>
@@ -133,26 +141,8 @@ exports[`Storyshots foundation|Type default 1`] = `
         <div
           className="col-md"
         >
-          <p>
-            Online classes taught by the world's greatest minds. Now get unlimited access to all classes.
-          </p>
-        </div>
-      </div>
-      <div
-        className="row align-items-center"
-      >
-        <div
-          className="col-md-2 mc-type__description"
-        >
-          <p>
-            Body 2
-          </p>
-        </div>
-        <div
-          className="col-md"
-        >
           <p
-            className="mc-text-body-2"
+            className="mc-body"
           >
             Online classes taught by the world's greatest minds. Now get unlimited access to all classes.
           </p>
@@ -1377,7 +1367,36 @@ exports[`Storyshots foundation|Type default 1`] = `
                         &lt;
                         h1
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            className
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                mc-heading-1
+                              </span>
+                              "
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -1755,7 +1774,36 @@ exports[`Storyshots foundation|Type default 1`] = `
                         &lt;
                         h2
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            className
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                mc-heading-2
+                              </span>
+                              "
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -2133,7 +2181,36 @@ exports[`Storyshots foundation|Type default 1`] = `
                         &lt;
                         h3
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            className
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                mc-heading-3
+                              </span>
+                              "
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -2511,7 +2588,36 @@ exports[`Storyshots foundation|Type default 1`] = `
                         &lt;
                         h4
                       </span>
-                      <span />
+                      <span>
+                        <span>
+                           
+                          <span
+                            style={Object {}}
+                          >
+                            className
+                          </span>
+                          <span>
+                            =
+                            <span
+                              style={Object {}}
+                            >
+                              "
+                              <span
+                                style={
+                                  Object {
+                                    "color": "#22a",
+                                    "wordBreak": "break-word",
+                                  }
+                                }
+                              >
+                                mc-heading-4
+                              </span>
+                              "
+                            </span>
+                          </span>
+                          
+                        </span>
+                      </span>
                       <span
                         style={
                           Object {
@@ -2889,384 +2995,6 @@ exports[`Storyshots foundation|Type default 1`] = `
                         &lt;
                         p
                       </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 78,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        Online classes taught by the world's greatest minds. Now get unlimited access to all classes.
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 63,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;/
-                        p
-                        &gt;
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 48,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;/
-                      div
-                      &gt;
-                    </span>
-                  </div>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#777",
-                      }
-                    }
-                  >
-                    &lt;/
-                    div
-                    &gt;
-                  </span>
-                </div>
-              </div>
-              <div>
-                <div
-                  style={
-                    Object {
-                      "paddingLeft": 33,
-                      "paddingRight": 3,
-                    }
-                  }
-                >
-                  <span
-                    style={
-                      Object {
-                        "color": "#777",
-                      }
-                    }
-                  >
-                    &lt;
-                    div
-                  </span>
-                  <span>
-                    <span>
-                       
-                      <span
-                        style={Object {}}
-                      >
-                        className
-                      </span>
-                      <span>
-                        =
-                        <span
-                          style={Object {}}
-                        >
-                          "
-                          <span
-                            style={
-                              Object {
-                                "color": "#22a",
-                                "wordBreak": "break-word",
-                              }
-                            }
-                          >
-                            row align-items-center
-                          </span>
-                          "
-                        </span>
-                      </span>
-                      
-                    </span>
-                  </span>
-                  <span
-                    style={
-                      Object {
-                        "color": "#777",
-                      }
-                    }
-                  >
-                    &gt;
-                  </span>
-                </div>
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 48,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;
-                      div
-                    </span>
-                    <span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          className
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            "
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              col-md-2 mc-type__description
-                            </span>
-                            "
-                          </span>
-                        </span>
-                        
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &gt;
-                    </span>
-                  </div>
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 63,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        p
-                      </span>
-                      <span />
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &gt;
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 78,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        Body 2
-                      </span>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 63,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;/
-                        p
-                        &gt;
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 48,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;/
-                      div
-                      &gt;
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <div
-                    style={
-                      Object {
-                        "paddingLeft": 48,
-                        "paddingRight": 3,
-                      }
-                    }
-                  >
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &lt;
-                      div
-                    </span>
-                    <span>
-                      <span>
-                         
-                        <span
-                          style={Object {}}
-                        >
-                          className
-                        </span>
-                        <span>
-                          =
-                          <span
-                            style={Object {}}
-                          >
-                            "
-                            <span
-                              style={
-                                Object {
-                                  "color": "#22a",
-                                  "wordBreak": "break-word",
-                                }
-                              }
-                            >
-                              col-md
-                            </span>
-                            "
-                          </span>
-                        </span>
-                        
-                      </span>
-                    </span>
-                    <span
-                      style={
-                        Object {
-                          "color": "#777",
-                        }
-                      }
-                    >
-                      &gt;
-                    </span>
-                  </div>
-                  <div>
-                    <div
-                      style={
-                        Object {
-                          "paddingLeft": 63,
-                          "paddingRight": 3,
-                        }
-                      }
-                    >
-                      <span
-                        style={
-                          Object {
-                            "color": "#777",
-                          }
-                        }
-                      >
-                        &lt;
-                        p
-                      </span>
                       <span>
                         <span>
                            
@@ -3289,7 +3017,7 @@ exports[`Storyshots foundation|Type default 1`] = `
                                   }
                                 }
                               >
-                                mc-text-body-2
+                                mc-body
                               </span>
                               "
                             </span>
