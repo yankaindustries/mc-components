@@ -33,7 +33,7 @@ storiesOf('foundation|Type', module)
           </div>
 
           <div className='col-md'>
-            <h1>Unlock Every Class with the All‑Access Pass</h1>
+            <h1 className='mc-heading-1'>Unlock Every Class with the All‑Access Pass</h1>
           </div>
         </div>
 
@@ -43,7 +43,7 @@ storiesOf('foundation|Type', module)
           </div>
 
           <div className='col-md'>
-            <h2>Lorem Ipsum Sin Dolor</h2>
+            <h2 className='mc-heading-2'>Lorem Ipsum Sin Dolor</h2>
           </div>
         </div>
 
@@ -53,7 +53,7 @@ storiesOf('foundation|Type', module)
           </div>
 
           <div className='col-md'>
-            <h3>All-Access Pass</h3>
+            <h3 className='mc-heading-3'>All-Access Pass</h3>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ storiesOf('foundation|Type', module)
           </div>
 
           <div className='col-md'>
-            <h4>NOW AVAILABLE</h4>
+            <h4 className='mc-heading-4'>NOW AVAILABLE</h4>
           </div>
         </div>
 
@@ -73,19 +73,9 @@ storiesOf('foundation|Type', module)
           </div>
 
           <div className='col-md'>
-            <p>Online classes taught by the world&#39;s
+            <p className='mc-body'>Online classes taught by the world&#39;s
             greatest minds. Now get unlimited access to all classes.
             </p>
-          </div>
-        </div>
-
-        <div className='row align-items-center'>
-          <div className='col-md-2 mc-type__description'>
-            <p>Body 2</p>
-          </div>
-
-          <div className='col-md'>
-            <p className='mc-text-body-2'>Online classes taught by the world&#39;s greatest minds. Now get unlimited access to all classes.</p>
           </div>
         </div>
 
