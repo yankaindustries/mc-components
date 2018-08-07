@@ -13,7 +13,7 @@ storiesOf('components|Tiles/TileVideo', module)
   .add('TileVideo', withProps(TileVideo)(() => (
     <div className='container'>
       <div className='container'>
-        <h2>TileVideo</h2>
+        <h2 className='mc-heading-2'>TileVideo</h2>
 
         <DocSection title='Props'>
           <PropExample

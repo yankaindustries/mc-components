@@ -15,7 +15,7 @@ storiesOf('components|Tiles/TileOverlay', module)
   .add('TileOverlay', () => (
     <div className='container'>
       <div className='container'>
-        <h2>TileOverlay</h2>
+        <h2 className='mc-heading-2'>TileOverlay</h2>
 
         <DocSection title='Props'>
           <PropExample
