@@ -18,14 +18,14 @@ export default class Definition extends PureComponent {
       <div className='example--definition'>
         <div className='row'>
           <div className='col-xs-10'>
-            <h5>
+            <p className='mc-body'>
               <span className='example--definition-name'>{name}</span>
               {type &&
                 <span className='example--definition-type'>
                   &nbsp;&lt;{type}&gt;
                 </span>
               }
-            </h5>
+            </p>
           </div>
 
           <div className='col-xs-2 text-right'>

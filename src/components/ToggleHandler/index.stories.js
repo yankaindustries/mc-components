@@ -12,7 +12,7 @@ import Button from '../Button'
 storiesOf('utilities|ToggleHandler', module)
   .add('default', withProps(ToggleHandler)(() => (
     <div className='container'>
-      <h2>ToggleHandler</h2>
+      <h2 className='mc-heading-2'>ToggleHandler</h2>
 
       <DocSection title='Variations'>
         <PropExample

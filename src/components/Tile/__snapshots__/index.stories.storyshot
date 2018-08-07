@@ -7,7 +7,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
   <div
     className="container"
   >
-    <h2>
+    <h2
+      className="mc-heading-2"
+    >
       Tile
     </h2>
     <div
@@ -19,7 +21,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             Tile
           </h4>
           <div
@@ -47,7 +51,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             TileOverlay
           </h4>
           <div
@@ -76,7 +82,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             TileCaption
           </h4>
           <div
@@ -120,7 +128,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             TileCheck
           </h4>
           <div
@@ -155,7 +165,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             TileImage
           </h4>
           <div
@@ -186,7 +198,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             TileVideo
           </h4>
           <div
@@ -234,7 +248,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             Animations
           </h4>
           <div
@@ -304,7 +320,9 @@ exports[`Storyshots components|Tiles Summary 1`] = `
         <div
           className="example--section"
         >
-          <h4>
+          <h4
+            className="mc-heading-4"
+          >
             Swap
           </h4>
           <div
@@ -367,13 +385,17 @@ exports[`Storyshots components|Tiles/Tile Tile 1`] = `
   <div
     className="container"
   >
-    <h2>
+    <h2
+      className="mc-heading-2"
+    >
       Tile
     </h2>
     <div
       className="example--section"
     >
-      <h4>
+      <h4
+        className="mc-heading-4"
+      >
         Props
       </h4>
       <div
@@ -385,7 +407,9 @@ exports[`Storyshots components|Tiles/Tile Tile 1`] = `
           <div
             className="col-xs-10"
           >
-            <h5>
+            <p
+              className="mc-body"
+            >
               <span
                 className="example--definition-name"
               >
@@ -398,7 +422,7 @@ exports[`Storyshots components|Tiles/Tile Tile 1`] = `
                 String[16x9]
                 &gt;
               </span>
-            </h5>
+            </p>
           </div>
           <div
             className="col-xs-2 text-right"

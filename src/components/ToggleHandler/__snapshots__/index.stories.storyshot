@@ -4,13 +4,17 @@ exports[`Storyshots utilities|ToggleHandler default 1`] = `
 <div
   className="container"
 >
-  <h2>
+  <h2
+    className="mc-heading-2"
+  >
     ToggleHandler
   </h2>
   <div
     className="example--section"
   >
-    <h4>
+    <h4
+      className="mc-heading-4"
+    >
       Variations
     </h4>
     <div
@@ -22,7 +26,9 @@ exports[`Storyshots utilities|ToggleHandler default 1`] = `
         <div
           className="col-xs-10"
         >
-          <h5>
+          <p
+            className="mc-body"
+          >
             <span
               className="example--definition-name"
             >
@@ -35,7 +41,7 @@ exports[`Storyshots utilities|ToggleHandler default 1`] = `
               RenderProp
               &gt;
             </span>
-          </h5>
+          </p>
         </div>
         <div
           className="col-xs-2 text-right"
