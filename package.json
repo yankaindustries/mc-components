@@ -24,7 +24,6 @@
     "build:css-vendor": "node-sass src/styles/libraries/_libraries.scss dist/styles/css/vendor.css && postcss -r dist/styles/css/vendor.css",
     "build:scss": "cpx -p './src/styles/**/*.scss' ./dist/styles/scss",
     "build:styles": "yarn build:scss && yarn build:css",
-    "test": "jest",
     "start": "start-storybook -p 9001 -c .storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "prepublishOnly": "yarn build",
@@ -41,27 +40,21 @@
     "@storybook/addon-backgrounds": "^3.4.5",
     "@storybook/addon-info": "^3.4.5",
     "@storybook/addon-options": "^3.4.8",
-    "@storybook/addon-storyshots": "^3.4.8",
     "@storybook/react": "^3.4.5",
     "@storybook/storybook-deployer": "^2.3.0",
     "autoprefixer": "^8.6.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "8.2.3",
-    "babel-jest": "^23.2.0",
     "babel-loader": "^7.1.4",
     "babel-preset-react-app": "^3.1.1",
     "cpx": "^1.5.0",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.4",
     "eslint": "4.19.1",
     "eslint-plugin-import": "2.11.0",
     "file-loader": "^1.1.11",
     "husky": "^0.14.3",
-    "jest": "^23.2.0",
     "jsx-to-string": "^1.4.0",
     "lint-staged": "^7.2.0",
     "node-sass": "^4.9.0",
@@ -71,8 +64,6 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-highlight": "^0.12.0",
-    "react-test-renderer": "^16.4.1",
-    "regenerator-runtime": "^0.12.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
@@ -103,12 +94,5 @@
     ]
   },
   "style": "dist/styles/css/mc-components.css",
-  "sass": "dist/styles/scss/index.scss",
-  "jest": {
-    "moduleNameMapper": {
-      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|ico)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "setupTestFrameworkScriptFile": "<rootDir>/tools/testSetup.js"
-  }
+  "sass": "dist/styles/scss/index.scss"
 }
