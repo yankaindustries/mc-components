@@ -1,10 +1,36 @@
 @import '../src/styles/libraries/libraries';
 @import '../src/styles/index';
 
-body {
-  padding: 20px;
+
+
+
+
+
+
+.mc-background--light {
+  background: $mc-light;
+  color: $mc-dark;
+}
+
+.mc-background--dark {
   background: $mc-dark;
-  font-size: 14px;
+}
+
+.mc-section {
+  padding: 32px;
+}
+
+.mc-section__header {
+  padding-bottom: 32px;
+}
+
+
+
+
+
+
+body {
+  background: $mc-background;
 }
 
 pre {
