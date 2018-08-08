@@ -34,7 +34,7 @@ export default class CodeExample extends PureComponent {
           {children}
         </div>
 
-        <div className='mc-text--code text-right'>
+        <div className='mc-text--monospace text-right'>
           <a onClick={this.toggleCode}>
             &lt;/&gt;
           </a>

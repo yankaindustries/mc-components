@@ -1,18 +1,43 @@
+// stylelint-disable declaration-no-important
 .mc-text {
+  // Monospaced
+  &--monospace {
+    font-family: monospace !important;
+  }
+
+  // Transformation
+  &--uppercase {
+    text-transform: uppercase !important;
+  }
+
+  &--lowercase {
+    text-transform: lowercase !important;
+  }
+
+  &--capitalize {
+    text-transform: capitalize !important;
+  }
+
+  // Weight / opacity
   &--bold {
-    font-weight: 600;
+    font-weight: 600 !important;
+  }
+
+  &--normal {
+    font-weight: 400 !important;
   }
 
   &--muted {
-    opacity: 0.5;
+    opacity: 0.5 !important;
   }
+}
 
-  &--uppercase {
-    text-transform: uppercase;
+// Responsive
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .mc-text#{$infix}-left   { text-align: left !important; }
+    .mc-text#{$infix}-right  { text-align: right !important; }
+    .mc-text#{$infix}-center { text-align: center !important; }
   }
-
-  &--code {
-    font-family: monospace;
-  }
-
 }
