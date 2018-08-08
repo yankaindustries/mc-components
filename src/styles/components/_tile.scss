@@ -23,10 +23,16 @@
   backface-visibility: hidden;
   cursor: pointer;
 
+  &--1x1,
+  &--square {
+    @include tile-aspect-ratio(1, 1);
+  }
+
   &--4x3,
   &--video {
     @include tile-aspect-ratio(4, 3);
   }
+
   &--16x9,
   &--widescreen-video {
     @include tile-aspect-ratio(16, 9);
@@ -35,11 +41,14 @@
   &--100x65 {
     @include tile-aspect-ratio(100, 65);
   }
+
   &--1000x609,
   &--site {
     @include tile-aspect-ratio(1000, 609);
   }
-  &--519x187 {
+
+  &--519x187,
+  &--ultra-wide {
     @include tile-aspect-ratio(519, 187);
   }
 

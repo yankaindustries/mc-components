@@ -50,6 +50,8 @@ $mc-bp-sm:     576px !default;
 $mc-bp-md:     768px !default;
 $mc-bp-lg:     992px !default;
 $mc-bp-xl:     1200px !default;
+// NOTE: If we change these breakpoint values, we
+// also need to update them for ResponsiveHandler.
 
 // Z-indexes
 $mc-zindex-dropdown:          1000 !default;
