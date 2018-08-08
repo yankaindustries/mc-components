@@ -1,7 +1,8 @@
 import React from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
-import ReplayIcon from '../icons/ReplayIcon'
+
+import Replay from '../../assets/icons/replay.svg'
 
 export default class VideoPlayer extends React.PureComponent {
   static propTypes = {
@@ -174,7 +175,7 @@ export default class VideoPlayer extends React.PureComponent {
 
   renderEndScreen = () => (
       <div className='bc-player-endscreen'>
-        <ReplayIcon
+        <Replay
           className='bc-player-endscreen__replay'
           onClick={this.handleReplayClick}
         />

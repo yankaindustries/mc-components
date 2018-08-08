@@ -49,7 +49,6 @@
     position: absolute;
     top: 3.2rem;
     right: 3.2rem;
-    padding: 1rem;
 
     @include media-breakpoint-down(sm) {
       display: none;
@@ -63,7 +62,6 @@
     position: absolute;
     top: 1.4rem;
     left: 1.4rem;
-    padding: 1rem;
 
     svg {
       opacity: 0.3;

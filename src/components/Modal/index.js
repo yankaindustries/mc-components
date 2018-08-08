@@ -4,9 +4,10 @@ import cn from 'classnames'
 
 import ModalPortal from '../ModalPortal'
 import ModalHeader from '../ModalHeader'
-import CloseIcon from '../icons/CloseIcon'
 import ClickOutside from '../ClickOutside'
 import RoundedBox from '../RoundedBox'
+
+import Close from '../../assets/icons/close.svg'
 
 export default class Modal extends Component {
   static propTypes = {
@@ -75,7 +76,7 @@ export default class Modal extends Component {
 
     return (
       <ModalPortal>
-        <CloseIcon className='modal__close-icon' onClick={onClose} />
+        <Close className='modal__close-icon' onClick={onClose} />
         <ClickOutside
           divRef={this.container}
           onClickOutside={this.onClickOutside}
@@ -86,7 +87,7 @@ export default class Modal extends Component {
               HeaderComponent={HeaderComponent}
               {...props}
             >
-              <CloseIcon className='modal__inner-close-icon' onClick={onClose} />
+              <Close className='modal__inner-close-icon' onClick={onClose} />
               {children}
             </RoundedBox>
           </div>

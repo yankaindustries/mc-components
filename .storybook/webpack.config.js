@@ -4,8 +4,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+              replaceAttrValues: {
+                '#000': 'currentColor',
+              }
+            },
+          },
+        ],
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
@@ -16,7 +26,8 @@ module.exports = {
         loaders: ["style-loader", "css-loader", "sass-loader"],
         include: path.resolve(__dirname, "../")
       },
-      { test: /\.eot(\?v=\d+.\d+.\d+)?$/,
+      {
+        test: /\.eot(\?v=\d+.\d+.\d+)?$/,
         loader: 'file-loader'
       },
       {

@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import ArrowImage from '../../assets/Carousel/arrow.svg'
+
+import Arrow from '../../assets/icons/arrow.svg'
 
 const CarouselArrow = ({
   direction,
@@ -21,10 +22,7 @@ const CarouselArrow = ({
       onClick={onClick}
       style={isHidden ? { opacity: 0 } : null}
     >
-      <img
-        src={ArrowImage}
-        className='mc-carousel-arrow__image'
-      />
+      <Arrow className='mc-carousel-arrow__image' />
     </button>
   )
 }

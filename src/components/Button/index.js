@@ -1,7 +1,9 @@
 import React from 'react'
 import cn from 'classnames'
 import { string, func, bool, node, oneOfType, arrayOf } from 'prop-types'
-import ButtonLoader from '../ButtonLoader'
+
+import Loader from '../../assets/icons/loader.svg'
+
 
 const Button = ({
   children,
@@ -44,7 +46,7 @@ const Button = ({
       <span>
         {children}
       </span>
-      {loading && <ButtonLoader />}
+      {loading && <Loader className='loader' />}
     </button>
   )
 }
