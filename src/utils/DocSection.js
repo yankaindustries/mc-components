@@ -13,7 +13,7 @@ export default class Section extends PureComponent {
 
     return (
       <div className='example--section'>
-        <h4 className='mc-heading-4'>{title}</h4>
+        <h4 className='mc-text-h4'>{title}</h4>
         {children}
       </div>
     )

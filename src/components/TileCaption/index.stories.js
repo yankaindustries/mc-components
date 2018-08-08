@@ -16,7 +16,7 @@ storiesOf('components|Tiles/TileCaption', module)
   .add('TileCaption', withProps(TileCaption)(() => (
     <div className='container'>
       <div className='container'>
-        <h2 className='mc-heading-2'>TileCaption</h2>
+        <h2 className='mc-text-h2'>TileCaption</h2>
 
         <DocSection title='Variants'>
           <PropExample

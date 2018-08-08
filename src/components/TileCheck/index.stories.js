@@ -13,7 +13,7 @@ storiesOf('components|Tiles/TileCheck', module)
   .add('TileCheck', () => (
     <div className='container'>
       <div className='container'>
-        <h2 className='mc-heading-2'>TileCheck</h2>
+        <h2 className='mc-text-h2'>TileCheck</h2>
 
         <DocSection title='Props'>
           <PropExample

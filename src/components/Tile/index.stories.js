@@ -21,7 +21,7 @@ storiesOf('components|Tiles', module)
   .add('Summary', () => (
     <div className='container'>
       <div className='container'>
-        <h2 className='mc-heading-2'>Tile</h2>
+        <h2 className='mc-text-h2'>Tile</h2>
 
         <div className='row'>
           <div className='col-lg-4 col-md-6'>
@@ -162,7 +162,7 @@ storiesOf('components|Tiles/Tile', module)
   .add('Tile', () => (
     <div className='container'>
       <div className='container'>
-        <h2 className='mc-heading-2'>Tile</h2>
+        <h2 className='mc-text-h2'>Tile</h2>
 
         <DocSection title='Props'>
           <PropExample

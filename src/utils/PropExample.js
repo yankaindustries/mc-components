@@ -17,8 +17,8 @@ export default class Definition extends PureComponent {
     return (
       <div className='example--definition'>
         <div className='row'>
-          <div className='col-xs-10'>
-            <p className='mc-body'>
+          <div className='col-10'>
+            <p>
               <span className='example--definition-name'>{name}</span>
               {type &&
                 <span className='example--definition-type'>
@@ -28,7 +28,7 @@ export default class Definition extends PureComponent {
             </p>
           </div>
 
-          <div className='col-xs-2 text-right'>
+          <div className='col-2 text-right'>
           </div>
         </div>
 
