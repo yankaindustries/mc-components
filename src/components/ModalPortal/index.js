@@ -7,8 +7,6 @@ export default class ModalPortal extends Component {
     children: oneOfType([arrayOf(node), node]).isRequired,
   }
 
-  el = document.createElement('div')
-
   componentDidMount () {
     const modalRoot = document.getElementById('modal-root')
     modalRoot.appendChild(this.el)
@@ -23,6 +21,8 @@ export default class ModalPortal extends Component {
     const body = document.getElementsByTagName('body')[0]
     body.classList.remove('modal__body--open')
   }
+
+  el = document.createElement('div')
 
   render () {
     return ReactDOM.createPortal(

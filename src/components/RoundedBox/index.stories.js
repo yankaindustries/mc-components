@@ -14,7 +14,8 @@ storiesOf('components|RoundedBox', module)
   .add('with header', withProps(RoundedBox)(() => (
     <RoundedBox
       header='Header'
-      subheader='Sub header'>
+      subheader='Sub header'
+    >
 
       <p>Content</p>
     </RoundedBox>

@@ -57,14 +57,16 @@ storiesOf('foundation|Type', module)
           <div className='align-items-center example--section'>
             <h5 className='mc-text-h5'>Body</h5>
             <p>Online classes taught by the world&#39;s greatest minds. Now get
-             unlimited access to all classes.</p>
+             unlimited access to all classes.
+            </p>
             <p className='mc-text--muted mc-text--monospace'>Default body text</p>
           </div>
 
           <div className='align-items-center example--section'>
             <h5 className='mc-text-h5'>Intro</h5>
             <p className='mc-text-intro'>Online classes taught by the world&#39;s greatest minds. Now get
-             unlimited access to all classes.</p>
+             unlimited access to all classes.
+            </p>
             <p className='mc-text--muted mc-text--monospace'>.mc-text-intro</p>
           </div>
 
