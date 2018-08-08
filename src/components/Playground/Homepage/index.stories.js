@@ -6,6 +6,7 @@ import Footer from '../../Footer'
 import Button from '../../Button'
 import Tile from '../../Tile'
 import TileImage from '../../TileImage'
+import TileOverlay from '../../TileOverlay'
 import TileCaption from '../../TileCaption'
 import HoverHandler from '../../HoverHandler'
 import AnimationHandler from '../../AnimationHandler'
@@ -25,19 +26,19 @@ storiesOf('playground|Pages', module)
         <div className='container'>
           <div className='row'>
             <div className='col-md-5'>
-              <h2 className='mc-text-d1 mc-text--uppercase'>
+              <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left'>
                 Alice Waters
               </h2>
-              <h3 className='mc-text-h3 mc-text--muted'>
+              <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left'>
                 Teaches the art of home cooking
               </h3>
               <br />
-              <p className='mc-text-intro'>
+              <p className='mc-text-intro mc-text-center mc-text-md-left'>
                 Online classes taught by the world&apos;s greatest minds.<br />
                 Learn from Alice Waters and all 35+ other instructors.
               </p>
               <br />
-              <div className='row'>
+              <div className='row row--vertical-space'>
                 <div className='col-md-6'>
                   <Button primary fullWidth>
                     All Access Pass
@@ -62,7 +63,7 @@ storiesOf('playground|Pages', module)
             </h2>
           </div>
 
-          <div className='row'>
+          <div className='row row--vertical-space'>
             <div className='col-md-2 mc-text--muted mc-text-center'>
               <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/today-4d4e4dfc0db7fa08e4e18e4b0ae9f8598e674c0de4f3349d9b74f02138604276.svg' />
             </div>
@@ -103,6 +104,8 @@ storiesOf('playground|Pages', module)
                         <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1473/original/1520466687-Featured_Tile.jpg%3F1520466687' />
                       </AnimationHandler>
 
+                      <TileOverlay />
+
                       <AnimationHandler type='lift' animating={hovering}>
                         <TileCaption
                           title='Malcom Gladwell'
@@ -122,6 +125,8 @@ storiesOf('playground|Pages', module)
                         <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1049/original/1510617187-Class_Tile.jpg%3F1510617187' />
                       </AnimationHandler>
 
+                      <TileOverlay />
+
                       <AnimationHandler type='lift' animating={hovering}>
                         <TileCaption
                           title='Alice Waters'
@@ -140,6 +145,8 @@ storiesOf('playground|Pages', module)
                       <AnimationHandler type='ken-burns' animating={hovering}>
                         <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/343/original/1513219465-Class_Tile.jpg%3F1513219465' />
                       </AnimationHandler>
+
+                      <TileOverlay />
 
                       <AnimationHandler type='lift' animating={hovering}>
                         <TileCaption
@@ -225,6 +232,8 @@ storiesOf('playground|Pages', module)
                         <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1532/original/1521243500-Featured_Tile.jpg%3F1521243500' />
                       </AnimationHandler>
 
+                      <TileOverlay />
+
                       <AnimationHandler type='lift' animating={hovering}>
                         <TileCaption
                           title='Spike Lee'
@@ -244,6 +253,8 @@ storiesOf('playground|Pages', module)
                         <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1689/original/1528446991-Class_Tile.jpg%3F1528446991' />
                       </AnimationHandler>
 
+                      <TileOverlay />
+
                       <AnimationHandler type='lift' animating={hovering}>
                         <TileCaption
                           title='Daniel Negreanu'
@@ -262,6 +273,8 @@ storiesOf('playground|Pages', module)
                       <AnimationHandler type='ken-burns' animating={hovering}>
                         <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1752/original/1530892888-Class_Tile.jpg%3F1530892888' />
                       </AnimationHandler>
+
+                      <TileOverlay />
 
                       <AnimationHandler type='lift' animating={hovering}>
                         <TileCaption
