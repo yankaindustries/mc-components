@@ -43,10 +43,14 @@ export default class TileCaption extends PureComponent {
       <div className={classes}>
         <div className='mc-tile-caption__titles'>
           {title &&
-            <h2 className='mc-tile-caption__title'>{title}</h2>
+            <h4 className='mc-tile-caption__title mc-text-h2 mc-text--uppercase'>
+              {title}
+            </h4>
           }
           {subtitle &&
-            <h3 className='mc-tile-caption__subtitle'>{subtitle}</h3>
+            <h5 className='mc-tile-caption__subtitle mc-text-h4 mc-text--muted'>
+              {subtitle}
+            </h5>
           }
         </div>
 
