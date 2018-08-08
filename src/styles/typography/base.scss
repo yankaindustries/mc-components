@@ -4,84 +4,80 @@ html {
 
 body {
   font-family: $mc-font-default;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.015em;
+  font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-variant-ligatures: none;
-  color: #777;
-  text-rendering: optimizeLegibility;
-  text-shadow: rgba($mc-dark, 0.01) 0 0 1px;
-  text-size-adjust: 100%;
 }
 
 a {
   text-decoration: none;
 }
 
-.mc-heading-1 {
-  font-size: 36px;
-  line-height: 48px;
+// Big "display" text
+.mc-text-d1 {
+  font-size: 48px;
   letter-spacing: 0.04em;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 700;
 }
 
-.mc-heading-2 {
+.mc-text-d2 {
   font-size: 32px;
-  line-height: 44px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.mc-heading-3 {
-  font-size: 26px;
-  line-height: 36px;
   letter-spacing: 0.06em;
-  font-weight: 600;
-  color: #fff;
-}
-
-.mc-heading-4 {
-  font-size: 18px;
-  line-height: 36px;
-  letter-spacing: 0.22em;
+  font-weight: 400;
   text-transform: uppercase;
-  font-weight: 300;
-  color: #fff;
 }
 
-.mc-body {
+// html header equivalents
+.mc-text-h1,
+.mc-text-h2,
+.mc-text-h3,
+.mc-text-h4,
+.mc-text-h5 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.mc-text-h1 {
+  font-size: 32px;
+  letter-spacing: 0.04em;
+}
+
+.mc-text-h2 {
+  font-size: 24px;
+  letter-spacing: 0.06em;
+}
+
+.mc-text-h3 {
+  font-size: 20px;
+  letter-spacing: 0.24em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.mc-text-h4 {
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.mc-text-h5 {
+  font-size: 12px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.mc-text-intro {
   font-size: 18px;
   line-height: 26px;
   letter-spacing: 0.025em;
   font-weight: 400;
-  color: #fff;
-}
-
-.mc-text-hero-1 {
-  font-size: 48px;
-  line-height: 64px;
-  letter-spacing: 0.04em;
-  font-weight: 400;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.mc-text-hero-2 {
-  font-size: 36px;
-  font-weight: 300;
-  line-height: 48px;
-  letter-spacing: 2px;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.mc-text-body-2 {
-  font-size: 15px;
-  line-height: 22px;
-  letter-spacing: 0.015em;
-  font-weight: 400;
-  color: #fff;
 }
 
 .mc-text-legal {
@@ -89,5 +85,4 @@ a {
   line-height: 18px;
   letter-spacing: 0.5px;
   font-weight: 400;
-  color: #fff;
 }
