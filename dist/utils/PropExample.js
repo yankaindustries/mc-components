@@ -52,7 +52,7 @@ var Definition = function (_PureComponent) {
           { className: 'row' },
           _react2.default.createElement(
             'div',
-            { className: 'col-xs-10' },
+            { className: 'col-10' },
             _react2.default.createElement(
               'h5',
               null,
@@ -70,7 +70,7 @@ var Definition = function (_PureComponent) {
               )
             )
           ),
-          _react2.default.createElement('div', { className: 'col-xs-2 text-right' })
+          _react2.default.createElement('div', { className: 'col-2 text-right' })
         ),
         _react2.default.createElement(
           _CodeExample2.default,
