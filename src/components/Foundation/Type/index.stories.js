@@ -76,12 +76,23 @@ storiesOf('foundation|Type', module)
             <p className='mc-text--muted mc-text--monospace'>.mc-text-legal</p>
           </div>
         </div>
+      </div>,
+    ),
+  )
+  .add(
+    'Modifiers',
+    withInfo()(() =>
+      <div className='example-mc-type'>
+        <div className='container example--section'>
+          <h2 className='mc-text-d1'>Modifiers</h2>
+          <p className='mc-text-p'>All available text modifier classes.</p>
+        </div>
 
         <div className='container example--section'>
           <div className='align-items-center example--section'>
-            <h5 className='mc-text-h5'>Bold</h5>
-            <p className='mc-text--bold'>The quick brown fox jumped over the lazy dog.</p>
-            <p className='mc-text--muted mc-text--monospace'>.mc-text--bold</p>
+            <h5 className='mc-text-h5'>Monospace</h5>
+            <p className='mc-text--monospace'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text--monospace.mc-text--uppercase.mc-text--bold</p>
           </div>
 
           <div className='align-items-center example--section'>
@@ -91,21 +102,84 @@ storiesOf('foundation|Type', module)
           </div>
 
           <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>Lowercase</h5>
+            <p className='mc-text--lowercase'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text--lowercase</p>
+          </div>
+
+          <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>Capitalize</h5>
+            <p className='mc-text--capitalize'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text--capitalize</p>
+          </div>
+
+          <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>Bold</h5>
+            <p className='mc-text--bold'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text--bold</p>
+          </div>
+
+          <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>Normal</h5>
+            <h1 className='mc-text-h1 mc-text--normal'>The quick brown fox jumped over the lazy dog.</h1>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text--h1.mc-text--normal</p>
+          </div>
+
+          <div className='align-items-center example--section'>
             <h5 className='mc-text-h5'>Muted</h5>
             <p className='mc-text--muted'>The quick brown fox jumped over the lazy dog.</p>
             <p className='mc-text--muted mc-text--monospace'>.mc-text--muted</p>
           </div>
 
           <div className='align-items-center example--section'>
-            <h5 className='mc-text-h5'>Combined Example</h5>
-            <p className='mc-text--muted mc-text--uppercase mc-text --bold'>The quick brown fox jumped over the lazy dog.</p>
-            <p className='mc-text--muted mc-text--monospace'>.mc-text--muted.mc-text--uppercase.mc-text--bold</p>
+            <h5 className='mc-text-h5'>Invert</h5>
+            <div className='rounded-box'>
+              <p className='mc-text--invert'>The quick brown fox jumped over the lazy dog.</p>
+            </div>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text--invert</p>
+          </div>
+        </div>
+      </div>,
+    ),
+  )
+  .add(
+    'Alignment',
+    withInfo()(() =>
+      <div className='example-mc-type'>
+        <div className='container example--section'>
+          <h2 className='mc-text-d1'>Alignment</h2>
+          <p className='mc-text-p'>Modifier classes to aid you in text alignment.</p>
+        </div>
+
+        <div className='container example--section'>
+          <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>Align left</h5>
+            <p className='mc-text-left'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text-left</p>
           </div>
 
           <div className='align-items-center example--section'>
-            <h5 className='mc-text-h5'>Code</h5>
-            <p className='mc-text--monospace'>The quick brown fox jumped over the lazy dog.</p>
-            <p className='mc-text--muted mc-text--monospace'>.mc-text--monospace.mc-text--uppercase.mc-text--bold</p>
+            <h5 className='mc-text-h5'>Align Center</h5>
+            <p className='mc-text-center'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text-center</p>
+          </div>
+
+          <div className='align-items-right example--section'>
+            <h5 className='mc-text-h5'>Align right</h5>
+            <p className='mc-text-right'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text-right</p>
+          </div>
+
+          <div className='align-items-right example--section'>
+            <h5 className='mc-text-h5'>Responsive alignment</h5>
+            <p className='mc-text-right mc-text-md-center'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text-right mc-text-md-center</p>
+          </div>
+
+          <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>Chaining modifiers</h5>
+            <p className='mc-text--muted mc-text--uppercase mc-text --bold'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--muted mc-text--monospace'>.mc-text--muted.mc-text--uppercase.mc-text--bold</p>
           </div>
         </div>
       </div>,
