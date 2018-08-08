@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import PlayImage from '../../assets/PlayButton/play-with-circle.svg'
+
+import PlayImage from '../../assets/icons/play-circle.svg'
 
 export default class PlayButton extends PureComponent {
   static propTypes = {
@@ -28,7 +29,7 @@ export default class PlayButton extends PureComponent {
 
     return (
       <a className={className} onClick={this.onClick}>
-        <img src={PlayImage} className='mc-play-button__image' alt={this.props.alt} />
+        <PlayImage className='mc-play-button__image' alt={this.props.alt} />
       </a>
     )
   }

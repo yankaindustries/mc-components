@@ -6,7 +6,7 @@ import { renderChildren } from '../../utils/helpers'
 
 import ToggleHandler from '../ToggleHandler'
 
-import Check from '../../assets/check-circle.svg'
+import Check from '../../assets/icons/check-circle.svg'
 
 export default class TileCheck extends PureComponent {
   static propTypes = {
@@ -44,7 +44,7 @@ export default class TileCheck extends PureComponent {
       >
         {({ toggled, onClick }) =>
           <a className={classNames(checked)} onClick={onClick}>
-            <img className='mc-tile-check__check' src={toggled ? Check : null} />
+            {toggled && <Check className='mc-tile-check__check' />}
             {children &&
               <div className='mc-tile__content'>
                 {renderChildren(children, { checked: toggled })}

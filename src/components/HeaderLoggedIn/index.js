@@ -4,11 +4,12 @@ import cn from 'classnames'
 
 import NavBarMenu from '../NavBarMenu'
 import ClickOutside from '../ClickOutside'
-import logo from '../../assets/logo-wordmark.svg'
 import MobileNavButton from '../MobileNavButton'
 import Badge from '../Badge'
-import defaultAvatar from '../../assets/header/default-avatar@2x.png'
-import backArrow from '../../assets/header/back-arrow.svg'
+
+import Logo from '../../assets/logo-wordmark.svg'
+import BackArrow from '../../assets/icons/back-arrow.svg'
+import defaultAvatar from '../../assets/images/default-avatar@2x.png'
 
 export default class HeaderLoggedIn extends PureComponent {
   static propTypes = {
@@ -64,10 +65,7 @@ export default class HeaderLoggedIn extends PureComponent {
           className='header__left-button'
           onClick={Boolean(action) && action}
         >
-          <img
-            src={backArrow}
-            className='header__left-button__icon'
-          />
+          <BackArrow className='header__left-button__icon' />
           <span className='header__left-button__label'>{label}</span>
         </button>
       )
@@ -119,7 +117,7 @@ export default class HeaderLoggedIn extends PureComponent {
           }
           <div className='header__section'>
             <a className='header__wordmark' href='/'>
-              <img src={logo} alt='Logo wordmark' />
+              <Logo alt='Logo wordmark' />
             </a>
           </div>
 

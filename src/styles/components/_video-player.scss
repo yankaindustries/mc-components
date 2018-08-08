@@ -349,10 +349,12 @@ $brightcove-video-sizes: (
     bottom: 24px;
     left: 24px;
     z-index: 1;
-    width: 36px;
+    width: 48px;
+    height: 48px;
     opacity: 0.8;
     cursor: pointer;
     transition: 300ms $mc-default-ease;
+    fill: #fff;
 
     &:hover {
       opacity: 1;

@@ -1,9 +1,8 @@
 import React, { PureComponent, Fragment } from 'react'
 import { bool } from 'prop-types'
 
-import logo from '../../assets/logo.svg'
-import logoMinimal from '../../assets/logo-minimal.svg'
-import sslBadge from '../../assets/ssl-badge.svg'
+import Logo from '../../assets/logo.svg'
+import SSLBadge from '../../assets/ssl-badge.svg'
 
 export default class Footer extends PureComponent {
   static propTypes = {
@@ -21,11 +20,8 @@ export default class Footer extends PureComponent {
       <Fragment>
         <div className='mc-site-footer'>
           <div className='mc-container mc-contain-inner'>
-            <img
-              src={isMinimal ? logoMinimal : logo}
-              alt='Logo wordmark'
-              className={!isMinimal ? 'mc-site-footer__logo-footer' : ''}
-            />
+            <Logo className='mc-site-footer__logo-footer' />
+
             {!isMinimal &&
               <Fragment>
                 <ul className='mc-site-footer__links'>
@@ -78,12 +74,7 @@ export default class Footer extends PureComponent {
                   </p>
                 </ul>
 
-                <img
-                  src={sslBadge}
-                  alt='Secured by Expedited SSL'
-                  className='mc-site-footer__ssl-badge'
-                  name='ssl-badge'
-                />
+                <SSLBadge className='mc-site-footer__ssl-badge' />
               </Fragment>
             }
           </div>

@@ -1,10 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import HoverHandler from '../HoverHandler'
-
-import Unmute from '../../assets/muted.svg'
-import Mute from '../../assets/unmuted.svg'
+import Unmute from '../../assets/icons/muted.svg'
+import Mute from '../../assets/icons/unmuted.svg'
 
 const ACCOUNT_ID = '5344802162001'
 const PLAYER_ID = 'rkcQq7gAe'
@@ -77,33 +75,27 @@ export default class TileVideo extends PureComponent {
     ].join(' ')
 
     return (
-      <HoverHandler>
-        {({ hovering }) =>
-          <div className='mc-tile-video mc-tile__component'>
-            {!controls &&
-              <a className='mc-tile-video__mute' onClick={this.onMuteClick}>
-                {hovering &&
-                  <img src={muted ? Unmute : Mute} />
-                }
-              </a>
-            }
-
-            <video
-              ref={this.playerRef}
-              className={classes}
-              data-embed='default'
-              data-video-id={videoId}
-              data-player-id={PLAYER_ID}
-              data-account={ACCOUNT_ID}
-              controls={controls}
-              muted={muted}
-              {...restProps}
-            />
-
-            {children}
-          </div>
+      <div className='mc-tile-video mc-tile__component'>
+        {!controls &&
+          <a className='mc-tile-video__mute' onClick={this.onMuteClick}>
+            {muted ? <Unmute /> : <Mute />}
+          </a>
         }
-      </HoverHandler>
+
+        <video
+          ref={this.playerRef}
+          className={classes}
+          data-embed='default'
+          data-video-id={videoId}
+          data-player-id={PLAYER_ID}
+          data-account={ACCOUNT_ID}
+          controls={controls}
+          muted={muted}
+          {...restProps}
+        />
+
+        {children}
+      </div>
     )
   }
 }

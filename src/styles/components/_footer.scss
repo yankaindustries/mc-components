@@ -1,11 +1,12 @@
 .mc-site-footer {
-  background: #000;
-  border-top: 2px solid rgba(#fff, 0.2);
+  background: $mc-dark;
+  border-top: 2px solid rgba($mc-light, 0.2);
   // margin-top: 64px; holding off for now..
   // Better to have footer overlaid than hacky fix
   padding: 1em;
   font-size: 0.95em;
   clear: both;
+  color: $mc-light;
   text-align: center;
 
   &__copyright {
@@ -16,7 +17,6 @@
     color: rgba(#fff, 0.2);
   }
 
-  // desired width / 1.513333333
   &__logo-footer {
     border-bottom: 1px solid rgba(#fff, 0.2);
     padding: 1.5em 1em 2.5em;
@@ -62,6 +62,8 @@
     &__ssl-badge {
       display: inline-block;
       vertical-align: middle;
+      width: 150px;
+      height: 64px;
     }
 
     &__links {

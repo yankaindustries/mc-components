@@ -7,7 +7,7 @@ import PropExample from '../../utils/PropExample'
 import Tile from '../Tile'
 import TileImage from '../TileImage'
 
-import shondaRhimesThumbnail from '../../assets/shonda-rhimes-video.png'
+import shondaRhimesThumbnail from '../../assets/images/shonda-rhimes-video.png'
 
 
 storiesOf('components|Tiles/TileImage', module)
