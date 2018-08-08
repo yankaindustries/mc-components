@@ -9,7 +9,6 @@ const Button = ({
   children,
   className,
   onClick,
-  primary,
   secondary,
   tertiary,
   fullWidth,
@@ -24,7 +23,6 @@ const Button = ({
     'c-button',
     { [className]: Boolean(className) },
     {
-      'c-button--primary': primary,
       'c-button--secondary': secondary,
       'c-button--tertiary': tertiary,
       'c-button--with-icon': Boolean(Icon),
@@ -59,7 +57,6 @@ Button.propTypes = {
   ]),
   className: string,
   onClick: func,
-  primary: bool,
   secondary: bool,
   tertiary: bool,
   fullWidth: bool,
@@ -73,7 +70,6 @@ Button.propTypes = {
 Button.defaultProps = {
   className: '',
   onClick: () => {},
-  primary: false,
   secondary: false,
   tertiary: false,
   fullWidth: false,

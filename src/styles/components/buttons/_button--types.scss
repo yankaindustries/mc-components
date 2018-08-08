@@ -61,16 +61,6 @@
     }
   }
 
-  &--primary {
-    background-color: $mc-color-primary;
-
-    &:focus,
-    &.focus {
-      outline: 0;
-      box-shadow: 0 0 0 0.2rem rgba($mc-color-primary-hover, 0.25);
-    }
-  }
-
   &--secondary {
     background: $mc-color-secondary;
 
