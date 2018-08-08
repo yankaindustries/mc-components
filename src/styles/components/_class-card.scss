@@ -14,7 +14,7 @@
     left: 0;
     width: 100%;
     height: 102%;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.6) 25%, transparent 45%);
+    background-image: linear-gradient(to top, rgba($mc-dark, 0.9) 0, rgba($mc-dark, 0.6) 25%, transparent 45%);
     z-index: 2;
   }
 
@@ -27,7 +27,7 @@
     right: 0;
     z-index: 4;
 
-    @include box-shadow(inset 0 0 0 1px rgba(255, 255, 255, 0.1));
+    @include box-shadow(inset 0 0 0 1px rgba($mc-light, 0.1));
     @include transition(box-shadow 250ms ease);
   }
 
@@ -45,7 +45,7 @@
 
   &:hover {
     &:before {
-      @include box-shadow(inset 0 0 0 1px rgba(255, 255, 255, 0.2));
+      @include box-shadow(inset 0 0 0 1px rgba($mc-light, 0.2));
       @include transition(box-shadow 250ms ease);
     }
 
@@ -71,7 +71,7 @@
     text-transform: uppercase;
 
     @include transition(transform 0.75s cubic-bezier(0.29, 1.185, 1, 1));
-    text-shadow: 0 0 10px #000;
+    text-shadow: 0 0 10px $mc-dark;
     text-align: left;
 
     &__title {
@@ -86,7 +86,7 @@
 
     &__subtitle {
       font-size: 1.1em;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba($mc-light, 0.5);
       letter-spacing: 0.045em;
       text-transform: uppercase;
       margin: 0;

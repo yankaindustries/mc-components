@@ -12,6 +12,9 @@
   &--bold { font-weight: 600 !important; }
   &--normal { font-weight: 400 !important; }
   &--muted { opacity: 0.5 !important; }
+
+  // Colors
+  &--invert { color: $mc-dark; }
 }
 
 // Responsive

@@ -51,7 +51,7 @@
       width: 100%;
       height: 100%;
       content: " ";
-      background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0) 40%);
+      background-image: linear-gradient(to top, $mc-dark, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0) 40%);
     }
   }
 
@@ -126,8 +126,8 @@
     background:
       linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.9) 0,
-        rgba(0, 0, 0, 0.6) 25%,
+        rgba($mc-dark, 0.9) 0,
+        rgba($mc-dark, 0.6) 25%,
         transparent 45%
       );
   }
@@ -141,7 +141,7 @@
     padding: 16px;
     width: 100%;
     background: rgba($mc-dark, 0);
-    text-shadow: 0 0 10px #000;
+    text-shadow: 0 0 10px $mc-dark;
     transition: transform 0.2s ease;
 
     .mc-tile-caption--bottom & {
@@ -168,14 +168,14 @@
     margin-bottom: 0.3em;
     letter-spacing: 0.045em;
     text-transform: uppercase;
-    color: #fff;
+    color: $mc-light;
     line-height: 1em;
     font-weight: 400;
   }
 
   &__subtitle {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba($mc-light, 0.5);
     letter-spacing: 0.045em;
     text-transform: uppercase;
     margin: 0;
