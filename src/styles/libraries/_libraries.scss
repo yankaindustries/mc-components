@@ -5,6 +5,17 @@
 
 // Bootstrap Grid
 @import "../base/variables";
-@import "node_modules/bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/bootstrap-grid";
+
+// Bootstrap text helpers and dependencies
+@import "~bootstrap/scss/mixins/text-truncate";
+@import "~bootstrap/scss/mixins/text-emphasis";
+@import "~bootstrap/scss/mixins/hover";
+@import "~bootstrap/scss/mixins/text-hide";
+@import "~bootstrap/scss/utilities/text";
+
+// Our bootstrap overrides
 @import "bootstrap-overrides/grid";
+
+// Slick slider
 @import "node_modules/slick-carousel/slick/slick.scss";
