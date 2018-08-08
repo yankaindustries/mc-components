@@ -6,22 +6,32 @@
 
 
 
+// THE UPSIDE DOWN
+.mc-background {
+  &--light {
+    background: $mc-light;
+  }
 
-.mc-background--light {
-  background: $mc-light;
-  color: $mc-dark;
-}
-
-.mc-background--dark {
-  background: $mc-dark;
+  &--dark {
+    background: $mc-dark;
+  }
 }
 
 .mc-section {
-  padding: 32px;
+  padding: $grid-gutter-width 0;
+
+  &__header {
+    padding-bottom: $grid-gutter-width;
+  }
 }
 
-.mc-section__header {
-  padding-bottom: 32px;
+.mc-card {
+  padding: $grid-gutter-width / 2;
+  border-radius: 3px;
+
+  &--equal-height {
+    height: 100%;
+  }
 }
 
 

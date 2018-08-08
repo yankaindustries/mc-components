@@ -8,8 +8,9 @@ import Tile from '../../Tile'
 import TileImage from '../../TileImage'
 import TileOverlay from '../../TileOverlay'
 import TileCaption from '../../TileCaption'
-import HoverHandler from '../../HoverHandler'
 import AnimationHandler from '../../AnimationHandler'
+import HoverHandler from '../../HoverHandler'
+import ResponsiveHandler from '../../ResponsiveHandler'
 
 
 storiesOf('playground|Pages', module)
@@ -25,7 +26,7 @@ storiesOf('playground|Pages', module)
       >
         <div className='container'>
           <div className='row'>
-            <div className='col-md-5'>
+            <div className='col-xl-5 col-lg-6 col-md-8'>
               <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left'>
                 Alice Waters
               </h2>
@@ -38,7 +39,7 @@ storiesOf('playground|Pages', module)
                 Learn from Alice Waters and all 35+ other instructors.
               </p>
               <br />
-              <div className='row row--vertical-space'>
+              <div className='row'>
                 <div className='col-md-6'>
                   <Button primary fullWidth>
                     All Access Pass
@@ -63,7 +64,7 @@ storiesOf('playground|Pages', module)
             </h2>
           </div>
 
-          <div className='row row--vertical-space'>
+          <div className='row'>
             <div className='col-md-2 mc-text--muted mc-text-center'>
               <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/today-4d4e4dfc0db7fa08e4e18e4b0ae9f8598e674c0de4f3349d9b74f02138604276.svg' />
             </div>
@@ -95,29 +96,33 @@ storiesOf('playground|Pages', module)
               </h2>
             </div>
 
-            <div className='row row--vertical-space'>
+            <div className='row'>
               <div className='col-12'>
-                <HoverHandler>
-                  {({ hovering }) =>
-                    <Tile aspectRatio='519x187'>
-                      <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1473/original/1520466687-Featured_Tile.jpg%3F1520466687' />
-                      </AnimationHandler>
+                <ResponsiveHandler>
+                  {({ ltMD }) =>
+                    <HoverHandler>
+                      {({ hovering }) =>
+                        <Tile aspectRatio={ltMD ? '16x9' : '519x187'}>
+                          <AnimationHandler type='ken-burns' animating={hovering}>
+                            <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1473/original/1520466687-Featured_Tile.jpg%3F1520466687' />
+                          </AnimationHandler>
 
-                      <TileOverlay />
+                          <TileOverlay />
 
-                      <AnimationHandler type='lift' animating={hovering}>
-                        <TileCaption
-                          title='Malcom Gladwell'
-                          subtitle='Teaches Writing'
-                        />
-                      </AnimationHandler>
-                    </Tile>
+                          <AnimationHandler type='lift' animating={hovering}>
+                            <TileCaption
+                              title='Malcom Gladwell'
+                              subtitle='Teaches Writing'
+                            />
+                          </AnimationHandler>
+                        </Tile>
+                      }
+                    </HoverHandler>
                   }
-                </HoverHandler>
+                </ResponsiveHandler>
               </div>
 
-              <div className='col-sm-6'>
+              <div className='col-md-6'>
                 <HoverHandler>
                   {({ hovering }) =>
                     <Tile aspectRatio='16x9'>
@@ -138,7 +143,7 @@ storiesOf('playground|Pages', module)
                 </HoverHandler>
               </div>
 
-              <div className='col-sm-6'>
+              <div className='col-md-6'>
                 <HoverHandler>
                   {({ hovering }) =>
                     <Tile aspectRatio='16x9'>
@@ -169,47 +174,91 @@ storiesOf('playground|Pages', module)
             </div>
 
             <div className='row'>
-              <div className='col-sm-4'>
-                <div className='mc-background--light'>
-                  <div className='mc-section'>
-                    Annie Leibovitz
-                    Photography
+              <div className='col-md-4'>
+                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                  <div className='row align-items-center small-gutters'>
+                    <div className='col col-auto'>
+                      <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-al-300e6379265c09b2f4b659df27a10cace702dd3beb031af97178f4f1b683adc3.png' />
+                    </div>
+                    <div className='col'>
+                      <h4 className='mc-text-h4'>Annie Leibovitz</h4>
+                      <h5 className='mc-text-h5 mc-text--muted'>Photography</h5>
+                    </div>
 
-                    Annie&apos;s MasterClass offered insight into her approach,
-                    but also offered the permission to create, create, create!
-                    And with a tenacity I had been afraid to embody.
+                    <div className='col-12'>
+                      <p>
+                        Annie&apos;s MasterClass offered insight into her
+                        approach, but also offered the permission to create,
+                        create, create! And with a tenacity I had been afraid
+                        to embody.
+                      </p>
+                    </div>
 
-                    Jesse L.
+                    <div className='col-auto'>
+                      <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                    </div>
+                    <div className='col'>
+                      <p className='mc-text--muted'>Jesse L.</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className='col-sm-4'>
-                <div className='mc-background--light'>
-                  <div className='mc-section'>
-                    Gordon Ramsay
-                    Cooking
+              <div className='col-md-4'>
+                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                  <div className='row align-items-center small-gutters'>
+                    <div className='col col-auto'>
+                      <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-gr-24c1d9b59bbeadd671a0ef5140e137d07e26368f5b0984a0b90fe5f794700de0.png' />
+                    </div>
+                    <div className='col'>
+                      <h4 className='mc-text-h4'>Gordon Ramsay</h4>
+                      <h5 className='mc-text-h5 mc-text--muted'>Cooking</h5>
+                    </div>
 
-                    I loved this class, I learned to create rather than follow
-                    recipes and how to think outside the box! I&apos;ve always
-                    loved cooking, this class has taken me to a new level!
+                    <div className='col-12'>
+                      <p>
+                        I loved this class, I learned to create rather than
+                        follow recipes and how to think outside the box!
+                        I&apos;ve always loved cooking, this class has taken me
+                        to a new level!
+                      </p>
+                    </div>
 
-                    Pamela E.
+                    <div className='col-auto'>
+                      <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                    </div>
+                    <div className='col'>
+                      <p className='mc-text--muted'>Pamela E.</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className='col-sm-4'>
-                <div className='mc-background--light'>
-                  <div className='mc-section'>
-                    James Patterson
-                    Writing
+              <div className='col-md-4'>
+                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                  <div className='row align-items-center small-gutters'>
+                    <div className='col col-auto'>
+                      <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-jp-cde7e157ed95191ad3167e5dea00394798decee7462fc897d71ac6e450cd8b79.png' />
+                    </div>
+                    <div className='col'>
+                      <h4 className='mc-text-h4'>James Patterson</h4>
+                      <h5 className='mc-text-h5 mc-text--muted'>Writing</h5>
+                    </div>
 
-                    These classes are the important keys to unlocking our
-                    written creativity. If you have belief, freedom and
-                    discipline, then who knows what the future will hold.
+                    <div className='col-12'>
+                      <p>
+                        These classes are the important keys to unlocking our
+                        written creativity. If you have belief, freedom and
+                        discipline, then who knows what the future will hold.
+                      </p>
+                    </div>
 
-                    Jean-Paul W.
+                    <div className='col-auto'>
+                      <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                    </div>
+                    <div className='col'>
+                      <p className='mc-text--muted'>Jean-Paul W.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -223,7 +272,7 @@ storiesOf('playground|Pages', module)
               </h2>
             </div>
 
-            <div className='row row--vertical-space'>
+            <div className='row'>
               <div className='col-12'>
                 <HoverHandler>
                   {({ hovering }) =>
@@ -245,7 +294,7 @@ storiesOf('playground|Pages', module)
                 </HoverHandler>
               </div>
 
-              <div className='col-sm-6'>
+              <div className='col-md-6'>
                 <HoverHandler>
                   {({ hovering }) =>
                     <Tile aspectRatio='16x9'>
@@ -266,7 +315,7 @@ storiesOf('playground|Pages', module)
                 </HoverHandler>
               </div>
 
-              <div className='col-sm-6'>
+              <div className='col-md-6'>
                 <HoverHandler>
                   {({ hovering }) =>
                     <Tile aspectRatio='16x9'>
