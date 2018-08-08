@@ -7,7 +7,7 @@ body {
   font-size: 15px;
   line-height: 1.5;
   font-weight: 400;
-  color: #fff;
+  color: $mc-light;
   letter-spacing: 0.015em;
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
@@ -15,9 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
 // Big "display" text
 .mc-text-d1 {
