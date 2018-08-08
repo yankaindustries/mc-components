@@ -9,7 +9,9 @@
     "react/forbid-prop-types": 0,
     "function-paren-newline": 0,
     "no-shadow": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "react/boolean-prop-naming": 0,
+    "react/jsx-handler-names": 0
   },
   "globals": {
     "window": true,

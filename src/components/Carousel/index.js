@@ -16,6 +16,8 @@ const defaultSettings = {
 }
 
 export default class Carousel extends Component {
+  static Arrow = CarouselArrow;
+
   static propTypes = {
     slidesDataSource: PropTypes.arrayOf(PropTypes.shape({})),
     children: PropTypes.element,
@@ -32,8 +34,6 @@ export default class Carousel extends Component {
   static defaultProps = {
     hasArrows: true,
   }
-
-  static Arrow = CarouselArrow;
 
   handleNext = () => {
     this.slider.current.slickNext()

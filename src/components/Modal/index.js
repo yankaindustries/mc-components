@@ -29,7 +29,13 @@ export default class Modal extends Component {
     HeaderComponent: ModalHeader,
   }
 
-  container = React.createRef();
+  componentDidMount () {
+    document.addEventListener('keydown', this.onPressEsc)
+  }
+
+  componentWillUnmount () {
+    document.removeEventListener('keydown', this.onPressEsc)
+  }
 
   onClickOutside = () => {
     const { onClose, shouldCloseOnClickOutside } = this.props
@@ -47,13 +53,7 @@ export default class Modal extends Component {
     }
   }
 
-  componentDidMount () {
-    document.addEventListener('keydown', this.onPressEsc)
-  }
-
-  componentWillUnmount () {
-    document.removeEventListener('keydown', this.onPressEsc)
-  }
+  container = React.createRef();
 
   render () {
     const {
