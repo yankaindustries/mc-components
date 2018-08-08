@@ -1,0 +1,14 @@
+.mc-text {
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--muted {
+    opacity: 0.5;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+}
