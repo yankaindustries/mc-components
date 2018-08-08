@@ -1,35 +1,17 @@
 // stylelint-disable declaration-no-important
 .mc-text {
   // Monospaced
-  &--monospace {
-    font-family: monospace !important;
-  }
+  &--monospace { font-family: monospace !important; }
 
   // Transformation
-  &--uppercase {
-    text-transform: uppercase !important;
-  }
-
-  &--lowercase {
-    text-transform: lowercase !important;
-  }
-
-  &--capitalize {
-    text-transform: capitalize !important;
-  }
+  &--uppercase { text-transform: uppercase !important; }
+  &--lowercase { text-transform: lowercase !important; }
+  &--capitalize { text-transform: capitalize !important; }
 
   // Weight / opacity
-  &--bold {
-    font-weight: 600 !important;
-  }
-
-  &--normal {
-    font-weight: 400 !important;
-  }
-
-  &--muted {
-    opacity: 0.5 !important;
-  }
+  &--bold { font-weight: 600 !important; }
+  &--normal { font-weight: 400 !important; }
+  &--muted { opacity: 0.5 !important; }
 }
 
 // Responsive
