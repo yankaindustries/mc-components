@@ -3,19 +3,19 @@
 // Reset
 @import "reset";
 
-// Bootstrap Grid
+// MC Variables
 @import "../base/variables";
-@import "~bootstrap/scss/bootstrap-grid";
 
-// Bootstrap text helpers and dependencies
+// Bootstrap overrides
+@import "bootstrap-overrides/grid";
+
+// Bootstrap - the good parts
+@import "~bootstrap/scss/bootstrap-grid";
 @import "~bootstrap/scss/mixins/text-truncate";
 @import "~bootstrap/scss/mixins/text-emphasis";
 @import "~bootstrap/scss/mixins/hover";
 @import "~bootstrap/scss/mixins/text-hide";
 @import "~bootstrap/scss/utilities/text";
-
-// Our bootstrap overrides
-@import "bootstrap-overrides/grid";
 
 // Slick slider
 @import "node_modules/slick-carousel/slick/slick.scss";
