@@ -35,16 +35,26 @@ const FacebookIcon = () => (
 storiesOf('components|Buttons', module)
   .add('Button', withProps(Button)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>Button</h2>
+      <h2 className='mc-text-h2'>Button Types</h2>
 
       <DocSection title='Variations'>
         <PropExample
-          name='primary | secondary | tertiary | text'
+          name='default (no properties)'
+        >
+          <Button>Default</Button>
+        </PropExample>
+        <PropExample
+          name='secondary | tertiary'
           type='Boolean'
         >
-          <Button primary>Primary</Button>
           <Button secondary>Secondary</Button>
           <Button tertiary>Tertiary</Button>
+        </PropExample>
+
+        <PropExample
+          name='link | link muted | text'
+          type='Boolean'
+        >
           <Button link>Link</Button>
           <Button linkMuted>Link Muted</Button>
           <Button text>Text</Button>

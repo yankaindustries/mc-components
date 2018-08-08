@@ -1,5 +1,6 @@
 .c-button,
 .mc-c-btn {
+  background-color: $mc-color-primary;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +28,7 @@
   &:focus,
   &.focus {
     outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($mc-color-primary-hover, 0.25);
   }
 
   // Disabled comes first so active can properly restyle
