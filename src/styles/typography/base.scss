@@ -4,35 +4,32 @@ html {
 
 body {
   font-family: $mc-font-default;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.015em;
+  font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-variant-ligatures: none;
-  color: #777;
-  text-rendering: optimizeLegibility;
-  text-shadow: rgba($mc-dark, 0.01) 0 0 1px;
-  text-size-adjust: 100%;
 }
 
 a {
   text-decoration: none;
 }
 
-// Big hero text
-.mc-text-display1 {
+// Big "display" text
+.mc-text-d1 {
   font-size: 48px;
-  line-height: 1.5;
   letter-spacing: 0.04em;
   font-weight: 700;
-  color: #fff;
 }
 
-.mc-text-display2 {
+.mc-text-d2 {
   font-size: 32px;
-  font-weight: 400;
-  line-height: 1.5;
   letter-spacing: 0.06em;
-  color: #fff;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -44,7 +41,6 @@ a {
 .mc-text-h5 {
   font-weight: 700;
   line-height: 1.25;
-  color: #fff;
 }
 
 .mc-text-h1 {
@@ -77,20 +73,11 @@ a {
   text-transform: uppercase;
 }
 
-.mc-text-p {
+.mc-text-intro {
   font-size: 18px;
   line-height: 26px;
   letter-spacing: 0.025em;
   font-weight: 400;
-  color: #fff;
-}
-
-.mc-text-p2 {
-  font-size: 15px;
-  line-height: 22px;
-  letter-spacing: 0.015em;
-  font-weight: 400;
-  color: #fff;
 }
 
 .mc-text-legal {
@@ -98,5 +85,4 @@ a {
   line-height: 18px;
   letter-spacing: 0.5px;
   font-weight: 400;
-  color: #fff;
 }
