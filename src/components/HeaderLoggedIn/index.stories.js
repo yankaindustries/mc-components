@@ -15,33 +15,78 @@ const menuLinks = [
 
 storiesOf('components|Structure/Header/LoggedIn', module)
   .add('default', withProps(HeaderLoggedIn)(() =>
-    <HeaderLoggedIn menuLinks={menuLinks} />,
+    <div>
+      <HeaderLoggedIn menuLinks={menuLinks} />
+      <div style={
+        {
+          paddingBottom: '2000px',
+          background: '#ccc',
+        }
+      }>
+      </div>
+    </div>,
   ))
   .add('minimal', withProps(HeaderLoggedIn)(() =>
-    <HeaderLoggedIn isMinimal />,
+    <div>
+      <HeaderLoggedIn isMinimal />
+      <div style={
+        {
+          paddingBottom: '2000px',
+          background: '#ccc',
+        }
+      }>
+      </div>
+    </div>,
   ))
   .add('with avatar', withProps(HeaderLoggedIn)(() => (
-    <HeaderLoggedIn
-      menuLinks={menuLinks}
-      avatar='https://graph.facebook.com/10156122473642900/picture?height=300&width=300'
-    />
+    <div>
+      <HeaderLoggedIn
+        menuLinks={menuLinks}
+        avatar='https://graph.facebook.com/10156122473642900/picture?height=300&width=300'
+      />
+      <div style={
+        {
+          paddingBottom: '2000px',
+          background: '#ccc',
+        }
+      }>
+      </div>
+    </div>
   )))
   .add('with badges', withProps(HeaderLoggedIn)(() => (
-    <HeaderLoggedIn
-      menuLinks={[
-        ...menuLinks,
-        { label: 'Profile', href: '/profile', badgeCount: 1 },
-        { label: 'Sign out', href: '/sign_out' },
-      ]}
-    />
+    <div>
+      <HeaderLoggedIn
+        menuLinks={[
+          ...menuLinks,
+          { label: 'Profile', href: '/profile', badgeCount: 1 },
+          { label: 'Sign out', href: '/sign_out' },
+        ]}
+      />
+      <div style={
+        {
+          paddingBottom: '2000px',
+          background: '#ccc',
+        }
+      }>
+      </div>
+    </div>
   )))
   .add('with backButton', withProps(HeaderLoggedIn)(() => (
-    <HeaderLoggedIn
-      menuLinks={menuLinks}
-      left={{
-        action: action('clicked'),
-        label: 'Back',
-        type: 'back',
-      }}
-    />
+    <div>
+      <HeaderLoggedIn
+        menuLinks={menuLinks}
+        left={{
+          action: action('clicked'),
+          label: 'Back',
+          type: 'back',
+        }}
+      />
+      <div style={
+        {
+          paddingBottom: '2000px',
+          background: '#ccc',
+        }
+      }>
+      </div>
+    </div>
   )))

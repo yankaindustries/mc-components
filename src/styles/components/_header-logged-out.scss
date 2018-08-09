@@ -80,7 +80,7 @@ $header-condensed-ease-timing: 450ms !default;
     &__logo {
       display: block;
       width: 124px;
-      height: 56px;
+      height: 54px;
       margin: 0 auto;
       transition: margin $header-condensed-ease-timing ease;
       color: $mc-light;
@@ -128,12 +128,12 @@ $header-condensed-ease-timing: 450ms !default;
       }
 
       .header-logged-out__logo {
-        margin-top: -45px;
+        margin-top: -43px;
         transition: margin $header-condensed-ease-timing ease;
       }
 
       .header-logged-out__nav {
-        padding: 11.5px;
+        padding: 12px;
       }
     }
   }

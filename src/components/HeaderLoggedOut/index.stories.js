@@ -7,5 +7,14 @@ import HeaderLoggedOut from '../HeaderLoggedOut'
 
 storiesOf('components|Structure/Header/LoggedOut', module)
   .add('default', withProps(HeaderLoggedOut)(() =>
-    <HeaderLoggedOut />,
+    <div>
+      <HeaderLoggedOut />
+      <div style={
+        {
+          paddingBottom: '2000px',
+          background: '#ccc',
+        }
+      }>
+      </div>
+    </div>,
   ))
