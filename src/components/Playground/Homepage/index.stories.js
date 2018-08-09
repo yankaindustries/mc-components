@@ -12,6 +12,12 @@ import AnimationHandler from '../../AnimationHandler'
 import HoverHandler from '../../HoverHandler'
 import ResponsiveHandler from '../../ResponsiveHandler'
 
+import Facebook from '../../../assets/icons/facebook.svg'
+import Twitter from '../../../assets/icons/twitter.svg'
+import Instagram from '../../../assets/icons/instagram.svg'
+import ChevronLeft from '../../../assets/icons/chevron-left.svg'
+import ChevronRight from '../../../assets/icons/chevron-right.svg'
+
 
 storiesOf('playground|Pages', module)
   .add('Home', () =>
@@ -335,6 +341,132 @@ storiesOf('playground|Pages', module)
                   }
                 </HoverHandler>
               </div>
+            </div>
+          </div>
+
+          <div className='mc-section'>
+            <div className='row align-items-center'>
+              <div className='col-lg-4'>
+                <div className='mc-section__header'>
+                  <h2 className='mc-text-h1 mc-text-center mc-text-lg-left'>
+                    Instructor Announcements
+                  </h2>
+                  <p className='mc-text-center mc-text-lg-left mc-text--muted'>
+                    Learn from the world’s greatest minds.
+                  </p>
+                  <br />
+
+                  <div className='row small-gutters justify-content-center justify-content-lg-start'>
+                    <div className='col-auto'>
+                      <ChevronLeft className='mc-icon--7x mc-icon--circled mc-text--muted' />
+                    </div>
+
+                    <div className='col-auto'>
+                      <ChevronRight className='mc-icon--7x mc-icon--circled' />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className='col-lg-8'>
+                <div className='row'>
+                  <div className='col-lg-6'>
+                    <div className='row'>
+                      <div className='col-12'>
+                        <div className='mc-card mc-background--light mc-text--invert'>
+                          <div className='row align-items-center small-gutters'>
+                            <div className='col col-auto'>
+                              <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1429/original/1518557721-Slide_Thumb.jpg?1518557721' />
+                            </div>
+                            <div className='col'>
+                              <h4 className='mc-text-h4'>Malcom Gladwell</h4>
+                              <h5 className='mc-text-h5 mc-text--muted'>@Gladwell</h5>
+                            </div>
+
+                            <div className='col-12'>
+                              <p>
+                                If my books aren&apos;t enough for you,
+                                I&apos;ve done a really fun writing seminar!
+                                <br />
+                                <a href='#'>@MasterClass</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className='col-12'>
+                        <div className='mc-card mc-background--light mc-text--invert'>
+                          <div className='row align-items-center small-gutters'>
+                            <div className='col col-auto'>
+                              <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1194/original/1512075998-Slide_Thumb.jpg?1512075998' />
+                            </div>
+                            <div className='col'>
+                              <h4 className='mc-text-h4'>Armin Van Buuren</h4>
+                              <h5 className='mc-text-h5 mc-text--muted'>@arminvanbuuren</h5>
+                            </div>
+
+                            <div className='col-12'>
+                              <p>
+                                My <a href='#'>@masterclass</a> is now live! So
+                                proud to be able to share everything I know
+                                about dance music with you. Join me in the
+                                studio:
+                                <a href='#'>http://www.masterclass.com/avb</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className='col-lg-6'>
+                    <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                      <div className='row align-items-center small-gutters'>
+                        <div className='col col-auto'>
+                          <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/528/original/1488402263-1488323293-SM_SlideThumb_V1_A.jpg?1488402263' />
+                        </div>
+                        <div className='col'>
+                          <h4 className='mc-text-h4'>Steve Martin</h4>
+                        </div>
+
+                        <div className='col-12'>
+                          <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/instructor-announcements/steve-martin-7ff79ae2d7ec7677b76aa0dfe1c51b47c8b54d6065d330be11c49388e68624ad.jpg' />
+                          <p>
+                            I&apos;m told people are signing up in droves (a car
+                            made in the 30s) for my <a href='#'>MasterClass</a>
+                            in comedy. For the aspiring comedian, writer, or
+                            future world leader.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='container'>
+        <div className='mc-section'>
+          <div className='mc-section__header'>
+            <h4 className='mc-text-h4 mc-text-center mc-text--muted'>
+              Stay up to date with MasterClass
+            </h4>
+          </div>
+
+          <div className='row justify-content-center'>
+            <div className='col-auto'>
+              <Twitter className='mc-icon--15x mc-icon--circled mc-text--muted' />
+            </div>
+            <div className='col-auto'>
+              <Facebook className='mc-icon--15x mc-icon--circled mc-text--muted' />
+            </div>
+            <div className='col-auto'>
+              <Instagram className='mc-icon--15x mc-icon--circled mc-text--muted' />
             </div>
           </div>
         </div>

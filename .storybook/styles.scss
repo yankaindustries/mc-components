@@ -34,6 +34,27 @@
   }
 }
 
+.mc-icon--4x {
+  font-size: 16px;
+}
+
+.mc-icon--7x {
+  font-size: 28px;
+
+  &.mc-icon--circled {
+    padding: 8px;
+  }
+}
+
+.mc-icon--15x {
+  font-size: 60px;
+}
+
+.mc-icon--circled {
+  border: 1px solid currentColor;
+  border-radius: 100%;
+}
+
 
 
 
