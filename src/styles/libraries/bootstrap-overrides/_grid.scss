@@ -3,9 +3,17 @@
 // desktop.
 
 
-// Smallest gutter sizes
-.container { padding: 0 ($grid-gutter-width); }
-.row { margin: $grid-gutter-width / -2; }
+.container {
+  padding: 0 ($grid-gutter-width);
+}
+
+.row {
+  margin: $grid-gutter-width / -2;
+
+  &--fill {
+    height: 100%;
+  }
+}
 
 .col,
 [class*="col-"] {

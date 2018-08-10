@@ -73,9 +73,9 @@ export default class Carousel extends PureComponent {
     className: PropTypes.string,
     controls: PropTypes.bool,
     dots: PropTypes.bool,
-    fadeOut: PropTypes.bool,
+    fadeEdges: PropTypes.bool,
     focusOnSelect: PropTypes.bool,
-    infinite: PropTypes.bool,
+    loop: PropTypes.bool,
     scrollCount: PropTypes.number,
     showCount: PropTypes.number,
     transition: PropTypes.string,
@@ -87,9 +87,9 @@ export default class Carousel extends PureComponent {
     centered: false,
     controls: false,
     dots: false,
-    fadeOut: false,
+    fadeEdges: false,
     focusOnSelect: false,
-    infinite: false,
+    loop: false,
     scrollCount: 1,
     showCount: 3,
     transition: TRANSITION_SLIDE,
@@ -103,7 +103,8 @@ export default class Carousel extends PureComponent {
       className,
       centered,
       controls,
-      fadeOut,
+      fadeEdges,
+      loop,
       scrollCount,
       showCount,
       transition,
@@ -113,7 +114,9 @@ export default class Carousel extends PureComponent {
     const classes = [
       className,
       'mc-carousel',
-      centered && fadeOut ? 'mc-carousel--fade-out' : '',
+      `mc-carousel--${transition}`,
+      centered ? 'mc-carousel--centered' : '',
+      fadeEdges ? 'mc-carousel--fade-edges' : '',
     ].join(' ')
 
     const arrows = controls
@@ -140,10 +143,11 @@ export default class Carousel extends PureComponent {
           autoplay={autoPlay}
           className={classes}
           centerMode={centered}
-          centerPadding={fadeOut ? CENTERED_PADDING : 0}
+          centerPadding={fadeEdges ? CENTERED_PADDING : 0}
           fade={transition === TRANSITION_FADE}
           slidesToScroll={scrollCount}
           slidesToShow={showCount}
+          infinite={loop}
           {...arrows}
           {...restProps}
         >

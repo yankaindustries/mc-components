@@ -31,8 +31,20 @@
     top: 0;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba($mc-light, 0.1);
     z-index: 2;
+  }
+
+  &--naked {
+    &:after {
+      display: none;
+    }
+  }
+
+  &--active {
+    &:after {
+      box-shadow: inset 0 0 0 1px rgba($mc-light, 0.2);
+    }
   }
 
   &--1x1,
@@ -116,8 +128,6 @@
 
 .mc-tile-overlay {
   z-index: 2;
-  // To ensure the overlay extends just passed the bounds
-  transform: scale(1.01);
 
   &--gradient-bottom {
     background:
@@ -125,7 +135,30 @@
         to top,
         rgba($mc-dark, 0.9) 0,
         rgba($mc-dark, 0.6) 25%,
-        transparent 45%
+        rgba($mc-dark, 0) 45%,
+      );
+  }
+
+  &--offset-spotlight {
+    background:
+      radial-gradient(
+        farthest-side at top,
+        rgba($mc-color-background, 0) 50%,
+        rgba($mc-color-background, 1) 100%,
+      ),
+      linear-gradient(
+        to right,
+        rgba($mc-dark, 0.75) 30%,
+        rgba($mc-dark, 0) 60%,
+      );
+  }
+
+  &--spotlight {
+    background:
+      radial-gradient(
+        farthest-side at top,
+        rgba($mc-color-background, 0) 66%,
+        rgba($mc-color-background, 1) 100%,
       );
   }
 }

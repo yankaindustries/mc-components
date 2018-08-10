@@ -4,6 +4,8 @@
 // yet, so they'll live here!
 
 // THE UPSIDE DOWN
+$mc-unit: 4px;
+
 .mc-background {
   &--light {
     background: $mc-light;
@@ -12,6 +14,10 @@
   &--dark {
     background: $mc-dark;
   }
+}
+
+.mc-hero {
+  margin-bottom: $mc-unit * -20;
 }
 
 .mc-section {
@@ -32,19 +38,19 @@
 }
 
 .mc-icon--4x {
-  font-size: 16px;
+  font-size: $mc-unit * 4;
 }
 
 .mc-icon--7x {
-  font-size: 28px;
+  font-size: $mc-unit * 7;
 
   &.mc-icon--circled {
-    padding: 8px;
+    padding: $mc-unit * 2;
   }
 }
 
 .mc-icon--15x {
-  font-size: 60px;
+  font-size: $mc-unit * 15;
 }
 
 .mc-icon--circled {

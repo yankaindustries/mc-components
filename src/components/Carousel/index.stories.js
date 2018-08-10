@@ -5,96 +5,118 @@ import { withProps } from '../../utils/addon-props'
 import Carousel from '../Carousel'
 import Tile from '../Tile'
 import TileImage from '../TileImage'
-import ResponsiveHandler from '../ResponsiveHandler'
+import TileOverlay from '../TileOverlay'
+import Button from '../Button'
+import Header from '../HeaderLoggedOut'
+
 
 
 const items = [
-  { id: 1, image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132' },
-  { id: 2, image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/332/original/1477793873-wh-tile.jpg%3F1477793873' },
-  { id: 3, image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/628/original/1493844712-DVF_SlideThumb_V1_A.jpg%3F1493844712' },
-  { id: 4, image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/354/original/1479173180-DM5_SlideThumb_V2_A_%25281%2529.jpg%3F1479173180' },
-  { id: 5, image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/867/original/1508818886-SLJ_SlideThumb_V2_A.jpg%3F1508818886' },
-  { id: 6, image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/1087/original/1510618603-Slide_Thumb.jpg%3F1510618603' },
-  { id: 7, image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/428/original/1481770014-SR_SlideThumb_V1_B.jpg%3F1481770014' },
+  {
+    id: 1,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/preview_videos/2/original/1494895762-SR_Gem_BeyondThePilotWritingASeries.jpg%3F1494895762',
+  },
+  {
+    id: 2,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/332/original/1477793873-wh-tile.jpg%3F1477793873',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+  },
+  {
+    id: 3,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/628/original/1493844712-DVF_SlideThumb_V1_A.jpg%3F1493844712',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/331/original/1495558129-hero-wh-v3.jpg%3F1495558129',
+  },
+  {
+    id: 4,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/354/original/1479173180-DM5_SlideThumb_V2_A_%25281%2529.jpg%3F1479173180',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/627/original/1495558421-hero-dvf-v3.jpg%3F1495558421',
+  },
+  {
+    id: 5,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/867/original/1508818886-SLJ_SlideThumb_V2_A.jpg%3F1508818886',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/561/original/1489515027-DM5_CM_Hero_V1_A.jpg%3F1489515027',
+  },
+  {
+    id: 6,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/1087/original/1510618603-Slide_Thumb.jpg%3F1510618603',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/866/original/1508818329-SLJ_class_hero_no_gradient.jpg%3F1508818329',
+  },
+  {
+    id: 7,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/428/original/1481770014-SR_SlideThumb_V1_B.jpg%3F1481770014',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1070/original/1510618084-Class_Hero.jpg%3F1510618084',
+  },
 ]
-
-// const hero = React.createRef()
-// const thumbs = React.createRef()
 
 storiesOf('components|Carousel', module)
   .add('default', withProps(Carousel)(() => (
-    <div className='container'>
-      <br />
-      <br />
-      <br />
+    <div>
+      <Header />
 
-      <Carousel
-        showCount={1}
-        transition='fade'
-        infinite
-      >
-        {items.map((item, key) => (
-          <div key={key}>
-            <Tile key={item.id}>
-              <TileImage imageUrl={item.image} />
-            </Tile>
-          </div>
-        ))}
-      </Carousel>
 
-      <br />
+      <div className='container'>
+        <div className='mc-hero'>
+          <Carousel
+            transition='fade'
+            loop
+          >
+            {items.map((item, key) => (
+              <Tile key={key} naked>
+                <TileImage imageUrl={item.image} />
 
-      <ResponsiveHandler>
-        {({ ltMD }) =>
-          <div>
-            <Carousel
-              className='row'
-              showCount={ltMD ? 2 : 3}
-              autoPlay
-              centered
-              infinite
-            >
-              {items.map((item, key) => (
-                <div key={key} className='col-auto'>
-                  <Tile key={item.id}>
-                    <TileImage imageUrl={item.image} />
-                  </Tile>
-                </div>
-              ))}
-            </Carousel>
+                <TileOverlay type='offset-spotlight'>
+                  <div className='row row--fill align-items-center'>
+                    <div className='col-xl-5 col-lg-6 col-md-8'>
+                      <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left'>
+                        Alice Waters
+                      </h2>
+                      <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left'>
+                        Teaches the art of home cooking
+                      </h3>
+                      <br />
+                      <p className='mc-text-intro mc-text-center mc-text-md-left'>
+                        Online classes taught by the world&apos;s greatest
+                        minds.<br /> Learn from Alice Waters and all 35+ other
+                        instructors.
+                      </p>
+                      <br />
+                      <div className='row'>
+                        <div className='col-md-6'>
+                          <Button primary fullWidth>
+                            All Access Pass
+                          </Button>
+                        </div>
+                        <div className='col-md-6'>
+                          <Button secondary fullWidth>
+                            Learn More
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TileOverlay>
+              </Tile>
+            ))}
+          </Carousel>
+        </div>
 
-            <hr />
-
-            <Carousel
-              className='row'
-              showCount={ltMD ? 2 : 3}
-              centered
-              controls
-              fadeOut
-              infinite
-            >
-              {items.map((item, key) => (
-                <div key={key} className='col-auto'>
-                  <Tile key={item.id}>
-                    <TileImage imageUrl={item.image} />
-                  </Tile>
-                </div>
-              ))}
-            </Carousel>
-          </div>
-        }
-      </ResponsiveHandler>
-
-      <hr />
-
-      <div className='row'>
-        {items.map((item, key) => (
-          <div key={key} className='col-md-4 col-6'>
-            <Tile key={item.id}>
-              <TileImage imageUrl={item.image} />
-            </Tile>
-          </div>
-        ))}
+        <Carousel
+          className='row'
+          showCount={3}
+          centered
+          controls
+          fadeEdges
+          loop
+        >
+          {items.map((item, key) => (
+            <div key={key} className='col-auto'>
+              <Tile key={item.id}>
+                <TileImage imageUrl={item.thumbnail} />
+              </Tile>
+            </div>
+          ))}
+        </Carousel>
       </div>
     </div>
   )))

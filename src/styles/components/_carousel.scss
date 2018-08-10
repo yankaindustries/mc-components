@@ -1,3 +1,5 @@
+$mc-carousel-arrow-width: 50px !default;
+
 .mc-carousel {
   position: relative;
 
@@ -35,13 +37,9 @@
     &--left {
       left: 16px;
     }
-
-    svg {
-      vertical-align: middle;
-    }
   }
 
-  &--fade-out {
+  &--fade-edges {
     $centered-padding: 200px;
 
     .slick-list {
@@ -56,7 +54,7 @@
       top: 0;
       width: $centered-padding;
       height: 100%;
-      z-index: 4;
+      z-index: 0;
 
       // pointer-events: none;
     }

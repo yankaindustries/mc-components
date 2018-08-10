@@ -14,10 +14,12 @@ export default class Tile extends PureComponent {
     ]),
     children: PropTypes.node,
     className: PropTypes.string,
+    naked: PropTypes.bool,
   }
 
   static defaultProps = {
     aspectRatio: '16x9',
+    naked: false,
   }
 
   render () {
@@ -25,11 +27,13 @@ export default class Tile extends PureComponent {
       aspectRatio,
       children,
       className,
+      naked,
     } = this.props
 
     const classes = [
       'mc-tile',
       `mc-tile--${aspectRatio}`,
+      naked ? 'mc-tile--naked' : '',
       className || '',
     ].join(' ')
 
