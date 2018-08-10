@@ -7,7 +7,7 @@
 @import "../base/variables";
 
 // Bootstrap - the good parts
-@import "~bootstrap/scss/bootstrap-grid";
+@import "node_modules/bootstrap/scss/bootstrap-grid";
 
 // Bootstrap overrides
 @import "bootstrap-overrides/grid";
