@@ -15,8 +15,8 @@
 .small-gutters {
   margin: $grid-gutter-sm-width / -2;
 
-  .col,
-  [class*="col-"] {
+  > .col,
+  > [class*="col-"] {
     padding: $grid-gutter-sm-width / 2;
   }
 }

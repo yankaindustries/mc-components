@@ -5,15 +5,33 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        use: [
+        oneOf: [
           {
-            loader: '@svgr/webpack',
-            options: {
-              icon: true,
-              replaceAttrValues: {
-                '#000': 'currentColor',
-              }
-            },
+            include: path.resolve(__dirname, '../src/assets/icons'),
+            use: [
+              {
+                loader: '@svgr/webpack',
+                options: {
+                  icon: true,
+                  replaceAttrValues: {
+                    '#000': 'currentColor',
+                  }
+                },
+              },
+            ],
+          },
+          {
+            exclude: path.resolve(__dirname, '../src/assets/icons'),
+            use: [
+              {
+                loader: '@svgr/webpack',
+                options: {
+                  replaceAttrValues: {
+                    '#000': 'currentColor',
+                  }
+                },
+              },
+            ],
           },
         ],
       },
