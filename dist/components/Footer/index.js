@@ -16,10 +16,6 @@ var _logo = require('../../assets/logo.svg');
 
 var _logo2 = _interopRequireDefault(_logo);
 
-var _logoMinimal = require('../../assets/logo-minimal.svg');
-
-var _logoMinimal2 = _interopRequireDefault(_logoMinimal);
-
 var _sslBadge = require('../../assets/ssl-badge.svg');
 
 var _sslBadge2 = _interopRequireDefault(_sslBadge);
@@ -56,11 +52,7 @@ var Footer = function (_PureComponent) {
           _react2.default.createElement(
             'div',
             { className: 'mc-container mc-contain-inner' },
-            _react2.default.createElement('img', {
-              src: isMinimal ? _logoMinimal2.default : _logo2.default,
-              alt: 'Logo wordmark',
-              className: !isMinimal ? 'mc-site-footer__logo-footer' : ''
-            }),
+            _react2.default.createElement(_logo2.default, { className: 'mc-site-footer__logo-footer' }),
             !isMinimal && _react2.default.createElement(
               _react.Fragment,
               null,
@@ -153,12 +145,7 @@ var Footer = function (_PureComponent) {
                   'Copyright \xA9 2018 MasterClass'
                 )
               ),
-              _react2.default.createElement('img', {
-                src: _sslBadge2.default,
-                alt: 'Secured by Expedited SSL',
-                className: 'mc-site-footer__ssl-badge',
-                name: 'ssl-badge'
-              })
+              _react2.default.createElement(_sslBadge2.default, { className: 'mc-site-footer__ssl-badge' })
             )
           )
         )

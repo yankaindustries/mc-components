@@ -24,10 +24,6 @@ var _ModalHeader = require('../ModalHeader');
 
 var _ModalHeader2 = _interopRequireDefault(_ModalHeader);
 
-var _CloseIcon = require('../icons/CloseIcon');
-
-var _CloseIcon2 = _interopRequireDefault(_CloseIcon);
-
 var _ClickOutside = require('../ClickOutside');
 
 var _ClickOutside2 = _interopRequireDefault(_ClickOutside);
@@ -35,6 +31,10 @@ var _ClickOutside2 = _interopRequireDefault(_ClickOutside);
 var _RoundedBox = require('../RoundedBox');
 
 var _RoundedBox2 = _interopRequireDefault(_RoundedBox);
+
+var _close = require('../../assets/icons/close.svg');
+
+var _close2 = _interopRequireDefault(_close);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62,7 +62,7 @@ var Modal = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Modal.__proto__ || Object.getPrototypeOf(Modal)).call.apply(_ref, [this].concat(args))), _this), _this.container = _react2.default.createRef(), _this.onClickOutside = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Modal.__proto__ || Object.getPrototypeOf(Modal)).call.apply(_ref, [this].concat(args))), _this), _this.onClickOutside = function () {
       var _this$props = _this.props,
           onClose = _this$props.onClose,
           shouldCloseOnClickOutside = _this$props.shouldCloseOnClickOutside;
@@ -80,7 +80,7 @@ var Modal = function (_Component) {
       if (shouldCloseOnEsc && escKeyWasPressed) {
         onClose();
       }
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    }, _this.container = _react2.default.createRef(), _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Modal, [{
@@ -113,7 +113,7 @@ var Modal = function (_Component) {
       return _react2.default.createElement(
         _ModalPortal2.default,
         null,
-        _react2.default.createElement(_CloseIcon2.default, { className: 'modal__close-icon', onClick: onClose }),
+        _react2.default.createElement(_close2.default, { className: 'modal__close-icon', onClick: onClose }),
         _react2.default.createElement(
           _ClickOutside2.default,
           {
@@ -129,7 +129,7 @@ var Modal = function (_Component) {
                 className: 'modal__rounded-box',
                 HeaderComponent: HeaderComponent
               }, props),
-              _react2.default.createElement(_CloseIcon2.default, { className: 'modal__inner-close-icon', onClick: onClose }),
+              _react2.default.createElement(_close2.default, { className: 'modal__inner-close-icon', onClick: onClose }),
               children
             )
           )

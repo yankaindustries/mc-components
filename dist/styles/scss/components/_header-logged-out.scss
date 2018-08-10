@@ -15,7 +15,7 @@ $header-condensed-ease-timing: 450ms !default;
     justify-content: center;
     max-width: 1200px;
     margin: auto;
-    padding: 17px;
+    padding: 6px 17px;
     position: relative;
     text-transform: uppercase;
     z-index: 20;
@@ -25,12 +25,8 @@ $header-condensed-ease-timing: 450ms !default;
     background: transparent;
     text-decoration: none;
     display: block;
-    width: 129px;
-    height: 14px;
-
-    img {
-      display: block;
-    }
+    width: 130px;
+    color: $mc-light;
   }
 
   &__login-link {
@@ -77,15 +73,16 @@ $header-condensed-ease-timing: 450ms !default;
 
     &__logo {
       display: block;
-      width: 124px;
+      width: 130px;
       height: 56px;
       margin: 0 auto;
       transition: margin $header-condensed-ease-timing ease;
+      color: $mc-light;
 
-      img {
-        height: auto;
-        width: 100%;
-      }
+      // svg {
+      //   width: 100%;
+      //   height: 100%;
+      // }
     }
 
     &__login-link {
@@ -125,12 +122,12 @@ $header-condensed-ease-timing: 450ms !default;
       }
 
       .header-logged-out__logo {
-        margin-top: -45px;
+        margin-top: -46px;
         transition: margin $header-condensed-ease-timing ease;
       }
 
       .header-logged-out__nav {
-        padding: 11.5px;
+        padding: 12px;
       }
     }
   }

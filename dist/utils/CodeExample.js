@@ -68,17 +68,17 @@ var CodeExample = function (_PureComponent) {
         null,
         _react2.default.createElement(
           'div',
-          { className: 'text-right' },
+          { className: 'example--render' },
+          children
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'mc-text--monospace text-right' },
           _react2.default.createElement(
             'a',
             { onClick: this.toggleCode },
             '</>'
           )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'example--render' },
-          children
         ),
         this.state.showCode && _react2.default.createElement(
           _reactHighlight2.default,

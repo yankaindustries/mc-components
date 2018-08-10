@@ -18,9 +18,9 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _ReplayIcon = require('../icons/ReplayIcon');
+var _replay = require('../../assets/icons/replay.svg');
 
-var _ReplayIcon2 = _interopRequireDefault(_ReplayIcon);
+var _replay2 = _interopRequireDefault(_replay);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -140,7 +140,7 @@ var VideoPlayer = function (_React$PureComponent) {
       return _react2.default.createElement(
         'div',
         { className: 'bc-player-endscreen' },
-        _react2.default.createElement(_ReplayIcon2.default, {
+        _react2.default.createElement(_replay2.default, {
           className: 'bc-player-endscreen__replay',
           onClick: _this.handleReplayClick
         }),

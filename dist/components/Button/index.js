@@ -14,9 +14,9 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _propTypes = require('prop-types');
 
-var _ButtonLoader = require('../ButtonLoader');
+var _loader = require('../../assets/icons/loader.svg');
 
-var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+var _loader2 = _interopRequireDefault(_loader);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,7 +28,6 @@ var Button = function Button(_ref) {
   var children = _ref.children,
       className = _ref.className,
       onClick = _ref.onClick,
-      primary = _ref.primary,
       secondary = _ref.secondary,
       tertiary = _ref.tertiary,
       fullWidth = _ref.fullWidth,
@@ -37,10 +36,9 @@ var Button = function Button(_ref) {
       linkMuted = _ref.linkMuted,
       loading = _ref.loading,
       Icon = _ref.Icon,
-      props = _objectWithoutProperties(_ref, ['children', 'className', 'onClick', 'primary', 'secondary', 'tertiary', 'fullWidth', 'text', 'link', 'linkMuted', 'loading', 'Icon']);
+      props = _objectWithoutProperties(_ref, ['children', 'className', 'onClick', 'secondary', 'tertiary', 'fullWidth', 'text', 'link', 'linkMuted', 'loading', 'Icon']);
 
   var classNames = (0, _classnames2.default)('c-button', _defineProperty({}, className, Boolean(className)), {
-    'c-button--primary': primary,
     'c-button--secondary': secondary,
     'c-button--tertiary': tertiary,
     'c-button--with-icon': Boolean(Icon),
@@ -63,7 +61,7 @@ var Button = function Button(_ref) {
       null,
       children
     ),
-    loading && _react2.default.createElement(_ButtonLoader2.default, null)
+    loading && _react2.default.createElement(_loader2.default, { className: 'loader' })
   );
 };
 
@@ -71,7 +69,6 @@ Button.propTypes = {
   children: (0, _propTypes.oneOfType)([(0, _propTypes.arrayOf)(_propTypes.node), _propTypes.node, _propTypes.string]),
   className: _propTypes.string,
   onClick: _propTypes.func,
-  primary: _propTypes.bool,
   secondary: _propTypes.bool,
   tertiary: _propTypes.bool,
   fullWidth: _propTypes.bool,
@@ -85,7 +82,6 @@ Button.propTypes = {
 Button.defaultProps = {
   className: '',
   onClick: function onClick() {},
-  primary: false,
   secondary: false,
   tertiary: false,
   fullWidth: false,

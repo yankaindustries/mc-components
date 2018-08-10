@@ -14,15 +14,11 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _HoverHandler = require('../HoverHandler');
-
-var _HoverHandler2 = _interopRequireDefault(_HoverHandler);
-
-var _muted = require('../../assets/muted.svg');
+var _muted = require('../../assets/icons/muted.svg');
 
 var _muted2 = _interopRequireDefault(_muted);
 
-var _unmuted = require('../../assets/unmuted.svg');
+var _unmuted = require('../../assets/icons/unmuted.svg');
 
 var _unmuted2 = _interopRequireDefault(_unmuted);
 
@@ -76,8 +72,6 @@ var TileVideo = function (_PureComponent) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props = this.props,
           children = _props.children,
           className = _props.className,
@@ -91,31 +85,24 @@ var TileVideo = function (_PureComponent) {
       var classes = ['mc-tile__component', 'mc-tile-video__video', 'bc-player__video', 'bc-player__video--default', 'mc-tile-video__video', 'video-js', className || ''].join(' ');
 
       return _react2.default.createElement(
-        _HoverHandler2.default,
-        null,
-        function (_ref) {
-          var hovering = _ref.hovering;
-          return _react2.default.createElement(
-            'div',
-            { className: 'mc-tile-video mc-tile__component' },
-            !controls && _react2.default.createElement(
-              'a',
-              { className: 'mc-tile-video__mute', onClick: _this2.onMuteClick },
-              hovering && _react2.default.createElement('img', { src: muted ? _muted2.default : _unmuted2.default })
-            ),
-            _react2.default.createElement('video', Object.assign({
-              ref: _this2.playerRef,
-              className: classes,
-              'data-embed': 'default',
-              'data-video-id': videoId,
-              'data-player-id': PLAYER_ID,
-              'data-account': ACCOUNT_ID,
-              controls: controls,
-              muted: muted
-            }, restProps)),
-            children
-          );
-        }
+        'div',
+        { className: 'mc-tile-video mc-tile__component' },
+        !controls && _react2.default.createElement(
+          'a',
+          { className: 'mc-tile-video__mute', onClick: this.onMuteClick },
+          muted ? _react2.default.createElement(_muted2.default, null) : _react2.default.createElement(_unmuted2.default, null)
+        ),
+        _react2.default.createElement('video', Object.assign({
+          ref: this.playerRef,
+          className: classes,
+          'data-embed': 'default',
+          'data-video-id': videoId,
+          'data-player-id': PLAYER_ID,
+          'data-account': ACCOUNT_ID,
+          controls: controls,
+          muted: muted
+        }, restProps)),
+        children
       );
     }
   }]);

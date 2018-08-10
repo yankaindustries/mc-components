@@ -54,7 +54,7 @@ var Definition = function (_PureComponent) {
             'div',
             { className: 'col-10' },
             _react2.default.createElement(
-              'h5',
+              'p',
               null,
               _react2.default.createElement(
                 'span',

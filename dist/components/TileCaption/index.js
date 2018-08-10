@@ -57,13 +57,13 @@ var TileCaption = function (_PureComponent) {
           'div',
           { className: 'mc-tile-caption__titles' },
           title && _react2.default.createElement(
-            'h2',
-            { className: 'mc-tile-caption__title' },
+            'h4',
+            { className: 'mc-tile-caption__title mc-text-h2 mc-text--uppercase' },
             title
           ),
           subtitle && _react2.default.createElement(
-            'h3',
-            { className: 'mc-tile-caption__subtitle' },
+            'h5',
+            { className: 'mc-tile-caption__subtitle mc-text-h4 mc-text--muted' },
             subtitle
           )
         ),

@@ -22,7 +22,7 @@ var _ToggleHandler = require('../ToggleHandler');
 
 var _ToggleHandler2 = _interopRequireDefault(_ToggleHandler);
 
-var _checkCircle = require('../../assets/check-circle.svg');
+var _checkCircle = require('../../assets/icons/check-circle.svg');
 
 var _checkCircle2 = _interopRequireDefault(_checkCircle);
 
@@ -68,7 +68,7 @@ var TileCheck = function (_PureComponent) {
           return _react2.default.createElement(
             'a',
             { className: classNames(checked), onClick: onClick },
-            _react2.default.createElement('img', { className: 'mc-tile-check__check', src: toggled ? _checkCircle2.default : null }),
+            toggled && _react2.default.createElement(_checkCircle2.default, { className: 'mc-tile-check__check' }),
             children && _react2.default.createElement(
               'div',
               { className: 'mc-tile__content' },

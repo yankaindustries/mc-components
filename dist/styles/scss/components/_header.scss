@@ -31,13 +31,9 @@
     background: transparent;
     text-decoration: none;
     display: block;
-    width: 129px;
-    height: 14px;
-    margin: 10px auto;
-
-    img {
-      display: block;
-    }
+    width: 130px;
+    margin: 6px auto;
+    color: $mc-light;
   }
 
   &__arrow--down {
@@ -71,6 +67,10 @@
       color: $mc-light;
       text-transform: uppercase;
       font-weight: 600;
+    }
+
+    &__icon {
+      color: $mc-color-primary;
     }
   }
 

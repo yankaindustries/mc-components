@@ -44,7 +44,7 @@ var Section = function (_PureComponent) {
         { className: 'example--section' },
         _react2.default.createElement(
           'h4',
-          null,
+          { className: 'mc-text-h4' },
           title
         ),
         children

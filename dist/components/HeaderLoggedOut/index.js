@@ -18,9 +18,9 @@ var _logoWordmark = require('../../assets/logo-wordmark.svg');
 
 var _logoWordmark2 = _interopRequireDefault(_logoWordmark);
 
-var _logoHeader = require('../../assets/header/logo-header.png');
+var _logo = require('../../assets/logo.svg');
 
-var _logoHeader2 = _interopRequireDefault(_logoHeader);
+var _logo2 = _interopRequireDefault(_logo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -83,12 +83,12 @@ var HeaderLoggedOut = function (_PureComponent) {
             _react2.default.createElement(
               'a',
               { className: 'header-logged-out__wordmark', href: '/' },
-              _react2.default.createElement('img', { src: _logoWordmark2.default, alt: 'Logo wordmark' })
+              _react2.default.createElement(_logoWordmark2.default, null)
             ),
             _react2.default.createElement(
               'a',
               { className: 'header-logged-out__logo', href: '/' },
-              _react2.default.createElement('img', { src: _logoHeader2.default, alt: 'Logo' })
+              _react2.default.createElement(_logo2.default, null)
             )
           ),
           _react2.default.createElement(

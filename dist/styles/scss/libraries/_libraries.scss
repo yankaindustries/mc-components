@@ -3,8 +3,14 @@
 // Reset
 @import "reset";
 
-// Bootstrap Grid
+// MC Variables
 @import "../base/variables";
+
+// Bootstrap - the good parts
 @import "node_modules/bootstrap/scss/bootstrap-grid";
+
+// Bootstrap overrides
 @import "bootstrap-overrides/grid";
+
+// Slick slider
 @import "node_modules/slick-carousel/slick/slick.scss";

@@ -131,6 +131,7 @@ var Carousel = function (_Component) {
   return Carousel;
 }(_react.Component);
 
+Carousel.Arrow = _arrow2.default;
 Carousel.propTypes = {
   slidesDataSource: _propTypes2.default.arrayOf(_propTypes2.default.shape({})),
   children: _propTypes2.default.element,
@@ -146,5 +147,4 @@ Carousel.propTypes = {
 Carousel.defaultProps = {
   hasArrows: true
 };
-Carousel.Arrow = _arrow2.default;
 exports.default = Carousel;

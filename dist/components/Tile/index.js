@@ -58,7 +58,7 @@ var Tile = function (_PureComponent) {
 }(_react.PureComponent);
 
 Tile.propTypes = {
-  aspectRatio: _propTypes2.default.oneOf(['4x3', '16x9', '100x65', '1000x609', '519x187']),
+  aspectRatio: _propTypes2.default.oneOf(['1x1', '4x3', '16x9', '100x65', '1000x609', '519x187']),
   children: _propTypes2.default.node,
   className: _propTypes2.default.string
 };

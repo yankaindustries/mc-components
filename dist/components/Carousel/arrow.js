@@ -16,7 +16,7 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _arrow = require('../../assets/Carousel/arrow.svg');
+var _arrow = require('../../assets/icons/arrow.svg');
 
 var _arrow2 = _interopRequireDefault(_arrow);
 
@@ -39,10 +39,7 @@ var CarouselArrow = function CarouselArrow(_ref) {
       onClick: onClick,
       style: isHidden ? { opacity: 0 } : null
     },
-    _react2.default.createElement('img', {
-      src: _arrow2.default,
-      className: 'mc-carousel-arrow__image'
-    })
+    _react2.default.createElement(_arrow2.default, { className: 'mc-carousel-arrow__image' })
   );
 };
 

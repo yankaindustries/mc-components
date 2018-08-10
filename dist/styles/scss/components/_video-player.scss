@@ -250,7 +250,7 @@ $brightcove-video-sizes: (
 .bc-player__video--default {
   .vjs-progress-control .vjs-load-progress,
   .vjs-progress-control .vjs-progress-holder {
-    background-color: rgba(#fff, 0.3);
+    background-color: rgba($mc-light, 0.3);
   }
 
   .vjs-progress-control .vjs-play-progress {
@@ -258,19 +258,19 @@ $brightcove-video-sizes: (
   }
 
   .vjs-load-progress div {
-    background-color: rgba(#fff, 0.18);
+    background-color: rgba($mc-light, 0.18);
   }
 
   .vjs-volume-level {
-    background-color: rgba(#fff, 0.9);
+    background-color: rgba($mc-light, 0.9);
   }
 
   .vjs-menu-button-popup .vjs-menu {
     .vjs-menu-item {
-      background-color: rgba(#000, 0.2);
+      background-color: rgba($mc-dark, 0.2);
 
       &.vjs-selected {
-        color: #fff;
+        color: $mc-light;
         background-color: $default-primary-color;
 
         &:hover {
@@ -279,7 +279,7 @@ $brightcove-video-sizes: (
       }
 
       &:hover {
-        background-color: rgba(#000, 0.35);
+        background-color: rgba($mc-dark, 0.35);
       }
     }
   }
@@ -300,11 +300,11 @@ $brightcove-video-sizes: (
   }
 
   .vjs-volume-level {
-    background-color: rgba(#fff, 0.9);
+    background-color: rgba($mc-light, 0.9);
   }
 
   .vjs-load-progress div {
-    background-color: rgba(#fff, 0.12);
+    background-color: rgba($mc-light, 0.12);
   }
 
   .vjs-menu-button-popup .vjs-menu {
@@ -312,7 +312,7 @@ $brightcove-video-sizes: (
       background-color: rgba($chapter-primary-color, 0.3);
 
       &.vjs-selected {
-        color: #fff;
+        color: $mc-light;
         background-color: $chapter-primary-color;
 
         &:hover {
@@ -334,7 +334,7 @@ $brightcove-video-sizes: (
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(#000, 0.7);
+  background: rgba($mc-dark, 0.7);
   opacity: 0;
   pointer-events: none;
   transition: 700ms ease-out;
@@ -349,10 +349,12 @@ $brightcove-video-sizes: (
     bottom: 24px;
     left: 24px;
     z-index: 1;
-    width: 36px;
+    width: 48px;
+    height: 48px;
     opacity: 0.8;
     cursor: pointer;
     transition: 300ms $mc-default-ease;
+    fill: $mc-light;
 
     &:hover {
       opacity: 1;

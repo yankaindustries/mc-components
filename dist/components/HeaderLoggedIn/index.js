@@ -24,10 +24,6 @@ var _ClickOutside = require('../ClickOutside');
 
 var _ClickOutside2 = _interopRequireDefault(_ClickOutside);
 
-var _logoWordmark = require('../../assets/logo-wordmark.svg');
-
-var _logoWordmark2 = _interopRequireDefault(_logoWordmark);
-
 var _MobileNavButton = require('../MobileNavButton');
 
 var _MobileNavButton2 = _interopRequireDefault(_MobileNavButton);
@@ -36,13 +32,17 @@ var _Badge = require('../Badge');
 
 var _Badge2 = _interopRequireDefault(_Badge);
 
-var _defaultAvatar2x = require('../../assets/header/default-avatar@2x.png');
+var _logoWordmark = require('../../assets/logo-wordmark.svg');
 
-var _defaultAvatar2x2 = _interopRequireDefault(_defaultAvatar2x);
+var _logoWordmark2 = _interopRequireDefault(_logoWordmark);
 
-var _backArrow = require('../../assets/header/back-arrow.svg');
+var _backArrow = require('../../assets/icons/back-arrow.svg');
 
 var _backArrow2 = _interopRequireDefault(_backArrow);
+
+var _defaultAvatar2x = require('../../assets/images/default-avatar@2x.png');
+
+var _defaultAvatar2x2 = _interopRequireDefault(_defaultAvatar2x);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -93,10 +93,7 @@ var HeaderLoggedIn = function (_PureComponent) {
             className: 'header__left-button',
             onClick: Boolean(action) && action
           },
-          _react2.default.createElement('img', {
-            src: _backArrow2.default,
-            className: 'header__left-button__icon'
-          }),
+          _react2.default.createElement(_backArrow2.default, { className: 'header__left-button__icon' }),
           _react2.default.createElement(
             'span',
             { className: 'header__left-button__label' },
@@ -159,7 +156,7 @@ var HeaderLoggedIn = function (_PureComponent) {
             _react2.default.createElement(
               'a',
               { className: 'header__wordmark', href: '/' },
-              _react2.default.createElement('img', { src: _logoWordmark2.default, alt: 'Logo wordmark' })
+              _react2.default.createElement(_logoWordmark2.default, { alt: 'Logo wordmark' })
             )
           ),
           !isMinimal && _react2.default.createElement(
