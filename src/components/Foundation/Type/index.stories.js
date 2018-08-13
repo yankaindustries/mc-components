@@ -185,3 +185,65 @@ storiesOf('foundation|Type', module)
       </div>,
     ),
   )
+  .add(
+    'Flourishes',
+    withInfo()(() =>
+      <div className='example-mc-type'>
+        <div className='container example--section'>
+          <h2 className='mc-text-d1'>Flourishes</h2>
+          <p>
+            Fancy treatments for your typography.  If the containing
+            element is too narrow to accomodate the flourish, it will
+            gracefully disappear.</p>
+        </div>
+        <div className='container'>
+          <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>Variable length text separator line</h5>
+            <div className='row'>
+              <div className='col-sm-4'>
+                <p className='mc-text-hr mc-text--uppercase'><span>The</span></p>
+              </div>
+              <div className='col-sm-4'>
+                <p className='mc-text-hr mc-text--uppercase'><span>Text</span></p>
+              </div>
+              <div className='col-sm-4'>
+                <p className='mc-text-hr mc-text--uppercase'><span>Can be any length</span></p>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <p className='mc-text-hr mc-text--uppercase'><span>That you would like to use</span></p>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-12'>
+                <p className='mc-text-hr'><span>Cool.</span></p>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-sm-2 offset-sm-10'>
+                <p className='mc-text-hr'><span>Yeah!</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div className='align-items-center example--section'>
+            <h5 className='mc-text-h5'>On a white background</h5>
+            <div className='rounded-box'>
+              <div className='row'>
+                <div className='col-sm-4'>
+                  <p className='mc-text-hr mc-text--invert'><span>This can</span></p>
+                </div>
+                <div className='col-sm-4'>
+                  <p className='mc-text-hr mc-text--invert mc-text--uppercase'><span>also be used</span></p>
+                </div>
+                <div className='col-sm-4'>
+                  <p className='mc-text-hr mc-text--invert'><span>on a white background</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>,
+    ),
+  )

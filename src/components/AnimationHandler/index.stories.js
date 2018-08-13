@@ -30,7 +30,7 @@ storiesOf('utilities|AnimationHandler', module)
           <HoverHandler>
             {({ hovering }) =>
               <AnimationHandler type='zoom' animating={hovering}>
-                <Button primary>
+                <Button>
                   Zoom
                 </Button>
               </AnimationHandler>

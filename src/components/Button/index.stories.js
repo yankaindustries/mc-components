@@ -76,7 +76,7 @@ storiesOf('components|Buttons', module)
           name='loading'
           type='Boolean'
         >
-          <Button primary loading>
+          <Button loading>
             Button
           </Button>
         </PropExample>
@@ -85,7 +85,7 @@ storiesOf('components|Buttons', module)
           name='fullWidth'
           type='Boolean'
         >
-          <Button primary fullWidth>
+          <Button fullWidth>
             Button
           </Button>
         </PropExample>
