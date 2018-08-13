@@ -1,13 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const ButtonLoader = () => (
+const ButtonLoader = ({ color }) => (
   <div className='loader'>
     <svg
       width='120'
       height='30'
       viewBox='0 0 120 30'
       xmlns='http://www.w3.org/2000/svg'
-      fill='#fff'
+      fill={color}
     >
       <circle cx='15' cy='15' r='15'>
         <animate
@@ -78,5 +79,13 @@ const ButtonLoader = () => (
     </svg>
   </div>
 )
+
+ButtonLoader.propTypes = {
+  color: PropTypes.string,
+}
+
+ButtonLoader.defaultProps = {
+  color: '#fff',
+}
 
 export default ButtonLoader
