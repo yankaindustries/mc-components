@@ -8,6 +8,7 @@ import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
 import Button from '../Button'
 import Header from '../HeaderLoggedOut'
+import ResponsiveHandler from '../ResponsiveHandler'
 
 
 
@@ -15,7 +16,7 @@ const items = [
   {
     id: 1,
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
-    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/preview_videos/2/original/1494895762-SR_Gem_BeyondThePilotWritingASeries.jpg%3F1494895762',
+    image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/429/original/1495558277-hero-sr-v3.jpg%3F1495558277',
   },
   {
     id: 2,
@@ -54,61 +55,67 @@ storiesOf('components|Carousel', module)
     <div>
       <Header />
 
+      <div className='mc-hero'>
+        <ResponsiveHandler>
+          {({ gteMD }) =>
+            <Carousel transition='fade' loop>
+              {items.map((item, key) => (
+                <div key={key} className='container'>
+                  <Tile
+                    key={key}
+                    aspectRatio={gteMD ? '16x9' : '3x4'}
+                    naked
+                  >
+                    <Tile
+                      className='mc-hero__image'
+                      aspectRatio={gteMD ? '16x9' : '3x4'}
+                      naked
+                    >
+                      <TileImage imageUrl={item.image} />
+                      <TileOverlay type='offset-spotlight' />
+                    </Tile>
 
-      <div className='container'>
-        <div className='mc-hero'>
-          <Carousel
-            transition='fade'
-            loop
-          >
-            {items.map((item, key) => (
-              <Tile key={key} naked>
-                <TileImage imageUrl={item.image} />
-
-                <TileOverlay type='offset-spotlight'>
-                  <div className='row row--fill align-items-center'>
-                    <div className='col-xl-5 col-lg-6 col-md-8'>
-                      <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left'>
-                        Alice Waters
-                      </h2>
-                      <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left'>
-                        Teaches the art of home cooking
-                      </h3>
-                      <br />
-                      <p className='mc-text-intro mc-text-center mc-text-md-left'>
-                        Online classes taught by the world&apos;s greatest
-                        minds.<br /> Learn from Alice Waters and all 35+ other
-                        instructors.
-                      </p>
-                      <br />
-                      <div className='row'>
-                        <div className='col-md-6'>
-                          <Button primary fullWidth>
-                            All Access Pass
-                          </Button>
-                        </div>
-                        <div className='col-md-6'>
-                          <Button secondary fullWidth>
-                            Learn More
-                          </Button>
+                    <div className='mc-hero__content'>
+                      <div className='row row--fill align-items-center'>
+                        <div className='col-xl-5 col-lg-6 col-md-8'>
+                          <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left'>
+                            Alice Waters
+                          </h2>
+                          <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left'>
+                            Teaches the art of home cooking
+                          </h3>
+                          <br />
+                          <p className='mc-text-intro mc-text-center mc-text-md-left'>
+                            Online classes taught by the world&apos;s greatest
+                            minds.<br /> Learn from Alice Waters and all 35+
+                            other instructors.
+                          </p>
+                          <br />
+                          <div className='row'>
+                            <div className='col-md-6'>
+                              <Button primary fullWidth>
+                                All Access Pass
+                              </Button>
+                            </div>
+                            <div className='col-md-6'>
+                              <Button secondary fullWidth>
+                                Learn More
+                              </Button>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </TileOverlay>
-              </Tile>
-            ))}
-          </Carousel>
-        </div>
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          }
+        </ResponsiveHandler>
+      </div>
 
-        <Carousel
-          className='row'
-          showCount={3}
-          centered
-          controls
-          fadeEdges
-          loop
-        >
+      <div className='container'>
+        <Carousel className='row' centered fadeEdges loop controls>
           {items.map((item, key) => (
             <div key={key} className='col-auto'>
               <Tile key={item.id}>

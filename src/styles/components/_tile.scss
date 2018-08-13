@@ -12,8 +12,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -21,6 +21,10 @@
 .tile {
   position: relative;
   backface-visibility: hidden;
+  border-radius: 2px;
+  box-shadow:
+    0 3px 6px rgba($mc-dark, 0.16),
+    0 3px 6px rgba($mc-dark, 0.23);
   cursor: pointer;
 
   &:after {
@@ -31,6 +35,7 @@
     top: 0;
     width: 100%;
     height: 100%;
+    border-radius: 2px;
     box-shadow: inset 0 0 0 1px rgba($mc-light, 0.1);
     z-index: 2;
   }
@@ -45,6 +50,11 @@
     &:after {
       box-shadow: inset 0 0 0 1px rgba($mc-light, 0.2);
     }
+  }
+
+  &--3x4,
+  &--poster {
+    @include tile-aspect-ratio(3, 4);
   }
 
   &--1x1,
@@ -95,6 +105,8 @@
     z-index: 0;
     background-repeat: cover;
     background-size: cover;
+    background-position: center;
+    border-radius: 2px;
   }
 }
 
@@ -142,14 +154,19 @@
   &--offset-spotlight {
     background:
       radial-gradient(
-        farthest-side at top,
-        rgba($mc-color-background, 0) 50%,
+        farthest-side at center top,
+        rgba($mc-color-background, 0) 33%,
         rgba($mc-color-background, 1) 100%,
       ),
       linear-gradient(
         to right,
-        rgba($mc-dark, 0.75) 30%,
-        rgba($mc-dark, 0) 60%,
+        rgba($mc-dark, 1) 0%,
+        rgba($mc-dark, 0) 40%,
+      ),
+      linear-gradient(
+        to left,
+        rgba($mc-dark, 1) 0%,
+        rgba($mc-dark, 0) 40%,
       );
   }
 

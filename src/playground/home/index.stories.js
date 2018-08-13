@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Header from '../../components/HeaderLoggedOut'
+import Carousel from '../../components/Carousel'
 import Footer from '../../components/Footer'
 import Button from '../../components/Button'
 import Tile from '../../components/Tile'
@@ -19,47 +20,132 @@ import ChevronLeft from '../../components/Icons/ChevronLeft'
 import ChevronRight from '../../components/Icons/ChevronRight'
 
 
+const items = [
+  {
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    instructor: 'Ron Howard',
+    class: 'Directing',
+  },
+  {
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/332/original/1477793873-wh-tile.jpg%3F1477793873',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/331/original/1495558129-hero-wh-v3.jpg%3F1495558129',
+    instructor: 'Werner Herzog',
+    class: 'Filmmaking',
+
+  },
+  {
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/628/original/1493844712-DVF_SlideThumb_V1_A.jpg%3F1493844712',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/627/original/1495558421-hero-dvf-v3.jpg%3F1495558421',
+    instructor: 'Diane Von Furstenberg',
+    class: 'Building a Fashion Brand',
+  },
+  {
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/354/original/1479173180-DM5_SlideThumb_V2_A_%25281%2529.jpg%3F1479173180',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/561/original/1489515027-DM5_CM_Hero_V1_A.jpg%3F1489515027',
+    instructor: 'deadmau5',
+    class: 'Electronic Music Production',
+  },
+  {
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/867/original/1508818886-SLJ_SlideThumb_V2_A.jpg%3F1508818886',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/866/original/1508818329-SLJ_class_hero_no_gradient.jpg%3F1508818329',
+    instructor: 'Samuel L. Jackson',
+    class: 'Acting',
+  },
+  {
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/1087/original/1510618603-Slide_Thumb.jpg%3F1510618603',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1070/original/1510618084-Class_Hero.jpg%3F1510618084',
+    instructor: 'Thomas Keller',
+    class: 'Cooking Techniques',
+  },
+  {
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/428/original/1481770014-SR_SlideThumb_V1_B.jpg%3F1481770014',
+    image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/429/original/1495558277-hero-sr-v3.jpg%3F1495558277',
+    instructor: 'Shonda Rhimes',
+    class: 'Writing for Television',
+  },
+]
+
+
 storiesOf('playground|Pages', module)
   .add('Home', () =>
     <div>
       <Header />
 
-      <div
-        className='mc-background--dark'
-        style={{
-          padding: '160px 0',
-        }}
-      >
-        <div className='container'>
-          <div className='row'>
-            <div className='col-xl-5 col-lg-6 col-md-8'>
-              <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left'>
-                Alice Waters
-              </h2>
-              <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left'>
-                Teaches the art of home cooking
-              </h3>
-              <br />
-              <p className='mc-text-intro mc-text-center mc-text-md-left'>
-                Online classes taught by the world&apos;s greatest minds.<br />
-                Learn from Alice Waters and all 35+ other instructors.
-              </p>
-              <br />
-              <div className='row'>
-                <div className='col-md-6'>
-                  <Button primary fullWidth>
-                    All Access Pass
-                  </Button>
+      <div className='mc-hero'>
+        <ResponsiveHandler>
+          {({ gteLG }) =>
+            <Carousel transition='fade' loop>
+              {items.map((item, key) => (
+                <div key={key} className='container'>
+                  <Tile
+                    key={key}
+                    aspectRatio={gteLG ? '16x9' : '4x3'}
+                    naked
+                  >
+                    <Tile
+                      className='mc-hero__image'
+                      aspectRatio={gteLG ? '16x9' : '4x3'}
+                      naked
+                    >
+                      <TileImage imageUrl={item.image} />
+                      <TileOverlay type='offset-spotlight' />
+                    </Tile>
+
+                    <div className='mc-hero__content'>
+                      <div className='row row--fill align-items-center'>
+                        <div className='col-xl-5 col-lg-6 col-md-8'>
+                          <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left'>
+                            {item.instructor}
+                          </h2>
+                          <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left'>
+                            Teaches {item.class}
+                          </h3>
+                          <br />
+                          <p className='mc-text-intro mc-text-center mc-text-md-left'>
+                            Online classes taught by the world&apos;s greatest
+                            minds.<br /> Learn from {item.instructor} and all
+                            35+ other instructors.
+                          </p>
+                          <br />
+                          <div className='row'>
+                            <div className='col-md-6'>
+                              <Button primary fullWidth>
+                                All Access Pass
+                              </Button>
+                            </div>
+                            <div className='col-md-6'>
+                              <Button secondary fullWidth>
+                                Learn More
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Tile>
                 </div>
-                <div className='col-md-6'>
-                  <Button secondary fullWidth>
-                    Learn More
-                  </Button>
-                </div>
-              </div>
+              ))}
+            </Carousel>
+          }
+        </ResponsiveHandler>
+      </div>
+
+      <div className='container'>
+        <Carousel className='row'
+          centered
+          controls
+          fadeEdges
+          loop
+        >
+          {items.map((item, key) => (
+            <div key={key} className='col-auto'>
+              <Tile key={item.id}>
+                <TileImage imageUrl={item.thumbnail} />
+              </Tile>
             </div>
-          </div>
-        </div>
+          ))}
+        </Carousel>
       </div>
 
       <div className='container'>
