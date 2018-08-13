@@ -17,6 +17,12 @@ Our components do **not** contain any styles.  The style library must also be im
 @import 'mc-components';
 ```
 
+### Font files
+We use Lato as our primary font for headings and body text in 300, 400, and 700 font weights.  You can import it in your css below, or import it into your asset pipeline.
+```
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+```
+
 ### Standalone style usage
 If your project doesn't use yarn or npm for dependencies and you're only looking for masterclass css / style files, they can be imported manually by downloading the repository on github.  This will give you access to styles for buttons, the grid, typography, and more.  Save the contents of the `/dist/styles/scss/` folder to your own project, then import!
 
