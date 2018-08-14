@@ -1,0 +1,44 @@
+.mc-text-hr {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0.75em;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 9999px;
+      height: 1px;
+      background: $mc-gray-100;
+    }
+
+    &:before {
+      left: 100%;
+    }
+
+    &:after {
+      right: 100%;
+    }
+  }
+}
+
+// Tie into the same "invert" class we use
+// for text
+.mc-text--invert {
+  &.mc-text-hr {
+    span {
+      &:before,
+      &:after {
+        background: $mc-gray-400;
+      }
+    }
+  }
+}
