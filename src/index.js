@@ -1,3 +1,6 @@
+import * as Helpers from './utils/helpers'
+
+
 // COMPONENTS
 export { default as AnimationHandler } from './components/AnimationHandler'
 export { default as Badge } from './components/Badge'
@@ -37,5 +40,4 @@ export { default as VideoPlayer } from './components/VideoPlayer'
 
 
 // UTILS
-import * as Helpers from './utils/helpers'
 export { Helpers }
