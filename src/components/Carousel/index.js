@@ -75,6 +75,7 @@ export default class Carousel extends PureComponent {
     dots: PropTypes.bool,
     fadeEdges: PropTypes.bool,
     focusOnSelect: PropTypes.bool,
+    sliderRef: PropTypes.func,
     loop: PropTypes.bool,
     scrollCount: PropTypes.number,
     showCount: PropTypes.number,
@@ -105,6 +106,7 @@ export default class Carousel extends PureComponent {
       controls,
       fadeEdges,
       loop,
+      sliderRef,
       scrollCount,
       showCount,
       transition,
@@ -145,6 +147,7 @@ export default class Carousel extends PureComponent {
           centerMode={centered}
           centerPadding={fadeEdges ? CENTERED_PADDING : 0}
           fade={transition === TRANSITION_FADE}
+          ref={sliderRef}
           slidesToScroll={scrollCount}
           slidesToShow={showCount}
           infinite={loop}
