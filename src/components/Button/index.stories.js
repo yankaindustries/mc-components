@@ -61,6 +61,20 @@ storiesOf('components|Buttons', module)
         </PropExample>
 
         <PropExample
+          name='outline'
+          type='Boolean'
+        >
+          <Button outline>Outline</Button>
+        </PropExample>
+
+        <PropExample
+          name='outlineInvert'
+          type='Boolean'
+        >
+          <Button outlineInvert>Outline - Invert</Button>
+        </PropExample>
+
+        <PropExample
           name='icon'
           type='Component'
         >
