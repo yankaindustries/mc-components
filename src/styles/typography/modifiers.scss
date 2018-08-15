@@ -18,8 +18,9 @@
   &--twitter { color: #1da1f2; }
   &--facebook { color: #3b5998; }
 
-  // Monospaced
+  // Misc
   &--monospace { font-family: monospace !important; }
+  &--nowrap { white-space: nowrap; }
 }
 
 // Responsive
