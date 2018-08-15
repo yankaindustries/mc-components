@@ -1,0 +1,153 @@
+// This file contains the styles
+// and overrides that need to be integrated
+// more cleanly.  We don't know where to put them
+// yet, so they'll live here!
+
+// THE UPSIDE DOWN
+.mc-background {
+  &--light {
+    background: $mc-light;
+  }
+
+  &--dark {
+    background: $mc-dark;
+  }
+}
+
+.mc-section {
+  padding: $grid-gutter-width 0;
+
+  &__header {
+    padding-bottom: $grid-gutter-width;
+  }
+}
+
+.mc-card {
+  padding: $grid-gutter-width / 2;
+  border-radius: 3px;
+
+  &--equal-height {
+    height: 100%;
+  }
+}
+
+.mc-icon--4x {
+  font-size: 16px;
+}
+
+.mc-icon--7x {
+  font-size: 28px;
+
+  &.mc-icon--circled {
+    padding: 8px;
+  }
+}
+
+.mc-icon--15x {
+  font-size: 60px;
+}
+
+.mc-icon--circled {
+  border: 1px solid currentColor;
+  border-radius: 100%;
+}
+
+body {
+  background: $mc-background;
+}
+
+pre {
+  font-family: monospace;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: $mc-gray-100;
+  margin: 32px 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hljs {
+  border-radius: 6px;
+}
+
+.example--section {
+  margin-bottom: 6em;
+}
+
+.example--definition-name {
+  font-weight: 900;
+}
+
+.example--definition-type {
+  font-family: monospace;
+}
+
+.example--definition {
+  margin-bottom: 2em;
+}
+
+.example--render {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+
+  &.invert {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.example--code {
+  padding: 10px;
+  color: #000;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.example--table {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-collapse: collapse;
+  text-align: left;
+
+  tbody {
+    tr {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    tr:nth-child(2n +1) {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  th {
+    font-weight: 900;
+  }
+
+  th, td {
+    padding: 5px 10px;
+  }
+}
+
+.example-placeholder {
+  position: absolute;
+  left: 0; top: 0;
+  right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.d-inline-block {
+  display: inline-block;
+}
