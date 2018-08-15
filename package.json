@@ -1,12 +1,31 @@
 {
   "name": "mc-components",
   "version": "0.2.9",
-  "main": "./dist/index.js",
   "author": "Masterclass <engineering@masterclass.com>",
   "homepage": "https://github.com/yankaindustries/mc-components",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yankaindustries/mc-components/issues"
+  },
+  "main": "./dist/main.js",
+  "module": "./dist/module.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "yarn build:js && yarn build:assets && yarn build:styles",
+    "build:assets": "cpx -p './src/assets/**/*' ./dist/assets",
+    "build:js": "rollup -c",
+    "build:css": "node-sass src/styles/index.scss | postcss > dist/styles.css",
+    "build:css-vendor": "node-sass src/styles/libraries/_libraries.scss | postcss > dist/vendor.css",
+    "build:styles": "yarn build:css && yarn build:css-vendor",
+    "start": "start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "prepublishOnly": "yarn build",
+    "lint:js": "eslint src --color",
+    "lint:style": "stylelint \"src/styles/**/*.scss\" || echo \"Style lint failed.\"",
+    "lint": "yarn lint:js && yarn lint:style",
+    "preversion": "yarn lint",
+    "version": "yarn build && git add -A .",
+    "postversion": "git push origin develop && git push origin develop --tags && npm publish"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
@@ -14,41 +33,29 @@
     "react-slick": "^0.23.1",
     "slick-carousel": "^1.8.1"
   },
-  "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "yarn build:js && yarn build:assets && yarn build:styles && yarn build:css-vendor",
-    "build:assets": "cpx -p './src/assets/**/*' ./dist/assets",
-    "build:js": "NODE_ENV=production babel ./src --out-dir ./dist --ignore spec.js,test.js,stories.js",
-    "prebuild:css": "node-sass src/styles/index.scss dist/styles/css/mc-components.css",
-    "build:css": "postcss -r dist/styles/css/mc-components.css",
-    "build:css-vendor": "node-sass src/styles/libraries/_libraries.scss dist/styles/css/vendor.css && postcss -r dist/styles/css/vendor.css",
-    "build:scss": "cpx -p './src/styles/**/*.scss' ./dist/styles/scss",
-    "build:styles": "yarn build:scss && yarn build:css",
-    "start": "start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "prepublishOnly": "yarn build",
-    "lint:js": "eslint src --color",
-    "lint:style": "stylelint \"src/styles/**/*.scss\" || echo \"Style lint failed.\"",
-    "lint": "yarn lint:js && yarn lint:style",
-    "precommit": "lint-staged",
-    "preversion": "yarn lint",
-    "version": "yarn build && git add -A .",
-    "postversion": "git push origin develop && git push origin develop --tags && npm publish"
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.1",
+    "@babel/plugin-transform-react-constant-elements": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
     "@masterclass/eslint-config": "yankaindustries/eslint-config-masterclass#1.0.2",
     "@storybook/addon-backgrounds": "^3.4.5",
     "@storybook/addon-info": "^3.4.5",
     "@storybook/addon-options": "^3.4.8",
     "@storybook/react": "^3.4.5",
     "@storybook/storybook-deployer": "^2.3.0",
+    "@svgr/rollup": "^2.2.0",
     "@svgr/webpack": "^2.1.1",
     "autoprefixer": "^8.6.2",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-react-app": "^3.1.1",
+    "babel-loader": "^8.0.0-beta.4",
     "cpx": "^1.5.0",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
@@ -66,6 +73,12 @@
     "react-dom": "^16.4.0",
     "react-highlight": "^0.12.0",
     "rimraf": "^2.6.2",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^4.0.0-beta.8",
+    "rollup-plugin-commonjs": "^9.1.5",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-terser": "^1.0.1",
+    "rollup-plugin-uglify": "^4.0.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "stylelint": "^9.3.0",
@@ -81,17 +94,6 @@
       "yarn lint:style",
       "stylelint --fix",
       "git add"
-    ]
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "modules": "commonjs"
-        }
-      ],
-      "react-app"
     ]
   },
   "style": "dist/styles/css/mc-components.css",

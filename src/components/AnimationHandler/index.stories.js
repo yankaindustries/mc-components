@@ -14,7 +14,7 @@ import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
 
-import shondaRhimesThumbnail from '../../assets/images/shonda-rhimes-video.png'
+import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('utilities|AnimationHandler', module)
