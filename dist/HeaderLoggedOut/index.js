@@ -20,8 +20,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { PureComponent } from 'react';
 import cn from 'classnames';
-import LogoWordmark from '../../assets/logo-wordmark.svg';
-import Logo from '../../assets/logo.svg';
+import LogoWordmark from '../Icons/LogoWordmark';
+import Logo from '../Icons/Logo';
 
 var HeaderLoggedOut =
 /*#__PURE__*/

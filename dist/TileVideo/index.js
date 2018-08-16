@@ -26,8 +26,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Unmute from '../../assets/icons/muted.svg';
-import Mute from '../../assets/icons/unmuted.svg';
+import Unmute from '../Icons/Muted';
+import Mute from '../Icons/Unmuted';
 var ACCOUNT_ID = '5344802162001';
 var PLAYER_ID = 'rkcQq7gAe';
 

@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 import { noop } from 'lodash';
 import { renderChildren } from '../helpers';
 import ToggleHandler from '../ToggleHandler';
-import Check from '../../assets/icons/check-circle.svg';
+import Check from '../Icons/CheckCircle';
 
 var TileCheck =
 /*#__PURE__*/

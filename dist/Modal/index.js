@@ -31,7 +31,7 @@ import ModalPortal from '../ModalPortal';
 import ModalHeader from '../ModalHeader';
 import ClickOutside from '../ClickOutside';
 import RoundedBox from '../RoundedBox';
-import Close from '../../assets/icons/close.svg';
+import Close from '../Icons/Close';
 
 var Modal =
 /*#__PURE__*/

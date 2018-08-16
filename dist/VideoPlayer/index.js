@@ -21,7 +21,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import Replay from '../../assets/icons/replay.svg';
+import Replay from '../Icons/Replay';
 
 var VideoPlayer =
 /*#__PURE__*/

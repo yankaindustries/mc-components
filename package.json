@@ -16,7 +16,7 @@
     "prebuild": "rimraf ./dist",
     "build": "yarn build:assets && yarn build:js && yarn build:styles",
     "build:assets": "svgr ./src/assets/icons --out-dir ./src/components/Icons",
-    "build:js": "babel ./src/components --out-dir ./dist",
+    "build:js": "babel ./src/components --out-dir ./dist --ignore '**/*.stories.js,**/*.test.js'",
     "build:css": "node-sass ./src/styles/index.scss | postcss > ./dist/styles.css",
     "build:css-vendor": "node-sass ./src/styles/libraries/_libraries.scss | postcss > ./dist/vendor.css",
     "build:styles": "yarn build:css && yarn build:css-vendor",

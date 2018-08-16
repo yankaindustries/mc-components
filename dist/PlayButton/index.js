@@ -21,7 +21,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import PlayImage from '../../assets/icons/play-circle.svg';
+import PlayImage from '../Icons/PlayCircle';
 
 var PlayButton =
 /*#__PURE__*/
