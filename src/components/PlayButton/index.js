@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import PlayImage from '../../assets/icons/play-circle.svg'
+import PlayImage from '../Icons/PlayCircle'
 
 export default class PlayButton extends PureComponent {
   static propTypes = {

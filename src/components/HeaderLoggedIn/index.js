@@ -7,9 +7,9 @@ import ClickOutside from '../ClickOutside'
 import MobileNavButton from '../MobileNavButton'
 import Badge from '../Badge'
 
-import Logo from '../../assets/logo-wordmark.svg'
-import BackArrow from '../../assets/icons/back-arrow.svg'
-import DefaultAvatar from '../../assets/icons/avatar.svg'
+import Logo from '../Icons/LogoWordmark'
+import BackArrow from '../Icons/BackArrow'
+import DefaultAvatar from '../Icons/Avatar'
 
 
 export default class HeaderLoggedIn extends PureComponent {

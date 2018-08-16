@@ -2,7 +2,7 @@ import React from 'react'
 import cn from 'classnames'
 import { string, func, bool, node, oneOfType, arrayOf } from 'prop-types'
 
-import Loader from '../../assets/icons/loader.svg'
+import Loader from '../Icons/Loader'
 
 
 const Button = ({

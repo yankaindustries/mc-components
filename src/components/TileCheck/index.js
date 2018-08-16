@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { noop } from 'lodash'
 
-import { renderChildren } from '../../utils/helpers'
+import { renderChildren } from '../helpers'
 
 import ToggleHandler from '../ToggleHandler'
 
-import Check from '../../assets/icons/check-circle.svg'
+import Check from '../Icons/CheckCircle'
 
 export default class TileCheck extends PureComponent {
   static propTypes = {
