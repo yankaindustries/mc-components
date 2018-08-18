@@ -1,5 +1,6 @@
-import * as Helpers from './helpers'; // COMPONENTS
+import * as Helpers from './helpers';
 
+// COMPONENTS
 export { default as AnimationHandler } from './AnimationHandler';
 export { default as Badge } from './Badge';
 export { default as Button } from './Button';
@@ -34,8 +35,9 @@ export { default as TileImage } from './TileImage';
 export { default as TileOverlay } from './TileOverlay';
 export { default as TileVideo } from './TileVideo';
 export { default as ToggleHandler } from './ToggleHandler';
-export { default as VideoPlayer } from './VideoPlayer'; // ICONS
+export { default as VideoPlayer } from './VideoPlayer';
 
+// ICONS
 export { default as IconArrow } from './Icons/Arrow';
 export { default as IconAvatar } from './Icons/Avatar';
 export { default as IconBackArrow } from './Icons/BackArrow';
@@ -52,6 +54,7 @@ export { default as IconMuted } from './Icons/Muted';
 export { default as IconPlayCircle } from './Icons/PlayCircle';
 export { default as IconReplay } from './Icons/Replay';
 export { default as IconTwitter } from './Icons/Twitter';
-export { default as IconUnmuted } from './Icons/Unmuted'; // UTILS
+export { default as IconUnmuted } from './Icons/Unmuted';
 
+// UTILS
 export { Helpers };

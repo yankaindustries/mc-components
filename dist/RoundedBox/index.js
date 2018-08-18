@@ -3,6 +3,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React from 'react';
 import { node, func, oneOfType, arrayOf, string, object } from 'prop-types';
 import classNames from 'classnames';
+
 import RoundedBoxHeader from '../RoundedBoxHeader';
 
 var RoundedBox = function RoundedBox(_ref) {
@@ -11,17 +12,18 @@ var RoundedBox = function RoundedBox(_ref) {
       subheader = _ref.subheader,
       style = _ref.style,
       _ref$className = _ref.className,
-      className = _ref$className === void 0 ? '' : _ref$className,
+      className = _ref$className === undefined ? '' : _ref$className,
       _ref$HeaderComponent = _ref.HeaderComponent,
-      HeaderComponent = _ref$HeaderComponent === void 0 ? RoundedBoxHeader : _ref$HeaderComponent;
+      HeaderComponent = _ref$HeaderComponent === undefined ? RoundedBoxHeader : _ref$HeaderComponent;
+
   var containerClassNames = classNames('rounded-box', _defineProperty({}, className, Boolean(className)));
-  return React.createElement("div", {
-    style: style,
-    className: containerClassNames
-  }, React.createElement(HeaderComponent, {
-    subheader: subheader,
-    header: header
-  }), children);
+
+  return React.createElement(
+    'div',
+    { style: style, className: containerClassNames },
+    React.createElement(HeaderComponent, { subheader: subheader, header: header }),
+    children
+  );
 };
 
 RoundedBox.propTypes = {
@@ -32,4 +34,5 @@ RoundedBox.propTypes = {
   style: object,
   HeaderComponent: func
 };
+
 export default RoundedBox;

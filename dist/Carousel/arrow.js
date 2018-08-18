@@ -3,6 +3,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+
 import Arrow from '../Icons/Arrow';
 
 var CarouselArrow = function CarouselArrow(_ref) {
@@ -10,16 +11,18 @@ var CarouselArrow = function CarouselArrow(_ref) {
       className = _ref.className,
       onClick = _ref.onClick,
       isHidden = _ref.isHidden;
-  var classNames = cn('mc-carousel-arrow', _defineProperty({}, className, Boolean(className)), _defineProperty({}, "mc-carousel-arrow--".concat(direction), Boolean(direction)));
-  return React.createElement("button", {
-    className: classNames,
-    onClick: onClick,
-    style: isHidden ? {
-      opacity: 0
-    } : null
-  }, React.createElement(Arrow, {
-    className: "mc-carousel-arrow__image"
-  }));
+
+  var classNames = cn('mc-carousel-arrow', _defineProperty({}, className, Boolean(className)), _defineProperty({}, 'mc-carousel-arrow--' + direction, Boolean(direction)));
+
+  return React.createElement(
+    'button',
+    {
+      className: classNames,
+      onClick: onClick,
+      style: isHidden ? { opacity: 0 } : null
+    },
+    React.createElement(Arrow, { className: 'mc-carousel-arrow__image' })
+  );
 };
 
 CarouselArrow.propTypes = {
@@ -28,7 +31,9 @@ CarouselArrow.propTypes = {
   direction: PropTypes.string,
   isHidden: PropTypes.bool
 };
+
 CarouselArrow.defaultProps = {
   isHidden: false
 };
+
 export default CarouselArrow;

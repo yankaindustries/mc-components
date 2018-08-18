@@ -7,14 +7,19 @@ import cn from 'classnames';
 var Badge = function Badge(_ref) {
   var count = _ref.count,
       className = _ref.className;
+
   var classNames = cn('badge', _defineProperty({}, className, Boolean(className)));
-  return React.createElement("span", {
-    className: classNames
-  }, count);
+
+  return React.createElement(
+    'span',
+    { className: classNames },
+    count
+  );
 };
 
 Badge.propTypes = {
   count: number.isRequired,
   className: string
 };
+
 export default Badge;
