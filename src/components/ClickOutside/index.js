@@ -8,15 +8,23 @@ export default class ClickOutside extends Component {
     divRef: object,
   }
 
+  state = { isTouch: false }
+
   componentDidMount () {
+    document.addEventListener('touchend', this.onClickOutside, true)
     document.addEventListener('click', this.onClickOutside, true)
   }
 
   componentWillUnmount () {
+    document.removeEventListener('touchend', this.onClickOutside, true)
     document.removeEventListener('click', this.onClickOutside, true)
   }
 
   onClickOutside = (e) => {
+    if (e.type === 'touchend') {
+      this.setState({ isTouch: true })
+    }
+    if (e.type === 'click' && this.state.isTouch) return
     const { divRef } = this.props
     const ref = divRef || this.box
     if (!ref || !ref.current.contains(e.target)) {
