@@ -7,7 +7,7 @@ import ModalHeader from '../ModalHeader'
 import ClickOutside from '../ClickOutside'
 import RoundedBox from '../RoundedBox'
 
-import Close from '../../assets/icons/close.svg'
+import Close from '../Icons/Close'
 
 export default class Modal extends Component {
   static propTypes = {

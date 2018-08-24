@@ -14,7 +14,7 @@ import TileCheck from '../TileCheck'
 import AnimationHandler from '../AnimationHandler'
 import HoverHandler from '../HoverHandler'
 
-import shondaRhimesThumbnail from '../../assets/images/shonda-rhimes-video.png'
+import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('components|Tiles', module)

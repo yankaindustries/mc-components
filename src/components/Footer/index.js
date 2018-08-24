@@ -1,8 +1,8 @@
 import React, { PureComponent, Fragment } from 'react'
 import { bool } from 'prop-types'
 
-import Logo from '../../assets/logo.svg'
-import SSLBadge from '../../assets/ssl-badge.svg'
+import Logo from '../Icons/Logo'
+import SSLBadge from '../Icons/SslBadge'
 
 export default class Footer extends PureComponent {
   static propTypes = {

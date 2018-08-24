@@ -7,9 +7,10 @@ import ClickOutside from '../ClickOutside'
 import MobileNavButton from '../MobileNavButton'
 import Badge from '../Badge'
 
-import Logo from '../../assets/logo-wordmark.svg'
-import BackArrow from '../../assets/icons/back-arrow.svg'
-import defaultAvatar from '../../assets/images/default-avatar@2x.png'
+import Logo from '../Icons/LogoWordmark'
+import BackArrow from '../Icons/BackArrow'
+import DefaultAvatar from '../Icons/Avatar'
+
 
 export default class HeaderLoggedIn extends PureComponent {
   static propTypes = {
@@ -133,10 +134,15 @@ export default class HeaderLoggedIn extends PureComponent {
                   onClick={this.handleToggleDropdown}
                 >
                   <div className='header__info-blurb'>
-                    <img
-                      src={avatar || defaultAvatar}
-                      className='header__info-block__avatar'
-                    />
+                    {avatar &&
+                      <img
+                        src={avatar}
+                        className='header__info-block__avatar'
+                      />
+                    }
+                    {!avatar &&
+                      <DefaultAvatar className='header__info-block__avatar' />
+                    }
                     <span>
                       <span className='header__info-block__username'>{name}</span>
                     </span>

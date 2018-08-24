@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import Arrow from '../../assets/icons/arrow.svg'
+import Arrow from '../Icons/Arrow'
 
 const CarouselArrow = ({
   direction,

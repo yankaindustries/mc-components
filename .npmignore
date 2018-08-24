@@ -1,15 +1,6 @@
-# Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+# dependencies
 node_modules
 
-# Source folder
-src
-
-# Storybook folder
+# misc
 .storybook
-
-# Coverage folder
-coverage
-
-# Mac files
 .DS_Store
