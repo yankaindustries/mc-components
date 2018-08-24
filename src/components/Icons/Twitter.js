@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const Twitter = props => (
   <svg viewBox="0 0 50 50" fill="none" width="1em" height="1em" {...props}>
@@ -9,6 +10,6 @@ const Twitter = props => (
       fill="currentColor"
     />
   </svg>
-);
+)
 
-export default Twitter;
+export default Twitter

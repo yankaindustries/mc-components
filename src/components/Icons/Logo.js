@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const Logo = props => (
   <svg viewBox="0 0 128 56" fill="none" width="1em" height="1em" {...props}>
@@ -9,6 +10,6 @@ const Logo = props => (
       fill="currentColor"
     />
   </svg>
-);
+)
 
-export default Logo;
+export default Logo

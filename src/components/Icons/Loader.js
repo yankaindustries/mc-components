@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const Loader = props => (
   <svg viewBox="0 0 120 30" fill="#fff" width="1em" height="1em" {...props}>
@@ -69,6 +70,6 @@ const Loader = props => (
       />
     </circle>
   </svg>
-);
+)
 
-export default Loader;
+export default Loader

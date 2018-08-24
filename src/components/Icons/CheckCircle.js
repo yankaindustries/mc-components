@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const CheckCircle = props => (
   <svg viewBox="0 0 42 42" fill="none" width="1em" height="1em" {...props}>
@@ -16,6 +17,6 @@ const CheckCircle = props => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)
 
-export default CheckCircle;
+export default CheckCircle

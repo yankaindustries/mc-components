@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const ChevronLeft = props => (
   <svg viewBox="0 0 11 18" fill="none" width="1em" height="1em" {...props}>
@@ -9,6 +10,6 @@ const ChevronLeft = props => (
       fill="currentColor"
     />
   </svg>
-);
+)
 
-export default ChevronLeft;
+export default ChevronLeft

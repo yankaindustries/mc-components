@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const LogoWordmark = props => (
   <svg viewBox="0 0 129 13" width="1em" height="1em" {...props}>
@@ -8,6 +9,6 @@ const LogoWordmark = props => (
       fillRule="evenodd"
     />
   </svg>
-);
+)
 
-export default LogoWordmark;
+export default LogoWordmark

@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const BackArrow = props => (
   <svg viewBox="0 0 5 9" fill="none" width="1em" height="1em" {...props}>
@@ -14,6 +15,6 @@ const BackArrow = props => (
       strokeWidth={0.5}
     />
   </svg>
-);
+)
 
-export default BackArrow;
+export default BackArrow

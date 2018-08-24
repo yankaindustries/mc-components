@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const PlayCircle = props => (
   <svg viewBox="0 0 40 41" width="1em" height="1em" {...props}>
@@ -14,6 +15,6 @@ const PlayCircle = props => (
       />
     </g>
   </svg>
-);
+)
 
-export default PlayCircle;
+export default PlayCircle

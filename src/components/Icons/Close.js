@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const Close = props => (
   <svg viewBox="0 0 14 14" fill="none" width="1em" height="1em" {...props}>
@@ -8,6 +9,6 @@ const Close = props => (
       stroke="currentColor"
     />
   </svg>
-);
+)
 
-export default Close;
+export default Close

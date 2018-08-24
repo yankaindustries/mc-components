@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const Facebook = props => (
   <svg viewBox="0 0 50 50" fill="none" width="1em" height="1em" {...props}>
@@ -9,6 +10,6 @@ const Facebook = props => (
       fill="currentColor"
     />
   </svg>
-);
+)
 
-export default Facebook;
+export default Facebook

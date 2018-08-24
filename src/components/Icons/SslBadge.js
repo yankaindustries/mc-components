@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const SslBadge = props => (
   <svg
@@ -38,6 +39,6 @@ const SslBadge = props => (
       <path fill="#FFF" fillRule="nonzero" opacity={0.2} d="M37 33h1V7h-1z" />
     </g>
   </svg>
-);
+)
 
-export default SslBadge;
+export default SslBadge

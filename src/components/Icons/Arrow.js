@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const Arrow = props => (
   <svg viewBox="0 0 12 21" fill="none" width="1em" height="1em" {...props}>
@@ -7,6 +8,6 @@ const Arrow = props => (
       fill="#fff"
     />
   </svg>
-);
+)
 
-export default Arrow;
+export default Arrow

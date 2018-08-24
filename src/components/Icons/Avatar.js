@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint jsx-quotes: 0 */
+import React from 'react'
 
 const Avatar = props => (
   <svg viewBox="0 0 100 100" width="1em" height="1em" {...props}>
@@ -24,6 +25,6 @@ const Avatar = props => (
       fill="#fff"
     />
   </svg>
-);
+)
 
-export default Avatar;
+export default Avatar
