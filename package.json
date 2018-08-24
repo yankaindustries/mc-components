@@ -22,6 +22,7 @@
     "build:styles": "yarn build:css && yarn build:css-vendor",
     "start": "start-storybook -p 9001 -c .storybook",
     "deploy-storybook": "storybook-to-ghpages",
+    "precommit": "lint-staged",
     "prepublishOnly": "yarn build",
     "lint:js": "eslint ./src --color",
     "lint:style": "stylelint \"./src/styles/**/*.scss\" || echo \"Style lint failed.\"",
