@@ -23,7 +23,11 @@ var ClickOutside = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ClickOutside.__proto__ || Object.getPrototypeOf(ClickOutside)).call.apply(_ref, [this].concat(args))), _this), _this.onClickOutside = function (e) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ClickOutside.__proto__ || Object.getPrototypeOf(ClickOutside)).call.apply(_ref, [this].concat(args))), _this), _this.state = { isTouch: false }, _this.onClickOutside = function (e) {
+      if (e.type === 'touchend') {
+        _this.setState({ isTouch: true });
+      }
+      if (e.type === 'click' && _this.state.isTouch) return;
       var divRef = _this.props.divRef;
 
       var ref = divRef || _this.box;
@@ -38,11 +42,13 @@ var ClickOutside = function (_Component) {
   _createClass(ClickOutside, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      document.addEventListener('touchend', this.onClickOutside, true);
       document.addEventListener('click', this.onClickOutside, true);
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      document.removeEventListener('touchend', this.onClickOutside, true);
       document.removeEventListener('click', this.onClickOutside, true);
     }
   }, {

@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-var ButtonLoader = function ButtonLoader() {
+var ButtonLoader = function ButtonLoader(_ref) {
+  var color = _ref.color;
   return React.createElement(
     'div',
     { className: 'loader' },
@@ -11,7 +13,7 @@ var ButtonLoader = function ButtonLoader() {
         height: '30',
         viewBox: '0 0 120 30',
         xmlns: 'http://www.w3.org/2000/svg',
-        fill: '#fff'
+        fill: color
       },
       React.createElement(
         'circle',
@@ -87,6 +89,14 @@ var ButtonLoader = function ButtonLoader() {
       )
     )
   );
+};
+
+ButtonLoader.propTypes = {
+  color: PropTypes.string
+};
+
+ButtonLoader.defaultProps = {
+  color: '#fff'
 };
 
 export default ButtonLoader;

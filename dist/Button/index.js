@@ -19,10 +19,12 @@ var Button = function Button(_ref) {
       fullWidth = _ref.fullWidth,
       text = _ref.text,
       link = _ref.link,
+      outline = _ref.outline,
+      outlineInvert = _ref.outlineInvert,
       linkMuted = _ref.linkMuted,
       loading = _ref.loading,
       Icon = _ref.Icon,
-      props = _objectWithoutProperties(_ref, ['children', 'className', 'onClick', 'secondary', 'tertiary', 'fullWidth', 'text', 'link', 'linkMuted', 'loading', 'Icon']);
+      props = _objectWithoutProperties(_ref, ['children', 'className', 'onClick', 'secondary', 'tertiary', 'fullWidth', 'text', 'link', 'outline', 'outlineInvert', 'linkMuted', 'loading', 'Icon']);
 
   var classNames = cn('c-button', _defineProperty({}, className, Boolean(className)), {
     'c-button--secondary': secondary,
@@ -31,6 +33,8 @@ var Button = function Button(_ref) {
     'c-button--full-width': fullWidth,
     'c-button--text': text,
     'c-button--link': link,
+    'c-button--outline': outline,
+    'c-button--outline-invert': outlineInvert,
     'c-button--link-muted': linkMuted,
     'c-button--loading': loading
   });
@@ -60,6 +64,8 @@ Button.propTypes = {
   fullWidth: bool,
   text: bool,
   link: bool,
+  outline: bool,
+  outlineInvert: bool,
   linkMuted: bool,
   loading: bool,
   Icon: node
@@ -73,6 +79,8 @@ Button.defaultProps = {
   fullWidth: false,
   text: false,
   link: false,
+  outline: false,
+  outlineInvert: false,
   linkMuted: false,
   loading: false
 };
