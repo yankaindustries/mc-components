@@ -50,14 +50,11 @@
 
     .loader {
       position: absolute;
-      width: 50%;
-      height: 50%;
-      left: 25%;
-      top: 25%;
-      text-align: center;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 24px;
+      transform: translate(-50%, -50%);
     }
   }
 

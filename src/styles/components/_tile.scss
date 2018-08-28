@@ -140,22 +140,29 @@
     background: rgba($mc-dark, 0);
     text-shadow: 0 0 10px $mc-dark;
     transition: transform 0.2s ease;
+  }
 
-    .mc-tile-caption--bottom & {
+  // Modifiers
+  &--bottom {
+    .mc-tile-caption__titles {
       left: 0;
       top: 100%;
       transform: translateY(-100%);
     }
+  }
 
-    .mc-tile-caption--below & {
+  &--below {
+    .mc-tile-caption__titles {
       left: 0;
       top: 100%;
       transform: translateY(0);
       background: rgba($mc-dark, 1);
       transition: transform 0.2s ease, background 0.2s ease 0.2s;
     }
+  }
 
-    .mc-tile-caption--center & {
+  &--center {
+    .mc-tile-caption__titles {
       text-align: center;
     }
   }
