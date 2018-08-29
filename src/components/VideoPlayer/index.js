@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 
-import Replay from '../Icons/Replay'
+import VideoPlayerEndScreen from '../VideoPlayerEndScreen'
+import VideoPlayerScreen from '../VideoPlayerScreen'
 
-export default class VideoPlayer extends React.PureComponent {
+export default class VideoPlayer extends PureComponent {
   static propTypes = {
     playerId: PropTypes.string.isRequired,
     videoId: PropTypes.string.isRequired,
@@ -33,6 +34,8 @@ export default class VideoPlayer extends React.PureComponent {
     onError: PropTypes.func,
     accountId: PropTypes.string,
     progress: PropTypes.number,
+    showScreenComponent: PropTypes.bool,
+    ScreenComponent: PropTypes.func,
   }
 
   static defaultProps = {
@@ -45,6 +48,7 @@ export default class VideoPlayer extends React.PureComponent {
     hasControls: true,
     hasBreakpoints: false,
     accountId: '5344802162001',
+    showScreenComponent: false,
   }
 
   constructor (props) {
@@ -173,21 +177,11 @@ export default class VideoPlayer extends React.PureComponent {
     }
   }
 
-  renderEndScreen = () => (
-      <div className='bc-player-endscreen'>
-        <Replay
-          className='bc-player-endscreen__replay'
-          onClick={this.handleReplayClick}
-        />
-        <div className='bc-player-endscreen__content'>
-          {this.props.endscreenComponent}
-        </div>
-      </div>
-  )
-
   render () {
     const {
       endscreenComponent,
+      showScreenComponent,
+      ScreenComponent,
       hasBreakpoints,
       theme,
       videoId,
@@ -197,15 +191,28 @@ export default class VideoPlayer extends React.PureComponent {
       isMuted,
       accountId,
     } = this.props
+    const { endscreenOpen } = this.state
+    const isScreenOpen = endscreenOpen || showScreenComponent
 
     return (
       <div
         className={cn('bc-player', {
-          'bc-player--endscreen-open': this.state.endscreenOpen,
+          'bc-player--screen-open': isScreenOpen,
           'bc-player--has-breakpoints': hasBreakpoints,
         })}
       >
-        {endscreenComponent && this.renderEndScreen()}
+        {endscreenComponent &&
+          <VideoPlayerEndScreen
+            isActive={endscreenOpen}
+            handleReplayClick={this.handleReplayClick}
+            endscreenComponent={endscreenComponent}
+          />
+        }
+        {ScreenComponent &&
+          <VideoPlayerScreen isActive={showScreenComponent}>
+            <ScreenComponent />
+          </VideoPlayerScreen>
+        }
         <div className='bc-player__wrapper'>
           <video
             data-application-id
