@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 import VideoPlayerEndScreen from '../VideoPlayerEndScreen'
 import VideoPlayerScreen from '../VideoPlayerScreen'
+import { renderChildren } from '../helpers'
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
@@ -13,6 +14,10 @@ export default class VideoPlayer extends PureComponent {
     theme: PropTypes.oneOf(['default', 'chapter']),
     /** Pass in a react component to be shown at the end of the video. */
     endscreenComponent: PropTypes.element,
+    /** Pass in a react component to be shown before video starts. */
+    beforescreenComponent: PropTypes.func,
+    /** Pass in a react component to be shown when the video is paused. */
+    pausescreenComponent: PropTypes.func,
     /**
      * Keeps video constrained to standard sizes, eg 1080x720.
      * Used to keep videos looking crisp.
@@ -34,8 +39,6 @@ export default class VideoPlayer extends PureComponent {
     onError: PropTypes.func,
     accountId: PropTypes.string,
     progress: PropTypes.number,
-    showScreenComponent: PropTypes.bool,
-    ScreenComponent: PropTypes.func,
   }
 
   static defaultProps = {
@@ -48,16 +51,16 @@ export default class VideoPlayer extends PureComponent {
     hasControls: true,
     hasBreakpoints: false,
     accountId: '5344802162001',
-    showScreenComponent: false,
   }
 
-  constructor (props) {
-    super(props)
-    this.playerRef = React.createRef()
-    this.currentTime = 0
-  }
+  playerRef = React.createRef()
+  currentTime = 0
 
-  state = { endscreenOpen: false }
+  state = {
+    endscreenOpen: false,
+    beforescreenOpen: false,
+    pausescreenOpen: false,
+  }
 
   componentDidMount () {
     if (window.bc && window.videojs) {
@@ -72,9 +75,14 @@ export default class VideoPlayer extends PureComponent {
       // Call a function to play the video once player's JavaScropt loaded
       bcScript.onload = this.setupVideo
     }
+    const { progress, beforescreenComponent } = this.props
 
-    if (this.props.progress) {
-      this.playerRef.current.currentTime = this.props.progress
+    if (progress) {
+      this.playerRef.current.currentTime = progress
+    }
+
+    if (beforescreenComponent) {
+      this.setState({ beforescreenOpen: true })
     }
   }
 
@@ -86,19 +94,29 @@ export default class VideoPlayer extends PureComponent {
 
   handlePlayerReady = () => {
     const {
-      onPlay, onPause, onVideoReady, onPlayerReady,
+      onPlay, onPause, onVideoReady, onPlayerReady, pausescreenComponent,
     } = this.props
 
-    if (onPlay) {
-      this.video.on('play', () => {
+    this.video.on('play', () => {
+      const { beforescreenOpen, pausescreenOpen } = this.state
+      if (beforescreenOpen) {
+        this.setState({ beforescreenOpen: false })
+      }
+      if (pausescreenOpen) {
+        this.setState({ pausescreenOpen: false })
+      }
+      if (onPlay) {
         onPlay(this.video)
-      })
-    }
-    if (onPause) {
-      this.video.on('pause', () => {
+      }
+    })
+    this.video.on('pause', () => {
+      if (pausescreenComponent) {
+        this.setState({ pausescreenOpen: true })
+      }
+      if (onPause) {
         onPause(this.video)
-      })
-    }
+      }
+    })
 
     this.video.on('ended', this.handleVideoEnd)
 
@@ -117,15 +135,21 @@ export default class VideoPlayer extends PureComponent {
   handleVideoEnd = () => {
     this.currentTime = 0
     this.hasEnded = true
-    if (this.props.isLooped) {
+    const {
+      isLooped,
+      endscreenComponent,
+      pausescreenComponent,
+      onEnd,
+    } = this.props
+    if (isLooped) {
       this.video.play()
-    } else if (this.props.endscreenComponent) {
-      this.setState({
-        endscreenOpen: true,
-      })
+    } else if (endscreenComponent) {
+      this.setState({ endscreenOpen: true })
+    } else if (pausescreenComponent) {
+      this.setState({ pausescreenOpen: false })
     }
-    if (this.props.onEnd) {
-      this.props.onEnd(this.video)
+    if (onEnd) {
+      onEnd(this.video)
     }
   }
 
@@ -135,6 +159,8 @@ export default class VideoPlayer extends PureComponent {
       endscreenOpen: false,
     })
   }
+
+  resumeVideo = () => { this.video.play() }
 
   setupVideo = () => {
     window.bc(this.playerRef.current, {
@@ -180,8 +206,8 @@ export default class VideoPlayer extends PureComponent {
   render () {
     const {
       endscreenComponent,
-      showScreenComponent,
-      ScreenComponent,
+      beforescreenComponent,
+      pausescreenComponent,
       hasBreakpoints,
       theme,
       videoId,
@@ -191,8 +217,12 @@ export default class VideoPlayer extends PureComponent {
       isMuted,
       accountId,
     } = this.props
-    const { endscreenOpen } = this.state
-    const isScreenOpen = endscreenOpen || showScreenComponent
+    const {
+      endscreenOpen,
+      beforescreenOpen,
+      pausescreenOpen,
+    } = this.state
+    const isScreenOpen = endscreenOpen || beforescreenOpen || pausescreenOpen
 
     return (
       <div
@@ -208,9 +238,20 @@ export default class VideoPlayer extends PureComponent {
             endscreenComponent={endscreenComponent}
           />
         }
-        {ScreenComponent &&
-          <VideoPlayerScreen isActive={showScreenComponent}>
-            <ScreenComponent />
+        {beforescreenComponent &&
+          <VideoPlayerScreen isActive={beforescreenOpen}>
+            {renderChildren(
+              beforescreenComponent,
+              { onResume: this.resumeVideo })
+            }
+          </VideoPlayerScreen>
+        }
+        {pausescreenComponent &&
+          <VideoPlayerScreen isActive={pausescreenOpen}>
+            {renderChildren(
+              pausescreenComponent,
+              { onResume: this.resumeVideo })
+            }
           </VideoPlayerScreen>
         }
         <div className='bc-player__wrapper'>

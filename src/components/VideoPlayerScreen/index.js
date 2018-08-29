@@ -10,7 +10,10 @@ const VideoPlayerScreen = ({ isActive, variation, children }) => {
   )
 
   return (
-    <div className={classNames}>
+    <div
+      className={classNames}
+      style={{ opacity: isActive ? 1 : 0 }}
+    >
       {children}
     </div>
   )

@@ -1,58 +1,48 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { func } from 'prop-types'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
 import VideoPlayer from './'
 
-class VideoPlayerScreensExample extends Component {
-  state = {
-    status: 'init',
-    videoRef: undefined,
-  }
+const InitialPlayerScreen = ({ onResume }) =>
+  <div style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column',
+    }}
+  >
+    <p>Start playing your video</p>
+    <button onClick={onResume}>
+      START
+    </button>
+  </div>
 
-  onPlay = () => this.setState({ status: 'playing' })
+InitialPlayerScreen.propTypes = {
+  onResume: func,
+}
 
-  onPause = () => this.setState({ status: 'paused' })
+const PausePlayerScreen = ({ onResume }) =>
+  <div style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column',
+    }}
+  >
+    <p>Your video is paused</p>
+    <button onClick={onResume}>
+      CONTINUE
+    </button>
+  </div>
 
-  onEnd = () => this.setState({ status: 'ended' })
-
-  onVideoReady = videoRef => this.setState({ videoRef })
-
-  startPlaying = () => {
-    this.state.videoRef.play()
-  }
-
-  PlayerScreen = () =>
-    <div style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}
-    >
-      <p>{this.state.status} state</p>
-      <button onClick={this.startPlaying}>
-        {this.state.status === 'init' ? 'START' : 'CONTINUE'}
-      </button>
-    </div>
-
-  render () {
-    const { status } = this.state
-
-    return (
-      <VideoPlayer
-        onPlay={this.onPlay}
-        onPause={this.onPause}
-        onEnd={this.onEnd}
-        onVideoReady={this.onVideoReady}
-        showScreenComponent={status === 'init' || status === 'paused'}
-        ScreenComponent={this.PlayerScreen}
-        hasAutoplay={false}
-      />
-    )
-  }
+PausePlayerScreen.propTypes = {
+  onResume: func,
 }
 
 storiesOf('components|VideoPlayer', module)
@@ -72,6 +62,11 @@ storiesOf('components|VideoPlayer', module)
       hasControls={false}
     />
   )))
-  .add('custom overlay screens', withProps(VideoPlayer)(() =>
-    <VideoPlayerScreensExample />,
-  ))
+  .add('overlay screens', withProps(VideoPlayer)(() => (
+    <VideoPlayer
+      hasAutoplay={false}
+      beforescreenComponent={InitialPlayerScreen}
+      pausescreenComponent={PausePlayerScreen}
+      endscreenComponent={<p>Endscreen Component</p>}
+    />
+  )))
