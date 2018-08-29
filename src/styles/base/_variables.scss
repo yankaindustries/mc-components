@@ -18,11 +18,17 @@ $mc-color-secondary-active:  #1f1f21 !default;
 $mc-color-tertiary:          #75787f !default;
 $mc-color-tertiary-hover:    #90949d !default;
 
+$mc-color-background:        #090909 !default;
+$mc-color-background-invert: #ebeeee !default;
+$mc-color-text:              #272c33 !default;
+$mc-color-text-invert:       #8ca1c1 !default;
+
+
 // If we move to a light site later
 // these variables will be easier to find
 $mc-light:                   #fff !default;
 $mc-dark:                    #000 !default;
-$mc-background:              #090909 !default;
+
 
 // Not quite 50 of them, but...
 $mc-gray-100:           #333 !default;
