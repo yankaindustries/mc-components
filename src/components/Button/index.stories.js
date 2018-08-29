@@ -32,10 +32,10 @@ const FacebookIcon = () => (
   </svg>
 )
 
-storiesOf('components|Buttons', module)
+storiesOf('components|Button', module)
   .add('Button', withProps(Button)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>Button Types</h2>
+      <h2 className='mc-text-h2'>Button</h2>
 
       <DocSection title='Variations'>
         <PropExample
