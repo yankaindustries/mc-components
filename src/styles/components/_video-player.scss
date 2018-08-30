@@ -29,13 +29,8 @@ $brightcove-video-sizes: (
     }
   }
 
-  &--endscreen-open {
+  &--screen-open {
     pointer-events: none;
-
-    .bc-player-endscreen {
-      opacity: 1;
-      pointer-events: auto;
-    }
   }
 
   &__wrapper {
@@ -327,7 +322,7 @@ $brightcove-video-sizes: (
   }
 }
 
-.bc-player-endscreen {
+.bc-player-screen {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -343,7 +338,9 @@ $brightcove-video-sizes: (
     opacity: 1;
     pointer-events: auto;
   }
+}
 
+.bc-player-endscreen {
   &__replay {
     position: absolute;
     bottom: 24px;
