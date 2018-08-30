@@ -15,7 +15,6 @@ import Button from '../Button'
 import ResponsiveHandler from '../ResponsiveHandler'
 
 
-
 const items = [
   {
     id: 1,
@@ -201,96 +200,100 @@ storiesOf('components|Carousel', module)
     <CarouselConnector>
       {({ sliderRef, asNavFor }) =>
         <div>
-          <div className='mc-hero'>
-            <ResponsiveHandler>
-              {({ gteMD }) =>
-                <Carousel
-                  sliderRef={sliderRef('hero')}
-                  asNavFor={asNavFor('thumbs')}
-                  transition='fade'
-                  loop
-                >
-                  {items.map((item, key) => (
-                    <div key={key} className='container'>
-                      <Tile
-                        key={key}
-                        aspectRatio={gteMD ? '16x9' : '3x4'}
-                        naked
-                      >
+          <ResponsiveHandler>
+            {({ gteMD }) =>
+              <div>
+                <div className='mc-hero'>
+                  <Carousel
+                    sliderRef={sliderRef('hero')}
+                    asNavFor={asNavFor('thumbs')}
+                    transition='fade'
+                    loop
+                  >
+                    {items.map((item, key) => (
+                      <div key={key} className='container'>
                         <Tile
-                          className='mc-hero__image'
-                          aspectRatio={gteMD ? '16x9' : '3x4'}
+                          key={key}
+                          aspectRatio={gteMD ? '16x9' : '1x1'}
                           naked
                         >
-                          <TileImage imageUrl={item.image} />
-                          <TileOverlay type='offset-spotlight' />
-                        </Tile>
+                          <Tile
+                            className='mc-hero__image'
+                            aspectRatio={gteMD ? '16x9' : '1x1'}
+                            naked
+                          >
+                            <TileImage imageUrl={item.image} />
+                            <TileOverlay type='offset-spotlight' />
+                          </Tile>
 
-                        <div className='mc-hero__content'>
-                          <div className='row row--fill align-items-center'>
-                            <div className='col-xl-5 col-md-8 col-lg-6'>
-                              <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left mc-text--nowrap'>
-                                {item.instructor}
-                              </h2>
-                              <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left mc-text--nowrap'>
-                                Teaches {item.teaches}
-                              </h3>
-                              <br />
-                              <p className='mc-text-intro mc-text-center mc-text-md-left'>
-                                Online classes taught by the world&apos;s
-                                greatest minds.<br /> Learn from
-                                {item.instructor} and all 35+ other
-                                instructors.
-                              </p>
-                              <br />
-                              <div className='row'>
-                                <div className='col-md-6'>
-                                  <Button primary fullWidth>
-                                    All Access Pass
-                                  </Button>
-                                </div>
-                                <div className='col-md-6'>
-                                  <Button secondary fullWidth>
-                                    Learn More
-                                  </Button>
+                          <div className='mc-hero__content'>
+                            <div className='row row--fill align-items-center'>
+                              <div className='col-xl-5 col-md-8 col-lg-6'>
+                                <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left mc-text--nowrap'>
+                                  {item.instructor}
+                                </h2>
+                                <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left mc-text--nowrap'>
+                                  Teaches {item.teaches}
+                                </h3>
+                                <br />
+                                <p className='mc-text-intro mc-text-center mc-text-md-left'>
+                                  Online classes taught by the world&apos;s
+                                  greatest minds.<br /> Learn from
+                                  {item.instructor} and all 35+ other
+                                  instructors.
+                                </p>
+                                <br />
+                                <div className='row'>
+                                  <div className='col-md-6'>
+                                    <Button primary fullWidth>
+                                      All Access Pass
+                                    </Button>
+                                  </div>
+                                  <div className='col-md-6'>
+                                    <Button secondary fullWidth>
+                                      Learn More
+                                    </Button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </Tile>
-                    </div>
-                  ))}
-                </Carousel>
-              }
-            </ResponsiveHandler>
-          </div>
-
-          <div className='container'>
-            <Carousel
-              className='row'
-              sliderRef={sliderRef('thumbs')}
-              asNavFor={asNavFor('hero')}
-              centered
-              fadeEdges
-              focusOnSelect
-              loop
-              controls
-            >
-              {items.map((item, key) => (
-                <div key={key} className='col-auto'>
-                  <Tile key={item.id}>
-                    <TileImage imageUrl={item.thumbnail} />
-                    <TileOverlay />
-                    <TileCaption
-                      title={item.instructor}
-                      subtitle={`Teaches ${item.teaches}`}
-                    />
-                  </Tile>
+                        </Tile>
+                      </div>
+                    ))}
+                  </Carousel>
                 </div>
-              ))}
-            </Carousel>
-          </div>
+
+                <div className='container'>
+                  <Carousel
+                    className='row'
+                    sliderRef={sliderRef('thumbs')}
+                    asNavFor={asNavFor('hero')}
+                    centered
+                    fadeEdges
+                    focusOnSelect
+                    loop
+                    controls={gteMD}
+                  >
+                    {items.map((item, key) => (
+                      <div key={key} className='col-auto'>
+                        <Tile key={item.id}>
+                          <TileImage imageUrl={item.thumbnail} />
+                          {gteMD && <TileOverlay />}
+                          {gteMD &&
+                            <TileCaption
+                              title={item.instructor}
+                              subtitle={`Teaches ${item.teaches}`}
+                            />
+                          }
+                        </Tile>
+                      </div>
+                    ))}
+                  </Carousel>
+                </div>
+              </div>
+            }
+          </ResponsiveHandler>
         </div>
       }
     </CarouselConnector>
