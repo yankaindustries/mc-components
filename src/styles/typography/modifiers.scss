@@ -1,8 +1,5 @@
 // stylelint-disable declaration-no-important
 .mc-text {
-  // Monospaced
-  &--monospace { font-family: monospace !important; }
-
   // Transformation
   &--uppercase { text-transform: uppercase !important; }
   &--lowercase { text-transform: lowercase !important; }
@@ -13,10 +10,16 @@
   &--normal { font-weight: 400 !important; }
   &--muted { opacity: 0.5 !important; }
 
+  // Treatments
+  &--airy { letter-spacing: 0.24em; }
+
   // Colors
   &--invert { color: $mc-dark; }
   &--twitter { color: #1da1f2; }
   &--facebook { color: #3b5998; }
+
+  // Monospaced
+  &--monospace { font-family: monospace !important; }
 }
 
 // Responsive

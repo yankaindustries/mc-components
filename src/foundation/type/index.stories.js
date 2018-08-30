@@ -22,6 +22,12 @@ storiesOf('foundation|Type', module)
         </div>
 
         <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Display 3</h5>
+          <h1 className='mc-text-d3'>Now Available</h1>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text-d3</p>
+        </div>
+
+        <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>H1</h5>
           <h1 className='mc-text-h1'>Unlock Every Class with the All‑Access Pass</h1>
           <p className='mc-text--muted mc-text--monospace'>.mc-text-h1</p>
@@ -52,11 +58,11 @@ storiesOf('foundation|Type', module)
         </div>
 
         <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Body</h5>
+          <h5 className='mc-text-h5'>Default body text</h5>
           <p>Online classes taught by the world&#39;s greatest minds. Now get
            unlimited access to all classes.
           </p>
-          <p className='mc-text--muted mc-text--monospace'>Default body text</p>
+          <p className='mc-text--muted mc-text--monospace'>&lt;p&gt; - No class needed</p>
         </div>
 
         <div className='align-items-center example--section'>
@@ -82,13 +88,7 @@ storiesOf('foundation|Type', module)
         <p className='mc-text-p'>All available text modifier classes.</p>
       </div>
 
-      <div className='container example--section'>
-        <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Monospace</h5>
-          <p className='mc-text--monospace'>The quick brown fox jumped over the lazy dog.</p>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text--monospace.mc-text--uppercase.mc-text--bold</p>
-        </div>
-
+      <div className='container'>
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Uppercase</h5>
           <p className='mc-text--uppercase'>The quick brown fox jumped over the lazy dog.</p>
@@ -108,13 +108,13 @@ storiesOf('foundation|Type', module)
         </div>
 
         <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Bold</h5>
+          <h5 className='mc-text-h5'>Font weight - Bold</h5>
           <p className='mc-text--bold'>The quick brown fox jumped over the lazy dog.</p>
           <p className='mc-text--muted mc-text--monospace'>.mc-text--bold</p>
         </div>
 
         <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Normal</h5>
+          <h5 className='mc-text-h5'>Font weight - Normal</h5>
           <h1 className='mc-text-h1 mc-text--normal'>The quick brown fox jumped over the lazy dog.</h1>
           <p className='mc-text--muted mc-text--monospace'>.mc-text--h1.mc-text--normal</p>
         </div>
@@ -126,11 +126,29 @@ storiesOf('foundation|Type', module)
         </div>
 
         <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Airy</h5>
+          <p className='mc-text--airy'>The quick brown fox jumped over the lazy dog.</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--airy</p>
+        </div>
+
+        <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Invert</h5>
           <div className='rounded-box'>
             <p className='mc-text--invert'>The quick brown fox jumped over the lazy dog.</p>
           </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-text--invert</p>
+        </div>
+
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Monospace</h5>
+          <p className='mc-text--monospace'>The quick brown fox jumped over the lazy dog.</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--monospace.mc-text--uppercase.mc-text--bold</p>
+        </div>
+
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Chaining modifiers</h5>
+          <p className='mc-text--uppercase mc-text--airy mc-text--bold'>The quick brown fox jumped over the lazy dog.</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--uppercase.mc-text--airy.mc-text--bold</p>
         </div>
       </div>
     </div>,
@@ -165,12 +183,6 @@ storiesOf('foundation|Type', module)
           <h5 className='mc-text-h5'>Responsive alignment</h5>
           <p className='mc-text-right mc-text-md-center'>The quick brown fox jumped over the lazy dog.</p>
           <p className='mc-text--muted mc-text--monospace'>.mc-text-right mc-text-md-center</p>
-        </div>
-
-        <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Chaining modifiers</h5>
-          <p className='mc-text--muted mc-text--uppercase mc-text --bold'>The quick brown fox jumped over the lazy dog.</p>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text--muted.mc-text--uppercase.mc-text--bold</p>
         </div>
       </div>
     </div>,
@@ -213,6 +225,7 @@ storiesOf('foundation|Type', module)
               <p className='mc-text-hr'><span>Yeah!</span></p>
             </div>
           </div>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text-hr</p>
         </div>
 
         <div className='align-items-center example--section'>
@@ -230,6 +243,31 @@ storiesOf('foundation|Type', module)
               </div>
             </div>
           </div>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text-hr</p>
+        </div>
+      </div>
+    </div>,
+  )
+  .add('Colors', () =>
+    <div className='example-mc-type'>
+      <div className='container example--section'>
+        <h2 className='mc-text-d1'>Color Treatments</h2>
+        <p className='mc-text-p'>For specific branding guideline requirements.</p>
+      </div>
+
+      <div className='container example--section'>
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Align left</h5>
+          <p className='mc-text--facebook'>Facebook brand color</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text-facebook</p>
+        </div>
+      </div>
+
+      <div className='container example--section'>
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Align left</h5>
+          <p className='mc-text--twitter'>Twitter brand color</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text-twitter</p>
         </div>
       </div>
     </div>,
