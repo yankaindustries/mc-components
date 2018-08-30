@@ -32,6 +32,14 @@ a { text-decoration: none; }
   text-transform: uppercase;
 }
 
+.mc-text-d3 {
+  font-size: 20px;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
 // html header equivalents
 .mc-text-h1,
 .mc-text-h2,
@@ -40,36 +48,27 @@ a { text-decoration: none; }
 .mc-text-h5 {
   font-weight: 700;
   line-height: 1.25;
+  letter-spacing: 0.04em;
 }
 
 .mc-text-h1 {
   font-size: 32px;
-  letter-spacing: 0.04em;
 }
 
 .mc-text-h2 {
   font-size: 24px;
-  letter-spacing: 0.06em;
 }
 
 .mc-text-h3 {
   font-size: 20px;
-  letter-spacing: 0.24em;
-  font-weight: 400;
-  text-transform: uppercase;
 }
 
 .mc-text-h4 {
   font-size: 16px;
-  letter-spacing: 0.06em;
-  font-weight: 400;
-  text-transform: uppercase;
 }
 
 .mc-text-h5 {
   font-size: 12px;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
 }
 
 .mc-text-intro {
