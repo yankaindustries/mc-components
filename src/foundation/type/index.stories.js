@@ -6,7 +6,7 @@ storiesOf('foundation|Type', module)
     <div className='example-mc-type'>
       <div className='container example--section'>
         <h2 className='mc-text-d1'>Typography</h2>
-        <p className='mc-text-p'>A showcase of the available type styles in mc-components.</p>
+        <p>A showcase of the available type styles in mc-components.</p>
       </div>
       <div className='container'>
         <div className='align-items-center example--section'>

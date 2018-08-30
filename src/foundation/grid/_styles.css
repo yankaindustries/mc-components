@@ -1,7 +1,4 @@
 .example-grid-block {
-  background: #ccc;
-  width: 100%;
+  position: relative;
   height: 64px;
-  border: 1px solid #929093;
-  margin-bottom: 1em;
 }
