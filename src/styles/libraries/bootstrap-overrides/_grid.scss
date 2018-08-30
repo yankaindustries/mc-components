@@ -23,6 +23,15 @@
 
   .col,
   [class*="col-"] { padding: $grid-gutter-xl-width / 2; }
+
+  // Override for smaller gutters when using the
+  // grid inside of an existing column (nested grids)
+  .small-gutters {
+    margin: $grid-gutter-xl-width / -4;
+
+    .col,
+    [class*="col-"] { padding: $grid-gutter-xl-width / 4; }
+  }
 }
 
 // Grid modifiers
