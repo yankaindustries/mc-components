@@ -324,7 +324,7 @@ $brightcove-video-sizes: (
 
 .bc-player-screen {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   top: 0;
   right: 0;
   bottom: 0;
@@ -337,36 +337,6 @@ $brightcove-video-sizes: (
   &--is-open {
     opacity: 1;
     pointer-events: auto;
-  }
-}
-
-.bc-player-endscreen {
-  &__replay {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    z-index: 1;
-    width: 48px;
-    height: 48px;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: 300ms $mc-default-ease;
-    fill: $mc-light;
-
-    &:hover {
-      opacity: 1;
-    }
-
-    svg {
-      max-width: 100%;
-    }
-  }
-
-  &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
   }
 }
 
