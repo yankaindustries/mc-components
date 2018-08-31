@@ -21,7 +21,7 @@ const VideoPlayerScreen = ({ isActive, variation, children }) => {
 
 VideoPlayerScreen.propTypes = {
   children: oneOfType([arrayOf(node), node]).isRequired,
-  variation: oneOf(['endscreen']),
+  variation: oneOf(['endscreen', 'beforescreen', 'pausescreen']),
   isActive: bool,
 }
 

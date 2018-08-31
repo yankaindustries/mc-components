@@ -3,7 +3,7 @@ import cn from 'classnames'
 import PropTypes from 'prop-types'
 
 import VideoPlayerScreen from '../VideoPlayerScreen'
-import { renderChildren } from '../helpers'
+import { renderChildren, closeFullscreen } from '../helpers'
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
@@ -109,7 +109,8 @@ export default class VideoPlayer extends PureComponent {
       }
     })
     this.video.on('pause', () => {
-      if (pausescreenComponent) {
+      // eslint-disable-next-line
+      if (pausescreenComponent && !this.video.isFullscreen_) {
         this.setState({ pausescreenOpen: true })
       }
       if (onPause) {
@@ -144,6 +145,10 @@ export default class VideoPlayer extends PureComponent {
       this.video.play()
     } else if (endscreenComponent) {
       this.setState({ endscreenOpen: true })
+      // eslint-disable-next-line
+      if (this.video.isFullscreen_) {
+        closeFullscreen()
+      }
     }
     if (pausescreenComponent) {
       this.setState({ pausescreenOpen: false })
