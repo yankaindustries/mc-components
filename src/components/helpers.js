@@ -15,6 +15,18 @@ export const NumberToPX = value => (
   typeof value === 'number' ? `${value}px` : value
 )
 
+export const closeFullscreen = () => {
+  if (document.exitFullscreen) {
+    document.exitFullscreen()
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen()
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen()
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen()
+  }
+}
+
 export const FormatClassTitle = (title = '', instructorName = '') => {
   if (title.toLowerCase().indexOf(instructorName.toLowerCase()) === -1) {
     return title

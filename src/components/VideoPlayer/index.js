@@ -2,9 +2,8 @@ import React, { PureComponent } from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 
-import VideoPlayerEndScreen from '../VideoPlayerEndScreen'
 import VideoPlayerScreen from '../VideoPlayerScreen'
-import { renderChildren } from '../helpers'
+import { renderChildren, closeFullscreen } from '../helpers'
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
@@ -13,7 +12,7 @@ export default class VideoPlayer extends PureComponent {
     /** Player theme styles, must have correlating styles to go with it */
     theme: PropTypes.oneOf(['default', 'chapter']),
     /** Pass in a react component to be shown at the end of the video. */
-    endscreenComponent: PropTypes.element,
+    endscreenComponent: PropTypes.func,
     /** Pass in a react component to be shown before video starts. */
     beforescreenComponent: PropTypes.func,
     /** Pass in a react component to be shown when the video is paused. */
@@ -110,7 +109,8 @@ export default class VideoPlayer extends PureComponent {
       }
     })
     this.video.on('pause', () => {
-      if (pausescreenComponent) {
+      // eslint-disable-next-line
+      if (pausescreenComponent && !this.video.isFullscreen_) {
         this.setState({ pausescreenOpen: true })
       }
       if (onPause) {
@@ -145,7 +145,12 @@ export default class VideoPlayer extends PureComponent {
       this.video.play()
     } else if (endscreenComponent) {
       this.setState({ endscreenOpen: true })
-    } else if (pausescreenComponent) {
+      // eslint-disable-next-line
+      if (this.video.isFullscreen_) {
+        closeFullscreen()
+      }
+    }
+    if (pausescreenComponent) {
       this.setState({ pausescreenOpen: false })
     }
     if (onEnd) {
@@ -232,25 +237,35 @@ export default class VideoPlayer extends PureComponent {
         })}
       >
         {endscreenComponent &&
-          <VideoPlayerEndScreen
+          <VideoPlayerScreen
             isActive={endscreenOpen}
-            handleReplayClick={this.handleReplayClick}
-            endscreenComponent={endscreenComponent}
-          />
+            variation='endscreen'
+          >
+            {renderChildren(
+              endscreenComponent,
+              { onReplay: this.handleReplayClick, isActive: endscreenOpen })
+            }
+          </VideoPlayerScreen>
         }
         {beforescreenComponent &&
-          <VideoPlayerScreen isActive={beforescreenOpen}>
+          <VideoPlayerScreen
+            isActive={beforescreenOpen}
+            variation='beforescreen'
+          >
             {renderChildren(
               beforescreenComponent,
-              { onResume: this.resumeVideo })
+              { onResume: this.resumeVideo, isActive: beforescreenOpen })
             }
           </VideoPlayerScreen>
         }
         {pausescreenComponent &&
-          <VideoPlayerScreen isActive={pausescreenOpen}>
+          <VideoPlayerScreen
+            isActive={pausescreenOpen}
+            variation='pausescreen'
+          >
             {renderChildren(
               pausescreenComponent,
-              { onResume: this.resumeVideo })
+              { onResume: this.resumeVideo, isActive: pausescreenOpen })
             }
           </VideoPlayerScreen>
         }
