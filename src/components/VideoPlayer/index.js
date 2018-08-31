@@ -243,7 +243,7 @@ export default class VideoPlayer extends PureComponent {
           >
             {renderChildren(
               endscreenComponent,
-              { onReplay: this.handleReplayClick })
+              { onReplay: this.handleReplayClick, isActive: endscreenOpen })
             }
           </VideoPlayerScreen>
         }
@@ -254,7 +254,7 @@ export default class VideoPlayer extends PureComponent {
           >
             {renderChildren(
               beforescreenComponent,
-              { onResume: this.resumeVideo })
+              { onResume: this.resumeVideo, isActive: beforescreenOpen })
             }
           </VideoPlayerScreen>
         }
@@ -265,7 +265,7 @@ export default class VideoPlayer extends PureComponent {
           >
             {renderChildren(
               pausescreenComponent,
-              { onResume: this.resumeVideo })
+              { onResume: this.resumeVideo, isActive: pausescreenOpen })
             }
           </VideoPlayerScreen>
         }
