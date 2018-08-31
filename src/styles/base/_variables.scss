@@ -49,15 +49,6 @@ $yiq-text-light:            #fff !default;
 // Animations
 $mc-default-ease: cubic-bezier(0.25, 0.1, 0.25, 1) !default;
 
-// Breakpoints
-$mc-bp-xs:     0 !default;
-$mc-bp-sm:     576px !default;
-$mc-bp-md:     768px !default;
-$mc-bp-lg:     992px !default;
-$mc-bp-xl:     1200px !default;
-// NOTE: If we change these breakpoint values, we
-// also need to update them for ResponsiveHandler.
-
 // Z-indexes
 $mc-zindex-dropdown:          1000 !default;
 $mc-zindex-sticky:            1020 !default;
@@ -96,6 +87,15 @@ $transition-base:        all 0.2s ease-in-out !default;
 // Custom bootstrap grid overrides
 $grid-gutter-width:      16px !default;
 $grid-gutter-xl-width:   32px !default;
+
+// Breakpoints
+$mc-bp-xs:     0 !default;
+$mc-bp-sm:     576px !default;
+$mc-bp-md:     768px !default;
+$mc-bp-lg:     992px !default;
+$mc-bp-xl:     1200px !default;
+// NOTE: If we change these breakpoint values, we
+// also need to update them for ResponsiveHandler.
 
 $grid-breakpoints: (
   xs: $mc-bp-xs,
