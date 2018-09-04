@@ -6,40 +6,64 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import React from 'react';
+import React, { PureComponent } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import Replay from '../Icons/Replay';
+import VideoPlayerScreen from '../VideoPlayerScreen';
+import { renderChildren, closeFullscreen } from '../helpers';
 
-var VideoPlayer = function (_React$PureComponent) {
-  _inherits(VideoPlayer, _React$PureComponent);
+var VideoPlayer = function (_PureComponent) {
+  _inherits(VideoPlayer, _PureComponent);
 
-  function VideoPlayer(props) {
+  function VideoPlayer() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, VideoPlayer);
 
-    var _this = _possibleConstructorReturn(this, (VideoPlayer.__proto__ || Object.getPrototypeOf(VideoPlayer)).call(this, props));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.state = { endscreenOpen: false };
-
-    _this.handlePlayerReady = function () {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = VideoPlayer.__proto__ || Object.getPrototypeOf(VideoPlayer)).call.apply(_ref, [this].concat(args))), _this), _this.playerRef = React.createRef(), _this.currentTime = 0, _this.state = {
+      endscreenOpen: false,
+      beforescreenOpen: false,
+      pausescreenOpen: false
+    }, _this.handlePlayerReady = function () {
       var _this$props = _this.props,
           onPlay = _this$props.onPlay,
           onPause = _this$props.onPause,
           onVideoReady = _this$props.onVideoReady,
-          onPlayerReady = _this$props.onPlayerReady;
+          onPlayerReady = _this$props.onPlayerReady,
+          pausescreenComponent = _this$props.pausescreenComponent;
 
 
-      if (onPlay) {
-        _this.video.on('play', function () {
+      _this.video.on('play', function () {
+        var _this$state = _this.state,
+            beforescreenOpen = _this$state.beforescreenOpen,
+            pausescreenOpen = _this$state.pausescreenOpen;
+
+        if (beforescreenOpen) {
+          _this.setState({ beforescreenOpen: false });
+        }
+        if (pausescreenOpen) {
+          _this.setState({ pausescreenOpen: false });
+        }
+        if (onPlay) {
           onPlay(_this.video);
-        });
-      }
-      if (onPause) {
-        _this.video.on('pause', function () {
+        }
+      });
+      _this.video.on('pause', function () {
+        // eslint-disable-next-line
+        if (pausescreenComponent && !_this.video.isFullscreen_) {
+          _this.setState({ pausescreenOpen: true });
+        }
+        if (onPause) {
           onPause(_this.video);
-        });
-      }
+        }
+      });
 
       _this.video.on('ended', _this.handleVideoEnd);
 
@@ -53,39 +77,44 @@ var VideoPlayer = function (_React$PureComponent) {
       }
 
       _this.startSecondsTimer();
-    };
-
-    _this.handleVideoEnd = function () {
+    }, _this.handleVideoEnd = function () {
       _this.currentTime = 0;
       _this.hasEnded = true;
-      if (_this.props.isLooped) {
-        _this.video.play();
-      } else if (_this.props.endscreenComponent) {
-        _this.setState({
-          endscreenOpen: true
-        });
-      }
-      if (_this.props.onEnd) {
-        _this.props.onEnd(_this.video);
-      }
-    };
+      var _this$props2 = _this.props,
+          isLooped = _this$props2.isLooped,
+          endscreenComponent = _this$props2.endscreenComponent,
+          pausescreenComponent = _this$props2.pausescreenComponent,
+          onEnd = _this$props2.onEnd;
 
-    _this.handleReplayClick = function () {
+      if (isLooped) {
+        _this.video.play();
+      } else if (endscreenComponent) {
+        _this.setState({ endscreenOpen: true });
+        // eslint-disable-next-line
+        if (_this.video.isFullscreen_) {
+          closeFullscreen();
+        }
+      }
+      if (pausescreenComponent) {
+        _this.setState({ pausescreenOpen: false });
+      }
+      if (onEnd) {
+        onEnd(_this.video);
+      }
+    }, _this.handleReplayClick = function () {
       _this.video.play();
       _this.setState({
         endscreenOpen: false
       });
-    };
-
-    _this.setupVideo = function () {
+    }, _this.resumeVideo = function () {
+      _this.video.play();
+    }, _this.setupVideo = function () {
       window.bc(_this.playerRef.current, {
         playbackRates: [0.5, 1, 1.5, 2]
       });
       _this.video = window.videojs(_this.playerRef.current);
       _this.video.ready(_this.handlePlayerReady);
-    };
-
-    _this.replaceWith = function (videoId) {
+    }, _this.replaceWith = function (videoId) {
       if (_this.video.customOverlay) {
         _this.video.customOverlay.close();
       }
@@ -103,9 +132,7 @@ var VideoPlayer = function (_React$PureComponent) {
         });
         _this.video.play();
       });
-    };
-
-    _this.startSecondsTimer = function () {
+    }, _this.startSecondsTimer = function () {
       if (_this.props.onTimeChange) {
         _this.video.on('timeupdate', function () {
           var currentTime = Math.floor(_this.video.currentTime());
@@ -116,27 +143,7 @@ var VideoPlayer = function (_React$PureComponent) {
           }
         });
       }
-    };
-
-    _this.renderEndScreen = function () {
-      return React.createElement(
-        'div',
-        { className: 'bc-player-endscreen' },
-        React.createElement(Replay, {
-          className: 'bc-player-endscreen__replay',
-          onClick: _this.handleReplayClick
-        }),
-        React.createElement(
-          'div',
-          { className: 'bc-player-endscreen__content' },
-          _this.props.endscreenComponent
-        )
-      );
-    };
-
-    _this.playerRef = React.createRef();
-    _this.currentTime = 0;
-    return _this;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(VideoPlayer, [{
@@ -157,9 +164,17 @@ var VideoPlayer = function (_React$PureComponent) {
         // Call a function to play the video once player's JavaScropt loaded
         bcScript.onload = this.setupVideo;
       }
+      var _props2 = this.props,
+          progress = _props2.progress,
+          beforescreenComponent = _props2.beforescreenComponent;
 
-      if (this.props.progress) {
-        this.playerRef.current.currentTime = this.props.progress;
+
+      if (progress) {
+        this.playerRef.current.currentTime = progress;
+      }
+
+      if (beforescreenComponent) {
+        this.setState({ beforescreenOpen: true });
       }
     }
   }, {
@@ -172,27 +187,57 @@ var VideoPlayer = function (_React$PureComponent) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props,
-          endscreenComponent = _props2.endscreenComponent,
-          hasBreakpoints = _props2.hasBreakpoints,
-          theme = _props2.theme,
-          videoId = _props2.videoId,
-          playerId = _props2.playerId,
-          hasAutoplay = _props2.hasAutoplay,
-          hasControls = _props2.hasControls,
-          isMuted = _props2.isMuted,
-          accountId = _props2.accountId;
+      var _props3 = this.props,
+          endscreenComponent = _props3.endscreenComponent,
+          beforescreenComponent = _props3.beforescreenComponent,
+          pausescreenComponent = _props3.pausescreenComponent,
+          hasBreakpoints = _props3.hasBreakpoints,
+          theme = _props3.theme,
+          videoId = _props3.videoId,
+          playerId = _props3.playerId,
+          hasAutoplay = _props3.hasAutoplay,
+          hasControls = _props3.hasControls,
+          isMuted = _props3.isMuted,
+          accountId = _props3.accountId;
+      var _state = this.state,
+          endscreenOpen = _state.endscreenOpen,
+          beforescreenOpen = _state.beforescreenOpen,
+          pausescreenOpen = _state.pausescreenOpen;
 
+      var isScreenOpen = endscreenOpen || beforescreenOpen || pausescreenOpen;
 
       return React.createElement(
         'div',
         {
           className: cn('bc-player', {
-            'bc-player--endscreen-open': this.state.endscreenOpen,
+            'bc-player--screen-open': isScreenOpen,
             'bc-player--has-breakpoints': hasBreakpoints
           })
         },
-        endscreenComponent && this.renderEndScreen(),
+        endscreenComponent && React.createElement(
+          VideoPlayerScreen,
+          {
+            isActive: endscreenOpen,
+            variation: 'endscreen'
+          },
+          renderChildren(endscreenComponent, { onReplay: this.handleReplayClick, isActive: endscreenOpen })
+        ),
+        beforescreenComponent && React.createElement(
+          VideoPlayerScreen,
+          {
+            isActive: beforescreenOpen,
+            variation: 'beforescreen'
+          },
+          renderChildren(beforescreenComponent, { onResume: this.resumeVideo, isActive: beforescreenOpen })
+        ),
+        pausescreenComponent && React.createElement(
+          VideoPlayerScreen,
+          {
+            isActive: pausescreenOpen,
+            variation: 'pausescreen'
+          },
+          renderChildren(pausescreenComponent, { onResume: this.resumeVideo, isActive: pausescreenOpen })
+        ),
         React.createElement(
           'div',
           { className: 'bc-player__wrapper' },
@@ -214,7 +259,7 @@ var VideoPlayer = function (_React$PureComponent) {
   }]);
 
   return VideoPlayer;
-}(React.PureComponent);
+}(PureComponent);
 
 VideoPlayer.propTypes = {
   playerId: PropTypes.string.isRequired,
@@ -222,7 +267,11 @@ VideoPlayer.propTypes = {
   /** Player theme styles, must have correlating styles to go with it */
   theme: PropTypes.oneOf(['default', 'chapter']),
   /** Pass in a react component to be shown at the end of the video. */
-  endscreenComponent: PropTypes.element,
+  endscreenComponent: PropTypes.func,
+  /** Pass in a react component to be shown before video starts. */
+  beforescreenComponent: PropTypes.func,
+  /** Pass in a react component to be shown when the video is paused. */
+  pausescreenComponent: PropTypes.func,
   /**
    * Keeps video constrained to standard sizes, eg 1080x720.
    * Used to keep videos looking crisp.

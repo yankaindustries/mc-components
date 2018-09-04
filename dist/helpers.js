@@ -15,6 +15,21 @@ export var NumberToPX = function NumberToPX(value) {
   return typeof value === 'number' ? value + 'px' : value;
 };
 
+export var closeFullscreen = function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    /* IE/Edge */
+    document.msExitFullscreen();
+  }
+};
+
 export var FormatClassTitle = function FormatClassTitle() {
   var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   var instructorName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
