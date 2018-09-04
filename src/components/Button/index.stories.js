@@ -43,6 +43,7 @@ storiesOf('components|Button', module)
         >
           <Button>Default</Button>
         </PropExample>
+
         <PropExample
           name='secondary | tertiary'
           type='Boolean'

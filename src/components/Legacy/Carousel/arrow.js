@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-
-import Arrow from '../Icons/Arrow'
+import Arrow from '../../Icons/Arrow'
 
 const CarouselArrow = ({
   direction,
@@ -15,7 +14,6 @@ const CarouselArrow = ({
     { [className]: Boolean(className) },
     { [`mc-carousel-arrow--${direction}`]: Boolean(direction) },
   )
-
   return (
     <button
       className={classNames}

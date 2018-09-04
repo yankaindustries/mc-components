@@ -59,5 +59,9 @@ export { default as IconTwitter } from './Icons/Twitter'
 export { default as IconUnmuted } from './Icons/Unmuted'
 
 
+// LEGACY
+export { default as LegacyCarousel } from './Legacy/Carousel'
+
+
 // UTILS
 export { Helpers }
