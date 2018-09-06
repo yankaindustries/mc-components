@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+import Background from '../Background'
+
 export default class TileImage extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
-    imageUrl: PropTypes.string.isRequired,
+    image: PropTypes.node,
+    imageUrl: PropTypes.string,
   }
 
   static defaultProps = {
@@ -16,6 +19,7 @@ export default class TileImage extends PureComponent {
     const {
       className,
       children,
+      image,
       imageUrl,
     } = this.props
 
@@ -27,15 +31,18 @@ export default class TileImage extends PureComponent {
 
     return (
       <div className={classes}>
-        <div
-          className='mc-tile-image__image background'
-          style={{ backgroundImage: `url('${imageUrl}')` }}
-        />
-        {children &&
-          <div className='mc-tile__content content'>
-            {children}
-          </div>
-        }
+        <Background
+          className='mc-tile-image__image'
+          element={image || <img src={imageUrl} />}
+          fit='container'
+          size='cover'
+        >
+          {children &&
+            <div className='mc-tile-image__content'>
+              {children}
+            </div>
+          }
+        </Background>
       </div>
     )
   }

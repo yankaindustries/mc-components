@@ -72,11 +72,14 @@ storiesOf('utilities|AnimationHandler', module)
                   <TileOverlay type='gradient-bottom' />
 
                   <AnimationHandler type='lift' animating={hovering}>
-                    <TileCaption
-                      title='Shonda Rhimes'
-                      subtitle='Teaches Writing for Television'
-                      backdrop
-                    />
+                    <TileCaption>
+                      <h2 className='mc-text-h2 mc-text--uppercase'>
+                        Shonda Rhimes
+                      </h2>
+                      <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                        Teaches Writing for Television
+                      </h4>
+                    </TileCaption>
                   </AnimationHandler>
                 </Tile>
               }

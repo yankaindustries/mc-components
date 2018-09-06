@@ -16,6 +16,7 @@ export default class Background extends PureComponent {
       PropTypes.node,
     ]).isRequired,
     fit: PropTypes.oneOf([
+      'container',
       'content',
       'background',
     ]),
