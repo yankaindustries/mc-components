@@ -4,7 +4,10 @@ import PropTypes from 'prop-types'
 
 export default class TileCaption extends PureComponent {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.arrayOf(PropTypes.node),
+    ]),
     className: PropTypes.string,
     position: PropTypes.oneOf([
       'left bottom',
@@ -12,8 +15,6 @@ export default class TileCaption extends PureComponent {
       'left below',
       'center below',
     ]),
-    subtitle: PropTypes.string,
-    title: PropTypes.string,
   }
 
   static defaultProps = {
@@ -25,8 +26,6 @@ export default class TileCaption extends PureComponent {
       children,
       className,
       position,
-      subtitle,
-      title,
     } = this.props
 
     const positionClasses =
@@ -41,21 +40,8 @@ export default class TileCaption extends PureComponent {
 
     return (
       <div className={classes}>
-        <div className='mc-tile-caption__titles'>
-          {title &&
-            <h4 className='mc-tile-caption__title mc-text-h2 mc-text--uppercase'>
-              {title}
-            </h4>
-          }
-          {subtitle &&
-            <h5 className='mc-tile-caption__subtitle mc-text-h4 mc-text--muted'>
-              {subtitle}
-            </h5>
-          }
-        </div>
-
         {children &&
-          <div className='mc-tile-caption__content content'>
+          <div className='mc-tile-caption__content'>
             {children}
           </div>
         }

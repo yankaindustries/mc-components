@@ -46,10 +46,14 @@ storiesOf('components|Tiles', module)
           <div className='col-lg-4 col-md-6'>
             <DocSection title='TileCaption'>
               <Tile>
-                <TileCaption
-                  title='Shonda Rhimes'
-                  subtitle='Teaches Writing'
-                />
+                <TileCaption>
+                  <h3 className='mc-text-h4 mc-text--uppercase'>
+                    Shonda Rhimes
+                  </h3>
+                  <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                    Teaches Writing
+                  </h4>
+                </TileCaption>
                 <Placeholder />
               </Tile>
             </DocSection>
@@ -105,10 +109,14 @@ storiesOf('components|Tiles', module)
                             type='lift'
                             animating={hovering}
                           >
-                            <TileCaption
-                              title='Shonda Rhimes'
-                              subtitle='Teaches Writing'
-                            />
+                            <TileCaption>
+                              <h3 className='mc-text-h4 mc-text--uppercase'>
+                                Shonda Rhimes
+                              </h3>
+                              <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                                Teaches Writing
+                              </h4>
+                            </TileCaption>
                           </AnimationHandler>
                         </Fragment>
                       }
@@ -132,20 +140,32 @@ storiesOf('components|Tiles', module)
                         <Fragment>
                           <TileImage imageUrl={shondaRhimesThumbnail} />
                           <TileOverlay type='gradient-bottom' />
-                          <TileCaption
-                            title='Shonda Rhimes'
-                            subtitle='Teaches Writing'
-                          />
                         </Fragment>
                       }
                       {hovering &&
-                        <TileVideo
-                          videoId='5450137526001'
-                          autoPlay
-                          loop
-                          muted
-                        />
+                        <Fragment>
+                          <TileVideo
+                            videoId='5450137526001'
+                            autoPlay
+                            loop
+                            muted
+                          />
+                        </Fragment>
                       }
+
+                      <TileCaption
+                        position={hovering
+                          ? 'left below'
+                          : 'left bottom'
+                        }
+                      >
+                        <h3 className='mc-text-h4 mc-text--uppercase'>
+                          Shonda Rhimes
+                        </h3>
+                        <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                          Teaches Writing
+                        </h4>
+                      </TileCaption>
                     </Tile>
                   </AnimationHandler>
                 }
@@ -164,10 +184,10 @@ storiesOf('components|Tiles/Tile', module)
       <div className='container'>
         <h2 className='mc-text-h2'>Tile</h2>
 
-        <DocSection title='Props'>
+        <DocSection title='Variations'>
           <PropExample
             name='aspectRatio'
-            type='String[16x9]'
+            type='String'
           >
             <div className='row'>
               <div className='col-sm-4'>
@@ -175,28 +195,51 @@ storiesOf('components|Tiles/Tile', module)
                   <Placeholder>16x9</Placeholder>
                 </Tile>
               </div>
-
               <div className='col-sm-4'>
+                <Tile aspectRatio='16x9'>
+                  <Placeholder>16x9</Placeholder>
+                </Tile>
+              </div>
+              <div className='col-sm-4'>
+                <Tile aspectRatio='16x9'>
+                  <Placeholder>16x9</Placeholder>
+                </Tile>
+              </div>
+
+              <div className='col-sm-12'>
+                <Tile aspectRatio='519x187'>
+                  <Placeholder>519x187</Placeholder>
+                </Tile>
+              </div>
+
+              <div className='col-sm-2'>
                 <Tile aspectRatio='4x3'>
                   <Placeholder>4x3</Placeholder>
                 </Tile>
               </div>
-
-              <div className='col-sm-4'>
-                <Tile aspectRatio='100x65'>
-                  <Placeholder>100x65</Placeholder>
+              <div className='col-sm-2'>
+                <Tile aspectRatio='4x3'>
+                  <Placeholder>4x3</Placeholder>
                 </Tile>
               </div>
-
-              <div className='col-sm-4'>
-                <Tile aspectRatio='1000x609'>
-                  <Placeholder>1000x609</Placeholder>
+              <div className='col-sm-2'>
+                <Tile aspectRatio='4x3'>
+                  <Placeholder>4x3</Placeholder>
                 </Tile>
               </div>
-
-              <div className='col-sm-4'>
-                <Tile aspectRatio='519x187'>
-                  <Placeholder>519x187</Placeholder>
+              <div className='col-sm-2'>
+                <Tile aspectRatio='4x3'>
+                  <Placeholder>4x3</Placeholder>
+                </Tile>
+              </div>
+              <div className='col-sm-2'>
+                <Tile aspectRatio='4x3'>
+                  <Placeholder>4x3</Placeholder>
+                </Tile>
+              </div>
+              <div className='col-sm-2'>
+                <Tile aspectRatio='4x3'>
+                  <Placeholder>4x3</Placeholder>
                 </Tile>
               </div>
             </div>

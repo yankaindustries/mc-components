@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withProps } from '../../utils/addon-props'
 
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
@@ -10,7 +11,7 @@ import TileCheck from '../TileCheck'
 
 
 storiesOf('components|Tiles/TileCheck', module)
-  .add('TileCheck', () => (
+  .add('TileCheck', withProps(TileCheck)(() => (
     <div className='container'>
       <div className='container'>
         <h2 className='mc-text-h2'>TileCheck</h2>
@@ -49,4 +50,4 @@ storiesOf('components|Tiles/TileCheck', module)
         </DocSection>
       </div>
     </div>
-  ))
+  )))

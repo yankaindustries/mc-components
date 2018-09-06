@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withProps } from '../../utils/addon-props'
 
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
@@ -12,7 +13,7 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('components|Tiles/TileOverlay', module)
-  .add('TileOverlay', () => (
+  .add('TileOverlay', withProps(TileOverlay)(() => (
     <div className='container'>
       <div className='container'>
         <h2 className='mc-text-h2'>TileOverlay</h2>
@@ -34,4 +35,4 @@ storiesOf('components|Tiles/TileOverlay', module)
         </DocSection>
       </div>
     </div>
-  ))
+  )))

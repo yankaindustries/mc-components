@@ -36,7 +36,6 @@
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    box-shadow: inset 0 0 0 1px rgba($mc-light, 0.1);
     z-index: 2;
   }
 
@@ -183,7 +182,7 @@
 .mc-tile-caption {
   z-index: 2;
 
-  &__titles {
+  &__content {
     position: absolute;
     padding: 16px;
     width: 100%;
@@ -194,7 +193,7 @@
 
   // Modifiers
   &--bottom {
-    .mc-tile-caption__titles {
+    .mc-tile-caption__content {
       left: 0;
       top: 100%;
       transform: translateY(-100%);
@@ -202,7 +201,7 @@
   }
 
   &--below {
-    .mc-tile-caption__titles {
+    .mc-tile-caption__content {
       left: 0;
       top: 100%;
       transform: translateY(0);
@@ -212,7 +211,7 @@
   }
 
   &--center {
-    .mc-tile-caption__titles {
+    .mc-tile-caption__content {
       text-align: center;
     }
   }

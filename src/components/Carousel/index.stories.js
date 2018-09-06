@@ -84,10 +84,14 @@ storiesOf('components|Carousel', module)
                 <Tile key={item.id}>
                   <TileImage imageUrl={item.thumbnail} />
                   <TileOverlay />
-                  <TileCaption
-                    title={item.instructor}
-                    subtitle={`Teaches ${item.teaches}`}
-                  />
+                  <TileCaption>
+                    <h3 className='mc-text-h4 mc-text--uppercase'>
+                      {item.instructor}
+                    </h3>
+                    <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                      {`Teaches ${item.teaches}`}
+                    </h5>
+                  </TileCaption>
                 </Tile>
               </div>
             ))}
