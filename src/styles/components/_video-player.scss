@@ -245,7 +245,7 @@ $brightcove-video-sizes: (
 .bc-player__video--default {
   .vjs-progress-control .vjs-load-progress,
   .vjs-progress-control .vjs-progress-holder {
-    background-color: rgba($mc-light, 0.3);
+    background-color: rgba($mc-color-light, 0.3);
   }
 
   .vjs-progress-control .vjs-play-progress {
@@ -253,19 +253,19 @@ $brightcove-video-sizes: (
   }
 
   .vjs-load-progress div {
-    background-color: rgba($mc-light, 0.18);
+    background-color: rgba($mc-color-light, 0.18);
   }
 
   .vjs-volume-level {
-    background-color: rgba($mc-light, 0.9);
+    background-color: rgba($mc-color-light, 0.9);
   }
 
   .vjs-menu-button-popup .vjs-menu {
     .vjs-menu-item {
-      background-color: rgba($mc-dark, 0.2);
+      background-color: rgba($mc-color-dark, 0.2);
 
       &.vjs-selected {
-        color: $mc-light;
+        color: $mc-color-light;
         background-color: $default-primary-color;
 
         &:hover {
@@ -274,7 +274,7 @@ $brightcove-video-sizes: (
       }
 
       &:hover {
-        background-color: rgba($mc-dark, 0.35);
+        background-color: rgba($mc-color-dark, 0.35);
       }
     }
   }
@@ -295,11 +295,11 @@ $brightcove-video-sizes: (
   }
 
   .vjs-volume-level {
-    background-color: rgba($mc-light, 0.9);
+    background-color: rgba($mc-color-light, 0.9);
   }
 
   .vjs-load-progress div {
-    background-color: rgba($mc-light, 0.12);
+    background-color: rgba($mc-color-light, 0.12);
   }
 
   .vjs-menu-button-popup .vjs-menu {
@@ -307,7 +307,7 @@ $brightcove-video-sizes: (
       background-color: rgba($chapter-primary-color, 0.3);
 
       &.vjs-selected {
-        color: $mc-light;
+        color: $mc-color-light;
         background-color: $chapter-primary-color;
 
         &:hover {
@@ -329,7 +329,7 @@ $brightcove-video-sizes: (
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba($mc-dark, 0.7);
+  background: rgba($mc-color-dark, 0.7);
   opacity: 0;
   pointer-events: none;
   transition: 700ms ease-out;

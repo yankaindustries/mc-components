@@ -13,7 +13,7 @@
     left: 0;
     width: 100%;
     height: 1px;
-    background: $mc-light;
+    background: $mc-color-light;
 
     &:before,
     &:after {
@@ -23,7 +23,7 @@
       left: 0;
       width: 100%;
       height: 1px;
-      background: $mc-light;
+      background: $mc-color-light;
       transform-origin: center center;
       transition: top 125ms ease 125ms, transform 125ms ease 0ms;
     }

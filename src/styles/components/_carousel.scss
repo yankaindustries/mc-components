@@ -17,16 +17,16 @@ $mc-carousel-centered-padding: 100px !default;
     justify-content: center;
     width: 2em;
     height: 2em;
-    background: fade-out($mc-light, 0.7);
+    background: fade-out($mc-color-light, 0.7);
     transform: translateY(-50%);
-    color: $mc-light;
+    color: $mc-color-light;
     text-align: center;
     z-index: 5;
     cursor: pointer;
 
     &:hover {
       &:before {
-        background: fade-out($mc-light, 0.5);
+        background: fade-out($mc-color-light, 0.5);
       }
     }
 

@@ -8,8 +8,8 @@ $mc-font-default: "Lato", "Helvetica", "Arial", sans-serif !default; // Should b
 
 // If we move to a light site later
 // these variables will be easier to find
-$mc-light:                   #fff !default;
-$mc-dark:                    #000 !default;
+$mc-color-light:             #fff !default;
+$mc-color-dark:              #000 !default;
 
 // Colors
 $mc-color-primary:           #c83232 !default;
@@ -25,18 +25,23 @@ $mc-color-tertiary-hover:    #90949d !default;
 
 $mc-color-background:        #090909 !default;
 $mc-color-background-invert: #ebeeee !default;
-$mc-color-text:              $mc-light !default;
+$mc-color-text:              $mc-color-light !default;
 $mc-color-text-invert:       #8ca1c1 !default;
 
 // Not quite 50 of them, but...
-$mc-gray-100:           #333 !default;
-$mc-gray-200:           #484a4e !default;
-$mc-gray-300:           #75787f !default;
-$mc-gray-400:           #9b9b9b !default;
-$mc-gray-500:           #d8d8d8 !default;
+$mc-color-gray-100:           #272c33 !default;
+$mc-color-gray-200:           #191c21 !default;
+$mc-color-gray-300:           #31333b !default;
+$mc-color-gray-400:           #596170 !default;
+$mc-color-gray-500:           #949aa4 !default;
+$mc-color-gray-600:           #dbdde1 !default;
 
-$error-color:        rgba($mc-color-primary, 0.6) !default;
-$warning-color:      rgba($mc-color-primary, 0.6) !default;
+$mc-color-error:        rgba($mc-color-primary, 0.6) !default;
+$mc-color-warning:      rgba($mc-color-primary, 0.6) !default;
+
+// External brands
+$mc-color-facebook:     #3c5a99 !default;
+$mc-color-twitter:      #2ba2ef !default;
 
 // The yiq lightness value that determines when the
 // lightness of color changes from "dark" to "light".
@@ -79,8 +84,8 @@ $border-radius-sm: 0.3rem !default;
 
 $btn-focus-width: 0.2rem !default;
 
-$btn-box-shadow: inset 0 1px 0 rgba($mc-light, 0.15), 0 1px 1px rgba($mc-dark, 0.075) !default;
-$btn-active-box-shadow: inset 0 3px 5px rgba($mc-dark, 0.125) !default;
+$btn-box-shadow: inset 0 1px 0 rgba($mc-color-light, 0.15), 0 1px 1px rgba($mc-color-dark, 0.075) !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba($mc-color-dark, 0.125) !default;
 
 $transition-base:        all 0.2s ease-in-out !default;
 
