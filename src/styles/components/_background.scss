@@ -128,4 +128,12 @@
       max-width: 100%;
     }
   }
+
+  &--light {
+    background: $mc-light;
+  }
+
+  &--dark {
+    background: $mc-dark;
+  }
 }
