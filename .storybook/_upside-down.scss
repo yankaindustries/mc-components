@@ -171,18 +171,19 @@ hr {
 
 .example-mc-swatches {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
 }
 
 .example-mc-swatch {
   white-space: nowrap;
   margin: 10px 10px 15px;
-
-  &:first-child { margin-left: 0; }
+  flex-grow: 1;
 
   &__color {
     display: block;
-    width: 250px;
-    height: 100px;
+    width: 100%;
+    height: 50px;
     margin-bottom: 5px;
     border: 1px solid $mc-color-gray-100;
 
@@ -214,8 +215,8 @@ hr {
     &--mc-gray-500 { background-color: $mc-color-gray-500; }
     &--mc-gray-600 { background-color: $mc-color-gray-600; }
 
-    &--error-color { background-color: $mc-color-error; }
-    &--warning-color { background-color: $mc-color-warning; }
+    &--mc-color-error { background-color: $mc-color-error; }
+    &--mc-color-warning { background-color: $mc-color-warning; }
   }
 }
 
