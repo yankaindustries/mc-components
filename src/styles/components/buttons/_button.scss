@@ -11,14 +11,14 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   border-radius: 4px;
-  color: $mc-light;
+  color: $mc-color-light;
   transition: background 250ms ease;
 
   &:hover {
     background: $mc-color-primary-hover;
     // Needed to override old previously defined
     // hover color in masterclass repo
-    color: $mc-light;
+    color: $mc-color-light;
   }
 
   &:active {

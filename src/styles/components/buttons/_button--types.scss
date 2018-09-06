@@ -26,13 +26,13 @@
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 0.15rem;
-    color: rgba($mc-dark, 0.5);
+    color: rgba($mc-color-dark, 0.5);
     padding: 0;
     background-color: transparent;
 
     &:hover {
       background: none;
-      color: rgba($mc-dark, 0.8);
+      color: rgba($mc-color-dark, 0.8);
     }
   }
 
@@ -101,7 +101,7 @@
     margin: 12px;
     // Reset default mc-btn padding
     padding: 0 0 4px 0;
-    color: $mc-light;
+    color: $mc-color-light;
     transition: transform 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
     &:after {
@@ -112,7 +112,7 @@
       display: block;
       width: 0;
       height: 1px;
-      background: $mc-light;
+      background: $mc-color-light;
       transition: width 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
@@ -136,7 +136,7 @@
   &--outline,
   &--outline-invert {
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid $mc-gray-200;
+    border: 1px solid $mc-color-gray-200;
     transition:
       background 250ms ease,
       border 250ms ease;
@@ -144,7 +144,7 @@
     &:hover,
     &:active {
       background: rgba(255, 255, 255, 0.1);
-      border: 1px solid $mc-gray-300;
+      border: 1px solid $mc-color-gray-300;
     }
 
     &:focus,
@@ -155,13 +155,13 @@
 
   &--outline-invert {
     background: none;
-    border: 1px solid $mc-gray-300;
-    color: rgba($mc-dark, 0.75);
+    border: 1px solid $mc-color-gray-300;
+    color: rgba($mc-color-dark, 0.75);
 
     &:hover,
     &:active {
       background: rgba(0, 0, 0, 0.1);
-      color: $mc-dark;
+      color: $mc-color-dark;
     }
 
     &:focus,
@@ -172,14 +172,14 @@
 
   // Subtler!
   &--link-muted {
-    color: rgba($mc-light, 0.5);
+    color: rgba($mc-color-light, 0.5);
 
     &:after {
-      background: rgba($mc-light, 0.5);
+      background: rgba($mc-color-light, 0.5);
     }
 
     &:hover {
-      color: rgba($mc-light, 0.5);
+      color: rgba($mc-color-light, 0.5);
     }
   }
 }

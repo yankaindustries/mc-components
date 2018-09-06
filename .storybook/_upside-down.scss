@@ -8,11 +8,11 @@ $mc-unit: 4px;
 
 .mc-background {
   &--light {
-    background: $mc-light;
+    background: $mc-color-light;
   }
 
   &--dark {
-    background: $mc-dark;
+    background: $mc-color-dark;
   }
 }
 
@@ -84,7 +84,7 @@ pre {
 hr {
   height: 1px;
   border: none;
-  background: $mc-gray-100;
+  background: $mc-color-gray-100;
   margin: 32px 0;
 }
 
@@ -167,6 +167,70 @@ hr {
 
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.example-mc-swatches {
+  display: flex;
+}
+
+.example-mc-swatch {
+  white-space: nowrap;
+  margin: 10px 10px 15px;
+
+  &:first-child { margin-left: 0; }
+
+  &__color {
+    display: block;
+    width: 250px;
+    height: 100px;
+    margin-bottom: 5px;
+    border: 1px solid $mc-color-gray-100;
+
+    &--mc-color-light { background-color: $mc-color-light; }
+    &--mc-color-dark { background-color: $mc-color-dark; }
+
+    // Colors
+    &--mc-color-primary { background-color: $mc-color-primary; }
+    &--mc-color-primary-hover { background-color: $mc-color-primary-hover; }
+    &--mc-color-primary-active { background-color: $mc-color-primary-active; }
+
+    &--mc-color-secondary { background-color: $mc-color-secondary; }
+    &--mc-color-secondary-hover { background-color: $mc-color-secondary-hover; }
+    &--mc-color-secondary-active { background-color: $mc-color-secondary-active; }
+
+    &--mc-color-tertiary { background-color: $mc-color-tertiary; }
+    &--mc-color-tertiary-hover { background-color: $mc-color-tertiary-hover; }
+
+    &--mc-color-background { background-color: $mc-color-background; }
+    &--mc-color-background-invert { background-color: $mc-color-background-invert; }
+    &--mc-color-text { background-color: $mc-color-text; }
+    &--mc-color-text-invert { background-color: $mc-color-text-invert; }
+
+    // Not quite 50 of them, but...
+    &--mc-gray-100 { background-color: $mc-color-gray-100; }
+    &--mc-gray-200 { background-color: $mc-color-gray-200; }
+    &--mc-gray-300 { background-color: $mc-color-gray-300; }
+    &--mc-gray-400 { background-color: $mc-color-gray-400; }
+    &--mc-gray-500 { background-color: $mc-color-gray-500; }
+    &--mc-gray-600 { background-color: $mc-color-gray-600; }
+
+    &--error-color { background-color: $mc-color-error; }
+    &--warning-color { background-color: $mc-color-warning; }
+  }
+}
+
+.mc-example-breakpoints {
+  margin-top: 10px;
+}
+
+.mc-example-breakpoint {
+  border-bottom: 1px dashed $mc-color-gray-300;
+  padding: 10px 0;
+
+  span {
+    display: inline-flex;
+    width: 50%;
+  }
 }
 
 .d-inline-block {

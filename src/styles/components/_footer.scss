@@ -1,12 +1,12 @@
 .mc-site-footer {
-  background: $mc-dark;
-  border-top: 2px solid rgba($mc-light, 0.2);
+  background: $mc-color-dark;
+  border-top: 2px solid rgba($mc-color-light, 0.2);
   // margin-top: 64px; holding off for now..
   // Better to have footer overlaid than hacky fix
   padding: 1em;
   font-size: 0.95em;
   clear: both;
-  color: $mc-light;
+  color: $mc-color-light;
   text-align: center;
 
   &__copyright {
@@ -14,11 +14,11 @@
     text-align: center;
     font-size: 0.87em;
     margin-bottom: -1em;
-    color: rgba($mc-light, 0.2);
+    color: rgba($mc-color-light, 0.2);
   }
 
   &__logo-footer {
-    border-bottom: 1px solid rgba($mc-light, 0.2);
+    border-bottom: 1px solid rgba($mc-color-light, 0.2);
     padding: 1.5em 1em 2.5em;
     width: 135px;
     height: 128px;
@@ -34,7 +34,7 @@
     padding: 2em 0;
     max-width: 350px;
 
-    a { color: $mc-light; }
+    a { color: $mc-color-light; }
   }
 
   &__link {
@@ -69,7 +69,7 @@
     &__links {
       display: inline-block;
       vertical-align: middle;
-      border: 1px solid rgba($mc-light, 0.2);
+      border: 1px solid rgba($mc-color-light, 0.2);
       margin: 0 2.5em;
       padding: 0 2.5em;
       border-top: 0;

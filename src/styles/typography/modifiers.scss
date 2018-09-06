@@ -15,9 +15,9 @@
   &--airy { letter-spacing: 0.24em; }
 
   // Colors
-  &--invert { color: $mc-dark; }
-  &--twitter { color: #1da1f2; }
-  &--facebook { color: #3b5998; }
+  &--invert { color: $mc-color-dark; }
+  &--twitter { color: $mc-color-twitter; }
+  &--facebook { color: $mc-color-facebook; }
 
   // Misc
   &--monospace { font-family: monospace !important; }

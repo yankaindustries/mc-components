@@ -17,7 +17,7 @@
       top: 50%;
       width: 9999px;
       height: 1px;
-      background: $mc-gray-100;
+      background: $mc-color-gray-100;
     }
 
     &:before {
@@ -37,7 +37,7 @@
     span {
       &:before,
       &:after {
-        background: $mc-gray-400;
+        background: $mc-color-gray-400;
       }
     }
   }
