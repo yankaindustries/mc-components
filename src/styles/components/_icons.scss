@@ -3,6 +3,38 @@
   width: 16px;
   height: 16px;
 
+  @for $i from 1 through 16 {
+    &--#{$i}x {
+      font-size: $mc-unit * $i;
+    }
+  }
+
+  &--7x {
+    &.mc-icon--circled {
+      padding: $mc-unit * 2;
+    }
+  }
+
+  &--rotate-90 {
+    transform: rotate(90deg);
+  }
+
+  &--rotate-180 {
+    transform: rotate(180deg);
+  }
+
+  &--rotate-270 {
+    transform: rotate(270deg);
+  }
+
+  &--circled {
+    border: 1px solid currentColor;
+    border-radius: 100%;
+  }
+
+
+  // DEPRECATED
+
   // Sizing
   &--sm {
     width: 15px;
@@ -27,18 +59,5 @@
   // Color modification
   &--transparent {
     fill: none;
-  }
-
-  // Transforming
-  &--rotate-90 {
-    transform: rotate(90deg);
-  }
-
-  &--rotate-180 {
-    transform: rotate(180deg);
-  }
-
-  &--rotate-270 {
-    transform: rotate(270deg);
   }
 }

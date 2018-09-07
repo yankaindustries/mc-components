@@ -31,11 +31,19 @@ $mc-carousel-centered-padding: 100px !default;
     }
 
     &--right {
-      right: 16px;
+      right: $grid-gutter-width/2;
+
+      @media (min-width: $mc-bp-xl) {
+        right: $grid-gutter-xl-width/2;
+      }
     }
 
     &--left {
-      left: 16px;
+      left: $grid-gutter-width/2;
+
+      @media (min-width: $mc-bp-xl) {
+        left: $grid-gutter-xl-width/2;
+      }
     }
   }
 
@@ -56,7 +64,7 @@ $mc-carousel-centered-padding: 100px !default;
       height: 100%;
       z-index: 1;
 
-      // pointer-events: none;
+      pointer-events: none;
     }
 
     &:before {

@@ -138,6 +138,7 @@
 }
 
 .mc-tile-overlay {
+  transform: scale(1.01);
   z-index: 2;
 
   &--gradient-bottom {

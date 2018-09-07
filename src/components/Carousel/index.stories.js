@@ -233,14 +233,14 @@ storiesOf('components|Carousel', module)
                           <div className='mc-hero__content'>
                             <div className='row row--fill align-items-center'>
                               <div className='col-xl-5 col-md-8 col-lg-6'>
-                                <h2 className='mc-text-d1 mc-text--uppercase mc-text-center mc-text-md-left mc-text--nowrap'>
+                                <h2 className='mc-text-d1 mc-text--uppercase mc-text--center mc-text-md--left mc-text--nowrap'>
                                   {item.instructor}
                                 </h2>
-                                <h3 className='mc-text-h3 mc-text--muted mc-text-center mc-text-md-left mc-text--nowrap'>
+                                <h3 className='mc-text-h3 mc-text--muted mc-text--center mc-text-md--left mc-text--nowrap'>
                                   Teaches {item.teaches}
                                 </h3>
                                 <br />
-                                <p className='mc-text-intro mc-text-center mc-text-md-left'>
+                                <p className='mc-text-intro mc-text--center mc-text-md--left'>
                                   Online classes taught by the world&apos;s
                                   greatest minds.<br /> Learn from
                                   {item.instructor} and all 35+ other
