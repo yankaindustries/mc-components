@@ -25,8 +25,18 @@ storiesOf('components|Forms/Checkbox', module)
               aria-labelledby='agrees-to-terms-label'
             >
             </span>
-            <input type='checkbox' id='agrees-to-terms' className='mc-input-checkbox__realbox' />
-            <label className='mc-input-checkbox__label' id='agrees-to-terms-label' htmlFor='agrees-to-terms'>I agree to the terms</label>
+            <input
+              type='checkbox'
+              id='agrees-to-terms'
+              className='mc-input-checkbox__realbox'
+            />
+            <label
+              className='mc-input-checkbox__label'
+              id='agrees-to-terms-label'
+              htmlFor='agrees-to-terms'
+            >
+              I agree to the terms
+            </label>
           </p>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox</p>
         </div>
@@ -46,9 +56,79 @@ storiesOf('components|Forms/Checkbox', module)
               aria-labelledby='checks-things-twice-label'
             >
             </span>
-            <input type='checkbox' id='checks-things-twice' className='mc-input-checkbox__realbox' checked='checked' />
-            <label className='mc-input-checkbox__label' id='checks-things-twice-label' htmlFor='checks-things-twice'>I like checking things twice</label>
+            <input
+              type='checkbox'
+              id='checks-things-twice'
+              className='mc-input-checkbox__realbox'
+              checked='checked'
+            />
+            <label
+              className='mc-input-checkbox__label'
+              id='checks-things-twice-label'
+              htmlFor='checks-things-twice'
+            >
+              I like checking things twice
+            </label>
           </p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
+        </div>
+
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Inverted checkbox - Default</h5>
+          <div className='rounded-box'>
+            <p className='mc-input-checkbox mc-input-checkbox--invert'>
+              <span
+                className='mc-input-checkbox__fauxbox'
+                role='checkbox'
+                aria-checked='false'
+                tabIndex='0'
+                aria-labelledby='scss-once-label'
+              >
+              </span>
+              <input
+                type='checkbox'
+                id='scss-once'
+                className='mc-input-checkbox__realbox'
+              />
+              <label
+                className='mc-input-checkbox__label'
+                id='scss-once-label'
+                htmlFor='scss-once'
+              >
+                Check twice, SCSS once
+              </label>
+            </p>
+          </div>
+          <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
+        </div>
+
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Inverted checkbox - Checked</h5>
+          <div className='rounded-box'>
+            <p className='mc-input-checkbox mc-input-checkbox--checked mc-input-checkbox--invert'>
+              <span
+                className='mc-input-checkbox__fauxbox'
+                role='checkbox'
+                aria-checked='true'
+                tabIndex='0'
+                aria-labelledby='just-agree-label'
+              >
+              </span>
+              <input
+                type='checkbox'
+                id='just-agree'
+                className='mc-input-checkbox__realbox'
+                checked='checked'
+              />
+              <label
+                className='mc-input-checkbox__label'
+                id='just-agree-label'
+                htmlFor='just-agree'
+              >
+                I agree
+              </label>
+            </p>
+          </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
       </div>

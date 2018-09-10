@@ -93,4 +93,36 @@
       }
     }
   }
+
+
+  // Inverted colors
+  &--invert {
+    .mc-input-checkbox {
+      &__fauxbox {
+        background: rgba($mc-color-tertiary, 0.2);
+      }
+
+      &__label {
+        color: $mc-color-dark;
+      }
+    }
+
+    // Inverted and checked
+    &.mc-input-checkbox--checked {
+      .mc-input-checkbox__fauxbox {
+        background: $mc-color-primary;
+      }
+    }
+
+    // Inverted hover state
+    &:hover,
+    &--hover {
+      .mc-input-checkbox {
+        &__fauxbox {
+          background: rgba($mc-color-gray-400, 0.4);
+        }
+      }
+    }
+
+  }
 }
