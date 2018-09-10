@@ -16,12 +16,11 @@ storiesOf('components|Forms/Checkbox', module)
             - aria-labelledby is set to the ID of the label
             - htmlFor on the label is set to the id of the input
           */}
-          <p className='mc-input-checkbox'>
+          <div className='mc-input-checkbox'>
             <span
               className='mc-input-checkbox__fauxbox'
               role='checkbox'
               aria-checked='false'
-              tabIndex='0'
               aria-labelledby='agrees-to-terms-label'
             >
             </span>
@@ -37,13 +36,13 @@ storiesOf('components|Forms/Checkbox', module)
             >
               I agree to the terms
             </label>
-          </p>
+          </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox</p>
         </div>
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Checked State</h5>
-          <p className='mc-input-checkbox mc-input-checkbox--checked'>
+          <div className='mc-input-checkbox mc-input-checkbox--checked'>
             {/*
               - aria-checked is set to 'true'
               - parent class of mc-input-checkbox--checked is added
@@ -52,7 +51,6 @@ storiesOf('components|Forms/Checkbox', module)
               className='mc-input-checkbox__fauxbox'
               role='checkbox'
               aria-checked='true'
-              tabIndex='0'
               aria-labelledby='checks-things-twice-label'
             >
             </span>
@@ -69,19 +67,18 @@ storiesOf('components|Forms/Checkbox', module)
             >
               I like checking things twice
             </label>
-          </p>
+          </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Inverted checkbox - Default</h5>
           <div className='rounded-box'>
-            <p className='mc-input-checkbox mc-input-checkbox--invert'>
+            <div className='mc-input-checkbox mc-input-checkbox--invert'>
               <span
                 className='mc-input-checkbox__fauxbox'
                 role='checkbox'
                 aria-checked='false'
-                tabIndex='0'
                 aria-labelledby='scss-once-label'
               >
               </span>
@@ -97,7 +94,7 @@ storiesOf('components|Forms/Checkbox', module)
               >
                 Check twice, SCSS once
               </label>
-            </p>
+            </div>
           </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
@@ -105,12 +102,11 @@ storiesOf('components|Forms/Checkbox', module)
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Inverted checkbox - Checked</h5>
           <div className='rounded-box'>
-            <p className='mc-input-checkbox mc-input-checkbox--checked mc-input-checkbox--invert'>
+            <div className='mc-input-checkbox mc-input-checkbox--checked mc-input-checkbox--invert'>
               <span
                 className='mc-input-checkbox__fauxbox'
                 role='checkbox'
                 aria-checked='true'
-                tabIndex='0'
                 aria-labelledby='just-agree-label'
               >
               </span>
@@ -127,7 +123,7 @@ storiesOf('components|Forms/Checkbox', module)
               >
                 I agree
               </label>
-            </p>
+            </div>
           </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
