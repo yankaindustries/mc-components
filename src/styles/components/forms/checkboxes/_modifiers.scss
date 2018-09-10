@@ -1,0 +1,34 @@
+// Inverted colors
+.mc-input-checkbox--invert {
+  .mc-input-checkbox {
+    &__fauxbox {
+      background: rgba($mc-color-tertiary, 0.2);
+    }
+
+    &__label {
+      color: $mc-color-dark;
+    }
+  }
+
+  // Inverted hover state
+  &.mc-input-checkbox:hover,
+  &.mc-input-checkbox--hover {
+    .mc-input-checkbox__fauxbox {
+      background: rgba($mc-color-gray-400, 0.4);
+    }
+  }
+
+  // Inverted and checked
+  &.mc-input-checkbox--checked {
+    .mc-input-checkbox__fauxbox {
+      background: $mc-color-primary;
+    }
+
+    &:hover,
+    &--hover {
+      .mc-input-checkbox__fauxbox {
+        background: $mc-color-primary-hover;
+      }
+    }
+  }
+}
