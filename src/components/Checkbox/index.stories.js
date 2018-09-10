@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react'
 
 import Checkbox from '../Checkbox'
 
-
 storiesOf('components|Forms/Checkbox', module)
   .add('default', () => (
     <div className='example-mc-type'>
