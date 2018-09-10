@@ -1,0 +1,56 @@
+.mc-input-radio {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 40px;
+  cursor: pointer;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    // Need to figure out prefixing
+    // -webkit-appearance: none;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    background: $mc-color-gray-300;
+    cursor: pointer;
+
+    // "Selected" dot
+    &:after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background: $mc-color-light;
+      transform: scale(0.5);
+      opacity: 0;
+      transition:
+        opacity 250ms ease,
+        transform 250ms ease;
+    }
+
+    // Reset
+    &:checked,
+    &:active {
+      outline: none;
+    }
+
+    // Selected
+    &:checked {
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding-left: 16px;
+    cursor: pointer;
+  }
+}

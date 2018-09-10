@@ -1,0 +1,15 @@
+.mc-input-radio--invert {
+  .mc-input-radio {
+    &__button {
+      background: rgba($mc-color-tertiary, 0.2);
+
+      &:after {
+        background: $mc-color-dark;
+      }
+    }
+
+    &__label {
+      color: $mc-color-dark;
+    }
+  }
+}
