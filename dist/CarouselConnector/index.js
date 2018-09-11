@@ -9,43 +9,66 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-var TileOverlay = function (_PureComponent) {
-  _inherits(TileOverlay, _PureComponent);
+import { renderChildren } from '../helpers';
 
-  function TileOverlay() {
-    _classCallCheck(this, TileOverlay);
+var CarouselConnector = function (_PureComponent) {
+  _inherits(CarouselConnector, _PureComponent);
 
-    return _possibleConstructorReturn(this, (TileOverlay.__proto__ || Object.getPrototypeOf(TileOverlay)).apply(this, arguments));
+  function CarouselConnector() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, CarouselConnector);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CarouselConnector.__proto__ || Object.getPrototypeOf(CarouselConnector)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      hero: null,
+      thumbs: null
+    }, _this.ref = function (name) {
+      return function (slider) {
+        _this[name] = slider;
+      };
+    }, _this.asNavFor = function (sibling) {
+      return _this.state[sibling];
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(TileOverlay, [{
+  _createClass(CarouselConnector, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setState({
+        hero: this.hero,
+        thumbs: this.thumbs
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
           children = _props.children,
-          className = _props.className,
-          type = _props.type;
+          className = _props.className;
 
-
-      var classes = ['mc-tile__component', 'mc-tile-overlay', 'mc-tile-overlay--' + type, className || ''].join(' ');
 
       return React.createElement(
         'div',
-        { className: classes },
-        children
+        { className: className },
+        renderChildren(children, {
+          sliderRef: this.ref,
+          asNavFor: this.asNavFor
+        })
       );
     }
   }]);
 
-  return TileOverlay;
+  return CarouselConnector;
 }(PureComponent);
 
-TileOverlay.propTypes = {
-  children: PropTypes.element,
-  className: PropTypes.string,
-  type: PropTypes.oneOf(['gradient-bottom', 'offset-spotlight', 'spotlight'])
+CarouselConnector.propTypes = {
+  children: PropTypes.func,
+  className: PropTypes.string
 };
-TileOverlay.defaultProps = {
-  type: 'gradient-bottom'
-};
-export default TileOverlay;
+export default CarouselConnector;

@@ -24,10 +24,11 @@ var Tile = function (_PureComponent) {
       var _props = this.props,
           aspectRatio = _props.aspectRatio,
           children = _props.children,
-          className = _props.className;
+          className = _props.className,
+          naked = _props.naked;
 
 
-      var classes = ['mc-tile', 'mc-tile--' + aspectRatio, className || ''].join(' ');
+      var classes = ['mc-tile', 'mc-tile--' + aspectRatio, naked ? 'mc-tile--naked' : '', className || ''].join(' ');
 
       return React.createElement(
         'div',
@@ -45,11 +46,16 @@ var Tile = function (_PureComponent) {
 }(PureComponent);
 
 Tile.propTypes = {
-  aspectRatio: PropTypes.oneOf(['1x1', '4x3', '16x9', '100x65', '1000x609', '519x187']),
+  aspectRatio: PropTypes.oneOf(['1x1', '4x3', '16x9', '3x4', '519x187',
+
+  // DEPRECATE
+  '100x65', '1000x609']),
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
+  naked: PropTypes.bool
 };
 Tile.defaultProps = {
-  aspectRatio: '16x9'
+  aspectRatio: '16x9',
+  naked: false
 };
 export default Tile;

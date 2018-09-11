@@ -3,8 +3,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-
-import Arrow from '../Icons/Arrow';
+import Arrow from '../../Icons/Arrow';
 
 var CarouselArrow = function CarouselArrow(_ref) {
   var direction = _ref.direction,
@@ -13,7 +12,6 @@ var CarouselArrow = function CarouselArrow(_ref) {
       isHidden = _ref.isHidden;
 
   var classNames = cn('mc-carousel-arrow', _defineProperty({}, className, Boolean(className)), _defineProperty({}, 'mc-carousel-arrow--' + direction, Boolean(direction)));
-
   return React.createElement(
     'button',
     {

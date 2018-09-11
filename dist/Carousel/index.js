@@ -2,7 +2,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -10,115 +10,189 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import React, { Component } from 'react';
+import React, { Children, Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import Slider from 'react-slick';
-import ImageTile from '../ImageTile';
-import PlayButton from '../PlayButton';
-import CarouselArrow from './arrow';
 
-var defaultSettings = {
-  dots: false,
-  infinite: false,
-  autoplay: false,
-  variableWidth: true,
-  rows: 1,
-  arrows: false
+import ChevronLeft from '../Icons/ChevronLeft';
+import ChevronRight from '../Icons/ChevronRight';
+
+var TRANSITION_FADE = 'fade';
+var TRANSITION_SLIDE = 'slide';
+var CENTERED_PADDING = '200px';
+
+var Arrow = function (_PureComponent) {
+  _inherits(Arrow, _PureComponent);
+
+  function Arrow() {
+    _classCallCheck(this, Arrow);
+
+    return _possibleConstructorReturn(this, (Arrow.__proto__ || Object.getPrototypeOf(Arrow)).apply(this, arguments));
+  }
+
+  _createClass(Arrow, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          direction = _props.direction,
+          onClick = _props.onClick;
+
+
+      var classes = [className, 'mc-carousel__arrow', 'mc-carousel__arrow--' + direction].join(' ');
+
+      return React.createElement(
+        'a',
+        {
+          className: classes,
+          onClick: onClick
+        },
+        children
+      );
+    }
+  }]);
+
+  return Arrow;
+}(PureComponent);
+
+Arrow.propTypes = {
+  children: PropTypes.element,
+  className: PropTypes.string,
+  direction: PropTypes.oneOf(['left', 'right']).isRequired,
+  onClick: PropTypes.func
 };
 
-var Carousel = function (_Component) {
-  _inherits(Carousel, _Component);
+var Slide = function (_PureComponent2) {
+  _inherits(Slide, _PureComponent2);
+
+  function Slide() {
+    _classCallCheck(this, Slide);
+
+    return _possibleConstructorReturn(this, (Slide.__proto__ || Object.getPrototypeOf(Slide)).apply(this, arguments));
+  }
+
+  _createClass(Slide, [{
+    key: 'render',
+    value: function render() {
+      var children = this.props.children;
+
+
+      return React.createElement(
+        Fragment,
+        null,
+        children
+      );
+    }
+  }]);
+
+  return Slide;
+}(PureComponent);
+
+Slide.propTypes = {
+  children: PropTypes.element
+};
+
+var Carousel = function (_PureComponent3) {
+  _inherits(Carousel, _PureComponent3);
 
   function Carousel() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     _classCallCheck(this, Carousel);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call.apply(_ref, [this].concat(args))), _this), _this.handleNext = function () {
-      _this.slider.current.slickNext();
-    }, _this.handlePrevious = function () {
-      _this.slider.current.slickPrev();
-    }, _this.slideTo = function (index) {
-      _this.slider.current.slickGoTo(index);
-    }, _this.slider = React.createRef(), _this.renderSlide = function (item) {
-      return React.createElement(
-        ImageTile,
-        {
-          className: 'mc-carousel__slide',
-          imageUrl: item.image,
-          key: item.id,
-          width: _this.props.slideWidth,
-          backgroundGradient: _this.props.hasSlideGradient
-        },
-        React.createElement(PlayButton, { className: 'mc-carousel__slide__play' })
-      );
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    return _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).apply(this, arguments));
   }
 
   _createClass(Carousel, [{
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          hasArrows = _props.hasArrows,
-          settings = _props.settings,
-          className = _props.className,
-          slidesDataSource = _props.slidesDataSource;
+      var _props2 = this.props,
+          autoPlay = _props2.autoPlay,
+          children = _props2.children,
+          className = _props2.className,
+          centered = _props2.centered,
+          controls = _props2.controls,
+          fadeEdges = _props2.fadeEdges,
+          loop = _props2.loop,
+          sliderRef = _props2.sliderRef,
+          scrollCount = _props2.scrollCount,
+          showCount = _props2.showCount,
+          transition = _props2.transition,
+          restProps = _objectWithoutProperties(_props2, ['autoPlay', 'children', 'className', 'centered', 'controls', 'fadeEdges', 'loop', 'sliderRef', 'scrollCount', 'showCount', 'transition']);
 
+      var classes = [className, 'mc-carousel', 'mc-carousel--' + transition, centered ? 'mc-carousel--centered' : '', fadeEdges ? 'mc-carousel--fade-edges' : ''].join(' ');
 
-      var carouselSettings = _extends({}, defaultSettings, settings);
-
-      var classNames = cn('mc-carousel', _defineProperty({}, className, Boolean(className)));
-
-      var renderSlide = this.props.renderSlide || this.renderSlide;
+      var arrows = controls ? {
+        arrows: true,
+        prevArrow: React.createElement(
+          Arrow,
+          { direction: 'left' },
+          React.createElement(ChevronLeft, null)
+        ),
+        nextArrow: React.createElement(
+          Arrow,
+          { direction: 'right' },
+          React.createElement(ChevronRight, null)
+        )
+      } : {
+        arrows: false
+      };
 
       return React.createElement(
         'div',
-        { className: classNames },
-        hasArrows && React.createElement(CarouselArrow, {
-          className: 'mc-carousel__arrow mc-carousel__arrow--left',
-          onClick: this.handlePrevious,
-          direction: 'left'
-        }),
+        { className: 'mc-carousel__container' },
         React.createElement(
           Slider,
-          _extends({}, carouselSettings, {
-            ref: this.slider
-          }),
-          this.props.children || slidesDataSource.map(renderSlide)
-        ),
-        hasArrows && React.createElement(CarouselArrow, {
-          className: 'mc-carousel__arrow mc-carousel__arrow--right',
-          onClick: this.handleNext,
-          direction: 'right'
-        })
+          _extends({
+            autoplay: autoPlay,
+            className: classes,
+            centerMode: centered || fadeEdges,
+            centerPadding: fadeEdges ? CENTERED_PADDING : 0,
+            fade: transition === TRANSITION_FADE,
+            ref: sliderRef,
+            slidesToScroll: scrollCount,
+            slidesToShow: showCount,
+            infinite: loop
+          }, arrows, restProps),
+          Children.map(children, function (child) {
+            return React.createElement(
+              Slide,
+              null,
+              child
+            );
+          })
+        )
       );
     }
   }]);
 
   return Carousel;
-}(Component);
+}(PureComponent);
 
-Carousel.Arrow = CarouselArrow;
 Carousel.propTypes = {
-  slidesDataSource: PropTypes.arrayOf(PropTypes.shape({})),
-  children: PropTypes.element,
-  onSlideClick: PropTypes.func,
-  settings: PropTypes.shape({}),
+  autoPlay: PropTypes.bool,
+  centered: PropTypes.bool,
+  children: PropTypes.node,
   className: PropTypes.string,
-  slideWidth: PropTypes.number,
-  hasSlideGradient: PropTypes.bool,
-  hasFaders: PropTypes.bool,
-  hasArrows: PropTypes.bool,
-  renderSlide: PropTypes.func
+  controls: PropTypes.bool,
+  fadeEdges: PropTypes.bool,
+  focusOnSelect: PropTypes.bool,
+  sliderRef: PropTypes.func,
+  loop: PropTypes.bool,
+  scrollCount: PropTypes.number,
+  showCount: PropTypes.number,
+  transition: PropTypes.string,
+  variableWidth: PropTypes.bool
 };
 Carousel.defaultProps = {
-  hasArrows: true
+  autoPlay: false,
+  centered: false,
+  controls: false,
+  fadeEdges: false,
+  focusOnSelect: false,
+  loop: false,
+  scrollCount: 1,
+  showCount: 3,
+  transition: TRANSITION_SLIDE,
+  variableWidth: false
 };
 export default Carousel;

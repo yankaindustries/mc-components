@@ -9,6 +9,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+import Background from '../Background';
+
 var TileImage = function (_PureComponent) {
   _inherits(TileImage, _PureComponent);
 
@@ -24,6 +26,7 @@ var TileImage = function (_PureComponent) {
       var _props = this.props,
           className = _props.className,
           children = _props.children,
+          image = _props.image,
           imageUrl = _props.imageUrl;
 
 
@@ -32,14 +35,19 @@ var TileImage = function (_PureComponent) {
       return React.createElement(
         'div',
         { className: classes },
-        React.createElement('div', {
-          className: 'mc-tile-image__image background',
-          style: { backgroundImage: 'url(\'' + imageUrl + '\')' }
-        }),
-        children && React.createElement(
-          'div',
-          { className: 'mc-tile__content content' },
-          children
+        React.createElement(
+          Background,
+          {
+            className: 'mc-tile-image__image',
+            element: image || React.createElement('img', { src: imageUrl }),
+            fit: 'container',
+            size: 'cover'
+          },
+          children && React.createElement(
+            'div',
+            { className: 'mc-tile-image__content' },
+            children
+          )
         )
       );
     }
@@ -51,7 +59,8 @@ var TileImage = function (_PureComponent) {
 TileImage.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  imageUrl: PropTypes.string.isRequired
+  image: PropTypes.node,
+  imageUrl: PropTypes.string
 };
 TileImage.defaultProps = {
   className: ''
