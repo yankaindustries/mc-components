@@ -8,9 +8,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    appearance: none;
-    // Need to figure out prefixing
-    // -webkit-appearance: none;
     border-radius: 20px;
     width: 20px;
     height: 20px;
@@ -30,20 +27,6 @@
       transition:
         opacity 250ms ease,
         transform 250ms ease;
-    }
-
-    // Reset
-    &:checked,
-    &:active {
-      outline: none;
-    }
-
-    // Selected
-    &:checked {
-      &:after {
-        opacity: 1;
-        transform: scale(1);
-      }
     }
   }
 
