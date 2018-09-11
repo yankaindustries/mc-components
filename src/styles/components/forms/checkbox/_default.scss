@@ -9,6 +9,7 @@
     width: 20px;
     height: 20px;
     border-radius: 4px;
+    margin-right: 16px;
     padding: 5px;
     transition: background 250ms ease;
 
@@ -53,7 +54,6 @@
   &__label {
     font-weight: 600;
     letter-spacing: 0.5px;
-    padding-left: 16px;
     cursor: pointer; // override browser "default" cursor
   }
 }
