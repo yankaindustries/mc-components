@@ -1,6 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
+import Checkbox from '../Checkbox'
+
+
 storiesOf('components|Forms/Checkbox', module)
   .add('default', () => (
     <div className='example-mc-type'>
@@ -16,85 +19,36 @@ storiesOf('components|Forms/Checkbox', module)
             - aria-labelledby is set to the ID of the label
             - htmlFor on the label is set to the id of the input
           */}
-          <div className='mc-input-checkbox'>
-            <span
-              className='mc-input-checkbox__fauxbox'
-              role='checkbox'
-              aria-checked='false'
-              aria-labelledby='agrees-to-terms-label'
-            >
-            </span>
-            <input
-              type='checkbox'
-              id='agrees-to-terms'
-              className='mc-input-checkbox__realbox'
-            />
-            <label
-              className='mc-input-checkbox__label'
-              id='agrees-to-terms-label'
-              htmlFor='agrees-to-terms'
-            >
-              I agree to the terms
-            </label>
-          </div>
+          <Checkbox
+            onChange={console.log}
+            value={false}
+          >
+            I agree to the terms
+          </Checkbox>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox</p>
         </div>
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Checked State</h5>
-          <div className='mc-input-checkbox mc-input-checkbox--checked'>
-            {/*
-              - aria-checked is set to 'true'
-              - parent class of mc-input-checkbox--checked is added
-            */}
-            <span
-              className='mc-input-checkbox__fauxbox'
-              role='checkbox'
-              aria-checked='true'
-              aria-labelledby='checks-things-twice-label'
-            >
-            </span>
-            <input
-              type='checkbox'
-              id='checks-things-twice'
-              className='mc-input-checkbox__realbox'
-              checked='checked'
-            />
-            <label
-              className='mc-input-checkbox__label'
-              id='checks-things-twice-label'
-              htmlFor='checks-things-twice'
-            >
-              I like checking things twice
-            </label>
-          </div>
+          <Checkbox
+            onChange={console.log}
+            value={true}
+          >
+            I like checking things twice
+          </Checkbox>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Inverted checkbox - Default</h5>
           <div className='rounded-box'>
-            <div className='mc-input-checkbox mc-input-checkbox--invert'>
-              <span
-                className='mc-input-checkbox__fauxbox'
-                role='checkbox'
-                aria-checked='false'
-                aria-labelledby='scss-once-label'
-              >
-              </span>
-              <input
-                type='checkbox'
-                id='scss-once'
-                className='mc-input-checkbox__realbox'
-              />
-              <label
-                className='mc-input-checkbox__label'
-                id='scss-once-label'
-                htmlFor='scss-once'
-              >
-                Check twice, SCSS once
-              </label>
-            </div>
+            <Checkbox
+              onChange={console.log}
+              value={false}
+              inverted
+            >
+              I like checking things twice
+            </Checkbox>
           </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
@@ -102,28 +56,13 @@ storiesOf('components|Forms/Checkbox', module)
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Inverted checkbox - Checked</h5>
           <div className='rounded-box'>
-            <div className='mc-input-checkbox mc-input-checkbox--checked mc-input-checkbox--invert'>
-              <span
-                className='mc-input-checkbox__fauxbox'
-                role='checkbox'
-                aria-checked='true'
-                aria-labelledby='just-agree-label'
-              >
-              </span>
-              <input
-                type='checkbox'
-                id='just-agree'
-                className='mc-input-checkbox__realbox'
-                checked='checked'
-              />
-              <label
-                className='mc-input-checkbox__label'
-                id='just-agree-label'
-                htmlFor='just-agree'
-              >
-                I agree
-              </label>
-            </div>
+            <Checkbox
+              onChange={console.log}
+              value={true}
+              inverted
+            >
+              I like checking things twice
+            </Checkbox>
           </div>
           <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
