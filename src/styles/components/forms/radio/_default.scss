@@ -13,6 +13,7 @@
     height: 20px;
     background: $mc-color-gray-300;
     cursor: pointer;
+    margin-right: 16px;
 
     // "Selected" dot
     &:after {
@@ -33,7 +34,6 @@
   &__label {
     font-weight: 600;
     letter-spacing: 0.5px;
-    padding-left: 16px;
     cursor: pointer;
   }
 }
