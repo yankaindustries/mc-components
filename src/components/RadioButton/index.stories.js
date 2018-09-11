@@ -12,8 +12,8 @@ storiesOf('components|Forms/RadioButton', module)
       <div className='container'>
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Default</h5>
-          <div className='mc-input-radio'>
-            <input type='radio'
+          <div className='mc-input-radio mc-input-radio--checked'>
+            <span
               className='mc-input-radio__button'
               id='option-red'
               name='favorite-color'
@@ -27,7 +27,7 @@ storiesOf('components|Forms/RadioButton', module)
           </div>
 
           <div className='mc-input-radio'>
-            <input type='radio'
+            <span
               className='mc-input-radio__button'
               id='option-blue'
               name='favorite-color'
@@ -41,7 +41,7 @@ storiesOf('components|Forms/RadioButton', module)
           </div>
 
           <div className='mc-input-radio'>
-            <input type='radio'
+            <span
               className='mc-input-radio__button'
               id='option-green'
               name='favorite-color'
@@ -60,7 +60,7 @@ storiesOf('components|Forms/RadioButton', module)
           <h5 className='mc-text-h5'>Inverted checkbox - Default</h5>
           <div className='rounded-box'>
             <div className='mc-input-radio mc-input-radio--invert'>
-              <input type='radio'
+              <span
                 className='mc-input-radio__button'
                 id='option-banana'
                 name='favorite-fruit'
@@ -74,7 +74,7 @@ storiesOf('components|Forms/RadioButton', module)
             </div>
 
             <div className='mc-input-radio mc-input-radio--invert'>
-              <input type='radio'
+              <span
                 className='mc-input-radio__button'
                 id='option-banana2'
                 name='favorite-fruit'
@@ -88,7 +88,7 @@ storiesOf('components|Forms/RadioButton', module)
             </div>
 
             <div className='mc-input-radio mc-input-radio--invert'>
-              <input type='radio'
+              <span
                 className='mc-input-radio__button'
                 id='option-banana3'
                 name='favorite-fruit'
@@ -102,7 +102,7 @@ storiesOf('components|Forms/RadioButton', module)
             </div>
 
             <div className='mc-input-radio mc-input-radio--invert'>
-              <input type='radio'
+              <span
                 className='mc-input-radio__button'
                 id='option-orange'
                 name='favorite-fruit'
