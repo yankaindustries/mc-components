@@ -1,0 +1,11 @@
+.mc-input-radio {
+  // Selected
+  &--checked {
+    .mc-input-radio__button {
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
