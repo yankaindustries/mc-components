@@ -175,7 +175,7 @@ storiesOf('foundation|Variables', module)
             </li>
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
-                <span className='mc-text--muted'>$grid-gutter-xl-width:</span>
+                <span className='mc-text--muted'>$grid-gutter-width-xl:</span>
                 <span className='mc-text--bold'>32px</span>
               </p>
             </li>
