@@ -34,7 +34,7 @@ $mc-carousel-centered-padding: 100px !default;
       right: $grid-gutter-width/2;
 
       @media (min-width: $mc-bp-xl) {
-        right: $grid-gutter-xl-width/2;
+        right: $grid-gutter-width-xl/2;
       }
     }
 
@@ -42,7 +42,7 @@ $mc-carousel-centered-padding: 100px !default;
       left: $grid-gutter-width/2;
 
       @media (min-width: $mc-bp-xl) {
-        left: $grid-gutter-xl-width/2;
+        left: $grid-gutter-width-xl/2;
       }
     }
   }

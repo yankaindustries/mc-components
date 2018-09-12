@@ -25,7 +25,7 @@
 }
 
 .mc-card {
-  padding: $grid-gutter-xl-width / 2;
+  padding: $grid-gutter-width-xl / 2;
   border-radius: 3px;
 
   &--equal-height {
@@ -33,8 +33,8 @@
   }
 
   &__image {
-    margin: 0 $grid-gutter-xl-width / -2;
-    width: calc(100% + #{$grid-gutter-xl-width});
+    margin: 0 $grid-gutter-width-xl / -2;
+    width: calc(100% + #{$grid-gutter-width-xl});
   }
 }
 
