@@ -170,43 +170,43 @@ storiesOf('foundation|Variables', module)
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$grid-gutter-width:</span>
-                <span className='mc-text--bold'>16px</span>
+                <span className='mc-text--bold mc-gutter-value'></span>
               </p>
             </li>
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$grid-gutter-width-xl:</span>
-                <span className='mc-text--bold'>32px</span>
+                <span className='mc-text--bold mc-gutter-value--xl'></span>
               </p>
             </li>
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$mc-bp-xs:</span>
-                <span className='mc-text--bold'>0</span>
+                <span className='mc-text--bold mc-bp-value--xs'></span>
               </p>
             </li>
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$mc-bp-sm:</span>
-                <span className='mc-text--bold'>576px</span>
+                <span className='mc-text--bold mc-bp-value--sm'></span>
               </p>
             </li>
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$mc-bp-md:</span>
-                <span className='mc-text--bold'>768px</span>
+                <span className='mc-text--bold mc-bp-value--md'></span>
               </p>
             </li>
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$mc-bp-lg:</span>
-                <span className='mc-text--bold'>960px</span>
+                <span className='mc-text--bold mc-bp-value--lg'></span>
               </p>
             </li>
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$mc-bp-xl:</span>
-                <span className='mc-text--bold'>1200px</span>
+                <span className='mc-text--bold mc-bp-value--xl'></span>
               </p>
             </li>
           </ul>
