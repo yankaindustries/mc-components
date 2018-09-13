@@ -200,7 +200,7 @@ storiesOf('foundation|Variables', module)
             <li className='mc-example-breakpoint'>
               <p className='mc-text--monospace'>
                 <span className='mc-text--muted'>$mc-bp-lg:</span>
-                <span className='mc-text--bold'>992px</span>
+                <span className='mc-text--bold'>960px</span>
               </p>
             </li>
             <li className='mc-example-breakpoint'>
