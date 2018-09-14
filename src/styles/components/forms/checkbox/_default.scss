@@ -1,11 +1,12 @@
 .mc-input-checkbox {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  color: $mc-color-dark;
   cursor: pointer;
 
   &__fauxbox {
     position: relative;
-    background: $mc-color-gray-300;
+    background: rgba($mc-color-tertiary, 0.2);
     width: 20px;
     height: 20px;
     border-radius: 4px;

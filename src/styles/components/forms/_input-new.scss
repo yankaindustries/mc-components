@@ -1,0 +1,65 @@
+// Once a form has any characters entered, it
+// needs a class added of .mc-form__input--modified
+
+// If the user removes / deletes their input, the modified
+// class is removed.
+
+// This class helps manage the positioning
+// for labels and input padding.
+
+.mc-form {
+  // Just so I can better see how the input looks.
+  &--temporary { margin: 50px; }
+
+  &__element {
+    position: relative;
+  }
+
+  &__input {
+    font-family: $mc-font-default;
+    border: 1px solid $mc-color-gray-200;
+    background: none;
+    border-radius: 4px;
+    color: $mc-color-light;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    padding: 15px 12px;
+    transition: border 250ms ease;
+    width: 100%;
+    outline: 0;
+
+    &::placeholder {
+      color: $mc-color-gray-400;
+      opacity: 0;
+      transition: opacity 250ms ease;
+    }
+
+    // When focused OR modified by user
+    &:focus,
+    &--modified {
+      border: 1px solid $mc-color-light;
+      padding: 22px 12px 8px;
+
+      & + .mc-form__label {
+        transform: scale(0.75) translateY(-70%);
+      }
+
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 13px;
+    left: 12px;
+    color: $mc-color-gray-500;
+    transform-origin: 0 50%;
+    transform: translateY(0%);
+    transition:
+      transform 320ms ease,
+      opacity 320ms ease;
+  }
+}
