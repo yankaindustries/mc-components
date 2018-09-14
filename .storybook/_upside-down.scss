@@ -204,6 +204,41 @@ a {
   }
 }
 
+// Inline variables magically, thanks @jones for
+// the idea. You're so smart.
+ .mc-gutter-value {
+  &:before {
+    content: "#{$grid-gutter-width}";
+  }
+
+  &--xl:before {
+    content: "#{$grid-gutter-width-xl}";
+  }
+ }
+
+.mc-bp-value {
+  &--xs:before {
+    content: "#{$mc-bp-xs}";
+  }
+
+  &--sm:before {
+    content: "#{$mc-bp-sm}";
+  }
+
+  &--md:before {
+    content: "#{$mc-bp-md}";
+  }
+
+  &--lg:before {
+    content: "#{$mc-bp-lg}";
+  }
+
+  &--xl:before {
+    content: "#{$mc-bp-xl}";
+  }
+}
+
+
 .d-inline-block {
   display: inline-block;
 }

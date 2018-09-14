@@ -21,6 +21,10 @@
 }
 
 // Responsive
+@media only screen and (min-width: $mc-bp-sm) {
+  .container { padding: 0 ($grid-gutter-width-sm * 2); }
+}
+
 @media only screen and (min-width: $mc-bp-md) {
   .container { padding: 0 ($grid-gutter-width-md * 2); }
 }

@@ -133,9 +133,9 @@ $grid-breakpoints: (
 ) !default;
 
 $container-max-widths: (
-  sm: $mc-bp-sm + (2 * $container-margin-sm),
-  md: $mc-bp-md + (2 * $container-margin-md),
-  lg: $mc-bp-lg + (2 * $container-margin-lg),
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
   xl: $mc-bp-xl + (2 * $container-margin-xl)
 ) !default;
 

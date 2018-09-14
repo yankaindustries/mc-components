@@ -15,24 +15,22 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 storiesOf('components|Tiles/TileOverlay', module)
   .add('TileOverlay', withProps(TileOverlay)(() => (
     <div className='container'>
-      <div className='container'>
-        <h2 className='mc-text-h2'>TileOverlay</h2>
+      <h2 className='mc-text-h2'>TileOverlay</h2>
 
-        <DocSection title='Props'>
-          <PropExample
-            name='type'
-            type='String["gradient-bottom"]'
-          >
-            <div className='row'>
-              <div className='col-sm-6'>
-                <Tile>
-                  <TileImage imageUrl={shondaRhimesThumbnail} />
-                  <TileOverlay type='gradient-bottom' />
-                </Tile>
-              </div>
+      <DocSection title='Props'>
+        <PropExample
+          name='type'
+          type='String["gradient-bottom"]'
+        >
+          <div className='row'>
+            <div className='col-sm-6'>
+              <Tile>
+                <TileImage imageUrl={shondaRhimesThumbnail} />
+                <TileOverlay type='gradient-bottom' />
+              </Tile>
             </div>
-          </PropExample>
-        </DocSection>
-      </div>
+          </div>
+        </PropExample>
+      </DocSection>
     </div>
   )))
