@@ -4,24 +4,13 @@
 // yet, so they'll live here!
 
 // THE UPSIDE DOWN
-$mc-unit: 4px;
-
-.mc-background {
-  &--light {
-    background: $mc-color-light;
-  }
-
-  &--dark {
-    background: $mc-color-dark;
-  }
-}
 
 .mc-hero {
   @media only screen and (min-width: $mc-bp-md) {
-    margin-bottom: $mc-unit * -28;
+    margin-bottom: $mc-unit * -10;
 
     &__image {
-      left: 15%;
+      left: 25%;
     }
 
     &__content {
@@ -35,42 +24,18 @@ $mc-unit: 4px;
   }
 }
 
-.mc-section {
-  padding: $grid-gutter-width 0;
-
-  &__header {
-    padding-bottom: $grid-gutter-width;
-  }
-}
-
 .mc-card {
-  padding: $grid-gutter-width / 2;
+  padding: $grid-gutter-xl-width / 2;
   border-radius: 3px;
 
   &--equal-height {
     height: 100%;
   }
-}
 
-.mc-icon--4x {
-  font-size: $mc-unit * 4;
-}
-
-.mc-icon--7x {
-  font-size: $mc-unit * 7;
-
-  &.mc-icon--circled {
-    padding: $mc-unit * 2;
+  &__image {
+    margin: 0 $grid-gutter-xl-width / -2;
+    width: calc(100% + #{$grid-gutter-xl-width});
   }
-}
-
-.mc-icon--15x {
-  font-size: $mc-unit * 15;
-}
-
-.mc-icon--circled {
-  border: 1px solid currentColor;
-  border-radius: 100%;
 }
 
 body {
@@ -88,8 +53,12 @@ hr {
   margin: 32px 0;
 }
 
-.text-right {
-  text-align: right;
+a {
+  color: inherit;
+}
+
+.img--responsive {
+  max-width: 100%;
 }
 
 .hljs {

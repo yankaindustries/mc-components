@@ -163,26 +163,26 @@ storiesOf('foundation|Type', module)
       <div className='container example--section'>
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Align left</h5>
-          <p className='mc-text-left'>The quick brown fox jumped over the lazy dog.</p>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text-left</p>
+          <p className='mc-text--left'>The quick brown fox jumped over the lazy dog.</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--left</p>
         </div>
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Align Center</h5>
-          <p className='mc-text-center'>The quick brown fox jumped over the lazy dog.</p>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text-center</p>
+          <p className='mc-text--center'>The quick brown fox jumped over the lazy dog.</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--center</p>
         </div>
 
         <div className='align-items-right example--section'>
           <h5 className='mc-text-h5'>Align right</h5>
-          <p className='mc-text-right'>The quick brown fox jumped over the lazy dog.</p>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text-right</p>
+          <p className='mc-text--right'>The quick brown fox jumped over the lazy dog.</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--right</p>
         </div>
 
         <div className='align-items-right example--section'>
           <h5 className='mc-text-h5'>Responsive alignment</h5>
-          <p className='mc-text-right mc-text-md-center'>The quick brown fox jumped over the lazy dog.</p>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text-right mc-text-md-center</p>
+          <p className='mc-text--right mc-text-md--center'>The quick brown fox jumped over the lazy dog.</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--right mc-text-md--center</p>
         </div>
       </div>
     </div>,

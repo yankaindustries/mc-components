@@ -63,6 +63,9 @@ $mc-zindex-modal:             1050 !default;
 $mc-zindex-popover:           1060 !default;
 $mc-zindex-tooltip:           1070 !default;
 
+// Unit of measurement
+$mc-unit:                     4px !default;
+
 // Font Sizes
 $default-font-size:  1.6rem !default;
 $btn-font-size-base: 1.4rem !default;
@@ -92,6 +95,11 @@ $transition-base:        all 0.2s ease-in-out !default;
 // Custom bootstrap grid overrides
 $grid-gutter-width:      16px !default;
 $grid-gutter-xl-width:   32px !default;
+
+$grid-gutter-widths: (
+  xs: $grid-gutter-width,
+  xl: $grid-gutter-xl-width
+) !default;
 
 // Breakpoints
 $mc-bp-xs:     0 !default;
