@@ -49,3 +49,13 @@ storiesOf('components|Forms/Input', module)
   .add('with warning', withProps(InputComponent)(() =>
     <Input placeholder='My email' warning='Did you mean johndoe@gmail.com?' />,
   ))
+  .add('new input', withProps(InputComponent)(() =>
+    <form className='mc-form--temporary'>
+      <div className='mc-form__element'>
+        <input className='mc-form__input' name='your-name' id='your-name' placeholder='Jerry, Justin, Stephen, Stephanie?' />
+        <label htmlFor='your-name' className='mc-form__label'>
+          What is your name?
+        </label>
+      </div>
+    </form>,
+  ))
