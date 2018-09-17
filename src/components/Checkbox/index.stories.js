@@ -13,49 +13,33 @@ storiesOf('components|Forms/Checkbox', module)
       </div>
       <div className='container'>
         <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Default State</h5>
-          {/*
-            - Entire inpiut wrapped with mc-input-checkbox
-            - aria-labelledby is set to the ID of the label
-            - htmlFor on the label is set to the id of the input
-          */}
-          <Checkbox
-            onChange={console.log}
-            value={false}
-          >
-            I agree to the terms
-          </Checkbox>
-          <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox</p>
-        </div>
+          <h5 className='mc-text-h5'>Default</h5>
 
-        <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Checked State</h5>
-          <Checkbox
-            onChange={console.log}
-            value={true}
-          >
-            I like checking things twice
-          </Checkbox>
-          <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
-        </div>
-
-        <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Inverted checkbox - Default</h5>
           <div className='rounded-box'>
+            <Checkbox
+              onChange={console.log}
+              value={false}
+            >
+              I agree to the terms
+            </Checkbox>
+            <Checkbox
+              onChange={console.log}
+              value={true}
+            >
+              I like checking things twice
+            </Checkbox>
+          </div>
+        </div>
+
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Inverted</h5>
             <Checkbox
               onChange={console.log}
               value={false}
               inverted
             >
-              I like checking things twice
+              I agre to the terms
             </Checkbox>
-          </div>
-          <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
-        </div>
-
-        <div className='align-items-center example--section'>
-          <h5 className='mc-text-h5'>Inverted checkbox - Checked</h5>
-          <div className='rounded-box'>
             <Checkbox
               onChange={console.log}
               value={true}
@@ -63,8 +47,6 @@ storiesOf('components|Forms/Checkbox', module)
             >
               I like checking things twice
             </Checkbox>
-          </div>
-          <p className='mc-text--muted mc-text--monospace'>.mc-input-checkbox--checked</p>
         </div>
       </div>
     </div>
