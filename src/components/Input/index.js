@@ -14,12 +14,14 @@ export default class Input extends PureComponent {
     error: string,
     disabled: bool,
     warning: string,
+    inverted: bool,
   }
 
   static defaultProps = {
     type: 'text',
     fullWidth: true,
     disabled: false,
+    inverted: false,
   }
 
   onChange = ({ target: { value } }) => {

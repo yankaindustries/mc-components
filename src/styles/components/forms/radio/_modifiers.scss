@@ -1,4 +1,6 @@
 .mc-input-radio--invert {
+  // color: $mc-color-light;
+
   .mc-input-radio {
     &__button {
       background: $mc-color-gray-300;
@@ -6,10 +8,6 @@
       &:after {
         background: $mc-color-light;
       }
-    }
-
-    &__label {
-      color: $mc-color-light;
     }
   }
 }

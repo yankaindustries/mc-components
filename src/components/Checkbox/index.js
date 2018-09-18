@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default class Checkbox extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
+    label: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
     ]),
@@ -12,23 +12,23 @@ export default class Checkbox extends PureComponent {
     inverted: PropTypes.bool,
     name: PropTypes.string,
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.bool,
+    checked: PropTypes.bool,
   }
 
   render () {
     const {
-      children,
+      label,
       className,
       inverted,
       name,
       onChange,
-      value,
+      checked,
     } = this.props
 
     const classes = [
       className,
       'mc-input-checkbox',
-      value ? 'mc-input-checkbox--checked' : '',
+      checked ? 'mc-input-checkbox--checked' : '',
       inverted ? 'mc-input-checkbox--invert' : '',
     ].join(' ')
 
@@ -37,12 +37,12 @@ export default class Checkbox extends PureComponent {
         className={classes}
         id={`${name}-label`}
         htmlFor={name}
-        onClick={onChange.bind(null, !value)}
+        onChange={() => onChange(!checked)}
       >
         <span
           className='mc-input-checkbox__fauxbox'
           role='checkbox'
-          aria-checked={value}
+          aria-checked={checked}
           aria-labelledby={`${name}-label`}
         >
         </span>
@@ -51,7 +51,7 @@ export default class Checkbox extends PureComponent {
           id={name}
           className='mc-input-checkbox__realbox'
         />
-        {children}
+        {label}
       </label>
     )
   }

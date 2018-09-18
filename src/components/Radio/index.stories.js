@@ -4,14 +4,15 @@ import { storiesOf } from '@storybook/react'
 import Radio from '../Radio'
 
 storiesOf('components|Forms/Radio', module)
-  .add('default', () => (
+  .add('Radio', () => (
     <div className='example-mc-type'>
-      <div className='container example--section'>
-        <h2 className='mc-text-d1'>Radio Buttons</h2>
-        <p>And their various states</p>
-      </div>
       <div className='container'>
-        <div className='align-items-center example--section'>
+        <div className='example--section'>
+          <h2 className='mc-text-d1'>Radio</h2>
+          <p>And their various states</p>
+        </div>
+
+        <div className='example--section'>
           <h5 className='mc-text-h5'>Default</h5>
           <div className='rounded-box'>
             <Radio
