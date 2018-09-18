@@ -18,15 +18,24 @@ storiesOf('components|Forms/Checkbox', module)
           <div className='rounded-box'>
             <Checkbox
               onChange={console.log}
-              value={false}
+              checked={true}
             >
               I agree to the terms
             </Checkbox>
             <Checkbox
               onChange={console.log}
-              value={true}
             >
               I like checking things twice
+            </Checkbox>
+            <Checkbox
+              onChange={console.log}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
+              dui nibh. Morbi facilisis efficitur orci, in facilisis leo. Donec
+              libero libero, egestas non lacus in, ullamcorper suscipit nisi.
+              Aenean nisi erat, ultricies nec metus id, sagittis fringilla
+              tortor. Suspendisse rutrum placerat lectus, sit amet faucibus
+              augue elementum at. Aliquam congue non erat eu pellentesque.
             </Checkbox>
           </div>
         </div>
@@ -35,14 +44,13 @@ storiesOf('components|Forms/Checkbox', module)
           <h5 className='mc-text-h5'>Inverted</h5>
             <Checkbox
               onChange={console.log}
-              value={false}
+              checked
               inverted
             >
-              I agre to the terms
+              I agree to the terms
             </Checkbox>
             <Checkbox
               onChange={console.log}
-              value={true}
               inverted
             >
               I like checking things twice

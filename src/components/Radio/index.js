@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 export default class Radio extends PureComponent {
   static propTypes = {
     checked: PropTypes.bool,
-    children: PropTypes.oneOfType([
+    label: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
     ]),
@@ -13,18 +13,18 @@ export default class Radio extends PureComponent {
     inverted: PropTypes.bool,
     name: PropTypes.string,
     onChange: PropTypes.func,
-    value: PropTypes.string,
+    option: PropTypes.string,
   }
 
   render () {
     const {
       checked,
-      children,
+      label,
       className,
       inverted,
       name,
       onChange,
-      value,
+      option,
     } = this.props
 
     const classes = [
@@ -35,21 +35,17 @@ export default class Radio extends PureComponent {
     ].join(' ')
 
     return (
-      <div
+      <label
         className={classes}
-        onClick={onChange.bind(null, value)}
+        htmlFor={name}
+        onClick={() => onChange(option)}
       >
         <span
           className='mc-input-radio__button'
           name={name}
         />
-        <label
-          className='mc-input-radio__label'
-          htmlFor={name}
-        >
-          {children}
-        </label>
-      </div>
+        {label}
+      </label>
     )
   }
 }
