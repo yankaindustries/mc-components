@@ -17,10 +17,10 @@
 
   &__input {
     font-family: $mc-font-default;
-    border: 1px solid $mc-color-gray-200;
-    background: none;
+    border: 1px solid $mc-color-gray-300;
+    background: $mc-color-gray-200;
     border-radius: 4px;
-    color: $mc-color-light;
+    color: $mc-color-gray-600;
     font-size: 15px;
     line-height: 1.2;
     letter-spacing: 0.5px;
@@ -38,7 +38,7 @@
     // When focused OR modified by user
     &:focus,
     &--modified {
-      border: 1px solid $mc-color-light;
+      border-color: $mc-color-gray-400;
       padding: 22px 12px 8px;
 
       & + .mc-form__label {
@@ -50,11 +50,8 @@
       }
     }
 
-    &.empty:focus + .mc-form__label,
-    &:not(.empty) + .mc-form__label {
-      top: 15px;
-      left: 12px;
-      transform: scale(0.75) translateY(-70%);
+    &--modified {
+      border-color: $mc-color-gray-300;
     }
   }
 
