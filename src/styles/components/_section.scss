@@ -6,10 +6,10 @@
   }
 
   @media (min-width: $mc-bp-xl) {
-    padding: 2*$grid-gutter-xl-width 0;
+    padding: 2*$grid-gutter-width-xl 0;
 
     &__header {
-      padding-bottom: 2*$grid-gutter-xl-width;
+      padding-bottom: 2*$grid-gutter-width-xl;
     }
   }
 }

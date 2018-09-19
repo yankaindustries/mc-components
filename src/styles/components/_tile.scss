@@ -147,7 +147,7 @@
         to top,
         rgba($mc-color-dark, 0.9) 0,
         rgba($mc-color-dark, 0.6) 25%,
-        rgba($mc-color-dark, 0) 45%,
+        rgba($mc-color-dark, 0) 45%
       );
   }
 
@@ -156,17 +156,17 @@
       radial-gradient(
         farthest-side at center top,
         rgba($mc-color-background, 0) 33%,
-        rgba($mc-color-background, 1) 100%,
+        rgba($mc-color-background, 1) 100%
       ),
       linear-gradient(
         to right,
         rgba($mc-color-dark, 1) 0%,
-        rgba($mc-color-dark, 0) 40%,
+        rgba($mc-color-dark, 0) 40%
       ),
       linear-gradient(
         to left,
         rgba($mc-color-dark, 1) 0%,
-        rgba($mc-color-dark, 0) 40%,
+        rgba($mc-color-dark, 0) 40%
       );
   }
 
@@ -175,7 +175,7 @@
       radial-gradient(
         farthest-side at top,
         rgba($mc-color-background, 0) 66%,
-        rgba($mc-color-background, 1) 100%,
+        rgba($mc-color-background, 1) 100%
       );
   }
 }

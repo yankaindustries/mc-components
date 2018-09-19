@@ -108,7 +108,7 @@ Background.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
   className: PropTypes.string,
   element: PropTypes.oneOfType([PropTypes.func, PropTypes.node]).isRequired,
-  fit: PropTypes.oneOf(['content', 'background']),
+  fit: PropTypes.oneOf(['container', 'content', 'background']),
   position: PropTypes.oneOf(['left top', 'center top', 'right top', 'left center', 'center center', 'right center', 'left bottom', 'center bottom', 'right bottom']),
   size: PropTypes.oneOf(['contain', 'cover', 'none'])
 };

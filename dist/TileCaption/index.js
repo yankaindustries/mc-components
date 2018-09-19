@@ -26,9 +26,7 @@ var TileCaption = function (_PureComponent) {
       var _props = this.props,
           children = _props.children,
           className = _props.className,
-          position = _props.position,
-          subtitle = _props.subtitle,
-          title = _props.title;
+          position = _props.position;
 
 
       var positionClasses = position.split(' ').map(function (pos) {
@@ -40,23 +38,9 @@ var TileCaption = function (_PureComponent) {
       return React.createElement(
         'div',
         { className: classes },
-        React.createElement(
-          'div',
-          { className: 'mc-tile-caption__titles' },
-          title && React.createElement(
-            'h4',
-            { className: 'mc-tile-caption__title mc-text-h2 mc-text--uppercase' },
-            title
-          ),
-          subtitle && React.createElement(
-            'h5',
-            { className: 'mc-tile-caption__subtitle mc-text-h4 mc-text--muted' },
-            subtitle
-          )
-        ),
         children && React.createElement(
           'div',
-          { className: 'mc-tile-caption__content content' },
+          { className: 'mc-tile-caption__content' },
           children
         )
       );
@@ -67,11 +51,9 @@ var TileCaption = function (_PureComponent) {
 }(PureComponent);
 
 TileCaption.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
   className: PropTypes.string,
-  position: PropTypes.oneOf(['left bottom', 'center bottom', 'left below', 'center below']),
-  subtitle: PropTypes.string,
-  title: PropTypes.string
+  position: PropTypes.oneOf(['left bottom', 'center bottom', 'left below', 'center below'])
 };
 TileCaption.defaultProps = {
   position: 'left bottom'

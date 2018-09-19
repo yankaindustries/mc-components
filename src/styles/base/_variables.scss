@@ -94,18 +94,32 @@ $transition-base:        all 0.2s ease-in-out !default;
 
 // Custom bootstrap grid overrides
 $grid-gutter-width:      16px !default;
-$grid-gutter-xl-width:   32px !default;
+$grid-gutter-width-sm:   16px !default;
+$grid-gutter-width-md:   32px !default;
+$grid-gutter-width-ls:   32px !default;
+$grid-gutter-width-xl:   32px !default;
 
 $grid-gutter-widths: (
   xs: $grid-gutter-width,
-  xl: $grid-gutter-xl-width
+  xl: $grid-gutter-width-xl
 ) !default;
+
+// We calculate container widths based on
+// the padding from the gutter widths, so
+// these variables help us calc the correct
+// container widths
+$container-margin: 16px !default;
+$container-margin-sm: 32px !default;
+$container-margin-md: 64px !default;
+$container-margin-lg: 64px !default;
+$container-margin-xl: 64px !default;
+
 
 // Breakpoints
 $mc-bp-xs:     0 !default;
 $mc-bp-sm:     576px !default;
 $mc-bp-md:     768px !default;
-$mc-bp-lg:     992px !default;
+$mc-bp-lg:     960px !default;
 $mc-bp-xl:     1200px !default;
 // NOTE: If we change these breakpoint values, we
 // also need to update them for ResponsiveHandler.
@@ -116,6 +130,13 @@ $grid-breakpoints: (
   md: $mc-bp-md,
   lg: $mc-bp-lg,
   xl: $mc-bp-xl
+) !default;
+
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: $mc-bp-xl + (2 * $container-margin-xl)
 ) !default;
 
 
