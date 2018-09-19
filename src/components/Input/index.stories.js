@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
+import Arrow from '../Icons/Arrow'
+
 import InputComponent from '../Input'
 
 // Input Handler
@@ -50,12 +52,68 @@ storiesOf('components|Forms/Input', module)
     <Input placeholder='My email' warning='Did you mean johndoe@gmail.com?' />,
   ))
   .add('new input', withProps(InputComponent)(() =>
-    <form className='mc-form--temporary'>
-      <div className='mc-form__element'>
-        <input className='mc-form__input' name='your-name' id='your-name' placeholder='Jerry, Justin, Stephen, Stephanie?' />
-        <label htmlFor='your-name' className='mc-form__label'>
-          What is your name?
-        </label>
+    <div className='container'>
+      <div className='example--section'>
+        <h2 className='mc-text-d1'>Forms</h2>
+        <p>Some various input texts...</p>
       </div>
-    </form>,
+
+      <div className='example--section'>
+        <h2 className='mc-text-h2'>Input type text</h2>
+
+        <div className='mc-form'>
+          <div className='mc-form-group'>
+            <div className='mc-form-textbox'>
+              <div className='mc-form-textbox__input'>
+                <input name='your-name' id='your-name' placeholder='Jerry, Justin, Stephen, Stephanie?' />
+                <label htmlFor='your-name' className='mc-form-textbox__label'>
+                  Field Label
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className='mc-form-group'>
+            <div className='mc-form-textbox mc-form-textbox--focus'>
+              <div className='mc-form-textbox__input'>
+                <input name='your-name' id='your-name' placeholder='Clicked into / focused' />
+                <label htmlFor='your-name' className='mc-form-textbox__label'>
+                  Field Label
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className='mc-form-group'>
+            <div className='mc-form-textbox mc-form-textbox--focus'>
+              <div className='mc-form-prepend'>
+                <Arrow />
+              </div>
+
+              <div className='mc-form-textbox__input'>
+                <input name='your-name' id='your-name' placeholder='With prepended element' />
+                <label htmlFor='your-name' className='mc-form-textbox__label'>
+                  Field Label
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className='mc-form-group'>
+            <div className='mc-form-textbox mc-form-textbox--focus mc-form-textbox--modified'>
+              <div className='mc-form-prepend'>
+                <Arrow />
+              </div>
+
+              <div className='mc-form-textbox__input'>
+                <input name='your-name' id='your-name' placeholder='With prepended element (modified)' value='With prepended element (modified)' />
+                <label htmlFor='your-name' className='mc-form-textbox__label'>
+                  Field Label
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>,
   ))

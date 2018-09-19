@@ -7,59 +7,87 @@
 // This class helps manage the positioning
 // for labels and input padding.
 
-.mc-form {
-  // Just so I can better see how the input looks.
-  &--temporary { margin: 50px; }
+// Helper variables
+$input-padding: 12px !default;
 
-  &__element {
-    position: relative;
-  }
+.mc-form-prepend {
+  padding: $input-padding 0 $input-padding $input-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mc-form-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 24px; // not sure this should go here.
+}
+
+.mc-form-textbox {
+  display: flex;
+  align-items: center;
+  border: 1px solid $mc-color-gray-300;
+  background: $mc-color-gray-200;
+  border-radius: 4px;
+  width: 100%;
 
   &__input {
-    font-family: $mc-font-default;
-    border: 1px solid $mc-color-gray-300;
-    background: $mc-color-gray-200;
-    border-radius: 4px;
-    color: $mc-color-gray-600;
-    font-size: 15px;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-    padding: 15px 12px;
-    transition: border 250ms ease;
+    position: relative;
     width: 100%;
-    outline: 0;
+    padding: $input-padding;
+    transition: padding 250ms ease;
 
-    &::placeholder {
-      color: $mc-color-gray-400;
-      opacity: 0;
-      transition: opacity 250ms ease;
-    }
-
-    // When focused OR modified by user
-    &:focus,
-    &--modified {
-      border-color: $mc-color-gray-400;
-      padding: 22px 12px 8px;
-
-      & + .mc-form__label {
-        transform: scale(0.75) translateY(-70%);
-      }
+    input {
+      font-family: $mc-font-default;
+      background: none;
+      outline: none;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-size: 15px;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      color: $mc-color-gray-600;
 
       &::placeholder {
-        opacity: 1;
+        color: $mc-color-gray-400;
+        opacity: 0;
+        transition: opacity 250ms ease;
       }
     }
+  }
 
-    &--modified {
-      border-color: $mc-color-gray-300;
+  &--focus,
+  &--modified {
+    border-color: $mc-color-gray-400;
+
+    .mc-form-textbox {
+      &__input {
+        padding: 19px $input-padding 5px;
+
+        input {
+          &::placeholder {
+            opacity: 1;
+          }
+        }
+      }
+
+      &__label {
+        transform: scale(0.75) translateY(-60%);
+      }
     }
   }
 
   &__label {
     position: absolute;
-    bottom: 13px;
-    left: 12px;
+    top: $input-padding;
+    left: $input-padding;
+    font-size: 15px;
+    letter-spacing: 0.5px;
     color: $mc-color-gray-500;
+    pointer-events: none; // let react handle states
     transform-origin: 0 50%;
     transform: translateY(0%);
     transition:
