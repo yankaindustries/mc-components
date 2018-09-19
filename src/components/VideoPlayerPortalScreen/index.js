@@ -8,22 +8,12 @@ export default class VideoPlayerPortalScreen extends Component {
     videoRoot: instanceOf(Element),
   }
 
-  componentDidMount () {
-    const { videoRoot } = this.props
-    videoRoot.appendChild(this.el)
-  }
-
-  componentWillUnmount () {
-    const { videoRoot } = this.props
-    videoRoot.removeChild(this.el)
-  }
-
-  el = document.createElement('div')
-
   render () {
+    const { videoRoot } = this.props
+
     return ReactDOM.createPortal(
       this.props.children,
-      this.el,
+      videoRoot,
     )
   }
 }
