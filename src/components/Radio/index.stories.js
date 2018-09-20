@@ -1,10 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withProps } from '../../utils/addon-props'
 
 import Radio from '../Radio'
 
 storiesOf('components|Forms/Radio', module)
-  .add('Radio', () => (
+  .add('Radio', withProps(Radio)(() => (
     <div className='example-mc-type'>
       <div className='container'>
         <div className='example--section'>
@@ -17,28 +18,25 @@ storiesOf('components|Forms/Radio', module)
           <div className='rounded-box'>
             <Radio
               name='colors'
+              label='Red'
               onChange={console.log}
               value='red'
               checked
-            >
-              Red
-            </Radio>
+            />
 
             <Radio
               name='colors'
+              label='Green'
               onChange={console.log}
               value='green'
-            >
-              Green
-            </Radio>
+            />
 
             <Radio
               name='colors'
+              label='Blue'
               onChange={console.log}
               value='blue'
-            >
-              Blue
-            </Radio>
+            />
           </div>
         </div>
 
@@ -46,32 +44,29 @@ storiesOf('components|Forms/Radio', module)
           <h5 className='mc-text-h5'>Inverted</h5>
           <Radio
             name='colors'
+            label='Red'
             onChange={console.log}
             value='red'
             checked
             inverted
-          >
-            Red
-          </Radio>
+          />
 
           <Radio
             name='colors'
+            label='Green'
             onChange={console.log}
             value='green'
             inverted
-          >
-            Green
-          </Radio>
+          />
 
           <Radio
             name='colors'
+            label='Blue'
             onChange={console.log}
             value='blue'
             inverted
-          >
-            Blue
-          </Radio>
+          />
         </div>
       </div>
     </div>
-  ))
+  )))
