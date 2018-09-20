@@ -1,82 +1,66 @@
 import React, { PureComponent } from 'react'
-import { string, func, object, bool } from 'prop-types'
-import cn from 'classnames'
+import PropTypes from 'prop-types'
 
 export default class Input extends PureComponent {
   static propTypes = {
-    value: string.isRequired,
-    onChange: func.isRequired,
-    placeholder: string,
-    type: string,
-    label: string,
-    fullWidth: bool,
-    style: object,
-    error: string,
-    disabled: bool,
-    warning: string,
-    inverted: bool,
+    inverted: PropTypes.bool,
+    label: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
   }
 
-  static defaultProps = {
-    type: 'text',
-    fullWidth: true,
-    disabled: false,
-    inverted: false,
-  }
-
-  onChange = ({ target: { value } }) => {
-    const { onChange } = this.props
-    onChange(value)
+  state = {
+    focused: false,
   }
 
   render () {
     const {
-      value,
-      type,
-      placeholder,
       label,
-      style,
-      fullWidth,
-      error,
-      disabled,
+      name,
+      prepend,
+      value,
       onChange,
-      warning,
       ...props
     } = this.props
-    const showLabel = label && placeholder && value
-    const inputClassNames = cn(
-      'input-field__input',
-      { 'input-field__input--with-label': showLabel },
-      { 'input-field__input--full-width': fullWidth },
-      { 'input-field__input--error': error },
-      { 'input-field__input--warning': warning },
-      { 'input-field__input--disabled': disabled },
-    )
-    const labelClassNames = cn(
-      'input-field__label',
-      { 'input-field__label--hide': !showLabel },
-    )
+
+    const {
+      focused,
+    } = this.state
+
+    const classes = [
+      'mc-form-textbox',
+      focused ? 'mc-form-textbox--focus' : '',
+      value ? 'mc-form-textbox--modified' : '',
+    ].join(' ')
 
     return (
-      <div style={style} className='input-field'>
-        {label &&
-          <label className={labelClassNames}>{label}</label>
+      <div className={classes}>
+        {prepend &&
+          <div className='mc-form-prepend'>
+            {prepend}
+          </div>
         }
-        {error &&
-          <span className='input-field__error'>{error}</span>
-        }
-        {warning &&
-          <span className='input-field__warning'>{warning}</span>
-        }
-        <input
-          className={inputClassNames}
-          value={value}
-          type={type}
-          placeholder={placeholder}
-          disabled={disabled}
-          onChange={this.onChange}
-          {...props}
-        />
+
+        <div className='mc-form-textbox__input'>
+          <input
+            id={name}
+            name={name}
+            type='text'
+            onChange={onChange}
+            onFocus={() => this.setState({ focused: true })}
+            onBlur={() => this.setState({ focused: false })}
+            {...props}
+          />
+
+          {label &&
+            <label
+              htmlFor={name}
+              className='mc-form-textbox__label'
+            >
+              {label}
+            </label>
+          }
+        </div>
       </div>
     )
   }

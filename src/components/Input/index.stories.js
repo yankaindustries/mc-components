@@ -1,67 +1,47 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
+import Input from '../Input'
 import Arrow from '../Icons/Arrow'
-
-import InputComponent from '../Input'
-
-// Input Handler
-class Input extends Component {
-  state = { value: '' }
-
-  render () {
-    const { value } = this.state
-
-    return (
-      <div style={{ maxWidth: '500px' }}>
-        <InputComponent
-          {...this.props}
-          value={value}
-          onChange={value => this.setState({ value })}
-        />
-      </div>
-    )
-  }
-}
 
 
 storiesOf('components|Forms/Input', module)
-  .add('default', withProps(InputComponent)(() =>
-    <Input placeholder='My input' />,
-  ))
-  .add('with label', withProps(InputComponent)(() =>
-    <Input placeholder='My input' label='My input' />,
-  ))
-  .add('fixed width', withProps(InputComponent)(() =>
-    <Input placeholder='My input' fullWidth={false} style={{ width: '200px' }} />,
-  ))
-  .add('with error', withProps(InputComponent)(() =>
-    <Input placeholder='My email' error='Email is required' />,
-  ))
-  .add('with error and label', withProps(InputComponent)(() =>
-    <Input placeholder='My email' label='My email' error='Email is required' />,
-  ))
-  .add('without placeholder', withProps(InputComponent)(() =>
-    <Input />,
-  ))
-  .add('disabled', withProps(InputComponent)(() =>
-    <Input placeholder='My email' disabled />,
-  ))
-  .add('with warning', withProps(InputComponent)(() =>
-    <Input placeholder='My email' warning='Did you mean johndoe@gmail.com?' />,
-  ))
-  .add('new input', withProps(InputComponent)(() =>
+  .add('Input', withProps(Input)(() =>
     <div className='container'>
       <div className='example--section'>
-        <h2 className='mc-text-d1'>Forms</h2>
-        <p>Some various input texts...</p>
+        <h2 className='mc-text-d1'>Input</h2>
+        <p>Some various text inputs...</p>
       </div>
 
       <div className='example--section'>
-        <h2 className='mc-text-h2'>Input type text</h2>
-
         <div className='mc-form'>
+          <div className='mc-form-group'>
+            <Input
+              name='test'
+              label='Field Label'
+              placeholder='Placeholder'
+            />
+          </div>
+
+          <div className='mc-form-group'>
+            <Input
+              name='test'
+              placeholder='Placeholder'
+            />
+          </div>
+
+          <div className='mc-form-group'>
+            <Input
+              name='prepend'
+              label='Field Label'
+              placeholder='Placeholder'
+              prepend={<Arrow />}
+            />
+          </div>
+
+          <hr />
+
           <div className='mc-form-group'>
             <div className='mc-form-textbox'>
               <div className='mc-form-textbox__input'>
