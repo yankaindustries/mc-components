@@ -17,6 +17,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background: rgba($mc-color-gray-500, 0.3);
+}
+
+
 a { text-decoration: none; }
 
 // Big "display" text
