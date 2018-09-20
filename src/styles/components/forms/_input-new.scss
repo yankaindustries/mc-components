@@ -10,11 +10,19 @@
 // Helper variables
 $input-padding: 12px !default;
 
-.mc-form-prepend {
-  padding: $input-padding 0 $input-padding $input-padding;
+.mc-form-prepend,
+.mc-form-append {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mc-form-prepend {
+  padding: $input-padding 0 $input-padding $input-padding;
+}
+
+.mc-form-append {
+  padding: $input-padding $input-padding $input-padding 0;
 }
 
 .mc-form-group {
@@ -31,6 +39,7 @@ $input-padding: 12px !default;
   background: $mc-color-gray-200;
   border-radius: 4px;
   width: 100%;
+  transition: border 200ms ease;
 
   &__input {
     position: relative;
@@ -59,10 +68,17 @@ $input-padding: 12px !default;
     }
   }
 
+  &:hover {
+    cursor: text;
+    border-color: $mc-color-gray-400;
+  }
+
+  &--focus {
+    border-color: $mc-color-gray-400;
+  }
+
   &--focus,
   &--modified {
-    border-color: $mc-color-gray-400;
-
     .mc-form-textbox {
       &__input {
         padding: 19px $input-padding 5px;
@@ -76,6 +92,21 @@ $input-padding: 12px !default;
 
       &__label {
         transform: scale(0.75) translateY(-60%);
+      }
+    }
+  }
+
+  // When we don't want to move the label up
+  &--no-label {
+    .mc-form-textbox {
+      &__label { opacity: 0; }
+      &__input {
+        padding: $input-padding;
+
+        input::placeholder {
+          color: $mc-color-gray-500;
+          opacity: 1;
+        }
       }
     }
   }

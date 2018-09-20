@@ -4,6 +4,9 @@ import { withProps } from '../../utils/addon-props'
 
 import Input from '../Input'
 import Arrow from '../Icons/Arrow'
+import Lock from '../Icons/Lock'
+import MagnifyingGlass from '../Icons/MagnifyingGlass'
+import CloseIcon from '../Icons/Close'
 
 
 storiesOf('components|Forms/Input', module)
@@ -58,41 +61,49 @@ storiesOf('components|Forms/Input', module)
               <div className='mc-form-textbox__input'>
                 <input name='your-name' id='your-name' placeholder='Clicked into / focused' />
                 <label htmlFor='your-name' className='mc-form-textbox__label'>
-                  Field Label
+                  Field Label (focused state)
                 </label>
               </div>
             </div>
           </div>
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--focus'>
+            <div className='mc-form-textbox mc-form-textbox--no-label'>
               <div className='mc-form-prepend'>
-                <Arrow />
+                <MagnifyingGlass />
               </div>
 
               <div className='mc-form-textbox__input'>
                 <input name='your-name' id='your-name' placeholder='With prepended element' />
-                <label htmlFor='your-name' className='mc-form-textbox__label'>
-                  Field Label
-                </label>
               </div>
             </div>
           </div>
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--focus mc-form-textbox--modified'>
+            <div className='mc-form-textbox mc-form-textbox--no-label'>
               <div className='mc-form-prepend'>
-                <Arrow />
+                <Lock />
               </div>
 
               <div className='mc-form-textbox__input'>
-                <input name='your-name' id='your-name' placeholder='With prepended element (modified)' value='With prepended element (modified)' />
-                <label htmlFor='your-name' className='mc-form-textbox__label'>
-                  Field Label
-                </label>
+                <input name='your-name' id='your-name' type='password' placeholder='Password field (try me! - password should be hidden)' />
               </div>
             </div>
           </div>
+
+          <div className='mc-form-group'>
+            <div className='mc-form-textbox mc-form-textbox--no-label'>
+              <div className='mc-form-textbox__input'>
+                <input name='your-name' id='your-name' type='password' placeholder='Password field (try me! - password should be hidden)' />
+              </div>
+
+              <div className='mc-form-append'>
+                <CloseIcon />
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>,
