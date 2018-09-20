@@ -1,37 +1,3 @@
-// Once a form has any characters entered, it
-// needs a class added of .mc-form__input--modified
-
-// If the user removes / deletes their input, the modified
-// class is removed.
-
-// This class helps manage the positioning
-// for labels and input padding.
-
-// Helper variables
-$input-padding: 12px !default;
-
-.mc-form-prepend,
-.mc-form-append {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mc-form-prepend {
-  padding: $input-padding 0 $input-padding $input-padding;
-}
-
-.mc-form-append {
-  padding: $input-padding $input-padding $input-padding 0;
-}
-
-.mc-form-group {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-bottom: 24px; // not sure this should go here.
-}
-
 .mc-form-textbox {
   display: flex;
   align-items: center;
@@ -92,21 +58,6 @@ $input-padding: 12px !default;
 
       &__label {
         transform: scale(0.75) translateY(-60%);
-      }
-    }
-  }
-
-  // When we don't want to move the label up
-  &--no-label {
-    .mc-form-textbox {
-      &__label { opacity: 0; }
-      &__input {
-        padding: $input-padding;
-
-        input::placeholder {
-          color: $mc-color-gray-500;
-          opacity: 1;
-        }
       }
     }
   }

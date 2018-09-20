@@ -1,0 +1,15 @@
+.mc-form-textbox {
+  // When we don't want to move the
+  // label on focus.
+  &--no-label & {
+    &__label { opacity: 0; }
+    &__input {
+      padding: $input-padding;
+
+      input::placeholder {
+        color: $mc-color-gray-500;
+        opacity: 1;
+      }
+    }
+  }
+}
