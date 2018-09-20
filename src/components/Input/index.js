@@ -15,6 +15,7 @@ export default class Input extends PureComponent {
 
   render () {
     const {
+      append,
       label,
       name,
       prepend,
@@ -30,6 +31,7 @@ export default class Input extends PureComponent {
     const classes = [
       'mc-form-textbox',
       focused ? 'mc-form-textbox--focus' : '',
+      label ? '' : 'mc-form-textbox--no-label',
       value ? 'mc-form-textbox--modified' : '',
     ].join(' ')
 
@@ -61,6 +63,12 @@ export default class Input extends PureComponent {
             </label>
           }
         </div>
+
+        {append &&
+          <div className='mc-form-append'>
+            {append}
+          </div>
+        }
       </div>
     )
   }

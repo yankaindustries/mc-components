@@ -36,10 +36,27 @@ storiesOf('components|Forms/Input', module)
 
           <div className='mc-form-group'>
             <Input
+              name='test'
+              placeholder='Placeholder'
+              type='password'
+            />
+          </div>
+
+          <div className='mc-form-group'>
+            <Input
               name='prepend'
               label='Field Label'
               placeholder='Placeholder'
               prepend={<Arrow />}
+            />
+          </div>
+
+          <div className='mc-form-group'>
+            <Input
+              name='prepend'
+              label='Field Label'
+              placeholder='Placeholder'
+              append={<Arrow />}
             />
           </div>
 
