@@ -48,8 +48,8 @@ storiesOf('components|Forms/Input', module)
           <div className='mc-form-group'>
             <div className='mc-form-textbox'>
               <div className='mc-form-textbox__input'>
-                <input name='your-name' id='your-name' placeholder='Jerry, Justin, Stephen, Stephanie?' />
-                <label htmlFor='your-name' className='mc-form-textbox__label'>
+                <input name='just-a-label-example' id='just-a-label-example' placeholder='Jerry, Justin, Stephen, Stephanie?' />
+                <label htmlFor='just-a-label-example' className='mc-form-textbox__label'>
                   Field Label
                 </label>
               </div>
@@ -59,8 +59,8 @@ storiesOf('components|Forms/Input', module)
           <div className='mc-form-group'>
             <div className='mc-form-textbox mc-form-textbox--focus'>
               <div className='mc-form-textbox__input'>
-                <input name='your-name' id='your-name' placeholder='Clicked into / focused' />
-                <label htmlFor='your-name' className='mc-form-textbox__label'>
+                <input name='focused-example' id='focused-example' placeholder='Clicked into / focused' />
+                <label htmlFor='focused-example' className='mc-form-textbox__label'>
                   Field Label (focused state)
                 </label>
               </div>
@@ -74,7 +74,7 @@ storiesOf('components|Forms/Input', module)
               </div>
 
               <div className='mc-form-textbox__input'>
-                <input name='your-name' id='your-name' placeholder='With prepended element' />
+                <input name='prepended-example' id='prepended-example' placeholder='With prepended element' />
               </div>
             </div>
           </div>
@@ -86,15 +86,18 @@ storiesOf('components|Forms/Input', module)
               </div>
 
               <div className='mc-form-textbox__input'>
-                <input name='your-name' id='your-name' type='password' placeholder='Password field (try me! - password should be hidden)' />
+                <input name='password-example' id='password-example' type='password' placeholder='Password field (try me! - password should be hidden)' />
               </div>
             </div>
           </div>
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--no-label'>
+            <div className='mc-form-textbox mc-form-textbox--focus'>
               <div className='mc-form-textbox__input'>
-                <input name='your-name' id='your-name' type='password' placeholder='Password field (try me! - password should be hidden)' />
+                <input name='appended-x' id='appended-x' type='text' placeholder='Your text should overflow without covering the icon' />
+                <label htmlFor='appended-x' className='mc-form-textbox__label'>
+                  Field label (with appended close icon)
+                </label>
               </div>
 
               <div className='mc-form-append'>
