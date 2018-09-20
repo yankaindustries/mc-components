@@ -1,6 +1,6 @@
 .mc-input-checkbox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   cursor: pointer;
 
   &__fauxbox {
@@ -9,8 +9,9 @@
     width: 20px;
     height: 20px;
     border-radius: 4px;
-    margin-right: 16px;
+    margin: 0.15em 16px 0 0;
     padding: 5px;
+    flex-shrink: 0;
     transition: background 250ms ease;
 
     // The check
