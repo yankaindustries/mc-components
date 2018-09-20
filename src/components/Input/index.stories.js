@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
-import Arrow from '../Icons/Arrow'
+import Lock from '../Icons/Lock'
+import MagnifyingGlass from '../Icons/MagnifyingGlass'
+import CloseIcon from '../Icons/Close'
 
 import InputComponent from '../Input'
 
@@ -56,6 +58,15 @@ storiesOf('components|Forms/Input', module)
       <div className='example--section'>
         <h2 className='mc-text-d1'>Forms</h2>
         <p>Some various input texts...</p>
+        <h2 className='mc-text-h2'>Notes for jones:</h2>
+        <ul>
+          <li>Needs click event on wrapping .mc-form-textbox class to
+          focus input.</li>
+          <li>mc-form-textbox--focus when a user clicks into a field,
+          removed when they click out</li>
+          <li>mc-form-textbox--modified class added once user inputs
+          data into a field</li>
+        </ul>
       </div>
 
       <div className='example--section'>
@@ -78,41 +89,49 @@ storiesOf('components|Forms/Input', module)
               <div className='mc-form-textbox__input'>
                 <input name='your-name' id='your-name' placeholder='Clicked into / focused' />
                 <label htmlFor='your-name' className='mc-form-textbox__label'>
-                  Field Label
+                  Field Label (focused state)
                 </label>
               </div>
             </div>
           </div>
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--focus'>
+            <div className='mc-form-textbox mc-form-textbox--no-label'>
               <div className='mc-form-prepend'>
-                <Arrow />
+                <MagnifyingGlass />
               </div>
 
               <div className='mc-form-textbox__input'>
                 <input name='your-name' id='your-name' placeholder='With prepended element' />
-                <label htmlFor='your-name' className='mc-form-textbox__label'>
-                  Field Label
-                </label>
               </div>
             </div>
           </div>
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--focus mc-form-textbox--modified'>
+            <div className='mc-form-textbox mc-form-textbox--no-label'>
               <div className='mc-form-prepend'>
-                <Arrow />
+                <Lock />
               </div>
 
               <div className='mc-form-textbox__input'>
-                <input name='your-name' id='your-name' placeholder='With prepended element (modified)' value='With prepended element (modified)' />
-                <label htmlFor='your-name' className='mc-form-textbox__label'>
-                  Field Label
-                </label>
+                <input name='your-name' id='your-name' type='password' placeholder='Password field (try me! - password should be hidden)' />
               </div>
             </div>
           </div>
+
+          <div className='mc-form-group'>
+            <div className='mc-form-textbox mc-form-textbox--no-label'>
+              <div className='mc-form-textbox__input'>
+                <input name='your-name' id='your-name' type='password' placeholder='Password field (try me! - password should be hidden)' />
+              </div>
+
+              <div className='mc-form-append'>
+                <CloseIcon />
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>,
