@@ -1,14 +1,43 @@
-.mc-form-textbox {
-  // When we don't want to move the
-  // label on focus.
-  &--no-label & {
+// When the label shouldn't animate
+// or be shown
+.mc-form-textbox--no-label {
+  .mc-form-textbox {
     &__label { opacity: 0; }
+
     &__input {
       padding: $input-padding;
 
       input::placeholder {
         color: $mc-color-gray-500;
         opacity: 1;
+      }
+    }
+  }
+}
+
+// Error states
+.mc-form-textbox--error {
+  background: none;
+  border-color: $mc-color-primary;
+
+  &:hover {
+    border-color: $mc-color-primary-hover;
+  }
+
+  // Override default focus state
+  // with chained css selector
+  &.mc-form-textbox--focus {
+    border-color: $mc-color-primary-active;
+  }
+
+  .mc-form-textbox {
+    &__label {
+      color: $mc-color-primary;
+    }
+
+    &__input {
+      input::placeholder {
+        color: $mc-color-gray-600;
       }
     }
   }
