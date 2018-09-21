@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 
 export default class Input extends PureComponent {
   static propTypes = {
+    error: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+    ]),
     inverted: PropTypes.bool,
     label: PropTypes.string,
     value: PropTypes.string.isRequired,
@@ -20,6 +24,7 @@ export default class Input extends PureComponent {
   render () {
     const {
       append,
+      error,
       label,
       name,
       prepend,
@@ -37,6 +42,7 @@ export default class Input extends PureComponent {
       focused ? 'mc-form-textbox--focus' : '',
       label ? '' : 'mc-form-textbox--no-label',
       value ? 'mc-form-textbox--modified' : '',
+      error ? 'mc-form-textbox--error' : '',
     ].join(' ')
 
     return (
