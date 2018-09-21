@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
 import Input from '../Input'
-import Arrow from '../Icons/Arrow'
 import Lock from '../Icons/Lock'
 import MagnifyingGlass from '../Icons/MagnifyingGlass'
 import CloseIcon from '../Icons/Close'
@@ -22,107 +21,72 @@ storiesOf('components|Forms/Input', module)
           <div className='mc-form-group'>
             <Input
               name='test'
-              label='Field Label'
-              placeholder='Placeholder'
+              label={"What's your favorite color?"}
+              placeholder='Red, orange, yellow, green, blue, violet, or something else?'
             />
           </div>
 
           <div className='mc-form-group'>
             <Input
-              name='test'
-              placeholder='Placeholder'
-            />
-          </div>
-
-          <div className='mc-form-group'>
-            <Input
-              name='test'
-              placeholder='Placeholder'
+              name='prepend-password'
+              placeholder='Password'
               type='password'
+              prepend={<Lock />}
             />
           </div>
 
           <div className='mc-form-group'>
             <Input
               name='prepend'
-              label='Field Label'
-              placeholder='Placeholder'
-              prepend={<Arrow />}
+              placeholder='Search'
+              prepend={<MagnifyingGlass />}
             />
           </div>
 
           <div className='mc-form-group'>
             <Input
               name='prepend'
-              label='Field Label'
-              placeholder='Placeholder'
-              append={<Arrow />}
+              label='Field with appended icon'
+              placeholder={"Hint: It's a close icon!"}
+              append={<CloseIcon />}
             />
           </div>
 
           <hr />
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox'>
+            <div className='mc-form-textbox mc-form-textbox--error'>
               <div className='mc-form-textbox__input'>
-                <input name='just-a-label-example' id='just-a-label-example' placeholder='Jerry, Justin, Stephen, Stephanie?' />
-                <label htmlFor='just-a-label-example' className='mc-form-textbox__label'>
-                  Field Label
+                <input name='error-example' id='error-example' placeholder='With prepended element' />
+                <label htmlFor='error-example' className='mc-form-textbox__label'>
+                  Error example
                 </label>
               </div>
             </div>
           </div>
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--focus'>
+            <div className='mc-form-textbox mc-form-textbox--error mc-form-textbox--focus'>
               <div className='mc-form-textbox__input'>
-                <input name='focused-example' id='focused-example' placeholder='Clicked into / focused' />
-                <label htmlFor='focused-example' className='mc-form-textbox__label'>
-                  Field Label (focused state)
+                <input name='error-example' id='error-example' placeholder='Placeholder' />
+                <label htmlFor='error-example' className='mc-form-textbox__label'>
+                  Should the error message overwrite the label?
                 </label>
               </div>
             </div>
           </div>
 
-          <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--no-label'>
-              <div className='mc-form-prepend'>
-                <MagnifyingGlass />
-              </div>
-
-              <div className='mc-form-textbox__input'>
-                <input name='prepended-example' id='prepended-example' placeholder='With prepended element' />
-              </div>
-            </div>
-          </div>
 
           <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--no-label'>
-              <div className='mc-form-prepend'>
-                <Lock />
-              </div>
-
+            <div className='mc-form-textbox mc-form-textbox--error mc-form-textbox--focus'>
               <div className='mc-form-textbox__input'>
-                <input name='password-example' id='password-example' type='password' placeholder='Password field (try me! - password should be hidden)' />
-              </div>
-            </div>
-          </div>
-
-          <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--focus'>
-              <div className='mc-form-textbox__input'>
-                <input name='appended-x' id='appended-x' type='text' placeholder='Your text should overflow without covering the icon' />
-                <label htmlFor='appended-x' className='mc-form-textbox__label'>
-                  Field label (with appended close icon)
+                <input name='error-example' id='error-example' value='This is content the user typed' />
+                <label htmlFor='error-example' className='mc-form-textbox__label'>
+                  Should the error message overwrite the label?
                 </label>
               </div>
-
-              <div className='mc-form-append'>
-                <CloseIcon />
-              </div>
             </div>
           </div>
-
 
         </div>
       </div>
