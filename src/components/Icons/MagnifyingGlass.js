@@ -7,13 +7,13 @@ const MagnifyingGlass = props => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M6 1.75a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zM.25 6a5.75 5.75 0 1 1 11.5 0A5.75 5.75 0 0 1 .25 6z"
-      fill="#DBDDE1"
+      fill="currentColor"
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M9.47 9.47a.75.75 0 0 1 1.06 0l3 3a.75.75 0 1 1-1.06 1.06l-3-3a.75.75 0 0 1 0-1.06z"
-      fill="#DBDDE1"
+      fill="currentColor"
     />
   </svg>
 )

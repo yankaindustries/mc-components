@@ -4,12 +4,16 @@
   justify-content: center;
   align-items: center;
   padding: $input-padding;
-
-  &__content {
-    margin: -$input-padding;
-    padding: $input-padding;
-  }
 }
+
+.mc-form-prepend {
+  padding-right: 0;
+}
+
+.mc-form-append {
+  padding-left: 0;
+}
+
 
 .mc-form-group {
   display: flex;

@@ -23,7 +23,82 @@ storiesOf('components|Forms/Input', module)
               <h5 className='mc-text-h5'>Default</h5>
 
               <div className='rounded-box'>
+                <div className='mc-form-group'>
+                  <Input
+                    name='color'
+                    label='What is your favorite color?'
+                    placeholder='Red, orange, yellow, green, blue, violet, or something else?'
+                  />
+                </div>
 
+                <div className='mc-form-group'>
+                  <Input
+                    name='test'
+                    label='Who sang it best?'
+                    placeholder='Madonna or Britney?'
+                    value='Madona, obvi'
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Input
+                    name='prepend'
+                    placeholder='Search'
+                    prepend={<MagnifyingGlass />}
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Input
+                    name='prepend-password'
+                    type='password'
+                    value='it is a secret'
+                    placeholder='Password'
+                    prepend={<Lock />}
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Input
+                    name='prepend'
+                    label='Field with appended icon'
+                    placeholder='Hint: It is a close icon!'
+                    append={<Close />}
+                  />
+                </div>
+
+                <hr />
+
+                <div className='mc-form-group'>
+                  <Input
+                    name='error'
+                    label='Error example'
+                    placeholder='Try to fix it?'
+                    error
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Input
+                    name='fix-it'
+                    label='There might be a problem...'
+                    placeholder='Try to fix it?'
+                    value='...with the values of this field.'
+                    error
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Input
+                    name='password-error'
+                    type='password'
+                    label='Incorrect Password'
+                    placeholder='Password'
+                    value='this is incorrect'
+                    prepend={<Lock />}
+                    error
+                  />
+                </div>
               </div>
             </div>
 
