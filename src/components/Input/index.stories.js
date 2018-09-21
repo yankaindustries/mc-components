@@ -3,10 +3,9 @@ import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
 import Input from '../Input'
-import Arrow from '../Icons/Arrow'
 import Lock from '../Icons/Lock'
 import MagnifyingGlass from '../Icons/MagnifyingGlass'
-import CloseIcon from '../Icons/Close'
+import Close from '../Icons/Close'
 
 
 storiesOf('components|Forms/Input', module)
@@ -29,16 +28,19 @@ storiesOf('components|Forms/Input', module)
 
           <div className='mc-form-group'>
             <Input
-              name='test'
+              name='search'
               placeholder='Placeholder'
+              prepend={<MagnifyingGlass />}
             />
           </div>
 
           <div className='mc-form-group'>
             <Input
-              name='test'
+              name='password'
               placeholder='Placeholder'
               type='password'
+              value='it is a secret'
+              prepend={<Lock />}
             />
           </div>
 
@@ -47,16 +49,7 @@ storiesOf('components|Forms/Input', module)
               name='prepend'
               label='Field Label'
               placeholder='Placeholder'
-              prepend={<Arrow />}
-            />
-          </div>
-
-          <div className='mc-form-group'>
-            <Input
-              name='prepend'
-              label='Field Label'
-              placeholder='Placeholder'
-              append={<Arrow />}
+              append={<Close />}
             />
           </div>
 
@@ -118,7 +111,7 @@ storiesOf('components|Forms/Input', module)
               </div>
 
               <div className='mc-form-append'>
-                <CloseIcon />
+                <Close />
               </div>
             </div>
           </div>
