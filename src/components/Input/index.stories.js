@@ -98,6 +98,7 @@ storiesOf('components|Forms/Input', module)
               <div className='mc-form-group'>
                 <Input
                   name='password-error'
+                  type='password'
                   label='Incorrect Password'
                   placeholder='Password'
                   value='this is incorrect'
