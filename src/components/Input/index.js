@@ -17,6 +17,7 @@ export default class Input extends PureComponent {
   }
 
   static defaultProps = {
+    inverted: false,
     value: '',
   }
 
@@ -48,6 +49,7 @@ export default class Input extends PureComponent {
     const {
       append,
       error,
+      inverted,
       label,
       name,
       prepend,
@@ -65,6 +67,7 @@ export default class Input extends PureComponent {
       focused ? 'mc-form-textbox--focus' : '',
       label ? '' : 'mc-form-textbox--no-label',
       value ? 'mc-form-textbox--modified' : '',
+      inverted ? 'mc-form-textbox--invert' : '',
       error ? 'mc-form-textbox--error' : '',
     ].join(' ')
 
