@@ -25,23 +25,34 @@ const Form = reduxForm({
         </div>
 
         <div className='example--section'>
-          <h5 className='mc-text-h5'>Default</h5>
-          <div className='rounded-box'>
-            <InputField
-              name='something'
-              label='Red'
-            />
+          <div className='row'>
+            <div className='col-sm-6'>
+              <h5 className='mc-text-h5'>Default</h5>
+
+              <div className='rounded-box'>
+                <div className='mc-form-group'>
+                  <InputField
+                    name='color'
+                    label='Favorite Color'
+                    placeholder='Like, red/blue/green?'
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className='col-sm-6'>
+              <h5 className='mc-text-h5'>Inverted</h5>
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='fruit'
+                  label='Favorite Fruit'
+                  placeholder='Orange ya glad I did not say banana?'
+                  inverted
+                />
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className='example--section'>
-          <h5 className='mc-text-h5'>Inverted</h5>
-
-          <InputField
-            name='something'
-            label='Red'
-            inverted
-          />
         </div>
       </div>
     </div>,
