@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+
 export default class Input extends PureComponent {
   static propTypes = {
     error: PropTypes.oneOfType([
@@ -10,7 +11,9 @@ export default class Input extends PureComponent {
     inverted: PropTypes.bool,
     label: PropTypes.string,
     value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
   }
 
   static defaultProps = {
@@ -19,6 +22,26 @@ export default class Input extends PureComponent {
 
   state = {
     focused: false,
+  }
+
+  onFocus = () => {
+    const { onFocus } = this.props
+
+    this.setState({ focused: true })
+
+    if (onFocus) {
+      onFocus()
+    }
+  }
+
+  onBlur = () => {
+    const { onBlur } = this.props
+
+    this.setState({ focused: false })
+
+    if (onBlur) {
+      onBlur()
+    }
   }
 
   render () {
@@ -59,10 +82,10 @@ export default class Input extends PureComponent {
             name={name}
             type='text'
             value={value}
-            onChange={onChange}
-            onFocus={() => this.setState({ focused: true })}
-            onBlur={() => this.setState({ focused: false })}
             {...props}
+            onChange={onChange}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
           />
 
           {label &&
