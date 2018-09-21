@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { withProps } from '../../utils/addon-props'
 
 import Input from '../Input'
@@ -35,7 +36,7 @@ storiesOf('components|Forms/Input', module)
                   name='color'
                   label='What is your favorite color?'
                   placeholder='Red, orange, yellow, green, blue, violet, or something else?'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   inverted
                 />
               </div>
@@ -46,7 +47,7 @@ storiesOf('components|Forms/Input', module)
                   label='Who sang it best?'
                   placeholder='Madonna or Britney?'
                   value='Madona, obvi'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   inverted
                 />
               </div>
@@ -55,7 +56,7 @@ storiesOf('components|Forms/Input', module)
                 <Input
                   name='prepend'
                   placeholder='Search'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   prepend={<MagnifyingGlass />}
                   inverted
                 />
@@ -67,7 +68,7 @@ storiesOf('components|Forms/Input', module)
                   type='password'
                   value='it is a secret'
                   placeholder='Password'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   prepend={<Lock />}
                   inverted
                 />
@@ -78,7 +79,7 @@ storiesOf('components|Forms/Input', module)
                   name='append'
                   label='Field with appended icon'
                   placeholder='Hint: It is a close icon!'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   append={<Close />}
                   inverted
                 />
@@ -91,7 +92,7 @@ storiesOf('components|Forms/Input', module)
                   name='error'
                   label='Error example'
                   placeholder='Try to fix it?'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   inverted
                   error
                 />
@@ -103,7 +104,7 @@ storiesOf('components|Forms/Input', module)
                   label='There might be a problem...'
                   placeholder='Try to fix it?'
                   value='...with the values of this field.'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   inverted
                   error
                 />
@@ -116,7 +117,7 @@ storiesOf('components|Forms/Input', module)
                   label='Incorrect Password'
                   placeholder='Password'
                   value='this is incorrect'
-                  onChange={console.log}
+                  onChange={action('onChange')}
                   prepend={<Lock />}
                   inverted
                   error
