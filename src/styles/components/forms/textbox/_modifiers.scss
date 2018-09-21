@@ -42,3 +42,23 @@
     }
   }
 }
+
+
+// Inverted styles
+.mc-form-textbox--invert {
+  border: 1px solid $mc-color-gray-300;
+  background: $mc-color-gray-200;
+
+  &.mc-form-textbox--focus {
+    color: $mc-color-gray-600;
+    border-color: $mc-color-gray-400;
+  }
+
+  .mc-form-textbox {
+    &__input {
+      input {
+        color: $mc-color-gray-600;
+      }
+    }
+  }
+}

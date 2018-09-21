@@ -1,11 +1,14 @@
 .mc-form-textbox {
   display: flex;
   align-items: center;
-  border: 1px solid $mc-color-gray-300;
-  background: $mc-color-gray-200;
+  border: 1px solid $mc-color-gray-600;
+  background: transparent;
   border-radius: 4px;
   width: 100%;
-  transition: border 200ms ease;
+  color: $mc-color-gray-500;
+  transition:
+    border 200ms ease,
+    color 200ms ease;
 
   &__input {
     position: relative;
@@ -24,12 +27,11 @@
       font-size: 15px;
       line-height: 1.2;
       letter-spacing: 0.5px;
-      color: $mc-color-gray-600;
 
       &::placeholder {
         color: $mc-color-gray-400;
         opacity: 0;
-        transition: opacity 250ms ease;
+        transition: opacity 250ms ease 0ms;
       }
     }
   }
@@ -41,6 +43,7 @@
 
   &--focus {
     border-color: $mc-color-gray-400;
+    color: $mc-color-gray-100;
   }
 
   &--focus,
@@ -52,12 +55,16 @@
         input {
           &::placeholder {
             opacity: 1;
+            transition: opacity 250ms ease 100ms;
           }
         }
       }
 
       &__label {
         transform: scale(0.75) translateY(-60%);
+        transition:
+          transform 320ms ease 0ms,
+          opacity 320ms ease 0ms;
       }
     }
   }
@@ -71,9 +78,8 @@
     color: $mc-color-gray-500;
     pointer-events: none; // let react handle states
     transform-origin: 0 50%;
-    transform: translateY(0%);
     transition:
-      transform 320ms ease,
-      opacity 320ms ease;
+      transform 320ms ease 100ms,
+      opacity 320ms ease 100ms;
   }
 }
