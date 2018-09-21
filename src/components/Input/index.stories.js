@@ -5,8 +5,7 @@ import { withProps } from '../../utils/addon-props'
 import Input from '../Input'
 import Lock from '../Icons/Lock'
 import MagnifyingGlass from '../Icons/MagnifyingGlass'
-import CloseIcon from '../Icons/Close'
-import Arrow from '../Icons/Arrow'
+import Close from '../Icons/Close'
 
 
 storiesOf('components|Forms/Input', module)
@@ -22,16 +21,25 @@ storiesOf('components|Forms/Input', module)
           <div className='mc-form-group'>
             <Input
               name='test'
-              label={"What's your favorite color?"}
-              placeholder='Red, orange, yellow, green, blue, violet, or something else?'
+              label='Field Label'
+              placeholder='Placeholder'
             />
           </div>
 
           <div className='mc-form-group'>
             <Input
-              name='prepend-password'
-              placeholder='Password'
+              name='search'
+              placeholder='Placeholder'
+              prepend={<MagnifyingGlass />}
+            />
+          </div>
+
+          <div className='mc-form-group'>
+            <Input
+              name='password'
+              placeholder='Placeholder'
               type='password'
+              value='it is a secret'
               prepend={<Lock />}
             />
           </div>
@@ -39,17 +47,9 @@ storiesOf('components|Forms/Input', module)
           <div className='mc-form-group'>
             <Input
               name='prepend'
-              placeholder='Search'
-              prepend={<MagnifyingGlass />}
-            />
-          </div>
-
-          <div className='mc-form-group'>
-            <Input
-              name='prepend'
-              label='Field with appended icon'
-              placeholder={"Hint: It's a close icon!"}
-              append={<CloseIcon />}
+              label='Field Label'
+              placeholder='Placeholder'
+              append={<Close />}
             />
           </div>
 
@@ -85,6 +85,9 @@ storiesOf('components|Forms/Input', module)
                 <label htmlFor='error-example' className='mc-form-textbox__label'>
                   Should the error message overwrite the label?
                 </label>
+              </div>
+              <div className='mc-form-append'>
+                <Close />
               </div>
             </div>
           </div>

@@ -9,6 +9,10 @@ export default class Input extends PureComponent {
     onChange: PropTypes.func.isRequired,
   }
 
+  static defaultProps = {
+    value: '',
+  }
+
   state = {
     focused: false,
   }
@@ -48,6 +52,7 @@ export default class Input extends PureComponent {
             id={name}
             name={name}
             type='text'
+            value={value}
             onChange={onChange}
             onFocus={() => this.setState({ focused: true })}
             onBlur={() => this.setState({ focused: false })}
