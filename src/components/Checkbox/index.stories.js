@@ -1,5 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { withProps } from '../../utils/addon-props'
 
 import Checkbox from '../Checkbox'
@@ -20,14 +21,14 @@ storiesOf('components|Forms/Checkbox', module)
             <Checkbox
               name='terms'
               label='I agree to the terms'
-              onChange={console.log}
+              onChange={action('onChange')}
               checked={true}
             />
 
             <Checkbox
               name='twice'
               label='I like checking things twice'
-              onChange={console.log}
+              onChange={action('onChange')}
             />
 
             <Checkbox
@@ -40,7 +41,7 @@ storiesOf('components|Forms/Checkbox', module)
                 Suspendisse rutrum placerat lectus, sit amet faucibus augue
                 elementum at. Aliquam congue non erat eu pellentesque.
               '
-              onChange={console.log}
+              onChange={action('onChange')}
             />
           </div>
         </div>
@@ -50,7 +51,7 @@ storiesOf('components|Forms/Checkbox', module)
             <Checkbox
               name='terms'
               label='I agree to the terms'
-              onChange={console.log}
+              onChange={action('onChange')}
               checked
               inverted
             />
@@ -58,7 +59,7 @@ storiesOf('components|Forms/Checkbox', module)
             <Checkbox
               name='twice'
               label='I like checking things twice'
-              onChange={console.log}
+              onChange={action('onChange')}
               inverted
             />
         </div>
