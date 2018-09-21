@@ -35,6 +35,8 @@ storiesOf('components|Forms/Input', module)
                   name='color'
                   label='What is your favorite color?'
                   placeholder='Red, orange, yellow, green, blue, violet, or something else?'
+                  onChange={console.log}
+                  inverted
                 />
               </div>
 
@@ -44,6 +46,8 @@ storiesOf('components|Forms/Input', module)
                   label='Who sang it best?'
                   placeholder='Madonna or Britney?'
                   value='Madona, obvi'
+                  onChange={console.log}
+                  inverted
                 />
               </div>
 
@@ -51,7 +55,9 @@ storiesOf('components|Forms/Input', module)
                 <Input
                   name='prepend'
                   placeholder='Search'
+                  onChange={console.log}
                   prepend={<MagnifyingGlass />}
+                  inverted
                 />
               </div>
 
@@ -61,16 +67,20 @@ storiesOf('components|Forms/Input', module)
                   type='password'
                   value='it is a secret'
                   placeholder='Password'
+                  onChange={console.log}
                   prepend={<Lock />}
+                  inverted
                 />
               </div>
 
               <div className='mc-form-group'>
                 <Input
-                  name='prepend'
+                  name='append'
                   label='Field with appended icon'
                   placeholder='Hint: It is a close icon!'
+                  onChange={console.log}
                   append={<Close />}
+                  inverted
                 />
               </div>
 
@@ -81,6 +91,8 @@ storiesOf('components|Forms/Input', module)
                   name='error'
                   label='Error example'
                   placeholder='Try to fix it?'
+                  onChange={console.log}
+                  inverted
                   error
                 />
               </div>
@@ -91,6 +103,8 @@ storiesOf('components|Forms/Input', module)
                   label='There might be a problem...'
                   placeholder='Try to fix it?'
                   value='...with the values of this field.'
+                  onChange={console.log}
+                  inverted
                   error
                 />
               </div>
@@ -102,7 +116,9 @@ storiesOf('components|Forms/Input', module)
                   label='Incorrect Password'
                   placeholder='Password'
                   value='this is incorrect'
+                  onChange={console.log}
                   prepend={<Lock />}
+                  inverted
                   error
                 />
               </div>
