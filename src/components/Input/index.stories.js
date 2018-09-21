@@ -18,76 +18,95 @@ storiesOf('components|Forms/Input', module)
 
       <div className='example--section'>
         <div className='mc-form'>
-          <div className='mc-form-group'>
-            <Input
-              name='test'
-              label={"What's your favorite color?"}
-              placeholder='Red, orange, yellow, green, blue, violet, or something else?'
-            />
-          </div>
+          <div className='row'>
+            <div className='col-sm-6'>
+              <h5 className='mc-text-h5'>Default</h5>
 
-          <div className='mc-form-group'>
-            <Input
-              name='prepend-password'
-              placeholder='Password'
-              type='password'
-              prepend={<Lock />}
-            />
-          </div>
+              <div className='rounded-box'>
 
-          <div className='mc-form-group'>
-            <Input
-              name='prepend'
-              placeholder='Search'
-              prepend={<MagnifyingGlass />}
-            />
-          </div>
+              </div>
+            </div>
 
-          <div className='mc-form-group'>
-            <Input
-              name='prepend'
-              label='Field with appended icon'
-              placeholder='Hint: It is a close icon!'
-              append={<Close />}
-            />
-          </div>
+            <div className='col-sm-6'>
+              <h5 className='mc-text-h5'>Inverted</h5>
 
-          <hr />
+              <div className='mc-form-group'>
+                <Input
+                  name='color'
+                  label='What is your favorite color?'
+                  placeholder='Red, orange, yellow, green, blue, violet, or something else?'
+                />
+              </div>
 
-          <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--error'>
-              <div className='mc-form-textbox__input'>
-                <input name='error-example' id='error-example' placeholder='With prepended element' />
-                <label htmlFor='error-example' className='mc-form-textbox__label'>
-                  Error example
-                </label>
+              <div className='mc-form-group'>
+                <Input
+                  name='test'
+                  label='Who sang it best?'
+                  placeholder='Madonna or Britney?'
+                  value='Madona, obvi'
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Input
+                  name='prepend'
+                  placeholder='Search'
+                  prepend={<MagnifyingGlass />}
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Input
+                  name='prepend-password'
+                  type='password'
+                  value='it is a secret'
+                  placeholder='Password'
+                  prepend={<Lock />}
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Input
+                  name='prepend'
+                  label='Field with appended icon'
+                  placeholder='Hint: It is a close icon!'
+                  append={<Close />}
+                />
+              </div>
+
+              <hr />
+
+              <div className='mc-form-group'>
+                <Input
+                  name='error'
+                  label='Error example'
+                  placeholder='Try to fix it?'
+                  error
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Input
+                  name='fix-it'
+                  label='There might be a problem...'
+                  placeholder='Try to fix it?'
+                  value='...with the values of this field.'
+                  error
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Input
+                  name='password-error'
+                  label='Incorrect Password'
+                  placeholder='Password'
+                  value='this is incorrect'
+                  prepend={<Lock />}
+                  error
+                />
               </div>
             </div>
           </div>
-
-          <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--error mc-form-textbox--focus'>
-              <div className='mc-form-textbox__input'>
-                <input name='error-example' id='error-example' placeholder='Placeholder' />
-                <label htmlFor='error-example' className='mc-form-textbox__label'>
-                  Should the error message overwrite the label?
-                </label>
-              </div>
-            </div>
-          </div>
-
-
-          <div className='mc-form-group'>
-            <div className='mc-form-textbox mc-form-textbox--error mc-form-textbox--focus'>
-              <div className='mc-form-textbox__input'>
-                <input name='error-example' id='error-example' value='This is content the user typed' />
-                <label htmlFor='error-example' className='mc-form-textbox__label'>
-                  Should the error message overwrite the label?
-                </label>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>,
