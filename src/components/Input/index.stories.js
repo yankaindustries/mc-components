@@ -100,6 +100,18 @@ storiesOf('components|Forms/Input', module)
                     error
                   />
                 </div>
+
+                <hr />
+
+                <div className='mc-form-group'>
+                  <Input
+                    name='disabled'
+                    label='Disabled field'
+                    placeholder='Not clickable!'
+                    onChange={action('onChange')}
+                    disabled
+                  />
+                </div>
               </div>
             </div>
 
@@ -198,8 +210,18 @@ storiesOf('components|Forms/Input', module)
                   error
                 />
               </div>
-              <div className='mc-form-append'>
-                <Close />
+
+              <hr />
+
+              <div className='mc-form-group'>
+                <Input
+                  name='disabled'
+                  label='Disabled field'
+                  placeholder='Not clickable!'
+                  onChange={action('onChange')}
+                  inverted
+                  disabled
+                />
               </div>
             </div>
           </div>

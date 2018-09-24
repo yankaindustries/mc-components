@@ -61,4 +61,27 @@
       }
     }
   }
+
+  &.mc-form-textbox--disabled {
+    background: $mc-color-gray-100;
+    border-color: $mc-color-gray-100;
+
+    &:hover {
+      border-color: $mc-color-gray-100;
+    }
+  }
+}
+
+// disabled state
+.mc-form-textbox--disabled {
+  background: $mc-color-gray-600;
+  cursor: not-allowed;
+
+  &:hover {
+    border-color: $mc-color-gray-600;
+  }
+
+  input {
+    cursor: not-allowed;
+  }
 }
