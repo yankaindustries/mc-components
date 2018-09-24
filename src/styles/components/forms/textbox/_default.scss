@@ -57,7 +57,6 @@
           &::placeholder,
           &[placeholder] {
             opacity: 1;
-            color: $mc-color-gray-100;
             transition: opacity 250ms ease 100ms;
           }
         }
