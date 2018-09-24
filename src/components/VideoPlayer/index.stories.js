@@ -72,12 +72,6 @@ storiesOf('components|VideoPlayer', module)
   .add('default', withProps(VideoPlayer)(() =>
     <VideoPlayer />,
   ))
-  .add('chapter video', withProps(VideoPlayer)(() => (
-    <VideoPlayer
-      theme='chapter'
-      endscreenComponent={EndPlayerScreen}
-    />
-  )))
   .add('ambient video', withProps(VideoPlayer)(() => (
     <VideoPlayer
       isMuted
