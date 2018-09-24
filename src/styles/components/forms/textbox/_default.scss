@@ -29,9 +29,10 @@
       line-height: 1.2;
       letter-spacing: 0.5px;
 
-      &::placeholder {
-        color: $mc-color-gray-400;
+      &::placeholder,
+      &[placeholder] {
         opacity: 0;
+        text-overflow: ellipsis;
         transition: opacity 250ms ease 0ms;
       }
     }
@@ -50,19 +51,23 @@
   &--modified {
     .mc-form-textbox {
       &__input {
-        padding: 19px $input-padding 5px;
+        padding: 20px $input-padding 4px;
 
         input {
-          &::placeholder {
+          &::placeholder,
+          &[placeholder] {
             opacity: 1;
+            color: $mc-color-gray-100;
             transition: opacity 250ms ease 100ms;
           }
         }
       }
 
       &__label {
-        transform: scale(0.75) translateY(-60%);
+        font-size: 11px;
+        transform: translateY(-6px);
         transition:
+          font 320ms ease 0ms,
           transform 320ms ease 0ms,
           opacity 320ms ease 0ms;
       }
@@ -83,6 +88,7 @@
     text-overflow: ellipsis;
     transform-origin: 0 50%;
     transition:
+      font 320ms ease 100ms,
       transform 320ms ease 100ms,
       opacity 320ms ease 100ms;
   }

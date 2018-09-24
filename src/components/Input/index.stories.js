@@ -53,7 +53,6 @@ storiesOf('components|Forms/Input', module)
                   <Input
                     name='prepend-password'
                     type='password'
-                    value='it is a secret'
                     placeholder='Password'
                     prepend={<Lock />}
                   />
@@ -153,7 +152,6 @@ storiesOf('components|Forms/Input', module)
                 <Input
                   name='inverted-prepend-password'
                   type='password'
-                  value='it is a secret'
                   placeholder='Password'
                   onChange={action('onChange')}
                   prepend={<Lock />}

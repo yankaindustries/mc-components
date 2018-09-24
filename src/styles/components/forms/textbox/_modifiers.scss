@@ -7,7 +7,8 @@
     &__input {
       padding: $input-padding;
 
-      input::placeholder {
+      input::placeholder,
+      input[placeholder] {
         color: $mc-color-gray-500;
         opacity: 1;
       }
@@ -36,7 +37,8 @@
     }
 
     &__input {
-      input::placeholder {
+      input::placeholder,
+      input[placeholder] {
         color: $mc-color-gray-600;
       }
     }
