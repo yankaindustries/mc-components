@@ -73,6 +73,8 @@
     "node-sass": "^4.9.0",
     "postcss": "^6.0.22",
     "postcss-cli": "^5.0.0",
+    "postcss-inline-svg": "^3.1.1",
+    "postcss-loader": "^3.0.0",
     "prettier-eslint-cli": "^4.7.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

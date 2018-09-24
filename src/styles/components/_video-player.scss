@@ -1,6 +1,5 @@
 /* disabling because these are needed for overriding 3rd party styles */
 /* stylelint-disable declaration-no-important, selector-max-class */
-$chapter-primary-color: #502c2c !default;
 $default-primary-color: $mc-color-primary !default;
 $brightcove-progress-size: 0.45em !default;
 
@@ -60,7 +59,7 @@ $brightcove-video-sizes: (
     }
 
     &:before {
-      content: url("https://do6eyjibs3jse.cloudfront.net/assets/icons/icn-play-button-7ba012291cbf0c5ef41a6809bf798ce99aed9a8f76de812b219817cbba41e472.svg");
+      content: svg-load("video-player-icons/big-play-button.svg");
       transform: scale(1);
       transition: transform 150ms ease-in, opacity 2s ease;
     }
@@ -89,12 +88,20 @@ $brightcove-video-sizes: (
     .vjs-progress-control {
       height: $brightcove-progress-size;
       top: -$brightcove-progress-size;
-      transform-origin: bottom center;
-      transform: translate3d(0, 0, 0) scaleY(1);
-      transition: transform 150ms ease;
+
+      .vjs-progress-holder,
+      .vjs-marker {
+        transform-origin: bottom center;
+        transform: translate3d(0, 0, 0) scaleY(1);
+        transition: transform 150ms ease;
+      }
 
       &:hover {
-        transform: translate3d(0, 0, 0) scaleY(1.4);
+        .vjs-progress-holder,
+        .vjs-marker {
+          transform: translate3d(0, 0, 0) scaleY(1.4);
+        }
+
         height: $brightcove-progress-size;
         top: -$brightcove-progress-size;
       }
@@ -121,16 +128,91 @@ $brightcove-video-sizes: (
     }
   }
 
+  // preload icons
+  &:before {
+    content: "";
+    display: none;
+    background:
+      svg-load("video-player-icons/pause.svg"),
+      svg-load("video-player-icons/play.svg"),
+      svg-load("video-player-icons/volume-3.svg"),
+      svg-load("video-player-icons/volume-2.svg"),
+      svg-load("video-player-icons/volume-1.svg"),
+      svg-load("video-player-icons/volume-0.svg"),
+      svg-load("video-player-icons/cog.svg"),
+      svg-load("video-player-icons/cc.svg"),
+      svg-load("video-player-icons/fullscreen.svg"),
+      svg-load("video-player-icons/fullscreen-exit.svg");
+  }
+
+  .vjs-control:before {
+    line-height: 1.8;
+    width: 32px;
+    height: 32px;
+    left: 16px;
+  }
+
+  .vjs-play-control.vjs-playing:before {
+    content: svg-load("video-player-icons/pause.svg");
+  }
+
+  .vjs-play-control:before {
+    content: svg-load("video-player-icons/play.svg");
+  }
+
+  .vjs-volume-menu-button.vjs-vol-3:before {
+    content: svg-load("video-player-icons/volume-3.svg");
+  }
+
+  .vjs-volume-menu-button.vjs-vol-2:before {
+    content: svg-load("video-player-icons/volume-2.svg");
+  }
+
+  .vjs-volume-menu-button.vjs-vol-1:before {
+    content: svg-load("video-player-icons/volume-1.svg");
+  }
+
+  .vjs-volume-menu-button.vjs-vol-0:before {
+    content: svg-load("video-player-icons/volume-0.svg");
+  }
+
+  &.vjs-quality-menu .vjs-quality-menu-button:before {
+    content: svg-load("video-player-icons/cog.svg");
+  }
+
+  .video-annotations-menu:before {
+    top: 3px;
+    content: svg-load("video-player-icons/annotations.svg");
+  }
+
+  .vjs-subtitles-button:before {
+    content: svg-load("video-player-icons/cc.svg");
+  }
+
+  .vjs-fullscreen-control:before {
+    content: svg-load("video-player-icons/fullscreen.svg");
+  }
+
+  &.vjs-fullscreen .vjs-fullscreen-control:before {
+    content: svg-load("video-player-icons/fullscreen-exit.svg");
+  }
+
   .vjs-playback-rate .vjs-playback-rate-value {
-    font-size: 1.3em;
+    font-size: 1em;
     line-height: 2.2;
+    font-weight: 700;
+    top: 5px;
   }
 
   &.vjs-quality-menu .vjs-quality-menu-button-4K-flag:after,
   &.vjs-quality-menu .vjs-quality-menu-button-HD-flag:after {
     font-size: 0.6em;
     font-weight: 600;
-    right: 1px;
+    right: 7px;
+    top: 7px;
+    height: auto;
+    line-height: 1.4em;
+    border-radius: 4px;
   }
 
   // capitalize HD label
@@ -182,6 +264,8 @@ $brightcove-video-sizes: (
   }
 
   .vjs-menu-button-popup .vjs-menu {
+    left: -2.6em;
+
     .vjs-menu-content {
       padding-bottom: 0.75em;
     }
@@ -240,6 +324,12 @@ $brightcove-video-sizes: (
       font-size: 16px;
     }
   }
+
+  @media (max-width: 767px) {
+    .video-annotations-menu {
+      display: none;
+    }
+  }
 }
 
 .bc-player__video--default {
@@ -260,63 +350,43 @@ $brightcove-video-sizes: (
     background-color: rgba($mc-color-light, 0.9);
   }
 
-  .vjs-menu-button-popup .vjs-menu {
-    .vjs-menu-item {
-      background-color: rgba($mc-color-dark, 0.2);
-
-      &.vjs-selected {
-        color: $mc-color-light;
-        background-color: $default-primary-color;
-
-        &:hover {
-          background-color: $default-primary-color;
-        }
-      }
-
-      &:hover {
-        background-color: rgba($mc-color-dark, 0.35);
-      }
-    }
-  }
-}
-
-.bc-player__video--chapter {
   .vjs-control-bar {
-    background-color: rgba($chapter-primary-color, 0.7);
-  }
-
-  .vjs-progress-control .vjs-load-progress,
-  .vjs-progress-control .vjs-progress-holder {
-    background-color: rgba($chapter-primary-color, 0.2);
-  }
-
-  .vjs-progress-control .vjs-play-progress {
-    background-color: $chapter-primary-color;
-  }
-
-  .vjs-volume-level {
-    background-color: rgba($mc-color-light, 0.9);
-  }
-
-  .vjs-load-progress div {
-    background-color: rgba($mc-color-light, 0.12);
+    background: rgba($mc-color-dark, 0.4);
   }
 
   .vjs-menu-button-popup .vjs-menu {
+    .vjs-menu-content {
+      padding-bottom: 14px;
+    }
+
     .vjs-menu-item {
-      background-color: rgba($chapter-primary-color, 0.3);
+      font-family: $mc-font-default;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      text-transform: capitalize;
+      background-color: rgba($mc-color-dark, 0.8);
+
+      &:first-child {
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
 
       &.vjs-selected {
         color: $mc-color-light;
-        background-color: $chapter-primary-color;
+        background-color: $mc-color-gray-300;
 
         &:hover {
-          background-color: $chapter-primary-color;
+          background-color: $mc-color-gray-300;
         }
       }
 
       &:hover {
-        background-color: rgba($chapter-primary-color, 0.45);
+        background-color: rgba($mc-color-dark, 0.8);
       }
     }
   }
