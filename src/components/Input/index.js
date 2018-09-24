@@ -93,6 +93,7 @@ export default class Input extends PureComponent {
             onChange={onChange}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
+            disabled={disabled}
           />
 
           {label &&
