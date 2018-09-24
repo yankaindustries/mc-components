@@ -29,8 +29,7 @@
       line-height: 1.2;
       letter-spacing: 0.5px;
 
-      &::placeholder,
-      &[placeholder] {
+      &::placeholder {
         opacity: 0;
         text-overflow: ellipsis;
         transition: opacity 250ms ease 0ms;
@@ -54,8 +53,7 @@
         padding: 20px $input-padding 4px;
 
         input {
-          &::placeholder,
-          &[placeholder] {
+          &::placeholder {
             opacity: 1;
             transition: opacity 250ms ease 100ms;
           }
