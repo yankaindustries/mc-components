@@ -6,6 +6,7 @@
   border-radius: 4px;
   width: 100%;
   color: $mc-color-gray-500;
+  cursor: text;
   transition:
     border 200ms ease,
     color 200ms ease;
@@ -37,7 +38,6 @@
   }
 
   &:hover {
-    cursor: text;
     border-color: $mc-color-gray-400;
   }
 

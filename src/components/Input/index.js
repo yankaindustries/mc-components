@@ -9,6 +9,7 @@ export default class Input extends PureComponent {
       PropTypes.string,
     ]),
     inverted: PropTypes.bool,
+    disabled: PropTypes.bool,
     label: PropTypes.string,
     value: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
@@ -18,6 +19,7 @@ export default class Input extends PureComponent {
 
   static defaultProps = {
     inverted: false,
+    disabled: false,
     value: '',
   }
 
@@ -50,6 +52,7 @@ export default class Input extends PureComponent {
       append,
       error,
       inverted,
+      disabled,
       label,
       name,
       prepend,
@@ -68,6 +71,7 @@ export default class Input extends PureComponent {
       label ? '' : 'mc-form-textbox--no-label',
       value ? 'mc-form-textbox--modified' : '',
       inverted ? 'mc-form-textbox--invert' : '',
+      disabled ? 'mc-form-textbox--disabled' : '',
       error ? 'mc-form-textbox--error' : '',
     ].join(' ')
 
