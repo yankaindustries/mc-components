@@ -128,23 +128,6 @@ $brightcove-video-sizes: (
     }
   }
 
-  // preload icons
-  &:before {
-    content: "";
-    display: none;
-    background:
-      svg-load("video-player-icons/pause.svg"),
-      svg-load("video-player-icons/play.svg"),
-      svg-load("video-player-icons/volume-3.svg"),
-      svg-load("video-player-icons/volume-2.svg"),
-      svg-load("video-player-icons/volume-1.svg"),
-      svg-load("video-player-icons/volume-0.svg"),
-      svg-load("video-player-icons/cog.svg"),
-      svg-load("video-player-icons/cc.svg"),
-      svg-load("video-player-icons/fullscreen.svg"),
-      svg-load("video-player-icons/fullscreen-exit.svg");
-  }
-
   .vjs-control:before {
     line-height: 1.8;
     width: 32px;
