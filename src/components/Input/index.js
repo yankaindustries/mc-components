@@ -102,6 +102,7 @@ export default class Input extends PureComponent {
             name={name}
             type='text'
             value={value}
+            disabled={disabled}
             {...props}
             onChange={onChange}
             onFocus={this.onFocus}
