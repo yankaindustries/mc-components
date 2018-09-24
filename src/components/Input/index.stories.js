@@ -61,7 +61,7 @@ storiesOf('components|Forms/Input', module)
 
                 <div className='mc-form-group'>
                   <Input
-                    name='prepend'
+                    name='append'
                     label='Field with appended icon'
                     placeholder='Hint: It is a close icon!'
                     append={<Close />}
@@ -120,7 +120,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='color'
+                  name='inverted-color'
                   label='What is your favorite color?'
                   placeholder='Red, orange, yellow, green, blue, violet, or something else?'
                   onChange={action('onChange')}
@@ -130,7 +130,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='test'
+                  name='inverted-test'
                   label='Who sang it best?'
                   placeholder='Madonna or Britney?'
                   value='Madona, obvi'
@@ -141,7 +141,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='prepend'
+                  name='inverted-prepend'
                   placeholder='Search'
                   onChange={action('onChange')}
                   prepend={<MagnifyingGlass />}
@@ -151,7 +151,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='prepend-password'
+                  name='inverted-prepend-password'
                   type='password'
                   value='it is a secret'
                   placeholder='Password'
@@ -163,7 +163,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='append'
+                  name='inverted-append'
                   label='Field with appended icon'
                   placeholder='Hint: It is a close icon!'
                   onChange={action('onChange')}
@@ -176,7 +176,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='error'
+                  name='inverted-error'
                   label='Error example'
                   placeholder='Try to fix it?'
                   onChange={action('onChange')}
@@ -187,7 +187,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='fix-it'
+                  name='inverted-fix-it'
                   label='There might be a problem...'
                   placeholder='Try to fix it?'
                   value='...with the values of this field.'
@@ -199,7 +199,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='password-error'
+                  name='inverted-password-error'
                   type='password'
                   label='Incorrect Password'
                   placeholder='Password'
@@ -215,7 +215,7 @@ storiesOf('components|Forms/Input', module)
 
               <div className='mc-form-group'>
                 <Input
-                  name='disabled'
+                  name='inverted-disabled'
                   label='Disabled field'
                   placeholder='Not clickable!'
                   onChange={action('onChange')}

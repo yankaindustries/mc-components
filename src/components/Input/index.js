@@ -27,6 +27,12 @@ export default class Input extends PureComponent {
     focused: false,
   }
 
+  constructor (props) {
+    super(props)
+
+    this.input = React.createRef()
+  }
+
   onFocus = () => {
     const { onFocus } = this.props
 
@@ -45,6 +51,10 @@ export default class Input extends PureComponent {
     if (onBlur) {
       onBlur()
     }
+  }
+
+  focus = () => {
+    this.input.current.focus()
   }
 
   render () {
@@ -76,7 +86,10 @@ export default class Input extends PureComponent {
     ].join(' ')
 
     return (
-      <div className={classes}>
+      <div
+        className={classes}
+        onClick={this.focus}
+      >
         {prepend &&
           <div className='mc-form-prepend'>
             {prepend}
@@ -94,6 +107,7 @@ export default class Input extends PureComponent {
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             disabled={disabled}
+            ref={this.input}
           />
 
           {label &&
