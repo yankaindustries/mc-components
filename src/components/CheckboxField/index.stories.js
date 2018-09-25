@@ -11,9 +11,9 @@ const store = createStore(reducer)
 
 
 const Form = reduxForm({
-  form: 'radio',
+  form: 'checkbox',
   initialValues: {
-    red: true,
+    terms: true,
   },
 })(
   () =>
