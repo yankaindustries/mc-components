@@ -15,9 +15,9 @@ import Close from '../Icons/Close'
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
 const Form = reduxForm({
-  form: 'radio',
+  form: 'input',
   initialValues: {
-    something: 'something',
+    best: 'Madonna, obvi',
   },
 })(
   () =>
@@ -43,7 +43,7 @@ const Form = reduxForm({
 
                 <div className='mc-form-group'>
                   <InputField
-                    name='test'
+                    name='best'
                     label='Who sang it best?'
                     placeholder='Madonna or Britney?'
                   />
@@ -134,7 +134,7 @@ const Form = reduxForm({
 
               <div className='mc-form-group'>
                 <InputField
-                  name='test'
+                  name='best'
                   label='Who sang it best?'
                   placeholder='Madonna or Britney?'
                   inverted
