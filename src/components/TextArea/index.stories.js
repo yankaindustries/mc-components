@@ -17,20 +17,39 @@ storiesOf('components|Forms/TextArea', module)
           <div className='row'>
             <div className='col-sm-6'>
               <h5 className='mc-text-h5'>Default</h5>
+
               <div className='rounded-box'>
-                <div className='mc-form-group'>
-
-                  <div className='mc-form-textarea'>
-                    <textarea name='demo-textarea' id='demo-textarea' className='mc-form-textarea__textarea' placeholder='Now you can type here!'></textarea>
-                    <label htmlFor='demo-textarea' className='mc-form-textarea__label'>This is some dummy text.</label>
-                  </div>
-
-                </div>
-
                 <div className='mc-form-group'>
                   <TextArea
                     name='demo'
                     label='Some Label'
+                    value=''
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <TextArea
+                    name='value'
+                    label='Tell us more about yourself'
+                    value='I like turtles...'
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <TextArea
+                    name='error'
+                    label='What have we here?'
+                    value='Looks like a problem.'
+                    error
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <TextArea
+                    name='disabled'
+                    label={'Can\'t touch this'}
+                    value=''
+                    disabled
                   />
                 </div>
               </div>
@@ -38,13 +57,42 @@ storiesOf('components|Forms/TextArea', module)
 
             <div className='col-sm-6'>
               <h5 className='mc-text-h5'>Inverted</h5>
+
               <div className='mc-form-group'>
+                <TextArea
+                  name='inverted-demo'
+                  label='Some Label'
+                  inverted
+                />
+              </div>
 
-                <div className='mc-form-textarea mc-form-textarea--invert'>
-                  <textarea name='demo-textarea-invert' id='demo-textarea-invert' className='mc-form-textarea__textarea' placeholder='Now you can type here!'></textarea>
-                  <label htmlFor='demo-textarea-invert' className='mc-form-textarea__label'>This is some dummy text.</label>
-                </div>
+              <div className='mc-form-group'>
+                <TextArea
+                  name='inverted-value'
+                  label='Tell us more about yourself'
+                  value='I like turtles...'
+                  inverted
+                />
+              </div>
 
+              <div className='mc-form-group'>
+                <TextArea
+                  name='inverted-error'
+                  label='What have we here?'
+                  value='Looks like a problem.'
+                  error
+                  inverted
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <TextArea
+                  name='inverted-disabled'
+                  label={'Can\'t touch this'}
+                  value=''
+                  disabled
+                  inverted
+                />
               </div>
             </div>
           </div>
