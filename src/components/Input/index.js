@@ -11,6 +11,7 @@ export default class Input extends PureComponent {
     inverted: PropTypes.bool,
     disabled: PropTypes.bool,
     label: PropTypes.string,
+    name: PropTypes.string,
     value: PropTypes.string.isRequired,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
@@ -18,8 +19,6 @@ export default class Input extends PureComponent {
   }
 
   static defaultProps = {
-    inverted: false,
-    disabled: false,
     value: '',
   }
 

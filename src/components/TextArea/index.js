@@ -1,60 +1,96 @@
 import React, { PureComponent } from 'react'
-import { string, func, object, bool } from 'prop-types'
-import cn from 'classnames'
+import PropTypes from 'prop-types'
 
-export default class TextArea extends PureComponent {
+
+export default class Textarea extends PureComponent {
   static propTypes = {
-    value: string.isRequired,
-    onChange: func.isRequired,
-    placeholder: string,
-    fullWidth: bool,
-    resize: bool,
-    style: object,
-    type: string,
-    error: string,
+    error: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+    ]),
+    inverted: PropTypes.bool,
+    disabled: PropTypes.bool,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
   }
 
-  static defaultProps = {
-    type: 'text',
-    fullWidth: true,
-    resize: false,
+  state = {
+    focused: false,
   }
 
-  onChange = ({ target: { value } }) => {
-    const { onChange } = this.props
-    onChange(value)
+  constructor (props) {
+    super(props)
+
+    this.input = React.createRef()
+  }
+
+  onFocus = () => {
+    const { onFocus } = this.props
+
+    this.setState({ focused: true })
+
+    if (onFocus) {
+      onFocus()
+    }
+  }
+
+  onBlur = () => {
+    const { onBlur } = this.props
+
+    this.setState({ focused: false })
+
+    if (onBlur) {
+      onBlur()
+    }
+  }
+
+  focus = () => {
+    this.input.current.focus()
   }
 
   render () {
     const {
-      value,
-      placeholder,
-      style,
-      fullWidth,
+      disabled,
       error,
-      resize,
-      onChange,
-      ...props
+      inverted,
+      label,
+      name,
+      value,
     } = this.props
-    const inputClassNames = cn(
-      'input-field__input',
-      { 'input-field__input--full-width': fullWidth },
-      { 'input-field__input--error': error },
-      { 'input-field__input--no-resize': !resize },
-    )
+
+    const {
+      focused,
+    } = this.state
+
+    const classes = [
+      'mc-form-textarea',
+      focused ? 'mc-form-textarea--focus' : '',
+      label ? '' : 'mc-form-textarea--no-label',
+      value ? 'mc-form-textarea--modified' : '',
+      inverted ? 'mc-form-textarea--invert' : '',
+      disabled ? 'mc-form-textarea--disabled' : '',
+      error ? 'mc-form-textarea--error' : '',
+    ].join(' ')
 
     return (
-      <div style={style} className='input-field'>
-        {error &&
-          <span className='input-field__error'>{error}</span>
-        }
+      <div className={classes}>
         <textarea
-          className={inputClassNames}
-          value={value}
-          placeholder={placeholder}
-          onChange={this.onChange}
-          {...props}
+          name={name}
+          id={name}
+          className='mc-form-textarea__textarea'
+          placeholder='Now you can type here!'
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
         />
+        <label
+          htmlFor={name}
+          className='mc-form-textarea__label'>
+          {label}
+        </label>
       </div>
     )
   }
