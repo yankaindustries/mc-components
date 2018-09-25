@@ -1,0 +1,22 @@
+.mc-form-textarea {
+  // background: blue;
+}
+
+.mc-form-textarea--no-label {
+  .mc-form-textarea {
+    &__label { display: none; }
+
+    &__textarea {
+      padding: $textarea-padding $textarea-padding;
+      color: $mc-color-gray-600;
+
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.mc-form-textarea--invert {
+  border-color: $mc-color-gray-300;
+}
