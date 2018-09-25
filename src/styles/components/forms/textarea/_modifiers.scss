@@ -1,17 +1,13 @@
-.mc-form-textarea {
-  // background: blue;
-}
-
 .mc-form-textarea--no-label {
   .mc-form-textarea {
     &__label { display: none; }
 
     &__textarea {
       padding: $textarea-padding $textarea-padding;
-      color: $mc-color-gray-600;
 
       &::placeholder {
         opacity: 1;
+        color: $mc-color-gray-500;
       }
     }
   }
@@ -19,4 +15,21 @@
 
 .mc-form-textarea--invert {
   border-color: $mc-color-gray-300;
+}
+
+.mc-form-textarea--error {
+  border-color: $mc-color-primary;
+
+  &:hover {
+    border-color: $mc-color-primary-hover;
+  }
+
+  &.mc-form-textarea--focus,
+  &.mc-form-textarea--modified {
+    .mc-form-textarea {
+      &__label {
+        color: $mc-color-primary;
+      }
+    }
+  }
 }

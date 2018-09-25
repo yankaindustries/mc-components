@@ -15,35 +15,6 @@
   }
 }
 
-// Error states
-.mc-form-input--error {
-  background: none;
-  border-color: $mc-color-primary;
-
-  &:hover {
-    border-color: $mc-color-primary-hover;
-  }
-
-  // Override default focus state
-  // with chained css selector
-  &.mc-form-input--focus {
-    border-color: $mc-color-primary-active;
-  }
-
-  .mc-form-input {
-    &__label {
-      color: $mc-color-primary;
-    }
-
-    &__input {
-      input::placeholder {
-        color: $mc-color-gray-600;
-      }
-    }
-  }
-}
-
-
 // Inverted styles
 .mc-form-input--invert {
   border: 1px solid $mc-color-gray-300;
@@ -68,6 +39,35 @@
 
     &:hover {
       border-color: $mc-color-gray-100;
+    }
+  }
+}
+
+// Error states
+.mc-form-input--error {
+  background: none;
+  border-color: $mc-color-primary;
+
+  &:hover {
+    border-color: $mc-color-primary-hover;
+  }
+
+  // Override default focus state
+  // with chained css selector
+  &.mc-form-input--focus,
+  &.mc-form-input--modified {
+    border-color: $mc-color-primary-active;
+
+    .mc-form-input__label {
+      color: $mc-color-primary;
+    }
+  }
+
+  .mc-form-input {
+    &__input {
+      input::placeholder {
+        color: $mc-color-gray-600;
+      }
     }
   }
 }
