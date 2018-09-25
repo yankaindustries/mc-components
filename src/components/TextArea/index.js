@@ -12,10 +12,15 @@ export default class Textarea extends PureComponent {
     disabled: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
-    value: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
+  }
+
+  static defaultProp = {
+    value: '',
   }
 
   state = {
@@ -59,7 +64,9 @@ export default class Textarea extends PureComponent {
       inverted,
       label,
       name,
+      placeholder,
       value,
+      onChange,
     } = this.props
 
     const {
@@ -82,7 +89,9 @@ export default class Textarea extends PureComponent {
           name={name}
           id={name}
           className='mc-form-textarea__textarea'
-          placeholder='Now you can type here!'
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
         />
