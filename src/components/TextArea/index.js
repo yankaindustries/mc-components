@@ -67,6 +67,7 @@ export default class Textarea extends PureComponent {
       placeholder,
       value,
       onChange,
+      ...props
     } = this.props
 
     const {
@@ -91,6 +92,8 @@ export default class Textarea extends PureComponent {
           className='mc-form-textarea__textarea'
           placeholder={placeholder}
           value={value}
+          disabled={disabled}
+          {...props}
           onChange={onChange}
           onFocus={this.onFocus}
           onBlur={this.onBlur}

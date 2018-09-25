@@ -16,8 +16,15 @@
 
 
 .mc-form-group {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   position: relative;
   margin-bottom: 24px; // not sure this should go here.
+}
+
+.mc-form-help {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 15px;
+  color: $mc-color-gray-500;
 }
