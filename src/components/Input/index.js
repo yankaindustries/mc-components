@@ -1,15 +1,16 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 
 export default class Input extends PureComponent {
   static propTypes = {
+    disabled: PropTypes.bool,
     error: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.string,
     ]),
+    help: PropTypes.string,
     inverted: PropTypes.bool,
-    disabled: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string.isRequired,
@@ -60,6 +61,7 @@ export default class Input extends PureComponent {
     const {
       append,
       error,
+      help,
       inverted,
       disabled,
       label,
@@ -85,46 +87,54 @@ export default class Input extends PureComponent {
     ].join(' ')
 
     return (
-      <div
-        className={classes}
-        onClick={this.focus}
-      >
-        {prepend &&
-          <div className='mc-form-prepend'>
-            {prepend}
+      <Fragment>
+        <div
+          className={classes}
+          onClick={this.focus}
+        >
+          {prepend &&
+            <div className='mc-form-prepend'>
+              {prepend}
+            </div>
+          }
+
+          <div className='mc-form-input__input'>
+            <input
+              id={name}
+              name={name}
+              type='text'
+              value={value}
+              disabled={disabled}
+              {...props}
+              onChange={onChange}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              ref={this.input}
+            />
+
+            {label &&
+              <label
+                htmlFor={name}
+                className='mc-form-input__label'
+              >
+                {label}
+              </label>
+            }
           </div>
-        }
 
-        <div className='mc-form-input__input'>
-          <input
-            id={name}
-            name={name}
-            type='text'
-            value={value}
-            disabled={disabled}
-            {...props}
-            onChange={onChange}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            ref={this.input}
-          />
-
-          {label &&
-            <label
-              htmlFor={name}
-              className='mc-form-input__label'
-            >
-              {label}
-            </label>
+          {append &&
+            <div className='mc-form-append'>
+              {append}
+            </div>
           }
         </div>
 
-        {append &&
-          <div className='mc-form-append'>
-            {append}
-          </div>
+        {help &&
+          <span className='mc-form-help'>
+            {help}
+          </span>
         }
-      </div>
+      </Fragment>
     )
   }
 }

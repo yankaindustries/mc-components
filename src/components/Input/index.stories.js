@@ -29,6 +29,7 @@ storiesOf('components|Forms/Input', module)
                     name='color'
                     label='What is your favorite color?'
                     placeholder='Red, orange, yellow, green, blue, violet, or something else?'
+                    onChange={action('onChange')}
                   />
                 </div>
 
@@ -38,6 +39,7 @@ storiesOf('components|Forms/Input', module)
                     label='Who sang it best?'
                     placeholder='Madonna or Britney?'
                     value='Madona, obvi'
+                    onChange={action('onChange')}
                   />
                 </div>
 
@@ -46,6 +48,7 @@ storiesOf('components|Forms/Input', module)
                     name='prepend'
                     placeholder='Search'
                     prepend={<MagnifyingGlass />}
+                    onChange={action('onChange')}
                   />
                 </div>
 
@@ -54,7 +57,9 @@ storiesOf('components|Forms/Input', module)
                     name='prepend-password'
                     type='password'
                     placeholder='Password'
+                    help='You have a secret'
                     prepend={<Lock />}
+                    onChange={action('onChange')}
                   />
                 </div>
 
@@ -64,6 +69,7 @@ storiesOf('components|Forms/Input', module)
                     label='Field with appended icon'
                     placeholder='Hint: It is a close icon!'
                     append={<Close />}
+                    onChange={action('onChange')}
                   />
                 </div>
 
@@ -74,6 +80,7 @@ storiesOf('components|Forms/Input', module)
                     name='error'
                     label='Error example'
                     placeholder='Try to fix it?'
+                    onChange={action('onChange')}
                     error
                   />
                 </div>
@@ -84,6 +91,7 @@ storiesOf('components|Forms/Input', module)
                     label='There might be a problem...'
                     placeholder='Try to fix it?'
                     value='...with the values of this field.'
+                    onChange={action('onChange')}
                     error
                   />
                 </div>
@@ -96,6 +104,7 @@ storiesOf('components|Forms/Input', module)
                     placeholder='Password'
                     value='this is incorrect'
                     prepend={<Lock />}
+                    onChange={action('onChange')}
                     error
                   />
                 </div>
@@ -153,8 +162,9 @@ storiesOf('components|Forms/Input', module)
                   name='inverted-prepend-password'
                   type='password'
                   placeholder='Password'
-                  onChange={action('onChange')}
+                  help='You have a secret'
                   prepend={<Lock />}
+                  onChange={action('onChange')}
                   inverted
                 />
               </div>
@@ -164,8 +174,8 @@ storiesOf('components|Forms/Input', module)
                   name='inverted-append'
                   label='Field with appended icon'
                   placeholder='Hint: It is a close icon!'
-                  onChange={action('onChange')}
                   append={<Close />}
+                  onChange={action('onChange')}
                   inverted
                 />
               </div>
@@ -202,8 +212,8 @@ storiesOf('components|Forms/Input', module)
                   label='Incorrect Password'
                   placeholder='Password'
                   value='this is incorrect'
-                  onChange={action('onChange')}
                   prepend={<Lock />}
+                  onChange={action('onChange')}
                   inverted
                   error
                 />
