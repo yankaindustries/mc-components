@@ -76,13 +76,13 @@ export default class Input extends PureComponent {
     } = this.state
 
     const classes = [
-      'mc-form-textbox',
-      focused ? 'mc-form-textbox--focus' : '',
-      label ? '' : 'mc-form-textbox--no-label',
-      value ? 'mc-form-textbox--modified' : '',
-      inverted ? 'mc-form-textbox--invert' : '',
-      disabled ? 'mc-form-textbox--disabled' : '',
-      error ? 'mc-form-textbox--error' : '',
+      'mc-form-input',
+      focused ? 'mc-form-input--focus' : '',
+      label ? '' : 'mc-form-input--no-label',
+      value ? 'mc-form-input--modified' : '',
+      inverted ? 'mc-form-input--invert' : '',
+      disabled ? 'mc-form-input--disabled' : '',
+      error ? 'mc-form-input--error' : '',
     ].join(' ')
 
     return (
@@ -96,7 +96,7 @@ export default class Input extends PureComponent {
           </div>
         }
 
-        <div className='mc-form-textbox__input'>
+        <div className='mc-form-input__input'>
           <input
             id={name}
             name={name}
@@ -113,7 +113,7 @@ export default class Input extends PureComponent {
           {label &&
             <label
               htmlFor={name}
-              className='mc-form-textbox__label'
+              className='mc-form-input__label'
             >
               {label}
             </label>

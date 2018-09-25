@@ -1,4 +1,4 @@
-.mc-form-textbox {
+.mc-form-input {
   display: flex;
   align-items: center;
   border: 1px solid $mc-color-gray-600;
@@ -31,8 +31,9 @@
 
       &::placeholder {
         opacity: 0;
+        color: $mc-color-gray-400;
         text-overflow: ellipsis;
-        transition: opacity 250ms ease 0ms;
+        transition: opacity 150ms ease 0ms;
       }
     }
   }
@@ -48,7 +49,7 @@
 
   &--focus,
   &--modified {
-    .mc-form-textbox {
+    .mc-form-input {
       &__input {
         padding: 20px $input-padding 4px;
 
@@ -65,8 +66,7 @@
         transform: translateY(-6px);
         transition:
           font 320ms ease 0ms,
-          transform 320ms ease 0ms,
-          opacity 320ms ease 0ms;
+          transform 320ms ease 0ms;
       }
     }
   }
@@ -86,7 +86,6 @@
     transform-origin: 0 50%;
     transition:
       font 320ms ease 100ms,
-      transform 320ms ease 100ms,
-      opacity 320ms ease 100ms;
+      transform 320ms ease 100ms;
   }
 }

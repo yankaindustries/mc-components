@@ -1,8 +1,8 @@
 // When the label shouldn't animate
 // or be shown
-.mc-form-textbox--no-label {
-  .mc-form-textbox {
-    &__label { opacity: 0; }
+.mc-form-input--no-label {
+  .mc-form-input {
+    &__label { display: none; }
 
     &__input {
       padding: $input-padding;
@@ -16,7 +16,7 @@
 }
 
 // Error states
-.mc-form-textbox--error {
+.mc-form-input--error {
   background: none;
   border-color: $mc-color-primary;
 
@@ -26,11 +26,11 @@
 
   // Override default focus state
   // with chained css selector
-  &.mc-form-textbox--focus {
+  &.mc-form-input--focus {
     border-color: $mc-color-primary-active;
   }
 
-  .mc-form-textbox {
+  .mc-form-input {
     &__label {
       color: $mc-color-primary;
     }
@@ -45,16 +45,16 @@
 
 
 // Inverted styles
-.mc-form-textbox--invert {
+.mc-form-input--invert {
   border: 1px solid $mc-color-gray-300;
   background: $mc-color-gray-200;
 
-  &.mc-form-textbox--focus {
+  &.mc-form-input--focus {
     color: $mc-color-gray-600;
     border-color: $mc-color-gray-400;
   }
 
-  .mc-form-textbox {
+  .mc-form-input {
     &__input {
       input {
         color: $mc-color-gray-600;
@@ -62,7 +62,7 @@
     }
   }
 
-  &.mc-form-textbox--disabled {
+  &.mc-form-input--disabled {
     background: $mc-color-gray-100;
     border-color: $mc-color-gray-100;
 
@@ -73,7 +73,7 @@
 }
 
 // disabled state
-.mc-form-textbox--disabled {
+.mc-form-input--disabled {
   background: $mc-color-gray-600;
   cursor: not-allowed;
 
