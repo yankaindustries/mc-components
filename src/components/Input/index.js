@@ -100,7 +100,6 @@ export default class Input extends PureComponent {
 
           <div className='mc-form-input__input'>
             <input
-              id={name}
               name={name}
               type='text'
               value={value}
