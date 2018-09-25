@@ -7,10 +7,13 @@ import { withProps } from '../../utils/addon-props'
 
 import InputField from '../InputField'
 
+import Lock from '../Icons/Lock'
+import MagnifyingGlass from '../Icons/MagnifyingGlass'
+import Close from '../Icons/Close'
+
+
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
-
-
 const Form = reduxForm({
   form: 'radio',
   initialValues: {
@@ -33,8 +36,85 @@ const Form = reduxForm({
                 <div className='mc-form-group'>
                   <InputField
                     name='color'
-                    label='Favorite Color'
-                    placeholder='Like, red/blue/green?'
+                    label='What is your favorite color?'
+                    placeholder='Red, orange, yellow, green, blue, violet, or something else?'
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='test'
+                    label='Who sang it best?'
+                    placeholder='Madonna or Britney?'
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='prepend'
+                    placeholder='Search'
+                    prepend={<MagnifyingGlass />}
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='prepend-password'
+                    type='password'
+                    placeholder='Password'
+                    help='You have a secret'
+                    prepend={<Lock />}
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='append'
+                    label='Field with appended icon'
+                    placeholder='Hint: It is a close icon!'
+                    append={<Close />}
+                  />
+                </div>
+
+                <hr />
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='error'
+                    label='Error example'
+                    placeholder='Try to fix it?'
+                    error
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='fix-it'
+                    label='There might be a problem...'
+                    placeholder='Try to fix it?'
+                    error
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='password-error'
+                    type='password'
+                    label='Incorrect Password'
+                    placeholder='Password'
+                    prepend={<Lock />}
+                    error
+                  />
+                </div>
+
+                <hr />
+
+                <div className='mc-form-group'>
+                  <InputField
+                    name='disabled'
+                    label='Disabled field'
+                    placeholder='Not clickable!'
+                    disabled
                   />
                 </div>
               </div>
@@ -45,10 +125,95 @@ const Form = reduxForm({
 
               <div className='mc-form-group'>
                 <InputField
-                  name='fruit'
-                  label='Favorite Fruit'
-                  placeholder='Orange ya glad I did not say banana?'
+                  name='color'
+                  label='What is your favorite color?'
+                  placeholder='Red, orange, yellow, green, blue, violet, or something else?'
                   inverted
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='test'
+                  label='Who sang it best?'
+                  placeholder='Madonna or Britney?'
+                  inverted
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='prepend'
+                  placeholder='Search'
+                  prepend={<MagnifyingGlass />}
+                  inverted
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='prepend-password'
+                  type='password'
+                  placeholder='Password'
+                  help='You have a secret'
+                  prepend={<Lock />}
+                  inverted
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='append'
+                  label='Field with appended icon'
+                  placeholder='Hint: It is a close icon!'
+                  append={<Close />}
+                  inverted
+                />
+              </div>
+
+              <hr />
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='error'
+                  label='Error example'
+                  placeholder='Try to fix it?'
+                  inverted
+                  error
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='fix-it'
+                  label='There might be a problem...'
+                  placeholder='Try to fix it?'
+                  inverted
+                  error
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='password-error'
+                  type='password'
+                  label='Incorrect Password'
+                  placeholder='Password'
+                  prepend={<Lock />}
+                  inverted
+                  error
+                />
+              </div>
+
+              <hr />
+
+              <div className='mc-form-group'>
+                <InputField
+                  name='disabled'
+                  label='Disabled field'
+                  placeholder='Not clickable!'
+                  inverted
+                  disabled
                 />
               </div>
             </div>
