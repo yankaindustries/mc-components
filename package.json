@@ -19,7 +19,7 @@
     "build:js": "babel ./src/components --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
     "build:scss": "NODE_ENV=development mkdir -p ./dist/styles/scss && postcss ./src/styles --base ./src/styles --dir ./dist/styles/scss",
     "build:css": "NODE_ENV=production mkdir -p ./dist/styles/css && node-sass ./src/styles/index.scss | postcss > ./dist/styles/css/index.css",
-    "build:css-vendor": "NODE_ENV=production node-sass ./src/styles/libraries/_libraries.scss | postcss > ./dist/vendor.css",
+    "build:css-vendor": "NODE_ENV=production node-sass ./src/styles/libraries/_libraries.scss | postcss > ./dist/styles/css/vendor.css",
     "build:styles": "yarn build:css && yarn build:scss && yarn build:css-vendor",
     "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
     "deploy-storybook": "storybook-to-ghpages",

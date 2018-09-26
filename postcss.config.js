@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer')
 const inlineSVG = require('postcss-inline-svg')
 
 module.exports = ctx => ({
-  syntax: ctx.env === 'development' ? 'postcss-scss' : undefined,
+  syntax: 'postcss-scss',
   plugins: ctx.env === 'development'
     ? [
       autoprefixer({ grid: true }),
