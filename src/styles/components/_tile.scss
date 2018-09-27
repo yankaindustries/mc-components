@@ -7,20 +7,9 @@
     padding-top: ($height / $width) * 100%;
     content: "";
   }
-
-  .mc-tile__content,
-  .background,
-  .content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
 }
 
-.mc-tile,
-.tile {
+.mc-tile {
   position: relative;
   backface-visibility: hidden;
   border-radius: 2px;
@@ -39,6 +28,14 @@
     height: 100%;
     border-radius: 2px;
     z-index: 2;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &--naked {
