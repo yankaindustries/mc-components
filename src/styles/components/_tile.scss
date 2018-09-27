@@ -8,7 +8,9 @@
     content: "";
   }
 
-  .mc-tile__content {
+  .mc-tile__content,
+  .background,
+  .content {
     position: absolute;
     left: 0;
     top: 0;
