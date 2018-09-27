@@ -14,7 +14,14 @@
 }
 
 .mc-form-textarea--invert {
+  background: $mc-color-dark;
   border-color: $mc-color-gray-300;
+
+  .mc-form-textarea {
+    &__label {
+      background: $mc-color-dark;
+    }
+  }
 }
 
 .mc-form-textarea--error {
@@ -29,6 +36,29 @@
     .mc-form-textarea {
       &__label {
         color: $mc-color-primary;
+      }
+    }
+  }
+}
+
+.mc-form-textarea--disabled {
+  background: $mc-color-gray-600;
+
+  // disable cursor
+  * { cursor: not-allowed; }
+
+  &:hover {
+    border-color: $mc-color-gray-600;
+  }
+
+  // When inverted & disabled
+  &.mc-form-textarea--invert {
+    background: $mc-color-gray-100;
+    border-color: $mc-color-gray-100;
+
+    .mc-form-textarea {
+      &__label {
+        background: none;
       }
     }
   }
