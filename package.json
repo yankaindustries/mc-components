@@ -14,6 +14,10 @@
   "sideEffects": false,
   "scripts": {
     "prebuild": "rimraf ./dist",
+    "dev": "yarn dev:js && yarn dev:scss && yarn dev:css",
+    "dev:js": "babel ./src/components --watch --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
+    "dev:scss": "NODE_ENV=development mkdir -p ./dist/styles/scss && postcss ./src/styles --base ./src/styles --dir ./dist/styles/scss --watch",
+    "dev:css": "NODE_ENV=production mkdir -p ./dist/styles/css && node-sass ./src/styles/index.scss | postcss > ./dist/styles/css/index.css --watch",
     "build": "yarn build:assets && yarn build:js && yarn build:styles",
     "build:assets": "svgr ./src/assets/icons --out-dir ./src/components/Icons",
     "build:js": "babel ./src/components --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
