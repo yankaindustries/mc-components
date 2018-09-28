@@ -48,6 +48,12 @@ const Container = () =>
 
 All changes are hot-reloaded and you'll be able to see components being modified live as you work.
 
+If you want to develop in `mc-components` and see your work compiled live in your own project (like the masterclass repo), then you can use the following command to hot-reload changes to styles and components:
+
+```
+yarn dev
+```
+
 ## Submit your code
   - Create a PR with your changes
   - Once approved, it will be merged into develop and released with the next version bump.
