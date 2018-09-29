@@ -18,13 +18,15 @@ export default class Footer extends PureComponent {
 
     return (
       <Fragment>
-        <div className='mc-site-footer'>
-          <div className='mc-container mc-contain-inner'>
-            <Logo className='mc-site-footer__logo-footer' />
+        <div className='mc-site-footer container'>
+          <div className='row align-items-center justify-content-md-between'>
+            <div className='mc-text--center col-12 col-xl-auto'>
+              <Logo className='mc-site-footer__logo-footer' />
+            </div>
 
             {!isMinimal &&
               <Fragment>
-                <ul className='mc-site-footer__links'>
+                <ul className='mc-site-footer__links col mc-text--bold mc-text--uppercase'>
                   <li className='mc-site-footer__link'>
                     <a href='/#now-available'>Browse Classes</a>
                   </li>
@@ -69,12 +71,14 @@ export default class Footer extends PureComponent {
                     <a href='http://careers.masterclass.com'>Careers</a>
                   </li>
 
-                  <p className='mc-site-footer__copyright'>
+                  <p className='mc-site-footer__copyright mc-text-legal mc-text--capitalize'>
                     Copyright &copy; 2018 MasterClass
                   </p>
                 </ul>
 
-                <SSLBadge className='mc-site-footer__ssl-badge' />
+                <div className='mc-text--center col-12 col-xl-auto'>
+                  <SSLBadge className='mc-site-footer__ssl-badge' />
+                </div>
               </Fragment>
             }
           </div>
