@@ -37,7 +37,8 @@ export default class TileVideo extends PureComponent {
     }
   }
 
-  onMuteClick = () => {
+  onMuteClick = (event) => {
+    event.preventDefault()
     this.setState(state => ({
       muted: !state.muted,
     }))
@@ -64,7 +65,7 @@ export default class TileVideo extends PureComponent {
     return (
       <div className='mc-tile-video mc-tile__component'>
         {!controls &&
-          <a
+          <span
             className='mc-tile-video__mute'
             onClick={this.onMuteClick}
           >
@@ -72,7 +73,7 @@ export default class TileVideo extends PureComponent {
               ? <Unmute />
               : <Mute />
             }
-          </a>
+          </span>
         }
 
         <VideoPlayer

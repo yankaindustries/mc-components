@@ -27,6 +27,7 @@
     width: 100%;
     height: 100%;
     border-radius: 2px;
+    pointer-events: none;
   }
 
   &__content {
@@ -35,6 +36,9 @@
     top: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &--naked {
