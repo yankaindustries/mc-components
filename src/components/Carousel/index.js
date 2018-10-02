@@ -2,8 +2,8 @@ import React, { Children, Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 
-import ChevronLeft from '../../assets/icons/chevron-left.svg'
-import ChevronRight from '../../assets/icons/chevron-right.svg'
+import ChevronLeft from '../Icons/ChevronLeft'
+import ChevronRight from '../Icons/ChevronRight'
 
 
 const TRANSITION_FADE = 'fade'

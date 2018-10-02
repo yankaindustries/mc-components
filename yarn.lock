@@ -3694,7 +3694,7 @@ css-select-base-adapter@~0.1.0:
   resolved "https://registry.yarnpkg.com/css-select-base-adapter/-/css-select-base-adapter-0.1.0.tgz#0102b3d14630df86c3eb9fa9f5456270106cf990"
   integrity sha1-AQKz0UYw34bD65+p9UVicBBs+ZA=
 
-css-select@^1.1.0:
+css-select@^1.1.0, css-select@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
   integrity sha1-KzoRBTnFNV8c2NMUYj6HCxIeyFg=
@@ -4108,7 +4108,7 @@ dom-helpers@^3.3.1:
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.3.1.tgz#fc1a4e15ffdf60ddde03a480a9c0fece821dd4a6"
   integrity sha512-2Sm+JaYn74OiTM2wHvxJOo3roiq/h25Yi69Fqk269cNUwIXsCvATB6CRSFC9Am/20G2b28hGv/+7NiWydIrPvg==
 
-dom-serializer@0:
+dom-serializer@0, dom-serializer@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
   integrity sha1-BzxpdUbOB4DOI75KKOKT5AvDDII=
@@ -5786,7 +5786,7 @@ html-webpack-plugin@^2.30.1:
     pretty-error "^2.0.2"
     toposort "^1.0.0"
 
-htmlparser2@^3.9.2:
+htmlparser2@^3.9.0, htmlparser2@^3.9.2:
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
   integrity sha1-G9+HrMoPP55T+k/M6w9LTLsAszg=
@@ -8483,6 +8483,17 @@ postcss-html@^0.31.0:
   dependencies:
     htmlparser2 "^3.9.2"
 
+postcss-inline-svg@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/postcss-inline-svg/-/postcss-inline-svg-3.1.1.tgz#b4215f4b2bee605889d2ae9e6007d5c70cdec34a"
+  integrity sha512-G2BkarW6gGpGFGAiKzW7aiulUS0/6QuCgq1riZEiX4oMaUTpU1pdW7BU6UFRDrdKkwS0r4icK2pU0bg6sCSOjw==
+  dependencies:
+    css-select "^1.2.0"
+    dom-serializer "^0.1.0"
+    htmlparser2 "^3.9.0"
+    postcss "^6.0.1"
+    postcss-value-parser "^3.2.3"
+
 postcss-less@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/postcss-less/-/postcss-less-2.0.0.tgz#5d190b8e057ca446d60fe2e2587ad791c9029fb8"
@@ -8533,6 +8544,16 @@ postcss-loader@^2.1.2:
     postcss "^6.0.0"
     postcss-load-config "^2.0.0"
     schema-utils "^0.4.0"
+
+postcss-loader@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-3.0.0.tgz#6b97943e47c72d845fa9e03f273773d4e8dd6c2d"
+  integrity sha512-cLWoDEY5OwHcAjDnkyRQzAXfs2jrKjXpO/HQFcc5b5u/r7aa471wdmChmwfnv7x2u840iat/wi0lQ5nbRgSkUA==
+  dependencies:
+    loader-utils "^1.1.0"
+    postcss "^7.0.0"
+    postcss-load-config "^2.0.0"
+    schema-utils "^1.0.0"
 
 postcss-markdown@^0.31.0:
   version "0.31.0"
@@ -10063,7 +10084,7 @@ sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-schema-utils@1.0.0:
+schema-utils@1.0.0, schema-utils@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-1.0.0.tgz#0b79a93204d7b600d4b2850d1f66c2a34951c770"
   integrity sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==

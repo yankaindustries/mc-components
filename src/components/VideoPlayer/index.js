@@ -3,14 +3,12 @@ import cn from 'classnames'
 import PropTypes from 'prop-types'
 
 import VideoPlayerScreen from '../VideoPlayerScreen'
-import { renderChildren, closeFullscreen } from '../helpers'
+import { renderChildren } from '../helpers'
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
     playerId: PropTypes.string.isRequired,
     videoId: PropTypes.string.isRequired,
-    /** Player theme styles, must have correlating styles to go with it */
-    theme: PropTypes.oneOf(['default', 'chapter']),
     /** Pass in a react component to be shown at the end of the video. */
     endscreenComponent: PropTypes.func,
     /** Pass in a react component to be shown before video starts. */
@@ -43,7 +41,6 @@ export default class VideoPlayer extends PureComponent {
   static defaultProps = {
     playerId: 'rkcQq7gAe',
     videoId: '5450137526001',
-    theme: 'default',
     isLooped: false,
     isMuted: false,
     hasAutoplay: true,
@@ -109,8 +106,7 @@ export default class VideoPlayer extends PureComponent {
       }
     })
     this.video.on('pause', () => {
-      // eslint-disable-next-line
-      if (pausescreenComponent && !this.video.isFullscreen_) {
+      if (pausescreenComponent) {
         this.setState({ pausescreenOpen: true })
       }
       if (onPause) {
@@ -145,10 +141,6 @@ export default class VideoPlayer extends PureComponent {
       this.video.play()
     } else if (endscreenComponent) {
       this.setState({ endscreenOpen: true })
-      // eslint-disable-next-line
-      if (this.video.isFullscreen_) {
-        closeFullscreen()
-      }
     }
     if (pausescreenComponent) {
       this.setState({ pausescreenOpen: false })
@@ -214,7 +206,6 @@ export default class VideoPlayer extends PureComponent {
       beforescreenComponent,
       pausescreenComponent,
       hasBreakpoints,
-      theme,
       videoId,
       playerId,
       hasAutoplay,
@@ -228,6 +219,8 @@ export default class VideoPlayer extends PureComponent {
       pausescreenOpen,
     } = this.state
     const isScreenOpen = endscreenOpen || beforescreenOpen || pausescreenOpen
+    // eslint-disable-next-line
+    const videoRoot = this.video ? this.video.el_ : undefined
 
     return (
       <div
@@ -236,10 +229,11 @@ export default class VideoPlayer extends PureComponent {
           'bc-player--has-breakpoints': hasBreakpoints,
         })}
       >
-        {endscreenComponent &&
+        {endscreenComponent && videoRoot &&
           <VideoPlayerScreen
             isActive={endscreenOpen}
             variation='endscreen'
+            videoRoot={videoRoot}
           >
             {renderChildren(
               endscreenComponent,
@@ -247,10 +241,11 @@ export default class VideoPlayer extends PureComponent {
             }
           </VideoPlayerScreen>
         }
-        {beforescreenComponent &&
+        {beforescreenComponent && videoRoot &&
           <VideoPlayerScreen
             isActive={beforescreenOpen}
             variation='beforescreen'
+            videoRoot={videoRoot}
           >
             {renderChildren(
               beforescreenComponent,
@@ -258,10 +253,11 @@ export default class VideoPlayer extends PureComponent {
             }
           </VideoPlayerScreen>
         }
-        {pausescreenComponent &&
+        {pausescreenComponent && videoRoot &&
           <VideoPlayerScreen
             isActive={pausescreenOpen}
             variation='pausescreen'
+            videoRoot={videoRoot}
           >
             {renderChildren(
               pausescreenComponent,
@@ -276,7 +272,7 @@ export default class VideoPlayer extends PureComponent {
             className={cn(
               'video-js',
               'bc-player__video',
-              `bc-player__video--${theme}`,
+              'bc-player__video--default',
             )}
             data-embed='default'
             data-video-id={videoId}

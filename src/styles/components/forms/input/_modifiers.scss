@@ -75,13 +75,11 @@
 // disabled state
 .mc-form-input--disabled {
   background: $mc-color-gray-600;
-  cursor: not-allowed;
+
+  // disable cursor
+  * { cursor: not-allowed; }
 
   &:hover {
     border-color: $mc-color-gray-600;
-  }
-
-  input {
-    cursor: not-allowed;
   }
 }
