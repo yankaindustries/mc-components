@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 export default class Textarea extends PureComponent {
@@ -74,15 +75,15 @@ export default class Textarea extends PureComponent {
       focused,
     } = this.state
 
-    const classes = [
-      'mc-form-textarea',
-      focused ? 'mc-form-textarea--focus' : '',
-      label ? '' : 'mc-form-textarea--no-label',
-      value ? 'mc-form-textarea--modified' : '',
-      inverted ? 'mc-form-textarea--invert' : '',
-      disabled ? 'mc-form-textarea--disabled' : '',
-      error ? 'mc-form-textarea--error' : '',
-    ].join(' ')
+    const classes = cn({
+      'mc-form-textarea': true,
+      'mc-form-textarea--focus': focused,
+      'mc-form-textarea--no-label': !label,
+      'mc-form-textarea--modified': value,
+      'mc-form-textarea--invert': inverted,
+      'mc-form-textarea--disabled': disabled,
+      'mc-form-textarea--error': error,
+    })
 
     return (
       <div className={classes}>

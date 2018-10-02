@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 export default class Input extends PureComponent {
@@ -77,15 +78,15 @@ export default class Input extends PureComponent {
       focused,
     } = this.state
 
-    const classes = [
-      'mc-form-input',
-      focused ? 'mc-form-input--focus' : '',
-      label ? '' : 'mc-form-input--no-label',
-      value ? 'mc-form-input--modified' : '',
-      inverted ? 'mc-form-input--invert' : '',
-      disabled ? 'mc-form-input--disabled' : '',
-      error ? 'mc-form-input--error' : '',
-    ].join(' ')
+    const classes = cn({
+      'mc-form-input': true,
+      'mc-form-input--focus': focused,
+      'mc-form-input--no-label': !label,
+      'mc-form-input--modified': value,
+      'mc-form-input--invert': inverted,
+      'mc-form-input--disabled': disabled,
+      'mc-form-input--error': error,
+    })
 
     return (
       <Fragment>

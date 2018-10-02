@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 export default class Radio extends PureComponent {
@@ -28,12 +29,12 @@ export default class Radio extends PureComponent {
       option,
     } = this.props
 
-    const classes = [
-      className,
-      'mc-input-radio',
-      checked ? 'mc-input-radio--checked' : '',
-      inverted ? 'mc-input-radio--invert' : '',
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-input-radio': true,
+      'mc-input-radio--checked': checked,
+      'mc-input-radio--invert': inverted,
+    })
 
     return (
       <label

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 export default class Checkbox extends PureComponent {
@@ -26,12 +27,12 @@ export default class Checkbox extends PureComponent {
       checked,
     } = this.props
 
-    const classes = [
-      className,
-      'mc-input-checkbox',
-      checked ? 'mc-input-checkbox--checked' : '',
-      inverted ? 'mc-input-checkbox--invert' : '',
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-input-checkbox': true,
+      'mc-input-checkbox--checked': checked,
+      'mc-input-checkbox--invert': inverted,
+    })
 
     return (
       <label
