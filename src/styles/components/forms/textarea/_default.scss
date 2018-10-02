@@ -73,8 +73,7 @@ $scrollbarWidth: 7px !default; // Browser scrollbar width
 
     &__label {
       font-size: 11px;
-      transform: translateY(0);
-      padding-top: 4px;
+      transform: translateY(4px);
       background: $mc-color-light;
       width: calc(100% - (2 * #{$textarea-padding}) - #{$scrollbarWidth});
       transition:

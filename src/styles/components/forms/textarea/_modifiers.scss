@@ -18,6 +18,10 @@
   border-color: $mc-color-gray-300;
 
   .mc-form-textarea {
+    &__textarea {
+      color: $mc-color-light;
+    }
+
     &__label {
       background: $mc-color-dark;
     }
