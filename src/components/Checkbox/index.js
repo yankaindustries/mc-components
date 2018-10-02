@@ -4,15 +4,16 @@ import PropTypes from 'prop-types'
 
 export default class Checkbox extends PureComponent {
   static propTypes = {
+    checked: PropTypes.bool,
+    className: PropTypes.string,
+    inverted: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
     ]),
-    className: PropTypes.string,
-    inverted: PropTypes.bool,
     name: PropTypes.string,
+
     onChange: PropTypes.func.isRequired,
-    checked: PropTypes.bool,
   }
 
   render () {

@@ -14,6 +14,7 @@ export default class Input extends PureComponent {
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string.isRequired,
+
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,

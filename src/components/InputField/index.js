@@ -5,8 +5,8 @@ import { Field } from 'redux-form'
 import Input from '../Input'
 
 const FIELD_PROP_TYPE = {
-  name: PropTypes.string.isRequired,
   label: PropTypes.string,
+  name: PropTypes.string.isRequired,
 }
 
 

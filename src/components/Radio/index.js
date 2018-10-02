@@ -12,8 +12,9 @@ export default class Radio extends PureComponent {
     className: PropTypes.string,
     inverted: PropTypes.bool,
     name: PropTypes.string,
-    onChange: PropTypes.func,
     option: PropTypes.string,
+
+    onChange: PropTypes.func.isRequired,
   }
 
   render () {
