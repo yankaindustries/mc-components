@@ -1,89 +1,91 @@
 .mc-site-footer {
-  background: $mc-color-dark;
-  border-top: 2px solid rgba($mc-color-light, 0.2);
-  // margin-top: 64px; holding off for now..
-  // Better to have footer overlaid than hacky fix
-  padding: 1em;
-  font-size: 0.95em;
-  clear: both;
-  color: $mc-color-light;
-  text-align: center;
-
-  &__copyright {
-    display: block;
-    text-align: center;
-    font-size: 0.87em;
-    margin-bottom: -1em;
-    color: rgba($mc-color-light, 0.2);
+  .row {
+    padding: 64px 0;
+    border-top: 1px solid rgba($mc-color-light, 0.2);
   }
 
   &__logo-footer {
-    border-bottom: 1px solid rgba($mc-color-light, 0.2);
-    padding: 1.5em 1em 2.5em;
-    width: 135px;
-    height: 128px;
+    $padding-offset: 16px;
+    width: 85px;
+    height: calc(56px + #{$padding-offset});
+    padding-bottom: $padding-offset;
+    border-bottom: 1px solid $mc-color-gray-300;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 280px;
+  }
+
+  &__link {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    padding: 8px 4px;
+
+    a {
+      color: $mc-color-gray-500;
+      transition: color 250ms ease;
+
+      &:hover {
+        color: $mc-color-gray-600;
+      }
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    width: 100%;
+    color: $mc-color-gray-400;
   }
 
   &__ssl-badge {
     display: none;
-    width: 150px;
-  }
-
-  &__links {
-    margin: 0 auto;
-    padding: 2em 0;
-    max-width: 350px;
-
-    a { color: $mc-color-light; }
-  }
-
-  &__link {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0.87em;
-    text-transform: uppercase;
-    margin: 0.75em 0;
-    padding: 0 7px 0 8px;
   }
 }
 
-@media (min-width: $mc-bp-lg) {
+@media (min-width: $mc-bp-md) {
   .mc-site-footer {
-    padding: 3em 1em;
-
     &__logo-footer {
-      width: 97px;
-      height: 64px;
-      border-bottom: 0;
+      border: 0;
       padding: 0;
-    }
-
-    &__logo-footer,
-    &__ssl-badge {
-      display: inline-block;
-      vertical-align: middle;
-      width: 150px;
-      height: 64px;
+      width: 75px;
+      height: 50px;
     }
 
     &__links {
-      display: inline-block;
-      vertical-align: middle;
-      border: 1px solid rgba($mc-color-light, 0.2);
-      margin: 0 2.5em;
-      padding: 0 2.5em;
-      border-top: 0;
-      border-bottom: 0;
+      max-width: none;
+    }
+
+    &__ssl-badge {
+      display: inline;
+      width: 162px;
+      height: 34px;
     }
   }
 }
 
 @media (min-width: $mc-bp-xl) {
   .mc-site-footer {
+    &__logo-footer {
+      width: 97px;
+      height: 64px;
+    }
+
     &__links {
-      margin: 0 2em;
-      padding: 2em 1em;
-      max-width: none;
+      margin: 0 12px;
+      border-left: 1px solid rgba($mc-color-light, 0.2);
+      border-right: 1px solid rgba($mc-color-light, 0.2);
+    }
+
+    &__link {
+      padding: 0 8px;
+    }
+
+    &__copyright {
+      margin-top: 8px;
     }
   }
 }
