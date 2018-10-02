@@ -27,7 +27,7 @@
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    z-index: 2;
+    pointer-events: none;
   }
 
   &__content {
@@ -36,6 +36,9 @@
     top: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &--naked {
@@ -100,7 +103,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 0;
     background-repeat: cover;
     background-size: cover;
     background-position: center;
@@ -118,7 +120,7 @@
     width: 20px;
     height: 20px;
     margin: 15px;
-    z-index: 2;
+    z-index: 1;
 
     svg {
       width: 100%;
@@ -132,13 +134,11 @@
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
   }
 }
 
 .mc-tile-overlay {
   transform: scale(1.01);
-  z-index: 2;
 
   &--gradient-bottom {
     background:
@@ -180,8 +180,6 @@
 }
 
 .mc-tile-caption {
-  z-index: 2;
-
   &__content {
     position: absolute;
     padding: 16px;
@@ -206,7 +204,7 @@
       top: 100%;
       transform: translateY(0);
       background: rgba($mc-color-dark, 1);
-      transition: transform 0.2s ease, background 0.2s ease 0.2s;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
   }
 
@@ -219,8 +217,6 @@
 
 .mc-tile-check {
   cursor: pointer;
-  z-index: 3;
-
   &__check {
     position: absolute;
     right: 0;
@@ -228,7 +224,6 @@
     width: 42px;
     height: 42px;
     margin: 16px;
-    z-index: 3;
     color: $mc-color-light;
   }
 }

@@ -1,12 +1,14 @@
 .mc-animation {
-  // position: relative;
+  &--animating {
+    z-index: 1;
+  }
 
   &--zoom {
     transform: scale(1);
     transition: transform 0.3s cubic-bezier(0.29, 1.185, 1, 1);
 
     &.mc-animation--animating {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
   }
 

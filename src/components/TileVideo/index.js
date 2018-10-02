@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+import VideoPlayer from '../VideoPlayer'
 import Unmute from '../Icons/Muted'
 import Mute from '../Icons/Unmuted'
 
@@ -36,16 +37,8 @@ export default class TileVideo extends PureComponent {
     }
   }
 
-  componentDidMount () {
-    if (window.bc && window.videojs) {
-      window.bc(this.playerRef.current, {
-        playbackRates: [0.5, 1, 1.5, 2],
-      })
-      window.videojs(this.playerRef.current)
-    }
-  }
-
-  onMuteClick = () => {
+  onMuteClick = (event) => {
+    event.preventDefault()
     this.setState(state => ({
       muted: !state.muted,
     }))
@@ -65,32 +58,31 @@ export default class TileVideo extends PureComponent {
     } = this.state
 
     const classes = [
-      'mc-tile__component',
       'mc-tile-video__video',
-      'bc-player__video',
-      'bc-player__video--default',
-      'mc-tile-video__video',
-      'video-js',
       className || '',
     ].join(' ')
 
     return (
       <div className='mc-tile-video mc-tile__component'>
         {!controls &&
-          <a className='mc-tile-video__mute' onClick={this.onMuteClick}>
-            {muted ? <Unmute /> : <Mute />}
-          </a>
+          <span
+            className='mc-tile-video__mute'
+            onClick={this.onMuteClick}
+          >
+            {muted
+              ? <Unmute />
+              : <Mute />
+            }
+          </span>
         }
 
-        <video
-          ref={this.playerRef}
+        <VideoPlayer
           className={classes}
-          data-embed='default'
-          data-video-id={videoId}
-          data-player-id={PLAYER_ID}
-          data-account={ACCOUNT_ID}
-          controls={controls}
-          muted={muted}
+          accountId={ACCOUNT_ID}
+          hasControls={controls}
+          isMuted={muted}
+          playerId={PLAYER_ID}
+          videoId={videoId}
           {...restProps}
         />
 
