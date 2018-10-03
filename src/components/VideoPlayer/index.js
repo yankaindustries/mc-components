@@ -91,11 +91,11 @@ export default class VideoPlayer extends PureComponent {
 
   handlePlayerReady = () => {
     const {
-      onPlay,
-      onPause,
-      onVideoReady,
-      onPlayerReady,
       onSeek,
+      onPause,
+      onPlay,
+      onPlayerReady,
+      onVideoReady,
       pausescreenComponent,
     } = this.props
 
