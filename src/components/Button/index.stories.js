@@ -32,10 +32,10 @@ const FacebookIcon = () => (
   </svg>
 )
 
-storiesOf('components|Buttons', module)
+storiesOf('components|Button', module)
   .add('Button', withProps(Button)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>Button Types</h2>
+      <h2 className='mc-text-h2'>Button</h2>
 
       <DocSection title='Variations'>
         <PropExample
@@ -43,6 +43,7 @@ storiesOf('components|Buttons', module)
         >
           <Button>Default</Button>
         </PropExample>
+
         <PropExample
           name='secondary | tertiary'
           type='Boolean'
@@ -61,6 +62,20 @@ storiesOf('components|Buttons', module)
         </PropExample>
 
         <PropExample
+          name='outline'
+          type='Boolean'
+        >
+          <Button outline>Outline</Button>
+        </PropExample>
+
+        <PropExample
+          name='outlineInvert'
+          type='Boolean'
+        >
+          <Button outlineInvert>Outline - Invert</Button>
+        </PropExample>
+
+        <PropExample
           name='icon'
           type='Component'
         >
@@ -76,7 +91,7 @@ storiesOf('components|Buttons', module)
           name='loading'
           type='Boolean'
         >
-          <Button primary loading>
+          <Button loading>
             Button
           </Button>
         </PropExample>
@@ -85,7 +100,7 @@ storiesOf('components|Buttons', module)
           name='fullWidth'
           type='Boolean'
         >
-          <Button primary fullWidth>
+          <Button fullWidth>
             Button
           </Button>
         </PropExample>

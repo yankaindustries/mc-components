@@ -1,7 +1,7 @@
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import { renderChildren } from '../../utils/helpers'
+import { renderChildren } from '../helpers'
 
 
 const BP = {

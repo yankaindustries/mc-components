@@ -49,6 +49,7 @@ module.exports = {
               sourceMap: true,
             },
           },
+          'postcss-loader',
           {
             loader: 'sass-loader',
             options: {

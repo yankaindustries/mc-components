@@ -14,7 +14,7 @@ import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
 
-import shondaRhimesThumbnail from '../../assets/images/shonda-rhimes-video.png'
+import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('utilities|AnimationHandler', module)
@@ -30,7 +30,7 @@ storiesOf('utilities|AnimationHandler', module)
           <HoverHandler>
             {({ hovering }) =>
               <AnimationHandler type='zoom' animating={hovering}>
-                <Button primary>
+                <Button>
                   Zoom
                 </Button>
               </AnimationHandler>
@@ -72,11 +72,14 @@ storiesOf('utilities|AnimationHandler', module)
                   <TileOverlay type='gradient-bottom' />
 
                   <AnimationHandler type='lift' animating={hovering}>
-                    <TileCaption
-                      title='Shonda Rhimes'
-                      subtitle='Teaches Writing for Television'
-                      backdrop
-                    />
+                    <TileCaption>
+                      <h2 className='mc-text-h2 mc-text--uppercase'>
+                        Shonda Rhimes
+                      </h2>
+                      <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                        Teaches Writing for Television
+                      </h4>
+                    </TileCaption>
                   </AnimationHandler>
                 </Tile>
               }

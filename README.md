@@ -17,6 +17,12 @@ Our components do **not** contain any styles.  The style library must also be im
 @import 'mc-components';
 ```
 
+### Font files
+We use Lato as our primary font for headings and body text in 300, 400, and 700 font weights.  You can import it in your css below, or import it into your asset pipeline.
+```
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+```
+
 ### Standalone style usage
 If your project doesn't use yarn or npm for dependencies and you're only looking for masterclass css / style files, they can be imported manually by downloading the repository on github.  This will give you access to styles for buttons, the grid, typography, and more.  Save the contents of the `/dist/styles/scss/` folder to your own project, then import!
 
@@ -41,6 +47,12 @@ const Container = () =>
 4. Start storybook: `yarn start`
 
 All changes are hot-reloaded and you'll be able to see components being modified live as you work.
+
+If you want to develop in `mc-components` and see your work compiled live in your own project (like the masterclass repo), then you can use the following command to hot-reload changes to styles and components:
+
+```
+yarn dev
+```
 
 ## Submit your code
   - Create a PR with your changes

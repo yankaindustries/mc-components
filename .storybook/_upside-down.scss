@@ -1,0 +1,240 @@
+// This file contains the styles
+// and overrides that need to be integrated
+// more cleanly.  We don't know where to put them
+// yet, so they'll live here!
+
+// THE UPSIDE DOWN
+
+.mc-hero {
+  @media only screen and (min-width: $mc-bp-md) {
+    margin-bottom: $mc-unit * -10;
+
+    &__image {
+      left: 25%;
+    }
+
+    &__content {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+  }
+}
+
+.mc-card {
+  padding: $grid-gutter-width-xl / 2;
+  border-radius: 3px;
+
+  &--equal-height {
+    height: 100%;
+  }
+
+  &__image {
+    margin: 0 $grid-gutter-width-xl / -2;
+    width: calc(100% + #{$grid-gutter-width-xl});
+  }
+}
+
+pre {
+  font-family: monospace;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: $mc-color-gray-100;
+  margin: 32px 0;
+}
+
+a {
+  color: inherit;
+}
+
+.img--responsive {
+  max-width: 100%;
+}
+
+.hljs {
+  border-radius: 6px;
+}
+
+.example--section {
+  margin-bottom: 6em;
+}
+
+.example--definition-name {
+  font-weight: 900;
+}
+
+.example--definition-type {
+  font-family: monospace;
+}
+
+.example--definition {
+  margin-bottom: 2em;
+}
+
+.example--render {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+
+  &.invert {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.example--code {
+  padding: 10px;
+  color: #000;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.example--table {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-collapse: collapse;
+  text-align: left;
+
+  tbody {
+    tr {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    tr:nth-child(2n +1) {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  th {
+    font-weight: 900;
+  }
+
+  th, td {
+    padding: 5px 10px;
+  }
+}
+
+.example-placeholder {
+  position: absolute;
+  left: 0; top: 0;
+  right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.example-mc-swatches {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.example-mc-swatch {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+
+  &__color {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    border-radius: 5px;
+    border: 1px solid $mc-color-gray-100;
+    flex-shrink: 0;
+
+    &--mc-color-light { background-color: $mc-color-light; }
+    &--mc-color-dark { background-color: $mc-color-dark; }
+
+    // Colors
+    &--mc-color-primary { background-color: $mc-color-primary; }
+    &--mc-color-primary-hover { background-color: $mc-color-primary-hover; }
+    &--mc-color-primary-active { background-color: $mc-color-primary-active; }
+
+    &--mc-color-secondary { background-color: $mc-color-secondary; }
+    &--mc-color-secondary-hover { background-color: $mc-color-secondary-hover; }
+    &--mc-color-secondary-active { background-color: $mc-color-secondary-active; }
+
+    &--mc-color-tertiary { background-color: $mc-color-tertiary; }
+    &--mc-color-tertiary-hover { background-color: $mc-color-tertiary-hover; }
+
+    &--mc-color-background { background-color: $mc-color-background; }
+    &--mc-color-background-invert { background-color: $mc-color-background-invert; }
+    &--mc-color-text { background-color: $mc-color-text; }
+    &--mc-color-text-invert { background-color: $mc-color-text-invert; }
+
+    // Not quite 50 of them, but...
+    &--mc-gray-100 { background-color: $mc-color-gray-100; }
+    &--mc-gray-200 { background-color: $mc-color-gray-200; }
+    &--mc-gray-300 { background-color: $mc-color-gray-300; }
+    &--mc-gray-400 { background-color: $mc-color-gray-400; }
+    &--mc-gray-500 { background-color: $mc-color-gray-500; }
+    &--mc-gray-600 { background-color: $mc-color-gray-600; }
+
+    &--mc-color-error { background-color: $mc-color-error; }
+    &--mc-color-warning { background-color: $mc-color-warning; }
+  }
+}
+
+.mc-example-breakpoints {
+  margin-top: 10px;
+}
+
+.mc-example-breakpoint {
+  border-bottom: 1px dashed $mc-color-gray-300;
+  padding: 10px 0;
+
+  span {
+    display: inline-flex;
+    width: 50%;
+  }
+}
+
+// Inline variables magically, thanks @jones for
+// the idea. You're so smart.
+ .mc-gutter-value {
+  &:before {
+    content: "#{$grid-gutter-width}";
+  }
+
+  &--xl:before {
+    content: "#{$grid-gutter-width-xl}";
+  }
+ }
+
+.mc-bp-value {
+  &--xs:before {
+    content: "#{$mc-bp-xs}";
+  }
+
+  &--sm:before {
+    content: "#{$mc-bp-sm}";
+  }
+
+  &--md:before {
+    content: "#{$mc-bp-md}";
+  }
+
+  &--lg:before {
+    content: "#{$mc-bp-lg}";
+  }
+
+  &--xl:before {
+    content: "#{$mc-bp-xl}";
+  }
+}
+
+
+.d-inline-block {
+  display: inline-block;
+}

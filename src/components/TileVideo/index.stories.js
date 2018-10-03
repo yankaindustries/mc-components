@@ -12,62 +12,60 @@ import TileVideo from '../TileVideo'
 storiesOf('components|Tiles/TileVideo', module)
   .add('TileVideo', withProps(TileVideo)(() => (
     <div className='container'>
-      <div className='container'>
-        <h2 className='mc-text-h2'>TileVideo</h2>
+      <h2 className='mc-text-h2'>TileVideo</h2>
 
-        <DocSection title='Props'>
-          <PropExample
-            name='autoPlay'
-            type='Boolean'
-          >
-            <div className='row'>
-              <div className='col-sm-6'>
-                <Tile>
-                  <TileVideo videoId='5450137526001' autoPlay />
-                </Tile>
-              </div>
+      <DocSection title='Props'>
+        <PropExample
+          name='autoPlay'
+          type='Boolean'
+        >
+          <div className='row'>
+            <div className='col-sm-6'>
+              <Tile>
+                <TileVideo videoId='5450137526001' autoPlay />
+              </Tile>
             </div>
-          </PropExample>
+          </div>
+        </PropExample>
 
-          <PropExample
-            name='controls'
-            type='Boolean'
-          >
-            <div className='row'>
-              <div className='col-sm-6'>
-                <Tile>
-                  <TileVideo videoId='5450137526001' controls />
-                </Tile>
-              </div>
+        <PropExample
+          name='controls'
+          type='Boolean'
+        >
+          <div className='row'>
+            <div className='col-sm-6'>
+              <Tile>
+                <TileVideo videoId='5450137526001' controls />
+              </Tile>
             </div>
-          </PropExample>
+          </div>
+        </PropExample>
 
-          <PropExample
-            name='loop'
-            type='Boolean'
-          >
-            <div className='row'>
-              <div className='col-sm-6'>
-                <Tile>
-                  <TileVideo videoId='5450137526001' controls loop />
-                </Tile>
-              </div>
+        <PropExample
+          name='loop'
+          type='Boolean'
+        >
+          <div className='row'>
+            <div className='col-sm-6'>
+              <Tile>
+                <TileVideo videoId='5450137526001' controls loop />
+              </Tile>
             </div>
-          </PropExample>
+          </div>
+        </PropExample>
 
-          <PropExample
-            name='muted'
-            type='Boolean'
-          >
-            <div className='row'>
-              <div className='col-sm-6'>
-                <Tile>
-                  <TileVideo videoId='5450137526001' controls muted />
-                </Tile>
-              </div>
+        <PropExample
+          name='muted'
+          type='Boolean'
+        >
+          <div className='row'>
+            <div className='col-sm-6'>
+              <Tile>
+                <TileVideo videoId='5450137526001' controls muted />
+              </Tile>
             </div>
-          </PropExample>
-        </DocSection>
-      </div>
+          </div>
+        </PropExample>
+      </DocSection>
     </div>
   )))

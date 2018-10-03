@@ -1,108 +1,161 @@
-import React, { Component } from 'react'
+import React, { Children, Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
 import Slider from 'react-slick'
-import ImageTile from '../ImageTile'
-import PlayButton from '../PlayButton'
-import CarouselArrow from './arrow'
 
-const defaultSettings = {
-  dots: false,
-  infinite: false,
-  autoplay: false,
-  variableWidth: true,
-  rows: 1,
-  arrows: false,
-}
+import ChevronLeft from '../Icons/ChevronLeft'
+import ChevronRight from '../Icons/ChevronRight'
 
-export default class Carousel extends Component {
-  static Arrow = CarouselArrow;
 
+const TRANSITION_FADE = 'fade'
+const TRANSITION_SLIDE = 'slide'
+const CENTERED_PADDING = '200px'
+
+
+class Arrow extends PureComponent {
   static propTypes = {
-    slidesDataSource: PropTypes.arrayOf(PropTypes.shape({})),
     children: PropTypes.element,
-    onSlideClick: PropTypes.func,
-    settings: PropTypes.shape({}),
     className: PropTypes.string,
-    slideWidth: PropTypes.number,
-    hasSlideGradient: PropTypes.bool,
-    hasFaders: PropTypes.bool,
-    hasArrows: PropTypes.bool,
-    renderSlide: PropTypes.func,
+    direction: PropTypes.oneOf(['left', 'right']).isRequired,
+    onClick: PropTypes.func,
   }
-
-  static defaultProps = {
-    hasArrows: true,
-  }
-
-  handleNext = () => {
-    this.slider.current.slickNext()
-  }
-
-  handlePrevious = () => {
-    this.slider.current.slickPrev()
-  }
-
-  slideTo = (index) => {
-    this.slider.current.slickGoTo(index)
-  }
-
-  slider = React.createRef()
-
-  renderSlide = item => (
-    <ImageTile
-      className='mc-carousel__slide'
-      imageUrl={item.image}
-      key={item.id}
-      width={this.props.slideWidth}
-      backgroundGradient={this.props.hasSlideGradient}
-    >
-      <PlayButton className='mc-carousel__slide__play' />
-    </ImageTile>
-  )
 
   render () {
     const {
-      hasArrows,
-      settings,
+      children,
       className,
-      slidesDataSource,
+      direction,
+      onClick,
     } = this.props
 
-    const carouselSettings = {
-      ...defaultSettings,
-      ...settings,
-    }
-
-    const classNames = cn(
-      'mc-carousel',
-      { [className]: Boolean(className) },
-    )
-
-    const renderSlide = this.props.renderSlide || this.renderSlide
+    const classes = [
+      className,
+      'mc-carousel__arrow',
+      `mc-carousel__arrow--${direction}`,
+    ].join(' ')
 
     return (
-      <div className={classNames}>
-        { hasArrows &&
-          <CarouselArrow
-            className='mc-carousel__arrow mc-carousel__arrow--left'
-            onClick={this.handlePrevious}
-            direction='left'
-          />
-        }
+      <a
+        className={classes}
+        onClick={onClick}
+      >
+        {children}
+      </a>
+    )
+  }
+}
+
+
+class Slide extends PureComponent {
+  static propTypes = {
+    children: PropTypes.element,
+  }
+
+  render () {
+    const {
+      children,
+    } = this.props
+
+
+    return (
+      <Fragment>
+        {children}
+      </Fragment>
+    )
+  }
+}
+
+
+export default class Carousel extends PureComponent {
+  static propTypes = {
+    autoPlay: PropTypes.bool,
+    centered: PropTypes.bool,
+    children: PropTypes.node,
+    className: PropTypes.string,
+    controls: PropTypes.bool,
+    fadeEdges: PropTypes.bool,
+    focusOnSelect: PropTypes.bool,
+    sliderRef: PropTypes.func,
+    loop: PropTypes.bool,
+    scrollCount: PropTypes.number,
+    showCount: PropTypes.number,
+    transition: PropTypes.string,
+    variableWidth: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    autoPlay: false,
+    centered: false,
+    controls: false,
+    fadeEdges: false,
+    focusOnSelect: false,
+    loop: false,
+    scrollCount: 1,
+    showCount: 3,
+    transition: TRANSITION_SLIDE,
+    variableWidth: false,
+  }
+
+  render () {
+    const {
+      autoPlay,
+      children,
+      className,
+      centered,
+      controls,
+      fadeEdges,
+      loop,
+      sliderRef,
+      scrollCount,
+      showCount,
+      transition,
+      ...restProps
+    } = this.props
+
+    const classes = [
+      className,
+      'mc-carousel',
+      `mc-carousel--${transition}`,
+      centered ? 'mc-carousel--centered' : '',
+      fadeEdges ? 'mc-carousel--fade-edges' : '',
+    ].join(' ')
+
+    const arrows = controls
+      ? {
+        arrows: true,
+        prevArrow: (
+          <Arrow direction='left'>
+            <ChevronLeft />
+          </Arrow>
+        ),
+        nextArrow: (
+          <Arrow direction='right'>
+            <ChevronRight />
+          </Arrow>
+        ),
+      }
+      : {
+        arrows: false,
+      }
+
+    return (
+      <div className='mc-carousel__container'>
         <Slider
-          {...carouselSettings}
-          ref={this.slider}
+          autoplay={autoPlay}
+          className={classes}
+          centerMode={centered || fadeEdges}
+          centerPadding={fadeEdges ? CENTERED_PADDING : 0}
+          fade={transition === TRANSITION_FADE}
+          ref={sliderRef}
+          slidesToScroll={scrollCount}
+          slidesToShow={showCount}
+          infinite={loop}
+          {...arrows}
+          {...restProps}
         >
-          {this.props.children || slidesDataSource.map(renderSlide)}
+          {Children.map(children, child => (
+            <Slide>{child}</Slide>
+          ))}
         </Slider>
-        { hasArrows &&
-          <CarouselArrow
-            className='mc-carousel__arrow mc-carousel__arrow--right'
-            onClick={this.handleNext}
-            direction='right'
-          />
-        }
       </div>
     )
   }

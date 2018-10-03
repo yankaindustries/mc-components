@@ -2,12 +2,14 @@ html {
   font-size: 62.5%;
 }
 
+// Referenced as "paragraph 2" in comps
 body {
+  background: $mc-color-background;
   font-family: $mc-font-default;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 1.5;
   font-weight: 400;
-  color: $mc-light;
+  color: $mc-color-text;
   letter-spacing: 0.015em;
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
@@ -15,19 +17,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a { text-decoration: none; }
+::selection {
+  background: rgba($mc-color-gray-500, 0.3);
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 // Big "display" text
 .mc-text-d1 {
-  font-size: 48px;
+  font-size: 24px;
   letter-spacing: 0.04em;
   font-weight: 700;
 }
 
 .mc-text-d2 {
-  font-size: 32px;
+  font-size: 20px;
   letter-spacing: 0.06em;
   font-weight: 400;
+  text-transform: uppercase;
+}
+
+.mc-text-d3 {
+  font-size: 16px;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  line-height: 1.25;
   text-transform: uppercase;
 }
 
@@ -39,48 +57,64 @@ a { text-decoration: none; }
 .mc-text-h5 {
   font-weight: 700;
   line-height: 1.25;
-}
-
-.mc-text-h1 {
-  font-size: 32px;
   letter-spacing: 0.04em;
 }
 
+.mc-text-h1 {
+  font-size: 20px;
+}
+
 .mc-text-h2 {
-  font-size: 24px;
-  letter-spacing: 0.06em;
+  font-size: 16px;
 }
 
 .mc-text-h3 {
-  font-size: 20px;
-  letter-spacing: 0.24em;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: 16px;
 }
 
 .mc-text-h4 {
-  font-size: 16px;
-  letter-spacing: 0.06em;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: 12px;
 }
 
 .mc-text-h5 {
   font-size: 12px;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
 }
 
+// Referenced as "paragraph 1" in comps
 .mc-text-intro {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.025em;
   font-weight: 400;
 }
 
 .mc-text-legal {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.5px;
   font-weight: 400;
+}
+
+// responsive
+@media (min-width: $mc-bp-sm) {
+  body { font-size: 16px; }
+
+  .mc-text-d1 { font-size: 32px; }
+  .mc-text-d2 { font-size: 24px; }
+
+  .mc-text-h1 { font-size: 24px; }
+  .mc-text-h2 { font-size: 20px; }
+  .mc-text-h4 { font-size: 16px; }
+
+  .mc-text-intro { font-size: 20px; }
+}
+
+@media (min-width: $mc-bp-lg) {
+  .mc-text-d1 { font-size: 48px; }
+  .mc-text-d2 { font-size: 32px; }
+  .mc-text-d3 { font-size: 20px; }
+
+  .mc-text-h1 { font-size: 32px; }
+  .mc-text-h2 { font-size: 24px; }
+  .mc-text-h3 { font-size: 20px; }
 }

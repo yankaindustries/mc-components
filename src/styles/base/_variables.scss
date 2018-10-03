@@ -6,33 +6,41 @@
 // Fonts
 $mc-font-default: "Lato", "Helvetica", "Arial", sans-serif !default; // Should be used in most cases
 
+// If we move to a light site later
+// these variables will be easier to find
+$mc-color-light:             #fff !default;
+$mc-color-dark:              #000 !default;
+
 // Colors
+$mc-color-gray-100:           #191c21 !default;
+$mc-color-gray-200:           #272c33 !default;
+$mc-color-gray-300:           #31333b !default;
+$mc-color-gray-400:           #596170 !default;
+$mc-color-gray-500:           #949aa4 !default;
+$mc-color-gray-600:           #dbdde1 !default;
+
 $mc-color-primary:           #c83232 !default;
 $mc-color-primary-hover:     #d63636 !default;
 $mc-color-primary-active:    #b22b2b !default;
 
-$mc-color-secondary:         #232325 !default;
-$mc-color-secondary-hover:   #2c2c2e !default;
-$mc-color-secondary-active:  #1f1f21 !default;
+$mc-color-secondary:         $mc-color-gray-200 !default;
+$mc-color-secondary-hover:   $mc-color-gray-300 !default;
+$mc-color-secondary-active:  $mc-color-gray-100 !default;
 
-$mc-color-tertiary:          #75787f !default;
-$mc-color-tertiary-hover:    #90949d !default;
+$mc-color-tertiary:          $mc-color-gray-400 !default;
+$mc-color-tertiary-hover:    $mc-color-gray-500 !default;
 
-// If we move to a light site later
-// these variables will be easier to find
-$mc-light:                   #fff !default;
-$mc-dark:                    #000 !default;
-$mc-background:              #090909 !default;
+$mc-color-background:        #090909 !default;
+$mc-color-background-invert: #ebeeee !default;
+$mc-color-text:              $mc-color-light !default;
+$mc-color-text-invert:       #8ca1c1 !default;
 
-// Not quite 50 of them, but...
-$mc-gray-100:           #333 !default;
-$mc-gray-200:           #484a4e !default;
-$mc-gray-300:           #75787f !default;
-$mc-gray-400:           #9b9b9b !default;
-$mc-gray-500:           #d8d8d8 !default;
+$mc-color-error:        rgba($mc-color-primary, 0.6) !default;
+$mc-color-warning:      rgba($mc-color-primary, 0.6) !default;
 
-$error-color:        rgba($mc-color-primary, 0.6) !default;
-$warning-color:      rgba($mc-color-primary, 0.6) !default;
+// External brands
+$mc-color-facebook:     #3c5a99 !default;
+$mc-color-twitter:      #2ba2ef !default;
 
 // The yiq lightness value that determines when the
 // lightness of color changes from "dark" to "light".
@@ -45,15 +53,6 @@ $yiq-text-light:            #fff !default;
 // Animations
 $mc-default-ease: cubic-bezier(0.25, 0.1, 0.25, 1) !default;
 
-// Breakpoints
-$mc-bp-xs:     0 !default;
-$mc-bp-sm:     576px !default;
-$mc-bp-md:     768px !default;
-$mc-bp-lg:     992px !default;
-$mc-bp-xl:     1200px !default;
-// NOTE: If we change these breakpoint values, we
-// also need to update them for ResponsiveHandler.
-
 // Z-indexes
 $mc-zindex-dropdown:          1000 !default;
 $mc-zindex-sticky:            1020 !default;
@@ -62,6 +61,9 @@ $mc-zindex-modal-backdrop:    1040 !default;
 $mc-zindex-modal:             1050 !default;
 $mc-zindex-popover:           1060 !default;
 $mc-zindex-tooltip:           1070 !default;
+
+// Unit of measurement
+$mc-unit:                     4px !default;
 
 // Font Sizes
 $default-font-size:  1.6rem !default;
@@ -84,20 +86,56 @@ $border-radius-sm: 0.3rem !default;
 
 $btn-focus-width: 0.2rem !default;
 
-$btn-box-shadow: inset 0 1px 0 rgba($mc-light, 0.15), 0 1px 1px rgba($mc-dark, 0.075) !default;
-$btn-active-box-shadow: inset 0 3px 5px rgba($mc-dark, 0.125) !default;
+$btn-box-shadow: inset 0 1px 0 rgba($mc-color-light, 0.15), 0 1px 1px rgba($mc-color-dark, 0.075) !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba($mc-color-dark, 0.125) !default;
 
 $transition-base:        all 0.2s ease-in-out !default;
 
 // Custom bootstrap grid overrides
-$grid-gutter-width:      32px !default;
-$grid-gutter-sm-width:   16px !default;
+$grid-gutter-width:      16px !default;
+$grid-gutter-width-sm:   16px !default;
+$grid-gutter-width-md:   32px !default;
+$grid-gutter-width-lg:   32px !default;
+$grid-gutter-width-xl:   32px !default;
+
+$grid-gutter-widths: (
+  xs: $grid-gutter-width,
+  xl: $grid-gutter-width-xl
+) !default;
+
+// We calculate container widths based on
+// the padding from the gutter widths, so
+// these variables help us calc the correct
+// container widths
+$container-margin: 16px !default;
+$container-margin-sm: 32px !default;
+$container-margin-md: 64px !default;
+$container-margin-lg: 64px !default;
+$container-margin-xl: 64px !default;
+
+
+// Breakpoints
+$mc-bp-xs:     0 !default;
+$mc-bp-sm:     576px !default;
+$mc-bp-md:     768px !default;
+$mc-bp-lg:     960px !default;
+$mc-bp-xl:     1200px !default;
+// NOTE: If we change these breakpoint values, we
+// also need to update them for ResponsiveHandler.
+
 $grid-breakpoints: (
   xs: $mc-bp-xs,
   sm: $mc-bp-sm,
   md: $mc-bp-md,
   lg: $mc-bp-lg,
   xl: $mc-bp-xl
+) !default;
+
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: $mc-bp-xl + (2 * $container-margin-xl)
 ) !default;
 
 

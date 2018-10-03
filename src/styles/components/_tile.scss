@@ -7,20 +7,15 @@
     padding-top: ($height / $width) * 100%;
     content: "";
   }
-
-  .mc-tile__content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
 }
 
-.mc-tile,
-.tile {
+.mc-tile {
   position: relative;
   backface-visibility: hidden;
+  border-radius: 2px;
+  box-shadow:
+    0 3px 6px rgba($mc-color-dark, 0.16),
+    0 3px 6px rgba($mc-color-dark, 0.23);
   cursor: pointer;
 
   &:after {
@@ -31,8 +26,36 @@
     top: 0;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-    z-index: 2;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--naked {
+    &:after {
+      display: none;
+    }
+  }
+
+  &--active {
+    &:after {
+      box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.2);
+    }
+  }
+
+  &--3x4,
+  &--poster {
+    @include tile-aspect-ratio(3, 4);
   }
 
   &--1x1,
@@ -80,9 +103,10 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 0;
     background-repeat: cover;
     background-size: cover;
+    background-position: center;
+    border-radius: 2px;
   }
 }
 
@@ -96,7 +120,7 @@
     width: 20px;
     height: 20px;
     margin: 15px;
-    z-index: 2;
+    z-index: 1;
 
     svg {
       width: 100%;
@@ -110,52 +134,82 @@
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
   }
 }
 
 .mc-tile-overlay {
-  z-index: 2;
-  // To ensure the overlay extends just passed the bounds
   transform: scale(1.01);
 
   &--gradient-bottom {
     background:
       linear-gradient(
         to top,
-        rgba($mc-dark, 0.9) 0,
-        rgba($mc-dark, 0.6) 25%,
-        transparent 45%
+        rgba($mc-color-dark, 0.9) 0,
+        rgba($mc-color-dark, 0.6) 25%,
+        rgba($mc-color-dark, 0) 45%
+      );
+  }
+
+  &--offset-spotlight {
+    background:
+      radial-gradient(
+        farthest-side at center top,
+        rgba($mc-color-background, 0) 33%,
+        rgba($mc-color-background, 1) 100%
+      ),
+      linear-gradient(
+        to right,
+        rgba($mc-color-dark, 1) 0%,
+        rgba($mc-color-dark, 0) 40%
+      ),
+      linear-gradient(
+        to left,
+        rgba($mc-color-dark, 1) 0%,
+        rgba($mc-color-dark, 0) 40%
+      );
+  }
+
+  &--spotlight {
+    background:
+      radial-gradient(
+        farthest-side at top,
+        rgba($mc-color-background, 0) 66%,
+        rgba($mc-color-background, 1) 100%
       );
   }
 }
 
 .mc-tile-caption {
-  z-index: 2;
-
-  &__titles {
+  &__content {
     position: absolute;
     padding: 16px;
     width: 100%;
-    background: rgba($mc-dark, 0);
-    text-shadow: 0 0 10px $mc-dark;
+    background: rgba($mc-color-dark, 0);
+    text-shadow: 0 0 10px $mc-color-dark;
     transition: transform 0.2s ease;
+  }
 
-    .mc-tile-caption--bottom & {
+  // Modifiers
+  &--bottom {
+    .mc-tile-caption__content {
       left: 0;
       top: 100%;
       transform: translateY(-100%);
     }
+  }
 
-    .mc-tile-caption--below & {
+  &--below {
+    .mc-tile-caption__content {
       left: 0;
       top: 100%;
       transform: translateY(0);
-      background: rgba($mc-dark, 1);
-      transition: transform 0.2s ease, background 0.2s ease 0.2s;
+      background: rgba($mc-color-dark, 1);
+      transition: transform 0.2s ease, background 0.2s ease;
     }
+  }
 
-    .mc-tile-caption--center & {
+  &--center {
+    .mc-tile-caption__content {
       text-align: center;
     }
   }
@@ -163,8 +217,6 @@
 
 .mc-tile-check {
   cursor: pointer;
-  z-index: 3;
-
   &__check {
     position: absolute;
     right: 0;
@@ -172,7 +224,6 @@
     width: 42px;
     height: 42px;
     margin: 16px;
-    z-index: 3;
-    color: $mc-light;
+    color: $mc-color-light;
   }
 }

@@ -5,13 +5,22 @@ import PropTypes from 'prop-types'
 export default class Placeholder extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
+    className: PropTypes.string,
   }
 
   render () {
-    const { children } = this.props
+    const {
+      children,
+      className,
+    } = this.props
+
+    const classes = [
+      className,
+      'example-placeholder',
+    ].join(' ')
 
     return (
-      <div className='example-placeholder'>
+      <div className={classes}>
         <div className='example-placeholder__inner'>
           {children}
         </div>

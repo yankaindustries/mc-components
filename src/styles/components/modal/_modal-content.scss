@@ -4,15 +4,15 @@
   justify-content: center;
 
   @include fade-in-background-animation(
-    rgba($mc-dark, 0),
-    rgba($mc-dark, 0.8)
+    rgba($mc-color-dark, 0),
+    rgba($mc-color-dark, 0.8)
   );
 
   @include media-breakpoint-down(sm) {
     align-items: flex-start;
   }
 
-  background-color: rgba($mc-dark, 0.8);
+  background-color: rgba($mc-color-dark, 0.8);
   position: fixed;
   height: 100%;
   width: 100%;
@@ -74,8 +74,8 @@
     }
 
     path {
-      fill: $mc-dark;
-      stroke: $mc-dark;
+      fill: $mc-color-dark;
+      stroke: $mc-color-dark;
     }
 
     @include media-breakpoint-down(sm) {
@@ -100,7 +100,7 @@
     line-height: 2.4rem;
     text-align: center;
     letter-spacing: 0.02rem;
-    color: rgba($mc-gray-200, 0.8);
+    color: rgba($mc-color-gray-200, 0.8);
   }
 
   &__body--open {

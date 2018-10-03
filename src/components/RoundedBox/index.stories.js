@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
-import { RoundedBox } from '../index'
+import RoundedBox from '../RoundedBox'
 
 
 storiesOf('components|RoundedBox', module)

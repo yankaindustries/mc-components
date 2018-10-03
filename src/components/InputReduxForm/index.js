@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Input from '../Input'
-import { parseInputErrors } from '../../utils/helpers'
+import { parseInputErrors } from '../helpers'
 
 // Redux Form handler for the Input Component
 const InputReduxForm = ({

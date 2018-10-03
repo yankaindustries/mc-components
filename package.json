@@ -1,12 +1,39 @@
 {
   "name": "mc-components",
-  "version": "0.2.9",
-  "main": "./dist/index.js",
+  "version": "0.5.2",
   "author": "Masterclass <engineering@masterclass.com>",
   "homepage": "https://github.com/yankaindustries/mc-components",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yankaindustries/mc-components/issues"
+  },
+  "main": "./dist/components/index.js",
+  "module": "./dist/components/index.js",
+  "style": "dist/styles/css/index.css",
+  "sass": "dist/styles/scss/index.scss",
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "dev": "yarn dev:js & yarn dev:scss & yarn dev:css",
+    "dev:js": "babel ./src/components --watch --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
+    "dev:scss": "NODE_ENV=development mkdir -p ./dist/styles/scss && postcss ./src/styles --base ./src/styles --dir ./dist/styles/scss --watch",
+    "dev:css": "NODE_ENV=production mkdir -p ./dist/styles/css && node-sass ./src/styles/index.scss | postcss > ./dist/styles/css/index.css --watch",
+    "build": "yarn build:assets && yarn build:js && yarn build:styles",
+    "build:assets": "svgr ./src/assets/icons --out-dir ./src/components/Icons",
+    "build:js": "babel ./src/components --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
+    "build:scss": "NODE_ENV=development mkdir -p ./dist/styles/scss && postcss ./src/styles --base ./src/styles --dir ./dist/styles/scss",
+    "build:css": "NODE_ENV=production mkdir -p ./dist/styles/css && node-sass ./src/styles/index.scss | postcss > ./dist/styles/css/index.css",
+    "build:css-vendor": "NODE_ENV=production node-sass ./src/styles/libraries/_libraries.scss | postcss > ./dist/styles/css/vendor.css",
+    "build:styles": "yarn build:css && yarn build:scss && yarn build:css-vendor",
+    "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "precommit": "lint-staged",
+    "lint:js": "eslint ./src --color",
+    "lint:style": "stylelint \"./src/styles/**/*.scss\" || echo \"Style lint failed.\"",
+    "lint": "yarn lint:js && yarn lint:style",
+    "preversion": "yarn lint",
+    "version": "yarn build && git add -A .",
+    "postversion": "git push origin develop && git push origin develop --tags && npm publish"
   },
   "dependencies": {
     "bootstrap": "^4.1.1",
@@ -14,26 +41,9 @@
     "react-slick": "^0.23.1",
     "slick-carousel": "^1.8.1"
   },
-  "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "yarn build:js && yarn build:assets && yarn build:styles && yarn build:css-vendor",
-    "build:assets": "cpx -p './src/assets/**/*' ./dist/assets",
-    "build:js": "NODE_ENV=production babel ./src --out-dir ./dist --ignore spec.js,test.js,stories.js",
-    "prebuild:css": "node-sass src/styles/index.scss dist/styles/css/mc-components.css",
-    "build:css": "postcss -r dist/styles/css/mc-components.css",
-    "build:css-vendor": "node-sass src/styles/libraries/_libraries.scss dist/styles/css/vendor.css && postcss -r dist/styles/css/vendor.css",
-    "build:scss": "cpx -p './src/styles/**/*.scss' ./dist/styles/scss",
-    "build:styles": "yarn build:scss && yarn build:css",
-    "start": "start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "prepublishOnly": "yarn build",
-    "lint:js": "eslint src --color",
-    "lint:style": "stylelint \"src/styles/**/*.scss\" || echo \"Style lint failed.\"",
-    "lint": "yarn lint:js && yarn lint:style",
-    "precommit": "lint-staged",
-    "preversion": "yarn lint",
-    "version": "yarn build && git add -A .",
-    "postversion": "git push origin develop && git push origin develop --tags && npm publish"
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
     "@masterclass/eslint-config": "yankaindustries/eslint-config-masterclass#1.0.2",
@@ -42,13 +52,19 @@
     "@storybook/addon-options": "^3.4.8",
     "@storybook/react": "^3.4.5",
     "@storybook/storybook-deployer": "^2.3.0",
+    "@svgr/cli": "^2.2.0",
     "@svgr/webpack": "^2.1.1",
     "autoprefixer": "^8.6.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-react-app": "^3.1.1",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "cpx": "^1.5.0",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
@@ -61,6 +77,9 @@
     "node-sass": "^4.9.0",
     "postcss": "^6.0.22",
     "postcss-cli": "^5.0.0",
+    "postcss-inline-svg": "^3.1.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-scss": "^2.0.0",
     "prettier-eslint-cli": "^4.7.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -82,18 +101,5 @@
       "stylelint --fix",
       "git add"
     ]
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "modules": "commonjs"
-        }
-      ],
-      "react-app"
-    ]
-  },
-  "style": "dist/styles/css/mc-components.css",
-  "sass": "dist/styles/scss/index.scss"
+  }
 }

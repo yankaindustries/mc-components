@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 
-import Replay from '../../assets/icons/replay.svg'
+import VideoPlayerScreen from '../VideoPlayerScreen'
+import { renderChildren } from '../helpers'
 
-export default class VideoPlayer extends React.PureComponent {
+export default class VideoPlayer extends PureComponent {
   static propTypes = {
     playerId: PropTypes.string.isRequired,
     videoId: PropTypes.string.isRequired,
-    /** Player theme styles, must have correlating styles to go with it */
-    theme: PropTypes.oneOf(['default', 'chapter']),
     /** Pass in a react component to be shown at the end of the video. */
-    endscreenComponent: PropTypes.element,
+    endscreenComponent: PropTypes.func,
+    /** Pass in a react component to be shown before video starts. */
+    beforescreenComponent: PropTypes.func,
+    /** Pass in a react component to be shown when the video is paused. */
+    pausescreenComponent: PropTypes.func,
     /**
      * Keeps video constrained to standard sizes, eg 1080x720.
      * Used to keep videos looking crisp.
@@ -38,7 +41,6 @@ export default class VideoPlayer extends React.PureComponent {
   static defaultProps = {
     playerId: 'rkcQq7gAe',
     videoId: '5450137526001',
-    theme: 'default',
     isLooped: false,
     isMuted: false,
     hasAutoplay: true,
@@ -47,13 +49,14 @@ export default class VideoPlayer extends React.PureComponent {
     accountId: '5344802162001',
   }
 
-  constructor (props) {
-    super(props)
-    this.playerRef = React.createRef()
-    this.currentTime = 0
-  }
+  playerRef = React.createRef()
+  currentTime = 0
 
-  state = { endscreenOpen: false }
+  state = {
+    endscreenOpen: false,
+    beforescreenOpen: false,
+    pausescreenOpen: false,
+  }
 
   componentDidMount () {
     if (window.bc && window.videojs) {
@@ -68,9 +71,14 @@ export default class VideoPlayer extends React.PureComponent {
       // Call a function to play the video once player's JavaScropt loaded
       bcScript.onload = this.setupVideo
     }
+    const { progress, beforescreenComponent } = this.props
 
-    if (this.props.progress) {
-      this.playerRef.current.currentTime = this.props.progress
+    if (progress) {
+      this.playerRef.current.currentTime = progress
+    }
+
+    if (beforescreenComponent) {
+      this.setState({ beforescreenOpen: true })
     }
   }
 
@@ -82,19 +90,29 @@ export default class VideoPlayer extends React.PureComponent {
 
   handlePlayerReady = () => {
     const {
-      onPlay, onPause, onVideoReady, onPlayerReady,
+      onPlay, onPause, onVideoReady, onPlayerReady, pausescreenComponent,
     } = this.props
 
-    if (onPlay) {
-      this.video.on('play', () => {
+    this.video.on('play', () => {
+      const { beforescreenOpen, pausescreenOpen } = this.state
+      if (beforescreenOpen) {
+        this.setState({ beforescreenOpen: false })
+      }
+      if (pausescreenOpen) {
+        this.setState({ pausescreenOpen: false })
+      }
+      if (onPlay) {
         onPlay(this.video)
-      })
-    }
-    if (onPause) {
-      this.video.on('pause', () => {
+      }
+    })
+    this.video.on('pause', () => {
+      if (pausescreenComponent) {
+        this.setState({ pausescreenOpen: true })
+      }
+      if (onPause) {
         onPause(this.video)
-      })
-    }
+      }
+    })
 
     this.video.on('ended', this.handleVideoEnd)
 
@@ -113,15 +131,22 @@ export default class VideoPlayer extends React.PureComponent {
   handleVideoEnd = () => {
     this.currentTime = 0
     this.hasEnded = true
-    if (this.props.isLooped) {
+    const {
+      isLooped,
+      endscreenComponent,
+      pausescreenComponent,
+      onEnd,
+    } = this.props
+    if (isLooped) {
       this.video.play()
-    } else if (this.props.endscreenComponent) {
-      this.setState({
-        endscreenOpen: true,
-      })
+    } else if (endscreenComponent) {
+      this.setState({ endscreenOpen: true })
     }
-    if (this.props.onEnd) {
-      this.props.onEnd(this.video)
+    if (pausescreenComponent) {
+      this.setState({ pausescreenOpen: false })
+    }
+    if (onEnd) {
+      onEnd(this.video)
     }
   }
 
@@ -131,6 +156,8 @@ export default class VideoPlayer extends React.PureComponent {
       endscreenOpen: false,
     })
   }
+
+  resumeVideo = () => { this.video.play() }
 
   setupVideo = () => {
     window.bc(this.playerRef.current, {
@@ -173,23 +200,12 @@ export default class VideoPlayer extends React.PureComponent {
     }
   }
 
-  renderEndScreen = () => (
-      <div className='bc-player-endscreen'>
-        <Replay
-          className='bc-player-endscreen__replay'
-          onClick={this.handleReplayClick}
-        />
-        <div className='bc-player-endscreen__content'>
-          {this.props.endscreenComponent}
-        </div>
-      </div>
-  )
-
   render () {
     const {
       endscreenComponent,
+      beforescreenComponent,
+      pausescreenComponent,
       hasBreakpoints,
-      theme,
       videoId,
       playerId,
       hasAutoplay,
@@ -197,15 +213,58 @@ export default class VideoPlayer extends React.PureComponent {
       isMuted,
       accountId,
     } = this.props
+    const {
+      endscreenOpen,
+      beforescreenOpen,
+      pausescreenOpen,
+    } = this.state
+    const isScreenOpen = endscreenOpen || beforescreenOpen || pausescreenOpen
+    // eslint-disable-next-line
+    const videoRoot = this.video ? this.video.el_ : undefined
 
     return (
       <div
         className={cn('bc-player', {
-          'bc-player--endscreen-open': this.state.endscreenOpen,
+          'bc-player--screen-open': isScreenOpen,
           'bc-player--has-breakpoints': hasBreakpoints,
         })}
       >
-        {endscreenComponent && this.renderEndScreen()}
+        {endscreenComponent && videoRoot &&
+          <VideoPlayerScreen
+            isActive={endscreenOpen}
+            variation='endscreen'
+            videoRoot={videoRoot}
+          >
+            {renderChildren(
+              endscreenComponent,
+              { onReplay: this.handleReplayClick, isActive: endscreenOpen })
+            }
+          </VideoPlayerScreen>
+        }
+        {beforescreenComponent && videoRoot &&
+          <VideoPlayerScreen
+            isActive={beforescreenOpen}
+            variation='beforescreen'
+            videoRoot={videoRoot}
+          >
+            {renderChildren(
+              beforescreenComponent,
+              { onResume: this.resumeVideo, isActive: beforescreenOpen })
+            }
+          </VideoPlayerScreen>
+        }
+        {pausescreenComponent && videoRoot &&
+          <VideoPlayerScreen
+            isActive={pausescreenOpen}
+            variation='pausescreen'
+            videoRoot={videoRoot}
+          >
+            {renderChildren(
+              pausescreenComponent,
+              { onResume: this.resumeVideo, isActive: pausescreenOpen })
+            }
+          </VideoPlayerScreen>
+        }
         <div className='bc-player__wrapper'>
           <video
             data-application-id
@@ -213,7 +272,7 @@ export default class VideoPlayer extends React.PureComponent {
             className={cn(
               'video-js',
               'bc-player__video',
-              `bc-player__video--${theme}`,
+              'bc-player__video--default',
             )}
             data-embed='default'
             data-video-id={videoId}

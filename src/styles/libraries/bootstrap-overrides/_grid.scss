@@ -3,8 +3,16 @@
 // desktop.
 
 
+.container {
+  padding: 0 ($grid-gutter-width);
+}
+
 .row {
   margin: $grid-gutter-width / -2;
+
+  &--fill {
+    height: 100%;
+  }
 }
 
 .col,
@@ -12,36 +20,38 @@
   padding: $grid-gutter-width / 2;
 }
 
-.small-gutters {
-  margin: $grid-gutter-sm-width / -2;
+// Responsive
+@media only screen and (min-width: $mc-bp-sm) {
+  .container { padding: 0 ($grid-gutter-width-sm * 2); }
+}
 
-  > .col,
-  > [class*="col-"] {
-    padding: $grid-gutter-sm-width / 2;
+@media only screen and (min-width: $mc-bp-md) {
+  .container { padding: 0 ($grid-gutter-width-md * 2); }
+}
+
+@media only screen and (min-width: $mc-bp-xl) {
+  .container { padding: 0 ($grid-gutter-width-xl * 2); }
+  .row { margin: $grid-gutter-width-xl / -2; }
+
+  .col,
+  [class*="col-"] { padding: $grid-gutter-width-xl / 2; }
+
+  // Override for smaller gutters when using the
+  // grid inside of an existing column (nested grids)
+  .small-gutters {
+    margin: 0;
+
+    .col,
+    [class*="col-"] { padding: $grid-gutter-width-xl / 4; }
   }
 }
 
+// Grid modifiers
 .no-gutters {
   margin: 0;
 
   > .col,
   > [class*="col-"] {
     padding: 0;
-  }
-}
-
-
-@media only screen and (max-width: $mc-bp-sm) {
-  .container {
-    padding: 0 ($grid-gutter-sm-width / 2);
-  }
-
-  .row {
-    margin: $grid-gutter-sm-width / -2;
-  }
-
-  .col,
-  [class*="col-"] {
-    padding: $grid-gutter-sm-width / 2;
   }
 }

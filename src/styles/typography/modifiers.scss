@@ -1,8 +1,5 @@
 // stylelint-disable declaration-no-important
 .mc-text {
-  // Monospaced
-  &--monospace { font-family: monospace !important; }
-
   // Transformation
   &--uppercase { text-transform: uppercase !important; }
   &--lowercase { text-transform: lowercase !important; }
@@ -10,21 +7,30 @@
 
   // Weight / opacity
   &--bold { font-weight: 600 !important; }
-  &--normal { font-weight: 400 !important; }
+  &--normal { font-weight: 500 !important; }
+  &--light { font-weight: 400 !important; }
+  &--x-light { font-weight: 300 !important; }
   &--muted { opacity: 0.5 !important; }
 
+  // Treatments
+  &--airy { letter-spacing: 0.24em; }
+
   // Colors
-  &--invert { color: $mc-dark; }
-  &--twitter { color: #1da1f2; }
-  &--facebook { color: #3b5998; }
+  &--invert { color: $mc-color-dark; }
+  &--twitter { color: $mc-color-twitter; }
+  &--facebook { color: $mc-color-facebook; }
+
+  // Misc
+  &--monospace { font-family: monospace !important; }
+  &--nowrap { white-space: nowrap; }
 }
 
 // Responsive
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-    .mc-text#{$infix}-left   { text-align: left !important; }
-    .mc-text#{$infix}-right  { text-align: right !important; }
-    .mc-text#{$infix}-center { text-align: center !important; }
+    .mc-text#{$infix}--left   { text-align: left !important; }
+    .mc-text#{$infix}--right  { text-align: right !important; }
+    .mc-text#{$infix}--center { text-align: center !important; }
   }
 }
