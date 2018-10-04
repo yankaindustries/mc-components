@@ -34,6 +34,7 @@ export default class VideoPlayer extends PureComponent {
     onEnd: PropTypes.func,
     onTimeChange: PropTypes.func,
     onError: PropTypes.func,
+    onSeek: PropTypes.func,
     accountId: PropTypes.string,
     progress: PropTypes.number,
   }
@@ -90,7 +91,12 @@ export default class VideoPlayer extends PureComponent {
 
   handlePlayerReady = () => {
     const {
-      onPlay, onPause, onVideoReady, onPlayerReady, pausescreenComponent,
+      onSeek,
+      onPause,
+      onPlay,
+      onPlayerReady,
+      onVideoReady,
+      pausescreenComponent,
     } = this.props
 
     this.video.on('play', () => {
@@ -105,6 +111,7 @@ export default class VideoPlayer extends PureComponent {
         onPlay(this.video)
       }
     })
+
     this.video.on('pause', () => {
       if (pausescreenComponent) {
         this.setState({ pausescreenOpen: true })
@@ -115,6 +122,10 @@ export default class VideoPlayer extends PureComponent {
     })
 
     this.video.on('ended', this.handleVideoEnd)
+
+    if (onSeek) {
+      this.video.on('seeking', onSeek)
+    }
 
     if (onVideoReady) {
       this.video.on('loadedmetadata', () => {
