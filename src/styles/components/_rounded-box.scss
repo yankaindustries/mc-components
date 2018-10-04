@@ -2,6 +2,7 @@
   background-color: $mc-color-light;
   border-radius: 0.4rem;
   padding: 4rem;
+  color: $mc-color-dark;
 
   @include media-breakpoint-down(sm) {
     padding: 2rem;
@@ -12,7 +13,6 @@
     line-height: 3.4rem;
     font-size: 2.4rem;
     letter-spacing: 0.05rem;
-    color: $mc-color-dark;
     margin: 0 0 2rem 0;
   }
 

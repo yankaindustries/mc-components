@@ -1,81 +1,141 @@
-import React, { PureComponent } from 'react'
-import { string, func, object, bool } from 'prop-types'
+import React, { PureComponent, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import cn from 'classnames'
+
 
 export default class Input extends PureComponent {
   static propTypes = {
-    value: string.isRequired,
-    onChange: func.isRequired,
-    placeholder: string,
-    type: string,
-    label: string,
-    fullWidth: bool,
-    style: object,
-    error: string,
-    disabled: bool,
-    warning: string,
+    disabled: PropTypes.bool,
+    error: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+    ]),
+    help: PropTypes.string,
+    inverted: PropTypes.bool,
+    label: PropTypes.string,
+    name: PropTypes.string,
+    value: PropTypes.string.isRequired,
+
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
   }
 
   static defaultProps = {
-    type: 'text',
-    fullWidth: true,
-    disabled: false,
+    value: '',
   }
 
-  onChange = ({ target: { value } }) => {
-    const { onChange } = this.props
-    onChange(value)
+  state = {
+    focused: false,
+  }
+
+  constructor (props) {
+    super(props)
+
+    this.input = React.createRef()
+  }
+
+  onFocus = () => {
+    const { onFocus } = this.props
+
+    this.setState({ focused: true })
+
+    if (onFocus) {
+      onFocus()
+    }
+  }
+
+  onBlur = () => {
+    const { onBlur } = this.props
+
+    this.setState({ focused: false })
+
+    if (onBlur) {
+      onBlur()
+    }
+  }
+
+  focus = () => {
+    this.input.current.focus()
   }
 
   render () {
     const {
-      value,
-      type,
-      placeholder,
-      label,
-      style,
-      fullWidth,
+      append,
       error,
+      help,
+      inverted,
       disabled,
+      label,
+      name,
+      prepend,
+      value,
       onChange,
-      warning,
       ...props
     } = this.props
-    const showLabel = label && placeholder && value
-    const inputClassNames = cn(
-      'input-field__input',
-      { 'input-field__input--with-label': showLabel },
-      { 'input-field__input--full-width': fullWidth },
-      { 'input-field__input--error': error },
-      { 'input-field__input--warning': warning },
-      { 'input-field__input--disabled': disabled },
-    )
-    const labelClassNames = cn(
-      'input-field__label',
-      { 'input-field__label--hide': !showLabel },
-    )
+
+    const {
+      focused,
+    } = this.state
+
+    const classes = cn({
+      'mc-form-input': true,
+      'mc-form-input--focus': focused,
+      'mc-form-input--no-label': !label,
+      'mc-form-input--modified': value,
+      'mc-form-input--invert': inverted,
+      'mc-form-input--disabled': disabled,
+      'mc-form-input--error': error,
+    })
 
     return (
-      <div style={style} className='input-field'>
-        {label &&
-          <label className={labelClassNames}>{label}</label>
+      <Fragment>
+        <div
+          className={classes}
+          onClick={this.focus}
+        >
+          {prepend &&
+            <div className='mc-form-prepend'>
+              {prepend}
+            </div>
+          }
+
+          <div className='mc-form-input__input'>
+            <input
+              name={name}
+              type='text'
+              value={value}
+              disabled={disabled}
+              {...props}
+              onChange={onChange}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
+              ref={this.input}
+            />
+
+            {label &&
+              <label
+                htmlFor={name}
+                className='mc-form-input__label'
+              >
+                {label}
+              </label>
+            }
+          </div>
+
+          {append &&
+            <div className='mc-form-append'>
+              {append}
+            </div>
+          }
+        </div>
+
+        {help &&
+          <span className='mc-form-help'>
+            {help}
+          </span>
         }
-        {error &&
-          <span className='input-field__error'>{error}</span>
-        }
-        {warning &&
-          <span className='input-field__warning'>{warning}</span>
-        }
-        <input
-          className={inputClassNames}
-          value={value}
-          type={type}
-          placeholder={placeholder}
-          disabled={disabled}
-          onChange={this.onChange}
-          {...props}
-        />
-      </div>
+      </Fragment>
     )
   }
 }
