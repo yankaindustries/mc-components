@@ -1,0 +1,18 @@
+.mc-input-radio--invert {
+  // color: $mc-color-light;
+
+  .mc-input-radio {
+    &__button {
+      background: $mc-color-gray-300;
+
+      &:after {
+        background: $mc-color-light;
+      }
+    }
+  }
+}
+
+.mc-input-radio--inline {
+  display: inline-flex;
+  margin-right: 40px;
+}

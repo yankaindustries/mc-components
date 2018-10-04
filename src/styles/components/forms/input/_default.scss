@@ -1,0 +1,91 @@
+.mc-form-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid $mc-color-gray-600;
+  background: transparent;
+  border-radius: 4px;
+  width: 100%;
+  color: $mc-color-gray-500;
+  cursor: text;
+  transition:
+    border 200ms ease,
+    color 200ms ease;
+
+  &__input {
+    position: relative;
+    width: 100%;
+    padding: $input-padding;
+    transition: padding 250ms ease;
+
+    input {
+      font-family: $mc-font-default;
+      background: none;
+      outline: none;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-size: 15px;
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+
+      &::placeholder {
+        opacity: 0;
+        color: $mc-color-gray-400;
+        text-overflow: ellipsis;
+        transition: opacity 150ms ease 0ms;
+      }
+    }
+  }
+
+  &:hover {
+    border-color: $mc-color-gray-400;
+  }
+
+  &--focus {
+    border-color: $mc-color-gray-400;
+    color: $mc-color-gray-100;
+  }
+
+  &--focus,
+  &--modified {
+    .mc-form-input {
+      &__input {
+        padding: 20px $input-padding 4px;
+
+        input {
+          &::placeholder {
+            opacity: 1;
+            transition: opacity 250ms ease 100ms;
+          }
+        }
+      }
+
+      &__label {
+        font-size: 11px;
+        transform: translateY(-6px);
+        transition:
+          font 320ms ease 0ms,
+          transform 320ms ease 0ms;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: $input-padding;
+    left: $input-padding;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    color: $mc-color-gray-500;
+    pointer-events: none; // let react handle states
+    white-space: nowrap;
+    max-width: calc(100% - (2 * #{$input-padding}));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: 0 50%;
+    transition:
+      font 320ms ease 100ms,
+      transform 320ms ease 100ms;
+  }
+}

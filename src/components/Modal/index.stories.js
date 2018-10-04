@@ -47,3 +47,25 @@ storiesOf('components|Modals', module)
       </Modal>
     </div>,
   ))
+  .add('with close button inside', withProps(Modal)(() =>
+    <div style={{ height: '200px' }}>
+      <div id='modal-root' />
+      <Modal
+        isOpen
+        onClose={() => {}}
+        closeButtonPosition={Modal.CLOSE_POSITIONS.INSIDE_RIGHT}
+      >
+      </Modal>
+    </div>,
+  ))
+  .add('with custom mountEntry', withProps(Modal)(() =>
+    <div style={{ height: '200px' }}>
+      <div id='modal-root-custom' />
+      <Modal
+        isOpen
+        onClose={() => {}}
+        mountEntry='modal-root-custom'
+      >
+      </Modal>
+    </div>,
+  ))

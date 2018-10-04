@@ -21,7 +21,8 @@
       outline: 0;
     }
 
-    &::placeholder {
+    &::placeholder,
+    &[placeholder] {
       color: rgba($mc-color-gray-200, 0.5);
     }
 

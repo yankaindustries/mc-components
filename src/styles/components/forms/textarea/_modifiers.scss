@@ -1,0 +1,69 @@
+.mc-form-textarea--no-label {
+  .mc-form-textarea {
+    &__label { display: none; }
+
+    &__textarea {
+      padding: $textarea-padding $textarea-padding;
+
+      &::placeholder {
+        opacity: 1;
+        color: $mc-color-gray-500;
+      }
+    }
+  }
+}
+
+.mc-form-textarea--invert {
+  background: $mc-color-dark;
+  border-color: $mc-color-gray-300;
+
+  .mc-form-textarea {
+    &__textarea {
+      color: $mc-color-light;
+    }
+
+    &__label {
+      background: $mc-color-dark;
+    }
+  }
+}
+
+.mc-form-textarea--error {
+  border-color: $mc-color-primary;
+
+  &:hover {
+    border-color: $mc-color-primary-hover;
+  }
+
+  &.mc-form-textarea--focus,
+  &.mc-form-textarea--modified {
+    .mc-form-textarea {
+      &__label {
+        color: $mc-color-primary;
+      }
+    }
+  }
+}
+
+.mc-form-textarea--disabled {
+  background: $mc-color-gray-600;
+
+  // disable cursor
+  * { cursor: not-allowed; }
+
+  &:hover {
+    border-color: $mc-color-gray-600;
+  }
+
+  // When inverted & disabled
+  &.mc-form-textarea--invert {
+    background: $mc-color-gray-100;
+    border-color: $mc-color-gray-100;
+
+    .mc-form-textarea {
+      &__label {
+        background: none;
+      }
+    }
+  }
+}

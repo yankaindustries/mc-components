@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { bool, func, node, string, oneOfType, arrayOf } from 'prop-types'
+import { bool, func, node, string, oneOfType, arrayOf, oneOf } from 'prop-types'
 import cn from 'classnames'
 
 import ModalPortal from '../ModalPortal'
@@ -10,6 +10,16 @@ import RoundedBox from '../RoundedBox'
 import Close from '../Icons/Close'
 
 export default class Modal extends Component {
+  static CLOSE_POSITIONS = {
+    INSIDE: 'inside-right',
+    INSIDE_RIGHT: 'inside-right',
+    INSIDE_LEFT: 'inside-left',
+    OUTSIDE: 'outside-right',
+    OUTSIDE_RIGHT: 'outside-right',
+    OUTSIDE_LEFT: 'outside-left',
+    NONE: 'none',
+  }
+
   static propTypes = {
     isOpen: bool.isRequired,
     onClose: func.isRequired,
@@ -20,6 +30,14 @@ export default class Modal extends Component {
     header: string,
     subheader: string,
     HeaderComponent: func,
+    closeButtonPosition: oneOf([
+      'inside-right',
+      'inside-left',
+      'outside-right',
+      'outside-left',
+      'none',
+    ]),
+    mountEntry: string,
   }
 
   static defaultProps = {
@@ -27,6 +45,8 @@ export default class Modal extends Component {
     shouldCloseOnClickOutside: true,
     className: '',
     HeaderComponent: ModalHeader,
+    closeButtonPosition: 'outside-right',
+    mountEntry: 'modal-root',
   }
 
   componentDidMount () {
@@ -37,18 +57,18 @@ export default class Modal extends Component {
     document.removeEventListener('keydown', this.onPressEsc)
   }
 
-  onClickOutside = () => {
-    const { onClose, shouldCloseOnClickOutside } = this.props
-    if (shouldCloseOnClickOutside) {
-      onClose()
-    }
-  }
-
   onPressEsc = (event) => {
     const { onClose, shouldCloseOnEsc } = this.props
     const escKey = 27
     const escKeyWasPressed = event.keyCode === escKey
     if (shouldCloseOnEsc && escKeyWasPressed) {
+      onClose()
+    }
+  }
+
+  onClickOutside = () => {
+    const { onClose, shouldCloseOnClickOutside } = this.props
+    if (shouldCloseOnClickOutside) {
       onClose()
     }
   }
@@ -62,12 +82,19 @@ export default class Modal extends Component {
       children,
       className,
       HeaderComponent,
+      closeButtonPosition,
+      mountEntry,
       ...props
     } = this.props
+    const cnRoot = 'mc-components-modal'
 
     const classNames = cn(
-      'modal__container',
+      `${cnRoot}__container`,
       { [className]: Boolean(className) },
+    )
+    const cnClose = cn(
+      `${cnRoot}__close-icon`,
+      `${cnRoot}__close-icon--${closeButtonPosition}`,
     )
 
     if (!isOpen) {
@@ -75,19 +102,33 @@ export default class Modal extends Component {
     }
 
     return (
-      <ModalPortal>
-        <Close className='modal__close-icon' onClick={onClose} />
+      <ModalPortal mountEntry={mountEntry}>
+        { /outside/.test(closeButtonPosition) &&
+          <Close
+            className={cnClose}
+            onClick={onClose}
+          /> }
         <ClickOutside
           divRef={this.container}
           onClickOutside={this.onClickOutside}
         >
           <div ref={this.container} className={classNames}>
             <RoundedBox
-              className='modal__rounded-box'
+              className={`${cnRoot}__rounded-box`}
               HeaderComponent={HeaderComponent}
               {...props}
             >
-              <Close className='modal__inner-close-icon' onClick={onClose} />
+              <Close
+                className={cn([
+                  `${cnRoot}__inner-close-icon`,
+                  `${cnRoot}__inner-close-icon--${closeButtonPosition}`,
+                  {
+                    [`${cnRoot}__inner-close-icon--desktop-active`]: /inside/.test(closeButtonPosition),
+                  },
+                ])}
+                color='#000'
+                onClick={onClose}
+              />
               {children}
             </RoundedBox>
           </div>
