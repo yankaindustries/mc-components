@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import VideoPlayer from '../VideoPlayer'
 import Unmute from '../Icons/Muted'
@@ -44,6 +45,12 @@ export default class TileVideo extends PureComponent {
     }))
   }
 
+  onReady = () => {
+    this.setState({
+      ready: true,
+    })
+  }
+
   render () {
     const {
       children,
@@ -55,15 +62,19 @@ export default class TileVideo extends PureComponent {
 
     const {
       muted,
+      ready,
     } = this.state
 
-    const classes = [
-      'mc-tile-video__video',
-      className || '',
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-tile__component': true,
+      'mc-tile-video': true,
+      'mc-tile-video--ready': ready,
+      'mc-tile-video--muted': muted,
+    })
 
     return (
-      <div className='mc-tile-video mc-tile__component'>
+      <div className={classes}>
         {!controls &&
           <span
             className='mc-tile-video__mute'
@@ -76,15 +87,17 @@ export default class TileVideo extends PureComponent {
           </span>
         }
 
-        <VideoPlayer
-          className={classes}
-          accountId={ACCOUNT_ID}
-          hasControls={controls}
-          isMuted={muted}
-          playerId={PLAYER_ID}
-          videoId={videoId}
-          {...restProps}
-        />
+        <div className='mc-tile-video__video'>
+          <VideoPlayer
+            accountId={ACCOUNT_ID}
+            hasControls={controls}
+            isMuted={muted}
+            playerId={PLAYER_ID}
+            videoId={videoId}
+            onVideoReady={this.onReady}
+            {...restProps}
+          />
+        </div>
 
         {children}
       </div>

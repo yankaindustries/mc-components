@@ -129,31 +129,29 @@ storiesOf('components|Tiles', module)
         <div className='col-lg-4 col-md-6'>
           <DocSection title='Swap'>
             <HoverHandler>
-              {({ hovering }) =>
+              {({ intent }) =>
                 <AnimationHandler
                   type='zoom'
-                  animating={hovering}
+                  animating={intent}
                 >
                   <Tile>
-                    {!hovering &&
-                      <Fragment>
-                        <TileImage imageUrl={shondaRhimesThumbnail} />
-                        <TileOverlay type='gradient-bottom' />
-                      </Fragment>
+                    <TileImage imageUrl={shondaRhimesThumbnail} />
+
+                    {!intent &&
+                      <TileOverlay type='gradient-bottom' />
                     }
-                    {hovering &&
-                      <Fragment>
-                        <TileVideo
-                          videoId='5450137526001'
-                          autoPlay
-                          loop
-                          muted
-                        />
-                      </Fragment>
+
+                    {intent &&
+                      <TileVideo
+                        videoId='5450137526001'
+                        autoPlay
+                        loop
+                        muted
+                      />
                     }
 
                     <TileCaption
-                      position={hovering
+                      position={intent
                         ? 'left below'
                         : 'left bottom'
                       }
