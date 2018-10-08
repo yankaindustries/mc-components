@@ -6,11 +6,11 @@
 // MC Variables
 @import "../base/variables";
 
-// Bootstrap overrides
-@import "bootstrap-overrides/grid";
-
 // Bootstrap - the good parts
 @import "bootstrap-grid/bootstrap-grid";
+
+// Bootstrap overrides
+@import "bootstrap-overrides/grid";
 
 // Slick slider
 @import "slick-carousel/slick";
