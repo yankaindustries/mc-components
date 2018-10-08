@@ -14,15 +14,13 @@ storiesOf('utilities|HoverHandler', module)
     <div className='container'>
       <h2>HoverHandler</h2>
 
-      <DocSection title='Variations'>
-        <PropExample
-          name='children'
-          type='RenderProp'
-        >
+      <DocSection>
+        <PropExample>
           <HoverHandler>
-            {({ hovering }) =>
-              <Button primary>
+            {({ hovering, intent }) =>
+              <Button>
                 {hovering ? 'Hovering' : 'Normal'}
+                {intent ? ' w/ Intent' : ''}
               </Button>
             }
           </HoverHandler>
