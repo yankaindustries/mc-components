@@ -30,6 +30,10 @@
   .container { padding: 0 ($grid-gutter-width-md * 2); }
 }
 
+@media only screen and (min-width: $mc-bp-lg) {
+  .container { padding: 0 ($grid-gutter-width-lg * 2); }
+}
+
 @media only screen and (min-width: $mc-bp-xl) {
   .container { padding: 0 ($grid-gutter-width-xl * 2); }
   .row { margin: $grid-gutter-width-xl / -2; }
