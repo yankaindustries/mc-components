@@ -170,6 +170,7 @@ a {
   );
 
   @each $colorKey, $colorVal in $colors {
+    // .example-mc-swatch--mc-color-primary
     &--#{$colorKey} {
       .example-mc-swatch {
         &__color {
