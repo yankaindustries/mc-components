@@ -109,7 +109,7 @@ storiesOf('playground|Pages', module)
                                   <h2 className='mc-text-d1 mc-text--uppercase mc-text--center mc-text-md--left'>
                                     {item.instructor}
                                   </h2>
-                                  <h2 className='mc-text-h2 mc-text--uppercase mc-text--muted mc-text--light mc-text--center mc-text-md--left mc-text--nowrap'>
+                                  <h2 className='mc-text-h2 mc-text--uppercase mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap'>
                                     Teaches {item.class}
                                   </h2>
                                   <br />
@@ -644,7 +644,7 @@ storiesOf('playground|Pages', module)
       <div className='container'>
         <div className='mc-section'>
           <div className='mc-section__header'>
-            <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted mc-text--light mc-text--center'>
+            <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted mc-text--normal mc-text--center'>
               Stay up to date with MasterClass
             </h4>
           </div>

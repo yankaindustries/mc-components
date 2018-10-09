@@ -115,8 +115,14 @@ storiesOf('foundation|Type', module)
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Font weight - Normal</h5>
-          <h1 className='mc-text-h1 mc-text--normal'>The quick brown fox jumped over the lazy dog.</h1>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text--h1.mc-text--normal</p>
+          <h1 className='mc-text--normal'>The quick brown fox jumped over the lazy dog.</h1>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--normal</p>
+        </div>
+
+        <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Font weight - Extra Light</h5>
+          <h1 className='mc-text--x-light'>The quick brown fox jumped over the lazy dog.</h1>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text--x-light</p>
         </div>
 
         <div className='align-items-center example--section'>
