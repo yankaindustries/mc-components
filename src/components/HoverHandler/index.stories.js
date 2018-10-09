@@ -12,17 +12,17 @@ import Button from '../Button'
 storiesOf('utilities|HoverHandler', module)
   .add('default', withProps(HoverHandler)(() => (
     <div className='container'>
-      <h2>HoverHandler</h2>
+      <h2 className='mc-text-h2'>
+        HoverHandler
+      </h2>
 
-      <DocSection title='Variations'>
-        <PropExample
-          name='children'
-          type='RenderProp'
-        >
+      <DocSection>
+        <PropExample>
           <HoverHandler>
-            {({ hovering }) =>
-              <Button primary>
+            {({ hovering, intent }) =>
+              <Button>
                 {hovering ? 'Hovering' : 'Normal'}
+                {intent ? ' w/ Intent' : ''}
               </Button>
             }
           </HoverHandler>
