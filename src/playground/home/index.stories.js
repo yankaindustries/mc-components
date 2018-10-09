@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Header from '../../components/HeaderLoggedOut'
 import CarouselConnector from '../../components/CarouselConnector'
 import Carousel from '../../components/Carousel'
 import Footer from '../../components/Footer'
@@ -72,8 +71,6 @@ const items = [
 storiesOf('playground|Pages', module)
   .add('Home', () =>
     <div>
-      <Header />
-
       <CarouselConnector>
         {({ sliderRef, asNavFor }) =>
           <div>
