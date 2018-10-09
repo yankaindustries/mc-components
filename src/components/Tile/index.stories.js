@@ -49,7 +49,7 @@ storiesOf('components|Tiles', module)
                 <h3 className='mc-text-h4 mc-text--uppercase'>
                   Shonda Rhimes
                 </h3>
-                <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
                   Teaches Writing
                 </h4>
               </TileCaption>
@@ -112,7 +112,7 @@ storiesOf('components|Tiles', module)
                             <h3 className='mc-text-h4 mc-text--uppercase'>
                               Shonda Rhimes
                             </h3>
-                            <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                            <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
                               Teaches Writing
                             </h4>
                           </TileCaption>
@@ -159,7 +159,7 @@ storiesOf('components|Tiles', module)
                       <h3 className='mc-text-h4 mc-text--uppercase'>
                         Shonda Rhimes
                       </h3>
-                      <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                      <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
                         Teaches Writing
                       </h4>
                     </TileCaption>

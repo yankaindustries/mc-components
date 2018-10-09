@@ -88,7 +88,7 @@ storiesOf('components|Carousel', module)
                     <h3 className='mc-text-h4 mc-text--uppercase'>
                       {item.instructor}
                     </h3>
-                    <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                    <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
                       {`Teaches ${item.teaches}`}
                     </h5>
                   </TileCaption>
