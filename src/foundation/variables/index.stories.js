@@ -14,14 +14,20 @@ storiesOf('foundation|Variables', module)
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>Base</h2>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-dark'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-dark</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-dark'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-dark</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-light'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-light</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-light'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-light</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
             </div>
           </div>
@@ -30,19 +36,28 @@ storiesOf('foundation|Variables', module)
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>Primary</h2>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-primary'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-primary</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-primary'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-primary</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-primary-hover'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-primary-hover</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-primary-hover'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-primary-hover</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-primary-active'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-primary-active</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-primary-active'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-primary-active</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
             </div>
           </div>
@@ -51,19 +66,28 @@ storiesOf('foundation|Variables', module)
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>Secondary</h2>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-secondary'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-secondary</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-secondary'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-secondary</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-secondary-hover'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-secondary-hover</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-secondary-hover'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-secondary-hover</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-secondary-active'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-secondary-active</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-secondary-active'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-secondary-active</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
             </div>
           </div>
@@ -72,14 +96,20 @@ storiesOf('foundation|Variables', module)
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>Tertiary</h2>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-tertiary'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-tertiary</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-tertiary'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-tertiary</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-tertiary-hover'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-tertiary-hover</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-tertiary-hover'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-tertiary-hover</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
             </div>
           </div>
@@ -88,24 +118,36 @@ storiesOf('foundation|Variables', module)
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>Backgrounds + Text</h2>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-background'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-background</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-background'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-background</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-background-invert'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-background-invert</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-background-invert'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-background-invert</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-text'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-text</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-text'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-text</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-text-invert'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-text-invert</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-text-invert'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-text-invert</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
             </div>
           </div>
@@ -114,34 +156,52 @@ storiesOf('foundation|Variables', module)
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>Grays</h2>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-gray-100'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-gray-100</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-gray-100'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-gray-100</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-gray-200'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-gray-200</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-gray-200'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-gray-200</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-gray-300'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-gray-300</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-gray-300'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-gray-300</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-gray-400'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-gray-400</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-gray-400'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-gray-400</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-gray-500'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-gray-500</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-gray-500'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-gray-500</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-gray-600'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-gray-600</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-gray-600'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-gray-600</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
             </div>
           </div>
@@ -150,13 +210,19 @@ storiesOf('foundation|Variables', module)
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>States</h2>
 
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-error'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-error</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-error'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-error</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
-              <div className='example-mc-swatch'>
-                <span className='example-mc-swatch__color example-mc-swatch__color--mc-color-warning'></span>
-                <p className='mc-text-h5 mc-text--muted mc-text--monospace'>$mc-color-warning</p>
+              <div className='example-mc-swatch example-mc-swatch--mc-color-warning'>
+                <span className='example-mc-swatch__color'></span>
+                <div>
+                  <p className='mc-text-h5 mc-text--monospace'>$mc-color-warning</p>
+                  <p className='example-mc-swatch__hex mc-text-h5 mc-text--muted mc-text--monospace'></p>
+                </div>
               </div>
             </div>
           </div>
