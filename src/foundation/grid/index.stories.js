@@ -74,64 +74,132 @@ storiesOf('foundation|Grid', module)
         </CodeExample>
       </div>
 
-      <h2 className='mc-text-h2'>Grid (no-gutters)</h2>
-      <p className='mc-text--muted mc-text--monospace'>.row.no-gutters</p>
-      <CodeExample>
-        <div className='row no-gutters'>
-          <div className='col-6'>
-            <Placeholder className='example-grid-block'>.col-6</Placeholder>
+      <div className='example--section'>
+        <h2 className='mc-text-h2'>Grid (no-gutters)</h2>
+        <p className='mc-text--muted mc-text--monospace'>.row.no-gutters</p>
+        <CodeExample>
+          <div className='row no-gutters'>
+            <div className='col-6'>
+              <Placeholder className='example-grid-block'>.col-6</Placeholder>
+            </div>
+            <div className='col-6'>
+              <Placeholder className='example-grid-block'>.col-6</Placeholder>
+            </div>
+
+            <div className='col-sm-12 col-md-4'>
+              <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+            </div>
+            <div className='col-sm-12 col-md-4'>
+              <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+            </div>
+            <div className='col-sm-12 col-md-4'>
+              <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+            </div>
+
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
           </div>
-          <div className='col-6'>
-            <Placeholder className='example-grid-block'>.col-6</Placeholder>
+        </CodeExample>
+      </div>
+
+      <div className='example--section'>
+        <h2 className='mc-text-h2'>Grid (no-gutters-vertical)</h2>
+        <p className='mc-text--muted mc-text--monospace'>.row.no-gutters-vertical</p>
+        <CodeExample>
+          <div className='row no-gutters-vertical'>
+            <div className='col-6'>
+              <Placeholder className='example-grid-block'>.col-6</Placeholder>
+            </div>
+            <div className='col-6'>
+              <Placeholder className='example-grid-block'>.col-6</Placeholder>
+            </div>
           </div>
 
-          <div className='col-sm-12 col-md-4'>
-            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
-          </div>
-          <div className='col-sm-12 col-md-4'>
-            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
-          </div>
-          <div className='col-sm-12 col-md-4'>
-            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+          <div className='row no-gutters-vertical'>
+            <div className='col-sm-12 col-md-4'>
+              <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+            </div>
+            <div className='col-sm-12 col-md-4'>
+              <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+            </div>
+            <div className='col-sm-12 col-md-4'>
+              <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+            </div>
           </div>
 
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          <div className='row no-gutters-vertical'>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
+            <div className='col-md'>
+              <Placeholder className='example-grid-block'>.col-md</Placeholder>
+            </div>
           </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-          <div className='col-md'>
-            <Placeholder className='example-grid-block'>.col-md</Placeholder>
-          </div>
-        </div>
-      </CodeExample>
+        </CodeExample>
+      </div>
     </div>
   ))
