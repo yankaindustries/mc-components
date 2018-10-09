@@ -144,45 +144,55 @@ a {
   align-items: center;
   margin: 15px 0;
 
+  $colors: (
+    mc-color-light: $mc-color-light,
+    mc-color-dark: $mc-color-dark,
+    mc-color-primary: $mc-color-primary,
+    mc-color-primary-hover: $mc-color-primary-hover,
+    mc-color-primary-active: $mc-color-primary-active,
+    mc-color-secondary: $mc-color-secondary,
+    mc-color-secondary-hover: $mc-color-secondary-hover,
+    mc-color-secondary-active: $mc-color-secondary-active,
+    mc-color-tertiary: $mc-color-tertiary,
+    mc-color-tertiary-hover: $mc-color-tertiary-hover,
+    mc-color-background: $mc-color-background,
+    mc-color-background-invert: $mc-color-background-invert,
+    mc-color-text: $mc-color-text,
+    mc-color-text-invert: $mc-color-text-invert,
+    mc-color-gray-100: $mc-color-gray-100,
+    mc-color-gray-200: $mc-color-gray-200,
+    mc-color-gray-300: $mc-color-gray-300,
+    mc-color-gray-400: $mc-color-gray-400,
+    mc-color-gray-500: $mc-color-gray-500,
+    mc-color-gray-600: $mc-color-gray-600,
+    mc-color-error: $mc-color-error,
+    mc-color-warning: $mc-color-warning
+  );
+
+  @each $colorKey, $colorVal in $colors {
+    // .example-mc-swatch--mc-color-primary
+    &--#{$colorKey} {
+      .example-mc-swatch {
+        &__color {
+          background-color: #{$colorVal};
+        }
+
+        &__hex:before {
+          content: '#{$colorVal}';
+        }
+      }
+    }
+  }
+
   &__color {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     margin-right: 12px;
     border-radius: 5px;
     border: 1px solid $mc-color-gray-100;
     flex-shrink: 0;
 
-    &--mc-color-light { background-color: $mc-color-light; }
-    &--mc-color-dark { background-color: $mc-color-dark; }
-
-    // Colors
-    &--mc-color-primary { background-color: $mc-color-primary; }
-    &--mc-color-primary-hover { background-color: $mc-color-primary-hover; }
-    &--mc-color-primary-active { background-color: $mc-color-primary-active; }
-
-    &--mc-color-secondary { background-color: $mc-color-secondary; }
-    &--mc-color-secondary-hover { background-color: $mc-color-secondary-hover; }
-    &--mc-color-secondary-active { background-color: $mc-color-secondary-active; }
-
-    &--mc-color-tertiary { background-color: $mc-color-tertiary; }
-    &--mc-color-tertiary-hover { background-color: $mc-color-tertiary-hover; }
-
-    &--mc-color-background { background-color: $mc-color-background; }
-    &--mc-color-background-invert { background-color: $mc-color-background-invert; }
-    &--mc-color-text { background-color: $mc-color-text; }
-    &--mc-color-text-invert { background-color: $mc-color-text-invert; }
-
-    // Not quite 50 of them, but...
-    &--mc-gray-100 { background-color: $mc-color-gray-100; }
-    &--mc-gray-200 { background-color: $mc-color-gray-200; }
-    &--mc-gray-300 { background-color: $mc-color-gray-300; }
-    &--mc-gray-400 { background-color: $mc-color-gray-400; }
-    &--mc-gray-500 { background-color: $mc-color-gray-500; }
-    &--mc-gray-600 { background-color: $mc-color-gray-600; }
-
-    &--mc-color-error { background-color: $mc-color-error; }
-    &--mc-color-warning { background-color: $mc-color-warning; }
   }
 }
 
