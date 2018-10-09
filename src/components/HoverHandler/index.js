@@ -15,6 +15,10 @@ export default class HoverHandler extends PureComponent {
     intent: false,
   }
 
+  componentWillUnmount () {
+    if (this.timer) this.timer = clearTimeout(this.timer)
+  }
+
   onEnter = () => {
     if (this.timer) this.timer = clearTimeout(this.timer)
 
@@ -32,7 +36,7 @@ export default class HoverHandler extends PureComponent {
     )
   }
 
-  onOut = () => {
+  onLeave = () => {
     if (this.timer) this.timer = clearTimeout(this.timer)
 
     this.setState({
@@ -53,7 +57,7 @@ export default class HoverHandler extends PureComponent {
     return (
       <span
         onMouseEnter={this.onEnter}
-        onMouseLeave={this.onOut}
+        onMouseLeave={this.onLeave}
       >
         {children({ hovering, intent })}
       </span>
