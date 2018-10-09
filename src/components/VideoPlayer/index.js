@@ -127,11 +127,12 @@ export default class VideoPlayer extends PureComponent {
       this.video.on('seeking', onSeek)
     }
 
-    if (onVideoReady) {
-      this.video.on('loadedmetadata', () => {
+    this.video.on('loadedmetadata', () => {
+      this.checkBuffers()
+      if (onVideoReady) {
         onVideoReady(this.video)
-      })
-    }
+      }
+    })
     if (onPlayerReady) {
       onPlayerReady(this.video)
     }
@@ -208,6 +209,32 @@ export default class VideoPlayer extends PureComponent {
           this.props.onTimeChange(currentTime, remainingTime)
         }
       })
+    }
+  }
+
+  // videoJS fix for buffers
+  checkBuffers = () => {
+    const { videoId, hasAutoplay } = this.props
+    // eslint-disable-next-line
+    if (this.video) {
+      // eslint-disable-next-line
+      const { mediaSource } = this.video.tech_.hls
+      // eslint-disable-next-line
+      const videoBuffer = mediaSource.videoBuffer_
+      // eslint-disable-next-line
+      const audioBuffer = mediaSource.audioBuffer_
+      if (videoBuffer && !audioBuffer) {
+        this.video.reset()
+        this.video.catalog.getVideo(
+          videoId.video.brightcoveId,
+          (error, video) => {
+            this.video.catalog.load(video)
+            if (hasAutoplay) {
+              this.video.play()
+            }
+          },
+        )
+      }
     }
   }
 
