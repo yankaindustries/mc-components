@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 
+const DELAY = 300
+
+
 export default class HoverHandler extends PureComponent {
   static propTypes = {
     children: PropTypes.func.isRequired,
@@ -9,27 +12,55 @@ export default class HoverHandler extends PureComponent {
 
   state = {
     hovering: false,
+    intent: false,
   }
 
-  onEnter () {
-    this.setState({ hovering: true })
+  componentWillUnmount () {
+    if (this.timer) this.timer = clearTimeout(this.timer)
   }
 
-  onLeave () {
-    this.setState({ hovering: false })
+  onEnter = () => {
+    if (this.timer) this.timer = clearTimeout(this.timer)
+
+    this.setState({
+      hovering: true,
+    })
+
+    this.timer = setTimeout(
+      () => {
+        this.setState({
+          intent: true,
+        })
+      },
+      DELAY,
+    )
+  }
+
+  onLeave = () => {
+    if (this.timer) this.timer = clearTimeout(this.timer)
+
+    this.setState({
+      hovering: false,
+      intent: false,
+    })
   }
 
   render () {
-    const { children } = this.props
-    const { hovering } = this.state
+    const {
+      children,
+    } = this.props
+    const {
+      hovering,
+      intent,
+    } = this.state
 
     return (
-      <div
-        onMouseEnter={this.onEnter.bind(this)}
-        onMouseLeave={this.onLeave.bind(this)}
+      <span
+        onMouseEnter={this.onEnter}
+        onMouseLeave={this.onLeave}
       >
-        {children({ hovering })}
-      </div>
+        {children({ hovering, intent })}
+      </span>
     )
   }
 }
