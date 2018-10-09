@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import { renderChildren as renderProp } from '../helpers'
 
@@ -11,25 +12,31 @@ export default class Background extends PureComponent {
       PropTypes.arrayOf(PropTypes.node),
     ]),
     className: PropTypes.string,
+    color: PropTypes.oneOf([
+      'dark',
+      'medium',
+      'light',
+      'transparent',
+    ]),
     element: PropTypes.oneOfType([
       PropTypes.func,
       PropTypes.node,
-    ]).isRequired,
+    ]),
     fit: PropTypes.oneOf([
+      'background',
       'container',
       'content',
-      'background',
     ]),
     position: PropTypes.oneOf([
-      'left top',
-      'center top',
-      'right top',
-      'left center',
-      'center center',
-      'right center',
-      'left bottom',
       'center bottom',
+      'center center',
+      'center top',
+      'left bottom',
+      'left center',
+      'left top',
       'right bottom',
+      'right center',
+      'right top',
     ]),
     size: PropTypes.oneOf([
       'contain',
@@ -44,15 +51,27 @@ export default class Background extends PureComponent {
     size: 'none',
   }
 
-  state = {
-    loaded: false,
-  }
-
   constructor (props) {
     super(props)
 
     this.container = React.createRef()
     this.background = React.createRef()
+  }
+
+  state = {
+    loaded: false,
+  }
+
+  componentWillUnmount () {
+    if (this.props.element) {
+      window.removeEventListener('resize', this.setSizeBy)
+    }
+  }
+
+  onLoad = () => {
+    this.setSizeBy()
+    this.setState({ loaded: true })
+    window.addEventListener('resize', this.setSizeBy.bind(this))
   }
 
   setSizeBy = () => {
@@ -68,20 +87,11 @@ export default class Background extends PureComponent {
     }
   }
 
-  onLoad = () => {
-    this.setSizeBy()
-    this.setState({ loaded: true })
-    window.addEventListener('resize', this.setSizeBy.bind(this))
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.setSizeBy)
-  }
-
   render () {
     const {
       children,
       className,
+      color,
       element,
       fit,
       position,
@@ -95,16 +105,17 @@ export default class Background extends PureComponent {
 
     const [x, y] = position.split(' ')
 
-    const classes = [
-      'mc-background',
-      loaded ? 'mc-background--loaded' : '',
-      `mc-background--position-x-${x}`,
-      `mc-background--position-y-${y}`,
-      `mc-background--fit-${fit}`,
-      `mc-background--size-${size}`,
-      `mc-background--size-${size}-${sizeBy}`,
-      className,
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-background': true,
+      [`mc-background--color-${color}`]: color,
+      'mc-background--loaded': loaded,
+      [`mc-background--position-x-${x}`]: element,
+      [`mc-background--position-y-${y}`]: element,
+      [`mc-background--fit-${fit}`]: element,
+      [`mc-background--size-${size}`]: element,
+      [`mc-background--size-${size}-${sizeBy}`]: element,
+    })
 
     return (
       <div
@@ -112,7 +123,7 @@ export default class Background extends PureComponent {
         ref={this.container}
       >
         <div className='mc-background__background-container'>
-          {renderProp(element, {
+          {element && renderProp(element, {
             className: 'mc-background__background',
             ref: this.background,
             onLoad: this.onLoad,
