@@ -1,0 +1,45 @@
+.mc-modal {
+  &__backdrop {
+    @include fade-in-opacity();
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($mc-color-dark, 0.8);
+    z-index: $mc-zindex-modal-backdrop;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2rem;
+    cursor: pointer;
+    z-index: $mc-zindex-modal + 1;
+  }
+
+  &__container {
+    @include fade-in-opacity();
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: $mc-zindex-modal;
+  }
+
+  &__content {
+    pointer-events: auto;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
