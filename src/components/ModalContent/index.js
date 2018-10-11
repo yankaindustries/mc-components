@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { Consumer } from '../Modal'
+import ClickOutside from '../ClickOutside'
+
 
 export default class ModalContent extends PureComponent {
   static propTypes = {
@@ -12,15 +15,11 @@ export default class ModalContent extends PureComponent {
     className: PropTypes.string,
   }
 
-  constructor (props) {
-    super(props)
-
-    this.content = React.createRef()
-  }
-
   componentDidMount () {
     this.content.current.focus()
   }
+
+  content = React.createRef()
 
   render () {
     const {
@@ -34,13 +33,21 @@ export default class ModalContent extends PureComponent {
     })
 
     return (
-      <div
-        className={classes}
-        ref={this.content}
-        tabIndex='-1'
-      >
-        {children}
-      </div>
+      <Consumer>
+        {({ close }) =>
+          <div
+            className={classes}
+            ref={this.content}
+            tabIndex='-1'
+          >
+            <ClickOutside
+              onClickOutside={close('backdrop')}
+            >
+              {children}
+            </ClickOutside>
+          </div>
+        }
+      </Consumer>
     )
   }
 }
