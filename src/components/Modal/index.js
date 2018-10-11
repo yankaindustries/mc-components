@@ -19,7 +19,7 @@ export default class Modal extends PureComponent {
     children: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
-    ]),
+    ]).isRequired,
     className: PropTypes.string,
     show: PropTypes.bool,
 

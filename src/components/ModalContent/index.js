@@ -11,7 +11,7 @@ export default class ModalContent extends PureComponent {
     children: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
-    ]),
+    ]).isRequired,
     className: PropTypes.string,
   }
 
