@@ -226,7 +226,7 @@ export default class VideoPlayer extends PureComponent {
       if (videoBuffer && !audioBuffer) {
         this.video.reset()
         this.video.catalog.getVideo(
-          videoId.video.brightcoveId,
+          videoId,
           (error, video) => {
             this.video.catalog.load(video)
             if (hasAutoplay) {
