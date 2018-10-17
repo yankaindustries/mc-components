@@ -65,7 +65,7 @@ a {
 }
 
 .mc-text-h2 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .mc-text-h3 {
@@ -74,10 +74,12 @@ a {
 
 .mc-text-h4 {
   font-size: 12px;
+  letter-spacing: 0.06em;
 }
 
 .mc-text-h5 {
-  font-size: 12px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
 }
 
 // Referenced as "paragraph 1" in comps
@@ -104,7 +106,9 @@ a {
 
   .mc-text-h1 { font-size: 24px; }
   .mc-text-h2 { font-size: 20px; }
+  .mc-text-h3 { font-size: 18px; }
   .mc-text-h4 { font-size: 16px; }
+  .mc-text-h5 { font-size: 13px; }
 
   .mc-text-intro { font-size: 20px; }
 }
@@ -117,4 +121,6 @@ a {
   .mc-text-h1 { font-size: 32px; }
   .mc-text-h2 { font-size: 24px; }
   .mc-text-h3 { font-size: 20px; }
+  .mc-text-h4 { font-size: 14px; }
+  .mc-text-h5 { font-size: 12px; }
 }
