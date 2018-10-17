@@ -104,6 +104,15 @@ storiesOf('components|Button', module)
             Button
           </Button>
         </PropExample>
+
+        <PropExample
+          name='disabled'
+          type='Boolean'
+        >
+          <Button disabled>
+            Button disabled
+          </Button>
+        </PropExample>
       </DocSection>
     </div>
   )))
