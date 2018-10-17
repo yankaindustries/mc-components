@@ -46,7 +46,7 @@
   }
 }
 
-@media (min-width: $mc-bp-md) {
+@media (min-width: $mc-bp-lg) {
   .mc-site-footer {
     &__logo-footer {
       border: 0;
@@ -75,13 +75,13 @@
     }
 
     &__links {
-      margin: 0 12px;
+      margin: 0 10px;
       border-left: 1px solid rgba($mc-color-light, 0.2);
       border-right: 1px solid rgba($mc-color-light, 0.2);
     }
 
     &__link {
-      padding: 0 8px;
+      padding: 0 5px;
     }
 
     &__copyright {

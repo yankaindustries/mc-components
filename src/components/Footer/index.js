@@ -45,7 +45,7 @@ export default class Footer extends PureComponent {
                       rel='noopener noreferrer'
                       href='https://masterclasshelp.zendesk.com/hc/en-us'
                     >
-                      Help Center
+                      Support
                     </a>
                   </li>
 
@@ -69,6 +69,10 @@ export default class Footer extends PureComponent {
 
                   <li className='mc-site-footer__link'>
                     <a href='http://careers.masterclass.com'>Careers</a>
+                  </li>
+
+                  <li className='mc-site-footer__link'>
+                    <a href='/sitemap'>Sitemap</a>
                   </li>
 
                   <p className='mc-site-footer__copyright mc-text-legal mc-text--capitalize'>
