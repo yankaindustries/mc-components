@@ -34,7 +34,8 @@
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    opacity: 0.7;
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   // Opinionated: add "hand" cursor to non-disabled .btn elements
