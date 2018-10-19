@@ -216,7 +216,7 @@ export default class VideoPlayer extends PureComponent {
   checkBuffers = () => {
     const { videoId, hasAutoplay } = this.props
     // eslint-disable-next-line
-    if (this.video) {
+    if (this.video && this.video.tech_.hls) {
       // eslint-disable-next-line
       const { mediaSource } = this.video.tech_.hls
       // eslint-disable-next-line
