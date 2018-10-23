@@ -92,7 +92,7 @@ storiesOf('foundation|Variables', module)
             </div>
           </div>
 
-           <div className='col-sm-12 col-md-6 col-lg-4'>
+          <div className='col-sm-12 col-md-6 col-lg-4'>
             <div className='align-items-center example--section'>
               <h2 className='mc-text-h2'>Tertiary</h2>
 
