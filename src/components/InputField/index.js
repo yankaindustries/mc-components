@@ -12,10 +12,14 @@ const FIELD_PROP_TYPE = {
 
 const renderInput = ({
   input,
+  meta: {
+    error,
+  },
   ...props
 }) => (
   <Input
     {...input}
+    error={error}
     {...props}
   />
 )

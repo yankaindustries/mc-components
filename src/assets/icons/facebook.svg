@@ -1,3 +1,11 @@
-<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M22.6436 18.6326V21.5714H18.6326V25.4897H22.6436V38.2244H26.6546V25.4897H31.0668L32.0695 21.5714H26.6546V18.6326C26.6546 18.0448 27.0557 17.653 27.6574 17.653H31.6916V13.7346H27.6574C24.8497 13.7346 22.6436 15.8897 22.6436 18.6326Z" fill="#000000"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="26px" viewBox="0 0 15 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="facebook" fill="#000000">
+            <path d="M4.6436,5.6326 L4.6436,8.5714 L0.6326,8.5714 L0.6326,12.4897 L4.6436,12.4897 L4.6436,25.2244 L8.6546,25.2244 L8.6546,12.4897 L13.0668,12.4897 L14.0695,8.5714 L8.6546,8.5714 L8.6546,5.6326 C8.6546,5.0448 9.0557,4.653 9.6574,4.653 L13.6916,4.653 L13.6916,0.7346 L9.6574,0.7346 C6.8497,0.7346 4.6436,2.8897 4.6436,5.6326 Z" id="Path"></path>
+        </g>
+    </g>
 </svg>
