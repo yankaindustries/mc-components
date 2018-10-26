@@ -1,4 +1,9 @@
-@import "base/base";
+// mc-release mixins
+@import "mixins/mixins";
+
+// mc-components
 @import "animation/animation";
-@import "typography/typography";
+@import "base/base";
 @import "components/components";
+@import "functions/functions";
+@import "typography/typography";

@@ -37,21 +37,7 @@
   }
 
   &--facebook {
-    background-color: $mc-color-facebook;
-
-    &:hover {
-      background-color: lighten($mc-color-facebook, 6.5%);
-    }
-
-    &:active {
-      background-color: $mc-color-facebook;
-    }
-
-    &:focus,
-    &.focus {
-      outline: 0;
-      box-shadow: 0 0 0 0.2rem rgba($mc-color-facebook, 0.25);
-    }
+    @include button-variant(#4267b2, #4267b2);
   }
 
   &--loading {

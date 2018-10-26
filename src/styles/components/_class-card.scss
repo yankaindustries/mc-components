@@ -3,7 +3,7 @@
   position: relative;
   overflow: hidden;
 
-  transition: background-image 150ms ease;
+  @include transition(background-image 150ms ease);
   text-align: left;
   cursor: pointer;
 
@@ -27,8 +27,8 @@
     right: 0;
     z-index: 4;
 
-    box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.1);
-    transition: box-shadow 250ms ease;
+    @include box-shadow(inset 0 0 0 1px rgba($mc-color-light, 0.1));
+    @include transition(box-shadow 250ms ease);
   }
 
   &:after {
@@ -45,8 +45,8 @@
 
   &:hover {
     &:before {
-      box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.2);
-      transition: box-shadow 250ms ease;
+      @include box-shadow(inset 0 0 0 1px rgba($mc-color-light, 0.2));
+      @include transition(box-shadow 250ms ease);
     }
 
     .mc-class-card {
@@ -54,7 +54,7 @@
       &__image {
         transform: scale(1.1);
 
-        transition: transform 15s cubic-bezier(0.02, 0.075, 0.42, 1);
+        @include transition(transform 15s cubic-bezier(0.02, 0.075, 0.42, 1));
       }
 
       &__caption {
@@ -70,7 +70,7 @@
     left: 2em;
     text-transform: uppercase;
 
-    transition: transform 0.75s cubic-bezier(0.29, 1.185, 1, 1);
+    @include transition(transform 0.75s cubic-bezier(0.29, 1.185, 1, 1));
     text-shadow: 0 0 10px $mc-color-dark;
     text-align: left;
 
@@ -104,7 +104,7 @@
     z-index: 1;
     transform: scale(1);
 
-    transition: transform 8s ease;
+    @include transition(transform 8s ease);
 
   }
 }
