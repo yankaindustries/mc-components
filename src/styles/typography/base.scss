@@ -25,6 +25,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .mc-text-link {
@@ -69,7 +70,7 @@ a {
 .mc-text-h5 {
   font-weight: 700;
   line-height: 1.25;
-  // letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 }
 
 .mc-text-h1 {
