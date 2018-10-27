@@ -1,14 +1,34 @@
 import React from 'react'
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+import {
+  reducer as formReducer,
+  reduxForm,
+  Field,
+} from 'redux-form'
 import { storiesOf } from '@storybook/react'
+import { withProps } from '../../utils/addon-props'
 
-import TextArea from '../TextArea'
+import TextareaField from '../TextareaField'
 
 
-storiesOf('components|Forms/TextArea', module)
-  .add('TextArea', () =>
+const reducer = combineReducers({ form: formReducer })
+const store = createStore(reducer)
+
+
+const Form = reduxForm({
+  form: 'textarea',
+  initialValues: {
+    demo: 'Some Value',
+    'inverted-demo': 'Some Value',
+    error: 'Looks like a problem.',
+    'inverted-error': 'Looks like a problem.',
+  },
+})(
+  () =>
     <div className='container'>
       <div className='example--section'>
-        <h2 className='mc-text-d1'>TextArea</h2>
+        <h2 className='mc-text-d1'>Textarea</h2>
         <p>Some various textareas...</p>
       </div>
 
@@ -20,7 +40,8 @@ storiesOf('components|Forms/TextArea', module)
 
               <div className='rounded-box'>
                 <div className='mc-form-group'>
-                  <TextArea
+                  <Field
+                    component={TextareaField}
                     name='demo'
                     label='Some Label'
                     value=''
@@ -28,7 +49,8 @@ storiesOf('components|Forms/TextArea', module)
                 </div>
 
                 <div className='mc-form-group'>
-                  <TextArea
+                  <Field
+                    component={TextareaField}
                     name='value'
                     label='Tell us more about yourself'
                     value='I like turtles...'
@@ -36,16 +58,17 @@ storiesOf('components|Forms/TextArea', module)
                 </div>
 
                 <div className='mc-form-group'>
-                  <TextArea
+                  <Field
+                    component={TextareaField}
                     name='error'
                     label='What have we here?'
-                    value='Looks like a problem.'
                     error
                   />
                 </div>
 
                 <div className='mc-form-group'>
-                  <TextArea
+                  <Field
+                    component={TextareaField}
                     name='disabled'
                     label={'Can\'t touch this'}
                     value=''
@@ -59,7 +82,8 @@ storiesOf('components|Forms/TextArea', module)
               <h5 className='mc-text-h5'>Inverted</h5>
 
               <div className='mc-form-group'>
-                <TextArea
+                <Field
+                  component={TextareaField}
                   name='inverted-demo'
                   label='Some Label'
                   inverted
@@ -67,7 +91,8 @@ storiesOf('components|Forms/TextArea', module)
               </div>
 
               <div className='mc-form-group'>
-                <TextArea
+                <Field
+                  component={TextareaField}
                   name='inverted-value'
                   label='Tell us more about yourself'
                   value='I like turtles...'
@@ -76,7 +101,8 @@ storiesOf('components|Forms/TextArea', module)
               </div>
 
               <div className='mc-form-group'>
-                <TextArea
+                <Field
+                  component={TextareaField}
                   name='inverted-error'
                   label='What have we here?'
                   value='Looks like a problem.'
@@ -86,7 +112,8 @@ storiesOf('components|Forms/TextArea', module)
               </div>
 
               <div className='mc-form-group'>
-                <TextArea
+                <Field
+                  component={TextareaField}
                   name='inverted-disabled'
                   label={'Can\'t touch this'}
                   value=''
@@ -99,4 +126,12 @@ storiesOf('components|Forms/TextArea', module)
         </div>
       </div>
     </div>,
-  )
+)
+
+
+storiesOf('components|Forms/TextareaField', module)
+  .add('TextareaField', withProps(TextareaField)(() => (
+    <Provider store={store}>
+      <Form />
+    </Provider>
+  )))

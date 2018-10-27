@@ -1,7 +1,11 @@
 import React from 'react'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { reducer as formReducer, reduxForm } from 'redux-form'
+import {
+  reducer as formReducer,
+  reduxForm,
+  Field,
+} from 'redux-form'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
@@ -14,6 +18,8 @@ import Close from '../Icons/Close'
 
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
+
+
 const Form = reduxForm({
   form: 'input',
   initialValues: {
@@ -34,7 +40,8 @@ const Form = reduxForm({
 
               <div className='rounded-box'>
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='color'
                     label='What is your favorite color?'
                     placeholder='Red, orange, yellow, green, blue, violet, or something else?'
@@ -42,7 +49,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='best'
                     label='Who sang it best?'
                     placeholder='Madonna or Britney?'
@@ -50,7 +58,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='prepend'
                     placeholder='Search'
                     prepend={<MagnifyingGlass />}
@@ -58,7 +67,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='prepend-password'
                     type='password'
                     placeholder='Password'
@@ -68,7 +78,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='append'
                     label='Field with appended icon'
                     placeholder='Hint: It is a close icon!'
@@ -79,7 +90,8 @@ const Form = reduxForm({
                 <hr />
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='error'
                     label='Error example'
                     placeholder='Try to fix it?'
@@ -88,7 +100,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='fix-it'
                     label='There might be a problem...'
                     placeholder='Try to fix it?'
@@ -97,7 +110,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='password-error'
                     type='password'
                     label='Incorrect Password'
@@ -110,7 +124,8 @@ const Form = reduxForm({
                 <hr />
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='disabled'
                     label='Disabled field'
                     placeholder='Not clickable!'
@@ -124,7 +139,8 @@ const Form = reduxForm({
               <h5 className='mc-text-h5'>Inverted</h5>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='color'
                   label='What is your favorite color?'
                   placeholder='Red, orange, yellow, green, blue, violet, or something else?'
@@ -133,7 +149,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='best'
                   label='Who sang it best?'
                   placeholder='Madonna or Britney?'
@@ -142,7 +159,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='prepend'
                   placeholder='Search'
                   prepend={<MagnifyingGlass />}
@@ -151,7 +169,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='prepend-password'
                   type='password'
                   placeholder='Password'
@@ -162,7 +181,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='append'
                   label='Field with appended icon'
                   placeholder='Hint: It is a close icon!'
@@ -174,7 +194,8 @@ const Form = reduxForm({
               <hr />
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='error'
                   label='Error example'
                   placeholder='Try to fix it?'
@@ -184,7 +205,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='fix-it'
                   label='There might be a problem...'
                   placeholder='Try to fix it?'
@@ -194,7 +216,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='password-error'
                   type='password'
                   label='Incorrect Password'
@@ -208,7 +231,8 @@ const Form = reduxForm({
               <hr />
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='disabled'
                   label='Disabled field'
                   placeholder='Not clickable!'

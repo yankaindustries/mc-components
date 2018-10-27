@@ -1,10 +1,15 @@
 import React from 'react'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { reducer as formReducer, reduxForm } from 'redux-form'
+import {
+  reducer as formReducer,
+  reduxForm,
+  Field,
+} from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
 import CheckboxField from '../CheckboxField'
+
 
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
@@ -29,17 +34,20 @@ const Form = reduxForm({
 
             <div className='rounded-box'>
               <div className='form-group'>
-                <CheckboxField
+                <Field
+                  component={CheckboxField}
                   name='terms'
                   label='I agree to the terms'
                 />
 
-                <CheckboxField
+                <Field
+                  component={CheckboxField}
                   name='twice'
                   label='I like checking things twice'
                 />
 
-                <CheckboxField
+                <Field
+                  component={CheckboxField}
                   name='lipsum'
                   label='
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
@@ -57,19 +65,22 @@ const Form = reduxForm({
           <div className='col-sm-6'>
             <h5 className='mc-text-h5'>Inverted</h5>
             <div className='form-group'>
-              <CheckboxField
+              <Field
+                component={CheckboxField}
                 name='terms'
                 label='I agree to the terms'
                 inverted
               />
 
-              <CheckboxField
+              <Field
+                component={CheckboxField}
                 name='twice'
                 label='I like checking things twice'
                 inverted
               />
 
-              <CheckboxField
+              <Field
+                component={CheckboxField}
                 name='lipsum'
                 label='
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel

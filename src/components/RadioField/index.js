@@ -1,10 +1,9 @@
 import React from 'react'
-import { Field } from 'redux-form'
 
 import Radio from '../Radio'
 
 
-const renderRadio = ({
+const RadioField = ({
   input: {
     value,
     ...inputProps
@@ -17,13 +16,6 @@ const renderRadio = ({
     {...props}
   />
 )
-
-
-const RadioField = props =>
-  <Field
-    component={renderRadio}
-    {...props}
-  />
 
 
 export default RadioField

@@ -1,16 +1,16 @@
 import React from 'react'
 
-import Input from '../Input'
+import Textarea from '../Textarea'
 
 
-const InputField = ({
+const TextareaField = ({
   input,
   meta: {
     error,
   },
   ...props
 }) => (
-  <Input
+  <Textarea
     {...input}
     error={error}
     {...props}
@@ -18,4 +18,4 @@ const InputField = ({
 )
 
 
-export default InputField
+export default TextareaField

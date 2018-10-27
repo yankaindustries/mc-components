@@ -16,22 +16,22 @@
 
 .mc-form-group {
   position: relative;
-  margin-bottom: $grid-gutter-width / 2;
+  padding-bottom: $grid-gutter-width;
 
   @media (min-width: $mc-bp-sm) {
-    margin-bottom: $grid-gutter-width-sm / 2;
+    padding-bottom: $grid-gutter-width-sm;
   }
 
   @media (min-width: $mc-bp-md) {
-    margin-bottom: $grid-gutter-width-md / 2;
+    padding-bottom: $grid-gutter-width-md;
   }
 
   @media (min-width: $mc-bp-lg) {
-    margin-bottom: $grid-gutter-width-lg / 2;
+    padding-bottom: $grid-gutter-width-lg;
   }
 
   @media (min-width: $mc-bp-xl) {
-    margin-bottom: $grid-gutter-width-xl / 2;
+    padding-bottom: $grid-gutter-width-xl;
   }
 }
 

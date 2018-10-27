@@ -1,10 +1,9 @@
 import React from 'react'
-import { Field } from 'redux-form'
 
 import Checkbox from '../Checkbox'
 
 
-const renderCheckbox = ({
+const CheckboxField = ({
   input: {
     value,
     ...inputProps
@@ -14,14 +13,6 @@ const renderCheckbox = ({
   <Checkbox
     checked={!!value}
     {...inputProps}
-    {...props}
-  />
-)
-
-
-const CheckboxField = props => (
-  <Field
-    component={renderCheckbox}
     {...props}
   />
 )

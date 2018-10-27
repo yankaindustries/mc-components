@@ -1,7 +1,11 @@
 import React from 'react'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { reducer as formReducer, reduxForm } from 'redux-form'
+import {
+  reducer as formReducer,
+  reduxForm,
+  Field,
+} from 'redux-form'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
@@ -33,7 +37,8 @@ const Form = reduxForm({
                 <div className='mc-form-group'>
                   <div className='row'>
                     <div className='col-sm-6'>
-                      <InputField
+                      <Field
+                        component={InputField}
                         name='firstName'
                         label='First name'
                         placeholder='John'
@@ -41,7 +46,8 @@ const Form = reduxForm({
                     </div>
 
                     <div className='col-sm-6'>
-                      <InputField
+                      <Field
+                        component={InputField}
                         name='lastName'
                         label='Last name'
                         placeholder='Doe'
@@ -51,7 +57,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='email'
                     label='Email'
                     type='email'
@@ -60,13 +67,15 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <RadioField
+                  <Field
+                    component={RadioField}
                     name='billing'
                     option='yearly'
                     label='Bill me yearly ($180)'
                   />
 
-                  <RadioField
+                  <Field
+                    component={RadioField}
                     name='billing'
                     option='monthly'
                     label='Bill me monthly ($20)'
@@ -74,7 +83,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='password'
                     type='password'
                     placeholder='Password'
@@ -84,7 +94,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <InputField
+                  <Field
+                    component={InputField}
                     name='confirm-password'
                     type='password'
                     placeholder='Confirm Password'
@@ -93,7 +104,8 @@ const Form = reduxForm({
                 </div>
 
                 <div className='mc-form-group'>
-                  <CheckboxField
+                  <Field
+                    component={CheckboxField}
                     name='terms'
                     label='I agree to the terms'
                   />
@@ -111,7 +123,8 @@ const Form = reduxForm({
               <div className='mc-form-group'>
                 <div className='row'>
                   <div className='col-sm-6'>
-                    <InputField
+                    <Field
+                      component={InputField}
                       name='firstName'
                       label='First name'
                       placeholder='John'
@@ -120,7 +133,8 @@ const Form = reduxForm({
                   </div>
 
                   <div className='col-sm-6'>
-                    <InputField
+                    <Field
+                      component={InputField}
                       name='lastName'
                       label='Last name'
                       placeholder='Doe'
@@ -131,7 +145,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='email'
                   label='Email'
                   type='email'
@@ -141,14 +156,16 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <RadioField
+                <Field
+                  component={RadioField}
                   name='billing'
                   option='yearly'
                   label='Bill me yearly ($180)'
                   inverted
                 />
 
-                <RadioField
+                <Field
+                  component={RadioField}
                   name='billing'
                   option='monthly'
                   label='Bill me monthly ($20)'
@@ -157,7 +174,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='password'
                   type='password'
                   placeholder='Password'
@@ -168,7 +186,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <InputField
+                <Field
+                  component={InputField}
                   name='confirm-password'
                   type='password'
                   placeholder='Confirm Password'
@@ -178,7 +197,8 @@ const Form = reduxForm({
               </div>
 
               <div className='mc-form-group'>
-                <CheckboxField
+                <Field
+                  component={CheckboxField}
                   name='terms'
                   label='I agree to the terms'
                   inverted

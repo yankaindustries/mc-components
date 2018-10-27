@@ -5,22 +5,23 @@ import cn from 'classnames'
 
 export default class Textarea extends PureComponent {
   static propTypes = {
+    disabled: PropTypes.bool,
     error: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.string,
     ]),
+    help: PropTypes.string,
     inverted: PropTypes.bool,
-    disabled: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
-    placeholder: PropTypes.string,
     value: PropTypes.string,
+
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
   }
 
-  static defaultProp = {
+  static defaultProps = {
     value: '',
   }
 
@@ -65,8 +66,8 @@ export default class Textarea extends PureComponent {
       inverted,
       label,
       name,
-      placeholder,
       value,
+
       onChange,
       ...props
     } = this.props
@@ -87,23 +88,27 @@ export default class Textarea extends PureComponent {
 
     return (
       <div className={classes}>
+        {(error || label) &&
+          <label
+            htmlFor={name}
+            className='mc-form-textarea__label'
+          >
+            {label} {error}
+          </label>
+        }
+
         <textarea
           name={name}
           id={name}
           className='mc-form-textarea__textarea'
-          placeholder={placeholder}
           value={value}
           disabled={disabled}
           {...props}
+
           onChange={onChange}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
         />
-        <label
-          htmlFor={name}
-          className='mc-form-textarea__label'>
-          {label}
-        </label>
       </div>
     )
   }
