@@ -5,10 +5,7 @@ html {
 // Referenced as "paragraph 2" in comps
 body {
   background: $mc-color-background;
-  font-family: $mc-font-default;
-  font-size: 12px;
-  line-height: 1.5;
-  font-weight: 400;
+  font: 400 16px/1.5 $mc-font-default;
   color: $mc-color-text;
   letter-spacing: 0.015em;
   font-variant-ligatures: none;
@@ -74,29 +71,34 @@ a {
 }
 
 .mc-text-h1 {
-  font-size: 20px;
+  font-size: 28px;
 }
 
 .mc-text-h2 {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .mc-text-h3 {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .mc-text-h4 {
-  font-size: 12px;
+  font-size: 16px;
+  letter-spacing: 0.06em;
 }
 
 .mc-text-h5 {
-  font-size: 10px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
 }
 
-// Referenced as "paragraph 1" in comps
-.mc-text-intro {
-  font-size: 16px;
-  line-height: 26px;
+// 'Readable' for article pages
+// intro as placeholder for intro styles with
+// extra margins / treatment in the future.
+.mc-text-intro,
+.mc-text-readable {
+  font-size: 20px;
+  line-height: 1.5;
   letter-spacing: 0.025em;
   font-weight: 400;
 }
@@ -115,13 +117,11 @@ a {
   .mc-text-d1 { font-size: 32px; }
   .mc-text-d2 { font-size: 24px; }
 
-  .mc-text-h1 { font-size: 24px; }
-  .mc-text-h2 { font-size: 20px; }
-  .mc-text-h3 { font-size: 18px; }
-  .mc-text-h4 { font-size: 14px; }
-  .mc-text-h5 { font-size: 12px; }
-
-  .mc-text-intro { font-size: 20px; }
+  .mc-text-h1 { font-size: 32px; }
+  .mc-text-h2 { font-size: 28px; }
+  .mc-text-h3 { font-size: 24px; }
+  .mc-text-h4 { font-size: 20px; }
+  .mc-text-h5 { font-size: 16px; }
 }
 
 @media (min-width: $mc-bp-lg) {
@@ -129,7 +129,9 @@ a {
   .mc-text-d2 { font-size: 32px; }
   .mc-text-d3 { font-size: 20px; }
 
-  .mc-text-h1 { font-size: 32px; }
-  .mc-text-h2 { font-size: 24px; }
-  .mc-text-h3 { font-size: 20px; }
+  .mc-text-h1 { font-size: 48px; }
+  .mc-text-h2 { font-size: 32px; }
+  .mc-text-h3 { font-size: 28px; }
+  .mc-text-h4 { font-size: 24px; }
+  .mc-text-h5 { font-size: 20px; }
 }
