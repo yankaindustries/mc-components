@@ -15,7 +15,7 @@ export default class Input extends PureComponent {
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
-
+    touched: PropTypes.bool,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
@@ -70,7 +70,7 @@ export default class Input extends PureComponent {
       name,
       prepend,
       value,
-
+      touched,
       onChange,
       ...props
     } = this.props
@@ -86,7 +86,7 @@ export default class Input extends PureComponent {
       'mc-form-input--modified': value,
       'mc-form-input--invert': inverted,
       'mc-form-input--disabled': disabled,
-      'mc-form-input--error': error,
+      'mc-form-input--error': error && touched,
     })
 
     return (
@@ -114,7 +114,7 @@ export default class Input extends PureComponent {
               ref={this.input}
             />
 
-            {(error || label) &&
+            {((error && touched) || label) &&
               <label
                 htmlFor={name}
                 className='mc-form-input__label'
