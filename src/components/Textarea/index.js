@@ -93,7 +93,7 @@ export default class Textarea extends PureComponent {
             htmlFor={name}
             className='mc-form-textarea__label'
           >
-            {label} {error}
+            {error || label}
           </label>
         }
 
