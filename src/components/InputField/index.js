@@ -1,16 +1,21 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Field } from 'redux-form'
 
 import Input from '../Input'
 
-const FIELD_PROP_TYPE = {
-  label: PropTypes.string,
+
+const INPUT_PROP_TYPE = PropTypes.shape({
   name: PropTypes.string.isRequired,
-}
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.any.isRequired,
+})
+
+const META_PROP_TYPE = PropTypes.shape({
+  error: PropTypes.string,
+})
 
 
-const renderInput = ({
+const InputField = ({
   input,
   meta: {
     error,
@@ -18,25 +23,15 @@ const renderInput = ({
   ...props
 }) => (
   <Input
-    {...input}
     error={error}
+    {...input}
     {...props}
   />
 )
 
-
-export default class InputField extends PureComponent {
-  static propTypes = {
-    className: PropTypes.string,
-    ...FIELD_PROP_TYPE,
-  }
-
-  render () {
-    return (
-      <Field
-        component={renderInput}
-        {...this.props}
-      />
-    )
-  }
+InputField.propTypes = {
+  input: INPUT_PROP_TYPE,
+  meta: META_PROP_TYPE,
 }
+
+export default InputField

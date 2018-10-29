@@ -14,7 +14,7 @@ export default class Input extends PureComponent {
     inverted: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
 
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
@@ -70,6 +70,7 @@ export default class Input extends PureComponent {
       name,
       prepend,
       value,
+
       onChange,
       ...props
     } = this.props

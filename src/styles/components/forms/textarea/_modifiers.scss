@@ -35,13 +35,8 @@
     border-color: $mc-color-primary-hover;
   }
 
-  &.mc-form-textarea--focus,
-  &.mc-form-textarea--modified {
-    .mc-form-textarea {
-      &__label {
-        color: $mc-color-primary;
-      }
-    }
+  .mc-form-textarea__label {
+    color: $mc-color-primary;
   }
 }
 

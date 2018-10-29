@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Checkbox from '../Checkbox'
+import Textarea from '../Textarea'
 
 
 const INPUT_PROP_TYPE = PropTypes.shape({
@@ -15,23 +15,23 @@ const META_PROP_TYPE = PropTypes.shape({
 })
 
 
-const CheckboxField = ({
-  input: {
-    value,
-    ...input
+const TextareaField = ({
+  input,
+  meta: {
+    error,
   },
   ...props
 }) => (
-  <Checkbox
-    checked={!!value}
+  <Textarea
     {...input}
+    error={error}
     {...props}
   />
 )
 
-CheckboxField.propTypes = {
+TextareaField.propTypes = {
   input: INPUT_PROP_TYPE,
   meta: META_PROP_TYPE,
 }
 
-export default CheckboxField
+export default TextareaField

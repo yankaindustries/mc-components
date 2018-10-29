@@ -1,10 +1,15 @@
 import React from 'react'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import { reducer as formReducer, reduxForm } from 'redux-form'
+import {
+  reducer as formReducer,
+  reduxForm,
+  Field,
+} from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
 import RadioField from '../RadioField'
+
 
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
@@ -28,19 +33,22 @@ const Form = reduxForm({
             <h5 className='mc-text-h5'>Default</h5>
 
             <div className='rounded-box'>
-              <RadioField
+              <Field
+                component={RadioField}
                 name='color'
                 label='Red'
                 option='red'
               />
 
-              <RadioField
+              <Field
+                component={RadioField}
                 name='color'
                 label='Green'
                 option='green'
               />
 
-              <RadioField
+              <Field
+                component={RadioField}
                 name='color'
                 label='Blue'
                 option='blue'
@@ -51,21 +59,24 @@ const Form = reduxForm({
           <div className='col-sm-6'>
             <h5 className='mc-text-h5'>Inverted</h5>
 
-            <RadioField
+            <Field
+              component={RadioField}
               name='color'
               label='Red'
               option='red'
               inverted
             />
 
-            <RadioField
+            <Field
+              component={RadioField}
               name='color'
               label='Green'
               option='green'
               inverted
             />
 
-            <RadioField
+            <Field
+              component={RadioField}
               name='color'
               label='Blue'
               option='blue'
