@@ -118,7 +118,7 @@ export default class Input extends PureComponent {
                 htmlFor={name}
                 className='mc-form-input__label'
               >
-                {label} {error}
+                {error || label}
               </label>
             }
           </div>
