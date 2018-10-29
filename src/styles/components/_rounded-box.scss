@@ -1,12 +1,8 @@
 .rounded-box {
   background-color: $mc-color-light;
   border-radius: 0.4rem;
-  padding: 4rem;
+  padding: $grid-gutter-width;
   color: $mc-color-dark;
-
-  @include media-breakpoint-down(sm) {
-    padding: 2rem;
-  }
 
   &__header {
     font-weight: 400;

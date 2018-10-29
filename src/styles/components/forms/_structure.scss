@@ -14,12 +14,25 @@
   padding-left: 0;
 }
 
-
 .mc-form-group {
-  // display: flex;
-  // align-items: center;
   position: relative;
-  margin-bottom: 24px; // not sure this should go here.
+  margin-bottom: $grid-gutter-width / 2;
+
+  @media (min-width: $mc-bp-sm) {
+    margin-bottom: $grid-gutter-width-sm / 2;
+  }
+
+  @media (min-width: $mc-bp-md) {
+    margin-bottom: $grid-gutter-width-md / 2;
+  }
+
+  @media (min-width: $mc-bp-lg) {
+    margin-bottom: $grid-gutter-width-lg / 2;
+  }
+
+  @media (min-width: $mc-bp-xl) {
+    margin-bottom: $grid-gutter-width-xl / 2;
+  }
 }
 
 .mc-form-help {
