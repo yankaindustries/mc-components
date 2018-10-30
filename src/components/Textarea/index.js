@@ -79,7 +79,7 @@ export default class Textarea extends PureComponent {
     const classes = cn({
       'mc-form-textarea': true,
       'mc-form-textarea--focus': focused,
-      'mc-form-textarea--no-label': !label,
+      'mc-form-textarea--no-label': !label && !error,
       'mc-form-textarea--modified': value,
       'mc-form-textarea--invert': inverted,
       'mc-form-textarea--disabled': disabled,

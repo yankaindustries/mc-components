@@ -12,6 +12,7 @@ import { withProps } from '../../utils/addon-props'
 import InputField from '../InputField'
 import CheckboxField from '../CheckboxField'
 import RadioField from '../RadioField'
+import TextareaField from '../TextareaField'
 import Button from '../Button'
 import Lock from '../Icons/Lock'
 
@@ -63,6 +64,15 @@ const Form = reduxForm({
                     label='Email'
                     type='email'
                     placeholder='john@google.com'
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Field
+                    component={TextareaField}
+                    name='bio'
+                    label='Tell us about yourself'
+                    placeholder='This is the story of a girl...'
                   />
                 </div>
 
@@ -151,6 +161,16 @@ const Form = reduxForm({
                   label='Email'
                   type='email'
                   placeholder='john@google.com'
+                  inverted
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Field
+                  component={TextareaField}
+                  name='bio'
+                  label='Tell us about yourself'
+                  placeholder='This is the story of a girl...'
                   inverted
                 />
               </div>

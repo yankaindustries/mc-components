@@ -19,10 +19,8 @@ const store = createStore(reducer)
 const Form = reduxForm({
   form: 'textarea',
   initialValues: {
-    demo: 'Some Value',
-    'inverted-demo': 'Some Value',
+    bio: 'I am me, of course.',
     error: 'Looks like a problem.',
-    'inverted-error': 'Looks like a problem.',
   },
 })(
   () =>
@@ -44,16 +42,14 @@ const Form = reduxForm({
                     component={TextareaField}
                     name='demo'
                     label='Some Label'
-                    value=''
                   />
                 </div>
 
                 <div className='mc-form-group'>
                   <Field
                     component={TextareaField}
-                    name='value'
+                    name='bio'
                     label='Tell us more about yourself'
-                    value='I like turtles...'
                   />
                 </div>
 
@@ -62,7 +58,7 @@ const Form = reduxForm({
                     component={TextareaField}
                     name='error'
                     label='What have we here?'
-                    error
+                    error='Something is wrong'
                   />
                 </div>
 
@@ -71,7 +67,6 @@ const Form = reduxForm({
                     component={TextareaField}
                     name='disabled'
                     label={'Can\'t touch this'}
-                    value=''
                     disabled
                   />
                 </div>
@@ -84,7 +79,7 @@ const Form = reduxForm({
               <div className='mc-form-group'>
                 <Field
                   component={TextareaField}
-                  name='inverted-demo'
+                  name='demo'
                   label='Some Label'
                   inverted
                 />
@@ -93,9 +88,8 @@ const Form = reduxForm({
               <div className='mc-form-group'>
                 <Field
                   component={TextareaField}
-                  name='inverted-value'
+                  name='bio'
                   label='Tell us more about yourself'
-                  value='I like turtles...'
                   inverted
                 />
               </div>
@@ -103,10 +97,9 @@ const Form = reduxForm({
               <div className='mc-form-group'>
                 <Field
                   component={TextareaField}
-                  name='inverted-error'
+                  name='error'
                   label='What have we here?'
-                  value='Looks like a problem.'
-                  error
+                  error='Something is wrong'
                   inverted
                 />
               </div>
@@ -114,9 +107,8 @@ const Form = reduxForm({
               <div className='mc-form-group'>
                 <Field
                   component={TextareaField}
-                  name='inverted-disabled'
+                  name='disabled'
                   label={'Can\'t touch this'}
-                  value=''
                   disabled
                   inverted
                 />
