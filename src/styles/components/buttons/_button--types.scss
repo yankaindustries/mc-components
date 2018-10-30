@@ -94,6 +94,8 @@
   &--link-muted {
     position: relative;
     background: none;
+    margin: 12px 24px;
+    padding: 4px 0;
     color: $mc-color-light;
     transition: transform 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
