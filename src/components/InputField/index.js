@@ -19,11 +19,13 @@ const InputField = ({
   input,
   meta: {
     error,
+    touched,
   },
   ...props
 }) => (
   <Input
     error={error}
+    touched={touched}
     {...input}
     {...props}
   />
