@@ -74,6 +74,14 @@ storiesOf('foundation|Type', module)
         </div>
 
         <div className='align-items-center example--section'>
+          <h5 className='mc-text-h5'>Readable</h5>
+          <p className='mc-text-intro'>Online classes taught by the world&#39;s greatest minds. Now get
+           unlimited access to all classes.
+          </p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-text-readable</p>
+        </div>
+
+        <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Legal</h5>
           <p className='mc-text-legal'>Copyright 2018 MasterClass</p>
           <p className='mc-text--muted mc-text--monospace'>.mc-text-legal</p>
