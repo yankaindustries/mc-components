@@ -2,6 +2,7 @@ $textarea-padding: 8px !default;
 $scrollbarWidth: 7px !default; // Browser scrollbar width
 
 .mc-form-textarea {
+  position: relative;
   width: 100%;
   background: $mc-color-light;
   border: 1px solid $mc-color-gray-600;
