@@ -28,7 +28,7 @@
 
 // Responsive
 @each $breakpoint in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($breakpoint) {
+  @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
     .mc-text#{$infix}--left   { text-align: left !important; }
     .mc-text#{$infix}--right  { text-align: right !important; }

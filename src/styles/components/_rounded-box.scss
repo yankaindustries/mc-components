@@ -4,6 +4,10 @@
   padding: $grid-gutter-width;
   color: $mc-color-dark;
 
+  @media (max-width: $mc-bp-sm) {
+    padding: 2rem;
+  }
+
   &__header {
     font-weight: 400;
     line-height: 3.4rem;
