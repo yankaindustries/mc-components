@@ -23,11 +23,7 @@
   }
 
   &--text {
-    font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: 0.15rem;
     color: rgba($mc-color-dark, 0.5);
-    padding: 0;
     background-color: transparent;
 
     &:hover {
@@ -98,8 +94,7 @@
   &--link-muted {
     position: relative;
     background: none;
-    margin: 0 12px;
-    // Reset default mc-btn padding
+    margin: 12px 24px;
     padding: 4px 0;
     color: $mc-color-light;
     transition: transform 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
