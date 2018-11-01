@@ -75,6 +75,8 @@ export default class Input extends PureComponent {
       ...props
     } = this.props
 
+    const hasLabel = label || (error && touched)
+
     const {
       focused,
     } = this.state
@@ -82,7 +84,7 @@ export default class Input extends PureComponent {
     const classes = cn({
       'mc-form-input': true,
       'mc-form-input--focus': focused,
-      'mc-form-input--no-label': !label && !error,
+      'mc-form-input--no-label': !hasLabel,
       'mc-form-input--modified': value,
       'mc-form-input--invert': inverted,
       'mc-form-input--disabled': disabled,
@@ -114,7 +116,7 @@ export default class Input extends PureComponent {
               ref={this.input}
             />
 
-            {((error && touched) || label) &&
+            {hasLabel &&
               <label
                 htmlFor={name}
                 className='mc-form-input__label'
