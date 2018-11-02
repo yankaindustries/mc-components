@@ -11,9 +11,10 @@
   &--normal { font-weight: 500 !important; }
   &--x-light { font-weight: 300 !important; }
   &--muted { opacity: 0.5 !important; }
+  &--silenced { opacity: 0.25 !important; }
 
   // Treatments
-  &--airy { letter-spacing: 0.24em; }
+  &--airy { letter-spacing: 0.24em !important; }
 
   // Colors
   &--invert { color: $mc-color-dark; }
