@@ -25,14 +25,6 @@
   @media (min-width: $mc-bp-md) {
     padding-bottom: $grid-gutter-width-md;
   }
-
-  @media (min-width: $mc-bp-lg) {
-    padding-bottom: $grid-gutter-width-lg;
-  }
-
-  @media (min-width: $mc-bp-xl) {
-    padding-bottom: $grid-gutter-width-xl;
-  }
 }
 
 .mc-form-help {
