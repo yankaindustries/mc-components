@@ -11,7 +11,7 @@ class Summary extends PureComponent {
     uppercase: false,
   }
 
-  toggle = (modifier) => () => {
+  toggle = modifier => () => {
     this.setState(state => ({ [modifier]: !state[modifier] }))
   }
 
@@ -162,7 +162,9 @@ class Summary extends PureComponent {
                     Group Workshop: From Here To Alli By Corey Wright
                   </h3>
                   <p className='mcb-text-intro mc-text--muted mcb-space-2'>
-                    Every great story is born from intentions and obstacles. Learn how to build the "drive shaft" that will set your script in motion.
+                    Every great story is born from intentions and obstacles.
+                    Learn how to build the &quot;drive shaft&quot; that will
+                    set your script in motion.
                   </p>
                   <h6 className='mcb-text-h6 mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
                     Lesson 16 // 5min 40s
@@ -174,7 +176,9 @@ class Summary extends PureComponent {
                     Group Workshop: From Here To Alli By Corey Wright
                   </h3>
                   <p className='mc-text--muted mcb-space-2'>
-                    Every great story is born from intentions and obstacles. Learn how to build the "drive shaft" that will set your script in motion.
+                    Every great story is born from intentions and obstacles.
+                    Learn how to build the &quot;drive shaft&quot; that will
+                    set your script in motion.
                   </p>
                   <h6 className='mcb-text-h6 mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
                     Lesson 16 // 5min 40s
@@ -186,7 +190,9 @@ class Summary extends PureComponent {
                     Group Workshop: From Here To Alli By Corey Wright
                   </h3>
                   <p className='mc-text--muted mcb-space-2'>
-                    Every great story is born from intentions and obstacles. Learn how to build the "drive shaft" that will set your script in motion.
+                    Every great story is born from intentions and obstacles.
+                    Learn how to build the &quot;drive shaft&quot; that will
+                    set your script in motion.
                   </p>
                   <h6 className='mcb-text-h6 mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
                     Lesson 16 // 5min 40s
@@ -214,7 +220,9 @@ class Summary extends PureComponent {
                         Mastering Ingredients: Vegetables &amp; Herbs
                       </h6>
                       <p className='mc-text--silenced mcb-space-2'>
-                        Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.
+                        Do ugly vegetables taste better? Which are the most
+                        versatile herbs? Gordon shows you how to select great
+                        produce to create phenomenal dishes.
                       </p>
                     </div>
                   </div>
@@ -235,7 +243,9 @@ class Summary extends PureComponent {
                         Mastering Ingredients: Vegetables &amp; Herbs
                       </h6>
                       <p className='mc-text--silenced mcb-space-2'>
-                        Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.
+                        Do ugly vegetables taste better? Which are the most
+                        versatile herbs? Gordon shows you how to select great
+                        produce to create phenomenal dishes.
                       </p>
                     </div>
                   </div>
