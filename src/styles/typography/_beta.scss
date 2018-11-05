@@ -1,0 +1,68 @@
+$scale: 4;
+$rem: 16;
+$max: 7;
+
+@function step($step) {
+  $times: ceil($step / $max);
+  $level: if($step > $max, $step - $max + 1, $step);
+  $factor: if($times > 1, $scale, 1);
+
+  @return $level * $scale * $factor / $rem * 1rem;
+}
+
+html {
+  font-size: 14px;
+
+  @media (min-width: $mc-bp-md) {
+    font-size: 15px;
+  }
+
+  @media (min-width: $mc-bp-lg) {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-size: step(4);
+}
+
+.mcb-text {
+  &-d1 { font-size: step(11); }
+  &-d2 { font-size: step(10); }
+
+  &-h1 { font-size: step(9); }
+  &-h2 { font-size: step(8); }
+  &-h3 { font-size: step(7); }
+  &-h4 { font-size: step(6); }
+  &-h5 { font-size: step(5); }
+  &-h6 { font-size: step(4); }
+  &-h7 { font-size: step(3); }
+  &-h8 { font-size: step(2); }
+
+  &-d1,
+  &-d2,
+  &-d3,
+  &-h1,
+  &-h2,
+  &-h3,
+  &-h4,
+  &-h5,
+  &-h6,
+  &-h7,
+  &-h8 {
+    font-weight: 600;
+    line-height: 1.25em;
+    letter-spacing: 0.06em;
+  }
+
+  &-intro {
+    font-size: step(5);
+  }
+}
+
+
+.mcb-space {
+  @for $i from 1 to 12 {
+    &-#{$i} { margin-top: step($i); }
+  }
+}
