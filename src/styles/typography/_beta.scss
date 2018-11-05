@@ -10,8 +10,13 @@ $max: 7 !default;
   @return $level * $scale * $factor / $rem * 1rem;
 }
 
-html {
+// this should be on html
+.mc-beta {
   font-size: 14px;
+
+  body {
+    font-size: step(4);
+  }
 
   @media (min-width: $mc-bp-md) {
     font-size: 15px;
@@ -20,10 +25,6 @@ html {
   @media (min-width: $mc-bp-lg) {
     font-size: 16px;
   }
-}
-
-body {
-  font-size: step(4);
 }
 
 .mcb-text {
