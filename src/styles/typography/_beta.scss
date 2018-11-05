@@ -1,6 +1,6 @@
-$scale: 4;
-$rem: 16;
-$max: 7;
+$scale: 4 !default;
+$rem: 16 !default;
+$max: 7 !default;
 
 @function step($step) {
   $times: ceil($step / $max);

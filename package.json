@@ -29,7 +29,7 @@
     "deploy-storybook": "storybook-to-ghpages",
     "precommit": "lint-staged",
     "lint:js": "eslint ./src --color",
-    "lint:style": "stylelint \"./src/styles/**/*.scss\" || echo \"Style lint failed.\"",
+    "lint:style": "stylelint ./src/styles/**/*.scss",
     "lint": "yarn lint:js && yarn lint:style",
     "preversion": "yarn lint",
     "version": "yarn build && git add -A .",
