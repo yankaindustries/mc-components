@@ -2,7 +2,7 @@
 .mc-input-checkbox--invert {
   .mc-input-checkbox {
     &__fauxbox {
-      background: $mc-color-gray-300;
+      background: rgba($mc-color-tertiary, 0.2);
     }
   }
 
@@ -10,7 +10,7 @@
   &.mc-input-checkbox:hover,
   &.mc-input-checkbox--hover {
     .mc-input-checkbox__fauxbox {
-      background: $mc-color-gray-400;
+      background: rgba($mc-color-gray-400, 0.4);
     }
   }
 
