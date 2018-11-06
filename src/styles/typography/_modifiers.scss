@@ -17,7 +17,7 @@
   &--airy { letter-spacing: 0.24em !important; }
 
   // Colors
-  &--invert { color: $mc-color-dark; }
+  @at-root .mc--invert & { color: $mc-color-dark; }
   &--twitter { color: $mc-color-twitter; }
   &--facebook { color: $mc-color-facebook; }
 
