@@ -34,102 +34,6 @@ const Form = reduxForm({
             <div className='col-sm-6'>
               <h5 className='mc-text-h5'>Default</h5>
 
-              <div className='rounded-box'>
-                <div className='mc-form-group'>
-                  <div className='row'>
-                    <div className='col-sm-6'>
-                      <Field
-                        component={InputField}
-                        name='firstName'
-                        label='First name'
-                        placeholder='John'
-                      />
-                    </div>
-
-                    <div className='col-sm-6'>
-                      <Field
-                        component={InputField}
-                        name='lastName'
-                        label='Last name'
-                        placeholder='Doe'
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='email'
-                    label='Email'
-                    type='email'
-                    placeholder='john@google.com'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={TextareaField}
-                    name='bio'
-                    label='Tell us about yourself'
-                    placeholder='This is the story of a girl...'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={RadioField}
-                    name='billing'
-                    option='yearly'
-                    label='Bill me yearly ($180)'
-                  />
-
-                  <Field
-                    component={RadioField}
-                    name='billing'
-                    option='monthly'
-                    label='Bill me monthly ($20)'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='password'
-                    type='password'
-                    placeholder='Password'
-                    help='Must be at least 8 characters'
-                    prepend={<Lock />}
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='confirm-password'
-                    type='password'
-                    placeholder='Confirm Password'
-                    prepend={<Lock />}
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={CheckboxField}
-                    name='terms'
-                    label='I agree to the terms'
-                  />
-                </div>
-
-                <Button fullWidth>
-                  Register
-                </Button>
-              </div>
-            </div>
-
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Inverted</h5>
-
               <div className='mc-form-group'>
                 <div className='row'>
                   <div className='col-sm-6'>
@@ -138,7 +42,6 @@ const Form = reduxForm({
                       name='firstName'
                       label='First name'
                       placeholder='John'
-                      inverted
                     />
                   </div>
 
@@ -148,7 +51,6 @@ const Form = reduxForm({
                       name='lastName'
                       label='Last name'
                       placeholder='Doe'
-                      inverted
                     />
                   </div>
                 </div>
@@ -161,7 +63,6 @@ const Form = reduxForm({
                   label='Email'
                   type='email'
                   placeholder='john@google.com'
-                  inverted
                 />
               </div>
 
@@ -171,7 +72,6 @@ const Form = reduxForm({
                   name='bio'
                   label='Tell us about yourself'
                   placeholder='This is the story of a girl...'
-                  inverted
                 />
               </div>
 
@@ -181,7 +81,6 @@ const Form = reduxForm({
                   name='billing'
                   option='yearly'
                   label='Bill me yearly ($180)'
-                  inverted
                 />
 
                 <Field
@@ -189,7 +88,6 @@ const Form = reduxForm({
                   name='billing'
                   option='monthly'
                   label='Bill me monthly ($20)'
-                  inverted
                 />
               </div>
 
@@ -201,7 +99,6 @@ const Form = reduxForm({
                   placeholder='Password'
                   help='Must be at least 8 characters'
                   prepend={<Lock />}
-                  inverted
                 />
               </div>
 
@@ -212,7 +109,6 @@ const Form = reduxForm({
                   type='password'
                   placeholder='Confirm Password'
                   prepend={<Lock />}
-                  inverted
                 />
               </div>
 
@@ -221,13 +117,117 @@ const Form = reduxForm({
                   component={CheckboxField}
                   name='terms'
                   label='I agree to the terms'
-                  inverted
                 />
               </div>
 
               <Button fullWidth>
                 Register
               </Button>
+            </div>
+
+            <div className='col-sm-6 mc--invert'>
+              <h5 className='mc-text-h5'>Inverted</h5>
+              <div className='rounded-box'>
+
+                <div className='mc-form-group'>
+                  <div className='row'>
+                    <div className='col-sm-6'>
+                      <Field
+                        component={InputField}
+                        name='firstName'
+                        label='First name'
+                        placeholder='John'
+                        inverted
+                      />
+                    </div>
+
+                    <div className='col-sm-6'>
+                      <Field
+                        component={InputField}
+                        name='lastName'
+                        label='Last name'
+                        placeholder='Doe'
+                        inverted
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className='mc-form-group'>
+                  <Field
+                    component={InputField}
+                    name='email'
+                    label='Email'
+                    type='email'
+                    placeholder='john@google.com'
+                    inverted
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Field
+                    component={TextareaField}
+                    name='bio'
+                    label='Tell us about yourself'
+                    placeholder='This is the story of a girl...'
+                    inverted
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Field
+                    component={RadioField}
+                    name='billing'
+                    option='yearly'
+                    label='Bill me yearly ($180)'
+                    inverted
+                  />
+
+                  <Field
+                    component={RadioField}
+                    name='billing'
+                    option='monthly'
+                    label='Bill me monthly ($20)'
+                    inverted
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Field
+                    component={InputField}
+                    name='password'
+                    type='password'
+                    placeholder='Password'
+                    help='Must be at least 8 characters'
+                    prepend={<Lock />}
+                    inverted
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Field
+                    component={InputField}
+                    name='confirm-password'
+                    type='password'
+                    placeholder='Confirm Password'
+                    prepend={<Lock />}
+                    inverted
+                  />
+                </div>
+
+                <div className='mc-form-group'>
+                  <Field
+                    component={CheckboxField}
+                    name='terms'
+                    label='I agree to the terms'
+                    inverted
+                  />
+                </div>
+
+                <Button fullWidth>
+                  Register
+                </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -15,34 +15,6 @@
   }
 }
 
-// Inverted styles
-.mc-form-input--invert {
-  border: 1px solid $mc-color-gray-300;
-  background: $mc-color-gray-200;
-
-  &.mc-form-input--focus {
-    color: $mc-color-gray-600;
-    border-color: $mc-color-gray-400;
-  }
-
-  .mc-form-input {
-    &__input {
-      input {
-        color: $mc-color-gray-600;
-      }
-    }
-  }
-
-  &.mc-form-input--disabled {
-    background: $mc-color-gray-100;
-    border-color: $mc-color-gray-100;
-
-    &:hover {
-      border-color: $mc-color-gray-100;
-    }
-  }
-}
-
 // Error states
 .mc-form-input--error {
   background: none;
@@ -74,12 +46,40 @@
 
 // disabled state
 .mc-form-input--disabled {
-  background: $mc-color-gray-600;
+  background: $mc-color-gray-100;
+  border-color: $mc-color-gray-100;
 
   // disable cursor
   * { cursor: not-allowed; }
 
   &:hover {
-    border-color: $mc-color-gray-600;
+    border-color: $mc-color-gray-100;
+  }
+}
+
+// Inverted styles
+@at-root .mc--invert .mc-form-input {
+  border: 1px solid $mc-color-gray-600;
+  background: transparent;
+
+  &.mc-form-input--focus {
+    border-color: $mc-color-gray-400;
+    color: $mc-color-gray-100;
+  }
+
+  .mc-form-input {
+    &__input {
+      input {
+        color: $mc-color-gray-200;
+      }
+    }
+  }
+
+  &.mc-form-input--disabled {
+    background: $mc-color-gray-600;
+
+    &:hover {
+      border-color: $mc-color-gray-600;
+    }
   }
 }
