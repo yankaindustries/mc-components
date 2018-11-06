@@ -26,6 +26,10 @@ class Summary extends PureComponent {
       'mc-text--uppercase': uppercase,
     })
 
+    // Add class on body
+    const root = document.getElementsByTagName('html')[0]
+    root.setAttribute('class', 'mc-beta')
+
     return (
       <div className='example-mc-type container'>
         <div className='example--section'>
