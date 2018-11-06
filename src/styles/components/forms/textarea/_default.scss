@@ -4,8 +4,8 @@ $scrollbarWidth: 7px !default; // Browser scrollbar width
 .mc-form-textarea {
   position: relative;
   width: 100%;
-  background: $mc-color-light;
-  border: 1px solid $mc-color-gray-600;
+  background: $mc-color-dark;
+  border-color: $mc-color-gray-300;
   border-radius: 4px;
   font-size: 15px;
   line-height: 1.5;
@@ -58,8 +58,6 @@ $scrollbarWidth: 7px !default; // Browser scrollbar width
 
   &--focus,
   &--modified {
-    // border-color: $mc-color-gray-400;
-
     .mc-form-textarea {
       &__textarea {
         padding: 20px $textarea-padding $textarea-padding;
@@ -73,7 +71,6 @@ $scrollbarWidth: 7px !default; // Browser scrollbar width
       &__label {
         font-size: 11px;
         transform: translateY(4px);
-        background: $mc-color-light;
         width: calc(100% - (2 * #{$textarea-padding}) - #{$scrollbarWidth});
         transition:
           font 320ms ease 0ms,
@@ -87,9 +84,8 @@ $scrollbarWidth: 7px !default; // Browser scrollbar width
   }
 
   &--modified {
-
     .mc-form-textarea__textarea {
-      color: $mc-color-gray-400;
+      color: $mc-color-light;
     }
   }
 }

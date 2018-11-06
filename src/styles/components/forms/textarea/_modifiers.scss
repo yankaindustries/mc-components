@@ -13,17 +13,13 @@
   }
 }
 
-.mc-form-textarea--invert {
-  background: $mc-color-dark;
-  border-color: $mc-color-gray-300;
+@at-root .mc--invert .mc-form-textarea {
+  background: $mc-color-light;
+  border: 1px solid $mc-color-gray-600;
 
   .mc-form-textarea {
     &__textarea {
-      color: $mc-color-light;
-    }
-
-    &__label {
-      background: $mc-color-dark;
+      color: $mc-color-gray-200;
     }
   }
 }
