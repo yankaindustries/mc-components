@@ -15,20 +15,12 @@ storiesOf('components|Button', module)
 
       <DocSection title='Variations'>
         <PropExample
-          name='default (no properties)'
+          name='default (no properties) | secondary | tertiary'
         >
           <div className='row'>
             <div className='col-auto'>
               <Button>Default</Button>
             </div>
-          </div>
-        </PropExample>
-
-        <PropExample
-          name='secondary | tertiary'
-          type='Boolean'
-        >
-          <div className='row'>
             <div className='col-auto'>
               <Button secondary>Secondary</Button>
             </div>
@@ -40,7 +32,7 @@ storiesOf('components|Button', module)
         </PropExample>
 
         <PropExample
-          name='link | linkMuted | text'
+          name='link | linkMuted'
           type='Boolean'
         >
           <div className='row'>
@@ -49,31 +41,6 @@ storiesOf('components|Button', module)
             </div>
             <div className='col-auto'>
               <Button linkMuted>Link Muted</Button>
-            </div>
-            <div className='col-auto'>
-              <Button text>Text</Button>
-            </div>
-          </div>
-        </PropExample>
-
-        <PropExample
-          name='outline'
-          type='Boolean'
-        >
-          <div className='row'>
-            <div className='col-auto'>
-              <Button outline>Outline</Button>
-            </div>
-          </div>
-        </PropExample>
-
-        <PropExample
-          name='outlineInvert'
-          type='Boolean'
-        >
-          <div className='row'>
-            <div className='col-auto'>
-              <Button outlineInvert>Outline - Invert</Button>
             </div>
           </div>
         </PropExample>
@@ -84,7 +51,7 @@ storiesOf('components|Button', module)
         >
           <div className='row'>
             <div className='col-auto'>
-              <Button className='c-button--facebook'>
+              <Button className='c-button c-button--facebook'>
                 <FacebookIcon />
                 {' '}
                 Get Connected
@@ -111,9 +78,9 @@ storiesOf('components|Button', module)
           type='Boolean'
         >
           <div className='row'>
-            <div className='col-auto'>
+            <div className='col-12'>
               <Button fullWidth>
-                Button
+                Button - Full Width
               </Button>
             </div>
           </div>
@@ -129,8 +96,122 @@ storiesOf('components|Button', module)
                 Button disabled
               </Button>
             </div>
+
+            <div className='col-auto'>
+              <Button disabled secondary>
+                Secondary disabled
+              </Button>
+            </div>
+
+            <div className='col-auto'>
+              <Button disabled tertiary>
+                Tertiary disabled
+              </Button>
+            </div>
           </div>
         </PropExample>
+      </DocSection>
+
+
+      <DocSection title='Inverted'>
+        <div className='rounded-box mc-invert'>
+          <PropExample
+            name='default (no properties) | secondary | tertiary'
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button>Default</Button>
+              </div>
+              <div className='col-auto'>
+                <Button secondary>Secondary</Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button tertiary>Tertiary</Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='link | linkMuted'
+            type='Boolean'
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button link>Link</Button>
+              </div>
+              <div className='col-auto'>
+                <Button linkMuted>Link Muted</Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='icon'
+            type='Component'
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button className='c-button c-button--facebook'>
+                  <FacebookIcon />
+                  {' '}
+                  Get Connected
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='loading'
+            type='Boolean'
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button loading>
+                  Button
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='fullWidth'
+            type='Boolean'
+          >
+            <div className='row'>
+              <div className='col-12'>
+                <Button fullWidth>
+                  Button - Full Width
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='disabled'
+            type='Boolean'
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button disabled>
+                  Button disabled
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button disabled secondary>
+                  Secondary disabled
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button disabled tertiary>
+                  Tertiary disabled
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+        </div>
       </DocSection>
     </div>
   )))

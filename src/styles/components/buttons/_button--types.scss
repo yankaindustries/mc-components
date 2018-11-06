@@ -22,16 +22,6 @@
     }
   }
 
-  &--text {
-    color: rgba($mc-color-dark, 0.5);
-    background-color: transparent;
-
-    &:hover {
-      background: none;
-      color: rgba($mc-color-dark, 0.8);
-    }
-  }
-
   &--facebook {
     background-color: $mc-color-facebook;
 
@@ -41,12 +31,6 @@
 
     &:active {
       background-color: $mc-color-facebook;
-    }
-
-    &:focus,
-    &.focus {
-      outline: 0;
-      box-shadow: 0 0 0 0.2rem rgba($mc-color-facebook, 0.25);
     }
   }
 
@@ -79,103 +63,86 @@
       background: $mc-color-secondary-active;
     }
 
-    &:focus,
-    &.focus {
-      outline: 0;
-      box-shadow: 0 0 0 0.2rem rgba($mc-color-secondary-hover, 0.25);
+    // disabled
+    &.disabled,
+    &:disabled {
+      &:hover {
+        background: $mc-color-secondary;
+      }
+
+      &:active {
+        background: $mc-color-secondary;
+      }
     }
   }
 
   &--tertiary {
     background: $mc-color-tertiary;
+    border: 1px solid $mc-color-gray-300;
 
     &:hover {
       background: $mc-color-tertiary-hover;
     }
 
     &:active {
-      background: $mc-color-tertiary;
+      background: $mc-color-tertiary-active;
     }
 
-    &:focus,
-    &.focus {
-      outline: 0;
-      box-shadow: 0 0 0 0.2rem rgba($mc-color-tertiary-hover, 0.25);
+    // disabled
+    &.disabled,
+    &:disabled {
+      &:hover {
+        background: $mc-color-tertiary;
+      }
+
+      &:active {
+        background: $mc-color-tertiary;
+      }
     }
   }
 
   &--link,
   &--link-muted {
-    position: relative;
     background: none;
-    margin: 12px 24px;
-    padding: 4px 0;
     color: $mc-color-light;
-    transition: transform 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
-    &:after {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      content: "";
-      display: block;
-      width: 0;
-      height: 1px;
-      background: $mc-color-light;
-      transition: width 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    span {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        bottom: -4px;
+        right: 0;
+        content: "";
+        display: block;
+        width: 0;
+        height: 1px;
+        background: $mc-color-light;
+        transition:
+          width 250ms cubic-bezier(0.25, 0.1, 0.25, 1),
+          opacity 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
+      }
     }
 
     &:hover {
       // reset mc-btn default bg hover
       background: none;
 
-      &:after {
-        width: 100%;
-        left: 0;
-        right: auto;
+      span {
+        &:after {
+          width: 100%;
+          left: 0;
+          right: auto;
+        }
       }
     }
 
     &:active {
-      transform: scale(0.97);
-    }
-  }
+      background: transparent;
 
-  // Outline
-  &--outline,
-  &--outline-invert {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid $mc-color-gray-200;
-    transition:
-      background 250ms ease,
-      border 250ms ease;
-
-    &:hover,
-    &:active {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid $mc-color-gray-300;
-    }
-
-    &:focus,
-    &.focus {
-      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
-    }
-  }
-
-  &--outline-invert {
-    background: none;
-    border: 1px solid $mc-color-gray-300;
-    color: rgba($mc-color-dark, 0.75);
-
-    &:hover,
-    &:active {
-      background: rgba(0, 0, 0, 0.1);
-      color: $mc-color-dark;
-    }
-
-    &:focus,
-    &.focus {
-      box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+      span:after {
+        opacity: 0;
+      }
     }
   }
 
@@ -183,8 +150,8 @@
   &--link-muted {
     color: rgba($mc-color-light, 0.5);
 
-    &:after {
-      background: rgba($mc-color-light, 0.5);
+    span:after {
+      background: rgba($mc-color-light, 0.25);
     }
 
     &:hover {

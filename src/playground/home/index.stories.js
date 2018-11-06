@@ -663,3 +663,123 @@ storiesOf('playground|Pages', module)
       <Footer />
     </div>,
   )
+  .add('Style Demo', () =>
+    <div>
+      <div className='container'>
+        <div className='col-12'>
+          <h1 className='mc-text-h1'>Hello world!</h1>
+          <p>He exclaimed as he built his first sample page.</p>
+          <p>
+            A new paragraph began, as he continued to build.  In the
+            new paragraph, we was curious what would happen as the
+            content of his paragraph grew to be longer than
+            just one line, a line longer than the container so that
+            he could test the limits of his containment.</p>
+          <p>
+            He gasped as a third line began, but he knew not what
+            to write.  &ldquo;It&apos;s time...&rdquo;, he began,
+            &ldquo;...to demonstrate...a
+
+            <strong className='mc-text--bold'>
+              BOX!
+            </strong>
+
+            &rdquo;
+          </p>
+        </div>
+
+        <div className='rounded-box'>
+          <h1 className='mc-text-h1'>
+            h1 What&apos;s this? What&apos;s this?
+          </h1>
+
+          <p>There&apos;s color everywhere...</p>
+
+          <h2 className='mc-text-h2'>
+            h2 What&apos;s this?
+          </h2>
+
+          <p>There&apos;s white things in the air</p>
+
+          <h3 className='mc-text-h3'>
+            h3 What&apos;s this?!
+          </h3>
+
+          <p>
+            Why is my text getting smaller? Am I whispering? Is this
+            a demo for ants?
+          </p>
+
+          <h4 className='mc-text-h4'>
+            h4 Sorry about that guys.
+          </h4>
+
+          <p>
+            Looks like it&apos;s a case of
+
+            <span className='mc-text--italic'>
+              &ldquo;Honey I shrunk the headings.&rdquo;
+            </span>
+
+            eh?
+          </p>
+        </div>
+
+        <div className='row'>
+          <div className='col-6'>
+            <h5 className='mc-text-h5'>
+              Column A
+            </h5>
+            <ul>
+              <li>These are some things</li>
+              <li>in a little bit of a column A</li>
+              <li>Like the saying goes ya know...</li>
+              <li>
+                You can take a little of column A, and a little
+                bit from column B
+              </li>
+            </ul>
+          </div>
+
+          <div className='col-6'>
+            <h5 className='mc-text-h5'>
+              Column B
+            </h5>
+            <ul>
+              <li>Wait, is that right?</li>
+              <li>
+                I don&apos;t think I actually got that saying correct
+              </li>
+              <li>
+                Too late now, it&apos;s written for this sample
+                page, so I guess we&apos;re stuck with it.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className='rounded-box'>
+          <h1 className='mc-text-h1'>
+            Introducing the All-Accesser Pass
+          </h1>
+
+          <p>
+            It&apos;s a new offering that gets you more exclusive content
+            that normal AAP subscribers can&apos;t access. It&apos;s just for
+            VIP people.  We really think you should upgrade.
+            You won&apos;t regret it!</p>
+
+          <div className='row mc-invert'>
+            <div className='col-12'>
+              <button className='c-button c-button--full-width'>
+                Purchase AAPer Now
+              </button>
+              <button className='c-button c-button--link  c-button--full-width'>
+                No thanks, I&apos;ll pass
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>,
+  )
