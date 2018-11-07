@@ -19,19 +19,20 @@ $mc-color-gray-600:           #dbdde1 !default;
 
 $mc-color-primary:           #c83232 !default;
 $mc-color-primary-hover:     #d63636 !default;
-$mc-color-primary-active:    #b22b2b !default;
+$mc-color-primary-active:    #c83232 !default;
 
-$mc-color-secondary:         $mc-color-gray-200 !default;
-$mc-color-secondary-hover:   $mc-color-gray-300 !default;
-$mc-color-secondary-active:  $mc-color-gray-100 !default;
+$mc-color-secondary:           $mc-color-gray-200 !default;
+$mc-color-secondary-hover:     $mc-color-gray-300 !default;
+$mc-color-secondary-active:    $mc-color-gray-200 !default;
 
-$mc-color-tertiary:          $mc-color-gray-400 !default;
-$mc-color-tertiary-hover:    $mc-color-gray-500 !default;
+$mc-color-tertiary:            transparent !default;
+$mc-color-tertiary-hover:      $mc-color-gray-300 !default;
+$mc-color-tertiary-active:     $mc-color-gray-200 !default;
 
-$mc-color-background:        #090909 !default;
-$mc-color-background-invert: #ebeeee !default;
-$mc-color-text:              $mc-color-light !default;
-$mc-color-text-invert:       #8ca1c1 !default;
+$mc-color-background:          #090909 !default;
+$mc-color-background-invert:   #ebeeee !default;
+$mc-color-text:                $mc-color-light !default;
+$mc-color-text-invert:         #8ca1c1 !default;
 
 $mc-color-error:        rgba($mc-color-primary, 0.6) !default;
 $mc-color-warning:      rgba($mc-color-primary, 0.6) !default;

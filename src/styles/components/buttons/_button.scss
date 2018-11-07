@@ -5,10 +5,10 @@
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1.230769231;
-  letter-spacing: 1.5px;
+  line-height: 1.25;
+  letter-spacing: 0.144em;
   text-transform: uppercase;
   border-radius: 4px;
   color: $mc-color-light;
@@ -28,14 +28,22 @@
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba($mc-color-primary-hover, 0.25);
   }
 
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
-    opacity: 0.5;
     cursor: not-allowed;
+    opacity: 0.5;
+    color: rgba($mc-color-light, 0.5);
+
+    &:hover {
+      background: $mc-color-primary;
+    }
+
+    &:active {
+      background: $mc-color-primary;
+    }
   }
 
   // Opinionated: add "hand" cursor to non-disabled .btn elements

@@ -1,0 +1,55 @@
+// Inverted styles
+.mc-invert {
+  .c-button,
+  .mc-c-btn {
+    &--tertiary {
+      border-color: $mc-color-gray-400;
+      color: $mc-color-dark;
+
+      &:hover {
+        background: $mc-color-gray-300;
+        color: $mc-color-light;
+      }
+
+      &:active {
+        color: $mc-color-light;
+      }
+
+      &:disabled,
+      &.disabled {
+        color: rgba($mc-color-dark, 0.5);
+        border-color: $mc-color-gray-600;
+
+        &:hover,
+        &.hover,
+        &:active,
+        &.active {
+          background: transparent;
+          color: rgba($mc-color-dark, 0.5);
+        }
+      }
+    }
+
+    &--link {
+      color: $mc-color-dark;
+
+      span {
+        &:after {
+          background: $mc-color-dark;
+        }
+      }
+    }
+
+    &--link-muted {
+      color: rgba($mc-color-dark, 0.5);
+
+      span:after {
+        background: rgba($mc-color-dark, 0.25);
+      }
+
+      &:hover {
+        color: rgba($mc-color-dark, 0.5);
+      }
+    }
+  }
+}
