@@ -7,6 +7,7 @@ export default class ImageTile extends PureComponent {
     animationStyle: PropTypes.string,
     aspectRatio: PropTypes.oneOf([
       '4x3',
+      '9x16',
       '16x9',
       '100x65',
       '1000x609',
