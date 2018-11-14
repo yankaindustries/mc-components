@@ -1,41 +1,41 @@
 $mc-carousel-centered-padding: 100px !default;
 
-.slick-dots {
-  /* stylelint-disable */
-  display: flex !important;
-  /* stylelint-enable */
-  justify-content: center;
-  padding: 25px 0 0;
+.mc-carousel {
+  position: relative;
 
-  li {
-    line-height: 0;
-  }
+  .slick-dots {
+    /* stylelint-disable */
+    display: flex !important;
+    /* stylelint-enable */
+    justify-content: center;
+    padding: 25px 0 0;
 
-  button {
-    background: $mc-color-gray-400;
-    width: 6px;
-    height: 6px;
-    border-radius: 6px;
-    margin: 0 4px;
-    overflow: hidden;
-    text-indent: 9999em;
-    cursor: pointer;
-    transition: background 250ms ease;
-    outline: 0;
+    li {
+      line-height: 0;
+    }
 
-    &:hover {
-      background: $mc-color-gray-300;
+    button {
+      background: $mc-color-gray-400;
+      width: 6px;
+      height: 6px;
+      border-radius: 6px;
+      margin: 0 4px;
+      overflow: hidden;
+      text-indent: 9999em;
+      cursor: pointer;
+      transition: background 250ms ease;
+      outline: 0;
+
+      &:hover {
+        background: $mc-color-gray-300;
+      }
+    }
+
+    .slick-active button {
+      background: $mc-color-gray-500;
     }
   }
 
-  .slick-active button {
-    background: $mc-color-gray-500;
-  }
-}
-
-
-.mc-carousel {
-  position: relative;
 
   &__container {
     margin: 0 calc(50% - 50vw);
