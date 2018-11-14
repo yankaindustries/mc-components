@@ -102,7 +102,27 @@ storiesOf('components|Carousel', module)
           name='centered'
           type='Boolean'
         >
-          <Carousel centered dots>
+          <Carousel centered>
+            {items.map((item, key) => (
+              <div key={key} className='col-auto'>
+                <Tile key={item.id}>
+                  <TileImage imageUrl={item.thumbnail} />
+                  <TileOverlay />
+                  <TileCaption
+                    title={item.instructor}
+                    subtitle={`Teaches ${item.teaches}`}
+                  />
+                </Tile>
+              </div>
+            ))}
+          </Carousel>
+        </PropExample>
+
+        <PropExample
+          name='dots'
+          type='Boolean'
+        >
+          <Carousel dots>
             {items.map((item, key) => (
               <div key={key} className='col-auto'>
                 <Tile key={item.id}>
