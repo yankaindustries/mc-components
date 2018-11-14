@@ -72,6 +72,7 @@ export default class Carousel extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     controls: PropTypes.bool,
+    dots: PropTypes.bool,
     fadeEdges: PropTypes.bool,
     focusOnSelect: PropTypes.bool,
     sliderRef: PropTypes.func,
@@ -86,6 +87,7 @@ export default class Carousel extends PureComponent {
     autoPlay: false,
     centered: false,
     controls: false,
+    dots: false,
     fadeEdges: false,
     focusOnSelect: false,
     loop: false,
@@ -102,6 +104,7 @@ export default class Carousel extends PureComponent {
       className,
       centered,
       controls,
+      dots,
       fadeEdges,
       loop,
       sliderRef,
@@ -149,6 +152,7 @@ export default class Carousel extends PureComponent {
           slidesToScroll={scrollCount}
           slidesToShow={showCount}
           infinite={loop}
+          dots={dots}
           {...arrows}
           {...restProps}
         >

@@ -102,7 +102,7 @@ storiesOf('components|Carousel', module)
           name='centered'
           type='Boolean'
         >
-          <Carousel centered>
+          <Carousel centered dots>
             {items.map((item, key) => (
               <div key={key} className='col-auto'>
                 <Tile key={item.id}>
