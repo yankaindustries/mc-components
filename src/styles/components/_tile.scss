@@ -74,6 +74,11 @@
     @include tile-aspect-ratio(16, 9);
   }
 
+  &--9x16 {
+    @include tile-aspect-ratio(9, 16);
+  }
+
+
   &--100x65 {
     @include tile-aspect-ratio(100, 65);
   }
