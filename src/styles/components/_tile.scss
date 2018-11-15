@@ -153,6 +153,8 @@
 }
 
 .mc-tile-overlay {
+  // 1.01 guarantees extra coverage in case of
+  // pixel rounding down to be too small
   transform: scale(1.01);
 
   &--gradient-bottom {
