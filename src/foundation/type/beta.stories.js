@@ -147,6 +147,15 @@ class Summary extends PureComponent {
             </div>
 
             <div className='col-2 mc-text--right mc-text--muted'>
+              h8
+            </div>
+            <div className='col-10'>
+              <h6 className={`mcb-text-h8 ${modifierClasses}`}>
+                Account Settings
+              </h6>
+            </div>
+
+            <div className='col-2 mc-text--right mc-text--muted'>
               large
             </div>
             <div className='col-10'>

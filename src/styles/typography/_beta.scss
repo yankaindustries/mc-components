@@ -1,12 +1,13 @@
-$base: 10 !default;
+$base: 16 !default;
 $scale: 4 !default;
 $max: 7 !default;
+$min: 4 !default;
 
 @function calc-step($step, $decay) {
   $times: ceil($step / $max);
   $level: if($step > $max, $step - $max + 1, $step);
   $factor: if($times > 1, $scale, 1);
-  $less: (max($step - $scale, 0) * $decay) / $base;
+  $less: (max($step - $min, 0) * $decay) / $base;
   $value: $level * $scale * $factor / $base;
 
   @return ($value - $less) * 1rem;
@@ -73,6 +74,11 @@ $max: 7 !default;
 
   &-small {
     @include step(font-size, 3.5);
+    line-height: 1.5em;
+  }
+
+  &-x-small {
+    @include step(font-size, 3);
     line-height: 1.5em;
   }
 }
