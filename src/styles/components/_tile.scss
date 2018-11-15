@@ -40,6 +40,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    // Hide excess tile overlay
+    overflow: hidden;
   }
 
   &--naked {
@@ -153,7 +155,9 @@
 }
 
 .mc-tile-overlay {
-  transform: scale(1);
+  // 1.01 guarantees extra coverage in case of
+  // pixel rounding down to be too small
+  transform: scale(1.01);
 
   &--gradient-bottom {
     background:
