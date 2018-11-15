@@ -184,6 +184,16 @@ class Summary extends PureComponent {
                 Now get unlimited access to all classes.
               </p>
             </div>
+
+            <div className='col-2 mc-text--right mc-text--muted'>
+              x-small
+            </div>
+            <div className='col-10'>
+              <p className='mcb-text-x-small'>
+                Online classes taught by the world&#39;s greatest minds.<br />
+                Now get unlimited access to all classes.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -208,20 +218,6 @@ class Summary extends PureComponent {
                 <h3 className='mcb-text-h3 mc-text--uppercase mcb-space-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
-                <p className='mcb-text-intro mc-text--muted mcb-space-2'>
-                  Every great story is born from intentions and obstacles.
-                  Learn how to build the &quot;drive shaft&quot; that will
-                  set your script in motion.
-                </p>
-                <h6 className='mcb-text-small mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
-                  Lesson 16 // 5min 40s
-                </h6>
-              </div>
-
-              <div className='mcb-space-9'>
-                <h3 className='mcb-text-h5 mcb-space-2'>
-                  Group Workshop: From Here To Alli By Corey Wright
-                </h3>
                 <p className='mc-text--muted mcb-space-2'>
                   Every great story is born from intentions and obstacles.
                   Learn how to build the &quot;drive shaft&quot; that will
@@ -236,7 +232,21 @@ class Summary extends PureComponent {
                 <h3 className='mcb-text-h5 mcb-space-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
-                <p className='mc-text--muted mcb-space-2'>
+                <p className='mcb-text-small mc-text--muted mcb-space-2'>
+                  Every great story is born from intentions and obstacles.
+                  Learn how to build the &quot;drive shaft&quot; that will
+                  set your script in motion.
+                </p>
+                <h6 className='mcb-text-small mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
+                  Lesson 16 // 5min 40s
+                </h6>
+              </div>
+
+              <div className='mcb-space-9'>
+                <h3 className='mcb-text-h5 mcb-space-2'>
+                  Group Workshop: From Here To Alli By Corey Wright
+                </h3>
+                <p className='mcb-text-small mc-text--muted mcb-space-2'>
                   Every great story is born from intentions and obstacles.
                   Learn how to build the &quot;drive shaft&quot; that will
                   set your script in motion.
@@ -263,7 +273,7 @@ class Summary extends PureComponent {
                   <h6 className='mcb-text-h6 mcb-space-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
-                  <p className='mcb-text-small mc-text--silenced'>
+                  <p className='mcb-text-x-small mc-text--muted'>
                     Do ugly vegetables taste better? Which are the most
                     versatile herbs? Gordon shows you how to select great
                     produce to create phenomenal dishes.
@@ -284,7 +294,7 @@ class Summary extends PureComponent {
                   <h6 className='mcb-text-h6 mcb-space-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
-                  <p className='mcb-text-small mc-text--silenced'>
+                  <p className='mcb-text-x-small mc-text--muted'>
                     Do ugly vegetables taste better? Which are the most
                     versatile herbs? Gordon shows you how to select great
                     produce to create phenomenal dishes.
@@ -305,7 +315,7 @@ class Summary extends PureComponent {
                   <h6 className='mcb-text-h6 mcb-space-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
-                  <p className='mcb-text-small mc-text--silenced'>
+                  <p className='mcb-text-x-small mc-text--muted'>
                     Do ugly vegetables taste better? Which are the most
                     versatile herbs? Gordon shows you how to select great
                     produce to create phenomenal dishes.
