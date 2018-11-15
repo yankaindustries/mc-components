@@ -159,26 +159,6 @@ storiesOf('components|Carousel', module)
         </PropExample>
 
         <PropExample
-          name='fadeEdges'
-          type='Boolean'
-        >
-          <Carousel fadeEdges>
-            {items.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
-                  <TileCaption
-                    title={item.instructor}
-                    subtitle={`Teaches ${item.teaches}`}
-                  />
-                </Tile>
-              </div>
-            ))}
-          </Carousel>
-        </PropExample>
-
-        <PropExample
           name='focusOnSelect'
           type='Boolean'
         >
