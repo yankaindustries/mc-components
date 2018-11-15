@@ -1,4 +1,4 @@
-$base: 16 !default;
+$base: 10 !default;
 $scale: 4 !default;
 $max: 7 !default;
 
@@ -48,8 +48,8 @@ $max: 7 !default;
   &-h4 { @include step(font-size, 6); }
   &-h5 { @include step(font-size, 5); }
   &-h6 { @include step(font-size, 4); }
-  &-h7 { @include step(font-size, 3); }
-  &-h8 { @include step(font-size, 2); }
+  &-h7 { @include step(font-size, 3.5); }
+  &-h8 { @include step(font-size, 3); }
 
   &-d1,
   &-d2,
@@ -72,7 +72,7 @@ $max: 7 !default;
   }
 
   &-small {
-    @include step(font-size, 3);
+    @include step(font-size, 3.5);
     line-height: 1.5em;
   }
 }
