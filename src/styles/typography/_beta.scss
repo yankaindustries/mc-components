@@ -36,6 +36,7 @@ $min: 4 !default;
 
   .mc-text--uppercase {
     letter-spacing: 0.12em;
+    font-weight: 700;
   }
 }
 
@@ -63,23 +64,23 @@ $min: 4 !default;
   &-h6,
   &-h7,
   &-h8 {
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.25em;
   }
 
   &-large {
     @include step(font-size, 5);
-    line-height: 1.5em;
+    line-height: 1.7em;
   }
 
   &-small {
     @include step(font-size, 3.5);
-    line-height: 1.5em;
+    line-height: 1.25em;
   }
 
   &-x-small {
     @include step(font-size, 3);
-    line-height: 1.5em;
+    line-height: 1.25em;
   }
 }
 
