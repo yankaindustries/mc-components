@@ -77,7 +77,7 @@
   }
 
   &--tertiary {
-    background: $mc-color-tertiary;
+    background: none;
     border: 1px solid $mc-color-gray-300;
 
     &:hover {
@@ -92,11 +92,11 @@
     &.disabled,
     &:disabled {
       &:hover {
-        background: $mc-color-tertiary;
+        background: none;
       }
 
       &:active {
-        background: $mc-color-tertiary;
+        background: none;
       }
     }
   }
