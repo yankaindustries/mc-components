@@ -1,14 +1,37 @@
 $mc-carousel-centered-padding: 100px !default;
+$scrollbar-max-width: 17px !default;
 
 .mc-carousel {
   position: relative;
+
+  &__container {
+    margin: 0 calc(50% - 50vw + #{$scrollbar-max-width / 2});
+    padding: 0 calc(50vw - 50% - #{$scrollbar-max-width / 2});
+    overflow: hidden;
+  }
 
   .slick-dots {
     /* stylelint-disable */
     display: flex !important;
     /* stylelint-enable */
     justify-content: center;
-    padding: 25px 0 0;
+    padding: $grid-gutter-width/2 0;
+
+    @media only screen and (min-width: $mc-bp-sm) {
+      padding: $grid-gutter-width-sm/2 0;
+    }
+
+    @media only screen and (min-width: $mc-bp-md) {
+      padding: $grid-gutter-width-md/2 0;
+    }
+
+    @media only screen and (min-width: $mc-bp-lg) {
+      padding: $grid-gutter-width-lg/2 0;
+    }
+
+    @media only screen and (min-width: $mc-bp-xl) {
+      padding: $grid-gutter-width-xl/2 0;
+    }
 
     li {
       line-height: 0;

@@ -138,23 +138,25 @@ export default class Carousel extends PureComponent {
       }
 
     return (
-      <Slider
-        autoplay={autoPlay}
-        className={classes}
-        centerMode={centered || fadeEdges}
-        centerPadding={fadeEdges ? CENTERED_PADDING : 0}
-        fade={transition === TRANSITION_FADE}
-        ref={sliderRef}
-        slidesToScroll={scrollCount}
-        slidesToShow={showCount}
-        infinite={loop}
-        {...arrows}
-        {...restProps}
-      >
-        {Children.map(children, child => (
-          <Slide>{child}</Slide>
-        ))}
-      </Slider>
+      <div className='mc-carousel__container'>
+        <Slider
+          autoplay={autoPlay}
+          className={classes}
+          centerMode={centered || fadeEdges}
+          centerPadding={fadeEdges ? CENTERED_PADDING : 0}
+          fade={transition === TRANSITION_FADE}
+          ref={sliderRef}
+          slidesToScroll={scrollCount}
+          slidesToShow={showCount}
+          infinite={loop}
+          {...arrows}
+          {...restProps}
+        >
+          {Children.map(children, child => (
+            <Slide>{child}</Slide>
+          ))}
+        </Slider>
+      </div>
     )
   }
 }

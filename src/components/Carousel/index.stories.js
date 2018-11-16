@@ -78,124 +78,159 @@ storiesOf('components|Carousel', module)
           name='autoPlay'
           type='Boolean'
         >
-          <Carousel autoPlay>
-            {items.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
-                  <TileCaption>
-                    <h3 className='mc-text-h4 mc-text--uppercase'>
-                      {item.instructor}
-                    </h3>
-                    <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
-                      {`Teaches ${item.teaches}`}
-                    </h5>
-                  </TileCaption>
-                </Tile>
-              </div>
-            ))}
-          </Carousel>
+          <div className='row'>
+            <Carousel autoPlay>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption>
+                      <h3 className='mc-text-h4 mc-text--uppercase'>
+                        {item.instructor}
+                      </h3>
+                      <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
+                        {`Teaches ${item.teaches}`}
+                      </h5>
+                    </TileCaption>
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </PropExample>
 
         <PropExample
           name='centered'
           type='Boolean'
         >
-          <Carousel centered>
-            {items.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
-                  <TileCaption
-                    title={item.instructor}
-                    subtitle={`Teaches ${item.teaches}`}
-                  />
-                </Tile>
-              </div>
-            ))}
-          </Carousel>
-        </PropExample>
-
-        <PropExample
-          name='dots'
-          type='Boolean'
-        >
-          <Carousel dots>
-            {items.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
-                  <TileCaption
-                    title={item.instructor}
-                    subtitle={`Teaches ${item.teaches}`}
-                  />
-                </Tile>
-              </div>
-            ))}
-          </Carousel>
+          <div className='row'>
+            <Carousel centered>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </PropExample>
 
         <PropExample
           name='controls'
           type='Boolean'
         >
-          <Carousel controls>
-            {items.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
-                  <TileCaption
-                    title={item.instructor}
-                    subtitle={`Teaches ${item.teaches}`}
-                  />
-                </Tile>
-              </div>
-            ))}
-          </Carousel>
+          <div className='row'>
+            <Carousel controls>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </PropExample>
+
+        <PropExample
+          name='dots'
+          type='Boolean'
+        >
+          <div className='row'>
+            <Carousel dots>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </PropExample>
+
+        <PropExample
+          name='fadeEdges'
+          type='Boolean'
+        >
+          <div className='row'>
+            <Carousel fadeEdges dots>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </PropExample>
+
 
         <PropExample
           name='focusOnSelect'
           type='Boolean'
         >
-          <Carousel focusOnSelect loop>
-            {items.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
-                  <TileCaption
-                    title={item.instructor}
-                    subtitle={`Teaches ${item.teaches}`}
-                  />
-                </Tile>
-              </div>
-            ))}
-          </Carousel>
+          <div className='row'>
+            <Carousel focusOnSelect loop>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </PropExample>
 
         <PropExample
           name='loop'
           type='Boolean'
         >
-          <Carousel controls loop>
-            {items.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
-                  <TileCaption
-                    title={item.instructor}
-                    subtitle={`Teaches ${item.teaches}`}
-                  />
-                </Tile>
-              </div>
-            ))}
-          </Carousel>
+          <div className='row'>
+            <Carousel controls loop>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </PropExample>
       </DocSection>
     </div>
