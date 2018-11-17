@@ -12,7 +12,9 @@ import TileVideo from '../TileVideo'
 storiesOf('components|Tiles/TileVideo', module)
   .add('TileVideo', withProps(TileVideo)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>TileVideo</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>TileVideo</h1>
+      </div>
 
       <DocSection title='Props'>
         <PropExample

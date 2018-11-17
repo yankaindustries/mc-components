@@ -24,8 +24,8 @@ const Form = reduxForm({
   () => (
     <div className='example-mc-type'>
       <div className='container'>
-        <div className='example--section'>
-          <h2 className='mc-text-d1'>RadioField</h2>
+        <div className='example__heading'>
+          <h1 className='mc-text-h1'>RadioField</h1>
         </div>
 
         <div className='row'>

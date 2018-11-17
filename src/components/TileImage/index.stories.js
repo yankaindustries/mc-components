@@ -14,7 +14,9 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 storiesOf('components|Tiles/TileImage', module)
   .add('TileImage', withProps(TileImage)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>TileImage</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>TileImage</h1>
+      </div>
 
       <DocSection title='Props'>
         <PropExample

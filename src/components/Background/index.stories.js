@@ -13,11 +13,13 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 storiesOf('components|Background', module)
   .add('Background', withProps(Background)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>
-        Background
-        {' '}
-        <Badge count='Experimental' />
-      </h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>
+          Background
+          {' '}
+          <Badge count='Experimental' />
+        </h1>
+      </div>
 
       <div className='row'>
         <div className='col-lg-6'>

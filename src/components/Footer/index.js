@@ -26,20 +26,20 @@ export default class Footer extends PureComponent {
 
             {!isMinimal &&
               <Fragment>
-                <ul className='mc-site-footer__links col mc-text--bold mc-text--uppercase'>
-                  <li className='mc-site-footer__link'>
+                <ul className='mc-site-footer__links col'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a href='/#now-available'>Browse Classes</a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a href='/all-access-pass'>All-Access</a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a href='/gift'>Gifts</a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a
                       target='_blank'
                       rel='noopener noreferrer'
@@ -49,7 +49,7 @@ export default class Footer extends PureComponent {
                     </a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a
                       target='_blank'
                       rel='noopener noreferrer'
@@ -59,23 +59,23 @@ export default class Footer extends PureComponent {
                     </a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a href='/privacy'>Privacy</a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a href='/terms'>Terms</a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a href='http://careers.masterclass.com'>Careers</a>
                   </li>
 
-                  <li className='mc-site-footer__link'>
+                  <li className='mc-site-footer__link mc-text-h8 mc-text--bold mc-text--uppercase'>
                     <a href='/sitemap'>Sitemap</a>
                   </li>
 
-                  <p className='mc-site-footer__copyright mc-text-legal mc-text--capitalize'>
+                  <p className='mc-site-footer__copyright mc-text-small mc-text--capitalize'>
                     Copyright &copy; 2018 MasterClass
                   </p>
                 </ul>

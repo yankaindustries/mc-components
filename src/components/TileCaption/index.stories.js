@@ -13,7 +13,9 @@ import TileCaption from '../TileCaption'
 storiesOf('components|Tiles/TileCaption', module)
   .add('TileCaption', withProps(TileCaption)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>TileCaption</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>TileCaption</h1>
+      </div>
 
       <DocSection title='Variants'>
         <PropExample

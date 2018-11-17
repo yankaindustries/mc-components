@@ -32,7 +32,7 @@ class ModalExample extends Component {
   render () {
     return (
       <div className='container'>
-        <div className='example--section'>
+        <div className='example__heading'>
           <h1 className='mc-text-h1'>
             Modal
           </h1>
@@ -41,7 +41,7 @@ class ModalExample extends Component {
           </p>
         </div>
 
-        <div className='example--section'>
+        <div className='example__section'>
           <CodeExample>
             <div className='row'>
               <div className='col-sm-auto'>

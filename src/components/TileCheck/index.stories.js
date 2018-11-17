@@ -13,7 +13,9 @@ import TileCheck from '../TileCheck'
 storiesOf('components|Tiles/TileCheck', module)
   .add('TileCheck', withProps(TileCheck)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>TileCheck</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>TileCheck</h1>
+      </div>
 
       <DocSection title='Props'>
         <PropExample

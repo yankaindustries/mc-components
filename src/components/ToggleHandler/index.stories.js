@@ -12,7 +12,12 @@ import Button from '../Button'
 storiesOf('utilities|ToggleHandler', module)
   .add('default', withProps(ToggleHandler)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>ToggleHandler</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>ToggleHandler</h1>
+        <p className='mc-text--muted'>
+          Simplified way of tracking a toggle state
+        </p>
+      </div>
 
       <DocSection title='Variations'>
         <PropExample
@@ -24,7 +29,7 @@ storiesOf('utilities|ToggleHandler', module)
               <Button
                 onClick={onClick}
                 primary={toggled}
-                tertiary={!toggled}
+                secondary={!toggled}
               >
                 {toggled ? 'On' : 'Off'}
               </Button>

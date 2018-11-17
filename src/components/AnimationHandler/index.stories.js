@@ -20,7 +20,12 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 storiesOf('utilities|AnimationHandler', module)
   .add('default', withProps(AnimationHandler)(() => (
     <div className='container'>
-      <h2>AnimationHandler</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>AnimationHandler</h1>
+        <p className='mc-text--muted'>
+          Easily apply unified animations to components
+        </p>
+      </div>
 
       <DocSection title='Variations'>
         <PropExample

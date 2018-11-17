@@ -1,22 +1,30 @@
-// NOTES:
-// .mc-text-readable => .mc-text-large
-// .mc-text-legal => .mc-text-x-small
-
-
 html {
   font-size: $mc-step-base * 1px;
-
-  body {
-    @include step(font-size, 4);
-    line-height: 1.5em;
-    letter-spacing: 0.04em;
-  }
-
-  .mc-text--uppercase {
-    letter-spacing: 0.12em;
-    font-weight: 700;
-  }
 }
+
+body {
+  @include step(font-size, 4);
+  font-weight: 400;
+  font-family: $mc-font-default;
+  font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5em;
+  letter-spacing: 0.04em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba($mc-color-gray-500, 0.3);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 .mc-text {
   &-d1 { @include step(font-size, 11); }
@@ -60,36 +68,16 @@ html {
     @include step(font-size, 3);
     line-height: 1.25em;
   }
-}
 
+  &-link {
+    color: $mc-color-primary;
 
-body {
-  font: 400 16px/1.5 $mc-font-default;
-  letter-spacing: 0.015em;
-  font-variant-ligatures: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    &:hover {
+      color: $mc-color-primary-hover;
+    }
 
-::selection {
-  background: rgba($mc-color-gray-500, 0.3);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.mc-text-link {
-  color: $mc-color-primary;
-
-  &:hover {
-    color: $mc-color-primary-hover;
-  }
-
-  &:active {
-    color: $mc-color-primary-active;
+    &:active {
+      color: $mc-color-primary-active;
+    }
   }
 }
