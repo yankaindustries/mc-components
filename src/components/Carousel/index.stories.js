@@ -84,15 +84,6 @@ storiesOf('components|Carousel', module)
                 <div key={key} className='col-auto'>
                   <Tile key={item.id}>
                     <TileImage imageUrl={item.thumbnail} />
-                    <TileOverlay />
-                    <TileCaption>
-                      <h3 className='mc-text-h4 mc-text--uppercase'>
-                        {item.instructor}
-                      </h3>
-                      <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
-                        {`Teaches ${item.teaches}`}
-                      </h5>
-                    </TileCaption>
                   </Tile>
                 </div>
               ))}
@@ -167,11 +158,11 @@ storiesOf('components|Carousel', module)
         </PropExample>
 
         <PropExample
-          name='fadeEdges'
+          name='overflow'
           type='Boolean'
         >
           <div className='row'>
-            <Carousel fadeEdges dots>
+            <Carousel overflow>
               {items.map((item, key) => (
                 <div key={key} className='col-auto'>
                   <Tile key={item.id}>
@@ -216,7 +207,7 @@ storiesOf('components|Carousel', module)
           type='Boolean'
         >
           <div className='row'>
-            <Carousel controls loop>
+            <Carousel loop>
               {items.map((item, key) => (
                 <div key={key} className='col-auto'>
                   <Tile key={item.id}>
@@ -309,7 +300,7 @@ storiesOf('components|Carousel', module)
                     sliderRef={sliderRef('thumbs')}
                     asNavFor={asNavFor('hero')}
                     centered
-                    fadeEdges
+                    overflow
                     focusOnSelect
                     loop
                     controls={gteMD}

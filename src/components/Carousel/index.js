@@ -8,7 +8,6 @@ import ChevronRight from '../Icons/ChevronRight'
 
 const TRANSITION_FADE = 'fade'
 const TRANSITION_SLIDE = 'slide'
-const CENTERED_PADDING = '200px'
 
 
 class Arrow extends PureComponent {
@@ -72,7 +71,7 @@ export default class Carousel extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     controls: PropTypes.bool,
-    fadeEdges: PropTypes.bool,
+    overflow: PropTypes.bool,
     focusOnSelect: PropTypes.bool,
     sliderRef: PropTypes.func,
     loop: PropTypes.bool,
@@ -86,7 +85,7 @@ export default class Carousel extends PureComponent {
     autoPlay: false,
     centered: false,
     controls: false,
-    fadeEdges: false,
+    overflow: false,
     focusOnSelect: false,
     loop: false,
     scrollCount: 1,
@@ -102,7 +101,7 @@ export default class Carousel extends PureComponent {
       className,
       centered,
       controls,
-      fadeEdges,
+      overflow,
       loop,
       sliderRef,
       scrollCount,
@@ -116,7 +115,7 @@ export default class Carousel extends PureComponent {
       'mc-carousel',
       `mc-carousel--${transition}`,
       centered ? 'mc-carousel--centered' : '',
-      fadeEdges ? 'mc-carousel--fade-edges' : '',
+      overflow ? 'mc-carousel--overflow' : '',
     ].join(' ')
 
     const arrows = controls
@@ -142,8 +141,8 @@ export default class Carousel extends PureComponent {
         <Slider
           autoplay={autoPlay}
           className={classes}
-          centerMode={centered || fadeEdges}
-          centerPadding={fadeEdges ? CENTERED_PADDING : 0}
+          centerMode={centered}
+          centerPadding={0}
           fade={transition === TRANSITION_FADE}
           ref={sliderRef}
           slidesToScroll={scrollCount}

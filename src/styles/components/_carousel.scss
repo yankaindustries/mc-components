@@ -97,34 +97,9 @@ $scrollbar-max-width: 17px !default;
     }
   }
 
-  &--fade-edges {
-    $centered-padding: 200px;
-
+  &--overflow {
     .slick-list {
-      margin: 0 (-$centered-padding);
-    }
-
-    &:before,
-    &:after {
-      content: "";
-
-      position: absolute;
-      top: 0;
-      width: $centered-padding;
-      height: 100%;
-      z-index: 1;
-
-      pointer-events: none;
-    }
-
-    &:before {
-      right: -$centered-padding;
-      background: linear-gradient(to left, rgba($mc-color-background, 1) 0%, rgba($mc-color-background, 0) 100%);
-    }
-
-    &:after {
-      left: -$centered-padding;
-      background: linear-gradient(to right, rgba($mc-color-background, 1) 0%, rgba($mc-color-background, 0) 100%);
+      overflow: visible;
     }
   }
 
