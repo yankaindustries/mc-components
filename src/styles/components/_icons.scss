@@ -5,13 +5,13 @@
 
   @for $i from 1 through 16 {
     &--#{$i}x {
-      font-size: $mc-unit * $i;
+      font-size: $mc-step-scale * $i;
     }
   }
 
   &--7x {
     &.mc-icon--circled {
-      padding: $mc-unit * 2;
+      padding: $mc-step-scale * 2;
     }
   }
 

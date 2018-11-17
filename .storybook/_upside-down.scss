@@ -7,7 +7,7 @@
 
 .mc-hero {
   @media only screen and (min-width: $mc-bp-md) {
-    margin-bottom: $mc-unit * -10;
+    margin-bottom: $mc-step-scale * -10;
 
     &__image {
       left: 25%;

@@ -1,0 +1,11 @@
+@mixin step($attribute, $value) {
+  #{$attribute}: calc-step($value, 2);
+
+  @media (min-width: $mc-bp-md) {
+    #{$attribute}: calc-step($value, 1);
+  }
+
+  @media (min-width: $mc-bp-lg) {
+    #{$attribute}: calc-step($value, 0);
+  }
+}
