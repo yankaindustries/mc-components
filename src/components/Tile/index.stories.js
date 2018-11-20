@@ -13,6 +13,7 @@ import TileCaption from '../TileCaption'
 import TileCheck from '../TileCheck'
 import AnimationHandler from '../AnimationHandler'
 import HoverHandler from '../HoverHandler'
+import Background from '../Background'
 
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
@@ -156,14 +157,52 @@ storiesOf('components|Tiles', module)
                         : 'left bottom'
                       }
                     >
-                      <h3 className='mc-text-h4 mc-text--uppercase'>
-                        Shonda Rhimes
-                      </h3>
-                      <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
-                        Teaches Writing
-                      </h4>
+                      <Background
+                        color={intent
+                          ? 'dark'
+                          : 'transparent'
+                        }
+                      >
+                        <h3 className='mc-text-h4 mc-text--uppercase'>
+                          Shonda Rhimes
+                        </h3>
+                        <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
+                          Teaches Writing
+                        </h4>
+                      </Background>
                     </TileCaption>
                   </Tile>
+                </AnimationHandler>
+              }
+            </HoverHandler>
+          </DocSection>
+        </div>
+
+        <div className='col-lg-4 col-md-6'>
+          <DocSection title='Extra'>
+            <HoverHandler>
+              {({ hovering }) =>
+                <AnimationHandler
+                  type='zoom'
+                  animating={hovering}
+                >
+                  <div>
+                    <Tile>
+                      <TileImage imageUrl={shondaRhimesThumbnail} />
+                      <TileOverlay type='gradient-bottom' />
+                    </Tile>
+
+                    <Background color={'medium'}>
+                      <div style={{ padding: '1em' }}>
+                        <h3 className='mc-text-h4 mc-text--uppercase'>
+                          Shonda Rhimes
+                        </h3>
+                        <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                          Teaches Writing
+                        </h4>
+                      </div>
+                    </Background>
+                  </div>
                 </AnimationHandler>
               }
             </HoverHandler>

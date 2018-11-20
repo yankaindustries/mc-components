@@ -129,11 +129,19 @@
     }
   }
 
-  &--light {
+  &--color-light {
     background: $mc-color-light;
   }
 
-  &--dark {
+  &--color-medium {
     background: $mc-color-gray-100;
+  }
+
+  &--color-dark {
+    background: $mc-color-dark;
+  }
+
+  &--color-transparent {
+    background: transparent;
   }
 }
