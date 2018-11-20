@@ -171,6 +171,78 @@ export default class VideoPlayer extends PureComponent {
 
   resumeVideo = () => { this.video.play() }
 
+  handleKeyDown = (e) => {
+    const { target } = e
+    const selectingVolume = target.className.indexOf('vjs-volume-bar') > -1 ||
+      target.className.indexOf('vjs-volume-menu-button') > -1
+
+    if (selectingVolume) {
+      // trying to prevent these listeners from affecting accessibility controls
+      return
+    }
+
+    switch (e.key) {
+      case 'ArrowLeft': {
+        e.preventDefault()
+        this.playerSkipBackwards()
+        break
+      }
+      case 'ArrowRight': {
+        e.preventDefault()
+        this.playerSkipForward()
+        break
+      }
+      case ' ': {
+        e.preventDefault()
+        this.playPausePlayer()
+        break
+      }
+      case 'ArrowUp': {
+        e.preventDefault()
+        this.increasePlayerVolume()
+        break
+      }
+      case 'ArrowDown': {
+        e.preventDefault()
+        this.decreasePlayerVolume()
+        break
+      }
+      default:
+    }
+  }
+
+  increasePlayerVolume = () => {
+    const currentVolume = this.video.volume()
+    const newVolume = Math.min(currentVolume + 0.05, 1)
+    this.video.volume(newVolume)
+  }
+
+  decreasePlayerVolume = () => {
+    const currentVolume = this.video.volume()
+    const newVolume = Math.max(currentVolume - 0.05, 0)
+    this.video.volume(newVolume)
+  }
+
+  playPausePlayer = () => {
+    if (this.video.paused()) {
+      this.video.play()
+    } else {
+      this.video.pause()
+    }
+  }
+
+  playerSkipForward = () => {
+    const currentTime = Math.floor(this.video.currentTime())
+    const newTime = Math.min(this.video.duration(), currentTime + 5)
+    this.video.currentTime(newTime)
+  }
+
+  playerSkipBackwards = () => {
+    const currentTime = Math.floor(this.video.currentTime())
+    const newTime = Math.max(0, currentTime - 5)
+    this.video.currentTime(newTime)
+  }
+
   setupVideo = () => {
     window.bc(this.playerRef.current, {
       playbackRates: [0.5, 1, 1.5, 2],
@@ -266,6 +338,7 @@ export default class VideoPlayer extends PureComponent {
           'bc-player--screen-open': isScreenOpen,
           'bc-player--has-breakpoints': hasBreakpoints,
         })}
+        onKeyDown={this.handleKeyDown}
       >
         {endscreenComponent && videoRoot &&
           <VideoPlayerScreen
