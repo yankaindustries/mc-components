@@ -61,11 +61,11 @@ yarn dev
 In your own project (eg MasterClass) directory:
 
 ```
-yarn link "mc-components"
+yarn link mc-components
 yarn webpack-dev
 ```
 
-(Run `yarn unlink` in `mc-components` and `yarn unlink "mc-components"` in your project's repo when you are done developing and want to unlink.)
+(Run `yarn unlink "mc-components"` in your project's repo when you are done developing and want to unlink, and then run `yarn install` to reinstall the version of mc-components you were using previously)
 
 ## Submit your code
   - Create a PR with your changes
