@@ -89,6 +89,19 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
+  hideOpenScreens = () => {
+    const { beforescreenOpen, pausescreenOpen, endscreenOpen } = this.state
+    if (beforescreenOpen) {
+      this.setState({ beforescreenOpen: false })
+    }
+    if (pausescreenOpen) {
+      this.setState({ pausescreenOpen: false })
+    }
+    if (endscreenOpen) {
+      this.setState({ endscreenOpen: false })
+    }
+  }
+
   handlePlayerReady = () => {
     const {
       onSeek,
@@ -100,13 +113,7 @@ export default class VideoPlayer extends PureComponent {
     } = this.props
 
     this.video.on('play', () => {
-      const { beforescreenOpen, pausescreenOpen } = this.state
-      if (beforescreenOpen) {
-        this.setState({ beforescreenOpen: false })
-      }
-      if (pausescreenOpen) {
-        this.setState({ pausescreenOpen: false })
-      }
+      this.hideOpenScreens()
       if (onPlay) {
         onPlay(this.video)
       }
@@ -123,9 +130,12 @@ export default class VideoPlayer extends PureComponent {
 
     this.video.on('ended', this.handleVideoEnd)
 
-    if (onSeek) {
-      this.video.on('seeking', onSeek)
-    }
+    this.video.on('seeking', () => {
+      this.hideOpenScreens()
+      if (onSeek) {
+        onSeek(this.video)
+      }
+    })
 
     this.video.on('loadedmetadata', () => {
       this.checkBuffers()
