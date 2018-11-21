@@ -10,10 +10,16 @@ export default class TileCaption extends PureComponent {
     ]),
     className: PropTypes.string,
     position: PropTypes.oneOf([
+      'left center',
       'left bottom',
-      'center bottom',
       'left below',
+      'center center',
+      'center',
+      'center bottom',
       'center below',
+      'right center',
+      'right bottom',
+      'right below',
     ]),
   }
 
@@ -28,13 +34,19 @@ export default class TileCaption extends PureComponent {
       position,
     } = this.props
 
-    const positionClasses =
-      position.split(' ').map(pos => `mc-tile-caption--${pos}`)
+    // eslint-disable-next-line prefer-const
+    let [x, y] = position.split(' ')
+
+    // Support shorthand for 'center' => 'center center'
+    if (x === 'center' && !y) {
+      y = 'center'
+    }
 
     const classes = [
       'mc-tile__component',
       'mc-tile-caption',
-      ...positionClasses,
+      `mc-tile-caption--x-${x}`,
+      `mc-tile-caption--y-${y}`,
       className || '',
     ].join(' ')
 
