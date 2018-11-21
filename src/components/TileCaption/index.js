@@ -10,15 +10,20 @@ export default class TileCaption extends PureComponent {
     ]),
     className: PropTypes.string,
     position: PropTypes.oneOf([
-      'left bottom',
-      'center bottom',
-      'left below',
-      'center below',
+      'x-left y-center',
+      'x-left y-bottom',
+      'x-left y-below',
+      'x-center y-center',
+      'x-center y-bottom',
+      'x-center y-below',
+      'x-right y-center',
+      'x-right y-bottom',
+      'x-right y-below',
     ]),
   }
 
   static defaultProps = {
-    position: 'left bottom',
+    position: 'x-left y-bottom',
   }
 
   render () {

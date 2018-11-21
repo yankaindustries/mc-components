@@ -23,7 +23,36 @@ storiesOf('components|Tiles/TileCaption', module)
           <div className='row'>
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='left bottom'>
+                <TileCaption position='x-left y-center'>
+                  left center
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='x-center y-center'>
+                  center center
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='x-right y-center'>
+                  right center
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='x-left y-bottom'>
                   left bottom
                 </TileCaption>
                 <Placeholder />
@@ -32,7 +61,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='center bottom'>
+                <TileCaption position='x-center y-bottom'>
                   center bottom
                 </TileCaption>
                 <Placeholder />
@@ -41,8 +70,37 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='left below'>
+                <TileCaption position='x-right y-bottom'>
                   left below
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='x-left y-below'>
+                  left below
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='x-center y-below'>
+                  center below
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='x-right y-below'>
+                  right below
                 </TileCaption>
                 <Placeholder />
               </Tile>
