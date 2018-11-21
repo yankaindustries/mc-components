@@ -10,20 +10,20 @@ export default class TileCaption extends PureComponent {
     ]),
     className: PropTypes.string,
     position: PropTypes.oneOf([
-      'x-left y-center',
-      'x-left y-bottom',
-      'x-left y-below',
-      'x-center y-center',
-      'x-center y-bottom',
-      'x-center y-below',
-      'x-right y-center',
-      'x-right y-bottom',
-      'x-right y-below',
+      'left center',
+      'left bottom',
+      'left below',
+      'center center',
+      'center bottom',
+      'center below',
+      'right center',
+      'right bottom',
+      'right below',
     ]),
   }
 
   static defaultProps = {
-    position: 'x-left y-bottom',
+    position: 'left bottom',
   }
 
   render () {
@@ -33,13 +33,13 @@ export default class TileCaption extends PureComponent {
       position,
     } = this.props
 
-    const positionClasses =
-      position.split(' ').map(pos => `mc-tile-caption--${pos}`)
+    const [x, y] = position.split(' ')
 
     const classes = [
       'mc-tile__component',
       'mc-tile-caption',
-      ...positionClasses,
+      `mc-tile-caption--x-${x}`,
+      `mc-tile-caption--y-${y}`,
       className || '',
     ].join(' ')
 

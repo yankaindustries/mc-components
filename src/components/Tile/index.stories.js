@@ -153,8 +153,8 @@ storiesOf('components|Tiles', module)
 
                     <TileCaption
                       position={intent
-                        ? 'x-left y-below'
-                        : 'x-left y-bottom'
+                        ? 'left below'
+                        : 'left bottom'
                       }
                     >
                       <Background

@@ -23,7 +23,7 @@ storiesOf('components|Tiles/TileCaption', module)
           <div className='row'>
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-left y-center'>
+                <TileCaption position='left center'>
                   left center
                 </TileCaption>
                 <Placeholder />
@@ -32,7 +32,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-center y-center'>
+                <TileCaption position='center center'>
                   center center
                 </TileCaption>
                 <Placeholder />
@@ -41,7 +41,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-right y-center'>
+                <TileCaption position='right center'>
                   right center
                 </TileCaption>
                 <Placeholder />
@@ -52,7 +52,7 @@ storiesOf('components|Tiles/TileCaption', module)
           <div className='row'>
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-left y-bottom'>
+                <TileCaption position='left bottom'>
                   left bottom
                 </TileCaption>
                 <Placeholder />
@@ -61,7 +61,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-center y-bottom'>
+                <TileCaption position='center bottom'>
                   center bottom
                 </TileCaption>
                 <Placeholder />
@@ -70,7 +70,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-right y-bottom'>
+                <TileCaption position='right bottom'>
                   right bottom
                 </TileCaption>
                 <Placeholder />
@@ -81,7 +81,7 @@ storiesOf('components|Tiles/TileCaption', module)
           <div className='row'>
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-left y-below'>
+                <TileCaption position='left below'>
                   left below
                 </TileCaption>
                 <Placeholder />
@@ -90,7 +90,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-center y-below'>
+                <TileCaption position='center below'>
                   center below
                 </TileCaption>
                 <Placeholder />
@@ -99,7 +99,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='x-right y-below'>
+                <TileCaption position='right below'>
                   right below
                 </TileCaption>
                 <Placeholder />
