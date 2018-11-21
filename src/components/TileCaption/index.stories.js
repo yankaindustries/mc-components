@@ -23,6 +23,35 @@ storiesOf('components|Tiles/TileCaption', module)
           <div className='row'>
             <div className='col-sm-4'>
               <Tile>
+                <TileCaption position='left center'>
+                  left center
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='center'>
+                  center center
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='right center'>
+                  right center
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-sm-4'>
+              <Tile>
                 <TileCaption position='left bottom'>
                   left bottom
                 </TileCaption>
@@ -41,8 +70,37 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
+                <TileCaption position='right bottom'>
+                  right bottom
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-sm-4'>
+              <Tile>
                 <TileCaption position='left below'>
                   left below
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='center below'>
+                  center below
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='right below'>
+                  right below
                 </TileCaption>
                 <Placeholder />
               </Tile>
