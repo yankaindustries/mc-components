@@ -71,7 +71,7 @@ storiesOf('components|Tiles/TileCaption', module)
             <div className='col-sm-4'>
               <Tile>
                 <TileCaption position='x-right y-bottom'>
-                  left below
+                  right bottom
                 </TileCaption>
                 <Placeholder />
               </Tile>
