@@ -14,6 +14,7 @@ export default class TileCaption extends PureComponent {
       'left bottom',
       'left below',
       'center center',
+      'center',
       'center bottom',
       'center below',
       'right center',
@@ -33,7 +34,13 @@ export default class TileCaption extends PureComponent {
       position,
     } = this.props
 
-    const [x, y] = position.split(' ')
+    // eslint-disable-next-line prefer-const
+    let [x, y] = position.split(' ')
+
+    // Support shorthand for 'center' => 'center center'
+    if (x === 'center' && !y) {
+      y = 'center'
+    }
 
     const classes = [
       'mc-tile__component',

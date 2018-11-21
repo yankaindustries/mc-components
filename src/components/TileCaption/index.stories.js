@@ -32,7 +32,7 @@ storiesOf('components|Tiles/TileCaption', module)
 
             <div className='col-sm-4'>
               <Tile>
-                <TileCaption position='center center'>
+                <TileCaption position='center'>
                   center center
                 </TileCaption>
                 <Placeholder />
