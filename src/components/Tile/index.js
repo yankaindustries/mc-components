@@ -8,11 +8,12 @@ export default class Tile extends PureComponent {
       '1x1',
       '4x3',
       '9x16',
-      '16x9',
       '3x4',
-      '519x187',
+      '16x9',
+      '21x9',
 
       // DEPRECATE
+      '519x187',
       '100x65',
       '1000x609',
     ]),

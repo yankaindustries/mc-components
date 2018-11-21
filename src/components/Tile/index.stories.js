@@ -276,6 +276,12 @@ storiesOf('components|Tiles/Tile', module)
                 <Placeholder>4x3</Placeholder>
               </Tile>
             </div>
+
+            <div className='col-sm-12'>
+              <Tile aspectRatio='21x9'>
+                <Placeholder>21x9</Placeholder>
+              </Tile>
+            </div>
           </div>
         </PropExample>
       </DocSection>
