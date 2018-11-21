@@ -5,6 +5,9 @@ import PropTypes from 'prop-types'
 import VideoPlayerScreen from '../VideoPlayerScreen'
 import { renderChildren } from '../helpers'
 
+const VOLUME_INTERVAL = 0.05
+const SKIP_INTERVAL = 5
+
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
     playerId: PropTypes.string.isRequired,
@@ -172,7 +175,7 @@ export default class VideoPlayer extends PureComponent {
   resumeVideo = () => { this.video.play() }
 
   handleKeyDown = (e) => {
-    const { target } = e
+    const { target, key } = e
     const selectingVolume = target.className.indexOf('vjs-volume-bar') > -1 ||
       target.className.indexOf('vjs-volume-menu-button') > -1
 
@@ -181,49 +184,49 @@ export default class VideoPlayer extends PureComponent {
       return
     }
 
-    switch (e.key) {
+    switch (key) {
       case 'ArrowLeft': {
         e.preventDefault()
-        this.playerSkipBackwards()
+        this.skipBackwards()
         break
       }
       case 'ArrowRight': {
         e.preventDefault()
-        this.playerSkipForward()
+        this.skipForward()
         break
       }
       case ' ': {
         e.preventDefault()
-        this.playPausePlayer()
+        this.playPause()
         break
       }
       case 'ArrowUp': {
         e.preventDefault()
-        this.increasePlayerVolume()
+        this.increaseVolume()
         break
       }
       case 'ArrowDown': {
         e.preventDefault()
-        this.decreasePlayerVolume()
+        this.decreaseVolume()
         break
       }
       default:
     }
   }
 
-  increasePlayerVolume = () => {
+  increaseVolume = () => {
     const currentVolume = this.video.volume()
-    const newVolume = Math.min(currentVolume + 0.05, 1)
+    const newVolume = Math.min(currentVolume + VOLUME_INTERVAL, 1)
     this.video.volume(newVolume)
   }
 
-  decreasePlayerVolume = () => {
+  decreaseVolume = () => {
     const currentVolume = this.video.volume()
-    const newVolume = Math.max(currentVolume - 0.05, 0)
+    const newVolume = Math.max(currentVolume - VOLUME_INTERVAL, 0)
     this.video.volume(newVolume)
   }
 
-  playPausePlayer = () => {
+  playPause = () => {
     if (this.video.paused()) {
       this.video.play()
     } else {
@@ -231,15 +234,15 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
-  playerSkipForward = () => {
+  skipForward = () => {
     const currentTime = Math.floor(this.video.currentTime())
-    const newTime = Math.min(this.video.duration(), currentTime + 5)
+    const newTime = Math.min(this.video.duration(), currentTime + SKIP_INTERVAL)
     this.video.currentTime(newTime)
   }
 
-  playerSkipBackwards = () => {
+  skipBackwards = () => {
     const currentTime = Math.floor(this.video.currentTime())
-    const newTime = Math.max(0, currentTime - 5)
+    const newTime = Math.max(0, currentTime - SKIP_INTERVAL)
     this.video.currentTime(newTime)
   }
 
