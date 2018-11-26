@@ -3,6 +3,7 @@ import * as Helpers from './helpers'
 
 // COMPONENTS
 export { default as AnimationHandler } from './AnimationHandler'
+export { default as Background } from './Background'
 export { default as Badge } from './Badge'
 export { default as Button } from './Button'
 export { default as ButtonLoader } from './ButtonLoader'
