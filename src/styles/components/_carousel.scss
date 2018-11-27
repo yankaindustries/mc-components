@@ -97,6 +97,12 @@ $scrollbar-max-width: 17px !default;
         left: $grid-gutter-width-xl/2;
       }
     }
+
+    // Disabled state for when you can't
+    // advance the slide or "go back" anymore
+    &.slick-disabled {
+      display: none;
+    }
   }
 
   &--overflow {
