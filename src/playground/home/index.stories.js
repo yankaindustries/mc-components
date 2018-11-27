@@ -106,17 +106,15 @@ storiesOf('playground|Pages', module)
                                   <h1 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left'>
                                     {item.instructor}
                                   </h1>
-                                  <h4 className='mc-text-h4 mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap'>
+                                  <h4 className='mc-text-h4 mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
                                     Teaches {item.class}
                                   </h4>
-                                  <br />
-                                  <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap'>
+                                  <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
                                     Online classes taught by the world&apos;s
                                     greatest minds.<br /> Learn from
                                     {item.instructor} and all 35+ other
                                     instructors.
                                   </p>
-                                  <br />
                                   <div className='row'>
                                     <div className='col-auto'>
                                       <Button primary>

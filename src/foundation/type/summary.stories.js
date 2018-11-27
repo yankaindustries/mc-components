@@ -6,52 +6,58 @@ import CodeExample from '../../utils/CodeExample'
 import Button from '../../components/Button'
 
 
-const MODIFIER_NONE = 'MODIFIER_NONE'
+const NONE = 'NONE'
+
 const MODIFIER_AIRY = 'MODIFIER_AIRY'
 const MODIFIER_UPPERCASE = 'MODIFIER_UPPERCASE'
+
+const COLOR_MUTED = 'COLOR_MUTED'
+const COLOR_SILENCED = 'COLOR_SILENCED'
 
 
 export default class Summary extends PureComponent {
   state = {
-    modifier: MODIFIER_NONE,
+    color: NONE,
+    modifier: NONE,
   }
 
-  toggle = modifier => () => {
+  toggle = (key, value) => () => {
     this.setState(state => ({
-      modifier: state.modifier === modifier ? MODIFIER_NONE : modifier,
+      [key]: state[key] === value ? NONE : value,
     }))
   }
 
   render () {
     const {
       modifier,
+      color,
     } = this.state
 
     const modifierClass = cn({
       'mc-text--airy': modifier === MODIFIER_AIRY,
       'mc-text--uppercase': modifier === MODIFIER_UPPERCASE,
+      'mc-text--muted': color === COLOR_MUTED,
+      'mc-text--silenced': color === COLOR_SILENCED,
     })
-
-    // Add class on body
-    const root = document.getElementsByTagName('html')[0]
-    root.setAttribute('class', 'mc-beta')
 
     return (
       <div className='container'>
         <div className='example__heading'>
           <div className='row align-items-center'>
-            <div className='col-sm-9'>
-              <h2 className='mc-text-h1'>Typography</h2>
+            <div className='col-12'>
+              <h1 className='mc-text-h1'>
+                Typography
+              </h1>
               <p className='mc-text--muted'>
                 A showcase of the available type styles in mc-components.
               </p>
             </div>
 
-            <div className='col-sm-3'>
+            <div className='col-12'>
               <div className='row'>
                 <div className='col-auto'>
                   <Button
-                    onClick={this.toggle(MODIFIER_UPPERCASE)}
+                    onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
                     secondary={modifier !== MODIFIER_UPPERCASE}
                   >
                     Uppercase
@@ -60,10 +66,28 @@ export default class Summary extends PureComponent {
 
                 <div className='col-auto'>
                   <Button
-                    onClick={this.toggle(MODIFIER_AIRY)}
+                    onClick={this.toggle('modifier', MODIFIER_AIRY)}
                     secondary={modifier !== MODIFIER_AIRY}
                   >
                     Airy
+                  </Button>
+                </div>
+
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_MUTED)}
+                    secondary={color !== COLOR_MUTED}
+                  >
+                    Muted
+                  </Button>
+                </div>
+
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_SILENCED)}
+                    secondary={color !== COLOR_SILENCED}
+                  >
+                    Silenced
                   </Button>
                 </div>
               </div>
