@@ -5,6 +5,9 @@ import PropTypes from 'prop-types'
 import VideoPlayerScreen from '../VideoPlayerScreen'
 import { renderChildren } from '../helpers'
 
+const VOLUME_INTERVAL = 0.05
+const SKIP_INTERVAL = 5
+
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
     playerId: PropTypes.string.isRequired,
@@ -89,6 +92,19 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
+  hideOpenScreens = () => {
+    const { beforescreenOpen, pausescreenOpen, endscreenOpen } = this.state
+    if (beforescreenOpen) {
+      this.setState({ beforescreenOpen: false })
+    }
+    if (pausescreenOpen) {
+      this.setState({ pausescreenOpen: false })
+    }
+    if (endscreenOpen) {
+      this.setState({ endscreenOpen: false })
+    }
+  }
+
   handlePlayerReady = () => {
     const {
       onSeek,
@@ -100,13 +116,7 @@ export default class VideoPlayer extends PureComponent {
     } = this.props
 
     this.video.on('play', () => {
-      const { beforescreenOpen, pausescreenOpen } = this.state
-      if (beforescreenOpen) {
-        this.setState({ beforescreenOpen: false })
-      }
-      if (pausescreenOpen) {
-        this.setState({ pausescreenOpen: false })
-      }
+      this.hideOpenScreens()
       if (onPlay) {
         onPlay(this.video)
       }
@@ -123,9 +133,12 @@ export default class VideoPlayer extends PureComponent {
 
     this.video.on('ended', this.handleVideoEnd)
 
-    if (onSeek) {
-      this.video.on('seeking', onSeek)
-    }
+    this.video.on('seeking', () => {
+      this.hideOpenScreens()
+      if (onSeek) {
+        onSeek(this.video)
+      }
+    })
 
     this.video.on('loadedmetadata', () => {
       this.checkBuffers()
@@ -170,6 +183,78 @@ export default class VideoPlayer extends PureComponent {
   }
 
   resumeVideo = () => { this.video.play() }
+
+  handleKeyDown = (e) => {
+    const { target, key } = e
+    const selectingVolume = target.className.indexOf('vjs-volume-bar') > -1 ||
+      target.className.indexOf('vjs-volume-menu-button') > -1
+
+    if (selectingVolume) {
+      // trying to prevent these listeners from affecting accessibility controls
+      return
+    }
+
+    switch (key) {
+      case 'ArrowLeft': {
+        e.preventDefault()
+        this.skipBackwards()
+        break
+      }
+      case 'ArrowRight': {
+        e.preventDefault()
+        this.skipForward()
+        break
+      }
+      case ' ': {
+        e.preventDefault()
+        this.playPause()
+        break
+      }
+      case 'ArrowUp': {
+        e.preventDefault()
+        this.increaseVolume()
+        break
+      }
+      case 'ArrowDown': {
+        e.preventDefault()
+        this.decreaseVolume()
+        break
+      }
+      default:
+    }
+  }
+
+  increaseVolume = () => {
+    const currentVolume = this.video.volume()
+    const newVolume = Math.min(currentVolume + VOLUME_INTERVAL, 1)
+    this.video.volume(newVolume)
+  }
+
+  decreaseVolume = () => {
+    const currentVolume = this.video.volume()
+    const newVolume = Math.max(currentVolume - VOLUME_INTERVAL, 0)
+    this.video.volume(newVolume)
+  }
+
+  playPause = () => {
+    if (this.video.paused()) {
+      this.video.play()
+    } else {
+      this.video.pause()
+    }
+  }
+
+  skipForward = () => {
+    const currentTime = Math.floor(this.video.currentTime())
+    const newTime = Math.min(this.video.duration(), currentTime + SKIP_INTERVAL)
+    this.video.currentTime(newTime)
+  }
+
+  skipBackwards = () => {
+    const currentTime = Math.floor(this.video.currentTime())
+    const newTime = Math.max(0, currentTime - SKIP_INTERVAL)
+    this.video.currentTime(newTime)
+  }
 
   setupVideo = () => {
     window.bc(this.playerRef.current, {
@@ -266,6 +351,7 @@ export default class VideoPlayer extends PureComponent {
           'bc-player--screen-open': isScreenOpen,
           'bc-player--has-breakpoints': hasBreakpoints,
         })}
+        onKeyDown={this.handleKeyDown}
       >
         {endscreenComponent && videoRoot &&
           <VideoPlayerScreen

@@ -48,11 +48,24 @@ const Container = () =>
 
 All changes are hot-reloaded and you'll be able to see components being modified live as you work.
 
-If you want to develop in `mc-components` and see your work compiled live in your own project (like the masterclass repo), then you can use the following command to hot-reload changes to styles and components:
+If you want to develop in `mc-components` and see your work compiled live in your own project (like the masterclass repo), you can run the following commands:
+
+In `mc-components`: (this creates a symlink to use in your project's repo, and also will let you hot-reload changes to styles and components in mc-components)
 
 ```
+yarn install
+yarn link
 yarn dev
 ```
+
+In your own project (eg MasterClass) directory:
+
+```
+yarn link mc-components
+yarn webpack-dev
+```
+
+(Run `yarn unlink "mc-components"` in your project's repo when you are done developing and want to unlink, and then run `yarn install` to reinstall the version of mc-components you were using previously)
 
 ## Submit your code
   - Create a PR with your changes
