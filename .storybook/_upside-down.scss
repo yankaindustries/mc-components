@@ -33,7 +33,8 @@
   }
 
   &__image {
-    margin: 0 $grid-gutter-width-xl / -2;
+    margin-left: $grid-gutter-width-xl / -2;
+    margin-right: $grid-gutter-width-xl / -2;
     width: calc(100% + #{$grid-gutter-width-xl});
   }
 }

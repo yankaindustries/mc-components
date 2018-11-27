@@ -4,14 +4,8 @@
   height: 16px;
 
   @for $i from 1 through 16 {
-    &--#{$i}x {
-      font-size: $mc-step-scale * $i;
-    }
-  }
-
-  &--7x {
-    &.mc-icon--circled {
-      padding: $mc-step-scale * 2;
+    &--#{$i} {
+      @include step(font-size, $i);
     }
   }
 
@@ -28,6 +22,7 @@
   }
 
   &--circled {
+    padding: 0.25em;
     border: 1px solid currentColor;
     border-radius: 100%;
   }
