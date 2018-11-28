@@ -7,7 +7,7 @@ import Alignment from './alignment.stories'
 import Flourishes from './flourishes.stories'
 import Colors from './colors.stories'
 
-storiesOf('foundation|Type', module)
+storiesOf('foundation|Typography', module)
   .add('Summary', () => <Summary />)
   .add('Modifiers', () => <Modifiers />)
   .add('Alignment', () => <Alignment />)
