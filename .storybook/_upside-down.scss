@@ -5,25 +5,6 @@
 
 // THE UPSIDE DOWN
 
-.mc-hero {
-  @media only screen and (min-width: $mc-bp-md) {
-    margin-bottom: $mc-step-scale * -10;
-
-    &__image {
-      left: 25%;
-    }
-
-    &__content {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 3;
-    }
-  }
-}
-
 .mc-card {
   padding: $grid-gutter-width-xl / 2;
   border-radius: 3px;

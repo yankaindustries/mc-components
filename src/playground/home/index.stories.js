@@ -81,87 +81,85 @@ storiesOf('playground|Pages', module)
                     <Carousel
                       sliderRef={sliderRef('hero')}
                       asNavFor={asNavFor('thumbs')}
+                      slidesToShow={1}
                       transition='fade'
+                      adaptiveHeight
                       loop
                     >
                       {items.map((item, key) => (
-                        <div key={key} className='container'>
-                          <Tile
-                            key={key}
-                            aspectRatio={gteMD ? '16x9' : '1x1'}
-                            naked
-                          >
-                            <Tile
-                              className='mc-hero__image'
-                              aspectRatio={gteMD ? '16x9' : '1x1'}
-                              naked
-                            >
-                              <TileImage imageUrl={item.image} />
-                              <TileOverlay type='offset-spotlight' />
-                            </Tile>
-
-                            <div className='mc-hero__content'>
-                              <div className='row row--fill align-items-center'>
-                                <div className='col-md-8 col-lg-6'>
-                                  <h1 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left'>
-                                    {item.instructor}
-                                  </h1>
-                                  <h4 className='mc-text-h4 mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
-                                    Teaches {item.class}
-                                  </h4>
-                                  <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
-                                    Online classes taught by the world&apos;s
-                                    greatest minds.<br /> Learn from
-                                    {item.instructor} and all 35+ other
-                                    instructors.
-                                  </p>
-                                  <div className='row'>
-                                    <div className='col-auto'>
-                                      <Button primary>
-                                        All Access Pass
-                                      </Button>
-                                    </div>
-                                    <div className='col-auto'>
-                                      <Button secondary>
-                                        Learn More
-                                      </Button>
+                        <div
+                          key={key}
+                          className='container'
+                        >
+                          <Tile aspectRatio='16x9'>
+                            <TileImage imageUrl={item.image} />
+                            <TileOverlay type='offset-spotlight' />
+                            <TileCaption position='left center'>
+                              <div className='mc-hero__content'>
+                                <div className='row align-items-center'>
+                                  <div className='col-md-8 col-lg-6'>
+                                    <h1 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left'>
+                                      {item.instructor}
+                                    </h1>
+                                    <h4 className='mc-text-h4 mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
+                                      Teaches {item.class}
+                                    </h4>
+                                    <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
+                                      Online classes taught by the world&apos;s
+                                      greatest minds.<br /> Learn from
+                                      {item.instructor} and all 35+ other
+                                      instructors.
+                                    </p>
+                                    <div className='row'>
+                                      <div className='col-auto'>
+                                        <Button primary>
+                                          All Access Pass
+                                        </Button>
+                                      </div>
+                                      <div className='col-auto'>
+                                        <Button secondary>
+                                          Learn More
+                                        </Button>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            </TileCaption>
                           </Tile>
                         </div>
                       ))}
                     </Carousel>
                   </div>
 
-                  <div className='container'>
-                    <Carousel
-                      className='row'
-                      sliderRef={sliderRef('thumbs')}
-                      asNavFor={asNavFor('hero')}
-                      centered
-                      fadeEdges
-                      focusOnSelect
-                      loop
-                      controls={gteMD}
-                    >
-                      {items.map((item, key) => (
-                        <div key={key} className='col-auto'>
-                          <Tile key={item.id}>
-                            <TileImage imageUrl={item.thumbnail} />
-                            {gteMD && <TileOverlay />}
-                            {gteMD &&
-                              <TileCaption>
-                                <h5 className='mc-text-h5 mc-text--uppercase'>{item.instructor}</h5>
-                                <h6 className='mc-text-h6 mc-text--normal mc-text--muted'>{`Teaches ${item.class}`}</h6>
-                              </TileCaption>
-                            }
-                          </Tile>
-                        </div>
-                      ))}
-                    </Carousel>
+                  <div className='mc-hero__thumbs'>
+                    <div className='container'>
+                      <Carousel
+                        className='row'
+                        sliderRef={sliderRef('thumbs')}
+                        asNavFor={asNavFor('hero')}
+                        centered
+                        fadeEdges
+                        focusOnSelect
+                        loop
+                        controls={gteMD}
+                      >
+                        {items.map((item, key) => (
+                          <div key={key} className='col-auto'>
+                            <Tile key={item.id}>
+                              <TileImage imageUrl={item.thumbnail} />
+                              {gteMD && <TileOverlay />}
+                              {gteMD &&
+                                <TileCaption>
+                                  <h5 className='mc-text-h5 mc-text--uppercase'>{item.instructor}</h5>
+                                  <h6 className='mc-text-h6 mc-text--normal mc-text--muted'>{`Teaches ${item.class}`}</h6>
+                                </TileCaption>
+                              }
+                            </Tile>
+                          </div>
+                        ))}
+                      </Carousel>
+                    </div>
                   </div>
                 </div>
               }
@@ -300,7 +298,7 @@ storiesOf('playground|Pages', module)
 
           <div className='row'>
             <div className='col-md-4'>
-              <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+              <div className='mc-card mc-card--equal-height mc-background--color-light mc-text--invert'>
                 <div className='row align-items-center small-gutters'>
                   <div className='col col-auto'>
                     <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-al-300e6379265c09b2f4b659df27a10cace702dd3beb031af97178f4f1b683adc3.png' />
@@ -336,7 +334,7 @@ storiesOf('playground|Pages', module)
             </div>
 
             <div className='col-md-4'>
-              <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+              <div className='mc-card mc-card--equal-height mc-background--color-light mc-text--invert'>
                 <div className='row align-items-center small-gutters'>
                   <div className='col col-auto'>
                     <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-gr-24c1d9b59bbeadd671a0ef5140e137d07e26368f5b0984a0b90fe5f794700de0.png' />
@@ -372,7 +370,7 @@ storiesOf('playground|Pages', module)
             </div>
 
             <div className='col-md-4'>
-              <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+              <div className='mc-card mc-card--equal-height mc-background--color-light mc-text--invert'>
                 <div className='row align-items-center small-gutters'>
                   <div className='col col-auto'>
                     <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-jp-cde7e157ed95191ad3167e5dea00394798decee7462fc897d71ac6e450cd8b79.png' />
@@ -526,7 +524,7 @@ storiesOf('playground|Pages', module)
                 <div className='col-lg-6'>
                   <div className='row'>
                     <div className='col-12'>
-                      <div className='mc-card mc-background--light mc-text--invert'>
+                      <div className='mc-card mc-background--color-light mc-text--invert'>
                         <div className='row align-items-center small-gutters'>
                           <div className='col col-auto'>
                             <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1429/original/1518557721-Slide_Thumb.jpg?1518557721' />
@@ -555,7 +553,7 @@ storiesOf('playground|Pages', module)
                     </div>
 
                     <div className='col-12'>
-                      <div className='mc-card mc-background--light mc-text--invert'>
+                      <div className='mc-card mc-background--color-light mc-text--invert'>
                         <div className='row align-items-center small-gutters'>
                           <div className='col col-auto'>
                             <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1194/original/1512075998-Slide_Thumb.jpg?1512075998' />
@@ -592,7 +590,7 @@ storiesOf('playground|Pages', module)
                 </div>
 
                 <div className='col-lg-6'>
-                  <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                  <div className='mc-card mc-card--equal-height mc-background--color-light mc-text--invert'>
                     <div className='row align-items-center small-gutters'>
                       <div className='col col-auto'>
                         <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/528/original/1488402263-1488323293-SM_SlideThumb_V1_A.jpg?1488402263' />
