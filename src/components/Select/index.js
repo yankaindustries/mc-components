@@ -1,32 +1,31 @@
 import React, { PureComponent } from 'react'
-import { string, bool, array, func, object } from 'prop-types'
+import { any, shape, string, bool, arrayOf, func, object } from 'prop-types'
 import Select, { components } from 'react-select'
 import Arrow from '../Icons/SelectArrow'
 
+const Types = {
+  option: {
+    label: string,
+    value: any,
+  },
+}
+
 export default class SelectInput extends PureComponent {
   static propTypes = {
-    onChange: func.isRequired,
+    onChange: func,
     onFocus: func,
-    options: array,
+    options: arrayOf(shape(Types.option)),
     placeholder: string,
     isSearchable: bool,
-    defaultValue: object,
+    defaultValue: shape(Types.option),
     components: object,
+    value: shape(Types.option),
   }
 
   static defaultProps = {
     options: [],
-    placeholder: 'Select one',
     isSearchable: false,
   }
-
-  state = { isOpen: false }
-
-  handleOpenMenu = () =>
-    this.setState({ isOpen: true })
-
-  handleCloseMenu = () =>
-    this.setState({ isOpen: false })
 
   renderDropdownIndicator = props => (
     <components.DropdownIndicator {...props}>
@@ -39,13 +38,10 @@ export default class SelectInput extends PureComponent {
       <Select
         className='mc-select'
         classNamePrefix='mc-select__wrapper'
-        isSearchable={false}
         components={{
           DropdownIndicator: this.renderDropdownIndicator,
           ...this.props.components,
         }}
-        onMenuOpen={this.handleOpenMenu}
-        onMenuClose={this.handleCloseMenu}
         {...this.props}
       />
     )
