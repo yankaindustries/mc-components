@@ -65,10 +65,10 @@ $scrollbar-max-width: 17px !default;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2em;
-    height: 2em;
-    background: fade-out($mc-color-light, 0.7);
-    transform: translateY(-50%);
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    background: rgba($mc-color-gray-100, 0.8);
     color: $mc-color-light;
     text-align: center;
     z-index: 5;
@@ -82,6 +82,7 @@ $scrollbar-max-width: 17px !default;
 
     &--right {
       right: $grid-gutter-width/2;
+      transform: translate(50%, -50%);
 
       @media (min-width: $mc-bp-xl) {
         right: $grid-gutter-width-xl/2;
@@ -90,6 +91,7 @@ $scrollbar-max-width: 17px !default;
 
     &--left {
       left: $grid-gutter-width/2;
+      transform: translate(-50%, -50%);
 
       @media (min-width: $mc-bp-xl) {
         left: $grid-gutter-width-xl/2;
