@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 import DocSection from '../../utils/DocSection'
@@ -50,4 +50,43 @@ storiesOf('components|Forms/Select', module).add('Select', withProps(Select)(() 
       </PropExample>
     </DocSection>
   </div>
-)))
+))).add('Controlled Select', withProps(Select)(() =>
+    <ControlledSelect />,
+))
+
+class ControlledSelect extends Component {
+  state = { value: null }
+
+  onChange = (value) => {
+    this.setState({ value })
+  }
+
+  defaultValue = {
+    value: null,
+    label: 'Select Story',
+  }
+
+  render () {
+    return (
+      <div className='container'>
+        <h2 className='mc-text-h2'>Select</h2>
+        <DocSection title='Variations'>
+          <PropExample
+            name='controlled Select'
+          >
+            <div className='row'>
+              <div className='col-4'>
+                <Select
+                  options={options}
+                  defaultValue={this.defaultValue}
+                  onChange={this.onChange}
+                  value={this.state.value}
+                />
+              </div>
+            </div>
+          </PropExample>
+        </DocSection>
+      </div>
+    )
+  }
+}
