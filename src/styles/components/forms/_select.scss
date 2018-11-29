@@ -92,7 +92,7 @@
   }
 
   // Mobile only
-  @media (max-width: 768px) {
+  @media (max-width: $mc-bp-md) {
     .mc-select__wrapper {
       &__value-container {
         padding: 2px 8px;
