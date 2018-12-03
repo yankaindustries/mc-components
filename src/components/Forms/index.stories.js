@@ -125,7 +125,7 @@ const Form = reduxForm({
               </Button>
             </div>
 
-            <div className='col-sm-6 mc--invert'>
+            <div className='col-sm-6 mc-invert'>
               <h5 className='mc-text-h5'>Inverted</h5>
               <div className='rounded-box'>
 
