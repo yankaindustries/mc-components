@@ -11,7 +11,6 @@ export default class Radio extends PureComponent {
       PropTypes.arrayOf(PropTypes.node),
     ]),
     className: PropTypes.string,
-    inverted: PropTypes.bool,
     name: PropTypes.string,
     option: PropTypes.string,
 
@@ -23,7 +22,6 @@ export default class Radio extends PureComponent {
       checked,
       label,
       className,
-      inverted,
       name,
       onChange,
       option,
@@ -33,7 +31,6 @@ export default class Radio extends PureComponent {
       [className]: className,
       'mc-input-radio': true,
       'mc-input-radio--checked': checked,
-      'mc-input-radio--invert': inverted,
     })
 
     return (

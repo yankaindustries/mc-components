@@ -11,7 +11,6 @@ export default class Input extends PureComponent {
       PropTypes.string,
     ]),
     help: PropTypes.string,
-    inverted: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
@@ -64,7 +63,6 @@ export default class Input extends PureComponent {
       append,
       error,
       help,
-      inverted,
       disabled,
       label,
       name,
@@ -86,7 +84,6 @@ export default class Input extends PureComponent {
       'mc-form-input--focus': focused,
       'mc-form-input--no-label': !hasLabel,
       'mc-form-input--modified': value,
-      'mc-form-input--invert': inverted,
       'mc-form-input--disabled': disabled,
       'mc-form-input--error': error && touched,
     })
