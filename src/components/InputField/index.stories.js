@@ -90,32 +90,22 @@ const Form = reduxForm({
               <div className='mc-form-group'>
                 <Field
                   component={InputField}
-                  name='error'
-                  label='Error example'
-                  placeholder='Try to fix it?'
-                  error
+                  name='username'
+                  label='Username'
+                  placeholder='john@doe.com'
+                  error='Incorrect Username'
                 />
               </div>
 
               <div className='mc-form-group'>
                 <Field
                   component={InputField}
-                  name='fix-it'
-                  label='There might be a problem...'
-                  placeholder='Try to fix it?'
-                  error
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='password-error'
+                  name='password'
                   type='password'
-                  label='Incorrect Password'
-                  placeholder='Password'
+                  label='Password'
+                  placeholder='12345'
                   prepend={<Lock />}
-                  error
+                  error='Incorrect Password'
                 />
               </div>
 
@@ -188,32 +178,22 @@ const Form = reduxForm({
                 <div className='mc-form-group'>
                   <Field
                     component={InputField}
-                    name='error'
-                    label='Error example'
-                    placeholder='Try to fix it?'
-                    error
+                    name='username'
+                    label='Username'
+                    placeholder='john@doe.com'
+                    error='Incorrect Username'
                   />
                 </div>
 
                 <div className='mc-form-group'>
                   <Field
                     component={InputField}
-                    name='fix-it'
-                    label='There might be a problem...'
-                    placeholder='Try to fix it?'
-                    error
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='password-error'
+                    name='password'
                     type='password'
-                    label='Incorrect Password'
-                    placeholder='Password'
+                    label='Password'
+                    placeholder='12345'
                     prepend={<Lock />}
-                    error
+                    error='Incorrect Password'
                   />
                 </div>
 
