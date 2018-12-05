@@ -45,6 +45,14 @@
     background: none;
     border: 1px solid $mc-color-gray-600;
 
+    &__textarea {
+      color: $mc-color-gray-200;
+    }
+
+    &__label {
+      background: none;
+    }
+
     &:hover,
     &--hover,
     &:focus,
@@ -52,12 +60,21 @@
       border-color: $mc-color-gray-400;
     }
 
-    &__label {
-      background: none;
+    &--disabled {
+      background: $mc-color-gray-600;
+      &:hover { border-color: $mc-color-gray-600; }
     }
 
-    &__textarea {
-      color: $mc-color-gray-200;
+    &--error {
+      border-color: $mc-color-primary;
+
+      &:hover {
+        border-color: $mc-color-primary-hover;
+      }
+
+      .mc-form-textarea__label {
+        color: $mc-color-primary;
+      }
     }
   }
 }

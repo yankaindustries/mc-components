@@ -303,7 +303,7 @@ storiesOf('playground|Pages', module)
 
             <div className='row'>
               <div className='col-md-4'>
-                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                <div className='mc-card mc-card--equal-height mc-background--light mc-invert'>
                   <div className='row align-items-center small-gutters'>
                     <div className='col col-auto'>
                       <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-al-300e6379265c09b2f4b659df27a10cace702dd3beb031af97178f4f1b683adc3.png' />
@@ -337,7 +337,7 @@ storiesOf('playground|Pages', module)
               </div>
 
               <div className='col-md-4'>
-                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                <div className='mc-card mc-card--equal-height mc-background--light mc-invert'>
                   <div className='row align-items-center small-gutters'>
                     <div className='col col-auto'>
                       <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-gr-24c1d9b59bbeadd671a0ef5140e137d07e26368f5b0984a0b90fe5f794700de0.png' />
@@ -371,7 +371,7 @@ storiesOf('playground|Pages', module)
               </div>
 
               <div className='col-md-4'>
-                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                <div className='mc-card mc-card--equal-height mc-background--light mc-invert'>
                   <div className='row align-items-center small-gutters'>
                     <div className='col col-auto'>
                       <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-jp-cde7e157ed95191ad3167e5dea00394798decee7462fc897d71ac6e450cd8b79.png' />
@@ -513,7 +513,7 @@ storiesOf('playground|Pages', module)
                   <div className='col-lg-6'>
                     <div className='row'>
                       <div className='col-12'>
-                        <div className='mc-card mc-background--light mc-text--invert'>
+                        <div className='mc-card mc-background--light mc-invert'>
                           <div className='row align-items-center small-gutters'>
                             <div className='col col-auto'>
                               <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1429/original/1518557721-Slide_Thumb.jpg?1518557721' />
@@ -542,7 +542,7 @@ storiesOf('playground|Pages', module)
                       </div>
 
                       <div className='col-12'>
-                        <div className='mc-card mc-background--light mc-text--invert'>
+                        <div className='mc-card mc-background--light mc-invert'>
                           <div className='row align-items-center small-gutters'>
                             <div className='col col-auto'>
                               <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1194/original/1512075998-Slide_Thumb.jpg?1512075998' />
@@ -579,7 +579,7 @@ storiesOf('playground|Pages', module)
                   </div>
 
                   <div className='col-lg-6'>
-                    <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
+                    <div className='mc-card mc-card--equal-height mc-background--light mc-invert'>
                       <div className='row align-items-center small-gutters'>
                         <div className='col col-auto'>
                           <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/528/original/1488402263-1488323293-SM_SlideThumb_V1_A.jpg?1488402263' />

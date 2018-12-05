@@ -62,7 +62,7 @@ const Form = reduxForm({
 
           <div className='col-sm-6'>
             <h5 className='mc-text-h5'>Inverted</h5>
-            <div className='rounded-box'>
+            <div className='rounded-box mc-invert'>
               <div className='form-group'>
                 <Field
                   component={CheckboxField}

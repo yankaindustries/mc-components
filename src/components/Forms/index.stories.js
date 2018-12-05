@@ -125,9 +125,9 @@ const Form = reduxForm({
               </Button>
             </div>
 
-            <div className='col-sm-6 mc-invert'>
+            <div className='col-sm-6'>
               <h5 className='mc-text-h5'>Inverted</h5>
-              <div className='rounded-box'>
+              <div className='rounded-box mc-invert'>
 
                 <div className='mc-form-group'>
                   <div className='row'>
@@ -137,7 +137,6 @@ const Form = reduxForm({
                         name='firstName'
                         label='First name'
                         placeholder='John'
-                        inverted
                       />
                     </div>
 
@@ -147,7 +146,6 @@ const Form = reduxForm({
                         name='lastName'
                         label='Last name'
                         placeholder='Doe'
-                        inverted
                       />
                     </div>
                   </div>
@@ -160,7 +158,6 @@ const Form = reduxForm({
                     label='Email'
                     type='email'
                     placeholder='john@google.com'
-                    inverted
                   />
                 </div>
 
@@ -170,7 +167,6 @@ const Form = reduxForm({
                     name='bio'
                     label='Tell us about yourself'
                     placeholder='This is the story of a girl...'
-                    inverted
                   />
                 </div>
 
@@ -180,7 +176,6 @@ const Form = reduxForm({
                     name='billing'
                     option='yearly'
                     label='Bill me yearly ($180)'
-                    inverted
                   />
 
                   <Field
@@ -188,7 +183,6 @@ const Form = reduxForm({
                     name='billing'
                     option='monthly'
                     label='Bill me monthly ($20)'
-                    inverted
                   />
                 </div>
 
@@ -200,7 +194,6 @@ const Form = reduxForm({
                     placeholder='Password'
                     help='Must be at least 8 characters'
                     prepend={<Lock />}
-                    inverted
                   />
                 </div>
 
@@ -211,7 +204,6 @@ const Form = reduxForm({
                     type='password'
                     placeholder='Confirm Password'
                     prepend={<Lock />}
-                    inverted
                   />
                 </div>
 
@@ -220,7 +212,6 @@ const Form = reduxForm({
                     component={CheckboxField}
                     name='terms'
                     label='I agree to the terms'
-                    inverted
                   />
                 </div>
 
