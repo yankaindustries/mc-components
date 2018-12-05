@@ -11,7 +11,6 @@ export default class Textarea extends PureComponent {
       PropTypes.string,
     ]),
     help: PropTypes.string,
-    inverted: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
@@ -63,7 +62,6 @@ export default class Textarea extends PureComponent {
     const {
       disabled,
       error,
-      inverted,
       label,
       name,
       value,
@@ -81,7 +79,6 @@ export default class Textarea extends PureComponent {
       'mc-form-textarea--focus': focused,
       'mc-form-textarea--no-label': !label && !error,
       'mc-form-textarea--modified': value,
-      'mc-form-textarea--invert': inverted,
       'mc-form-textarea--disabled': disabled,
       'mc-form-textarea--error': error,
     })
