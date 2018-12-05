@@ -64,19 +64,17 @@ const Form = reduxForm({
 
           <div className='col-sm-6'>
             <h5 className='mc-text-h5'>Inverted</h5>
-            <div className='form-group'>
+            <div className='form-group mc-invert'>
               <Field
                 component={CheckboxField}
                 name='terms'
                 label='I agree to the terms'
-                inverted
               />
 
               <Field
                 component={CheckboxField}
                 name='twice'
                 label='I like checking things twice'
-                inverted
               />
 
               <Field
@@ -90,7 +88,6 @@ const Form = reduxForm({
                   Suspendisse rutrum placerat lectus, sit amet faucibus augue
                   elementum at. Aliquam congue non erat eu pellentesque.
                 '
-                inverted
               />
             </div>
           </div>
