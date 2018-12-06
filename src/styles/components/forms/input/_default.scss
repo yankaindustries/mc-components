@@ -1,11 +1,11 @@
 .mc-form-input {
   display: flex;
   align-items: center;
-  border: 1px solid $mc-color-gray-600;
-  background: transparent;
+  border: 1px solid $mc-color-gray-300;
+  background: $mc-color-gray-200;
   border-radius: 4px;
   width: 100%;
-  color: $mc-color-gray-500;
+
   cursor: text;
   transition:
     border 200ms ease,
@@ -19,6 +19,7 @@
 
     input {
       font-family: $mc-font-default;
+      color: $mc-color-gray-600;
       background: none;
       outline: none;
       border: 0;
@@ -31,7 +32,7 @@
 
       &::placeholder {
         opacity: 0;
-        color: $mc-color-gray-400;
+        color: $mc-color-gray-500;
         text-overflow: ellipsis;
         transition: opacity 150ms ease 0ms;
       }
@@ -43,8 +44,8 @@
   }
 
   &--focus {
+    color: $mc-color-gray-600;
     border-color: $mc-color-gray-400;
-    color: $mc-color-gray-100;
   }
 
   &--focus,

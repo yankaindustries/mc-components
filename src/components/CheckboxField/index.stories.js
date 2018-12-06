@@ -32,7 +32,37 @@ const Form = reduxForm({
           <div className='col-sm-6'>
             <h5 className='mc-text-h5'>Default</h5>
 
-            <div className='rounded-box'>
+            <div className='form-group'>
+              <Field
+                component={CheckboxField}
+                name='terms'
+                label='I agree to the terms'
+              />
+
+              <Field
+                component={CheckboxField}
+                name='twice'
+                label='I like checking things twice'
+              />
+
+              <Field
+                component={CheckboxField}
+                name='lipsum'
+                label='
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
+                  dui nibh. Morbi facilisis efficitur orci, in facilisis leo.
+                  Donec libero libero, egestas non lacus in, ullamcorper suscipit
+                  nisi. Aenean nisi erat, ultricies nec metus id, sagittis tortor.
+                  Suspendisse rutrum placerat lectus, sit amet faucibus augue
+                  elementum at. Aliquam congue non erat eu pellentesque.
+                '
+              />
+            </div>
+          </div>
+
+          <div className='col-sm-6'>
+            <h5 className='mc-text-h5'>Inverted</h5>
+            <div className='rounded-box mc-invert'>
               <div className='form-group'>
                 <Field
                   component={CheckboxField}
@@ -59,39 +89,6 @@ const Form = reduxForm({
                   '
                 />
               </div>
-            </div>
-          </div>
-
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Inverted</h5>
-            <div className='form-group'>
-              <Field
-                component={CheckboxField}
-                name='terms'
-                label='I agree to the terms'
-                inverted
-              />
-
-              <Field
-                component={CheckboxField}
-                name='twice'
-                label='I like checking things twice'
-                inverted
-              />
-
-              <Field
-                component={CheckboxField}
-                name='lipsum'
-                label='
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
-                  dui nibh. Morbi facilisis efficitur orci, in facilisis leo.
-                  Donec libero libero, egestas non lacus in, ullamcorper suscipit
-                  nisi. Aenean nisi erat, ultricies nec metus id, sagittis tortor.
-                  Suspendisse rutrum placerat lectus, sit amet faucibus augue
-                  elementum at. Aliquam congue non erat eu pellentesque.
-                '
-                inverted
-              />
             </div>
           </div>
         </div>

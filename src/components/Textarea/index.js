@@ -10,8 +10,6 @@ export default class Textarea extends PureComponent {
       PropTypes.bool,
       PropTypes.string,
     ]),
-    help: PropTypes.string,
-    inverted: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
@@ -63,9 +61,9 @@ export default class Textarea extends PureComponent {
     const {
       disabled,
       error,
-      inverted,
       label,
       name,
+      touched,
       value,
 
       onChange,
@@ -76,26 +74,28 @@ export default class Textarea extends PureComponent {
       focused,
     } = this.state
 
+    const showError = error && touched
+    const hasLabel = label || showError
+
     const classes = cn({
       'mc-form-textarea': true,
-      'mc-form-textarea--focus': focused,
-      'mc-form-textarea--no-label': !label && !error,
-      'mc-form-textarea--modified': value,
-      'mc-form-textarea--invert': inverted,
       'mc-form-textarea--disabled': disabled,
-      'mc-form-textarea--error': error,
+      'mc-form-textarea--error': showError,
+      'mc-form-textarea--focus': focused,
+      'mc-form-textarea--modified': value,
+      'mc-form-textarea--no-label': !hasLabel,
     })
 
     return (
       <div className={classes}>
-        {(error || label) &&
-          <label
-            htmlFor={name}
-            className='mc-form-textarea__label'
-          >
-            {error || label}
-          </label>
-        }
+      {hasLabel &&
+        <label
+          htmlFor={name}
+          className='mc-form-textarea__label'
+        >
+          {(touched && error) || label}
+        </label>
+      }
 
         <textarea
           name={name}

@@ -147,10 +147,10 @@ storiesOf('foundation|Type', module)
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>Invert</h5>
-          <div className='rounded-box'>
-            <p className='mc-text--invert'>The quick brown fox jumped over the lazy dog.</p>
+          <div className='rounded-box mc-invert'>
+            <p>The quick brown fox jumped over the lazy dog.</p>
           </div>
-          <p className='mc-text--muted mc-text--monospace'>.mc-text--invert</p>
+          <p className='mc-text--muted mc-text--monospace'>.mc-invert p</p>
         </div>
 
         <div className='align-items-center example--section'>
@@ -244,16 +244,16 @@ storiesOf('foundation|Type', module)
 
         <div className='align-items-center example--section'>
           <h5 className='mc-text-h5'>On a white background</h5>
-          <div className='rounded-box'>
+          <div className='rounded-box mc-invert'>
             <div className='row'>
               <div className='col-sm-4'>
-                <p className='mc-text-hr mc-text--invert'><span>This can</span></p>
+                <p className='mc-text-hr'><span>This can</span></p>
               </div>
               <div className='col-sm-4'>
-                <p className='mc-text-hr mc-text--invert mc-text--uppercase'><span>also be used</span></p>
+                <p className='mc-text-hr mc-text--uppercase'><span>also be used</span></p>
               </div>
               <div className='col-sm-4'>
-                <p className='mc-text-hr mc-text--invert'><span>on a white background</span></p>
+                <p className='mc-text-hr'><span>on a white background</span></p>
               </div>
             </div>
           </div>

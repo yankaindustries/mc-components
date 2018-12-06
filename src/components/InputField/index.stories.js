@@ -37,8 +37,94 @@ const Form = reduxForm({
           <div className='row'>
             <div className='col-sm-6'>
               <h5 className='mc-text-h5'>Default</h5>
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='color'
+                  label='What is your favorite color?'
+                  placeholder='Red, orange, yellow, green, blue, violet, or something else?'
+                />
+              </div>
 
-              <div className='rounded-box'>
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='best'
+                  label='Who sang it best?'
+                  placeholder='Madonna or Britney?'
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='prepend'
+                  placeholder='Search'
+                  prepend={<MagnifyingGlass />}
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='prepend-password'
+                  type='password'
+                  placeholder='Password'
+                  help='You have a secret'
+                  prepend={<Lock />}
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='append'
+                  label='Field with appended icon'
+                  placeholder='Hint: It is a close icon!'
+                  append={<Close />}
+                />
+              </div>
+
+              <hr />
+
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='username'
+                  label='Username'
+                  placeholder='john@doe.com'
+                  error='Incorrect Username'
+                />
+              </div>
+
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='password'
+                  type='password'
+                  label='Password'
+                  placeholder='12345'
+                  prepend={<Lock />}
+                  error='Incorrect Password'
+                />
+              </div>
+
+              <hr />
+
+              <div className='mc-form-group'>
+                <Field
+                  component={InputField}
+                  name='disabled'
+                  label='Disabled field'
+                  placeholder='Not clickable!'
+                  disabled
+                />
+              </div>
+            </div>
+
+            <div className='col-sm-6'>
+              <h5 className='mc-text-h5'>Inverted</h5>
+              <div className='rounded-box mc-invert'>
                 <div className='mc-form-group'>
                   <Field
                     component={InputField}
@@ -92,32 +178,22 @@ const Form = reduxForm({
                 <div className='mc-form-group'>
                   <Field
                     component={InputField}
-                    name='error'
-                    label='Error example'
-                    placeholder='Try to fix it?'
-                    error
+                    name='username'
+                    label='Username'
+                    placeholder='john@doe.com'
+                    error='Incorrect Username'
                   />
                 </div>
 
                 <div className='mc-form-group'>
                   <Field
                     component={InputField}
-                    name='fix-it'
-                    label='There might be a problem...'
-                    placeholder='Try to fix it?'
-                    error
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='password-error'
+                    name='password'
                     type='password'
-                    label='Incorrect Password'
-                    placeholder='Password'
+                    label='Password'
+                    placeholder='12345'
                     prepend={<Lock />}
-                    error
+                    error='Incorrect Password'
                   />
                 </div>
 
@@ -132,113 +208,6 @@ const Form = reduxForm({
                     disabled
                   />
                 </div>
-              </div>
-            </div>
-
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Inverted</h5>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='color'
-                  label='What is your favorite color?'
-                  placeholder='Red, orange, yellow, green, blue, violet, or something else?'
-                  inverted
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='best'
-                  label='Who sang it best?'
-                  placeholder='Madonna or Britney?'
-                  inverted
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='prepend'
-                  placeholder='Search'
-                  prepend={<MagnifyingGlass />}
-                  inverted
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='prepend-password'
-                  type='password'
-                  placeholder='Password'
-                  help='You have a secret'
-                  prepend={<Lock />}
-                  inverted
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='append'
-                  label='Field with appended icon'
-                  placeholder='Hint: It is a close icon!'
-                  append={<Close />}
-                  inverted
-                />
-              </div>
-
-              <hr />
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='error'
-                  label='Error example'
-                  placeholder='Try to fix it?'
-                  inverted
-                  error
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='fix-it'
-                  label='There might be a problem...'
-                  placeholder='Try to fix it?'
-                  inverted
-                  error
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='password-error'
-                  type='password'
-                  label='Incorrect Password'
-                  placeholder='Password'
-                  prepend={<Lock />}
-                  inverted
-                  error
-                />
-              </div>
-
-              <hr />
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='disabled'
-                  label='Disabled field'
-                  placeholder='Not clickable!'
-                  inverted
-                  disabled
-                />
               </div>
             </div>
           </div>

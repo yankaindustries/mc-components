@@ -11,7 +11,6 @@ export default class Input extends PureComponent {
       PropTypes.string,
     ]),
     help: PropTypes.string,
-    inverted: PropTypes.bool,
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
@@ -62,33 +61,34 @@ export default class Input extends PureComponent {
   render () {
     const {
       append,
+      disabled,
       error,
       help,
-      inverted,
-      disabled,
       label,
       name,
       prepend,
-      value,
       touched,
+      value,
+
       onChange,
+
       ...props
     } = this.props
-
-    const hasLabel = label || (error && touched)
 
     const {
       focused,
     } = this.state
 
+    const showError = error && touched
+    const hasLabel = label || showError
+
     const classes = cn({
       'mc-form-input': true,
-      'mc-form-input--focus': focused,
-      'mc-form-input--no-label': !hasLabel,
-      'mc-form-input--modified': value,
-      'mc-form-input--invert': inverted,
       'mc-form-input--disabled': disabled,
-      'mc-form-input--error': error && touched,
+      'mc-form-input--error': showError,
+      'mc-form-input--focus': focused,
+      'mc-form-input--modified': value,
+      'mc-form-input--no-label': !hasLabel,
     })
 
     return (

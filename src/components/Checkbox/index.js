@@ -7,7 +7,6 @@ export default class Checkbox extends PureComponent {
   static propTypes = {
     checked: PropTypes.bool,
     className: PropTypes.string,
-    inverted: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
@@ -21,7 +20,6 @@ export default class Checkbox extends PureComponent {
     const {
       label,
       className,
-      inverted,
       name,
       onChange,
       checked,
@@ -31,7 +29,6 @@ export default class Checkbox extends PureComponent {
       [className]: className,
       'mc-input-checkbox': true,
       'mc-input-checkbox--checked': checked,
-      'mc-input-checkbox--invert': inverted,
     })
 
     return (

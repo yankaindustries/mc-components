@@ -19,12 +19,14 @@ const TextareaField = ({
   input,
   meta: {
     error,
+    touched,
   },
   ...props
 }) => (
   <Textarea
-    {...input}
     error={error}
+    touched={touched}
+    {...input}
     {...props}
   />
 )
