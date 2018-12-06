@@ -18,16 +18,16 @@
 .mc-form-input--error {
   border-color: $mc-color-primary;
 
-  .mc-form-input__label {
-    color: $mc-color-primary;
-  }
-
   &:hover {
     border-color: $mc-color-primary-hover;
   }
 
+  .mc-form-input__label {
+    color: $mc-color-primary;
+  }
+
   // Override default focus state
-  // with chained css selector
+  // with more specificty for errors
   &.mc-form-input--focus,
   &.mc-form-input--modified {
     border-color: $mc-color-primary-active;
@@ -52,51 +52,41 @@
 }
 
 // Inverted styles
-.mc-invert .mc-form-input {
-  border: 1px solid $mc-color-gray-600;
-  background: transparent;
-  color: $mc-color-gray-500;
+.mc-invert {
+  .mc-form-input {
+    background: transparent;
+    border: 1px solid $mc-color-gray-600;
+    color: $mc-color-gray-500;
 
-  &:hover,
-  &--focus {
-    border-color: $mc-color-gray-400;
-    color: $mc-color-gray-100;
-  }
-
-  &__input {
-    input {
-      color: $mc-color-gray-200;
-    }
-  }
-
-  // These styles need to be redefined
-  // because of the above specificity
-  // (it just mirrors what's above on the regular
-  // default error class)
-  &--error {
-    border-color: $mc-color-primary;
-
-    &:hover {
-      border-color: $mc-color-primary-hover;
+    &:hover,
+    &--focus {
+      border-color: $mc-color-gray-400;
+      color: $mc-color-gray-100;
     }
 
-    // Override default focus state
-    // with chained css selector
-    &.mc-form-input--focus,
-    &.mc-form-input--modified {
-      border-color: $mc-color-primary-active;
-
-      .mc-form-input__label {
-        color: $mc-color-primary;
+    &__input {
+      input {
+        color: $mc-color-gray-200;
       }
     }
-  }
 
-  &--disabled {
-    background: $mc-color-gray-600;
+    // These styles need to be redefined
+    // because of the above specificity
+    // (it just mirrors what's above on the regular
+    // default error class)
+    &--error {
+      &.mc-form-input--focus,
+      &.mc-form-input--modified {
+        border-color: $mc-color-primary-active;
+      }
+    }
 
-    &:hover {
-      border-color: $mc-color-gray-600;
+    &--disabled {
+      background: $mc-color-gray-600;
+
+      &:hover {
+        border-color: $mc-color-gray-600;
+      }
     }
   }
 }
