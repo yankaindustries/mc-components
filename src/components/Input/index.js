@@ -73,19 +73,21 @@ export default class Input extends PureComponent {
       ...props
     } = this.props
 
-    const hasLabel = label || (error && touched)
-
     const {
       focused,
     } = this.state
 
+    const showError = error && touched
+    const hasLabel = label || showError
+    const isModified = value || showError
+
     const classes = cn({
       'mc-form-input': true,
-      'mc-form-input--focus': focused,
-      'mc-form-input--no-label': !hasLabel,
-      'mc-form-input--modified': value,
       'mc-form-input--disabled': disabled,
-      'mc-form-input--error': error && touched,
+      'mc-form-input--error': showError,
+      'mc-form-input--focus': focused,
+      'mc-form-input--modified': isModified,
+      'mc-form-input--no-label': !hasLabel,
     })
 
     return (
