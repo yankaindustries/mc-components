@@ -8,7 +8,6 @@
       padding: $input-padding;
 
       input::placeholder {
-        color: $mc-color-gray-500;
         opacity: 1;
       }
     }
@@ -18,6 +17,10 @@
 // Error states
 .mc-form-input--error {
   border-color: $mc-color-primary;
+
+  .mc-form-input__label {
+    color: $mc-color-primary;
+  }
 
   &:hover {
     border-color: $mc-color-primary-hover;
@@ -31,15 +34,6 @@
 
     .mc-form-input__label {
       color: $mc-color-primary;
-    }
-  }
-
-  .mc-form-input {
-    &__input {
-      input::placeholder {
-        color: $mc-color-gray-600;
-        opacity: 1;
-      }
     }
   }
 }
@@ -94,14 +88,6 @@
 
       .mc-form-input__label {
         color: $mc-color-primary;
-      }
-    }
-
-    .mc-form-input {
-      &__input {
-        input::placeholder {
-          color: $mc-color-gray-600;
-        }
       }
     }
   }
