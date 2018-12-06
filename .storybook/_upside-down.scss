@@ -47,6 +47,10 @@ hr {
   border: none;
   background: $mc-color-gray-100;
   margin: 1em 0;
+
+  @at-root .mc-invert & {
+    background: $mc-color-gray-600;
+  }
 }
 
 a {
