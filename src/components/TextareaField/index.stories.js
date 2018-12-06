@@ -20,7 +20,6 @@ const Form = reduxForm({
   form: 'textarea',
   initialValues: {
     bio: 'I am me, of course.',
-    error: 'Looks like a problem.',
   },
 })(
   () =>
@@ -57,6 +56,7 @@ const Form = reduxForm({
                   component={TextareaField}
                   name='error'
                   label='What have we here?'
+                  placeholder='I dont know, dont ask me!'
                   error='Something is wrong'
                 />
               </div>
@@ -96,6 +96,7 @@ const Form = reduxForm({
                     component={TextareaField}
                     name='error'
                     label='What have we here?'
+                    placeholder='I dont know, dont ask me!'
                     error='Something is wrong'
                   />
                 </div>

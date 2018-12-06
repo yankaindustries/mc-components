@@ -32,7 +32,32 @@ const Form = reduxForm({
           <div className='col-sm-6'>
             <h5 className='mc-text-h5'>Default</h5>
 
-            <div className='rounded-box'>
+            <Field
+              component={RadioField}
+              name='color'
+              label='Red'
+              option='red'
+            />
+
+            <Field
+              component={RadioField}
+              name='color'
+              label='Green'
+              option='green'
+            />
+
+            <Field
+              component={RadioField}
+              name='color'
+              label='Blue'
+              option='blue'
+            />
+          </div>
+
+          <div className='col-sm-6'>
+            <h5 className='mc-text-h5'>Inverted</h5>
+
+            <div className='rounded-box mc-invert'>
               <Field
                 component={RadioField}
                 name='color'
@@ -54,34 +79,6 @@ const Form = reduxForm({
                 option='blue'
               />
             </div>
-          </div>
-
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Inverted</h5>
-
-            <Field
-              component={RadioField}
-              name='color'
-              label='Red'
-              option='red'
-              inverted
-            />
-
-            <Field
-              component={RadioField}
-              name='color'
-              label='Green'
-              option='green'
-              inverted
-            />
-
-            <Field
-              component={RadioField}
-              name='color'
-              label='Blue'
-              option='blue'
-              inverted
-            />
           </div>
         </div>
       </div>
