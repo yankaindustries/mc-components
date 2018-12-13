@@ -27,9 +27,6 @@ a {
 
 
 .mc-text {
-  &-d1 { @include step(font-size, 11); }
-  &-d2 { @include step(font-size, 10); }
-
   &-h1 { @include step(font-size, 9); }
   &-h2 { @include step(font-size, 8); }
   &-h3 { @include step(font-size, 7); }
@@ -39,9 +36,6 @@ a {
   &-h7 { @include step(font-size, 3.5); }
   &-h8 { @include step(font-size, 3); }
 
-  &-d1,
-  &-d2,
-  &-d3,
   &-h1,
   &-h2,
   &-h3,
