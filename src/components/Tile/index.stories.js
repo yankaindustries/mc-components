@@ -21,7 +21,9 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 storiesOf('components|Tiles', module)
   .add('Summary', () => (
     <div className='container'>
-      <h2 className='mc-text-h2'>Tile</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>Tile</h1>
+      </div>
 
       <div className='row'>
         <div className='col-lg-4 col-md-6'>
@@ -47,10 +49,10 @@ storiesOf('components|Tiles', module)
           <DocSection title='TileCaption'>
             <Tile>
               <TileCaption>
-                <h3 className='mc-text-h4 mc-text--uppercase'>
+                <h3 className='mc-text-h5 mc-text--uppercase'>
                   Shonda Rhimes
                 </h3>
-                <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
+                <h4 className='mc-text--muted'>
                   Teaches Writing
                 </h4>
               </TileCaption>
@@ -110,10 +112,10 @@ storiesOf('components|Tiles', module)
                           animating={hovering}
                         >
                           <TileCaption>
-                            <h3 className='mc-text-h4 mc-text--uppercase'>
+                            <h3 className='mc-text-h5 mc-text--uppercase'>
                               Shonda Rhimes
                             </h3>
-                            <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
+                            <h4 className='mc-text--muted'>
                               Teaches Writing
                             </h4>
                           </TileCaption>
@@ -163,10 +165,10 @@ storiesOf('components|Tiles', module)
                           : 'transparent'
                         }
                       >
-                        <h3 className='mc-text-h4 mc-text--uppercase'>
+                        <h3 className='mc-text-h5 mc-text--uppercase'>
                           Shonda Rhimes
                         </h3>
-                        <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
+                        <h4 className='mc-text--muted'>
                           Teaches Writing
                         </h4>
                       </Background>
@@ -216,7 +218,9 @@ storiesOf('components|Tiles', module)
 storiesOf('components|Tiles/Tile', module)
   .add('Tile', () => (
     <div className='container'>
-      <h2 className='mc-text-h2'>Tile</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>Tile</h1>
+      </div>
 
       <DocSection title='Variations'>
         <PropExample

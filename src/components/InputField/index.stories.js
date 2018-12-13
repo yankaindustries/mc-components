@@ -29,11 +29,11 @@ const Form = reduxForm({
   () =>
     <div className='example-mc-type'>
       <div className='container'>
-        <div className='example--section'>
-          <h2 className='mc-text-d1'>InputField</h2>
+        <div className='example__heading'>
+          <h1 className='mc-text-h1'>InputField</h1>
         </div>
 
-        <div className='example--section'>
+        <div className='example__section'>
           <div className='row'>
             <div className='col-sm-6'>
               <h5 className='mc-text-h5'>Default</h5>

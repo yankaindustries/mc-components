@@ -11,7 +11,9 @@ import FacebookIcon from '../Icons/Facebook'
 storiesOf('components|Button', module)
   .add('Button', withProps(Button)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>Button</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>Button</h1>
+      </div>
 
       <DocSection title='Variations'>
         <PropExample

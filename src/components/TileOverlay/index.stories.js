@@ -15,7 +15,9 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 storiesOf('components|Tiles/TileOverlay', module)
   .add('TileOverlay', withProps(TileOverlay)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>TileOverlay</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>TileOverlay</h1>
+      </div>
 
       <DocSection title='Props'>
         <PropExample

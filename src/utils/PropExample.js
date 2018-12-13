@@ -15,11 +15,11 @@ export default class Definition extends PureComponent {
     const { name, type, children } = this.props
 
     return (
-      <div className='example--definition'>
+      <div className='example__definition'>
         <p>
-          <span className='example--definition-name'>{name}</span>
+          <span className='example__definition-name'>{name}</span>
           {type &&
-            <span className='example--definition-type'>
+            <span className='example__definition-type'>
               &nbsp;&lt;{type}&gt;
             </span>
           }

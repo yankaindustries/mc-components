@@ -24,12 +24,12 @@ const Form = reduxForm({
 })(
   () =>
     <div className='container'>
-      <div className='example--section'>
-        <h2 className='mc-text-d1'>Textarea</h2>
-        <p>Some various textareas...</p>
+      <div className='example__section'>
+        <h1 className='mc-text-h1'>Textarea</h1>
+        <p className='mc-text--muted'>Some various textareas...</p>
       </div>
 
-      <div className='example--section'>
+      <div className='example__section'>
         <div className='mc-form'>
           <div className='row'>
             <div className='col-sm-6'>

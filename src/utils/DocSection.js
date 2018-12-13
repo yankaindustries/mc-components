@@ -12,7 +12,7 @@ export default class Section extends PureComponent {
     const { title, children } = this.props
 
     return (
-      <div className='example--section'>
+      <div className='example__section'>
         <h4 className='mc-text-h4'>{title}</h4>
         {children}
       </div>

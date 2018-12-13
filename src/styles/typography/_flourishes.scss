@@ -28,12 +28,8 @@
       right: 100%;
     }
   }
-}
 
-// Tie into the same "invert" class we use
-// for text
-.mc-invert {
-  .mc-text-hr {
+  .mc-invert & {
     span {
       &:before,
       &:after {

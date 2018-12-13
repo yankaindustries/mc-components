@@ -1,20 +1,27 @@
 // stylelint-disable declaration-no-important
 .mc-text {
   // Transformation
-  &--uppercase { text-transform: uppercase !important; }
+  &--uppercase {
+    letter-spacing: 0.12em;
+    text-transform: uppercase !important;
+  }
   &--lowercase { text-transform: lowercase !important; }
   &--capitalize { text-transform: capitalize !important; }
 
   // Weight / opacity
-  &--bold { font-weight: 600 !important; }
+  &--bold { font-weight: 700 !important; }
   &--italic { font-style: italic !important; }
-  &--normal { font-weight: 500 !important; }
-  &--x-light { font-weight: 300 !important; }
+  &--normal { font-weight: 400 !important; }
+  &--light { font-weight: 300 !important; }
   &--muted { opacity: 0.5 !important; }
-  &--silenced { opacity: 0.25 !important; }
+  &--silenced { opacity: 0.3 !important; }
 
   // Treatments
-  &--airy { letter-spacing: 0.24em !important; }
+  &--airy {
+    font-weight: 400 !important;
+    letter-spacing: 0.24em !important;
+    text-transform: uppercase !important;
+  }
 
   // Colors
   &--twitter { color: $mc-color-twitter; }
