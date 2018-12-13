@@ -8,7 +8,7 @@ body {
   font-family: $mc-font-default;
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
-  line-height: 1.5em;
+  line-height: 1.5;
   letter-spacing: 0.04em;
 
   -webkit-font-smoothing: antialiased;
@@ -51,22 +51,22 @@ a {
   &-h7,
   &-h8 {
     font-weight: 700;
-    line-height: 1.25em;
+    line-height: 1.25;
   }
 
   &-large {
     @include step(font-size, 5);
-    line-height: 1.7em;
+    line-height: 1.7;
   }
 
   &-small {
     @include step(font-size, 3.5);
-    line-height: 1.25em;
+    line-height: 1.25;
   }
 
   &-x-small {
     @include step(font-size, 3);
-    line-height: 1.25em;
+    line-height: 1.25;
   }
 
   &-link {
