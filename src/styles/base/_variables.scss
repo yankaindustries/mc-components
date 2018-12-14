@@ -29,8 +29,8 @@ $mc-color-tertiary:            $mc-color-gray-400 !default;
 $mc-color-tertiary-hover:      $mc-color-gray-300 !default;
 $mc-color-tertiary-active:     $mc-color-gray-200 !default;
 
-$mc-color-background:          #090909 !default;
-$mc-color-background-invert:   #ebeeee !default;
+$mc-color-background:          $mc-color-dark !default;
+$mc-color-background-invert:   $mc-color-light !default;
 $mc-color-text:                $mc-color-light !default;
 $mc-color-text-invert:         #8ca1c1 !default;
 
