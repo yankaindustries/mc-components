@@ -148,6 +148,7 @@ export default class Carousel extends PureComponent {
           slidesToScroll={scrollCount}
           slidesToShow={showCount}
           infinite={loop}
+          draggable={false}
           {...arrows}
           {...restProps}
         >
