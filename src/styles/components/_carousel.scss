@@ -4,6 +4,24 @@ $scrollbar-max-width: 17px !default;
 .mc-carousel {
   position: relative;
 
+  // We need to override slick sliders default scss
+  // so that we can have cool hover effects and not cut off
+  // tiles that overflow the slick container
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-slide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+  }
+
+  .slick-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   &__container {
     margin: 0 calc(50% - 50vw + #{$scrollbar-max-width / 2});
     padding: 0 calc(50vw - 50% - #{$scrollbar-max-width / 2});
@@ -106,8 +124,9 @@ $scrollbar-max-width: 17px !default;
   }
 
   &--overflow {
-    .slick-list {
-      overflow: visible;
+    .slick-slide {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 
