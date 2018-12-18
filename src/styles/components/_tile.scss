@@ -157,10 +157,6 @@
 }
 
 .mc-tile-overlay {
-  // 1.01 guarantees extra coverage in case of
-  // pixel rounding down to be too small
-  transform: scale(1.01);
-
   &--gradient-bottom {
     background:
       linear-gradient(
@@ -168,7 +164,7 @@
         rgba($mc-color-dark, 0.9) 0,
         rgba($mc-color-dark, 0.6) 25%,
         rgba($mc-color-dark, 0) 45%
-      );
+      ) center no-repeat;
   }
 
   &--offset-spotlight {
