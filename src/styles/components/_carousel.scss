@@ -3,6 +3,7 @@ $scrollbar-max-width: 17px !default;
 
 .mc-carousel {
   position: relative;
+  pointer-events: auto;
 
   // We need to override slick sliders default scss
   // so that we can have cool hover effects and not cut off
@@ -23,9 +24,10 @@ $scrollbar-max-width: 17px !default;
   }
 
   &__container {
-    margin: 0 calc(50% - 50vw + #{$scrollbar-max-width / 2});
-    padding: 0 calc(50vw - 50% - #{$scrollbar-max-width / 2});
+    margin: -999px calc(50% - 50vw + #{$scrollbar-max-width / 2});
+    padding: 999px calc(50vw - 50% - #{$scrollbar-max-width / 2});
     overflow: hidden;
+    pointer-events: none;
   }
 
   .slick-dots {
