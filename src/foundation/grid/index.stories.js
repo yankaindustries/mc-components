@@ -15,6 +15,7 @@ storiesOf('foundation|Grid', module)
 
       <div className='example__section'>
         <p className='mc-text--muted mc-text--monospace'>.row</p>
+
         <CodeExample>
           <div className='row'>
             <div className='col-6'>
@@ -72,6 +73,26 @@ storiesOf('foundation|Grid', module)
             </div>
           </div>
         </CodeExample>
+      </div>
+
+      <div className='uncontainer'>
+        <div className='rounded-box'>
+          <h2 className='mc-text-h2'>
+            Pro tip!
+          </h2>
+          <p className=''>
+            You can use the <span className='mc-text--monospace'>.uncontainer</span>
+            class name to break any div out from the inside of a container div.
+          </p>
+
+          <p>
+            The <span className='mc-text--monospace'>.uncontainer</span>
+            class pulls your content out of the wrapping
+            <span className='mc-text--monospace'>.container</span> class
+            so your content lines up just as if it were inside a regular
+            container!
+          </p>
+        </div>
       </div>
 
       <div className='example__section'>
