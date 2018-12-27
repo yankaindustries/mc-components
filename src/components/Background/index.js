@@ -39,9 +39,9 @@ export default class Background extends PureComponent {
       'right top',
     ]),
     size: PropTypes.oneOf([
+      'auto',
       'contain',
       'cover',
-      'none',
     ]),
   }
 
