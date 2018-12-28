@@ -2,7 +2,7 @@
 import React from 'react'
 
 const Loader = props => (
-  <svg viewBox="0 0 120 30" fill="#fff" width="1em" height="1em" {...props}>
+  <svg viewBox="0 0 120 30" fill="currentColor" width="1em" height="1em" {...props}>
     <circle cx={15} cy={15} r={15}>
       <animate
         attributeName="r"
