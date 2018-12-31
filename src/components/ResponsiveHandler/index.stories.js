@@ -23,7 +23,7 @@ storiesOf('utilities|ResponsiveHandler', module)
         </p>
       </div>
 
-      <DocSection title='Example'>
+      <DocSection title='Demo'>
         <PropExample>
           <div className='row row--vertcal-space'>
             <div className='col-12'>

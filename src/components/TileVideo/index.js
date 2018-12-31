@@ -25,7 +25,7 @@ export default class TileVideo extends PureComponent {
     autoPlay: false,
     controls: false,
     loop: false,
-    muted: false,
+    muted: true,
   }
 
   constructor (props) {

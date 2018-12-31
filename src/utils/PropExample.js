@@ -22,17 +22,16 @@ export default class Definition extends PureComponent {
 
     return (
       <div className='example__definition'>
-        <p>
-          <span className='example__definition-name mc-text--bold'>
-            {name}
-          </span>
-          {' '}
-          {type &&
-            <span className='example__definition-type mc-text--monospace'>
-              &lt;{type}&gt;
-            </span>
-          }
+        <p className='example__definition-name mc-text--bold'>
+          {name}
         </p>
+        {' '}
+
+        {type &&
+          <p className='example__definition-type mc-text--monospace mc-text--nowrap'>
+            &lt;{type}&gt;
+          </p>
+        }
 
         {description &&
           <p className='example__definition-description mc-text--muted'>
