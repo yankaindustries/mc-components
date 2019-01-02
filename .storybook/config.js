@@ -1,6 +1,5 @@
 import { configure, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
-import { setDefaults } from '@storybook/addon-info';
 
 import './styles.scss'
 import 'highlight.js/styles/tomorrow-night.css'
@@ -13,12 +12,6 @@ setOptions({
   selectedAddonPanel: 'mc/props/panel',
   sortStoriesByKind: true,
 });
-
-// Info Defaults
-setDefaults({
-  header: false,
-  inline: true,
-})
 
 const req = require.context('../src', true, /\.stories\.js$/)
 
