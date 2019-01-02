@@ -130,13 +130,6 @@ $scrollbar-max-width: 17px !default;
     }
   }
 
-  &--overflow {
-    .slick-slide {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
-
   // DEPRECATED
   &__slide {
     width: 320px;

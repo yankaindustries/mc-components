@@ -234,6 +234,50 @@ storiesOf('components|Carousel', module)
             </Carousel>
           </div>
         </PropExample>
+
+        <PropExample
+          name='highlightOnActive'
+          type='Boolean'
+        >
+          <div className='row'>
+            <Carousel highlightOnActive>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </PropExample>
+
+        <PropExample
+          name='highlightOnHover'
+          type='Boolean'
+        >
+          <div className='row'>
+            <Carousel highlightOnHover>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </PropExample>
       </DocSection>
     </div>
   )))
