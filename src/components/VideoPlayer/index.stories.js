@@ -227,33 +227,111 @@ storiesOf('components|VideoPlayer', module)
           </div>
         </PropExample>
 
-        <PropExample
-          name='
-            onPlayerReady | onVideoReady | onPlay | onPause |
-            onEnd | onTimeChange | onError | onSeek
-          '
-          type='function'
-          description='
-            Callback events, bind these to add custom
-            functionality to your player.
-          '
-        >
-          <div className='row'>
-            <div className='col-lg-4'>
+        <div className='row'>
+          <div className='col-lg-4'>
+            <PropExample
+              name='onPlayerReady'
+              type='function(video)'
+              description='Callback event'
+            >
               <VideoPlayer
                 hasAutoplay={false}
                 onPlayerReady={action('onPlayerReady')}
+              />
+            </PropExample>
+          </div>
+
+          <div className='col-lg-4'>
+            <PropExample
+              name='onVideoReady'
+              type='function(video)'
+              description='Callback event'
+            >
+              <VideoPlayer
+                hasAutoplay={false}
                 onVideoReady={action('onVideoReady')}
+              />
+            </PropExample>
+          </div>
+
+          <div className='col-lg-4'>
+            <PropExample
+              name='onPlay'
+              type='function(video)'
+              description='Callback event'
+            >
+              <VideoPlayer
+                hasAutoplay={false}
                 onPlay={action('onPlay')}
+              />
+            </PropExample>
+          </div>
+
+          <div className='col-lg-4'>
+            <PropExample
+              name='onPause'
+              type='function(video)'
+              description='Callback event'
+            >
+              <VideoPlayer
+                hasAutoplay={false}
                 onPause={action('onPause')}
+              />
+            </PropExample>
+          </div>
+
+          <div className='col-lg-4'>
+            <PropExample
+              name='onEnd'
+              type='function(video)'
+              description='Callback event'
+            >
+              <VideoPlayer
+                hasAutoplay={false}
                 onEnd={action('onEnd')}
+              />
+            </PropExample>
+          </div>
+
+          <div className='col-lg-4'>
+            <PropExample
+              name='onTimeChange'
+              type='function(currentTime, remainingTime)'
+              description='Callback event'
+            >
+              <VideoPlayer
+                hasAutoplay={false}
                 onTimeChange={action('onTimeChange')}
+              />
+            </PropExample>
+          </div>
+
+          <div className='col-lg-4'>
+            <PropExample
+              name='onError'
+              type='function(error, video)'
+              description='Callback event'
+            >
+              <VideoPlayer
+                hasAutoplay={false}
                 onError={action('onError')}
+              />
+            </PropExample>
+          </div>
+
+          <div className='col-lg-4'>
+            <PropExample
+              name='onSeek'
+              type='function(video)'
+              description='Callback event'
+            >
+              <VideoPlayer
+                hasAutoplay={false}
                 onSeek={action('onSeek')}
               />
-            </div>
+            </PropExample>
           </div>
-        </PropExample>
+        </div>
       </DocSection>
     </div>,
   ))
