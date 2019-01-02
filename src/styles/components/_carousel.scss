@@ -18,6 +18,11 @@ $scrollbar-max-width: 17px !default;
     transition: opacity 250ms ease;
   }
 
+  // Align carousel items to left
+  .slick-track {
+    margin: 0;
+  }
+
   .slick-active {
     opacity: 1;
     pointer-events: auto;
