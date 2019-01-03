@@ -39,17 +39,5 @@
         }
       }
     }
-
-    &--link-muted {
-      color: rgba($mc-color-dark, 0.5);
-
-      span:after {
-        background: rgba($mc-color-dark, 0.25);
-      }
-
-      &:hover {
-        color: rgba($mc-color-dark, 0.5);
-      }
-    }
   }
 }

@@ -13,24 +13,20 @@ const Button = ({
   tertiary,
   fullWidth,
   link,
-  linkMuted,
   loading,
   Icon,
   ...props
 }) => {
-  const classNames = cn(
-    'c-button',
-    { [className]: Boolean(className) },
-    {
-      'c-button--secondary': secondary,
-      'c-button--tertiary': tertiary,
-      'c-button--with-icon': Boolean(Icon),
-      'c-button--full-width': fullWidth,
-      'c-button--link': link,
-      'c-button--link-muted': linkMuted,
-      'c-button--loading': loading,
-    },
-  )
+  const classNames = cn({
+    [className]: Boolean(className),
+    'c-button': true,
+    'c-button--secondary': secondary,
+    'c-button--tertiary': tertiary,
+    'c-button--with-icon': Boolean(Icon),
+    'c-button--full-width': fullWidth,
+    'c-button--link': link,
+    'c-button--loading': loading,
+  })
 
   return (
     <button
@@ -59,7 +55,6 @@ Button.propTypes = {
   tertiary: bool,
   fullWidth: bool,
   link: bool,
-  linkMuted: bool,
   loading: bool,
   Icon: node,
 }
@@ -71,7 +66,6 @@ Button.defaultProps = {
   tertiary: false,
   fullWidth: false,
   link: false,
-  linkMuted: false,
   loading: false,
 }
 
