@@ -101,8 +101,7 @@
     }
   }
 
-  &--link,
-  &--link-muted {
+  &--link {
     background: none;
     color: $mc-color-light;
 
@@ -141,19 +140,6 @@
       span:after {
         opacity: 0;
       }
-    }
-  }
-
-  // Subtler!
-  &--link-muted {
-    color: rgba($mc-color-light, 0.5);
-
-    span:after {
-      background: rgba($mc-color-light, 0.25);
-    }
-
-    &:hover {
-      color: rgba($mc-color-light, 0.5);
     }
   }
 }
