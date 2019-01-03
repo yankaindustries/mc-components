@@ -22,10 +22,6 @@
     border-color: $mc-color-primary-hover;
   }
 
-  .mc-form-input__label {
-    color: $mc-color-primary;
-  }
-
   // Override default focus state
   // with more specificty for errors
   &.mc-form-input--focus,
@@ -75,6 +71,11 @@
     // (it just mirrors what's above on the regular
     // default error class)
     &--error {
+      border-color: $mc-color-primary;
+
+      &:hover {
+        border-color: $mc-color-primary-hover;
+      }
       &.mc-form-input--focus,
       &.mc-form-input--modified {
         border-color: $mc-color-primary-active;

@@ -64,7 +64,7 @@ storiesOf('utilities|AnimationHandler', module)
         </PropExample>
       </DocSection>
 
-      <DocSection title='Example'>
+      <DocSection title='Demo'>
         <PropExample>
           <div style={{ maxWidth: '500px' }}>
             <HoverHandler>

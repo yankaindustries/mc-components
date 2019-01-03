@@ -34,7 +34,7 @@ storiesOf('components|Background', module)
           </div>
         </div>
 
-        <DocSection title='Examples'>
+        <DocSection title='Demo'>
           <CodeExample>
             <Background
               element={<img src={thomasKellerBackground} />}
