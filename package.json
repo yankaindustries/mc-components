@@ -28,7 +28,7 @@
     "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
     "deploy-storybook": "storybook-to-ghpages",
     "precommit": "lint-staged",
-    "lint:js": "eslint ./src --color",
+    "lint:js": "eslint ./src --color --quiet",
     "lint:style": "stylelint ./src/styles/**/*.scss",
     "lint": "yarn lint:js && yarn lint:style",
     "preversion": "yarn lint",
