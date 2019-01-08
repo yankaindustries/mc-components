@@ -71,12 +71,14 @@ export default class Carousel extends PureComponent {
     children: PropTypes.node,
     className: PropTypes.string,
     controls: PropTypes.bool,
-    overflow: PropTypes.bool,
     focusOnSelect: PropTypes.bool,
-    sliderRef: PropTypes.func,
+    highlightOnActive: PropTypes.bool,
+    highlightOnHover: PropTypes.bool,
     loop: PropTypes.bool,
+    overflow: PropTypes.bool,
     scrollCount: PropTypes.number,
     showCount: PropTypes.number,
+    sliderRef: PropTypes.func,
     transition: PropTypes.string,
     variableWidth: PropTypes.bool,
   }
@@ -85,9 +87,11 @@ export default class Carousel extends PureComponent {
     autoPlay: false,
     centered: false,
     controls: false,
-    overflow: false,
     focusOnSelect: false,
+    highlightOnActive: false,
+    highlightOnHover: false,
     loop: false,
+    overflow: false,
     scrollCount: 1,
     showCount: 3,
     transition: TRANSITION_SLIDE,
@@ -97,15 +101,17 @@ export default class Carousel extends PureComponent {
   render () {
     const {
       autoPlay,
+      centered,
       children,
       className,
-      centered,
       controls,
-      overflow,
+      highlightOnActive,
+      highlightOnHover,
       loop,
-      sliderRef,
+      overflow,
       scrollCount,
       showCount,
+      sliderRef,
       transition,
       ...restProps
     } = this.props
@@ -116,6 +122,8 @@ export default class Carousel extends PureComponent {
       `mc-carousel--${transition}`,
       centered ? 'mc-carousel--centered' : '',
       overflow ? 'mc-carousel--overflow' : '',
+      highlightOnActive ? 'mc-carousel--highlight-active' : '',
+      highlightOnHover ? 'mc-carousel--highlight-hover' : '',
     ].join(' ')
 
     const arrows = controls
@@ -148,6 +156,7 @@ export default class Carousel extends PureComponent {
           slidesToScroll={scrollCount}
           slidesToShow={showCount}
           infinite={loop}
+          draggable={false}
           {...arrows}
           {...restProps}
         >

@@ -12,7 +12,7 @@
     border-radius: 20px;
     width: 20px;
     height: 20px;
-    background: rgba($mc-color-tertiary, 0.2);
+    background: $mc-color-gray-300;
     cursor: pointer;
     margin-right: 16px;
 
@@ -23,7 +23,7 @@
       width: 10px;
       height: 10px;
       border-radius: 10px;
-      background: $mc-color-dark;
+      background: $mc-color-light;
       transform: scale(0.5);
       opacity: 0;
       transition:

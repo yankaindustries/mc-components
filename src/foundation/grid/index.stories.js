@@ -8,13 +8,14 @@ import './_styles.css'
 storiesOf('foundation|Grid', module)
   .add('default', () => (
     <div className='container'>
-      <div className='example--section'>
-        <h2 className='mc-text-d1'>Grid System</h2>
-        <p>A demo of the grid system in mc-components.</p>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>Grid System</h1>
+        <p className='mc-text--muted'>A demo of the grid system in mc-components.</p>
       </div>
 
-      <div className='example--section'>
-        <h2 className='mc-text-h2'>Default Grid</h2>
+      <div className='example__section'>
+        <p className='mc-text--muted mc-text--monospace'>.row</p>
+
         <CodeExample>
           <div className='row'>
             <div className='col-6'>
@@ -74,8 +75,27 @@ storiesOf('foundation|Grid', module)
         </CodeExample>
       </div>
 
-      <div className='example--section'>
-        <h2 className='mc-text-h2'>Grid (no-gutters)</h2>
+      <div className='uncontainer'>
+        <div className='rounded-box'>
+          <h2 className='mc-text-h2'>
+            Pro tip!
+          </h2>
+          <p className=''>
+            You can use the <span className='mc-text--monospace'>.uncontainer</span>
+            class name to break any div out from the inside of a container div.
+          </p>
+
+          <p>
+            The <span className='mc-text--monospace'>.uncontainer</span>
+            class pulls your content out of the wrapping
+            <span className='mc-text--monospace'>.container</span> class
+            so your content lines up just as if it were inside a regular
+            container!
+          </p>
+        </div>
+      </div>
+
+      <div className='example__section'>
         <p className='mc-text--muted mc-text--monospace'>.row.no-gutters</p>
         <CodeExample>
           <div className='row no-gutters'>
@@ -136,8 +156,7 @@ storiesOf('foundation|Grid', module)
         </CodeExample>
       </div>
 
-      <div className='example--section'>
-        <h2 className='mc-text-h2'>Grid (no-gutters-vertical)</h2>
+      <div className='example__section'>
         <p className='mc-text--muted mc-text--monospace'>.row.no-gutters-vertical</p>
         <CodeExample>
           <div className='row no-gutters-vertical'>

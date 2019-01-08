@@ -12,9 +12,12 @@ import Button from '../Button'
 storiesOf('utilities|HoverHandler', module)
   .add('default', withProps(HoverHandler)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>
-        HoverHandler
-      </h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>HoverHandler</h1>
+        <p className='mc-text--muted'>
+          Get access to hover as a property
+        </p>
+      </div>
 
       <DocSection>
         <PropExample>

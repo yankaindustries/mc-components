@@ -29,8 +29,8 @@ $mc-color-tertiary:            $mc-color-gray-400 !default;
 $mc-color-tertiary-hover:      $mc-color-gray-300 !default;
 $mc-color-tertiary-active:     $mc-color-gray-200 !default;
 
-$mc-color-background:          #090909 !default;
-$mc-color-background-invert:   #ebeeee !default;
+$mc-color-background:          $mc-color-dark !default;
+$mc-color-background-invert:   $mc-color-light !default;
 $mc-color-text:                $mc-color-light !default;
 $mc-color-text-invert:         #8ca1c1 !default;
 
@@ -61,8 +61,11 @@ $mc-zindex-modal:             1050 !default;
 $mc-zindex-popover:           1060 !default;
 $mc-zindex-tooltip:           1070 !default;
 
-// Unit of measurement
-$mc-unit:                     4px !default;
+// Step measurements
+$mc-step-base: 10 !default;
+$mc-step-scale: 4 !default;
+$mc-step-multipliers: 7 !default;
+$mc-step-min-resize: 4 !default;
 
 // Custom bootstrap grid overrides
 $enable-grid-classes:    true !default;

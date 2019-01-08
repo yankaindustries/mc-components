@@ -3,9 +3,10 @@
   align-items: flex-start;
   cursor: pointer;
 
+  // What appears as "the checkbox"
   &__fauxbox {
     position: relative;
-    background: rgba($mc-color-tertiary, 0.2);
+    background: $mc-color-gray-300;
     width: 20px;
     height: 20px;
     border-radius: 4px;

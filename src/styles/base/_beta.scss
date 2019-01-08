@@ -1,0 +1,5 @@
+.mcb-space {
+  @for $i from 1 to 12 {
+    &-#{$i} { @include step(margin-bottom, $i); }
+  }
+}

@@ -40,3 +40,15 @@
 @function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
   @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
+
+
+// Returns the value relative to `rem` for a given step
+@function calc-step($step, $decay) {
+  $times: ceil($step / $mc-step-multipliers);
+  $level: if($step > $mc-step-multipliers, $step - $mc-step-multipliers + 1, $step);
+  $factor: if($times > 1, $mc-step-scale, 1);
+  $less: (max($step - $mc-step-min-resize, 0) * $decay) / $mc-step-base;
+  $value: $level * $mc-step-scale * $factor / $mc-step-base;
+
+  @return ($value - $less) * 1rem;
+}

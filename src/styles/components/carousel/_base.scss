@@ -3,11 +3,36 @@ $scrollbar-max-width: 17px !default;
 
 .mc-carousel {
   position: relative;
+  pointer-events: auto;
+
+  // We need to override slick sliders default scss
+  // so that we can have cool hover effects and not cut off
+  // tiles that overflow the slick container
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-slide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+  }
+
+  // Align carousel items to left
+  .slick-track {
+    margin: 0;
+  }
+
+  .slick-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   &__container {
-    margin: 0 calc(50% - 50vw + #{$scrollbar-max-width / 2});
-    padding: 0 calc(50vw - 50% - #{$scrollbar-max-width / 2});
+    margin: -999px calc(50% - 50vw + #{$scrollbar-max-width / 2});
+    padding: 999px calc(50vw - 50% - #{$scrollbar-max-width / 2});
     overflow: hidden;
+    pointer-events: none;
   }
 
   .slick-dots {
@@ -97,11 +122,11 @@ $scrollbar-max-width: 17px !default;
         left: $grid-gutter-width-xl/2;
       }
     }
-  }
 
-  &--overflow {
-    .slick-list {
-      overflow: visible;
+    // Disabled state for when you can't
+    // advance the slide or "go back" anymore
+    &.slick-disabled {
+      display: none;
     }
   }
 

@@ -1,63 +1,79 @@
-.mc-form-textarea--no-label {
-  .mc-form-textarea {
-    &__label { display: none; }
-
-    &__textarea {
-      padding: $textarea-padding $textarea-padding;
-
-      &::placeholder {
-        opacity: 1;
-        color: $mc-color-gray-500;
-      }
-    }
-  }
-}
-
-.mc-form-textarea--invert {
-  background: $mc-color-dark;
-  border-color: $mc-color-gray-300;
-
-  .mc-form-textarea {
-    &__textarea {
-      color: $mc-color-light;
-    }
-
-    &__label {
-      background: $mc-color-dark;
-    }
-  }
-}
-
-.mc-form-textarea--error {
-  border-color: $mc-color-primary;
-
-  &:hover {
-    border-color: $mc-color-primary-hover;
-  }
-
-  .mc-form-textarea__label {
-    color: $mc-color-primary;
-  }
-}
-
-.mc-form-textarea--disabled {
-  background: $mc-color-gray-600;
-
-  // disable cursor
-  * { cursor: not-allowed; }
-
-  &:hover {
-    border-color: $mc-color-gray-600;
-  }
-
-  // When inverted & disabled
-  &.mc-form-textarea--invert {
+.mc-form-textarea {
+  &--disabled {
     background: $mc-color-gray-100;
     border-color: $mc-color-gray-100;
 
+    // disable cursor
+    * { cursor: not-allowed; }
+
+    &:hover {
+      border-color: $mc-color-gray-100;
+    }
+  }
+
+  &--no-label {
     .mc-form-textarea {
-      &__label {
-        background: none;
+      &__label { display: none; }
+
+      &__textarea {
+        padding: $textarea-padding $textarea-padding;
+
+        &::placeholder {
+          opacity: 1;
+          color: $mc-color-gray-500;
+        }
+      }
+    }
+  }
+
+  &--error {
+    border-color: $mc-color-primary;
+
+    &:hover {
+      border-color: $mc-color-primary-hover;
+    }
+
+    .mc-form-textarea__label {
+      color: $mc-color-primary;
+    }
+  }
+}
+
+// Inverted styles
+.mc-invert {
+  .mc-form-textarea {
+    background: none;
+    border: 1px solid $mc-color-gray-600;
+
+    &__textarea {
+      color: $mc-color-gray-200;
+    }
+
+    &__label {
+      background: none;
+    }
+
+    &:hover,
+    &--hover,
+    &:focus,
+    &--focus {
+      border-color: $mc-color-gray-400;
+    }
+
+    &--disabled {
+      background: $mc-color-gray-600;
+      &:hover { border-color: $mc-color-gray-600; }
+    }
+
+    &--error {
+      border-color: $mc-color-primary;
+
+      &:hover {
+        border-color: $mc-color-primary-hover;
+      }
+
+      .mc-form-textarea__label {
+        color: $mc-color-primary;
       }
     }
   }

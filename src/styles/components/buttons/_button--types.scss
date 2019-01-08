@@ -53,25 +53,25 @@
   }
 
   &--secondary {
-    background: $mc-color-secondary;
+    background: $mc-color-gray-200;
 
     &:hover {
-      background: $mc-color-secondary-hover;
+      background: $mc-color-gray-300;
     }
 
     &:active {
-      background: $mc-color-secondary-active;
+      background: $mc-color-gray-200;
     }
 
     // disabled
     &.disabled,
     &:disabled {
       &:hover {
-        background: $mc-color-secondary;
+        background: $mc-color-gray-200;
       }
 
       &:active {
-        background: $mc-color-secondary;
+        background: $mc-color-gray-200;
       }
     }
   }
@@ -81,11 +81,11 @@
     border: 1px solid $mc-color-gray-300;
 
     &:hover {
-      background: $mc-color-tertiary-hover;
+      background: $mc-color-gray-300;
     }
 
     &:active {
-      background: $mc-color-tertiary-active;
+      background: $mc-color-gray-200;
     }
 
     // disabled
@@ -101,8 +101,7 @@
     }
   }
 
-  &--link,
-  &--link-muted {
+  &--link {
     background: none;
     color: $mc-color-light;
 
@@ -141,19 +140,6 @@
       span:after {
         opacity: 0;
       }
-    }
-  }
-
-  // Subtler!
-  &--link-muted {
-    color: rgba($mc-color-light, 0.5);
-
-    span:after {
-      background: rgba($mc-color-light, 0.25);
-    }
-
-    &:hover {
-      color: rgba($mc-color-light, 0.5);
     }
   }
 }

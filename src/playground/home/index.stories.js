@@ -81,89 +81,85 @@ storiesOf('playground|Pages', module)
                     <Carousel
                       sliderRef={sliderRef('hero')}
                       asNavFor={asNavFor('thumbs')}
+                      slidesToShow={1}
                       transition='fade'
+                      adaptiveHeight
                       loop
                     >
                       {items.map((item, key) => (
-                        <div key={key} className='container'>
-                          <Tile
-                            key={key}
-                            aspectRatio={gteMD ? '16x9' : '1x1'}
-                            naked
-                          >
-                            <Tile
-                              className='mc-hero__image'
-                              aspectRatio={gteMD ? '16x9' : '1x1'}
-                              naked
-                            >
-                              <TileImage imageUrl={item.image} />
-                              <TileOverlay type='offset-spotlight' />
-                            </Tile>
-
-                            <div className='mc-hero__content'>
-                              <div className='row row--fill align-items-center'>
-                                <div className='col-md-8 col-lg-6'>
-                                  <h2 className='mc-text-d1 mc-text--uppercase mc-text--center mc-text-md--left'>
-                                    {item.instructor}
-                                  </h2>
-                                  <h2 className='mc-text-h2 mc-text--uppercase mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap'>
-                                    Teaches {item.class}
-                                  </h2>
-                                  <br />
-                                  <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap'>
-                                    Online classes taught by the world&apos;s
-                                    greatest minds.<br /> Learn from
-                                    {item.instructor} and all 35+ other
-                                    instructors.
-                                  </p>
-                                  <br />
-                                  <div className='row'>
-                                    <div className='col-md-6'>
-                                      <Button primary fullWidth>
-                                        All Access Pass
-                                      </Button>
-                                    </div>
-                                    <div className='col-md-6'>
-                                      <Button secondary fullWidth>
-                                        Learn More
-                                      </Button>
+                        <div
+                          key={key}
+                          className='container'
+                        >
+                          <Tile aspectRatio='16x9'>
+                            <TileImage imageUrl={item.image} />
+                            <TileOverlay type='offset-spotlight' />
+                            <TileCaption position='left center'>
+                              <div className='mc-hero__content'>
+                                <div className='row align-items-center'>
+                                  <div className='col-md-8 col-lg-6'>
+                                    <h1 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left'>
+                                      {item.instructor}
+                                    </h1>
+                                    <h4 className='mc-text-h4 mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
+                                      Teaches {item.class}
+                                    </h4>
+                                    <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
+                                      Online classes taught by the world&apos;s
+                                      greatest minds.<br /> Learn from
+                                      {item.instructor} and all 35+ other
+                                      instructors.
+                                    </p>
+                                    <div className='row'>
+                                      <div className='col-auto'>
+                                        <Button primary>
+                                          All Access Pass
+                                        </Button>
+                                      </div>
+                                      <div className='col-auto'>
+                                        <Button secondary>
+                                          Learn More
+                                        </Button>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            </TileCaption>
                           </Tile>
                         </div>
                       ))}
                     </Carousel>
                   </div>
 
-                  <div className='container'>
-                    <Carousel
-                      className='row'
-                      sliderRef={sliderRef('thumbs')}
-                      asNavFor={asNavFor('hero')}
-                      centered
-                      fadeEdges
-                      focusOnSelect
-                      loop
-                      controls={gteMD}
-                    >
-                      {items.map((item, key) => (
-                        <div key={key} className='col-auto'>
-                          <Tile key={item.id}>
-                            <TileImage imageUrl={item.thumbnail} />
-                            {gteMD && <TileOverlay />}
-                            {gteMD &&
-                              <TileCaption>
-                                <h3 className='mc-text-h4 mc-text--uppercase'>{item.instructor}</h3>
-                                <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted'>{`Teaches ${item.class}`}</h4>
-                              </TileCaption>
-                            }
-                          </Tile>
-                        </div>
-                      ))}
-                    </Carousel>
+                  <div className='mc-hero__thumbs'>
+                    <div className='container'>
+                      <Carousel
+                        className='row'
+                        sliderRef={sliderRef('thumbs')}
+                        asNavFor={asNavFor('hero')}
+                        centered
+                        fadeEdges
+                        focusOnSelect
+                        loop
+                        controls={gteMD}
+                      >
+                        {items.map((item, key) => (
+                          <div key={key} className='col-auto'>
+                            <Tile key={item.id}>
+                              <TileImage imageUrl={item.thumbnail} />
+                              {gteMD && <TileOverlay />}
+                              {gteMD &&
+                                <TileCaption>
+                                  <h5 className='mc-text-h5 mc-text--uppercase'>{item.instructor}</h5>
+                                  <h6 className='mc-text-h6 mc-text--normal mc-text--muted'>{`Teaches ${item.class}`}</h6>
+                                </TileCaption>
+                              }
+                            </Tile>
+                          </div>
+                        ))}
+                      </Carousel>
+                    </div>
                   </div>
                 </div>
               }
@@ -175,9 +171,9 @@ storiesOf('playground|Pages', module)
       <div className='container'>
         <div className='mc-section'>
           <div className='mc-section__header'>
-            <h2 className='mc-text-d3 mc-text--uppercase mc-text--airy mc-text--center'>
+            <h5 className='mc-text-h5 mc-text--airy mc-text--center'>
               MasterClass In The News
-            </h2>
+            </h5>
           </div>
 
           <div className='row justify-content-center'>
@@ -203,410 +199,424 @@ storiesOf('playground|Pages', module)
         </div>
       </div>
 
-      <div className='mc-background--dark'>
-        <div className='container'>
-          <div className='mc-section'>
-            <div className='mc-section__header'>
-              <h2 className='mc-text-d3 mc-text--uppercase mc-text--airy mc-text--center'>
-                Now Available
-              </h2>
+      <div className='container'>
+        <div className='mc-section'>
+          <div className='mc-section__header'>
+            <h5 className='mc-text-h5 mc-text--airy mc-text--center'>
+              Now Available
+            </h5>
+          </div>
+
+          <div className='row'>
+            <div className='col-12'>
+              <ResponsiveHandler>
+                {({ gteMD }) =>
+                  <HoverHandler>
+                    {({ hovering }) =>
+                      <Tile aspectRatio={gteMD ? '519x187' : '16x9'}>
+                        <AnimationHandler type='ken-burns' animating={hovering}>
+                          <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1473/original/1520466687-Featured_Tile.jpg%3F1520466687' />
+                        </AnimationHandler>
+
+                        <TileOverlay />
+
+                        <AnimationHandler type='lift' animating={hovering}>
+                          <TileCaption>
+                            <h4 className='mc-text-h4 mc-text--uppercase'>
+                              Malcom Gladwell
+                            </h4>
+                            <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                              Teaches Writing
+                            </h5>
+                          </TileCaption>
+                        </AnimationHandler>
+                      </Tile>
+                    }
+                  </HoverHandler>
+                }
+              </ResponsiveHandler>
             </div>
 
-            <div className='row'>
-              <div className='col-12'>
-                <ResponsiveHandler>
-                  {({ gteMD }) =>
-                    <HoverHandler>
-                      {({ hovering }) =>
-                        <Tile aspectRatio={gteMD ? '519x187' : '16x9'}>
-                          <AnimationHandler type='ken-burns' animating={hovering}>
-                            <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1473/original/1520466687-Featured_Tile.jpg%3F1520466687' />
-                          </AnimationHandler>
+            <div className='col-md-6'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <Tile aspectRatio='16x9'>
+                    <AnimationHandler type='ken-burns' animating={hovering}>
+                      <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1049/original/1510617187-Class_Tile.jpg%3F1510617187' />
+                    </AnimationHandler>
 
-                          <TileOverlay />
+                    <TileOverlay />
 
-                          <AnimationHandler type='lift' animating={hovering}>
-                            <TileCaption>
-                              <h3 className='mc-text-h3 mc-text--uppercase'>
-                                Malcom Gladwell
-                              </h3>
-                              <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted'>
-                                Teaches Writing
-                              </h4>
-                            </TileCaption>
-                          </AnimationHandler>
-                        </Tile>
-                      }
-                    </HoverHandler>
-                  }
-                </ResponsiveHandler>
+                    <AnimationHandler type='lift' animating={hovering}>
+                      <TileCaption>
+                        <h4 className='mc-text-h4 mc-text--uppercase'>
+                          Alice Waters
+                        </h4>
+                        <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                          Teaches the Art of Home Cooking
+                        </h5>
+                      </TileCaption>
+                    </AnimationHandler>
+                  </Tile>
+                }
+              </HoverHandler>
+            </div>
+
+            <div className='col-md-6'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <Tile aspectRatio='16x9'>
+                    <AnimationHandler type='ken-burns' animating={hovering}>
+                      <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/343/original/1513219465-Class_Tile.jpg%3F1513219465' />
+                    </AnimationHandler>
+
+                    <TileOverlay />
+
+                    <AnimationHandler type='lift' animating={hovering}>
+                      <TileCaption>
+                        <h4 className='mc-text-h4 mc-text--uppercase'>
+                          Annie Leibovitz
+                        </h4>
+                        <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                          Teaches Photography
+                        </h5>
+                      </TileCaption>
+                    </AnimationHandler>
+                  </Tile>
+                }
+              </HoverHandler>
+            </div>
+          </div>
+        </div>
+
+        <div className='mc-section'>
+          <div className='mc-section__header'>
+            <h5 className='mc-text-h5 mc-text--airy mc-text--center'>
+              What Students Are Saying
+            </h5>
+          </div>
+
+          <div className='row'>
+            <div className='col-md-4'>
+              <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
+                <div className='row align-items-center small-gutters'>
+                  <div className='col col-auto'>
+                    <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-al-300e6379265c09b2f4b659df27a10cace702dd3beb031af97178f4f1b683adc3.png' />
+                  </div>
+                  <div className='col'>
+                    <h6 className='mc-text-h6 mc-text--uppercase'>
+                      Annie Leibovitz
+                    </h6>
+                    <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-text--muted'>
+                      Photography
+                    </h5>
+                  </div>
+
+                  <div className='col-12'>
+                    <p>
+                      Annie&apos;s MasterClass offered insight into her
+                      approach, but also offered the permission to create,
+                      create, create! And with a tenacity I had been afraid
+                      to embody.
+                    </p>
+                  </div>
+
+                  <div className='col-auto'>
+                    <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                  </div>
+                  <div className='col'>
+                    <h6 className='mc-text-h6 mc-text--muted'>
+                      Jesse L.
+                    </h6>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div className='col-md-6'>
-                <HoverHandler>
-                  {({ hovering }) =>
-                    <Tile aspectRatio='16x9'>
-                      <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1049/original/1510617187-Class_Tile.jpg%3F1510617187' />
-                      </AnimationHandler>
+            <div className='col-md-4'>
+              <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
+                <div className='row align-items-center small-gutters'>
+                  <div className='col col-auto'>
+                    <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-gr-24c1d9b59bbeadd671a0ef5140e137d07e26368f5b0984a0b90fe5f794700de0.png' />
+                  </div>
+                  <div className='col'>
+                    <h6 className='mc-text-h6 mc-text--uppercase'>
+                      Gordon Ramsay
+                    </h6>
+                    <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-text--muted'>
+                      Cooking
+                    </h5>
+                  </div>
 
-                      <TileOverlay />
+                  <div className='col-12'>
+                    <p>
+                      I loved this class, I learned to create rather than
+                      follow recipes and how to think outside the box!
+                      I&apos;ve always loved cooking, this class has taken me
+                      to a new level!
+                    </p>
+                  </div>
 
-                      <AnimationHandler type='lift' animating={hovering}>
-                        <TileCaption>
-                          <h3 className='mc-text-h3 mc-text--uppercase'>
-                            Alice Waters
-                          </h3>
-                          <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted'>
-                            Teaches the Art of Home Cooking
-                          </h4>
-                        </TileCaption>
-                      </AnimationHandler>
-                    </Tile>
-                  }
-                </HoverHandler>
+                  <div className='col-auto'>
+                    <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                  </div>
+                  <div className='col'>
+                    <h6 className='mc-text-h6 mc-text--muted'>
+                      Pamela E.
+                    </h6>
+                  </div>
+                </div>
               </div>
+            </div>
 
-              <div className='col-md-6'>
-                <HoverHandler>
-                  {({ hovering }) =>
-                    <Tile aspectRatio='16x9'>
-                      <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/343/original/1513219465-Class_Tile.jpg%3F1513219465' />
-                      </AnimationHandler>
+            <div className='col-md-4'>
+              <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
+                <div className='row align-items-center small-gutters'>
+                  <div className='col col-auto'>
+                    <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-jp-cde7e157ed95191ad3167e5dea00394798decee7462fc897d71ac6e450cd8b79.png' />
+                  </div>
+                  <div className='col'>
+                    <h6 className='mc-text-h6'>
+                      James Patterson
+                    </h6>
+                    <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-text--muted'>
+                      Writing
+                    </h5>
+                  </div>
 
-                      <TileOverlay />
+                  <div className='col-12'>
+                    <p>
+                      These classes are the important keys to unlocking our
+                      written creativity. If you have belief, freedom and
+                      discipline, then who knows what the future will hold.
+                    </p>
+                  </div>
 
-                      <AnimationHandler type='lift' animating={hovering}>
-                        <TileCaption>
-                          <h3 className='mc-text-h3 mc-text--uppercase'>
-                            Annie Leibovitz
-                          </h3>
-                          <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted'>
-                            Teaches Photography
-                          </h4>
-                        </TileCaption>
-                      </AnimationHandler>
-                    </Tile>
-                  }
-                </HoverHandler>
+                  <div className='col-auto'>
+                    <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                  </div>
+                  <div className='col'>
+                    <h6 className='mc-text-h6 mc-text--muted'>
+                      Jean-Paul W.
+                    </h6>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className='mc-section'>
-            <div className='mc-section__header'>
-              <h2 className='mc-text-d3 mc-text--uppercase mc-text--airy mc-text--center'>
-                What Students Are Saying
-              </h2>
-            </div>
-
-            <div className='row'>
-              <div className='col-md-4'>
-                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
-                  <div className='row align-items-center small-gutters'>
-                    <div className='col col-auto'>
-                      <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-al-300e6379265c09b2f4b659df27a10cace702dd3beb031af97178f4f1b683adc3.png' />
-                    </div>
-                    <div className='col'>
-                      <h4 className='mc-text-h4'>
-                        Annie Leibovitz
-                      </h4>
-                      <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted'>
-                        Photography
-                      </h5>
-                    </div>
-
-                    <div className='col-12'>
-                      <p>
-                        Annie&apos;s MasterClass offered insight into her
-                        approach, but also offered the permission to create,
-                        create, create! And with a tenacity I had been afraid
-                        to embody.
-                      </p>
-                    </div>
-
-                    <div className='col-auto'>
-                      <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
-                    </div>
-                    <div className='col'>
-                      <p className='mc-text--muted'>Jesse L.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className='col-md-4'>
-                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
-                  <div className='row align-items-center small-gutters'>
-                    <div className='col col-auto'>
-                      <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-gr-24c1d9b59bbeadd671a0ef5140e137d07e26368f5b0984a0b90fe5f794700de0.png' />
-                    </div>
-                    <div className='col'>
-                      <h4 className='mc-text-h4'>
-                        Gordon Ramsay
-                      </h4>
-                      <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted'>
-                        Cooking
-                      </h5>
-                    </div>
-
-                    <div className='col-12'>
-                      <p>
-                        I loved this class, I learned to create rather than
-                        follow recipes and how to think outside the box!
-                        I&apos;ve always loved cooking, this class has taken me
-                        to a new level!
-                      </p>
-                    </div>
-
-                    <div className='col-auto'>
-                      <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
-                    </div>
-                    <div className='col'>
-                      <p className='mc-text--muted'>Pamela E.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className='col-md-4'>
-                <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
-                  <div className='row align-items-center small-gutters'>
-                    <div className='col col-auto'>
-                      <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-jp-cde7e157ed95191ad3167e5dea00394798decee7462fc897d71ac6e450cd8b79.png' />
-                    </div>
-                    <div className='col'>
-                      <h4 className='mc-text-h4'>
-                        James Patterson
-                      </h4>
-                      <h5 className='mc-text-h5 mc-text--uppercase mc-text--muted'>
-                        Writing
-                      </h5>
-                    </div>
-
-                    <div className='col-12'>
-                      <p>
-                        These classes are the important keys to unlocking our
-                        written creativity. If you have belief, freedom and
-                        discipline, then who knows what the future will hold.
-                      </p>
-                    </div>
-
-                    <div className='col-auto'>
-                      <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
-                    </div>
-                    <div className='col'>
-                      <p className='mc-text--muted'>
-                        Jean-Paul W.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className='mc-section'>
+          <div className='mc-section__header'>
+            <h5 className='mc-text-h5 mc-text--airy mc-text--center'>
+              Now Available
+            </h5>
           </div>
 
-          <div className='mc-section'>
-            <div className='mc-section__header'>
-              <h2 className='mc-text-d3 mc-text--uppercase mc-text--airy mc-text--center'>
-                Now Available
-              </h2>
+          <div className='row'>
+            <div className='col-12'>
+              <ResponsiveHandler>
+                {({ gteMD }) =>
+                  <HoverHandler>
+                    {({ hovering }) =>
+                      <Tile aspectRatio={gteMD ? '519x187' : '16x9'}>
+                        <AnimationHandler type='ken-burns' animating={hovering}>
+                          <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1532/original/1521243500-Featured_Tile.jpg%3F1521243500' />
+                        </AnimationHandler>
+
+                        <TileOverlay />
+
+                        <AnimationHandler type='lift' animating={hovering}>
+                          <TileCaption>
+                            <h4 className='mc-text-h4 mc-text--uppercase'>
+                              Spike Lee
+                            </h4>
+                            <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                              Teaches Filmmaking
+                            </h5>
+                          </TileCaption>
+                        </AnimationHandler>
+                      </Tile>
+                    }
+                  </HoverHandler>
+                }
+              </ResponsiveHandler>
             </div>
 
-            <div className='row'>
-              <div className='col-12'>
-                <ResponsiveHandler>
-                  {({ gteMD }) =>
-                    <HoverHandler>
-                      {({ hovering }) =>
-                        <Tile aspectRatio={gteMD ? '519x187' : '16x9'}>
-                          <AnimationHandler type='ken-burns' animating={hovering}>
-                            <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1532/original/1521243500-Featured_Tile.jpg%3F1521243500' />
-                          </AnimationHandler>
+            <div className='col-md-6'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <Tile aspectRatio='16x9'>
+                    <AnimationHandler type='ken-burns' animating={hovering}>
+                      <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1689/original/1528446991-Class_Tile.jpg%3F1528446991' />
+                    </AnimationHandler>
 
-                          <TileOverlay />
+                    <TileOverlay />
 
-                          <AnimationHandler type='lift' animating={hovering}>
-                            <TileCaption>
-                              <h3 className='mc-text-h3 mc-text--uppercase'>Spike Lee</h3>
-                              <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted'>Teaches Filmmaking</h4>
-                            </TileCaption>
-                          </AnimationHandler>
-                        </Tile>
-                      }
-                    </HoverHandler>
-                  }
-                </ResponsiveHandler>
-              </div>
+                    <AnimationHandler type='lift' animating={hovering}>
+                      <TileCaption>
+                        <h4 className='mc-text-h4 mc-text--uppercase'>
+                          Daniel Negreanu
+                        </h4>
+                        <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                          Teaches Poker
+                        </h5>
+                      </TileCaption>
+                    </AnimationHandler>
+                  </Tile>
+                }
+              </HoverHandler>
+            </div>
 
-              <div className='col-md-6'>
-                <HoverHandler>
-                  {({ hovering }) =>
-                    <Tile aspectRatio='16x9'>
-                      <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1689/original/1528446991-Class_Tile.jpg%3F1528446991' />
-                      </AnimationHandler>
+            <div className='col-md-6'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <Tile aspectRatio='16x9'>
+                    <AnimationHandler type='ken-burns' animating={hovering}>
+                      <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1752/original/1530892888-Class_Tile.jpg%3F1530892888' />
+                    </AnimationHandler>
 
-                      <TileOverlay />
+                    <TileOverlay />
 
-                      <AnimationHandler type='lift' animating={hovering}>
-                        <TileCaption>
-                          <h3 className='mc-text-h3 mc-text--uppercase'>Daniel Negreanu</h3>
-                          <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted'>Teaches Poker</h4>
-                        </TileCaption>
-                      </AnimationHandler>
-                    </Tile>
-                  }
-                </HoverHandler>
-              </div>
-
-              <div className='col-md-6'>
-                <HoverHandler>
-                  {({ hovering }) =>
-                    <Tile aspectRatio='16x9'>
-                      <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1752/original/1530892888-Class_Tile.jpg%3F1530892888' />
-                      </AnimationHandler>
-
-                      <TileOverlay />
-
-                      <AnimationHandler type='lift' animating={hovering}>
-                        <TileCaption>
-                          <h3 className='mc-text-h3 mc-text--uppercase'>Margaret Atwood</h3>
-                          <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted'>Teaches Creative Writing</h4>
-                        </TileCaption>
-                      </AnimationHandler>
-                    </Tile>
-                  }
-                </HoverHandler>
-              </div>
+                    <AnimationHandler type='lift' animating={hovering}>
+                      <TileCaption>
+                        <h4 className='mc-text-h4 mc-text--uppercase'>
+                          Margaret Atwood
+                        </h4>
+                        <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                          Teaches Creative Writing
+                        </h5>
+                      </TileCaption>
+                    </AnimationHandler>
+                  </Tile>
+                }
+              </HoverHandler>
             </div>
           </div>
+        </div>
 
-          <div className='mc-section'>
-            <div className='row align-items-center'>
-              <div className='col-lg-4'>
-                <div className='mc-section__header'>
-                  <h2 className='mc-text-h1 mc-text--center mc-text-lg--left'>
-                    Instructor Announcements
-                  </h2>
-                  <p className='mc-text--center mc-text-lg--left mc-text--muted'>
-                    Learn from the world’s greatest minds.
-                  </p>
-                  <br />
+        <div className='mc-section'>
+          <div className='row align-items-center'>
+            <div className='col-lg-4'>
+              <div className='mc-section__header'>
+                <h3 className='mc-text-h3 mc-text--center mc-text-lg--left'>
+                  Instructor Announcements
+                </h3>
+                <p className='mc-text--center mc-text-lg--left mc-text--muted'>
+                  Learn from the world’s greatest minds.
+                </p>
+                <br />
 
-                  <div className='row small-gutters justify-content-center justify-content-lg-start'>
-                    <div className='col-auto'>
-                      <ChevronLeft className='mc-icon--7x mc-icon--circled mc-text--muted' />
-                    </div>
+                <div className='row small-gutters justify-content-center justify-content-lg-start'>
+                  <div className='col-auto'>
+                    <ChevronLeft className='mc-icon--7 mc-icon--circled mc-text--muted' />
+                  </div>
 
-                    <div className='col-auto'>
-                      <ChevronRight className='mc-icon--7x mc-icon--circled' />
-                    </div>
+                  <div className='col-auto'>
+                    <ChevronRight className='mc-icon--7 mc-icon--circled' />
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className='col-lg-8'>
-                <div className='row'>
-                  <div className='col-lg-6'>
-                    <div className='row'>
-                      <div className='col-12'>
-                        <div className='mc-card mc-background--light mc-text--invert'>
-                          <div className='row align-items-center small-gutters'>
-                            <div className='col col-auto'>
-                              <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1429/original/1518557721-Slide_Thumb.jpg?1518557721' />
-                            </div>
-                            <div className='col'>
-                              <h4 className='mc-text-h4'>
-                                Malcom Gladwell
-                              </h4>
-                              <h5 className='mc-text-h5 mc-text--muted'>
-                                @Gladwell
-                              </h5>
-                            </div>
-
-                            <div className='col-12'>
-                              <p>
-                                If my books aren&apos;t enough for you,
-                                I&apos;ve done a really fun writing seminar!
-                                <br />
-                                <a href='#' className='mc-text--twitter'>
-                                  @MasterClass
-                                </a>
-                              </p>
-                            </div>
+            <div className='col-lg-8'>
+              <div className='row'>
+                <div className='col-lg-6'>
+                  <div className='row'>
+                    <div className='col-12'>
+                      <div className='mc-card mc-background--color-light mc-invert'>
+                        <div className='row align-items-center small-gutters'>
+                          <div className='col col-auto'>
+                            <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1429/original/1518557721-Slide_Thumb.jpg?1518557721' />
                           </div>
-                        </div>
-                      </div>
+                          <div className='col'>
+                            <h6 className='mc-text-h6'>
+                              Malcom Gladwell
+                            </h6>
+                            <h6 className='mc-text-h8 mc-text--normal mc-text--muted'>
+                              @Gladwell
+                            </h6>
+                          </div>
 
-                      <div className='col-12'>
-                        <div className='mc-card mc-background--light mc-text--invert'>
-                          <div className='row align-items-center small-gutters'>
-                            <div className='col col-auto'>
-                              <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1194/original/1512075998-Slide_Thumb.jpg?1512075998' />
-                            </div>
-                            <div className='col'>
-                              <h4 className='mc-text-h4'>
-                                Armin Van Buuren
-                              </h4>
-                              <h5 className='mc-text-h5 mc-text--muted'>
-                                @arminvanbuuren
-                              </h5>
-                            </div>
-
-                            <div className='col-12'>
-                              <p>
-                                My
-                                {' '}
-                                <a href='#' className='mc-text--twitter'>
-                                  @masterclass
-                                </a>
-                                is now live! So proud to be able to share
-                                everything I know about dance music with you.
-                                Join me in the studio:
-                                {' '}
-                                <a href='#' className='mc-text--twitter'>
-                                  http://www.masterclass.com/avb
-                                </a>
-                              </p>
-                            </div>
+                          <div className='col-12'>
+                            <p>
+                              If my books aren&apos;t enough for you,
+                              I&apos;ve done a really fun writing seminar!
+                              <br />
+                              <a href='#' className='mc-text--twitter'>
+                                @MasterClass
+                              </a>
+                            </p>
                           </div>
                         </div>
                       </div>
                     </div>
+
+                    <div className='col-12'>
+                      <div className='mc-card mc-background--color-light mc-invert'>
+                        <div className='row align-items-center small-gutters'>
+                          <div className='col col-auto'>
+                            <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1194/original/1512075998-Slide_Thumb.jpg?1512075998' />
+                          </div>
+                          <div className='col'>
+                            <h6 className='mc-text-h6'>
+                              Armin Van Buuren
+                            </h6>
+                            <h6 className='mc-text-h8 mc-text--normal mc-text--muted'>
+                              @arminvanbuuren
+                            </h6>
+                          </div>
+
+                          <div className='col-12'>
+                            <p>
+                              My
+                              {' '}
+                              <a href='#' className='mc-text--twitter'>
+                                @masterclass
+                              </a>
+                              is now live! So proud to be able to share
+                              everything I know about dance music with you.
+                              Join me in the studio:
+                              {' '}
+                              <a href='#' className='mc-text--twitter'>
+                                http://www.masterclass.com/avb
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
 
-                  <div className='col-lg-6'>
-                    <div className='mc-card mc-card--equal-height mc-background--light mc-text--invert'>
-                      <div className='row align-items-center small-gutters'>
-                        <div className='col col-auto'>
-                          <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/528/original/1488402263-1488323293-SM_SlideThumb_V1_A.jpg?1488402263' />
-                        </div>
-                        <div className='col'>
-                          <h4 className='mc-text-h4'>
-                            Steve Martin
-                          </h4>
-                        </div>
+                <div className='col-lg-6'>
+                  <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
+                    <div className='row align-items-center small-gutters'>
+                      <div className='col col-auto'>
+                        <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/528/original/1488402263-1488323293-SM_SlideThumb_V1_A.jpg?1488402263' />
+                      </div>
+                      <div className='col'>
+                        <h6 className='mc-text-h6'>
+                          Steve Martin
+                        </h6>
+                      </div>
 
-                        <div className='col-12'>
-                          <img
-                            className='mc-card__image'
-                            src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/instructor-announcements/steve-martin-7ff79ae2d7ec7677b76aa0dfe1c51b47c8b54d6065d330be11c49388e68624ad.jpg'
-                          />
-                          <p>
-                            I&apos;m told people are signing up in droves (a car
-                            made in the 30s) for my
-                            {' '}
-                            <a href='#' className='mc-text--twitter'>
-                              MasterClass
-                            </a>
-                            {' '}
-                            in comedy. For the aspiring comedian, writer, or
-                            future world leader.
-                          </p>
-                        </div>
+                      <div className='col-12'>
+                        <img
+                          className='mc-card__image mcb-space-4'
+                          src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/instructor-announcements/steve-martin-7ff79ae2d7ec7677b76aa0dfe1c51b47c8b54d6065d330be11c49388e68624ad.jpg'
+                        />
+                        <p>
+                          I&apos;m told people are signing up in droves (a car
+                          made in the 30s) for my
+                          {' '}
+                          <a href='#' className='mc-text--twitter'>
+                            MasterClass
+                          </a>
+                          {' '}
+                          in comedy. For the aspiring comedian, writer, or
+                          future world leader.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -622,11 +632,11 @@ storiesOf('playground|Pages', module)
         size='cover'
       >
         <div className='mc-section mc-text--center'>
-          <h2 className='mc-text-h1 mc-text--uppercase mc-text--x-light'>
+          <h2 className='mc-text-h3 mc-text--uppercase mc-text--light'>
             Learn From The Best
           </h2>
           <br />
-          <p className='mc-text--x-light'>
+          <p>
             Visit our blog for a deeper dive into all things MasterClass.
           </p>
           <br />
@@ -641,145 +651,25 @@ storiesOf('playground|Pages', module)
       <div className='container'>
         <div className='mc-section'>
           <div className='mc-section__header'>
-            <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted mc-text--normal mc-text--center'>
+            <h5 className='mc-text-h5 mc-text--airy mc-text--center'>
               Stay up to date with MasterClass
-            </h4>
+            </h5>
           </div>
 
           <div className='row justify-content-center'>
             <div className='col-auto'>
-              <Twitter className='mc-icon--15x mc-icon--circled mc-text--muted' />
+              <Twitter className='mc-icon--9 mc-icon--circled mc-text--muted' />
             </div>
             <div className='col-auto'>
-              <Facebook className='mc-icon--15x mc-icon--circled mc-text--muted' />
+              <Facebook className='mc-icon--9 mc-icon--circled mc-text--muted' />
             </div>
             <div className='col-auto'>
-              <Instagram className='mc-icon--15x mc-icon--circled mc-text--muted' />
+              <Instagram className='mc-icon--9 mc-icon--circled mc-text--muted' />
             </div>
           </div>
         </div>
       </div>
 
       <Footer />
-    </div>,
-  )
-  .add('Style Demo', () =>
-    <div>
-      <div className='container'>
-        <div className='col-12'>
-          <h1 className='mc-text-h1'>Hello world!</h1>
-          <p>He exclaimed as he built his first sample page.</p>
-          <p>
-            A new paragraph began, as he continued to build.  In the
-            new paragraph, we was curious what would happen as the
-            content of his paragraph grew to be longer than
-            just one line, a line longer than the container so that
-            he could test the limits of his containment.</p>
-          <p>
-            He gasped as a third line began, but he knew not what
-            to write.  &ldquo;It&apos;s time...&rdquo;, he began,
-            &ldquo;...to demonstrate...a
-
-            <strong className='mc-text--bold'>
-              BOX!
-            </strong>
-
-            &rdquo;
-          </p>
-        </div>
-
-        <div className='rounded-box'>
-          <h1 className='mc-text-h1'>
-            h1 What&apos;s this? What&apos;s this?
-          </h1>
-
-          <p>There&apos;s color everywhere...</p>
-
-          <h2 className='mc-text-h2'>
-            h2 What&apos;s this?
-          </h2>
-
-          <p>There&apos;s white things in the air</p>
-
-          <h3 className='mc-text-h3'>
-            h3 What&apos;s this?!
-          </h3>
-
-          <p>
-            Why is my text getting smaller? Am I whispering? Is this
-            a demo for ants?
-          </p>
-
-          <h4 className='mc-text-h4'>
-            h4 Sorry about that guys.
-          </h4>
-
-          <p>
-            Looks like it&apos;s a case of
-
-            <span className='mc-text--italic'>
-              &ldquo;Honey I shrunk the headings.&rdquo;
-            </span>
-
-            eh?
-          </p>
-        </div>
-
-        <div className='row'>
-          <div className='col-6'>
-            <h5 className='mc-text-h5'>
-              Column A
-            </h5>
-            <ul>
-              <li>These are some things</li>
-              <li>in a little bit of a column A</li>
-              <li>Like the saying goes ya know...</li>
-              <li>
-                You can take a little of column A, and a little
-                bit from column B
-              </li>
-            </ul>
-          </div>
-
-          <div className='col-6'>
-            <h5 className='mc-text-h5'>
-              Column B
-            </h5>
-            <ul>
-              <li>Wait, is that right?</li>
-              <li>
-                I don&apos;t think I actually got that saying correct
-              </li>
-              <li>
-                Too late now, it&apos;s written for this sample
-                page, so I guess we&apos;re stuck with it.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className='rounded-box'>
-          <h1 className='mc-text-h1'>
-            Introducing the All-Accesser Pass
-          </h1>
-
-          <p>
-            It&apos;s a new offering that gets you more exclusive content
-            that normal AAP subscribers can&apos;t access. It&apos;s just for
-            VIP people.  We really think you should upgrade.
-            You won&apos;t regret it!</p>
-
-          <div className='row mc-invert'>
-            <div className='col-12'>
-              <button className='c-button c-button--full-width'>
-                Purchase AAPer Now
-              </button>
-              <button className='c-button c-button--link  c-button--full-width'>
-                No thanks, I&apos;ll pass
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>,
   )

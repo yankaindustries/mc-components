@@ -1,0 +1,34 @@
+.mc-carousel {
+  &--overflow {
+    .slick-slide {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &--highlight-active {
+    .slick-list {
+      .slick-slide {
+        opacity: 0.5;
+        transition: opacity 250ms ease;
+
+        &.slick-current {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &--highlight-hover {
+    .slick-list:hover {
+      .slick-slide {
+        opacity: 0.5;
+        transition: opacity 250ms ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -71,7 +71,9 @@ const items = [
 storiesOf('components|Carousel', module)
   .add('Carousel', withProps(Carousel)(() => (
     <div className='container'>
-      <h2 className='mc-text-h2'>Carousel</h2>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>Carousel</h1>
+      </div>
 
       <DocSection title='Variations'>
         <PropExample
@@ -84,6 +86,15 @@ storiesOf('components|Carousel', module)
                 <div key={key} className='col-auto'>
                   <Tile key={item.id}>
                     <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption>
+                      <h3 className='mc-text-h5 mc-text--uppercase'>
+                        {item.instructor}
+                      </h3>
+                      <h5 className='mc-text--muted'>
+                        {`Teaches ${item.teaches}`}
+                      </h5>
+                    </TileCaption>
                   </Tile>
                 </div>
               ))}
@@ -223,6 +234,50 @@ storiesOf('components|Carousel', module)
             </Carousel>
           </div>
         </PropExample>
+
+        <PropExample
+          name='highlightOnActive'
+          type='Boolean'
+        >
+          <div className='row'>
+            <Carousel highlightOnActive>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </PropExample>
+
+        <PropExample
+          name='highlightOnHover'
+          type='Boolean'
+        >
+          <div className='row'>
+            <Carousel highlightOnHover>
+              {items.map((item, key) => (
+                <div key={key} className='col-auto'>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
+                    <TileCaption
+                      title={item.instructor}
+                      subtitle={`Teaches ${item.teaches}`}
+                    />
+                  </Tile>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </PropExample>
       </DocSection>
     </div>
   )))
@@ -259,28 +314,26 @@ storiesOf('components|Carousel', module)
                           <div className='mc-hero__content'>
                             <div className='row row--fill align-items-center'>
                               <div className='col-xl-5 col-md-8 col-lg-6'>
-                                <h2 className='mc-text-d1 mc-text--uppercase mc-text--center mc-text-md--left mc-text--nowrap'>
+                                <h2 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left mc-text--nowrap'>
                                   {item.instructor}
                                 </h2>
-                                <h3 className='mc-text-h3 mc-text--muted mc-text--center mc-text-md--left mc-text--nowrap'>
+                                <h3 className='mc-text-h3 mc-text--muted mc-text--uppercase mc-text--normal mc-text--airy mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
                                   Teaches {item.teaches}
                                 </h3>
-                                <br />
-                                <p className='mc-text-intro mc-text--center mc-text-md--left'>
+                                <p className='mc-text-intro mc-text--center mc-text-md--left mcb-space-8'>
                                   Online classes taught by the world&apos;s
                                   greatest minds.<br /> Learn from
                                   {item.instructor} and all 35+ other
                                   instructors.
                                 </p>
-                                <br />
                                 <div className='row'>
-                                  <div className='col-md-6'>
-                                    <Button primary fullWidth>
+                                  <div className='col-auto'>
+                                    <Button primary>
                                       All Access Pass
                                     </Button>
                                   </div>
-                                  <div className='col-md-6'>
-                                    <Button secondary fullWidth>
+                                  <div className='col-auto'>
+                                    <Button secondary>
                                       Learn More
                                     </Button>
                                   </div>

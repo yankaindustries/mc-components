@@ -30,21 +30,23 @@ export default class CodeExample extends PureComponent {
 
     return (
       <div>
-        <div className='example--render'>
+        <div className='example__render'>
           {children}
         </div>
 
-        <div className='mc-text--monospace mc-text--right'>
+        <div className='example__trigger mc-text--monospace mc-text--right'>
           <a onClick={this.toggleCode}>
             &lt;/&gt;
           </a>
         </div>
 
-        {this.state.showCode && (
-          <Highlight language='html'>
-            {code}
-          </Highlight>
-        )}
+        <div className='example__code'>
+          {this.state.showCode && (
+            <Highlight language='html'>
+              {code}
+            </Highlight>
+          )}
+        </div>
       </div>
     )
   }

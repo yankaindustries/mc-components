@@ -16,11 +16,14 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 storiesOf('utilities|ResponsiveHandler', module)
   .add('default', withProps(ResponsiveHandler)(() => (
     <div className='container'>
-      <h1 className='mc-text-h1'>
-        ResponsiveHandler
-      </h1>
+      <div className='example__heading'>
+        <h1 className='mc-text-h1'>ResponsiveHandler</h1>
+        <p className='mc-text--muted'>
+          Get access to screen size as a prop
+        </p>
+      </div>
 
-      <DocSection title='Example'>
+      <DocSection title='Demo'>
         <PropExample>
           <div className='row row--vertcal-space'>
             <div className='col-12'>
