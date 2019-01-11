@@ -97,7 +97,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('components|Forms/CheckboxField', module)
+storiesOf('Components|Forms/CheckboxField', module)
   .add('CheckboxField', () => (
     <Provider store={store}>
       <Form />

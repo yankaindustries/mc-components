@@ -13,7 +13,7 @@ import IconMagnifyingGlass from '../Icons/MagnifyingGlass'
 import IconClose from '../Icons/Close'
 
 
-storiesOf('components|Button', module)
+storiesOf('Components|Button', module)
   .add('Summary', withProps(Button)(() => (
     <div className='container'>
       <DocHeader

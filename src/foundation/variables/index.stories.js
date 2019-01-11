@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-storiesOf('foundation|Variables', module)
+storiesOf('Foundation|Variables', module)
   .add('All', () =>
     <div className='container'>
       <div className='example__heading'>

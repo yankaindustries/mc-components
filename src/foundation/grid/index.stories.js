@@ -5,7 +5,7 @@ import CodeExample from '../../utils/CodeExample'
 import Placeholder from '../../utils/Placeholder'
 import './_styles.css'
 
-storiesOf('foundation|Grid', module)
+storiesOf('Foundation|Grid', module)
   .add('default', () => (
     <div className='container'>
       <div className='example__heading'>
