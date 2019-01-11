@@ -101,10 +101,10 @@ storiesOf('playground|Pages', module)
                                     <h1 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left'>
                                       {item.instructor}
                                     </h1>
-                                    <h4 className='mc-text-h4 mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
+                                    <h4 className='mc-text-h4 mc-text--muted mc-text--normal mc-text--center mc-text-md--left mc-text--nowrap mc-mb-4'>
                                       Teaches {item.class}
                                     </h4>
-                                    <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
+                                    <p className='mc-text-intro mc-text--center mc-text-md--left mc-text--nowrap mc-mb-4'>
                                       Online classes taught by the world&apos;s
                                       greatest minds.<br /> Learn from
                                       {item.instructor} and all 35+ other
@@ -603,7 +603,7 @@ storiesOf('playground|Pages', module)
 
                       <div className='col-12'>
                         <img
-                          className='mc-card__image mcb-space-4'
+                          className='mc-card__image mc-mb-4'
                           src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/instructor-announcements/steve-martin-7ff79ae2d7ec7677b76aa0dfe1c51b47c8b54d6065d330be11c49388e68624ad.jpg'
                         />
                         <p>

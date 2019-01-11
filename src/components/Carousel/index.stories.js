@@ -317,10 +317,10 @@ storiesOf('components|Carousel', module)
                                 <h2 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left mc-text--nowrap'>
                                   {item.instructor}
                                 </h2>
-                                <h3 className='mc-text-h3 mc-text--muted mc-text--uppercase mc-text--normal mc-text--airy mc-text--center mc-text-md--left mc-text--nowrap mcb-space-4'>
+                                <h3 className='mc-text-h3 mc-text--muted mc-text--uppercase mc-text--normal mc-text--airy mc-text--center mc-text-md--left mc-text--nowrap mc-mb-4'>
                                   Teaches {item.teaches}
                                 </h3>
-                                <p className='mc-text-intro mc-text--center mc-text-md--left mcb-space-8'>
+                                <p className='mc-text-intro mc-text--center mc-text-md--left mc-mb-8'>
                                   Online classes taught by the world&apos;s
                                   greatest minds.<br /> Learn from
                                   {item.instructor} and all 35+ other
