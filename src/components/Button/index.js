@@ -35,7 +35,11 @@ const Button = ({
       {...props}
     >
       {Boolean(Icon) && Icon}
-      <span>
+      <span className='
+        d-inline-flex
+        align-items-center
+        justify-content-center
+      '>
         {children}
       </span>
       {loading && <Loader className='loader' />}

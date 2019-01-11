@@ -126,14 +126,13 @@ storiesOf('components|Button', module)
               <div className='col-auto'>
                 <Button>
                   Button
-                  {' '}
-                  <IconArrow />
+                  <IconArrow className='mc-ml-2' />
                 </Button>
               </div>
 
               <div className='col-auto'>
                 <Button secondary>
-                  <IconLock />
+                  <IconLock className='mc-mr-2' />
                   {' '}
                   Secondary
                 </Button>
