@@ -16,6 +16,26 @@
   }
 }
 
+// Margins - x axis only
+.mc-mx {
+  @for $i from 1 to 12 {
+    &-#{$i} {
+      @include step(margin-left, $i);
+      @include step(margin-right, $i);
+    }
+  }
+}
+
+// Margins - y axis only
+.mc-my {
+  @for $i from 1 to 12 {
+    &-#{$i} {
+      @include step(margin-top, $i);
+      @include step(margin-bottom, $i);
+    }
+  }
+}
+
 // Margins - top only
 .mc-mt {
   @for $i from 1 to 12 {
@@ -38,46 +58,8 @@
 }
 
 // Margins - left only
-// mc-mb-1 through mc-mb-12
 .mc-ml {
   @for $i from 1 to 12 {
     &-#{$i} { @include step(margin-left, $i); }
-  }
-}
-
-
-// Padding all around
-// mc-p-1 through mc-p-12
-.mc-p {
-  @for $i from 1 to 12 {
-    &-#{$i} { @include step(padding, $i); }
-  }
-}
-
-// Padding - top only
-.mc-pt {
-  @for $i from 1 to 12 {
-    &-#{$i} { @include step(padding-top, $i); }
-  }
-}
-
-// Padding - right only
-.mc-pr {
-  @for $i from 1 to 12 {
-    &-#{$i} { @include step(padding-right, $i); }
-  }
-}
-
-// Padding - bottom only
-.mc-pb {
-  @for $i from 1 to 12 {
-    &-#{$i} { @include step(padding-bottom, $i); }
-  }
-}
-
-// Padding - left only
-.mc-pl {
-  @for $i from 1 to 12 {
-    &-#{$i} { @include step(padding-left, $i); }
   }
 }
