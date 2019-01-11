@@ -1,0 +1,65 @@
+// These are modeled after the bootstrap helper classes.
+
+// The premise is mc-m is the base for margins and mc-p is
+// the base for padding.  Here are some examples:
+
+// mc-p-6 = padding "6 scale" all around
+// mc-pt-6 = padding-top "6"
+// mc-pr-6 = padding-right "6"
+// mc-pb-6 = padding-bottom "6"
+// mc-pl-6 = padding-left "6"
+
+// Padding all around
+.mc-p {
+  @for $i from 1 to 12 {
+    &-#{$i} { @include step(padding, $i); }
+  }
+}
+
+// Padding on x-axis only
+.mc-px {
+  @for $i from 1 to 12 {
+    &-#{$i} {
+      @include step(padding-left, $i);
+      @include step(padding-right, $i);
+    }
+  }
+}
+
+// Padding on y-axis only
+.mc-py {
+  @for $i from 1 to 12 {
+    &-#{$i} {
+      @include step(padding-top, $i);
+      @include step(padding-bottom, $i);
+    }
+  }
+}
+
+// Padding - top only
+.mc-pt {
+  @for $i from 1 to 12 {
+    &-#{$i} { @include step(padding-top, $i); }
+  }
+}
+
+// Padding - right only
+.mc-pr {
+  @for $i from 1 to 12 {
+    &-#{$i} { @include step(padding-right, $i); }
+  }
+}
+
+// Padding - bottom only
+.mc-pb {
+  @for $i from 1 to 12 {
+    &-#{$i} { @include step(padding-bottom, $i); }
+  }
+}
+
+// Padding - left only
+.mc-pl {
+  @for $i from 1 to 12 {
+    &-#{$i} { @include step(padding-left, $i); }
+  }
+}
