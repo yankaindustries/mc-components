@@ -13,7 +13,7 @@ const GettingStarted = () =>
     />
 
     <DocSection title='Installation'>
-      <p className='mcb-space-2'>
+      <p className='mc-mb-2'>
         This library is available as an
         {' '}
         <a
@@ -24,25 +24,25 @@ const GettingStarted = () =>
         </a>
       </p>
 
-      <Highlight className='language-bash mcb-space-8'>
+      <Highlight className='language-bash mc-mb-8'>
         yarn add mc-components
       </Highlight>
     </DocSection>
 
     <DocSection title='Usage'>
-      <p className='mcb-space-2'>
+      <p className='mc-mb-2'>
         SCSS
       </p>
 
-      <Highlight className='language-scss mcb-space-8'>
+      <Highlight className='language-scss mc-mb-8'>
         {'@import \'mc-components/src/styles/index\''}
       </Highlight>
 
-      <p className='mcb-space-2'>
+      <p className='mc-mb-2'>
         JSX
       </p>
 
-      <Highlight className='language-jsx mcb-space-8'>
+      <Highlight className='language-jsx mc-mb-8'>
 {`import React from 'react'
 import { Button } from 'mc-components'
 
