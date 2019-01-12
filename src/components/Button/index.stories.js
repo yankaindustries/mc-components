@@ -133,7 +133,6 @@ storiesOf('components|Button', module)
               <div className='col-auto'>
                 <Button secondary>
                   <IconLock className='mc-mr-2' />
-                  {' '}
                   Secondary
                 </Button>
               </div>
