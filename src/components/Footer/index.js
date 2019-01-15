@@ -15,6 +15,7 @@ export default class Footer extends PureComponent {
 
   render () {
     const { isMinimal } = this.props
+    const currentYear = new Date().getFullYear()
 
     return (
       <Fragment>
@@ -76,7 +77,7 @@ export default class Footer extends PureComponent {
                   </li>
 
                   <p className='mc-site-footer__copyright mc-text-small mc-text--capitalize'>
-                    Copyright &copy; 2018 MasterClass
+                    Copyright &copy; {currentYear} MasterClass
                   </p>
                 </ul>
 
