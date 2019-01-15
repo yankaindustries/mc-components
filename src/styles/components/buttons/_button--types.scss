@@ -77,26 +77,26 @@
   }
 
   &--tertiary {
-    background: none;
-    border: 1px solid $mc-color-gray-300;
+    background: $mc-color-light;
+    border: 1px solid $mc-color-gray-600;
+    color: $mc-color-dark;
 
     &:hover {
-      background: $mc-color-gray-300;
+      background: $mc-color-gray-600;
+      color: $mc-color-dark;
     }
 
     &:active {
-      background: $mc-color-gray-200;
+      background: $mc-color-light;
     }
 
     // disabled
     &.disabled,
     &:disabled {
-      &:hover {
-        background: none;
-      }
+      color: $mc-color-dark;
 
-      &:active {
-        background: none;
+      &:hover {
+        background: $mc-color-light;
       }
     }
   }
@@ -139,6 +139,15 @@
 
       span:after {
         opacity: 0;
+      }
+    }
+
+    // disabled
+    &.disabled:hover,
+    &:disabled:hover {
+      background: none;
+      span:after {
+        display: none;
       }
     }
   }
