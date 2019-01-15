@@ -22,7 +22,6 @@ const Button = ({
     'c-button': true,
     'c-button--secondary': secondary,
     'c-button--tertiary': tertiary,
-    'c-button--with-icon': Boolean(Icon),
     'c-button--full-width': fullWidth,
     'c-button--link': link,
     'c-button--loading': loading,
@@ -34,15 +33,12 @@ const Button = ({
       onClick={onClick}
       {...props}
     >
-      {Boolean(Icon) && Icon}
-      <span className={`
-        d-inline-flex
-        align-items-center
-        justify-content-center
-      `}>
+      <span className='c-button__content'>
         {children}
       </span>
-      {loading && <Loader className='loader' />}
+      {loading &&
+        <Loader className='c-button__loader' />
+      }
     </button>
   )
 }

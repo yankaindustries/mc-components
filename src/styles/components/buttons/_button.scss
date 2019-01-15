@@ -1,10 +1,14 @@
 .c-button,
 .mc-c-btn {
   background-color: $mc-color-primary;
-  padding: 16px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  height: 48px;
   font-size: 12px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 24px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: 4px;
@@ -46,6 +50,11 @@
   // Opinionated: add "hand" cursor to non-disabled .btn elements
   &:not(:disabled):not(.disabled) {
     cursor: pointer;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
   }
 }
 

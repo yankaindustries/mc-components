@@ -1,75 +1,21 @@
-/* eslint jsx-quotes: 0 */
 import React from 'react'
 
-const Loader = props => (
-  <svg viewBox="0 0 120 30" fill="currentColor" width="1em" height="1em" {...props}>
-    <circle cx={15} cy={15} r={15}>
-      <animate
-        attributeName="r"
-        from={15}
-        to={15}
-        begin="0s"
-        dur="0.8s"
-        values="15;9;15"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="fill-opacity"
-        from={1}
-        to={1}
-        begin="0s"
-        dur="0.8s"
-        values="1;.5;1"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </circle>
-    <circle cx={60} cy={15} r={9}>
-      <animate
-        attributeName="r"
-        from={9}
-        to={9}
-        begin="0s"
-        dur="0.8s"
-        values="9;15;9"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="fill-opacity"
-        from={0.5}
-        to={0.5}
-        begin="0s"
-        dur="0.8s"
-        values=".5;1;.5"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </circle>
-    <circle cx={105} cy={15} r={15}>
-      <animate
-        attributeName="r"
-        from={15}
-        to={15}
-        begin="0s"
-        dur="0.8s"
-        values="15;9;15"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-      <animate
-        attributeName="fill-opacity"
-        from={1}
-        to={1}
-        begin="0s"
-        dur="0.8s"
-        values="1;.5;1"
-        calcMode="linear"
-        repeatCount="indefinite"
-      />
-    </circle>
+const SvgLoader = props => (
+  <svg width='2em' height='2em' viewBox='0 0 24 24' fill='none' {...props}>
+    <path
+      opacity={0.3}
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M12 6.75a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5zM5.25 12a6.75 6.75 0 1 1 13.5 0 6.75 6.75 0 0 1-13.5 0z'
+      fill='currentColor'
+    />
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M11.25 6a.75.75 0 0 1 .75-.75A6.75 6.75 0 0 1 18.75 12a.75.75 0 0 1-1.5 0c0-2.9-2.35-5.25-5.25-5.25a.75.75 0 0 1-.75-.75z'
+      fill='currentColor'
+    />
   </svg>
 )
 
-export default Loader
+export default SvgLoader
