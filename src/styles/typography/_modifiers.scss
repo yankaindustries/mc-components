@@ -23,6 +23,40 @@
     text-transform: uppercase !important;
   }
 
+  &--2-lines {
+    overflow: hidden;
+
+    // Default body / anything not defined
+    max-height: #{2 * $mc-lh-md}em;
+
+    // Headings
+    &[class^="mc-text-h"] {
+      max-height: #{2 * $mc-lh-sm}em;
+    }
+
+    // Headings
+    &.mc-text-large {
+      max-height: #{2 * $mc-lh-lg}em;
+    }
+  }
+
+  &--3-lines {
+    overflow: hidden;
+
+    // Default body / anything not defined
+    max-height: #{3 * $mc-lh-md}em;
+
+    // Headings
+    &[class^="mc-text-h"] {
+      max-height: #{3 * $mc-lh-sm}em;
+    }
+
+    // Headings
+    &.mc-text-large {
+      max-height: #{3 * $mc-lh-lg}em;
+    }
+  }
+
   // Colors
   &--twitter { color: $mc-color-twitter; }
   &--facebook { color: $mc-color-facebook; }

@@ -6,6 +6,13 @@
 // Fonts
 $mc-font-default: "Lato", "Helvetica", "Arial", sans-serif !default; // Should be used in most cases
 
+// Share line-height values between
+// the font definitions and the max-height
+// helper 'mc-text--2-line'
+$mc-lh-sm:  1.25 !default;
+$mc-lh-md:  1.5 !default;
+$mc-lh-lg:  1.7 !default;
+
 // Colors
 $mc-color-light:             #fff !default;
 $mc-color-dark:              #000 !default;
