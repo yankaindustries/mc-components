@@ -82,7 +82,7 @@
     color: $mc-color-dark;
 
     &:hover {
-      background: $mc-color-gray-600;
+      background: $mc-color-gray-700;
       color: $mc-color-dark;
     }
 
@@ -146,6 +146,7 @@
     &.disabled:hover,
     &:disabled:hover {
       background: none;
+
       span:after {
         display: none;
       }
