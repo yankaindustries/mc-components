@@ -4,16 +4,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
-  height: 48px;
-  font-size: 12px;
+  padding: 1em 2em;
+  height: 4em;
+  font-size: 0.75em;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 2;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: 4px;
   color: $mc-color-light;
   transition: background 250ms ease;
+  vertical-align: middle;
 
   &:hover {
     background: $mc-color-primary-hover;

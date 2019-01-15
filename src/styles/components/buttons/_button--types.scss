@@ -1,13 +1,5 @@
 .c-button,
 .mc-c-btn {
-  &--small {
-    padding: 12px 16px;
-  }
-
-  &--wide {
-    min-width: 27.5rem;
-  }
-
   &--full-width {
     width: 100%;
   }
@@ -46,7 +38,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      margin: -12px;
+      margin: -1em;
 
       @include spin;
     }
