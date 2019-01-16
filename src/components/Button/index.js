@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cn from 'classnames'
 import { string, func, bool, node, oneOfType, arrayOf } from 'prop-types'
 
@@ -33,11 +33,16 @@ const Button = ({
       onClick={onClick}
       {...props}
     >
-      <span className='c-button__content'>
-        {children}
-      </span>
+      {!loading &&
+        children
+      }
       {loading &&
-        <Loader className='c-button__loader' />
+        <Fragment>
+          <span className='c-button__content'>
+            {children}
+          </span>
+          <Loader className='c-button__loader' />
+        </Fragment>
       }
     </button>
   )

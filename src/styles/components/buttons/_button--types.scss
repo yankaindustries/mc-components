@@ -30,7 +30,8 @@
     position: relative;
     pointer-events: none;
 
-    span {
+    .c-button__content,
+    .mc-c-btn__content {
       opacity: 0;
     }
 

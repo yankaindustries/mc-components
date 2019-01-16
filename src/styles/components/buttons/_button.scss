@@ -52,11 +52,6 @@
   &:not(:disabled):not(.disabled) {
     cursor: pointer;
   }
-
-  &__content {
-    display: flex;
-    align-items: center;
-  }
 }
 
 // Future-proof disabling of clicks on `<a>` elements
