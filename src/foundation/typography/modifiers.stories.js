@@ -29,6 +29,15 @@ const Modifiers = () =>
     </div>
 
     <div className='align-items-center example__section'>
+      <p className='mc-text--hinted mc-text--monospace'>.mc-text--hinted</p>
+      <CodeExample>
+        <h6 className='mc-text-h5 mc-text--hinted'>
+          The quick brown fox jumped over the lazy dog.
+        </h6>
+      </CodeExample>
+    </div>
+
+    <div className='align-items-center example__section'>
       <p className='mc-text--muted mc-text--monospace'>.mc-text--muted</p>
       <CodeExample>
         <h6 className='mc-text-h5 mc-text--muted'>

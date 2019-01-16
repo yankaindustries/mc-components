@@ -1,15 +1,20 @@
-/* eslint jsx-quotes: 0 */
 import React from 'react'
 
-const Lock = props => (
-  <svg fill="none" viewBox="0 0 12 14" width="1em" height="1em" {...props}>
-    <g fill="currentColor">
-      <path d="M.75 13V7h10.5v6z" />
-      <g clipRule="evenodd" fillRule="evenodd">
-        <path d="M0 7a.75.75 0 0 1 .75-.75h10.5A.75.75 0 0 1 12 7v6a.75.75 0 0 1-.75.75H.75A.75.75 0 0 1 0 13zm1.5.75v4.5h9v-4.5zM6 1.75C4.388 1.75 3 3.159 3 5v1.25H1.5V5C1.5 2.423 3.47.25 6 .25S10.5 2.423 10.5 5v1.25H9V5c0-1.841-1.388-3.25-3-3.25z" />
-      </g>
-    </g>
+const SvgLock = props => (
+  <svg width='2em' height='2em' viewBox='0 0 24 24' fill='none' {...props}>
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M6 11.625a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 .75.75V18a.75.75 0 0 1-.75.75H6.75A.75.75 0 0 1 6 18v-6.375zm1.5.75v4.875h9v-4.875h-9z'
+      fill='currentColor'
+    />
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M12 6.75c-1.612 0-3 1.409-3 3.25v1.25H7.5V10c0-2.577 1.97-4.75 4.5-4.75 2.53 0 4.5 2.173 4.5 4.75v1.25H15V10c0-1.841-1.388-3.25-3-3.25z'
+      fill='currentColor'
+    />
   </svg>
 )
 
-export default Lock
+export default SvgLock
