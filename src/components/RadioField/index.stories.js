@@ -87,7 +87,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('components|Forms/RadioField', module)
+storiesOf('Components|Forms/RadioField', module)
   .add('RadioField', () => (
     <Provider store={store}>
       <Form />

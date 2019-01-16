@@ -68,7 +68,7 @@ const items = [
 ]
 
 
-storiesOf('components|Carousel', module)
+storiesOf('Components|Carousel', module)
   .add('Carousel', withProps(Carousel)(() => (
     <div className='container'>
       <div className='example__heading'>

@@ -217,7 +217,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('components|Forms/InputField', module)
+storiesOf('Components|Forms/InputField', module)
   .add('InputField', withProps(InputField)(() => (
     <Provider store={store}>
       <Form />

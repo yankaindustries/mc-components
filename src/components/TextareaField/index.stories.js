@@ -118,7 +118,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('components|Forms/TextareaField', module)
+storiesOf('Components|Forms/TextareaField', module)
   .add('TextareaField', withProps(TextareaField)(() => (
     <Provider store={store}>
       <Form />

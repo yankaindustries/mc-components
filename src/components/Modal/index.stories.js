@@ -111,7 +111,7 @@ class ModalExample extends Component {
 }
 
 
-storiesOf('components|Modal', module)
+storiesOf('Components|Modal', module)
   .add('Summary', withProps(Modal)(() =>
     <ModalExample />,
   ))

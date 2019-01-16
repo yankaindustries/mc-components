@@ -18,7 +18,7 @@ import Background from '../Background'
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
-storiesOf('components|Tiles', module)
+storiesOf('Components|Tiles', module)
   .add('Summary', () => (
     <div className='container'>
       <div className='example__heading'>
@@ -215,7 +215,7 @@ storiesOf('components|Tiles', module)
   ))
 
 
-storiesOf('components|Tiles/Tile', module)
+storiesOf('Components|Tiles/Tile', module)
   .add('Tile', () => (
     <div className='container'>
       <div className='example__heading'>
