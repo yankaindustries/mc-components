@@ -11,7 +11,7 @@ import TileImage from '../TileImage'
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
-storiesOf('components|Tiles/TileImage', module)
+storiesOf('Components|Tiles/TileImage', module)
   .add('TileImage', withProps(TileImage)(() => (
     <div className='container'>
       <div className='example__heading'>

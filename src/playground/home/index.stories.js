@@ -68,7 +68,7 @@ const items = [
 ]
 
 
-storiesOf('playground|Pages', module)
+storiesOf('Playground|Pages', module)
   .add('Home', () =>
     <div>
       <CarouselConnector>

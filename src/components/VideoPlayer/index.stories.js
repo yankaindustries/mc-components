@@ -28,7 +28,7 @@ const screenStyle = {
 }
 
 
-storiesOf('components|VideoPlayer', module)
+storiesOf('Components|VideoPlayer', module)
   .add('Summary', withProps(VideoPlayer)(() =>
     <div className='container'>
       <DocHeader

@@ -67,6 +67,9 @@ $mc-step-base: 10 !default;
 $mc-step-scale: 4 !default;
 $mc-step-multipliers: 7 !default;
 $mc-step-min-resize: 4 !default;
+$mc-step-decay-sm: 2 !default;
+$mc-step-decay-md: 1 !default;
+$mc-step-decay-lg: 0 !default;
 
 // Custom bootstrap grid overrides
 $enable-grid-classes:    true !default;
