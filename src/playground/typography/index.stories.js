@@ -7,7 +7,7 @@ import TileImage from '../../components/TileImage'
 import HoverHandler from '../../components/HoverHandler'
 
 
-storiesOf('playground|Typography', module)
+storiesOf('Playground|Typography', module)
   .add('Examples', () =>
     <div className='container'>
       <div className='example__section'>

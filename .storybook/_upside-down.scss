@@ -28,7 +28,8 @@ hr {
   height: 1px;
   border: none;
   background: $mc-color-gray-100;
-  margin: 1em 0;
+  @include step(margin-top, 4);
+  @include step(margin-bottom, 4);
 
   .mc-invert & {
     background: $mc-color-gray-600;
@@ -48,20 +49,23 @@ a {
 }
 
 .example__heading {
-  margin: 3em 0;
+  @include step(margin-top, 8);
+  @include step(margin-bottom, 8);
 }
 
 .example__section {
-  margin: 3em 0 6em;
+  @include step(margin-top, 8);
+  @include step(margin-bottom, 10);
 }
 
 .example__definition {
-  margin-bottom: 2em;
+  @include step(margin-bottom, 5);
 }
 
 .example__render {
-  padding: 1em 0;
-  margin-bottom: 1em;
+  @include step(padding-top, 4);
+  @include step(padding-bottom, 4);
+  @include step(margin-bottom, 4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   .mc-invert & {
@@ -70,16 +74,15 @@ a {
 }
 
 .example__trigger {
-  margin-bottom: 1em;
+  @include step(margin-bottom, 4);
 }
 
 .example__code {
-  margin-bottom: 1em;
+  @include step(margin-bottom, 4);
 }
 
 .example__table {
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
   border-collapse: collapse;
   text-align: left;
 
@@ -88,10 +91,6 @@ a {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
-
-    tr:nth-child(2n +1) {
-      background: rgba(255, 255, 255, 0.05);
-    }
   }
 
   th {
@@ -99,7 +98,7 @@ a {
   }
 
   th, td {
-    padding: 5px 10px;
+    @include step(padding, 2);
   }
 }
 
@@ -124,7 +123,6 @@ a {
 .example-mc-swatch {
   display: flex;
   align-items: center;
-  margin: 15px 0;
 
   $colors: (
     mc-color-light: $mc-color-light,
@@ -178,9 +176,58 @@ a {
   }
 }
 
-.mc-example-breakpoint {
-  border-bottom: 1px dashed $mc-color-gray-300;
-  padding: 10px 0;
+.example-mc-step {
+  @for $i from 1 through 16 {
+    &__box {
+      display: inline-block;
+      background: $mc-color-primary;
+    }
+
+    &__box-#{$i} {
+      @include step(width, $i);
+      @include step(height, $i);
+    }
+
+    $rem-sm: calc-step($i, $mc-step-decay-sm);
+    $rem-md: calc-step($i, $mc-step-decay-md);
+    $rem-lg: calc-step($i, $mc-step-decay-lg);
+
+    &__label-#{$i}-sm-px:before {
+      content: "#{$rem-sm * $mc-step-base}";
+    }
+
+    &__label-#{$i}-sm-rem:before {
+      content: "#{$rem-sm}";
+    }
+
+    &__label-#{$i}-sm-em:before {
+      content: "#{$rem-sm * $mc-step-base / (4 * $mc-step-scale)}";
+    }
+
+    &__label-#{$i}-md-px:before {
+      content: "#{$rem-md * $mc-step-base}";
+    }
+
+    &__label-#{$i}-md-rem:before {
+      content: "#{$rem-md}";
+    }
+
+    &__label-#{$i}-md-em:before {
+      content: "#{$rem-md * $mc-step-base / (4 * $mc-step-scale)}";
+    }
+
+    &__label-#{$i}-lg-px:before {
+      content: "#{$rem-lg * $mc-step-base}";
+    }
+
+    &__label-#{$i}-lg-rem:before {
+      content: "#{$rem-lg}";
+    }
+
+    &__label-#{$i}-lg-em:before {
+      content: "#{$rem-lg * $mc-step-base / (4 * $mc-step-scale)}";
+    }
+  }
 }
 
 // Inline variables magically, thanks @jones for

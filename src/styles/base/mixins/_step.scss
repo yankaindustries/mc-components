@@ -1,11 +1,11 @@
 @mixin step($attribute, $value) {
-  #{$attribute}: calc-step($value, 2);
+  #{$attribute}: calc-step($value, $mc-step-decay-sm) * 1rem;
 
   @media (min-width: $mc-bp-md) {
-    #{$attribute}: calc-step($value, 1);
+    #{$attribute}: calc-step($value, $mc-step-decay-md) * 1rem;
   }
 
   @media (min-width: $mc-bp-lg) {
-    #{$attribute}: calc-step($value, 0);
+    #{$attribute}: calc-step($value, $mc-step-decay-lg) * 1rem;
   }
 }

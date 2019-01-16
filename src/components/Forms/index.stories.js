@@ -227,7 +227,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('components|Forms', module)
+storiesOf('Components|Forms', module)
   .add('Summary', withProps(InputField)(() => (
     <Provider store={store}>
       <Form />
