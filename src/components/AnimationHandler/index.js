@@ -10,6 +10,8 @@ export default class AnimationHandler extends PureComponent {
       'zoom',
       'ken-burns',
       'lift',
+      'show',
+      'hide',
     ]),
     animating: PropTypes.bool,
     children: PropTypes.oneOfType([

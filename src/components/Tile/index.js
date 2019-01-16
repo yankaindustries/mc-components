@@ -5,17 +5,13 @@ import PropTypes from 'prop-types'
 export default class Tile extends PureComponent {
   static propTypes = {
     aspectRatio: PropTypes.oneOf([
+      'auto',
       '1x1',
+      '3x4',
       '4x3',
       '9x16',
-      '3x4',
       '16x9',
       '21x9',
-
-      // DEPRECATE
-      '519x187',
-      '100x65',
-      '1000x609',
     ]),
     children: PropTypes.node,
     className: PropTypes.string,

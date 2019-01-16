@@ -33,4 +33,50 @@
       transform: translateY(-0.75em);
     }
   }
+
+  &--show {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+
+    &.mc-animation--animating {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: none;
+    }
+  }
+
+  &--delayed-show {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 200ms ease, visibility 0ms 200ms;
+
+    &.mc-animation--animating {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: none;
+      transition: opacity 200ms ease 500ms, visibility 0ms 200ms;
+    }
+  }
+
+  &--hide {
+    opacity: 1;
+    transition: opacity 200ms ease;
+
+    &.mc-animation--animating {
+      opacity: 0;
+    }
+  }
+
+  &--delayed-hide {
+    opacity: 1;
+    transition: opacity 200ms ease 500ms;
+
+    &.mc-animation--animating {
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+  }
 }
