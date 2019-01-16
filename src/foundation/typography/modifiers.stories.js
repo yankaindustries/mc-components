@@ -65,6 +65,99 @@ const Modifiers = () =>
     </div>
 
     <div className='align-items-center example__section'>
+      <p className='mc-text--muted mc-text--monospace'>.mc-text--2-lines</p>
+      <CodeExample>
+        <p>
+          The examples below should wrap to a maximum of two lines,
+          even when the window is resized. The sample text used is much longer
+          than 2 lines for demonstrative purposes.
+        </p>
+
+        <hr />
+
+        <div className='row'>
+          <div className='col-5'>
+            <h4 className='mc-text-h4 mc-text--2-lines'>
+              This is a heading: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </h4>
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-5'>
+            <p className='mc-text--2-lines'>
+              This is body text: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-5'>
+            <p className='mc-text-large mc-text--2-lines'>
+              This is mc-text-large: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+          </div>
+        </div>
+      </CodeExample>
+    </div>
+
+    <div className='align-items-center example__section'>
+      <p className='mc-text--muted mc-text--monospace'>.mc-text--3-lines</p>
+      <CodeExample>
+        <p>
+          The examples below should wrap to a maximum of three lines,
+          even when the window is resized. The sample text used is much longer
+          than 3 lines for demonstrative purposes.
+        </p>
+
+        <hr />
+
+        <div className='row'>
+          <div className='col-5'>
+            <h4 className='mc-text-h4 mc-text--3-lines'>
+              This is a heading: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </h4>
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-5'>
+            <p className='mc-text--3-lines'>
+              This is body text: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+          </div>
+        </div>
+
+        <div className='row'>
+          <div className='col-5'>
+            <p className='mc-text-large mc-text--3-lines'>
+              This is mc-text-large: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+          </div>
+        </div>
+      </CodeExample>
+    </div>
+
+
+    <div className='align-items-center example__section'>
       <p className='mc-text--muted mc-text--monospace'>.mc-text--normal</p>
       <CodeExample>
         <p className='mc-text-large mc-text--normal'>
