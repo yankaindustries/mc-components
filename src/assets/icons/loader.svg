@@ -1,74 +1,15 @@
-<svg
-  width='120'
-  height='30'
-  viewBox='0 0 120 30'
-  xmlns='http://www.w3.org/2000/svg'
-  fill='#fff'
->
-  <circle cx='15' cy='15' r='15'>
-    <animate
-      attributeName='r'
-      from='15'
-      to='15'
-      begin='0s'
-      dur='0.8s'
-      values='15;9;15'
-      calcMode='linear'
-      repeatCount='indefinite'
-    />
-    <animate
-      attributeName='fill-opacity'
-      from='1'
-      to='1'
-      begin='0s'
-      dur='0.8s'
-      values='1;.5;1'
-      calcMode='linear'
-      repeatCount='indefinite'
-    />
-  </circle>
-  <circle cx='60' cy='15' r='9' fillOpacity='0.3'>
-    <animate
-      attributeName='r'
-      from='9'
-      to='9'
-      begin='0s'
-      dur='0.8s'
-      values='9;15;9'
-      calcMode='linear'
-      repeatCount='indefinite'
-    />
-    <animate
-      attributeName='fill-opacity'
-      from='0.5'
-      to='0.5'
-      begin='0s'
-      dur='0.8s'
-      values='.5;1;.5'
-      calcMode='linear'
-      repeatCount='indefinite'
-    />
-  </circle>
-  <circle cx='105' cy='15' r='15'>
-    <animate
-      attributeName='r'
-      from='15'
-      to='15'
-      begin='0s'
-      dur='0.8s'
-      values='15;9;15'
-      calcMode='linear'
-      repeatCount='indefinite'
-    />
-    <animate
-      attributeName='fill-opacity'
-      from='1'
-      to='1'
-      begin='0s'
-      dur='0.8s'
-      values='1;.5;1'
-      calcMode='linear'
-      repeatCount='indefinite'
-    />
-  </circle>
+<svg width="24"
+  height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    opacity="0.3"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M12 6.75C9.10051 6.75 6.75 9.10051 6.75 12C6.75 14.8995 9.10051 17.25 12 17.25C14.8995 17.25 17.25 14.8995 17.25 12C17.25 9.10051 14.8995 6.75 12 6.75ZM5.25 12C5.25 8.27208 8.27208 5.25 12 5.25C15.7279 5.25 18.75 8.27208 18.75 12C18.75 15.7279 15.7279 18.75 12 18.75C8.27208 18.75 5.25 15.7279 5.25 12Z"
+    fill="black"
+  />
+  <path fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M11.25 6C11.25 5.58579 11.5858 5.25 12 5.25C15.7279 5.25 18.75 8.27208 18.75 12C18.75 12.4142 18.4142 12.75 18 12.75C17.5858 12.75 17.25 12.4142 17.25 12C17.25 9.1005 14.8995 6.75 12 6.75C11.5858 6.75 11.25 6.41421 11.25 6Z"
+    fill="black"
+  />
 </svg>

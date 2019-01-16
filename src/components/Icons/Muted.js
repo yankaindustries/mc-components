@@ -1,15 +1,14 @@
-/* eslint jsx-quotes: 0 */
 import React from 'react'
 
-const Muted = props => (
-  <svg viewBox="0 0 20 18" fill="none" width="1em" height="1em" {...props}>
+const SvgMuted = props => (
+  <svg width='2em' height='2em' viewBox='0 0 24 24' fill='none' {...props}>
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M9.418.092A1 1 0 0 1 10 1v16a1 1 0 0 1-1.65.76L4.63 14.57H1a1 1 0 0 1-1-1V4.43a1 1 0 0 1 1-1h3.63L8.35.24A1 1 0 0 1 9.417.09zM8 3.174L5.65 5.188a1 1 0 0 1-.65.24H2v7.143h3a1 1 0 0 1 .65.241L8 14.826V3.174zM13.293 5.793a1 1 0 0 1 1.414 0L16.5 7.586l1.793-1.793a1 1 0 0 1 1.414 1.414L17.914 9l1.793 1.793a1 1 0 0 1-1.414 1.414L16.5 10.414l-1.793 1.793a1 1 0 0 1-1.414-1.414L15.086 9l-1.793-1.793a1 1 0 0 1 0-1.414z"
-      fill="#fff"
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M11.563 5.319A.75.75 0 0 1 12 6v12a.75.75 0 0 1-1.238.57l-2.79-2.391H5.25a.75.75 0 0 1-.75-.75V8.57a.75.75 0 0 1 .75-.75h2.723l2.789-2.39a.75.75 0 0 1 .801-.112zM10.5 7.63L8.738 9.14a.75.75 0 0 1-.488.18H6v5.358h2.25a.75.75 0 0 1 .488.18l1.762 1.51V7.631zM14.47 9.595a.75.75 0 0 1 1.06 0l1.345 1.344 1.345-1.344a.75.75 0 1 1 1.06 1.06L17.936 12l1.344 1.345a.75.75 0 1 1-1.06 1.06l-1.345-1.344-1.345 1.344a.75.75 0 1 1-1.06-1.06L15.814 12l-1.344-1.345a.75.75 0 0 1 0-1.06z'
+      fill='currentColor'
     />
   </svg>
 )
 
-export default Muted
+export default SvgMuted

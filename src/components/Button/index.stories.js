@@ -7,7 +7,7 @@ import DocSection from '../../utils/DocSection'
 import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
 import Button from '../Button'
-import IconArrow from '../Icons/Arrow'
+import IconChevronRight from '../Icons/ChevronRight'
 import IconLock from '../Icons/Lock'
 import IconMagnifyingGlass from '../Icons/MagnifyingGlass'
 import IconClose from '../Icons/Close'
@@ -126,7 +126,7 @@ storiesOf('Components|Button', module)
               <div className='col-auto'>
                 <Button>
                   Button
-                  <IconArrow className='mc-ml-3' />
+                  <IconChevronRight className='mc-ml-3' />
                 </Button>
               </div>
 

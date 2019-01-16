@@ -20,3 +20,12 @@
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
+
+@mixin spin {
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  animation: spin 500ms infinite linear;
+}

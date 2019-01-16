@@ -1,15 +1,14 @@
-/* eslint jsx-quotes: 0 */
 import React from 'react'
 
-const ChevronLeft = props => (
-  <svg viewBox="0 0 11 18" fill="none" width="1em" height="1em" {...props}>
+const SvgChevronLeft = props => (
+  <svg width='2em' height='2em' viewBox='0 0 24 24' fill='none' {...props}>
     <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M10.207.293a1 1 0 0 1 0 1.414L2.914 9l7.293 7.293a1 1 0 0 1-1.414 1.414l-8-8a1 1 0 0 1 0-1.414l8-8a1 1 0 0 1 1.414 0z"
-      fill="currentColor"
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M15.155 5.47a.75.75 0 0 1 0 1.06L9.685 12l5.47 5.47a.75.75 0 1 1-1.06 1.06l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 0 1 1.06 0z'
+      fill='currentColor'
     />
   </svg>
 )
 
-export default ChevronLeft
+export default SvgChevronLeft
