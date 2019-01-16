@@ -73,7 +73,7 @@ $scrollbarWidth: 7px !default; // Browser scrollbar width
       &__label {
         font-size: 11px;
         transform: translateY(4px);
-        width: calc(100% - (2 * #{$textarea-padding}) - #{$scrollbarWidth});
+        max-width: calc(100% - (2 * #{$textarea-padding}) - #{$scrollbarWidth});
         transition:
           font 320ms ease 0ms,
           transform 320ms ease 0ms;
