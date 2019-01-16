@@ -126,13 +126,13 @@ storiesOf('Components|Button', module)
               <div className='col-auto'>
                 <Button>
                   Button
-                  <IconChevronRight className='mc-ml-2' />
+                  <IconChevronRight className='mc-ml-3' />
                 </Button>
               </div>
 
               <div className='col-auto'>
                 <Button secondary>
-                  <IconLock className='mc-mr-2' />
+                  <IconLock className='mc-mr-3' />
                   Secondary
                 </Button>
               </div>
