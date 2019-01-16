@@ -1,11 +1,18 @@
-const template = require('./src/utils/template-svgr.js')
 const prettierConfig = require('./prettier.config.js')
 
 module.exports = {
-  icon: true,
+  // icon: true,
   replaceAttrValues: {
     '#000': 'currentColor',
   },
+  svgProps: {
+    width: '2em',
+    height: '2em',
+  },
+  svgoConfig: {
+    plugins: {
+      removeViewBox: false,
+    },
+  },
   prettierConfig,
-  template,
 }

@@ -1,14 +1,14 @@
-/* eslint jsx-quotes: 0 */
 import React from 'react'
 
-const Close = props => (
-  <svg viewBox="0 0 14 14" fill="none" width="1em" height="1em" {...props}>
+const SvgClose = props => (
+  <svg width='2em' height='2em' viewBox='0 0 24 24' fill='none' {...props}>
     <path
-      d="M6.169 7L1.173 2.005a.587.587 0 0 1 0-.832c.23-.23.601-.23.832 0L7 6.167l4.992-4.994c.23-.23.606-.23.832 0 .23.23.23.602 0 .832L7.83 7l4.996 4.994a.589.589 0 0 1-.832.832L7.001 7.832l-4.996 4.994a.589.589 0 0 1-.832-.832L6.169 7z"
-      fill="currentColor"
-      stroke="currentColor"
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M6.97 6.97a.75.75 0 0 1 1.06 0L12 10.94l3.97-3.97a.75.75 0 1 1 1.06 1.06L13.06 12l3.97 3.97a.75.75 0 1 1-1.06 1.06L12 13.06l-3.97 3.97a.75.75 0 0 1-1.06-1.06L10.94 12 6.97 8.03a.75.75 0 0 1 0-1.06z'
+      fill='currentColor'
     />
   </svg>
 )
 
-export default Close
+export default SvgClose
