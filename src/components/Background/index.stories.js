@@ -13,7 +13,7 @@ import abstractBackground from '../../utils/abstract-background.jpg'
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
-storiesOf('components|Background', module)
+storiesOf('Components|Background', module)
   .add('Summary', withProps(Background)(() => (
     <div>
       <div className='container'>

@@ -8,9 +8,10 @@ import 'highlight.js/styles/tomorrow-night.css'
 setOptions({
   hierarchySeparator: /\//,
   hierarchyRootSeparator: /\|/,
-  addonPanelInRight: true,
-  selectedAddonPanel: 'mc/props/panel',
   sortStoriesByKind: true,
+  showAddonPanel: false,
+  addonPanelInRight: true,
+  // selectedAddonPanel: 'mc/props/panel',
 });
 
 const req = require.context('../src', true, /\.stories\.js$/)

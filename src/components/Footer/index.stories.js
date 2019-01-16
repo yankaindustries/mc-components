@@ -5,7 +5,7 @@ import { withProps } from '../../utils/addon-props'
 import Footer from '../Footer'
 
 
-storiesOf('components|Structure/Footer', module)
+storiesOf('Components|Structure/Footer', module)
   .add('default',
     withProps(Footer)(() =>
       <Footer />,

@@ -12,7 +12,7 @@ import TileOverlay from '../TileOverlay'
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
-storiesOf('components|Tiles/TileOverlay', module)
+storiesOf('Components|Tiles/TileOverlay', module)
   .add('TileOverlay', withProps(TileOverlay)(() => (
     <div className='container'>
       <div className='example__heading'>
