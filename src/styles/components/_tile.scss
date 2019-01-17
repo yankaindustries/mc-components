@@ -32,10 +32,10 @@
 
   &__content {
     position: absolute;
-    left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -201,11 +201,11 @@
 
   &__content {
     position: absolute;
-    padding: 16px;
+    padding: 16px 0;
     width: 100%;
     background: rgba($mc-color-dark, 0);
     text-shadow: 0 0 10px $mc-color-dark;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, padding 0.2s ease;
   }
 
   // Modifiers
