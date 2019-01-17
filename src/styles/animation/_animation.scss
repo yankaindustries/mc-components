@@ -69,9 +69,10 @@
 
     &.mc-animation--animating {
       .mc-tile__content {
-        top: -32px;
+        top: -16px;
         left: -32px;
         right: -32px;
+        bottom: -16px;
         transition:
           left $zoom-duration $bezier 0ms,
           top $zoom-duration $bezier 0ms,
