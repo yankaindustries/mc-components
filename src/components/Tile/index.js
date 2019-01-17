@@ -6,6 +6,7 @@ export default class Tile extends PureComponent {
   static propTypes = {
     aspectRatio: PropTypes.oneOf([
       '1x1',
+      '2x3',
       '4x3',
       '9x16',
       '3x4',

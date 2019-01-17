@@ -7,7 +7,6 @@
 
 .mc-card {
   padding: $grid-gutter-width-xl / 2;
-  border-radius: 3px;
 
   &--equal-height {
     height: 100%;
@@ -169,7 +168,6 @@ a {
     width: 35px;
     height: 35px;
     margin-right: 12px;
-    border-radius: 5px;
     border: 1px solid $mc-color-gray-100;
     flex-shrink: 0;
 
