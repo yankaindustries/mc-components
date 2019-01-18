@@ -48,7 +48,10 @@ storiesOf('components|Accordion', module)
       <div className='container'>
         <DocHeader
           title='Accordion'
-          description='test test test'
+          description='
+            Excellent for when you need to take a deeper dive when using
+            short form content like a Tile.
+          '
           experimental
         />
 
