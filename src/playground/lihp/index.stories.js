@@ -148,45 +148,46 @@ storiesOf('Playground|Pages', module)
           <div key={key} className='col-auto'>
             <HoverHandler>
               {({ intent }) =>
-              <AnimationHandler type='zoom-tile' animating={intent}>
-                <Tile key={item.id}>
-                  <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
+                <AnimationHandler type='zoom-tile' animating={intent}>
+                  <Tile key={item.id}>
+                    <TileImage imageUrl={item.thumbnail} />
+                    <TileOverlay />
 
-                  <TileCaption
-                    position='center bottom'
-                  >
-                    <div className='mc-tile__reveal-on-hover'>
-                      <Button secondary>Resume</Button>
-                    </div>
-                  </TileCaption>
+                    <TileCaption
+                      position='center bottom'
+                    >
+                      <div className='mc-tile__reveal-on-hover'>
+                        <Button secondary>Resume</Button>
+                      </div>
+                    </TileCaption>
 
-                  <TileCaption
-                    position='left below'
-                  >
-                    <h6 className={`
-                      mc-text-h7
-                      mc-text--uppercase
-                      mc-text--muted
-                      mc-mb-2
-                    `}>
-                      {item.instructor}
-                    </h6>
-                    <p>
-                      {`${item.lesson}`}
-                    </p>
-
-                    <div className='mc-tile__reveal-on-hover'>
-                      <p className={`
-                        mc-mt-2
-                        mc-text-small
+                    <TileCaption
+                      position='left below'
+                      className='mc-tile__darken-bg-on-hover'
+                    >
+                      <h6 className={`
+                        mc-text-h7
+                        mc-text--uppercase
                         mc-text--muted
+                        mc-mb-2
                       `}>
-                        {`${item.extract}`}
+                        {item.instructor}
+                      </h6>
+                      <p>
+                        {`${item.lesson}`}
                       </p>
-                    </div>
-                  </TileCaption>
-                </Tile>
+
+                      <div className='mc-tile__reveal-on-hover'>
+                        <p className={`
+                          mc-mt-2
+                          mc-text-small
+                          mc-text--muted
+                        `}>
+                          {`${item.extract}`}
+                        </p>
+                      </div>
+                    </TileCaption>
+                  </Tile>
                 </AnimationHandler>
               }
             </HoverHandler>
@@ -221,36 +222,35 @@ storiesOf('Playground|Pages', module)
               <TileCaption
                 position='left bottom'
               >
-                <div className='mc-p-4'>
-                  <div className={`
-                    d-flex
-                    align-items-center
-                    justify-content-between
+                <div className={`
+                  d-flex
+                  align-items-center
+                  justify-content-between
+                  mc-mb-2
+                `}>
+                  <h6 className={`
+                    mc-text-h8
+                    mc-text--uppercase
                   `}>
-                    <h6 className={`
-                      mc-text-h8
-                      mc-text--uppercase
-                    `}>
-                      {item.playlist}
-                    </h6>
+                    {item.playlist}
+                  </h6>
 
-                    <Badge>
-                      <span className='mc-text-small'>6 Videos</span>
-                    </Badge>
-                  </div>
-
-                  <h5 className='mc-text-h5'>
-                    {`${item.lesson}`}
-                  </h5>
-                  <p className={`
-                    mc-mt-2
-                    mc-text-small
-                    mc-text--hinted
-                    mc-text--3-lines
-                  `}>
-                    {`${item.extract}`}
-                  </p>
+                  <Badge>
+                    6 Videos
+                  </Badge>
                 </div>
+
+                <h5 className='mc-text-h5'>
+                  {`${item.lesson}`}
+                </h5>
+                <p className={`
+                  mc-mt-2
+                  mc-text-small
+                  mc-text--hinted
+                  mc-text--3-lines
+                `}>
+                  {`${item.extract}`}
+                </p>
               </TileCaption>
             </Tile>
           </div>

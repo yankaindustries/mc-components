@@ -1,8 +1,12 @@
-.badge {
+.mc-badge {
   display: inline-block;
   vertical-align: middle;
   background: $mc-color-gray-200;
   color: $mc-color-light;
-  padding: 0.286em 0.454em;
+  padding: 0.25em 0.5em;
   border-radius: 3px;
+
+  &--primary {
+    background: $mc-color-primary;
+  }
 }

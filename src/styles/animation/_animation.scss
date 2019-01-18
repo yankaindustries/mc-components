@@ -68,6 +68,8 @@
 
 
     &.mc-animation--animating {
+      z-index: 1;
+
       .mc-tile__content {
         top: -16px;
         left: -32px;
@@ -81,11 +83,16 @@
       }
 
       .mc-tile-caption__content {
-        background: $mc-color-gray-100;
         padding: 16px 32px 24px 32px;
         transition:
           background $bg-duration ease 0ms,
           padding $zoom-duration $bezier 0ms;
+      }
+
+      .mc-tile__darken-bg-on-hover {
+        .mc-tile-caption__content {
+          background: $mc-color-gray-100;
+        }
       }
 
       .mc-tile__reveal-on-hover {

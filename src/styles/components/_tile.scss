@@ -202,11 +202,12 @@
 
   &__content {
     position: absolute;
-    padding: 16px 0;
+    padding: 16px;
     width: 100%;
-    background: rgba($mc-color-dark, 0);
     text-shadow: 0 0 10px $mc-color-dark;
-    transition: transform 0.2s ease, padding 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      padding 0.2s ease;
   }
 
   // Modifiers
@@ -243,8 +244,9 @@
   &--y-below {
     .mc-tile-caption__content {
       align-self: flex-end;
+      padding-left: 0;
+      padding-right: 0;
       transform: translateY(100%);
-      background: rgba($mc-color-dark, 1);
     }
   }
 }
