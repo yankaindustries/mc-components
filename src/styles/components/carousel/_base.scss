@@ -5,6 +5,13 @@ $scrollbar-max-width: 17px !default;
   position: relative;
   pointer-events: auto;
 
+  // Make sure that when you hover on a carousel
+  // row, the hover effects are z-indexed correctly
+  // (they have to be set higher here to work)
+  &:hover {
+    z-index: 1;
+  }
+
   // We need to override slick sliders default scss
   // so that we can have cool hover effects and not cut off
   // tiles that overflow the slick container

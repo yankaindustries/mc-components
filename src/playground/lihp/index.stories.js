@@ -142,7 +142,7 @@ storiesOf('Playground|Pages', module)
       <Carousel
         slidesToShow={4}
         controls
-        className='row'
+        className='row mc-pb-12'
       >
         {jbi.map((item, key) => (
           <div key={key} className='col-auto'>
@@ -194,8 +194,6 @@ storiesOf('Playground|Pages', module)
           </div>
         ))}
       </Carousel>
-
-      <div className='mc-py-10'></div>
 
       <h5 className={`
         mc-text-h5

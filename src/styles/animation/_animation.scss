@@ -68,8 +68,6 @@
 
 
     &.mc-animation--animating {
-      z-index: 1;
-
       .mc-tile__content {
         top: -16px;
         left: -32px;
