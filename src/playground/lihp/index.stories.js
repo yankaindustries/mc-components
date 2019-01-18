@@ -159,7 +159,7 @@ const playlist = [
 
 storiesOf('Playground|Pages', module)
   .add('LIHP', () =>
-    <div className='container mc-pt-5'>
+    <div className='container mc-pt-6'>
       <h5 className={`
         mc-text-h5
         mc-text--airy
@@ -171,7 +171,7 @@ storiesOf('Playground|Pages', module)
       <Carousel
         slidesToShow={4}
         controls
-        className='row mc-pb-12'
+        className='row mc-mb-10'
       >
         {jbi.map((item, key) => (
           <div key={key} className='col-auto'>
