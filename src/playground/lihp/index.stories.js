@@ -1,15 +1,17 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Carousel from '../../components/Carousel'
+import Accordion from '../../components/Accordion'
+import AnimationHandler from '../../components/AnimationHandler'
 import Badge from '../../components/Badge'
 import Button from '../../components/Button'
+import Carousel from '../../components/Carousel'
+import HoverHandler from '../../components/HoverHandler'
+import IconPlay from '../../components/Icons/Play'
 import Tile from '../../components/Tile'
+import TileCaption from '../../components/TileCaption'
 import TileImage from '../../components/TileImage'
 import TileOverlay from '../../components/TileOverlay'
-import TileCaption from '../../components/TileCaption'
-import AnimationHandler from '../../components/AnimationHandler'
-import HoverHandler from '../../components/HoverHandler'
 
 const jbi = [
   {
@@ -70,6 +72,32 @@ const jbi = [
   },
 ]
 
+const instructors = [
+  {
+    image: 'http://stephenpontes.com/clients/mc/images/gr.png',
+    instructor: 'Gordon Ramsay',
+    course: 'Teaches Cooking 1',
+    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+  },
+  {
+    image: 'http://stephenpontes.com/clients/mc/images/tk.png',
+    instructor: 'Thomas Keller',
+    course: 'Teaches Cooking Techniques II: Meats, Stocks, and Sauces',
+    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+  },
+  {
+    image: 'http://stephenpontes.com/clients/mc/images/da.png',
+    instructor: 'Dominique Ansel',
+    course: 'Teaches French Pastry Fundamentals',
+    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+  },
+  {
+    image: 'http://stephenpontes.com/clients/mc/images/dakr.jpg',
+    instructor: 'David Axelrod and Karl Rove',
+    course: 'Teaches Campaign Strategy and Messaging',
+    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+  },
+]
 
 const playlist = [
   {
@@ -146,54 +174,144 @@ storiesOf('Playground|Pages', module)
       >
         {jbi.map((item, key) => (
           <div key={key} className='col-auto'>
-            <HoverHandler>
-              {({ intent }) =>
-                <AnimationHandler type='zoom-tile' animating={intent}>
-                  <Tile key={item.id}>
-                    <TileImage imageUrl={item.thumbnail} />
-                    <TileOverlay />
+            <div className='mc-mb-10'>
+              <HoverHandler>
+                {({ intent }) =>
+                  <AnimationHandler type='zoom-tile' animating={intent}>
+                    <Tile key={item.id}>
+                      <TileImage imageUrl={item.thumbnail} />
+                      <TileOverlay />
 
-                    <TileCaption
-                      position='center bottom'
-                    >
-                      <div className='mc-tile__reveal-on-hover'>
-                        <Button secondary>Resume</Button>
-                      </div>
-                    </TileCaption>
+                      <TileCaption
+                        position='right bottom'
+                      >
+                        <Badge>
+                          13:33
+                        </Badge>
+                      </TileCaption>
 
-                    <TileCaption
-                      position='left below'
-                      className='mc-tile__darken-bg-on-hover'
-                    >
-                      <h6 className={`
-                        mc-text-h7
-                        mc-text--uppercase
-                        mc-text--muted
-                        mc-mb-2
-                      `}>
-                        {item.instructor}
-                      </h6>
-                      <p>
-                        {`${item.lesson}`}
-                      </p>
+                      <TileCaption
+                        position='center bottom'
+                      >
+                        <div className='mc-tile__reveal-on-hover'>
+                          <Button secondary>Resume</Button>
+                        </div>
+                      </TileCaption>
 
-                      <div className='mc-tile__reveal-on-hover'>
-                        <p className={`
-                          mc-mt-2
-                          mc-text-small
+                      <TileCaption
+                        position='left below'
+                        className='mc-tile__darken-bg-on-hover'
+                      >
+                        <h6 className={`
+                          mc-text-h7
+                          mc-text--uppercase
                           mc-text--muted
+                          mc-mb-2
                         `}>
-                          {`${item.extract}`}
+                          {item.instructor}
+                        </h6>
+                        <p>
+                          {`${item.lesson}`}
                         </p>
-                      </div>
-                    </TileCaption>
-                  </Tile>
-                </AnimationHandler>
-              }
-            </HoverHandler>
+
+                        <div className='mc-tile__reveal-on-hover'>
+                          <p className={`
+                            mc-mt-2
+                            mc-text-small
+                            mc-text--muted
+                          `}>
+                            {`${item.extract}`}
+                          </p>
+                        </div>
+                      </TileCaption>
+                    </Tile>
+                  </AnimationHandler>
+                }
+              </HoverHandler>
+            </div>
           </div>
         ))}
       </Carousel>
+
+      <h5 className={`
+        mc-text-h5
+        mc-text--airy
+        mc-mb-6
+      `}>
+        Creative Writing
+      </h5>
+
+      <HoverHandler nowrap>
+        {({ intent: parentHovering, props: parentProps }) =>
+          <Accordion {...parentProps} className='mc-mb-10'>
+            {instructors.map((tile, key) =>
+              <HoverHandler key={key} nowrap>
+                {({ intent: panelHovering, props: panelProps }) =>
+                  <Tile aspectRatio='auto' {...panelProps}>
+                    <TileImage imageUrl={tile.image} />
+
+                    <AnimationHandler
+                      type='hide'
+                      animating={parentHovering}
+                    >
+                      <TileOverlay type='gradient-bottom' />
+                      <TileCaption position='center bottom'>
+                        <h5 className={`
+                          mc-text-h5
+                          mc-text--airy
+                          mc-mb-2
+                        `}>
+                          {tile.instructor}
+                        </h5>
+                        <p className={`
+                          mc-text--muted
+                          mc-text--2-lines
+                        `}>
+                          {tile.course}
+                        </p>
+                      </TileCaption>
+                    </AnimationHandler>
+
+                    <AnimationHandler
+                      type='show-delayed'
+                      animating={panelHovering}
+                    >
+                      <div>
+                        <TileOverlay type='gradient-left' />
+                        <TileCaption position='left center'>
+                          <div className='row'>
+                            <div className='col-4 offset-1'>
+                              <h4 className='mc-text-h4'>
+                                {tile.instructor}
+                              </h4>
+                              <p className='mc-text--muted'>
+                                {tile.course}
+                              </p>
+                              <p className='mc-mb-4'>
+                                {tile.description}
+                              </p>
+                              <Button>Start Class</Button>
+                            </div>
+                          </div>
+                        </TileCaption>
+                      </div>
+                    </AnimationHandler>
+                  </Tile>
+                }
+              </HoverHandler>,
+            )}
+          </Accordion>
+        }
+      </HoverHandler>
+
+      <Tile aspectRatio='21x9'>
+        <TileImage imageUrl='http://placekitten.com/1920/1080' />
+        <TileCaption position='center bottom'>
+          <h1 className='mc-text-h1'>
+            hi
+          </h1>
+        </TileCaption>
+      </Tile>
 
       <h5 className={`
         mc-text-h5
@@ -234,7 +352,7 @@ storiesOf('Playground|Pages', module)
                   </h6>
 
                   <Badge>
-                    6 Videos
+                    <IconPlay /> 6 Videos
                   </Badge>
                 </div>
 

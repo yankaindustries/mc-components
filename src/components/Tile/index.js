@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 export default class Tile extends PureComponent {
@@ -33,12 +34,12 @@ export default class Tile extends PureComponent {
       ...restProps
     } = this.props
 
-    const classes = [
-      'mc-tile',
-      `mc-tile--${aspectRatio}`,
-      naked ? 'mc-tile--naked' : '',
-      className || '',
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-tile': true,
+      [`mc-tile--${aspectRatio}`]: aspectRatio,
+      'mc-tile--naked': naked,
+    })
 
     return (
       <div className={classes} {...restProps}>

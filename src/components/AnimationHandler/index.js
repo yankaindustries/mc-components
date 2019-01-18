@@ -1,5 +1,6 @@
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import { renderChildren } from '../helpers'
 
@@ -32,14 +33,18 @@ export default class AnimationHandler extends PureComponent {
       animating,
       type,
       children,
+      ...restProps
     } = this.props
 
-    const classes = [
-      'mc-animation',
-      `mc-animation--${type}`,
-      animating ? 'mc-animation--animating' : '',
-    ].join(' ')
+    const classes = cn({
+      'mc-animation': true,
+      [`mc-animation--${type}`]: type,
+      'mc-animation--animating': animating,
+    })
 
-    return renderChildren(children, { className: classes })
+    return renderChildren(children, {
+      className: classes,
+      ...restProps,
+    })
   }
 }
