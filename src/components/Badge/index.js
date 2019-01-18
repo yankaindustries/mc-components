@@ -1,8 +1,8 @@
 import React from 'react'
-import { number, string } from 'prop-types'
+import { number, string, PropTypes } from 'prop-types'
 import cn from 'classnames'
 
-const Badge = ({ count, className }) => {
+const Badge = ({ className, children }) => {
   const classNames = cn(
     'badge',
     { [className]: Boolean(className) },
@@ -10,7 +10,7 @@ const Badge = ({ count, className }) => {
 
   return (
     <span className={classNames}>
-      {count}
+      {children}
     </span>
   )
 }
@@ -18,6 +18,10 @@ const Badge = ({ count, className }) => {
 Badge.propTypes = {
   count: number.isRequired,
   className: string,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
 }
 
 export default Badge
