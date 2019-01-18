@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Carousel from '../../components/Carousel'
+import Badge from '../../components/Badge'
 import Button from '../../components/Button'
 import Tile from '../../components/Tile'
 import TileImage from '../../components/TileImage'
@@ -10,7 +11,7 @@ import TileCaption from '../../components/TileCaption'
 import AnimationHandler from '../../components/AnimationHandler'
 import HoverHandler from '../../components/HoverHandler'
 
-const items = [
+const jbi = [
   {
     id: 1,
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
@@ -69,6 +70,64 @@ const items = [
   },
 ]
 
+
+const playlist = [
+  {
+    id: 1,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    playlist: 'Creative Life',
+    count: '6',
+    lesson: 'Leadership',
+    extract: 'Take charge of being in charge.',
+  },
+  {
+    id: 2,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    playlist: 'Creative Life',
+    count: '6',
+    lesson: 'Developing Characters For The Screen',
+    extract: 'The best actors create characters you can\'t forget. Actors and directors on the ingredients jha kljnsln lksnlkn sklnlsao eiown.',
+  },
+  {
+    id: 3,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    playlist: 'Creative Life',
+    count: '6',
+    lesson: 'Dinner For a Special Occassion',
+    extract: 'Showing up every day to do the work can be hard. Reflections on the deep motivations that are the foundation of great work hkuhiu ujhek.',
+  },
+  {
+    id: 4,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    playlist: 'Creative Life',
+    count: '6',
+    lesson: 'Developing Characters For The Screen',
+    extract: 'The best actors create characters you can\'t forget. Actors and directors on the ingredients jha kljnsln lksnlkn sklnlsao eiown.',
+  },
+  {
+    id: 5,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    playlist: 'Creative Life',
+    count: '6',
+    lesson: 'Leadership',
+    extract: 'Take charge of being in charge.',
+  },
+  {
+    id: 6,
+    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
+    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    playlist: 'Creative Life',
+    count: '6',
+    lesson: 'Dinner For a Special Occassion',
+    extract: 'Showing up every day to do the work can be hard. Reflections on the deep motivations that are the foundation of great work hkuhiu ujhek.',
+  },
+]
+
 storiesOf('Playground|Pages', module)
   .add('LIHP', () =>
     <div className='container mc-pt-5'>
@@ -85,7 +144,7 @@ storiesOf('Playground|Pages', module)
         controls
         className='row'
       >
-        {items.map((item, key) => (
+        {jbi.map((item, key) => (
           <div key={key} className='col-auto'>
             <HoverHandler>
               {({ intent }) =>
@@ -96,7 +155,6 @@ storiesOf('Playground|Pages', module)
 
                   <TileCaption
                     position='center bottom'
-                    className='temporary-stuff'
                   >
                     <div className='mc-tile__reveal-on-hover'>
                       <Button secondary>Resume</Button>
@@ -132,6 +190,69 @@ storiesOf('Playground|Pages', module)
                 </AnimationHandler>
               }
             </HoverHandler>
+          </div>
+        ))}
+      </Carousel>
+
+      <div className='mc-py-10'></div>
+
+      <h5 className={`
+        mc-text-h5
+        mc-text--airy
+        mc-mb-6
+      `}>
+        Playlist in Creative Life
+      </h5>
+
+      <Carousel
+        slidesToShow={3}
+        controls
+        className='row'
+      >
+        {playlist.map((item, key) => (
+          <div key={key} className='col-auto'>
+            <Tile
+              key={item.id}
+              aspectRatio='2x3'
+             >
+              <TileImage imageUrl={item.thumbnail} />
+              <TileOverlay />
+
+              <TileCaption
+                position='left bottom'
+              >
+                <div className='mc-p-4'>
+                  <div className={`
+                    d-flex
+                    align-items-center
+                    justify-content-between
+                  `}>
+                    <h6 className={`
+                      mc-text-h8
+                      mc-text--uppercase
+                    `}>
+                      {item.playlist}
+                    </h6>
+
+                    <Badge>
+                      <span className='mc-text-small'>6 Videos</span>
+                    </Badge>
+                  </div>
+
+                  <h5 className='mc-text-h5'>
+                    {`${item.lesson}`}
+                  </h5>
+                  <p className={`
+                    mc-mt-2
+                    mc-text-small
+                    mc-text--hinted
+                    mc-text--3-lines
+                  `}>
+                    {`${item.extract}`}
+                  </p>
+                </div>
+              </TileCaption>
+            </Tile>
           </div>
         ))}
       </Carousel>
