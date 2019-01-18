@@ -12,6 +12,7 @@ import Tile from '../../components/Tile'
 import TileCaption from '../../components/TileCaption'
 import TileImage from '../../components/TileImage'
 import TileOverlay from '../../components/TileOverlay'
+import TileProgress from '../../components/TileProgress'
 
 const jbi = [
   {
@@ -224,6 +225,7 @@ storiesOf('Playground|Pages', module)
                           </p>
                         </div>
                       </TileCaption>
+                      <TileProgress value={50} />
                     </Tile>
                   </AnimationHandler>
                 }
