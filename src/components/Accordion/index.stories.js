@@ -84,23 +84,25 @@ storiesOf('components|Accordion', module)
                           type='show-delayed'
                           animating={panelHovering}
                         >
-                          <TileOverlay type='gradient-left' />
-                          <TileCaption position='left center'>
-                            <div className='row'>
-                              <div className='col-4 offset-1'>
-                                <h4 className='mc-text-h4'>
-                                  {tile.instructor}
-                                </h4>
-                                <p className='mc-text--muted'>
-                                  {tile.course}
-                                </p>
-                                <p className='mc-mb-4'>
-                                  {tile.description}
-                                </p>
-                                <Button>Start Class</Button>
+                          <div>
+                            <TileOverlay type='gradient-left' />
+                            <TileCaption position='left center'>
+                              <div className='row'>
+                                <div className='col-4 offset-1'>
+                                  <h4 className='mc-text-h4'>
+                                    {tile.instructor}
+                                  </h4>
+                                  <p className='mc-text--muted'>
+                                    {tile.course}
+                                  </p>
+                                  <p className='mc-mb-4'>
+                                    {tile.description}
+                                  </p>
+                                  <Button>Start Class</Button>
+                                </div>
                               </div>
-                            </div>
-                          </TileCaption>
+                            </TileCaption>
+                          </div>
                         </AnimationHandler>
                       </Tile>
                     }

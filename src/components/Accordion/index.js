@@ -2,8 +2,6 @@ import React, { Children, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import HoverHandler from '../HoverHandler'
-
 
 export default class Accordion extends PureComponent {
   static propTypes = {
@@ -23,22 +21,15 @@ export default class Accordion extends PureComponent {
 
     const classes = cn({
       [className]: className,
-      'mc-accordian': true,
+      'mc-accordion': true,
     })
 
     return (
       <div className={classes} {...restProps}>
-        {Children.map(children, (child, key) => (
-          <HoverHandler key={key} nowrap>
-            {({ intent: hovering, props: panelProps }) =>
-              <div
-                className={`mc-accordian__item ${hovering ? 'mc-accordian__item--active' : ''}`}
-                {...panelProps}
-              >
-                {child}
-              </div>
-            }
-          </HoverHandler>
+        {Children.map(children, child => (
+          <div className='mc-accordion__item'>
+            {child}
+          </div>
         ))}
       </div>
     )
