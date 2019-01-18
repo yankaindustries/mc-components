@@ -187,7 +187,7 @@ storiesOf('Playground|Pages', module)
                         position='right bottom'
                       >
                         <Badge>
-                          13:33
+                          1:23
                         </Badge>
                       </TileCaption>
 
@@ -306,12 +306,29 @@ storiesOf('Playground|Pages', module)
         }
       </HoverHandler>
 
-      <Tile aspectRatio='21x9'>
+      <Tile aspectRatio='21x9' className='mc-mb-10'>
         <TileImage imageUrl='http://placekitten.com/1920/1080' />
         <TileCaption position='center bottom'>
-          <h1 className='mc-text-h1'>
-            hi
-          </h1>
+          <h6 className={`
+            mc-text-h7
+            mc-text--uppercase
+            mc-mb-4
+          `}>
+            New Class Announcement
+          </h6>
+          <h2 className={`
+            mc-text-h2
+            mc-text--airy
+            mc-mb-2
+          `}>
+            Natalie Portman
+          </h2>
+          <p className='mc-mb-6'>
+            Teaches Cooking Techniques II: Meats, Stocks, And Sauces
+          </p>
+          <Button>
+            <IconPlay /> Start Class
+          </Button>
         </TileCaption>
       </Tile>
 
