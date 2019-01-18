@@ -34,11 +34,15 @@
     }
   }
 
+  $fade-duration: 200ms;
+  $slide-duration: 500ms;
+  $delay-duration: $slide-duration;
+
   &--show {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 200ms ease;
+    transition: opacity $fade-duration ease;
 
     &.mc-animation--animating {
       opacity: 1;
@@ -51,32 +55,46 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 200ms ease, visibility 0ms 200ms;
+    transition:
+      opacity $fade-duration ease 0ms,
+      visibility 0ms $slide-duration;
 
     &.mc-animation--animating {
       opacity: 1;
       visibility: visible;
-      pointer-events: none;
-      transition: opacity 200ms ease 500ms, visibility 0ms 200ms;
+      pointer-events: auto;
+      transition:
+        opacity $fade-duration ease $delay-duration,
+        visibility 0ms $slide-duration;
     }
   }
 
   &--hide {
     opacity: 1;
-    transition: opacity 200ms ease;
+    transition: opacity $fade-duration ease $delay-duration;
 
     &.mc-animation--animating {
       opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity $fade-duration ease 0ms,
+        visibility 0ms $delay-duration;
     }
   }
 
   &--delayed-hide {
     opacity: 1;
-    transition: opacity 200ms ease 500ms;
+    transition:
+      opacity $fade-duration ease 0ms,
+      visibility 0ms 0ms;
 
     &.mc-animation--animating {
       opacity: 0;
-      transition: opacity 200ms ease;
+      visibility: hidden;
+      transition:
+        opacity $fade-duration ease $delay-duration,
+        visibility 0ms $delay-duration;
     }
   }
 }

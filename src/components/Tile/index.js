@@ -29,6 +29,7 @@ export default class Tile extends PureComponent {
       children,
       className,
       naked,
+      ...restProps
     } = this.props
 
     const classes = [
@@ -39,7 +40,7 @@ export default class Tile extends PureComponent {
     ].join(' ')
 
     return (
-      <div className={classes}>
+      <div className={classes} {...restProps}>
         {children &&
           <div className='mc-tile__content content'>
             {children}

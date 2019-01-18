@@ -1,31 +1,35 @@
 .mc-accordian {
+  $slide-duration: 500ms;
+
   display: flex;
   width: 100%;
 
   &__item {
+    cursor: pointer;
+
     position: relative;
     flex: 1;
-    margin: 0 12px;
+    padding: 0 12px;
     min-height: 512px;
     overflow: hidden;
+    transform: scale(1);
 
-    cursor: pointer;
-    transition: flex-grow 500ms ease;
+    transition:
+      flex-grow $slide-duration ease,
+      transform $slide-duration ease;
 
     &:first-child {
-      margin-left: 0;
+      padding-left: 0;
     }
 
     &:last-child {
-      margin-right: 0;
+      padding-right: 0;
     }
 
     &--active {
       flex-grow: 10;
-
-      &:after {
-        opacity: 0;
-      }
+      // transform: scale(1.05);
+      z-index: 1;
     }
   }
 }
