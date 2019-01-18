@@ -8,6 +8,7 @@ import Tile from '../../components/Tile'
 import TileImage from '../../components/TileImage'
 import TileOverlay from '../../components/TileOverlay'
 import TileCaption from '../../components/TileCaption'
+import TileProgress from '../../components/TileProgress'
 import AnimationHandler from '../../components/AnimationHandler'
 import HoverHandler from '../../components/HoverHandler'
 
@@ -187,6 +188,8 @@ storiesOf('Playground|Pages', module)
                         </p>
                       </div>
                     </TileCaption>
+
+                    <TileProgress value={50} />
                   </Tile>
                 </AnimationHandler>
               }
