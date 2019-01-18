@@ -28,21 +28,21 @@
     overflow: hidden;
 
     // Default body / anything not defined
-    max-height: #{2 * $mc-lh-md}em;
+    height: #{2 * $mc-lh-md}em;
 
     // Headings
     &[class^="mc-text-h"] {
-      max-height: #{2 * $mc-lh-sm}em;
+      height: #{2 * $mc-lh-sm}em;
     }
 
     // Small text
     &.mc-text-small {
-      max-height: #{2 * $mc-lh-sm}em;
+      height: #{2 * $mc-lh-sm}em;
     }
 
     // Large text
     &.mc-text-large {
-      max-height: #{2 * $mc-lh-lg}em;
+      height: #{2 * $mc-lh-lg}em;
     }
   }
 
@@ -50,21 +50,21 @@
     overflow: hidden;
 
     // Default body / anything not defined
-    max-height: #{3 * $mc-lh-md}em;
+    height: #{3 * $mc-lh-md}em;
 
     // Headings
     &[class^="mc-text-h"] {
-      max-height: #{3 * $mc-lh-sm}em;
+      height: #{3 * $mc-lh-sm}em;
     }
 
     // Small text
     &.mc-text-small {
-      max-height: #{3 * $mc-lh-sm}em;
+      height: #{3 * $mc-lh-sm}em;
     }
 
     // Large text
     &.mc-text-large {
-      max-height: #{3 * $mc-lh-lg}em;
+      height: #{3 * $mc-lh-lg}em;
     }
   }
 
