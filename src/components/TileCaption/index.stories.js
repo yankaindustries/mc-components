@@ -10,7 +10,7 @@ import Tile from '../Tile'
 import TileCaption from '../TileCaption'
 
 
-storiesOf('components|Tiles/TileCaption', module)
+storiesOf('Components|Tiles/TileCaption', module)
   .add('TileCaption', withProps(TileCaption)(() => (
     <div className='container'>
       <div className='example__heading'>

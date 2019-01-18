@@ -9,7 +9,7 @@ import Tile from '../Tile'
 import TileVideo from '../TileVideo'
 
 
-storiesOf('components|Tiles/TileVideo', module)
+storiesOf('Components|Tiles/TileVideo', module)
   .add('TileVideo', withProps(TileVideo)(() => (
     <div className='container'>
       <div className='example__heading'>

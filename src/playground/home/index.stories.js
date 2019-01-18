@@ -68,7 +68,7 @@ const items = [
 ]
 
 
-storiesOf('playground|Pages', module)
+storiesOf('Playground|Pages', module)
   .add('Home', () =>
     <div>
       <CarouselConnector>
@@ -509,11 +509,11 @@ storiesOf('playground|Pages', module)
 
                 <div className='row small-gutters justify-content-center justify-content-lg-start'>
                   <div className='col-auto'>
-                    <ChevronLeft className='mc-icon--7 mc-icon--circled mc-text--muted' />
+                    <ChevronLeft className='mc-icon--5 mc-icon--circled mc-text--muted' />
                   </div>
 
                   <div className='col-auto'>
-                    <ChevronRight className='mc-icon--7 mc-icon--circled' />
+                    <ChevronRight className='mc-icon--5 mc-icon--circled' />
                   </div>
                 </div>
               </div>
@@ -658,13 +658,13 @@ storiesOf('playground|Pages', module)
 
           <div className='row justify-content-center'>
             <div className='col-auto'>
-              <Twitter className='mc-icon--9 mc-icon--circled mc-text--muted' />
+              <Twitter className='mc-icon--8 mc-icon--circled mc-text--muted' />
             </div>
             <div className='col-auto'>
-              <Facebook className='mc-icon--9 mc-icon--circled mc-text--muted' />
+              <Facebook className='mc-icon--8 mc-icon--circled mc-text--muted' />
             </div>
             <div className='col-auto'>
-              <Instagram className='mc-icon--9 mc-icon--circled mc-text--muted' />
+              <Instagram className='mc-icon--8 mc-icon--circled mc-text--muted' />
             </div>
           </div>
         </div>
