@@ -308,6 +308,7 @@ storiesOf('Playground|Pages', module)
 
       <Tile aspectRatio='21x9' className='mc-mb-10'>
         <TileImage imageUrl='http://placekitten.com/1920/1080' />
+        <TileOverlay />
         <TileCaption position='center bottom'>
           <h6 className={`
             mc-text-h7
