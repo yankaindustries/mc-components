@@ -4,12 +4,15 @@ $scrollbar-max-width: 17px !default;
 .mc-carousel {
   position: relative;
   pointer-events: auto;
+  z-index: 0;
+  transition: z-index 0ms 1s;
 
   // Make sure that when you hover on a carousel
   // row, the hover effects are z-indexed correctly
   // (they have to be set higher here to work)
   &:hover {
     z-index: 1;
+    transition: z-index 0ms 0ms;
   }
 
   // We need to override slick sliders default scss
