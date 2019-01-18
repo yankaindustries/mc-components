@@ -1,5 +1,7 @@
 .mc-accordian {
   $slide-duration: 500ms;
+  $fade-duration: 300ms;
+  $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
 
   display: flex;
   width: 100%;
@@ -12,11 +14,8 @@
     padding: 0 12px;
     min-height: 512px;
     overflow: hidden;
-    transform: scale(1);
 
-    transition:
-      flex-grow $slide-duration ease,
-      transform $slide-duration ease;
+    transition: flex-grow $slide-duration $bezier $fade-duration;
 
     &:first-child {
       padding-left: 0;
@@ -28,7 +27,6 @@
 
     &--active {
       flex-grow: 10;
-      // transform: scale(1.05);
       z-index: 1;
     }
   }

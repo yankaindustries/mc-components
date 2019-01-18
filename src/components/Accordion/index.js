@@ -4,10 +4,8 @@ import cn from 'classnames'
 
 import HoverHandler from '../HoverHandler'
 
-import './styles.scss'
 
-
-export default class Accordian extends PureComponent {
+export default class Accordion extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.node,

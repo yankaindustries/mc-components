@@ -4,7 +4,7 @@ import { withProps } from '../../utils/addon-props'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
-import Accordian from '../Accordian'
+import Accordion from '../Accordion'
 import AnimationHandler from '../AnimationHandler'
 import HoverHandler from '../HoverHandler'
 import Button from '../Button'
@@ -42,12 +42,12 @@ const tiles = [
 ]
 
 
-storiesOf('components|Accordian', module)
-  .add('Summary', withProps(Accordian)(() => (
+storiesOf('components|Accordion', module)
+  .add('Summary', withProps(Accordion)(() => (
     <div>
       <div className='container'>
         <DocHeader
-          title='Accordian'
+          title='Accordion'
           description='test test test'
           experimental
         />
@@ -55,7 +55,7 @@ storiesOf('components|Accordian', module)
         <DocSection title='Demo'>
           <HoverHandler nowrap>
             {({ intent: parentHovering, props: parentProps }) =>
-              <Accordian {...parentProps}>
+              <Accordion {...parentProps}>
                 {tiles.map((tile, key) =>
                   <HoverHandler key={key} nowrap>
                     {({ intent: panelHovering, props: panelProps }) =>
@@ -69,7 +69,7 @@ storiesOf('components|Accordian', module)
                           <TileOverlay type='gradient-bottom' />
                           <TileCaption position='center bottom'>
                             <h4 className='mc-text-h4'>
-                              {tile.instructor} {panelHovering && 'balls'}
+                              {tile.instructor}
                             </h4>
                             <p className='mc-text--muted'>
                               {tile.course}
@@ -78,7 +78,7 @@ storiesOf('components|Accordian', module)
                         </AnimationHandler>
 
                         <AnimationHandler
-                          type='delayed-show'
+                          type='show-delayed'
                           animating={panelHovering}
                         >
                           <TileOverlay type='gradient-left' />
@@ -103,7 +103,7 @@ storiesOf('components|Accordian', module)
                     }
                   </HoverHandler>,
                 )}
-              </Accordian>
+              </Accordion>
             }
           </HoverHandler>
         </DocSection>

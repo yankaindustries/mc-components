@@ -32,6 +32,7 @@ export default class DocHeader extends PureComponent {
           <div className='col-lg-6'>
             <h1 className='mc-text-h1'>
               {title}
+              {' '}
               {experimental &&
                 <Badge count='Experimental' />
               }
