@@ -8,6 +8,7 @@ export default class TileOverlay extends PureComponent {
     className: PropTypes.string,
     type: PropTypes.oneOf([
       'gradient-bottom',
+      'gradient-left',
       'offset-spotlight',
       'spotlight',
     ]),
