@@ -10,7 +10,7 @@ import Tile from '../Tile'
 import TileCheck from '../TileCheck'
 
 
-storiesOf('components|Tiles/TileCheck', module)
+storiesOf('Components|Tiles/TileCheck', module)
   .add('TileCheck', withProps(TileCheck)(() => (
     <div className='container'>
       <div className='example__heading'>

@@ -2,11 +2,14 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import Badge from '../components/Badge'
+
 
 export default class DocHeader extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
     description: PropTypes.string.isRequired,
+    experimental: PropTypes.bool,
     title: PropTypes.string.isRequired,
   }
 
@@ -14,6 +17,7 @@ export default class DocHeader extends PureComponent {
     const {
       className,
       description,
+      experimental,
       title,
     } = this.props
 
@@ -28,6 +32,10 @@ export default class DocHeader extends PureComponent {
           <div className='col-lg-6'>
             <h1 className='mc-text-h1'>
               {title}
+              {' '}
+              {experimental &&
+                <Badge count='Experimental' />
+              }
             </h1>
 
             <p className='mc-text-large mc-text--muted'>

@@ -1,13 +1,5 @@
 .c-button,
 .mc-c-btn {
-  &--small {
-    padding: 12px 16px;
-  }
-
-  &--wide {
-    min-width: 27.5rem;
-  }
-
   &--full-width {
     width: 100%;
   }
@@ -38,17 +30,18 @@
     position: relative;
     pointer-events: none;
 
-    span {
+    .c-button__content,
+    .mc-c-btn__content {
       opacity: 0;
     }
 
-    .loader {
+    .c-button__loader {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 40px;
-      height: 24px;
-      transform: translate(-50%, -50%);
+      margin: -1em;
+
+      @include spin;
     }
   }
 
@@ -77,26 +70,26 @@
   }
 
   &--tertiary {
-    background: none;
-    border: 1px solid $mc-color-gray-300;
+    background: $mc-color-light;
+    border: 1px solid $mc-color-gray-600;
+    color: $mc-color-dark;
 
     &:hover {
-      background: $mc-color-gray-300;
+      background: $mc-color-gray-700;
+      color: $mc-color-dark;
     }
 
     &:active {
-      background: $mc-color-gray-200;
+      background: $mc-color-light;
     }
 
     // disabled
     &.disabled,
     &:disabled {
-      &:hover {
-        background: none;
-      }
+      color: $mc-color-dark;
 
-      &:active {
-        background: none;
+      &:hover {
+        background: $mc-color-light;
       }
     }
   }
@@ -139,6 +132,16 @@
 
       span:after {
         opacity: 0;
+      }
+    }
+
+    // disabled
+    &.disabled:hover,
+    &:disabled:hover {
+      background: none;
+
+      span:after {
+        display: none;
       }
     }
   }

@@ -7,18 +7,18 @@ import TileImage from '../../components/TileImage'
 import HoverHandler from '../../components/HoverHandler'
 
 
-storiesOf('playground|Typography', module)
+storiesOf('Playground|Typography', module)
   .add('Examples', () =>
     <div className='container'>
       <div className='example__section'>
-        <div className='mcb-space-9'>
+        <div className='mc-mb-9'>
           <div className='row'>
             <div className='col-sm-6 offset-sm-1'>
               <h2 className='mc-text-h5 mc-text--muted mc-text--normal mc-text--airy mc-text--uppercase'>
                 Lorem Ipsum
               </h2>
 
-              <h4 className='mc-text-h4 mcb-space-2'>
+              <h4 className='mc-text-h4 mc-mb-2'>
                 Clean &amp; Simple Title Text
               </h4>
             </div>
@@ -27,44 +27,44 @@ storiesOf('playground|Typography', module)
 
         <div className='row'>
           <div className='col-sm-6 offset-sm-1'>
-            <div className='mcb-space-9'>
-              <h3 className='mc-text-h3 mc-text--uppercase mcb-space-2'>
+            <div className='mc-mb-9'>
+              <h3 className='mc-text-h3 mc-text--uppercase mc-mb-2'>
                 Group Workshop: From Here To Alli By Corey Wright
               </h3>
-              <p className='mc-text--muted mcb-space-2'>
+              <p className='mc-text--muted mc-mb-2'>
                 Every great story is born from intentions and obstacles.
                 Learn how to build the &quot;drive shaft&quot; that will
                 set your script in motion.
               </p>
-              <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
+              <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
                 Lesson 16 // 5min 40s
               </h6>
             </div>
 
-            <div className='mcb-space-9'>
-              <h3 className='mc-text-h5 mcb-space-2'>
+            <div className='mc-mb-9'>
+              <h3 className='mc-text-h5 mc-mb-2'>
                 Group Workshop: From Here To Alli By Corey Wright
               </h3>
-              <p className='mc-text--muted mcb-space-2'>
+              <p className='mc-text--muted mc-mb-2'>
                 Every great story is born from intentions and obstacles.
                 Learn how to build the &quot;drive shaft&quot; that will
                 set your script in motion.
               </p>
-              <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
+              <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
                 Lesson 16 // 5min 40s
               </h6>
             </div>
 
-            <div className='mcb-space-9'>
-              <h3 className='mc-text-h5 mcb-space-2'>
+            <div className='mc-mb-9'>
+              <h3 className='mc-text-h5 mc-mb-2'>
                 Group Workshop: From Here To Alli By Corey Wright
               </h3>
-              <p className='mc-text--muted mcb-space-2'>
+              <p className='mc-text--muted mc-mb-2'>
                 Every great story is born from intentions and obstacles.
                 Learn how to build the &quot;drive shaft&quot; that will
                 set your script in motion.
               </p>
-              <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mcb-space-3'>
+              <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
                 Lesson 16 // 5min 40s
               </h6>
             </div>
@@ -79,11 +79,11 @@ storiesOf('playground|Typography', module)
               </div>
 
               <div className='col-10'>
-                <h6 className='mc-text-h7 mc-text--muted mc-text--uppercase mcb-space-2'>
+                <h6 className='mc-text-h7 mc-text--muted mc-text--uppercase mc-mb-2'>
                   Up Next
                 </h6>
 
-                <h6 className='mc-text-h6 mcb-space-2'>
+                <h6 className='mc-text-h6 mc-mb-2'>
                   Mastering Ingredients: Vegetables &amp; Herbs
                 </h6>
                 <p className='mc-text-x-small mc-text--muted'>
@@ -104,7 +104,7 @@ storiesOf('playground|Typography', module)
               </div>
 
               <div className='col-10'>
-                <h6 className='mc-text-h6 mcb-space-2'>
+                <h6 className='mc-text-h6 mc-mb-2'>
                   Mastering Ingredients: Vegetables &amp; Herbs
                 </h6>
                 <p className='mc-text-x-small mc-text--muted'>
@@ -125,7 +125,7 @@ storiesOf('playground|Typography', module)
               </div>
 
               <div className='col-10'>
-                <h6 className='mc-text-h6 mcb-space-2'>
+                <h6 className='mc-text-h6 mc-mb-2'>
                   Mastering Ingredients: Vegetables &amp; Herbs
                 </h6>
                 <p className='mc-text-x-small mc-text--muted'>
@@ -155,15 +155,15 @@ storiesOf('playground|Typography', module)
                       </Tile>
 
                       <div className='mc-card mc-background mc-background--dark'>
-                        <h6 className='mc-text-h7 mc-text--muted mc-text--uppercase mcb-space-2'>
+                        <h6 className='mc-text-h7 mc-text--muted mc-text--uppercase mc-mb-2'>
                           Building Your Home Studio
                         </h6>
 
-                        <h4 className='mc-text-h4 mcb-space-2'>
+                        <h4 className='mc-text-h4 mc-mb-2'>
                           Margaret Atwood
                         </h4>
 
-                        <p className='mc-text--muted mcb-space-2'>
+                        <p className='mc-text--muted mc-mb-2'>
                           Mixtape tumblr chartreuse snackwave 8-bit
                           selfies, glossier mumblecore fingerstache church-key
                           kombucha. Hot chocolate.

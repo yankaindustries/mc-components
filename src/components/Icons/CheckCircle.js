@@ -1,22 +1,21 @@
-/* eslint jsx-quotes: 0 */
 import React from 'react'
 
-const CheckCircle = props => (
-  <svg viewBox="0 0 68 68" fill="none" width="1em" height="1em" {...props}>
+const SvgCheckCircle = props => (
+  <svg width='2em' height='2em' viewBox='0 0 52 52' fill='none' {...props}>
     <path
-      clipRule="evenodd"
-      d="M34 66c17.673 0 32-14.327 32-32 0-8.837-3.582-16.837-9.373-22.627A32.046 32.046 0 0 0 46.25 4.428a31.76 31.76 0 0 0-9.111-2.276 32.389 32.389 0 0 0-9.383.457 31.76 31.76 0 0 0-6.004 1.819 32.046 32.046 0 0 0-10.378 6.945C5.582 17.163 2 25.163 2 34c0 17.673 14.327 32 32 32z"
-      stroke="currentColor"
-      strokeWidth={2.813}
+      clipRule='evenodd'
+      d='M26 50c13.255 0 24-10.745 24-24S39.255 2 26 2 2 12.745 2 26s10.745 24 24 24z'
+      stroke='#fff'
+      strokeWidth={3}
     />
     <path
-      d="M24.01 33.36l7.706 7.239 13.626-14.477"
-      stroke="currentColor"
-      strokeWidth={3.516}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M35.613 17.426L21.949 32.15l-5.657-4.815c-.523-.447-1.375-.447-1.898 0-.525.448-.525 1.171 0 1.615l6.713 5.714c.252.215.595.336.95.336.391 0 .782-.15 1.044-.425L37.7 18.86c.467-.491.377-1.211-.2-1.605-.578-.4-1.424-.322-1.888.17z'
+      fill='#fff'
+      stroke='#fff'
     />
   </svg>
 )
 
-export default CheckCircle
+export default SvgCheckCircle

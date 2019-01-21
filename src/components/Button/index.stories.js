@@ -7,13 +7,13 @@ import DocSection from '../../utils/DocSection'
 import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
 import Button from '../Button'
-import IconArrow from '../Icons/Arrow'
+import IconChevronRight from '../Icons/ChevronRight'
 import IconLock from '../Icons/Lock'
 import IconMagnifyingGlass from '../Icons/MagnifyingGlass'
 import IconClose from '../Icons/Close'
 
 
-storiesOf('components|Button', module)
+storiesOf('Components|Button', module)
   .add('Summary', withProps(Button)(() => (
     <div className='container'>
       <DocHeader
@@ -126,15 +126,13 @@ storiesOf('components|Button', module)
               <div className='col-auto'>
                 <Button>
                   Button
-                  {' '}
-                  <IconArrow />
+                  <IconChevronRight className='mc-ml-3' />
                 </Button>
               </div>
 
               <div className='col-auto'>
                 <Button secondary>
-                  <IconLock />
-                  {' '}
+                  <IconLock className='mc-mr-3' />
                   Secondary
                 </Button>
               </div>

@@ -6,6 +6,13 @@
 // Fonts
 $mc-font-default: "Lato", "Helvetica", "Arial", sans-serif !default; // Should be used in most cases
 
+// Share line-height values between
+// the font definitions and the max-height
+// helper 'mc-text--2-line'
+$mc-lh-sm:  1.25 !default;
+$mc-lh-md:  1.5 !default;
+$mc-lh-lg:  1.7 !default;
+
 // Colors
 $mc-color-light:             #fff !default;
 $mc-color-dark:              #000 !default;
@@ -16,6 +23,7 @@ $mc-color-gray-300:           #31333b !default;
 $mc-color-gray-400:           #596170 !default;
 $mc-color-gray-500:           #949aa4 !default;
 $mc-color-gray-600:           #dbdde1 !default;
+$mc-color-gray-700:           #f3f3f3 !default;
 
 $mc-color-primary:           #c83232 !default;
 $mc-color-primary-hover:     #d63636 !default;
@@ -66,6 +74,9 @@ $mc-step-base: 10 !default;
 $mc-step-scale: 4 !default;
 $mc-step-multipliers: 7 !default;
 $mc-step-min-resize: 4 !default;
+$mc-step-decay-sm: 2 !default;
+$mc-step-decay-md: 1 !default;
+$mc-step-decay-lg: 0 !default;
 
 // Custom bootstrap grid overrides
 $enable-grid-classes:    true !default;

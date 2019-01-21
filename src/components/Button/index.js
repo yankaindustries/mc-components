@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import cn from 'classnames'
 import { string, func, bool, node, oneOfType, arrayOf } from 'prop-types'
 
@@ -22,7 +22,6 @@ const Button = ({
     'c-button': true,
     'c-button--secondary': secondary,
     'c-button--tertiary': tertiary,
-    'c-button--with-icon': Boolean(Icon),
     'c-button--full-width': fullWidth,
     'c-button--link': link,
     'c-button--loading': loading,
@@ -34,11 +33,17 @@ const Button = ({
       onClick={onClick}
       {...props}
     >
-      {Boolean(Icon) && Icon}
-      <span>
-        {children}
-      </span>
-      {loading && <Loader className='loader' />}
+      {!loading &&
+        children
+      }
+      {loading &&
+        <Fragment>
+          <span className='c-button__content'>
+            {children}
+          </span>
+          <Loader className='c-button__loader' />
+        </Fragment>
+      }
     </button>
   )
 }

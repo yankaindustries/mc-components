@@ -13,7 +13,7 @@ import abstractBackground from '../../utils/abstract-background.jpg'
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
-storiesOf('components|Background', module)
+storiesOf('Components|Background', module)
   .add('Summary', withProps(Background)(() => (
     <div>
       <div className='container'>
@@ -84,11 +84,11 @@ storiesOf('components|Background', module)
                 <br />
                 <br />
                 <div className='container mc-text--center'>
-                  <h2 className='mc-text-h4 mc-text--airy mcb-space-4'>
+                  <h2 className='mc-text-h4 mc-text--airy mc-mb-4'>
                     Learn From The Best
                   </h2>
 
-                  <p className='mc-text--muted mcb-space-5'>
+                  <p className='mc-text--muted mc-mb-5'>
                     Visit our blog for a deeper dive
                     into all things MasterClass.
                   </p>

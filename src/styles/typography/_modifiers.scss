@@ -13,6 +13,7 @@
   &--italic { font-style: italic !important; }
   &--normal { font-weight: 400 !important; }
   &--light { font-weight: 300 !important; }
+  &--hinted { opacity: 0.8 !important; }
   &--muted { opacity: 0.5 !important; }
   &--silenced { opacity: 0.3 !important; }
 
@@ -21,6 +22,40 @@
     font-weight: 400 !important;
     letter-spacing: 0.24em !important;
     text-transform: uppercase !important;
+  }
+
+  &--2-lines {
+    overflow: hidden;
+
+    // Default body / anything not defined
+    max-height: #{2 * $mc-lh-md}em;
+
+    // Headings
+    &[class^="mc-text-h"] {
+      max-height: #{2 * $mc-lh-sm}em;
+    }
+
+    // Large text
+    &.mc-text-large {
+      max-height: #{2 * $mc-lh-lg}em;
+    }
+  }
+
+  &--3-lines {
+    overflow: hidden;
+
+    // Default body / anything not defined
+    max-height: #{3 * $mc-lh-md}em;
+
+    // Headings
+    &[class^="mc-text-h"] {
+      max-height: #{3 * $mc-lh-sm}em;
+    }
+
+    // Large text
+    &.mc-text-large {
+      max-height: #{3 * $mc-lh-lg}em;
+    }
   }
 
   // Colors
