@@ -185,7 +185,7 @@ storiesOf('Playground|Pages', module)
           </h5>
 
           <Carousel
-            slidesToShow={4}
+            slidesToShow={responsiveValues(media, 4, 3, 2)}
             controls
             className='row mc-mb-10'
           >
@@ -360,7 +360,7 @@ storiesOf('Playground|Pages', module)
           </h5>
 
           <Carousel
-            slidesToShow={3}
+            slidesToShow={responsiveValues(media, 3, 3, 1)}
             controls
             className='row'
           >
