@@ -23,7 +23,6 @@ const jbi = [
     instructor: 'Ron Howard',
     lesson: '01. Banana bread mastery.',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
-    color: '#ff0000',
   },
   {
     id: 2,
@@ -111,6 +110,7 @@ const playlist = [
     count: '6',
     lesson: 'Leadership',
     extract: 'Take charge of being in charge.',
+    color: '61, 7, 7',
   },
   {
     id: 2,
@@ -120,6 +120,7 @@ const playlist = [
     count: '6',
     lesson: 'Developing Characters For The Screen',
     extract: 'The best actors create characters you can\'t forget. Actors and directors on the ingredients jha kljnsln lksnlkn sklnlsao eiown.',
+    color: '95, 107, 120',
   },
   {
     id: 3,
@@ -129,6 +130,7 @@ const playlist = [
     count: '6',
     lesson: 'Dinner For a Special Occassion',
     extract: 'Showing up every day to do the work can be hard. Reflections on the deep motivations that are the foundation of great work hkuhiu ujhek.',
+    color: '96, 85, 76',
   },
   {
     id: 4,
@@ -138,6 +140,7 @@ const playlist = [
     count: '6',
     lesson: 'Developing Characters For The Screen',
     extract: 'The best actors create characters you can\'t forget. Actors and directors on the ingredients jha kljnsln lksnlkn sklnlsao eiown.',
+    color: '123, 71, 56',
   },
   {
     id: 5,
@@ -197,7 +200,7 @@ storiesOf('Playground|Pages', module)
                       <AnimationHandler type='zoom-tile' animating={intent}>
                         <Tile key={item.id}>
                           <TileImage imageUrl={item.thumbnail} />
-                          <TileOverlay color={item.color} />
+                          <TileOverlay />
 
                           <TileCaption
                             position='right bottom'
@@ -375,7 +378,7 @@ storiesOf('Playground|Pages', module)
                   aspectRatio='2x3'
                  >
                   <TileImage imageUrl={item.thumbnail} />
-                  <TileOverlay />
+                  <TileOverlay color={item.color} />
 
                   <TileCaption
                     position='left bottom'

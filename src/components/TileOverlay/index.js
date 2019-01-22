@@ -34,10 +34,24 @@ export default class TileOverlay extends PureComponent {
       className || '',
     ].join(' ')
 
+    // ,
+
+    const styles = {
+      background: `
+        linear-gradient(
+          to top,
+            rgba(${color}, 0.9) 0,
+            rgba(${color}, 0.6) 25%,
+            rgba(${color}, 0) 45%
+          )
+          center no-repeat`,
+    }
+
     console.log(color)
+    console.log(styles)
 
     return (
-      <div className={classes}>
+      <div className={classes} style={styles}>
         {children}
       </div>
     )
