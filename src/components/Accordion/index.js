@@ -26,11 +26,13 @@ export default class Accordion extends PureComponent {
 
     return (
       <div className={classes} {...restProps}>
-        {Children.map(children, child => (
-          <div className='mc-accordion__item'>
-            {child}
-          </div>
-        ))}
+        <div className='mc-accordion__inner'>
+          {Children.map(children, child => (
+            <div className='mc-accordion__item'>
+              {child}
+            </div>
+          ))}
+        </div>
       </div>
     )
   }

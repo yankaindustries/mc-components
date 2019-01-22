@@ -42,7 +42,7 @@ const tiles = [
 ]
 
 
-storiesOf('components|Accordion', module)
+storiesOf('Components|Accordion', module)
   .add('Summary', withProps(Accordion)(() => (
     <div>
       <div className='container'>

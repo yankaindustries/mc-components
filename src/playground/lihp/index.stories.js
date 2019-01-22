@@ -8,6 +8,7 @@ import Button from '../../components/Button'
 import Carousel from '../../components/Carousel'
 import HoverHandler from '../../components/HoverHandler'
 import IconPlay from '../../components/Icons/Play'
+import ResponsiveHandler from '../../components/ResponsiveHandler'
 import Tile from '../../components/Tile'
 import TileCaption from '../../components/TileCaption'
 import TileImage from '../../components/TileImage'
@@ -157,241 +158,258 @@ const playlist = [
   },
 ]
 
+const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
+  if (gteLG) {
+    return lg
+  }
+
+  if (gteMD) {
+    return md
+  }
+
+  return sm
+}
+
 storiesOf('Playground|Pages', module)
   .add('LIHP', () =>
-    <div className='container mc-pt-6'>
-      <h5 className={`
-        mc-text-h5
-        mc-text--airy
-        mc-mb-6
-      `}>
-        Jump Back In
-      </h5>
-
-      <Carousel
-        slidesToShow={4}
-        controls
-        className='row mc-mb-10'
-      >
-        {jbi.map((item, key) => (
-          <div key={key} className='col-auto'>
-            <div className='mc-mb-10'>
-              <HoverHandler>
-                {({ intent }) =>
-                  <AnimationHandler type='zoom-tile' animating={intent}>
-                    <Tile key={item.id}>
-                      <TileImage imageUrl={item.thumbnail} />
-                      <TileOverlay />
-
-                      <TileCaption
-                        position='right bottom'
-                      >
-                        <Badge>
-                          1:23
-                        </Badge>
-                      </TileCaption>
-
-                      <TileCaption
-                        position='center bottom'
-                      >
-                        <div className='mc-tile__reveal-on-hover'>
-                          <Button secondary>Resume</Button>
-                        </div>
-                      </TileCaption>
-
-                      <TileCaption
-                        position='left below'
-                        className='mc-tile__darken-bg-on-hover'
-                      >
-                        <h6 className={`
-                          mc-text-h7
-                          mc-text--uppercase
-                          mc-text--muted
-                          mc-mb-2
-                        `}>
-                          {item.instructor}
-                        </h6>
-                        <p>
-                          {`${item.lesson}`}
-                        </p>
-
-                        <div className='mc-tile__reveal-on-hover'>
-                          <p className={`
-                            mc-mt-2
-                            mc-text-small
-                            mc-text--muted
-                          `}>
-                            {`${item.extract}`}
-                          </p>
-                        </div>
-                      </TileCaption>
-                      <TileProgress value={50} />
-                    </Tile>
-                  </AnimationHandler>
-                }
-              </HoverHandler>
-            </div>
-          </div>
-        ))}
-      </Carousel>
-
-      <h5 className={`
-        mc-text-h5
-        mc-text--airy
-        mc-mb-6
-      `}>
-        Creative Writing
-      </h5>
-
-      <HoverHandler nowrap>
-        {({ intent: parentHovering, props: parentProps }) =>
-          <Accordion {...parentProps} className='mc-mb-10'>
-            {instructors.map((tile, key) =>
-              <HoverHandler key={key} nowrap>
-                {({ intent: panelHovering, props: panelProps }) =>
-                  <Tile aspectRatio='auto' {...panelProps}>
-                    <TileImage imageUrl={tile.image} />
-
-                    <AnimationHandler
-                      type='hide'
-                      animating={parentHovering}
-                    >
-                      <TileOverlay type='gradient-bottom' />
-                      <TileCaption position='center bottom'>
-                        <h5 className={`
-                          mc-text-h5
-                          mc-text--airy
-                          mc-mb-2
-                        `}>
-                          {tile.instructor}
-                        </h5>
-                        <p className={`
-                          mc-text--muted
-                          mc-text--2-lines
-                        `}>
-                          {tile.course}
-                        </p>
-                      </TileCaption>
-                    </AnimationHandler>
-
-                    <AnimationHandler
-                      type='show-delayed'
-                      animating={panelHovering}
-                    >
-                      <div>
-                        <TileOverlay type='gradient-left' />
-                        <TileCaption position='left center'>
-                          <div className='row'>
-                            <div className='col-4 offset-1'>
-                              <h4 className='mc-text-h4'>
-                                {tile.instructor}
-                              </h4>
-                              <p className='mc-text--muted'>
-                                {tile.course}
-                              </p>
-                              <p className='mc-mb-4'>
-                                {tile.description}
-                              </p>
-                              <Button>Start Class</Button>
-                            </div>
-                          </div>
-                        </TileCaption>
-                      </div>
-                    </AnimationHandler>
-                  </Tile>
-                }
-              </HoverHandler>,
-            )}
-          </Accordion>
-        }
-      </HoverHandler>
-
-      <Tile aspectRatio='21x9' className='mc-mb-10'>
-        <TileImage imageUrl='http://placekitten.com/1920/1080' />
-        <TileOverlay />
-        <TileCaption position='center bottom'>
-          <h6 className={`
-            mc-text-h7
-            mc-text--uppercase
-            mc-mb-4
-          `}>
-            New Class Announcement
-          </h6>
-          <h2 className={`
-            mc-text-h2
+    <ResponsiveHandler>
+      {media =>
+        <div className='container mc-pt-6'>
+          <h5 className={`
+            mc-text-h5
             mc-text--airy
-            mc-mb-2
+            mc-mb-6
           `}>
-            Natalie Portman
-          </h2>
-          <p className='mc-mb-6'>
-            Teaches Cooking Techniques II: Meats, Stocks, And Sauces
-          </p>
-          <Button>
-            <IconPlay /> Start Class
-          </Button>
-        </TileCaption>
-      </Tile>
+            Jump Back In
+          </h5>
 
-      <h5 className={`
-        mc-text-h5
-        mc-text--airy
-        mc-mb-6
-      `}>
-        Playlist in Creative Life
-      </h5>
+          <Carousel
+            slidesToShow={4}
+            controls
+            className='row mc-mb-10'
+          >
+            {jbi.map((item, key) => (
+              <div key={key} className='col-auto'>
+                <div className='mc-mb-10'>
+                  <HoverHandler>
+                    {({ intent }) =>
+                      <AnimationHandler type='zoom-tile' animating={intent}>
+                        <Tile key={item.id}>
+                          <TileImage imageUrl={item.thumbnail} />
+                          <TileOverlay />
 
-      <Carousel
-        slidesToShow={3}
-        controls
-        className='row'
-      >
-        {playlist.map((item, key) => (
-          <div key={key} className='col-auto'>
-            <Tile
-              key={item.id}
-              aspectRatio='2x3'
-             >
-              <TileImage imageUrl={item.thumbnail} />
-              <TileOverlay />
+                          <TileCaption
+                            position='right bottom'
+                          >
+                            <Badge>
+                              1:23
+                            </Badge>
+                          </TileCaption>
 
-              <TileCaption
-                position='left bottom'
-              >
-                <div className={`
-                  d-flex
-                  align-items-center
-                  justify-content-between
-                  mc-mb-2
-                `}>
-                  <h6 className={`
-                    mc-text-h8
-                    mc-text--uppercase
-                  `}>
-                    {item.playlist}
-                  </h6>
+                          <TileCaption
+                            position='center bottom'
+                          >
+                            <div className='mc-tile__reveal-on-hover'>
+                              <Button secondary>Resume</Button>
+                            </div>
+                          </TileCaption>
 
-                  <Badge>
-                    <IconPlay /> 6 Videos
-                  </Badge>
+                          <TileCaption
+                            position='left below'
+                            className='mc-tile__darken-bg-on-hover'
+                          >
+                            <h6 className={`
+                              mc-text-h7
+                              mc-text--uppercase
+                              mc-text--muted
+                              mc-mb-2
+                            `}>
+                              {item.instructor}
+                            </h6>
+                            <p>
+                              {`${item.lesson}`}
+                            </p>
+
+                            <div className='mc-tile__reveal-on-hover'>
+                              <p className={`
+                                mc-mt-2
+                                mc-text-small
+                                mc-text--muted
+                              `}>
+                                {`${item.extract}`}
+                              </p>
+                            </div>
+                          </TileCaption>
+                          <TileProgress value={50} />
+                        </Tile>
+                      </AnimationHandler>
+                    }
+                  </HoverHandler>
                 </div>
+              </div>
+            ))}
+          </Carousel>
 
-                <h5 className='mc-text-h5'>
-                  {`${item.lesson}`}
-                </h5>
-                <p className={`
-                  mc-mt-2
-                  mc-text-small
-                  mc-text--hinted
-                  mc-text--3-lines
-                `}>
-                  {`${item.extract}`}
-                </p>
-              </TileCaption>
-            </Tile>
-          </div>
-        ))}
-      </Carousel>
+          <h5 className={`
+            mc-text-h5
+            mc-text--airy
+            mc-mb-6
+          `}>
+            Creative Writing
+          </h5>
 
-    </div>,
+          <HoverHandler nowrap>
+            {({ intent: parentHovering, props: parentProps }) =>
+              <Accordion {...parentProps} className='mc-mb-10'>
+                {instructors
+                  .slice(0, responsiveValues(media, 4, 3, 2))
+                  .map((tile, key) =>
+                  <HoverHandler key={key} nowrap>
+                    {({ intent: panelHovering, props: panelProps }) =>
+                      <Tile aspectRatio='auto' {...panelProps}>
+                        <TileImage imageUrl={tile.image} />
+
+                        <AnimationHandler
+                          type='hide'
+                          animating={parentHovering}
+                        >
+                          <TileOverlay type='gradient-bottom' />
+                          <TileCaption position='center bottom'>
+                            <h5 className={`
+                              mc-text-h5
+                              mc-text--airy
+                              mc-mb-2
+                            `}>
+                              {tile.instructor}
+                            </h5>
+                            <p className={`
+                              mc-text--muted
+                              mc-text--2-lines
+                            `}>
+                              {tile.course}
+                            </p>
+                          </TileCaption>
+                        </AnimationHandler>
+
+                        <AnimationHandler
+                          type='show-delayed'
+                          animating={panelHovering}
+                        >
+                          <div>
+                            <TileOverlay type='gradient-left' />
+                            <TileCaption position='left center'>
+                              <div className='row'>
+                                <div className='col-4 offset-1'>
+                                  <h4 className='mc-text-h4'>
+                                    {tile.instructor}
+                                  </h4>
+                                  <p className='mc-text--muted'>
+                                    {tile.course}
+                                  </p>
+                                  <p className='mc-mb-4'>
+                                    {tile.description}
+                                  </p>
+                                  <Button>Start Class</Button>
+                                </div>
+                              </div>
+                            </TileCaption>
+                          </div>
+                        </AnimationHandler>
+                      </Tile>
+                    }
+                  </HoverHandler>,
+                )}
+              </Accordion>
+            }
+          </HoverHandler>
+
+          <Tile aspectRatio='21x9' className='mc-mb-10'>
+            <TileImage imageUrl='http://placekitten.com/1920/1080' />
+            <TileOverlay />
+            <TileCaption position='center bottom'>
+              <h6 className={`
+                mc-text-h7
+                mc-text--uppercase
+                mc-mb-4
+              `}>
+                New Class Announcement
+              </h6>
+              <h2 className={`
+                mc-text-h2
+                mc-text--airy
+                mc-mb-2
+              `}>
+                Natalie Portman
+              </h2>
+              <p className='mc-mb-6'>
+                Teaches Cooking Techniques II: Meats, Stocks, And Sauces
+              </p>
+              <Button>
+                <IconPlay /> Start Class
+              </Button>
+            </TileCaption>
+          </Tile>
+
+          <h5 className={`
+            mc-text-h5
+            mc-text--airy
+            mc-mb-6
+          `}>
+            Playlist in Creative Life
+          </h5>
+
+          <Carousel
+            slidesToShow={3}
+            controls
+            className='row'
+          >
+            {playlist.map((item, key) => (
+              <div key={key} className='col-auto'>
+                <Tile
+                  key={item.id}
+                  aspectRatio='2x3'
+                 >
+                  <TileImage imageUrl={item.thumbnail} />
+                  <TileOverlay />
+
+                  <TileCaption
+                    position='left bottom'
+                  >
+                    <div className={`
+                      d-flex
+                      align-items-center
+                      justify-content-between
+                      mc-mb-2
+                    `}>
+                      <h6 className={`
+                        mc-text-h8
+                        mc-text--uppercase
+                      `}>
+                        {item.playlist}
+                      </h6>
+
+                      <Badge>
+                        <IconPlay /> 6 Videos
+                      </Badge>
+                    </div>
+
+                    <h5 className='mc-text-h5'>
+                      {`${item.lesson}`}
+                    </h5>
+                    <p className={`
+                      mc-mt-2
+                      mc-text-small
+                      mc-text--hinted
+                      mc-text--3-lines
+                    `}>
+                      {`${item.extract}`}
+                    </p>
+                  </TileCaption>
+                </Tile>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      }
+    </ResponsiveHandler>,
   )
