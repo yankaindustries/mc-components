@@ -2,19 +2,12 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { ASPECT_RATIOS } from '../helpers'
+
 
 export default class Tile extends PureComponent {
   static propTypes = {
-    aspectRatio: PropTypes.oneOf([
-      'auto',
-      '1x1',
-      '2x3',
-      '3x4',
-      '4x3',
-      '9x16',
-      '16x9',
-      '21x9',
-    ]),
+    aspectRatio: PropTypes.oneOf(ASPECT_RATIOS),
     children: PropTypes.node,
     className: PropTypes.string,
     naked: PropTypes.bool,

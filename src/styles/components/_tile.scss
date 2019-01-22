@@ -1,32 +1,11 @@
-@mixin tile-aspect-ratio($width, $height) {
-  position: relative;
-
-  &:before {
-    display: block;
-    width: 100%;
-    padding-top: ($height / $width) * 100%;
-    content: "";
-  }
-}
-
 .mc-tile {
   position: relative;
   backface-visibility: hidden;
   box-shadow:
     0 3px 6px rgba($mc-color-dark, 0.16),
     0 3px 6px rgba($mc-color-dark, 0.23);
-  cursor: pointer;
 
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
+  cursor: pointer;
 
   &__content {
     position: absolute;
@@ -34,10 +13,10 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
   }
 
   &--naked {
@@ -59,36 +38,36 @@
 
   &--1x1,
   &--square {
-    @include tile-aspect-ratio(1, 1);
+    @include aspect-ratio(1, 1);
   }
 
   &--2x3 {
-    @include tile-aspect-ratio(2, 3);
+    @include aspect-ratio(2, 3);
   }
 
   &--3x4,
   &--poster {
-    @include tile-aspect-ratio(3, 4);
+    @include aspect-ratio(3, 4);
   }
 
   &--4x3,
   &--video {
-    @include tile-aspect-ratio(4, 3);
+    @include aspect-ratio(4, 3);
   }
 
   &--9x16,
   &--portrait {
-    @include tile-aspect-ratio(9, 16);
+    @include aspect-ratio(9, 16);
   }
 
   &--16x9,
   &--widescreen-video {
-    @include tile-aspect-ratio(16, 9);
+    @include aspect-ratio(16, 9);
   }
 
   &--21x9,
   &--cinematic {
-    @include tile-aspect-ratio(21, 9);
+    @include aspect-ratio(21, 9);
   }
 
   &__component {

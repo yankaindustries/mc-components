@@ -1,6 +1,17 @@
 import { Children, cloneElement } from 'react'
 import { isFunction } from 'lodash'
 
+export const aspectRatios = [
+  'auto',
+  '1x1',
+  '2x3',
+  '3x4',
+  '4x3',
+  '9x16',
+  '16x9',
+  '21x9',
+]
+
 export const parseInputErrors = (error) => {
   if (!error) {
     return undefined

@@ -261,7 +261,11 @@ storiesOf('Playground|Pages', module)
 
           <HoverHandler nowrap>
             {({ intent: parentHovering, props: parentProps }) =>
-              <Accordion {...parentProps} className='mc-mb-10'>
+              <Accordion
+                className='mc-mb-10'
+                aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
+                {...parentProps}
+              >
                 {instructors
                   .slice(0, responsiveValues(media, 4, 3, 2))
                   .map((tile, key) =>

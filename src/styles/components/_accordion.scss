@@ -6,21 +6,38 @@
 
   position: relative;
 
-  &:before {
-    display: block;
-    width: 100%;
-    padding-top: (9 / 21) * 100%;
-    content: "";
+  &--1x1,
+  &--square {
+    @include aspect-ratio(1, 1);
   }
 
-  &__inner {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    display: flex;
+  &--2x3 {
+    @include aspect-ratio(2, 3);
+  }
+
+  &--3x4,
+  &--poster {
+    @include aspect-ratio(3, 4);
+  }
+
+  &--4x3,
+  &--video {
+    @include aspect-ratio(4, 3);
+  }
+
+  &--9x16,
+  &--portrait {
+    @include aspect-ratio(9, 16);
+  }
+
+  &--16x9,
+  &--widescreen-video {
+    @include aspect-ratio(16, 9);
+  }
+
+  &--21x9,
+  &--cinematic {
+    @include aspect-ratio(21, 9);
   }
 
   &:hover {
@@ -31,6 +48,15 @@
         opacity: 1;
       }
     }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
   }
 
   &__item {
