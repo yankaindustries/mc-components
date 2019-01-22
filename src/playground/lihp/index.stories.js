@@ -359,7 +359,7 @@ storiesOf('Playground|Pages', module)
           </h5>
 
           <Carousel
-            slidesToShow={3}
+            slidesToShow={responsiveValues(media, 3, 3, 1)}
             controls
             className='row'
           >
