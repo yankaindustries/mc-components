@@ -6,6 +6,7 @@ export default class TileOverlay extends PureComponent {
   static propTypes = {
     children: PropTypes.element,
     className: PropTypes.string,
+    color: PropTypes.string,
     type: PropTypes.oneOf([
       'gradient-bottom',
       'gradient-left',
@@ -22,6 +23,7 @@ export default class TileOverlay extends PureComponent {
     const {
       children,
       className,
+      color,
       type,
     } = this.props
 
@@ -31,6 +33,8 @@ export default class TileOverlay extends PureComponent {
       `mc-tile-overlay--${type}`,
       className || '',
     ].join(' ')
+
+    console.log(color)
 
     return (
       <div className={classes}>

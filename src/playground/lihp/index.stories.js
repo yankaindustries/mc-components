@@ -23,6 +23,7 @@ const jbi = [
     instructor: 'Ron Howard',
     lesson: '01. Banana bread mastery.',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
+    color: '#ff0000',
   },
   {
     id: 2,
@@ -196,7 +197,7 @@ storiesOf('Playground|Pages', module)
                       <AnimationHandler type='zoom-tile' animating={intent}>
                         <Tile key={item.id}>
                           <TileImage imageUrl={item.thumbnail} />
-                          <TileOverlay />
+                          <TileOverlay color={item.color} />
 
                           <TileCaption
                             position='right bottom'
