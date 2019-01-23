@@ -134,7 +134,7 @@ export default class VideoPlayer extends PureComponent {
     this.video.on('ended', this.handleVideoEnd)
 
     this.video.on('seeking', () => {
-      this.hideOpenScreens()
+      this.setState({ screen: SCREEN_NONE })
       if (onSeek) {
         onSeek(this.video)
       }
