@@ -93,6 +93,16 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
+  componentWillUnmount () {
+    // clean listeners
+    this.video.off('play')
+    this.video.off('pause')
+    this.video.off('ended')
+    this.video.off('seeking')
+    // remove DOM element
+    this.video.dispose()
+  }
+
   handlePlayerReady = () => {
     const {
       onSeek,
