@@ -11,6 +11,7 @@ const NONE = 'NONE'
 const MODIFIER_AIRY = 'MODIFIER_AIRY'
 const MODIFIER_UPPERCASE = 'MODIFIER_UPPERCASE'
 
+const COLOR_HINTED = 'COLOR_HINTED'
 const COLOR_MUTED = 'COLOR_MUTED'
 const COLOR_SILENCED = 'COLOR_SILENCED'
 
@@ -36,6 +37,7 @@ export default class Summary extends PureComponent {
     const modifierClass = cn({
       'mc-text--airy': modifier === MODIFIER_AIRY,
       'mc-text--uppercase': modifier === MODIFIER_UPPERCASE,
+      'mc-text--hinted': color === COLOR_HINTED,
       'mc-text--muted': color === COLOR_MUTED,
       'mc-text--silenced': color === COLOR_SILENCED,
     })
@@ -70,6 +72,15 @@ export default class Summary extends PureComponent {
                     secondary={modifier !== MODIFIER_AIRY}
                   >
                     Airy
+                  </Button>
+                </div>
+
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_HINTED)}
+                    secondary={color !== COLOR_HINTED}
+                  >
+                    Hinted
                   </Button>
                 </div>
 
