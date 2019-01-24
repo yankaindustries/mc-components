@@ -69,7 +69,7 @@
     overflow: hidden;
 
     transition:
-      flex-grow $slide-duration $bezier $delay-duration,
+      flex $slide-duration $bezier $delay-duration,
       opacity $fade-duration $bezier $delay-duration;
 
     &:first-child {
