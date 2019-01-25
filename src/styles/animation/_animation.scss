@@ -1,6 +1,8 @@
 .mc-animation {
-  &--animating {
-    z-index: 2;
+  &--important {
+    &.mc-animation--animating {
+      z-index: 2;
+    }
   }
 
   &--zoom {
@@ -105,69 +107,50 @@
     }
   }
 
-  // Variables for show / hide specifically
-  $slide-duration: 500ms;
-  $fade-duration: 300ms;
-  $delay-duration: $fade-duration + $slide-duration;
+  // Show / Hide
+  $slide-duration: 400ms;
+  $fade-duration: 200ms;
+  $delay-in-duration: $slide-duration + $fade-duration;
+  $delay-out-duration: $slide-duration + $fade-duration;
   $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
 
   &--show {
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity $fade-duration $bezier;
+    transition: opacity $fade-duration $bezier 0ms;
 
     &.mc-animation--animating {
       opacity: 1;
-      visibility: visible;
-      pointer-events: none;
+      transition: opacity $fade-duration $bezier;
     }
   }
 
   &--show-delayed {
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition:
-      opacity $fade-duration $bezier 0ms,
-      visibility 0ms $slide-duration;
+    transition: opacity $fade-duration $bezier 0ms;
 
     &.mc-animation--animating {
       opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transition:
-        opacity $fade-duration $bezier $delay-duration,
-        visibility 0ms $fade-duration;
+      transition: opacity $fade-duration $bezier $delay-in-duration;
     }
   }
 
   &--hide {
     opacity: 1;
-    transition: opacity $fade-duration $bezier $delay-duration;
+    transition: opacity $fade-duration $bezier $delay-out-duration;
 
     &.mc-animation--animating {
       opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition:
-        opacity $fade-duration $bezier 0ms,
-        visibility 0ms $slide-duration;
+      transition: opacity $fade-duration $bezier 0ms;
     }
   }
 
   &--hide-delayed {
     opacity: 1;
-    transition:
-      opacity $fade-duration $bezier 0ms,
-      visibility 0ms 0ms;
+    transition: opacity $fade-duration $bezier 0ms;
 
     &.mc-animation--animating {
       opacity: 0;
-      visibility: hidden;
-      transition:
-        opacity $fade-duration $bezier $delay-duration,
-        visibility 0ms $delay-duration;
+      transition: opacity $fade-duration $bezier $delay-in-duration;
     }
   }
 }

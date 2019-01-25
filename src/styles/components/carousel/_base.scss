@@ -103,17 +103,17 @@ $scrollbar-max-width: 17px !default;
     width: 3em;
     height: 3em;
     border-radius: 3em;
-    background: rgba($mc-color-gray-100, 0.8);
+    background: $mc-color-gray-200;
     color: $mc-color-light;
     text-align: center;
     z-index: 5;
     cursor: pointer;
 
-    &:hover {
-      &:before {
-        background: fade-out($mc-color-light, 0.5);
-      }
-    }
+    // &:hover {
+    //   &:before {
+    //     background: fade-out($mc-color-light, 0.5);
+    //   }
+    // }
 
     &--right {
       right: $grid-gutter-width/2;

@@ -53,5 +53,12 @@ export const renderChildren = (children, props) => {
     return children(props)
   }
 
-  return Children.map(children, child => cloneElement(child, props))
+  return Children.map(children, (child) => {
+    const newProps = {
+      ...props,
+      className: `${child.props.className || ''} ${props.className || ''}`,
+    }
+
+    return cloneElement(child, newProps)
+  })
 }

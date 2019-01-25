@@ -187,20 +187,23 @@ storiesOf('Playground|Pages', module)
             Jump Back In
           </h5>
 
-          <Carousel
-            slidesToShow={responsiveValues(media, 4, 3, 2)}
-            controls
-            className='row mc-mb-10'
-          >
-            {jbi.map((item, key) => (
-              <div key={key} className='col-auto'>
-                <div className='mc-mb-10'>
+          <div className='mc-mb-10'>
+            <Carousel
+              slidesToShow={responsiveValues(media, 4, 3, 2)}
+              controls
+              className='row mc-mb-10'
+            >
+              {jbi.map((item, key) => (
+                <div key={key} className='col-auto'>
                   <HoverHandler>
                     {({ intent }) =>
-                      <AnimationHandler type='zoom-tile' animating={intent}>
+                      <AnimationHandler
+                        type='zoom-tile'
+                        animating={intent}
+                        important
+                      >
                         <Tile key={item.id}>
                           <TileImage imageUrl={item.thumbnail} />
-                          <TileOverlay />
 
                           <TileCaption
                             position='right bottom'
@@ -250,9 +253,9 @@ storiesOf('Playground|Pages', module)
                     }
                   </HoverHandler>
                 </div>
-              </div>
-            ))}
-          </Carousel>
+              ))}
+            </Carousel>
+          </div>
 
           <h5 className={`
             mc-text-h5
@@ -274,8 +277,18 @@ storiesOf('Playground|Pages', module)
                   .map((tile, key) =>
                   <HoverHandler key={key} nowrap>
                     {({ intent: panelHovering, props: panelProps }) =>
-                      <Tile aspectRatio='auto' {...panelProps}>
-                        <TileImage imageUrl={tile.image} />
+                      <Tile
+                        aspectRatio='auto'
+                        crop
+                        {...panelProps}
+                      >
+                        <TileImage
+                          imageUrl={tile.image}
+                          className={panelHovering
+                            ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
+                            : 'example-offset-left-one-quarter'
+                          }
+                        />
 
                         <AnimationHandler
                           type='hide'
@@ -283,45 +296,63 @@ storiesOf('Playground|Pages', module)
                         >
                           <TileOverlay type='gradient-bottom' />
                           <TileCaption position='center bottom'>
-                            <h5 className={`
-                              mc-text-h5
-                              mc-text--airy
-                              mc-mb-2
-                            `}>
+                            <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
                               {tile.instructor}
-                            </h5>
-                            <p className={`
-                              mc-text--muted
-                              mc-text--2-lines
-                            `}>
+                            </h6>
+                            <p className='mc-text-small mc-text--hinted'>
                               {tile.course}
                             </p>
                           </TileCaption>
                         </AnimationHandler>
 
                         <AnimationHandler
-                          type='show-delayed'
+                          type='show'
                           animating={panelHovering}
+                          important
                         >
                           <div>
-                            <TileOverlay type='gradient-left' />
-                            <TileCaption position='left center'>
-                              <div className='row'>
-                                <div className='col-4 offset-1'>
-                                  <h4 className='mc-text-h4'>
-                                    {tile.instructor}
-                                  </h4>
-                                  <p className='mc-text--muted'>
-                                    {tile.course}
-                                  </p>
-                                  <p className='mc-mb-4'>
-                                    {tile.description}
-                                  </p>
-                                  <Button>Start Class</Button>
-                                </div>
-                              </div>
-                            </TileCaption>
+                            <TileOverlay
+                              type='gradient-left'
+                              className={panelHovering
+                                ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
+                                : 'example-offset-left-one-quarter'
+                              }
+                            />
                           </div>
+                        </AnimationHandler>
+
+                        <AnimationHandler
+                          type='show-delayed'
+                          animating={panelHovering}
+                          important
+                        >
+                          <TileCaption position='left center'>
+                            <div className='row'>
+                              <div className='col-4 offset-1'>
+                              <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
+                                {tile.instructor}
+                              </h6>
+                              <p className='mc-text-small mc-text--hinted mc-mb-2'>
+                                {tile.course}
+                              </p>
+                              <p className='mc-text-x-small mc-mb-8'>
+                                {tile.description}
+                              </p>
+                              <Button
+                                className='mc-mc-3'
+                                fullWidth
+                              >
+                                Start Class
+                              </Button>
+                              <Button
+                                fullWidth
+                                link
+                              >
+                                Watch Trailer
+                              </Button>
+                              </div>
+                            </div>
+                          </TileCaption>
                         </AnimationHandler>
                       </Tile>
                     }
@@ -367,9 +398,9 @@ storiesOf('Playground|Pages', module)
           </h5>
 
           <Carousel
+            className='row'
             slidesToShow={responsiveValues(media, 3, 3, 1)}
             controls
-            className='row'
           >
             {playlist.map((item, key) => (
               <div key={key} className='col-auto'>

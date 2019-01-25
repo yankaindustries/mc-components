@@ -7,6 +7,12 @@ import { renderChildren } from '../helpers'
 
 export default class AnimationHandler extends PureComponent {
   static propTypes = {
+    animating: PropTypes.bool,
+    children: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.element,
+    ]),
+    important: PropTypes.bool,
     type: PropTypes.oneOf([
       'zoom',
       'ken-burns',
@@ -17,11 +23,6 @@ export default class AnimationHandler extends PureComponent {
       'hide',
       'hide-delayed',
     ]),
-    animating: PropTypes.bool,
-    children: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.element,
-    ]),
   }
 
   static defaultProps = {
@@ -31,8 +32,9 @@ export default class AnimationHandler extends PureComponent {
   render () {
     const {
       animating,
-      type,
       children,
+      important,
+      type,
       ...restProps
     } = this.props
 
@@ -40,6 +42,7 @@ export default class AnimationHandler extends PureComponent {
       'mc-animation': true,
       [`mc-animation--${type}`]: type,
       'mc-animation--animating': animating,
+      'mc-animation--important': important,
     })
 
     return renderChildren(children, {

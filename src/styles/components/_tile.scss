@@ -4,7 +4,6 @@
   box-shadow:
     0 3px 6px rgba($mc-color-dark, 0.16),
     0 3px 6px rgba($mc-color-dark, 0.23);
-
   cursor: pointer;
 
   &__content {
@@ -23,6 +22,10 @@
     &:after {
       display: none;
     }
+  }
+
+  &--crop {
+    overflow: hidden;
   }
 
   &--active {
@@ -129,11 +132,13 @@
 }
 
 .mc-tile-overlay {
+  transform: scale(1.01);
+
   &--gradient-bottom {
     background:
       linear-gradient(
         to top,
-        rgba($mc-color-dark, 0.9) 0,
+        rgba($mc-color-dark, 1) 0,
         rgba($mc-color-dark, 0.6) 25%,
         rgba($mc-color-dark, 0) 45%
       ) center no-repeat;
@@ -143,7 +148,7 @@
     background:
       linear-gradient(
         to right,
-        rgba($mc-color-dark, 0.9) 0,
+        rgba($mc-color-dark, 1) 0,
         rgba($mc-color-dark, 0.6) 25%,
         rgba($mc-color-dark, 0) 45%
       ) center no-repeat;
@@ -182,10 +187,10 @@
   display: flex;
 
   &__content {
+    @include step(padding, 4);
+
     position: absolute;
-    padding: 16px;
     width: 100%;
-    text-shadow: 0 0 10px $mc-color-dark;
     transition:
       transform 0.2s ease,
       padding 0.2s ease;
