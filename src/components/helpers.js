@@ -1,7 +1,7 @@
 import { Children, cloneElement } from 'react'
 import { isFunction } from 'lodash'
 
-export const aspectRatios = [
+export const ASPECT_RATIOS = [
   'auto',
   '1x1',
   '2x3',
@@ -50,6 +50,7 @@ export const FormatClassTitle = (title = '', instructorName = '') => {
 
 export const renderChildren = (children, props) => {
   if (isFunction(children)) {
+    console.log('renderChildren', children, props)
     return children(props)
   }
 

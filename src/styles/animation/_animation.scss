@@ -110,8 +110,7 @@
   // Show / Hide
   $slide-duration: 400ms;
   $fade-duration: 200ms;
-  $delay-in-duration: $slide-duration + $fade-duration;
-  $delay-out-duration: $slide-duration + $fade-duration;
+  $delay-duration: 400ms;
   $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
 
   &--show {
@@ -130,17 +129,17 @@
 
     &.mc-animation--animating {
       opacity: 1;
-      transition: opacity $fade-duration $bezier $delay-in-duration;
+      transition: opacity $fade-duration $bezier $delay-duration;
     }
   }
 
   &--hide {
     opacity: 1;
-    transition: opacity $fade-duration $bezier $delay-out-duration;
+    transition: opacity $fade-duration $bezier $delay-duration;
 
     &.mc-animation--animating {
       opacity: 0;
-      transition: opacity $fade-duration $bezier 0ms;
+      transition: opacity 0ms $bezier 0ms;
     }
   }
 
@@ -150,7 +149,7 @@
 
     &.mc-animation--animating {
       opacity: 0;
-      transition: opacity $fade-duration $bezier $delay-in-duration;
+      transition: opacity $fade-duration $bezier $delay-duration;
     }
   }
 }

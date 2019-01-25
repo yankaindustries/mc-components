@@ -1,3 +1,5 @@
+/* eslint react/display-name:0, react/prop-types:0 */
+
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
@@ -62,10 +64,10 @@ storiesOf('Components|Accordion', module)
         <div className='container'>
           <DocHeader
             title='Accordion'
-            description='
+            description={`
               Excellent for when you need to take a deeper dive when using
               short form content like a Tile.
-            '
+            `}
             experimental
           />
 
@@ -80,9 +82,11 @@ storiesOf('Components|Accordion', module)
                   {instructors
                     .slice(0, responsiveValues(media, 4, 3, 2))
                     .map((tile, key) =>
-                    <HoverHandler key={key} nowrap>
-                      {({ intent: panelHovering, props: panelProps }) =>
-                        <Tile aspectRatio='auto' {...panelProps}>
+                      ({ active }) =>
+                        <Tile
+                          aspectRatio='auto'
+                          key={key}
+                        >
                           <TileImage imageUrl={tile.image} />
 
                           <AnimationHandler
@@ -102,43 +106,40 @@ storiesOf('Components|Accordion', module)
 
                           <AnimationHandler
                             type='show-delayed'
-                            animating={panelHovering}
+                            animating={active}
                           >
-                            <div>
-                              <TileOverlay type='gradient-left' />
-                              <TileCaption position='left center'>
-                                <div className='row'>
-                                  <div className='col-4 offset-1'>
-                                    <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                                      {tile.instructor}
-                                    </h6>
-                                    <p className='mc-text-small mc-text--hinted mc-mb-8'>
-                                      {tile.course}
-                                    </p>
-                                    <p className='mc-text-x-small mc-text--hinted mc-mb-8'>
-                                      {tile.description}
-                                    </p>
-                                    <Button
-                                      className='mc-mc-3'
-                                      fullWidth
-                                    >
-                                      Start Class
-                                    </Button>
-                                    <Button
-                                      fullWidth
-                                      link
-                                    >
-                                      Watch Trailer
-                                    </Button>
-                                  </div>
+                            <TileOverlay type='gradient-left' />
+                            <TileCaption position='left center'>
+                              <div className='row'>
+                                <div className='col-4 offset-1'>
+                                  <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
+                                    {tile.instructor}
+                                  </h6>
+                                  <p className='mc-text-small mc-text--hinted mc-mb-8'>
+                                    {tile.course}
+                                  </p>
+                                  <p className='mc-text-x-small mc-text--hinted mc-mb-8'>
+                                    {tile.description}
+                                  </p>
+                                  <Button
+                                    className='mc-mc-3'
+                                    fullWidth
+                                  >
+                                    Start Class
+                                  </Button>
+                                  <Button
+                                    fullWidth
+                                    link
+                                  >
+                                    Watch Trailer
+                                  </Button>
                                 </div>
-                              </TileCaption>
-                            </div>
+                              </div>
+                            </TileCaption>
                           </AnimationHandler>
-                        </Tile>
-                      }
-                    </HoverHandler>,
-                  )}
+                        </Tile>,
+                    )
+                  }
                 </Accordion>
               }
             </HoverHandler>

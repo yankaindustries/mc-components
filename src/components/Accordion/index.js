@@ -1,8 +1,14 @@
 import React, { Children, PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { isArray, isFunction } from 'lodash'
 import cn from 'classnames'
 
-import { ASPECT_RATIOS } from '../helpers'
+import HoverHandler from '../HoverHandler'
+
+import {
+  renderChildren,
+  ASPECT_RATIOS,
+} from '../helpers'
 
 
 export default class Accordion extends PureComponent {
@@ -11,12 +17,21 @@ export default class Accordion extends PureComponent {
     children: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
+      PropTypes.arrayOf(PropTypes.func),
     ]),
     className: PropTypes.string,
   }
 
   static defaultProps = {
     aspectRatio: '21x9',
+  }
+
+  mapChildren = (children, mapFn) => {
+    if (isArray(children) && isFunction(children[0])) {
+      return children.map(mapFn)
+    }
+
+    return Children.map(children, mapFn)
   }
 
   render () {
@@ -27,22 +42,42 @@ export default class Accordion extends PureComponent {
       ...restProps
     } = this.props
 
-    const classes = cn({
-      [className]: className,
-      'mc-accordion': true,
-      [`mc-accordion--${aspectRatio}`]: aspectRatio,
-    })
+    const parentClasses = active =>
+      cn({
+        [className]: className,
+        'mc-accordion': true,
+        'mc-accordion--active': active,
+        [`mc-accordion--${aspectRatio}`]: aspectRatio,
+      })
+
+    const itemClasses = active =>
+      cn({
+        'mc-accordion__item': true,
+        'mc-accordion__item--active': active,
+      })
 
     return (
-      <div className={classes} {...restProps}>
-        <div className='mc-accordion__content'>
-          {Children.map(children, child => (
-            <div className='mc-accordion__item'>
-              {child}
+      <HoverHandler nowrap>
+        {({ intent: parentActive, props: parentProps }) =>
+          <div
+            className={parentClasses(parentActive)}
+            {...restProps}
+            {...parentProps}
+          >
+            <div className='mc-accordion__content'>
+              {this.mapChildren(children, child =>
+                <HoverHandler nowrap>
+                  {({ intent: itemActive, props: itemProps }) =>
+                    <div className={itemClasses(itemActive)} {...itemProps}>
+                      {renderChildren(child, { itemActive, parentActive })}
+                    </div>
+                  }
+                </HoverHandler>,
+              )}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        }
+      </HoverHandler>
     )
   }
 }

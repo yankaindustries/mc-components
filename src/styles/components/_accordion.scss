@@ -1,7 +1,6 @@
 .mc-accordion {
   $slide-duration: 400ms;
   $fade-duration: 200ms;
-  $delay-duration: $slide-duration + $fade-duration;
   $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
 
   position: relative;
@@ -40,11 +39,11 @@
     @include aspect-ratio(21, 9);
   }
 
-  &:hover {
+  &--active {
     .mc-accordion__item {
       opacity: 0.5;
 
-      &:hover {
+      &--active {
         opacity: 1;
       }
     }
@@ -68,15 +67,11 @@
     overflow: hidden;
 
     transition:
-      flex $slide-duration $bezier $delay-duration,
-      opacity $fade-duration $bezier $delay-duration;
+      flex $slide-duration $bezier 0ms,
+      opacity $fade-duration $bezier 0ms;
 
-    &:hover {
+    &--active {
       flex-grow: 10;
-
-      transition:
-        flex $slide-duration $bezier $delay-duration,
-        opacity $fade-duration $bezier $delay-duration;
     }
 
     &:first-child {

@@ -1,3 +1,5 @@
+/* eslint react/display-name:0, react/prop-types:0 */
+
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
@@ -265,70 +267,67 @@ storiesOf('Playground|Pages', module)
             Creative Writing
           </h5>
 
-          <HoverHandler nowrap>
-            {({ intent: parentHovering, props: parentProps }) =>
-              <Accordion
-                className='mc-mb-10'
-                aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
-                {...parentProps}
-              >
-                {instructors
-                  .slice(0, responsiveValues(media, 4, 3, 2))
-                  .map((tile, key) =>
-                  <HoverHandler key={key} nowrap>
-                    {({ intent: panelHovering, props: panelProps }) =>
-                      <Tile
-                        aspectRatio='auto'
-                        crop
-                        {...panelProps}
-                      >
-                        <TileImage
-                          imageUrl={tile.image}
-                          className={panelHovering
+          <Accordion
+            className='mc-mb-10'
+            aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
+          >
+            {instructors
+              .slice(0, responsiveValues(media, 4, 3, 2))
+              .map((tile, key) =>
+                ({ itemActive, parentActive }) =>
+                  <Tile
+                    aspectRatio='auto'
+                    key={key}
+                    crop
+                  >
+                    <TileImage
+                      imageUrl={tile.image}
+                      className={itemActive
+                        ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
+                        : 'example-offset-left-one-quarter'
+                      }
+                    />
+
+                    <AnimationHandler
+                      type='hide'
+                      animating={parentActive}
+                    >
+                      <TileOverlay type='gradient-bottom' />
+                      <TileCaption position='center bottom'>
+                        <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
+                          {tile.instructor}
+                        </h6>
+                        <p className='mc-text-small mc-text--hinted'>
+                          {tile.course}
+                        </p>
+                      </TileCaption>
+                    </AnimationHandler>
+
+                    <AnimationHandler
+                      type='show'
+                      animating={itemActive}
+                      important
+                    >
+                      <div>
+                        <TileOverlay
+                          type='gradient-left'
+                          className={itemActive
                             ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
                             : 'example-offset-left-one-quarter'
                           }
                         />
+                      </div>
+                    </AnimationHandler>
 
-                        <AnimationHandler
-                          type='hide'
-                          animating={parentHovering}
-                        >
-                          <TileOverlay type='gradient-bottom' />
-                          <TileCaption position='center bottom'>
-                            <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                              {tile.instructor}
-                            </h6>
-                            <p className='mc-text-small mc-text--hinted'>
-                              {tile.course}
-                            </p>
-                          </TileCaption>
-                        </AnimationHandler>
-
-                        <AnimationHandler
-                          type='show'
-                          animating={panelHovering}
-                          important
-                        >
-                          <div>
-                            <TileOverlay
-                              type='gradient-left'
-                              className={panelHovering
-                                ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
-                                : 'example-offset-left-one-quarter'
-                              }
-                            />
-                          </div>
-                        </AnimationHandler>
-
-                        <AnimationHandler
-                          type='show-delayed'
-                          animating={panelHovering}
-                          important
-                        >
-                          <TileCaption position='left center'>
-                            <div className='row'>
-                              <div className='col-4 offset-1'>
+                    <AnimationHandler
+                      type='show'
+                      animating={itemActive}
+                      important
+                    >
+                      <TileCaption position='left center'>
+                        <div className='row'>
+                          <div className='col-4 offset-1'>
+                            <div className='example-instructor-card-content'>
                               <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
                                 {tile.instructor}
                               </h6>
@@ -350,17 +349,15 @@ storiesOf('Playground|Pages', module)
                               >
                                 Watch Trailer
                               </Button>
-                              </div>
                             </div>
-                          </TileCaption>
-                        </AnimationHandler>
-                      </Tile>
-                    }
-                  </HoverHandler>,
-                )}
-              </Accordion>
+                          </div>
+                        </div>
+                      </TileCaption>
+                    </AnimationHandler>
+                  </Tile>,
+              )
             }
-          </HoverHandler>
+          </Accordion>
 
           <Tile aspectRatio='21x9' className='mc-mb-10'>
             <TileImage imageUrl='http://placekitten.com/1920/1080' />

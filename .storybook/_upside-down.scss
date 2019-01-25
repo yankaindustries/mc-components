@@ -271,10 +271,14 @@ a {
   $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
 
   left: 0;
-  transition: left 200ms $bezier 400ms;
+  transition: left 200ms $bezier 0ms;
 
   &--active {
     left: 22%;
-    transition: left 400ms $bezier 200ms;
+    transition: left 400ms $bezier 0ms;
   }
+}
+
+.example-instructor-card-content {
+  width: 220px;
 }
