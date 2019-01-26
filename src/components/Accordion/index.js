@@ -28,7 +28,7 @@ export default class Accordion extends PureComponent {
 
   static defaultProps = {
     aspectRatio: '21x9',
-    on: 'intent',
+    on: 'hovering',
   }
 
   mapChildren = (children, mapFn) => {
