@@ -108,48 +108,26 @@
   }
 
   // Show / Hide
-  $slide-duration: 400ms;
+  $slide-duration: 650ms;
   $fade-duration: 200ms;
-  $delay-duration: 400ms;
-  $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
 
   &--show {
     opacity: 0;
-    transition: opacity $fade-duration $bezier 0ms;
+    transition: opacity $fade-duration ease;
 
     &.mc-animation--animating {
       opacity: 1;
-      transition: opacity $fade-duration $bezier;
-    }
-  }
-
-  &--show-delayed {
-    opacity: 0;
-    transition: opacity $fade-duration $bezier 0ms;
-
-    &.mc-animation--animating {
-      opacity: 1;
-      transition: opacity $fade-duration $bezier $delay-duration;
+      transition: opacity $fade-duration ease;
     }
   }
 
   &--hide {
     opacity: 1;
-    transition: opacity $fade-duration $bezier $delay-duration;
+    transition: opacity $fade-duration ease $slide-duration;
 
     &.mc-animation--animating {
       opacity: 0;
-      transition: opacity 0ms $bezier 0ms;
-    }
-  }
-
-  &--hide-delayed {
-    opacity: 1;
-    transition: opacity $fade-duration $bezier 0ms;
-
-    &.mc-animation--animating {
-      opacity: 0;
-      transition: opacity $fade-duration $bezier $delay-duration;
+      transition: opacity $fade-duration ease;
     }
   }
 }

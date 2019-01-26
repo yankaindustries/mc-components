@@ -20,10 +20,15 @@ export default class Accordion extends PureComponent {
       PropTypes.arrayOf(PropTypes.func),
     ]),
     className: PropTypes.string,
+    on: PropTypes.oneOf([
+      'hovering',
+      'intent',
+    ]),
   }
 
   static defaultProps = {
     aspectRatio: '21x9',
+    on: 'intent',
   }
 
   mapChildren = (children, mapFn) => {
@@ -39,6 +44,7 @@ export default class Accordion extends PureComponent {
       aspectRatio,
       children,
       className,
+      on,
       ...restProps
     } = this.props
 
@@ -58,7 +64,7 @@ export default class Accordion extends PureComponent {
 
     return (
       <HoverHandler nowrap>
-        {({ intent: parentActive, props: parentProps }) =>
+        {({ [on]: parentActive, props: parentProps }) =>
           <div
             className={parentClasses(parentActive)}
             {...restProps}
@@ -67,7 +73,7 @@ export default class Accordion extends PureComponent {
             <div className='mc-accordion__content'>
               {this.mapChildren(children, child =>
                 <HoverHandler nowrap>
-                  {({ intent: itemActive, props: itemProps }) =>
+                  {({ [on]: itemActive, props: itemProps }) =>
                     <div className={itemClasses(itemActive)} {...itemProps}>
                       {renderChildren(child, { itemActive, parentActive })}
                     </div>
