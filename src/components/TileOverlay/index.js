@@ -10,7 +10,6 @@ export default class TileOverlay extends PureComponent {
     type: PropTypes.oneOf([
       'gradient-bottom',
       'gradient-left',
-      'offset-spotlight',
       'spotlight',
     ]),
   }
@@ -35,7 +34,7 @@ export default class TileOverlay extends PureComponent {
       className || '',
     ].join(' ')
 
-    let styles = ''
+    let styles = {}
 
     if (type === 'gradient-bottom') {
       styles = {

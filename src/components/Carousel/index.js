@@ -37,7 +37,7 @@ class Arrow extends PureComponent {
         className={classes}
         onClick={onClick}
       >
-        <span className='mc-text--muted'>
+        <span className='mc-carousel__arrow-text'>
           {children}
         </span>
       </a>

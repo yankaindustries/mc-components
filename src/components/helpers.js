@@ -50,12 +50,12 @@ export const FormatClassTitle = (title = '', instructorName = '') => {
 
 export const renderChildren = (children, props) => {
   if (isFunction(children)) {
-    console.log('renderChildren', children, props)
     return children(props)
   }
 
   return Children.map(children, (child) => {
     const newProps = {
+      ...child.props,
       ...props,
       className: `${child.props.className || ''} ${props.className || ''}`,
     }
