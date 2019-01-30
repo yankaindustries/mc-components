@@ -113,8 +113,6 @@ export default class VideoPlayer extends PureComponent {
       pausescreenComponent,
     } = this.props
 
-    console.log(this.video)
-
     this.video.on('play', () => {
       if (onPlay) {
         onPlay(this.video)
