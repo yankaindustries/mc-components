@@ -268,14 +268,14 @@ a {
 }
 
 .example-offset-left-one-quarter {
-  $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
+  $slide-duration: 650ms;
 
   left: 0;
-  transition: left 200ms $bezier 0ms;
+  transition: left ($slide-duration / 2) ease;
 
   &--active {
     left: 22%;
-    transition: left 400ms $bezier 0ms;
+    transition: left $slide-duration ease;
   }
 }
 

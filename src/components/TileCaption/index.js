@@ -23,10 +23,12 @@ export default class TileCaption extends PureComponent {
       'right bottom',
       'right below',
     ]),
+    padding: PropTypes.number,
   }
 
   static defaultProps = {
     position: 'left bottom',
+    padding: 3,
   }
 
   render () {
@@ -34,6 +36,7 @@ export default class TileCaption extends PureComponent {
       children,
       className,
       flush,
+      padding,
       position,
     } = this.props
 
@@ -57,7 +60,7 @@ export default class TileCaption extends PureComponent {
     return (
       <div className={classes}>
         {children &&
-          <div className='mc-tile-caption__content'>
+          <div className={`mc-tile-caption__content mc-p-${padding}`}>
             {children}
           </div>
         }

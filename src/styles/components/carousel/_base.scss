@@ -104,16 +104,23 @@ $scrollbar-max-width: 17px !default;
     height: 3em;
     border-radius: 3em;
     background: $mc-color-gray-200;
-    color: $mc-color-light;
+    color: $mc-color-gray-500;
     text-align: center;
     z-index: 5;
     cursor: pointer;
+    transition:
+      background 200ms ease,
+      color 200ms ease;
 
-    // &:hover {
-    //   &:before {
-    //     background: fade-out($mc-color-light, 0.5);
-    //   }
-    // }
+
+    &:not(.slick-disabled):hover {
+      background: $mc-color-gray-300;
+      color: $mc-color-light;
+
+      .mc-carousel__arrow-text {
+        opacity: 1;
+      }
+    }
 
     &--right {
       right: $grid-gutter-width/2;
@@ -136,7 +143,7 @@ $scrollbar-max-width: 17px !default;
     // Disabled state for when you can't
     // advance the slide or "go back" anymore
     &.slick-disabled {
-      display: none;
+      opacity: 0.5;
     }
   }
 

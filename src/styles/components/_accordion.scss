@@ -1,7 +1,5 @@
 .mc-accordion {
-  $slide-duration: 400ms;
-  $fade-duration: 200ms;
-  $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
+  $slide-duration: 650ms;
 
   position: relative;
 
@@ -67,8 +65,8 @@
     overflow: hidden;
 
     transition:
-      flex $slide-duration $bezier 0ms,
-      opacity $fade-duration $bezier 0ms;
+      flex $slide-duration ease,
+      opacity $slide-duration ease;
 
     &--active {
       flex-grow: 10;

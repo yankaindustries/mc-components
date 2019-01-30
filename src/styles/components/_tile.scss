@@ -154,7 +154,7 @@
       ) center no-repeat;
   }
 
-  &--offset-spotlight {
+  &--spotlight {
     background:
       radial-gradient(
         farthest-side at center top,
@@ -164,21 +164,12 @@
       linear-gradient(
         to right,
         rgba($mc-color-dark, 1) 0%,
-        rgba($mc-color-dark, 0) 40%
+        rgba($mc-color-dark, 0) 10%
       ),
       linear-gradient(
         to left,
         rgba($mc-color-dark, 1) 0%,
-        rgba($mc-color-dark, 0) 40%
-      );
-  }
-
-  &--spotlight {
-    background:
-      radial-gradient(
-        farthest-side at top,
-        rgba($mc-color-background, 0) 66%,
-        rgba($mc-color-background, 1) 100%
+        rgba($mc-color-dark, 0) 10%
       );
   }
 }
@@ -229,16 +220,19 @@
 
   &--y-below {
     .mc-tile-caption__content {
-      align-self: flex-end;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
       padding-left: 0;
       padding-right: 0;
-      transform: translateY(100%);
     }
   }
 }
 
 .mc-tile-check {
   cursor: pointer;
+
   &__check {
     position: absolute;
     right: 0;

@@ -23,7 +23,7 @@ const jbi = [
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
     image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
     instructor: 'Ron Howard',
-    lesson: '01. Banana bread mastery.',
+    lesson: '01. Banana Bread Mastery.',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
   },
   {
@@ -31,7 +31,7 @@ const jbi = [
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/332/original/1477793873-wh-tile.jpg%3F1477793873',
     image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/331/original/1495558129-hero-wh-v3.jpg%3F1495558129',
     instructor: 'Werner Herzog',
-    lesson: '07. Nose flute for beginners',
+    lesson: '07. Nose Flute For Beginners',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
   },
   {
@@ -39,7 +39,7 @@ const jbi = [
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/628/original/1493844712-DVF_SlideThumb_V1_A.jpg%3F1493844712',
     image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/627/original/1495558421-hero-dvf-v3.jpg%3F1495558421',
     instructor: 'Diane Von Furstenberg',
-    lesson: '03. Choosing your first tattoo',
+    lesson: '03. Choosing Your First Tattoo',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
   },
   {
@@ -47,7 +47,7 @@ const jbi = [
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/354/original/1479173180-DM5_SlideThumb_V2_A_%25281%2529.jpg%3F1479173180',
     image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/561/original/1489515027-DM5_CM_Hero_V1_A.jpg%3F1489515027',
     instructor: 'deadmau5',
-    lesson: '08. Picking a mask to hide your face',
+    lesson: '08. Picking A Mask To Hide Your Face',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
   },
   {
@@ -55,7 +55,7 @@ const jbi = [
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/867/original/1508818886-SLJ_SlideThumb_V2_A.jpg%3F1508818886',
     image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/866/original/1508818329-SLJ_class_hero_no_gradient.jpg%3F1508818329',
     instructor: 'Samuel L. Jackson',
-    lesson: '11. Say what again, and the eloquent use of profanity in classical theatrical productions',
+    lesson: '11. Say What Again, And The Eloquent Use Of Profanity In Classical Theatrical Productions',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
   },
   {
@@ -63,7 +63,7 @@ const jbi = [
     thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/1087/original/1510618603-Slide_Thumb.jpg%3F1510618603',
     image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1070/original/1510618084-Class_Hero.jpg%3F1510618084',
     instructor: 'Thomas Keller',
-    lesson: '02. Make: Pinterest fails turned into fuel for your fireplace',
+    lesson: '02. Make: Pinterest Fails Turned Into Fuel For Your Fireplace',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
   },
   {
@@ -82,24 +82,28 @@ const instructors = [
     instructor: 'Gordon Ramsay',
     course: 'Teaches Cooking 1',
     description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+    color: '15, 20, 25',
   },
   {
     image: 'http://stephenpontes.com/clients/mc/images/tk.png',
     instructor: 'Thomas Keller',
     course: 'Teaches Cooking Techniques II: Meats, Stocks, and Sauces',
     description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+    color: '5, 10, 25',
   },
   {
     image: 'http://stephenpontes.com/clients/mc/images/da.png',
     instructor: 'Dominique Ansel',
     course: 'Teaches French Pastry Fundamentals',
     description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+    color: '0, 0, 0',
   },
   {
     image: 'http://stephenpontes.com/clients/mc/images/dakr.jpg',
     instructor: 'David Axelrod and Karl Rove',
     course: 'Teaches Campaign Strategy and Messaging',
     description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
+    color: '10, 10, 20',
   },
 ]
 
@@ -209,6 +213,7 @@ storiesOf('Playground|Pages', module)
 
                           <TileCaption
                             position='right bottom'
+                            padding={1}
                           >
                             <Badge>
                               1:23
@@ -217,10 +222,10 @@ storiesOf('Playground|Pages', module)
 
                           <TileCaption
                             position='center bottom'
+                            padding={4}
+                            className='mc-tile__reveal-on-hover'
                           >
-                            <div className='mc-tile__reveal-on-hover'>
-                              <Button secondary>Resume</Button>
-                            </div>
+                            <Button secondary>Resume</Button>
                           </TileCaption>
 
                           <TileCaption
@@ -270,18 +275,20 @@ storiesOf('Playground|Pages', module)
           <Accordion
             className='mc-mb-10'
             aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
+            on='hovering'
           >
             {instructors
               .slice(0, responsiveValues(media, 4, 3, 2))
-              .map((tile, key) =>
+              .map((item, key) =>
                 ({ itemActive, parentActive }) =>
                   <Tile
                     aspectRatio='auto'
                     key={key}
+                    style={{ background: `rgb(${item.color})` }}
                     crop
                   >
                     <TileImage
-                      imageUrl={tile.image}
+                      imageUrl={item.image}
                       className={itemActive
                         ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
                         : 'example-offset-left-one-quarter'
@@ -292,13 +299,16 @@ storiesOf('Playground|Pages', module)
                       type='hide'
                       animating={parentActive}
                     >
-                      <TileOverlay type='gradient-bottom' />
+                      <TileOverlay
+                        type='gradient-bottom'
+                        color={item.color}
+                      />
                       <TileCaption position='center bottom'>
                         <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                          {tile.instructor}
+                          {item.instructor}
                         </h6>
                         <p className='mc-text-small mc-text--hinted'>
-                          {tile.course}
+                          {item.course}
                         </p>
                       </TileCaption>
                     </AnimationHandler>
@@ -311,6 +321,7 @@ storiesOf('Playground|Pages', module)
                       <div>
                         <TileOverlay
                           type='gradient-left'
+                          color={item.color}
                           className={itemActive
                             ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
                             : 'example-offset-left-one-quarter'
@@ -329,13 +340,13 @@ storiesOf('Playground|Pages', module)
                           <div className='col-4 offset-1'>
                             <div className='example-instructor-card-content'>
                               <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                                {tile.instructor}
+                                {item.instructor}
                               </h6>
                               <p className='mc-text-small mc-text--hinted mc-mb-2'>
-                                {tile.course}
+                                {item.course}
                               </p>
                               <p className='mc-text-x-small mc-mb-8'>
-                                {tile.description}
+                                {item.description}
                               </p>
                               <Button
                                 className='mc-mc-3'
@@ -359,32 +370,38 @@ storiesOf('Playground|Pages', module)
             }
           </Accordion>
 
-          <Tile aspectRatio='21x9' className='mc-mb-10'>
-            <TileImage imageUrl='http://placekitten.com/1920/1080' />
-            <TileOverlay />
-            <TileCaption position='center bottom'>
-              <h6 className={`
-                mc-text-h7
-                mc-text--uppercase
-                mc-mb-4
-              `}>
-                New Class Announcement
-              </h6>
-              <h2 className={`
-                mc-text-h2
-                mc-text--airy
-                mc-mb-2
-              `}>
-                Natalie Portman
-              </h2>
-              <p className='mc-mb-6'>
-                Teaches Cooking Techniques II: Meats, Stocks, And Sauces
-              </p>
-              <Button>
-                <IconPlay /> Start Class
-              </Button>
-            </TileCaption>
-          </Tile>
+          <div className='uncontainer'>
+            <Tile aspectRatio='21x9' className='mc-mb-10'>
+              <TileImage imageUrl='http://placekitten.com/1920/1080' />
+              <TileOverlay type='spotlight' />
+              <TileCaption
+                padding={6}
+                position='center bottom'
+              >
+                <h6 className={`
+                  mc-text-h7
+                  mc-text--uppercase
+                  mc-mb-4
+                `}>
+                  New Class Announcement
+                </h6>
+                <h2 className={`
+                  mc-text-h2
+                  mc-text--airy
+                  mc-mb-2
+                `}>
+                  Natalie Portman
+                </h2>
+                <p className='mc-mb-6 mc-text--hinted'>
+                  Teaches Cooking Techniques II: Meats, Stocks, And Sauces
+                </p>
+                <Button>
+                  <IconPlay className='mc-mr-3' />
+                  Start Class
+                </Button>
+              </TileCaption>
+            </Tile>
+          </div>
 
           <h5 className={`
             mc-text-h5
@@ -420,6 +437,7 @@ storiesOf('Playground|Pages', module)
                       <h6 className={`
                         mc-text-h8
                         mc-text--uppercase
+                        mc-text--hinted
                       `}>
                         {item.playlist}
                       </h6>
