@@ -22,7 +22,7 @@ export default class Modal extends PureComponent {
     ]).isRequired,
     className: PropTypes.string,
     show: PropTypes.bool,
-    portalNode: PropTypes.node,
+    portalNode: PropTypes.instanceOf(Element),
     usePortal: PropTypes.bool,
     onCloseClick: PropTypes.func,
   }
