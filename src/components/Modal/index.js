@@ -22,8 +22,14 @@ export default class Modal extends PureComponent {
     ]).isRequired,
     className: PropTypes.string,
     show: PropTypes.bool,
-
+    portalNode: PropTypes.node,
+    usePortal: PropTypes.bool,
     onCloseClick: PropTypes.func,
+  }
+
+  static defaultProps = {
+    portalNode: document.body,
+    usePortal: true,
   }
 
   onKeyDown = (event) => {
@@ -42,28 +48,17 @@ export default class Modal extends PureComponent {
     }
   }
 
-  render () {
+  renderModal = () => {
     const {
       children,
       className,
-      show,
-
       onCloseClick,
     } = this.props
 
-    if (!show) {
-      return null
-    }
-
-    const classes = cn({
-      [className]: className,
-      'mc-modal': true,
-    })
-
-    return createPortal(
+    return (
       <Provider value={{ close: this.close }}>
         <div
-          className={classes}
+          className={cn(className, 'mc-modal')}
           onKeyDown={this.onKeyDown}
           ref={this.container}
         >
@@ -84,8 +79,24 @@ export default class Modal extends PureComponent {
             </div>
           </div>
         </div>
-      </Provider>,
-      document.body,
+      </Provider>
     )
+  }
+
+  render () {
+    const {
+      show,
+      usePortal,
+      portalNode,
+    } = this.props
+
+    if (!show) {
+      return null
+    }
+
+    return usePortal ? createPortal(
+      this.renderModal(),
+      portalNode,
+    ) : this.renderModal()
   }
 }
