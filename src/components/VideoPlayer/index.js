@@ -100,6 +100,7 @@ export default class VideoPlayer extends PureComponent {
     this.video.off('pause')
     this.video.off('ended')
     this.video.off('seeking')
+    this.video.off('fullscreenchange')
     // remove DOM element
     this.video.dispose()
   }
