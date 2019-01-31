@@ -1,26 +1,20 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
+
+import { ASPECT_RATIOS } from '../helpers'
 
 
 export default class Tile extends PureComponent {
   static propTypes = {
-    aspectRatio: PropTypes.oneOf([
-      'auto',
-      '1x1',
-      '3x4',
-      '4x3',
-      '9x16',
-      '16x9',
-      '21x9',
-    ]),
+    aspectRatio: PropTypes.oneOf(ASPECT_RATIOS),
     children: PropTypes.node,
     className: PropTypes.string,
-    naked: PropTypes.bool,
+    crop: PropTypes.bool,
   }
 
   static defaultProps = {
     aspectRatio: '16x9',
-    naked: false,
   }
 
   render () {
@@ -28,16 +22,16 @@ export default class Tile extends PureComponent {
       aspectRatio,
       children,
       className,
-      naked,
+      crop,
       ...restProps
     } = this.props
 
-    const classes = [
-      'mc-tile',
-      `mc-tile--${aspectRatio}`,
-      naked ? 'mc-tile--naked' : '',
-      className || '',
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-tile': true,
+      [`mc-tile--${aspectRatio}`]: aspectRatio,
+      'mc-tile--crop': crop,
+    })
 
     return (
       <div className={classes} {...restProps}>

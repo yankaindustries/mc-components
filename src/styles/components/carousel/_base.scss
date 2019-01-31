@@ -4,6 +4,16 @@ $scrollbar-max-width: 17px !default;
 .mc-carousel {
   position: relative;
   pointer-events: auto;
+  z-index: 0;
+  transition: z-index 0ms 1s;
+
+  // Make sure that when you hover on a carousel
+  // row, the hover effects are z-indexed correctly
+  // (they have to be set higher here to work)
+  &:hover {
+    z-index: 1;
+    transition: z-index 0ms 0ms;
+  }
 
   // We need to override slick sliders default scss
   // so that we can have cool hover effects and not cut off
@@ -93,15 +103,22 @@ $scrollbar-max-width: 17px !default;
     width: 3em;
     height: 3em;
     border-radius: 3em;
-    background: rgba($mc-color-gray-100, 0.8);
-    color: $mc-color-light;
+    background: $mc-color-gray-200;
+    color: $mc-color-gray-500;
     text-align: center;
     z-index: 5;
     cursor: pointer;
+    transition:
+      background 200ms ease,
+      color 200ms ease;
 
-    &:hover {
-      &:before {
-        background: fade-out($mc-color-light, 0.5);
+
+    &:not(.slick-disabled):hover {
+      background: $mc-color-gray-300;
+      color: $mc-color-light;
+
+      .mc-carousel__arrow-text {
+        opacity: 1;
       }
     }
 
@@ -126,7 +143,7 @@ $scrollbar-max-width: 17px !default;
     // Disabled state for when you can't
     // advance the slide or "go back" anymore
     &.slick-disabled {
-      display: none;
+      opacity: 0.5;
     }
   }
 

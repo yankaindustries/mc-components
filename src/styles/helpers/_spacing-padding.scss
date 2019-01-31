@@ -11,14 +11,14 @@
 
 // Padding all around
 .mc-p {
-  @for $i from 1 to 12 {
+  @for $i from 1 through 12 {
     &-#{$i} { @include step(padding, $i); }
   }
 }
 
 // Padding on x-axis only
 .mc-px {
-  @for $i from 1 to 12 {
+  @for $i from 1 through 12 {
     &-#{$i} {
       @include step(padding-left, $i);
       @include step(padding-right, $i);
@@ -28,7 +28,7 @@
 
 // Padding on y-axis only
 .mc-py {
-  @for $i from 1 to 12 {
+  @for $i from 1 through 12 {
     &-#{$i} {
       @include step(padding-top, $i);
       @include step(padding-bottom, $i);
@@ -38,28 +38,28 @@
 
 // Padding - top only
 .mc-pt {
-  @for $i from 1 to 12 {
+  @for $i from 1 through 12 {
     &-#{$i} { @include step(padding-top, $i); }
   }
 }
 
 // Padding - right only
 .mc-pr {
-  @for $i from 1 to 12 {
+  @for $i from 1 through 12 {
     &-#{$i} { @include step(padding-right, $i); }
   }
 }
 
 // Padding - bottom only
 .mc-pb {
-  @for $i from 1 to 12 {
+  @for $i from 1 through 12 {
     &-#{$i} { @include step(padding-bottom, $i); }
   }
 }
 
 // Padding - left only
 .mc-pl {
-  @for $i from 1 to 12 {
+  @for $i from 1 through 12 {
     &-#{$i} { @include step(padding-left, $i); }
   }
 }
