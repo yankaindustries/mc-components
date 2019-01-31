@@ -35,6 +35,7 @@ export default class VideoPlayer extends PureComponent {
     onPause: PropTypes.func,
     onEnd: PropTypes.func,
     onTimeChange: PropTypes.func,
+    onFullscreenChange: PropTypes.func,
     onError: PropTypes.func,
     onSeek: PropTypes.func,
     progress: PropTypes.number,
@@ -131,6 +132,7 @@ export default class VideoPlayer extends PureComponent {
       }
     })
 
+    this.video.on('fullscreenchange', this.handleFullscreenChange)
     this.video.on('ended', this.handleVideoEnd)
 
     this.video.on('seeking', () => {
@@ -146,6 +148,7 @@ export default class VideoPlayer extends PureComponent {
         onVideoReady(this.video)
       }
     })
+
     if (onPlayerReady) {
       onPlayerReady(this.video)
     }
@@ -171,6 +174,13 @@ export default class VideoPlayer extends PureComponent {
 
     if (onEnd) {
       onEnd(this.video)
+    }
+  }
+
+  handleFullscreenChange = () => {
+    const { onFullscreenChange } = this.props
+    if (onFullscreenChange) {
+      onFullscreenChange(this.video.isFullscreen())
     }
   }
 

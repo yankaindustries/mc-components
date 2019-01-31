@@ -22,14 +22,12 @@ export default class Modal extends PureComponent {
     ]).isRequired,
     className: PropTypes.string,
     show: PropTypes.bool,
-    portalNode: PropTypes.instanceOf(Element),
-    usePortal: PropTypes.bool,
+    appendToBody: PropTypes.bool,
     onCloseClick: PropTypes.func,
   }
 
   static defaultProps = {
-    portalNode: document.body,
-    usePortal: true,
+    appendToBody: true,
   }
 
   onKeyDown = (event) => {
@@ -86,17 +84,16 @@ export default class Modal extends PureComponent {
   render () {
     const {
       show,
-      usePortal,
-      portalNode,
+      appendToBody,
     } = this.props
 
     if (!show) {
       return null
     }
 
-    return usePortal ? createPortal(
+    return appendToBody ? createPortal(
       this.renderModal(),
-      portalNode,
+      document.body,
     ) : this.renderModal()
   }
 }
