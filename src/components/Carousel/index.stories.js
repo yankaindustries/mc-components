@@ -79,7 +79,6 @@ storiesOf('Components|Carousels')
               controls={responsiveValues(media, true, true, false)}
               peek={responsiveValues(media, false, false, true)}
               showCount={responsiveValues(media, 3, 2, 1)}
-              loop
             >
               {tiles()}
             </Carousel>
@@ -99,7 +98,7 @@ storiesOf('Components|Carousels/Carousel', module)
             <h1 className='mc-text-h1'>Carousel</h1>
           </div>
 
-          <DocSection title='Variations'>
+          <DocSection title='Props'>
             <PropExample
               name='autoPlay'
               type='Boolean'

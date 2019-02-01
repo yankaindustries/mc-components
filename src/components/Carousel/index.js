@@ -147,9 +147,7 @@ export default class Carousel extends PureComponent {
             {...arrows}
             {...restProps}
           >
-            {Children.map(children, child => (
-              <Slide>{child}</Slide>
-            ))}
+            {children}
           </Slider>
         </div>
         <div className='mc-carousel__forced-spacing' />
