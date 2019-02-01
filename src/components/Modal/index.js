@@ -13,7 +13,6 @@ export const {
   Consumer,
 } = ModalContext
 
-
 export default class Modal extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([
@@ -24,6 +23,16 @@ export default class Modal extends PureComponent {
     show: PropTypes.bool,
 
     onCloseClick: PropTypes.func,
+  }
+
+  componentDidUpdate (prevProps) {
+    const { show } = this.props
+    const body = document.getElementsByTagName('body')[0]
+    if (!prevProps.show && show) {
+      body.classList.add('mc-modal__body--open')
+    } else if (prevProps.show && !show) {
+      body.classList.remove('mc-modal__body--open')
+    }
   }
 
   onKeyDown = (event) => {

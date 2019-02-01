@@ -58,4 +58,9 @@
       outline: none;
     }
   }
+
+  &__body--open {
+    overflow: hidden;
+    height: 100vh;
+  }
 }
