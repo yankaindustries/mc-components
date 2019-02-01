@@ -147,31 +147,7 @@ $scrollbar-max-width: 17px !default;
     }
   }
 
-  // DEPRECATED
-  &__slide {
-    width: 320px;
-    height: 180px;
-
-    .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-}
-
-// DEPRECATED
-.mc-carousel-arrow {
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: none;
-
-  &--right {
-    transform: rotate(0deg);
-  }
-
-  &--left {
-    transform: rotate(180deg);
+  [tabindex]:focus {
+    outline: none;
   }
 }

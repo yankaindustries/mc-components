@@ -10,18 +10,7 @@ import Placeholder from '../../utils/Placeholder'
 import Accordion from '../Accordion'
 import ResponsiveHandler from '../ResponsiveHandler'
 
-
-const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
-  if (gteLG) {
-    return lg
-  }
-
-  if (gteMD) {
-    return md
-  }
-
-  return sm
-}
+import { responsiveValues } from '../helpers'
 
 
 storiesOf('Components|Accordion', module)
