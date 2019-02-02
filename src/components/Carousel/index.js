@@ -147,26 +147,30 @@ export default class Carousel extends PureComponent {
       }
 
     return (
-      <div className='mc-carousel__container'>
-        <Slider
-          autoplay={autoPlay}
-          className={classes}
-          centerMode={centered}
-          centerPadding={0}
-          fade={transition === TRANSITION_FADE}
-          ref={sliderRef}
-          slidesToScroll={scrollCount}
-          slidesToShow={showCount}
-          infinite={loop}
-          draggable={false}
-          {...arrows}
-          {...restProps}
-        >
-          {Children.map(children, child => (
-            <Slide>{child}</Slide>
-          ))}
-        </Slider>
-      </div>
+      <Fragment>
+        <div className='mc-carousel__forced-spacing' />
+        <div className='mc-carousel__container'>
+          <Slider
+            autoplay={autoPlay}
+            className={classes}
+            centerMode={centered}
+            centerPadding={0}
+            fade={transition === TRANSITION_FADE}
+            ref={sliderRef}
+            slidesToScroll={scrollCount}
+            slidesToShow={showCount}
+            infinite={loop}
+            draggable={false}
+            {...arrows}
+            {...restProps}
+          >
+            {Children.map(children, child => (
+              <Slide>{child}</Slide>
+            ))}
+          </Slider>
+        </div>
+        <div className='mc-carousel__forced-spacing' />
+      </Fragment>
     )
   }
 }
