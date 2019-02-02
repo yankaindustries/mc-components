@@ -45,6 +45,17 @@ $scrollbar-max-width: 17px !default;
     pointer-events: none;
   }
 
+  // The padding hack above that allows us to have
+  // overflowing content on hover in tiles
+  // without affecting the flow of the document
+  // causes issues when carousels are stacked on
+  // one another.
+  // Ask @jones and @stephen how they figufed this out.
+  &__forced-spacing {
+    height: 1px;
+    margin-bottom: -1px;
+  }
+
   .slick-dots {
     /* stylelint-disable */
     display: flex !important;
