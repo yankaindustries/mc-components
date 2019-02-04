@@ -27,8 +27,8 @@ storiesOf('Components|Button', module)
       <DocSection title='Properties'>
         <InvertedMirror>
           <PropExample
-            name='[default] | secondary | tertiary | link'
-            type='boolean'
+            name='type'
+            type='string(primary, secondary, tertiary, link)'
           >
             <div className='row'>
               <div className='col-auto'>

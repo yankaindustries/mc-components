@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import cn from 'classnames'
-import { string, func, bool, node, oneOfType, arrayOf } from 'prop-types'
+import PropTypes from 'prop-types'
 
 import Loader from '../Icons/Loader'
 
@@ -15,6 +15,7 @@ const Button = ({
   link,
   loading,
   Icon,
+  type,
   ...props
 }) => {
   const classNames = cn({
@@ -25,6 +26,7 @@ const Button = ({
     'c-button--full-width': fullWidth,
     'c-button--link': link,
     'c-button--loading': loading,
+    [`c-button--${type}`]: type,
   })
 
   return (
@@ -49,19 +51,32 @@ const Button = ({
 }
 
 Button.propTypes = {
-  children: oneOfType([
-    arrayOf(node),
-    node,
-    string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.string,
   ]),
-  className: string,
-  onClick: func,
-  secondary: bool,
-  tertiary: bool,
-  fullWidth: bool,
-  link: bool,
-  loading: bool,
-  Icon: node,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  secondary: PropTypes.bool,
+  tertiary: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  link: PropTypes.bool,
+  loading: PropTypes.bool,
+  Icon: PropTypes.node,
+  type: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'tertiary',
+    'link',
+    'success',
+    'facebook',
+    'twitter',
+    'google',
+    'pinterest',
+    'applepay',
+    'paypal',
+  ]),
 }
 
 Button.defaultProps = {
@@ -72,6 +87,7 @@ Button.defaultProps = {
   fullWidth: false,
   link: false,
   loading: false,
+  type: 'primary',
 }
 
 export default Button
