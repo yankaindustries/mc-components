@@ -1,11 +1,9 @@
 import React from 'react'
 
 const SvgFacebook = props => (
-  <svg width='2em' height='2em' viewBox='0 0 50 50' fill='none' {...props}>
+  <svg width='2em' height='2em' viewBox='0 0 24 24' fill='none' {...props}>
     <path
-      fillRule='evenodd'
-      clipRule='evenodd'
-      d='M22.644 18.633v2.938h-4.011v3.919h4.01v12.735h4.012V25.49h4.412l1.003-3.919h-5.415v-2.938c0-.588.401-.98 1.003-.98h4.034v-3.918h-4.034c-2.808 0-5.014 2.155-5.014 4.898z'
+      d='M19.117 4H4.877A.883.883 0 0 0 4 4.883v14.24a.883.883 0 0 0 .883.877h7.664v-6.187h-2.08V11.39h2.08V9.61c0-2.066 1.263-3.2 3.106-3.2a16.73 16.73 0 0 1 1.862.096v2.166h-1.28c-1 0-1.193.48-1.193 1.176v1.542h2.398l-.32 2.423h-2.08V20h4.077a.883.883 0 0 0 .883-.883V4.877A.883.883 0 0 0 19.117 4z'
       fill='currentColor'
     />
   </svg>

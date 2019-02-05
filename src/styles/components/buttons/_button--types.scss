@@ -14,18 +14,6 @@
     }
   }
 
-  &--facebook {
-    background-color: $mc-color-facebook;
-
-    &:hover {
-      background-color: lighten($mc-color-facebook, 6.5%);
-    }
-
-    &:active {
-      background-color: $mc-color-facebook;
-    }
-  }
-
   &--loading {
     position: relative;
     pointer-events: none;
@@ -145,4 +133,98 @@
       }
     }
   }
+
+
+  // Social types
+  &--google {
+    background-color: $mc-color-google;
+
+    &:hover {
+      background-color: lighten($mc-color-google, 6.5%);
+    }
+
+    &:active {
+      background-color: $mc-color-google;
+    }
+  }
+
+  &--facebook {
+    background-color: $mc-color-facebook;
+
+    &:hover {
+      background-color: lighten($mc-color-facebook, 6.5%);
+    }
+
+    &:active {
+      background-color: $mc-color-facebook;
+    }
+  }
+
+  &--twitter {
+    background-color: $mc-color-twitter;
+
+    &:hover {
+      background-color: lighten($mc-color-twitter, 6.5%);
+    }
+
+    &:active {
+      background-color: $mc-color-twitter;
+    }
+  }
+
+  &--pinterest {
+    background-color: $mc-color-pinterest;
+
+    &:hover {
+      background-color: lighten($mc-color-pinterest, 6.5%);
+    }
+
+    &:active {
+      background-color: $mc-color-pinterest;
+    }
+  }
+
+  &--paypal {
+    background-color: $mc-color-paypal;
+    color: $mc-color-dark;
+
+    &:hover {
+      background-color: lighten($mc-color-paypal, 6.5%);
+      color: $mc-color-dark;
+    }
+
+    &:active {
+      background-color: $mc-color-paypal;
+      color: $mc-color-dark;
+    }
+  }
+
+  &--success {
+    background-color: $mc-color-success;
+
+    &:hover {
+      background-color: lighten($mc-color-success, 6.5%);
+    }
+
+    &:active {
+      background-color: $mc-color-success;
+    }
+  }
+
+  &--applepay {
+    background-color: $mc-color-applepay;
+    color: $mc-color-dark;
+
+    &:hover {
+      background-color: lighten($mc-color-applepay, 6.5%);
+      color: $mc-color-dark;
+    }
+
+    &:active {
+      background-color: $mc-color-applepay;
+      color: $mc-color-dark;
+    }
+  }
+
+
 }
