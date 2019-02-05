@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
+
+import DocHeader from '../../utils/DocHeader'
+import DocSection from '../../utils/DocSection'
+import PropExample from '../../utils/PropExample'
 
 import Carousel from '../Carousel'
 import CarouselConnector from '../CarouselConnector'
@@ -8,8 +12,6 @@ import Tile from '../Tile'
 import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
-import Button from '../Button'
-import ResponsiveHandler from '../ResponsiveHandler'
 
 
 const items = [
@@ -64,97 +66,66 @@ const items = [
   },
 ]
 
+const tiles = () =>
+  items.map(item =>
+    <div key={item.id} className='col-auto'>
+      <Tile>
+        <TileImage imageUrl={item.thumbnail} />
+        <TileOverlay />
+        <TileCaption>
+          <h6 className='mc-text-h6 mc-text--uppercase'>
+            {item.instructor}
+          </h6>
+          <h6 className='mc-text-h8 mc-text--airy mc-text--muted'>
+            {item.teaches}
+          </h6>
+        </TileCaption>
+      </Tile>
+    </div>,
+  )
+
 
 storiesOf('Components|Carousels/CarouselConnector', module)
-  .add('CarouselConnector', withProps(CarouselConnector)(() => (
-    <CarouselConnector>
-      {({ sliderRef, asNavFor }) =>
-        <ResponsiveHandler>
-          {({ gteMD }) =>
-            <div className='container'>
-              <Carousel
-                sliderRef={sliderRef('hero')}
-                asNavFor={asNavFor('thumbs')}
-                transition='fade'
-                loop
-              >
-                {items.map((item, key) =>
-                  <div className='uncontainer' key={key}>
-                    <Tile
-                      className='mc-hero__image'
-                      aspectRatio={gteMD ? '16x9' : '1x1'}
-                    >
-                      <TileImage
-                        className='example-offset-left-one-quarter example-offset-left-one-quarter--active'
-                        imageUrl={item.image}
-                      />
-                      <TileOverlay
-                        className='example-offset-left-one-quarter example-offset-left-one-quarter--active'
-                        type='spotlight'
-                      />
-                      <TileCaption position='left center'>
-                        <div className='row row--fill align-items-center'>
-                          <div className='offset-1 col-xl-5 col-md-8 col-lg-6'>
-                            <h2 className='mc-text-h1 mc-text--uppercase mc-text--center mc-text-md--left'>
-                              {item.instructor}
-                            </h2>
-                            <h3 className='mc-text-h3 mc-text--muted mc-text--airy mc-text--center mc-text-md--left mc-mb-4'>
-                              Teaches {item.teaches}
-                            </h3>
-                            <p className='mc-text-intro mc-text--hinted mc-text--center mc-text-md--left mc-mb-8'>
-                              Online classes taught by the world&apos;s
-                              greatest minds.<br /> Learn from
-                              {item.instructor} and all 35+ other
-                              instructors.
-                            </p>
-                            <div className='row'>
-                              <div className='col-auto'>
-                                <Button primary>
-                                  All Access Pass
-                                </Button>
-                              </div>
-                              <div className='col-auto'>
-                                <Button secondary>
-                                  Learn More
-                                </Button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </TileCaption>
-                    </Tile>
-                  </div>,
-                )}
-              </Carousel>
+  .add('CarouselConnector', withProps(CarouselConnector)(() =>
+    <div className='container'>
+      <DocHeader
+        title='CarouselContainer'
+        description='Mechanism to keep two carousels in sync.'
+      />
 
-              <Carousel
-                className='row'
-                sliderRef={sliderRef('thumbs')}
-                asNavFor={asNavFor('hero')}
-                centered
-                overflow
-                focusOnSelect
-                loop
-                controls={gteMD}
-              >
-                {items.map((item, key) => (
-                  <div key={key} className='col-auto'>
-                    <Tile key={item.id}>
-                      <TileImage imageUrl={item.thumbnail} />
-                      {gteMD && <TileOverlay />}
-                      {gteMD &&
-                        <TileCaption
-                          title={item.instructor}
-                          subtitle={`Teaches ${item.teaches}`}
-                        />
-                      }
-                    </Tile>
-                  </div>
-                ))}
-              </Carousel>
-            </div>
-          }
-        </ResponsiveHandler>
-      }
-    </CarouselConnector>
-  )))
+      <DocSection
+        title='Props'
+      >
+        <PropExample
+          name='children'
+          type='function({ sliderRef, asNavFor })'
+        >
+          <CarouselConnector>
+            {({ sliderRef, asNavFor }) =>
+              <Fragment>
+                <Carousel
+                  className='row'
+                  sliderRef={sliderRef('hero')}
+                  asNavFor={asNavFor('thumbs')}
+                  controls
+                >
+                  {tiles()}
+                </Carousel>
+
+                <hr className='mc-my-4' />
+
+                <Carousel
+                  className='row'
+                  sliderRef={sliderRef('thumbs')}
+                  asNavFor={asNavFor('hero')}
+                  controls
+                >
+                  {tiles()}
+                </Carousel>
+              </Fragment>
+            }
+          </CarouselConnector>
+        </PropExample>
+      </DocSection>
+    </div>,
+  ))

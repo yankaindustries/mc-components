@@ -33,8 +33,7 @@ $scrollbar-max-width: 17px !default;
     margin: 0;
   }
 
-  .slick-active,
-  .slick-cloned {
+  .slick-active {
     opacity: 1;
     pointer-events: auto;
   }
