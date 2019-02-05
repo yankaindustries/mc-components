@@ -17,6 +17,8 @@ import TileImage from '../../components/TileImage'
 import TileOverlay from '../../components/TileOverlay'
 import TileProgress from '../../components/TileProgress'
 
+import { responsiveValues } from '../../components/helpers'
+
 const jbi = [
   {
     id: 1,
@@ -168,17 +170,6 @@ const playlist = [
   },
 ]
 
-const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
-  if (gteLG) {
-    return lg
-  }
-
-  if (gteMD) {
-    return md
-  }
-
-  return sm
-}
 
 storiesOf('Playground|Pages', module)
   .add('LIHP', () =>
