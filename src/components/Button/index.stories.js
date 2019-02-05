@@ -169,20 +169,22 @@ storiesOf('Components|Button', module)
             </div>
           </PropExample>
 
+          <div className='row'>
+            <div className='col-12'>
+              <p>
+                You can also pass in a &ldquo;type&rdquo;
+                of any of the following strings and get the
+                background color / text color combinations
+                shown here.
+              </p>
+            </div>
+          </div>
+
           <PropExample
             name='type'
             type='string'
           >
             <div className='row'>
-              <div className='col-12'>
-                <p>
-                  You can also pass in a &ldquo;type&rdquo;
-                  of any of the following strings and get the
-                  background color / text color combinations
-                  shown here.
-                </p>
-              </div>
-
               <div className='col-4'>
                 <Button kind='google' fullWidth>
                   <IconGoogle className='mc-mr-3' />
@@ -225,7 +227,6 @@ storiesOf('Components|Button', module)
               </div>
             </div>
           </PropExample>
-
         </InvertedMirror>
       </DocSection>
     </div>
