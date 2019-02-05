@@ -7,6 +7,11 @@ import DocSection from '../../utils/DocSection'
 import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
 import Button from '../Button'
+import IconGoogle from '../Icons/Google'
+import IconFacebook from '../Icons/Facebook'
+import IconPinterest from '../Icons/Pinterest'
+import IconTwitter from '../Icons/Twitter'
+import IconCheck from '../Icons/Check'
 import IconChevronRight from '../Icons/ChevronRight'
 import IconLock from '../Icons/Lock'
 import IconMagnifyingGlass from '../Icons/MagnifyingGlass'
@@ -163,6 +168,64 @@ storiesOf('Components|Button', module)
               </div>
             </div>
           </PropExample>
+
+          <PropExample
+            name='type'
+            type='string'
+          >
+            <div className='row'>
+              <div className='col-12'>
+                <p>
+                  You can also pass in a &ldquo;type&rdquo;
+                  of any of the following strings and get the
+                  background color / text color combinations
+                  shown here.
+                </p>
+              </div>
+
+              <div className='col-4'>
+                <Button kind='google' fullWidth>
+                  <IconGoogle className='mc-mr-3' />
+                  Google
+                </Button>
+              </div>
+              <div className='col-4'>
+                <Button kind='facebook' fullWidth>
+                  <IconFacebook className='mc-mr-3' />
+                  Facebook
+                </Button>
+              </div>
+              <div className='col-4'>
+                <Button kind='twitter' fullWidth>
+                  <IconTwitter className='mc-mr-3' />
+                  Twitter
+                </Button>
+              </div>
+              <div className='col-4'>
+                <Button kind='pinterest' fullWidth>
+                  <IconPinterest className='mc-mr-3' />
+                  Pinterest
+                </Button>
+              </div>
+              <div className='col-4'>
+                <Button kind='paypal' fullWidth>
+                  Paypal
+                </Button>
+              </div>
+              <div className='col-4'>
+                <Button kind='success' fullWidth>
+                  <IconCheck className='mc-mr-3' />
+                  Success
+                </Button>
+              </div>
+              <div className='col-4'>
+                <Button kind='applepay' fullWidth>
+                  Apple pay
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
         </InvertedMirror>
       </DocSection>
     </div>

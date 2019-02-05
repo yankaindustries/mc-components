@@ -15,7 +15,7 @@ const Button = ({
   link,
   loading,
   Icon,
-  type,
+  kind,
   ...props
 }) => {
   const classNames = cn({
@@ -26,7 +26,7 @@ const Button = ({
     'c-button--full-width': fullWidth,
     'c-button--link': link,
     'c-button--loading': loading,
-    [`c-button--${type}`]: type,
+    [`c-button--${kind}`]: kind,
   })
 
   return (
@@ -64,7 +64,7 @@ Button.propTypes = {
   link: PropTypes.bool,
   loading: PropTypes.bool,
   Icon: PropTypes.node,
-  type: PropTypes.oneOf([
+  kind: PropTypes.oneOf([
     'primary',
     'secondary',
     'tertiary',
@@ -87,7 +87,7 @@ Button.defaultProps = {
   fullWidth: false,
   link: false,
   loading: false,
-  type: 'primary',
+  kind: 'primary',
 }
 
 export default Button
