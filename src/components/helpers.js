@@ -63,3 +63,15 @@ export const renderChildren = (children, props) => {
     return cloneElement(child, newProps)
   })
 }
+
+export const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
+  if (gteLG) {
+    return lg
+  }
+
+  if (gteMD) {
+    return md
+  }
+
+  return sm
+}

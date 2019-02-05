@@ -44,7 +44,7 @@ export default class TileOverlay extends PureComponent {
             rgba(${color}, 1) 0,
             rgba(${color}, 0.6) 25%,
             rgba(${color}, 0) 45%
-          )
+          ) center no-repeat
         `,
       }
     }
@@ -57,7 +57,7 @@ export default class TileOverlay extends PureComponent {
             rgba(${color}, 1) 0,
             rgba(${color}, 0.6) 25%,
             rgba(${color}, 0) 45%
-          )
+          ) center no-repeat
         `,
       }
     }
