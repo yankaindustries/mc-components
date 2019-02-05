@@ -1,4 +1,4 @@
-import React, { Children, Fragment, PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import cn from 'classnames'

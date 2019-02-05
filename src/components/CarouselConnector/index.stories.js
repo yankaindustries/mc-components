@@ -2,9 +2,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
-import DocSection from '../../utils/DocSection'
-import PropExample from '../../utils/PropExample'
-
 import Carousel from '../Carousel'
 import CarouselConnector from '../CarouselConnector'
 import Tile from '../Tile'
@@ -82,9 +79,8 @@ storiesOf('Components|Carousels/CarouselConnector', module)
                 loop
               >
                 {items.map((item, key) =>
-                  <div className='uncontainer'>
+                  <div className='uncontainer' key={key}>
                     <Tile
-                      key={key}
                       className='mc-hero__image'
                       aspectRatio={gteMD ? '16x9' : '1x1'}
                     >
@@ -127,7 +123,7 @@ storiesOf('Components|Carousels/CarouselConnector', module)
                         </div>
                       </TileCaption>
                     </Tile>
-                  </div>
+                  </div>,
                 )}
               </Carousel>
 
