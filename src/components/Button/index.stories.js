@@ -11,7 +11,6 @@ import IconGoogle from '../Icons/Google'
 import IconFacebook from '../Icons/Facebook'
 import IconPinterest from '../Icons/Pinterest'
 import IconTwitter from '../Icons/Twitter'
-import IconCheck from '../Icons/Check'
 import IconChevronRight from '../Icons/ChevronRight'
 import IconLock from '../Icons/Lock'
 import IconMagnifyingGlass from '../Icons/MagnifyingGlass'
@@ -32,8 +31,11 @@ storiesOf('Components|Button', module)
       <DocSection title='Properties'>
         <InvertedMirror>
           <PropExample
-            name='type'
-            type='string(primary, secondary, tertiary, link)'
+            name='kind'
+            type='string'
+            description={`
+              Change the way your button looks by adjusting the 'kind' property.
+            `}
           >
             <div className='row'>
               <div className='col-auto'>
@@ -42,20 +44,67 @@ storiesOf('Components|Button', module)
                 </Button>
               </div>
               <div className='col-auto'>
-                <Button secondary>
+                <Button kind='secondary'>
                   Secondary
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button tertiary>
+                <Button kind='tertiary'>
                   Tertiary
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button link>
+                <Button kind='success'>
+                  Success
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='link'>
                   Link
+                </Button>
+              </div>
+
+              <div className='col-12'>
+                <h6 className='mc-text-h6'>
+                  Third-Party Support
+                </h6>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='google'>
+                  <IconGoogle className='mc-mr-3' />
+                  Google
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='facebook'>
+                  <IconFacebook className='mc-mr-3' />
+                  Facebook
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='twitter'>
+                  <IconTwitter className='mc-mr-3' />
+                  Twitter
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='pinterest'>
+                  <IconPinterest className='mc-mr-3' />
+                  Pinterest
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='paypal'>
+                  Paypal
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='applepay'>
+                  Apple pay
                 </Button>
               </div>
             </div>
@@ -73,19 +122,19 @@ storiesOf('Components|Button', module)
               </div>
 
               <div className='col-auto'>
-                <Button secondary disabled>
+                <Button kind='secondary' disabled>
                   Secondary
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button tertiary disabled>
+                <Button kind='tertiary' disabled>
                   Tertiary
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button link disabled>
+                <Button kind='link' disabled>
                   Link
                 </Button>
               </div>
@@ -104,19 +153,19 @@ storiesOf('Components|Button', module)
               </div>
 
               <div className='col-auto'>
-                <Button secondary loading>
+                <Button kind='secondary' loading>
                   Secondary
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button tertiary loading>
+                <Button kind='tertiary' loading>
                   Tertiary
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button link loading>
+                <Button kind='link' loading>
                   Link
                 </Button>
               </div>
@@ -172,61 +221,13 @@ storiesOf('Components|Button', module)
           <div className='row'>
             <div className='col-12'>
               <p>
-                You can also pass in a &ldquo;type&rdquo;
+                You can also pass in a &ldquo;kind&rdquo;
                 of any of the following strings and get the
                 background color / text color combinations
                 shown here.
               </p>
             </div>
           </div>
-
-          <PropExample
-            name='type'
-            type='string'
-          >
-            <div className='row'>
-              <div className='col-4'>
-                <Button kind='google' fullWidth>
-                  <IconGoogle className='mc-mr-3' />
-                  Google
-                </Button>
-              </div>
-              <div className='col-4'>
-                <Button kind='facebook' fullWidth>
-                  <IconFacebook className='mc-mr-3' />
-                  Facebook
-                </Button>
-              </div>
-              <div className='col-4'>
-                <Button kind='twitter' fullWidth>
-                  <IconTwitter className='mc-mr-3' />
-                  Twitter
-                </Button>
-              </div>
-              <div className='col-4'>
-                <Button kind='pinterest' fullWidth>
-                  <IconPinterest className='mc-mr-3' />
-                  Pinterest
-                </Button>
-              </div>
-              <div className='col-4'>
-                <Button kind='paypal' fullWidth>
-                  Paypal
-                </Button>
-              </div>
-              <div className='col-4'>
-                <Button kind='success' fullWidth>
-                  <IconCheck className='mc-mr-3' />
-                  Success
-                </Button>
-              </div>
-              <div className='col-4'>
-                <Button kind='applepay' fullWidth>
-                  Apple pay
-                </Button>
-              </div>
-            </div>
-          </PropExample>
         </InvertedMirror>
       </DocSection>
     </div>
