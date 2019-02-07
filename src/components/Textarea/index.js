@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-
+import FormGroup from '../FormGroup'
 
 export default class Textarea extends PureComponent {
   static propTypes = {
@@ -75,41 +75,37 @@ export default class Textarea extends PureComponent {
     } = this.state
 
     const showError = error && touched
-    const hasLabel = label || showError
 
     const classes = cn({
       'mc-form-textarea': true,
-      'mc-form-textarea--disabled': disabled,
-      'mc-form-textarea--error': showError,
-      'mc-form-textarea--focus': focused,
-      'mc-form-textarea--modified': value,
-      'mc-form-textarea--no-label': !hasLabel,
+      'mc-form-element': true,
+      'mc-form-element--disabled': disabled,
+      'mc-form-element--error': showError,
+      'mc-form-element--focus': focused,
     })
 
     return (
-      <div className={classes}>
-      {hasLabel &&
-        <label
-          htmlFor={name}
-          className='mc-form-textarea__label'
-        >
-          {(touched && error) || label}
-        </label>
-      }
+      <FormGroup
+        disabled={disabled}
+        error={error}
+        label={label}
+        touched={touched}
+      >
+        <div className={classes}>
+          <textarea
+            name={name}
+            id={name}
+            className='mc-form-element__element'
+            value={value}
+            disabled={disabled}
+            {...props}
 
-        <textarea
-          name={name}
-          id={name}
-          className='mc-form-textarea__textarea'
-          value={value}
-          disabled={disabled}
-          {...props}
-
-          onChange={onChange}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-        />
-      </div>
+            onChange={onChange}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+          />
+        </div>
+      </FormGroup>
     )
   }
 }

@@ -29,7 +29,7 @@ export default class InvertedMirror extends PureComponent {
         <div className='row'>
           <div className='col-lg-6'>
             <Background
-              color='medium'
+              color='dark'
               className='mc-card'
             >
               {children}

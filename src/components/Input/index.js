@@ -1,6 +1,8 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+
+import FormGroup from '../FormGroup'
 
 
 export default class Input extends PureComponent {
@@ -11,9 +13,11 @@ export default class Input extends PureComponent {
       PropTypes.string,
     ]),
     help: PropTypes.string,
+    counter: PropTypes.string,
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
+    fieldText: PropTypes.string,
     touched: PropTypes.bool,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
@@ -64,11 +68,14 @@ export default class Input extends PureComponent {
       disabled,
       error,
       help,
+      fieldText,
+      counter,
       label,
       name,
       prepend,
       touched,
       value,
+      required,
 
       onChange,
 
@@ -80,19 +87,23 @@ export default class Input extends PureComponent {
     } = this.state
 
     const showError = error && touched
-    const hasLabel = label || showError
 
     const classes = cn({
       'mc-form-input': true,
-      'mc-form-input--disabled': disabled,
-      'mc-form-input--error': showError,
-      'mc-form-input--focus': focused,
-      'mc-form-input--modified': value,
-      'mc-form-input--no-label': !hasLabel,
+      'mc-form-element': true,
+      'mc-form-element--disabled': disabled,
+      'mc-form-element--error': showError,
+      'mc-form-element--focus': focused,
     })
 
     return (
-      <Fragment>
+      <FormGroup
+        disabled={disabled}
+        error={error}
+        label={label}
+        touched={touched}
+        required={required}
+      >
         <div
           className={classes}
           onClick={this.focus}
@@ -103,28 +114,18 @@ export default class Input extends PureComponent {
             </div>
           }
 
-          <div className='mc-form-input__input'>
-            <input
-              name={name}
-              type='text'
-              value={value}
-              disabled={disabled}
-              {...props}
-              onChange={onChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              ref={this.input}
-            />
-
-            {hasLabel &&
-              <label
-                htmlFor={name}
-                className='mc-form-input__label'
-              >
-                {(touched && error) || label}
-              </label>
-            }
-          </div>
+          <input
+            name={name}
+            type='text'
+            value={value}
+            disabled={disabled}
+            {...props}
+            className='mc-form-element__element'
+            onChange={onChange}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            ref={this.input}
+          />
 
           {append &&
             <div className='mc-form-append'>
@@ -133,12 +134,26 @@ export default class Input extends PureComponent {
           }
         </div>
 
-        {help &&
-          <span className='mc-form-help'>
-            {help}
-          </span>
+        {(help || counter) &&
+          <div className='row no-gutters justify-content-between align-items-end mc-mb-2'>
+            <div className='col-auto'>
+              {help &&
+                <span className='mc-form-help'>
+                  {help}
+                </span>
+              }
+            </div>
+
+            <div className='col-auto'>
+              { counter &&
+                <span className='mc-form-counter'>
+                  {counter}
+                </span>
+              }
+            </div>
+          </div>
         }
-      </Fragment>
+      </FormGroup>
     )
   }
 }
