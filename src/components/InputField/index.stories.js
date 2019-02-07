@@ -22,7 +22,7 @@ const store = createStore(reducer)
 const Form = reduxForm({
   form: 'input',
   initialValues: {
-    best: 'Madonna, obvi',
+    errors: 'Value',
   },
 })(
   () =>
@@ -50,7 +50,7 @@ const Form = reduxForm({
               <Field
                 component={InputField}
                 name='required'
-                label='Required (not optional)'
+                label='Required'
                 placeholder='Placeholder'
                 required
               />
@@ -82,7 +82,7 @@ const Form = reduxForm({
                 name='errors'
                 label='Error'
                 placeholder='Placeholder'
-                error='Incorrect Username'
+                error='Error explanation'
                 touched
               />
             </div>

@@ -8,6 +8,7 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
+import InvertedMirror from '../../utils/InvertedMirror'
 
 import InputField from '../InputField'
 import CheckboxField from '../CheckboxField'
@@ -30,197 +31,100 @@ const Form = reduxForm({
         </div>
 
         <div className='example__section'>
-          <div className='row'>
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Default</h5>
-
-              <div className='mc-form-group'>
-                <div className='row'>
-                  <div className='col-sm-6'>
-                    <Field
-                      component={InputField}
-                      name='firstName'
-                      label='First name'
-                      placeholder='John'
-                    />
-                  </div>
-
-                  <div className='col-sm-6'>
-                    <Field
-                      component={InputField}
-                      name='lastName'
-                      label='Last name'
-                      placeholder='Doe'
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className='mc-form-group'>
+          <InvertedMirror>
+            <div className='row'>
+              <div className='col-sm-6'>
                 <Field
                   component={InputField}
-                  name='email'
-                  label='Email'
-                  type='email'
-                  placeholder='john@google.com'
+                  name='firstName'
+                  label='First name'
+                  placeholder='John'
+                  required
                 />
               </div>
 
-              <div className='mc-form-group'>
-                <Field
-                  component={TextareaField}
-                  name='bio'
-                  label='Tell us about yourself'
-                  placeholder='This is the story of a girl...'
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={RadioField}
-                  name='billing'
-                  option='yearly'
-                  label='Bill me yearly ($180)'
-                />
-
-                <Field
-                  component={RadioField}
-                  name='billing'
-                  option='monthly'
-                  label='Bill me monthly ($20)'
-                />
-              </div>
-
-              <div className='mc-form-group'>
+              <div className='col-sm-6'>
                 <Field
                   component={InputField}
-                  name='password'
-                  type='password'
-                  placeholder='Password'
-                  help='Must be at least 8 characters'
-                  prepend={<Lock />}
+                  name='lastName'
+                  label='Last name'
+                  placeholder='Doe'
+                  required
                 />
               </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='confirm-password'
-                  type='password'
-                  placeholder='Confirm Password'
-                  prepend={<Lock />}
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={CheckboxField}
-                  name='terms'
-                  label='I agree to the terms'
-                />
-              </div>
-
-              <Button fullWidth>
-                Register
-              </Button>
             </div>
 
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Inverted</h5>
-              <div className='rounded-box mc-invert'>
+            <Field
+              component={InputField}
+              name='email'
+              label='Email'
+              type='email'
+              placeholder='john@google.com'
+              required
+            />
 
-                <div className='mc-form-group'>
-                  <div className='row'>
-                    <div className='col-sm-6'>
-                      <Field
-                        component={InputField}
-                        name='firstName'
-                        label='First name'
-                        placeholder='John'
-                      />
-                    </div>
+            <Field
+              component={TextareaField}
+              name='bio'
+              label='Tell us about yourself'
+              placeholder='This is the story of a girl...'
+            />
 
-                    <div className='col-sm-6'>
-                      <Field
-                        component={InputField}
-                        name='lastName'
-                        label='Last name'
-                        placeholder='Doe'
-                      />
-                    </div>
-                  </div>
-                </div>
+            <Field
+              component={RadioField}
+              name='billing'
+              option='yearly'
+              label='Bill me yearly ($180)'
+            />
 
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='email'
-                    label='Email'
-                    type='email'
-                    placeholder='john@google.com'
-                  />
-                </div>
+            <Field
+              className='mc-mb-6'
+              component={RadioField}
+              name='billing'
+              option='monthly'
+              label='Bill me monthly ($20)'
+            />
 
-                <div className='mc-form-group'>
-                  <Field
-                    component={TextareaField}
-                    name='bio'
-                    label='Tell us about yourself'
-                    placeholder='This is the story of a girl...'
-                  />
-                </div>
+            <Field
+              component={InputField}
+              name='password'
+              type='password'
+              label='Password'
+              placeholder='••••••••'
+              help='Must be at least 8 characters'
+              prepend={<Lock />}
+              required
+              error
+              touched
+            />
 
-                <div className='mc-form-group'>
-                  <Field
-                    component={RadioField}
-                    name='billing'
-                    option='yearly'
-                    label='Bill me yearly ($180)'
-                  />
+            <Field
+              component={InputField}
+              name='confirm-password'
+              type='password'
+              label='Confirm Password'
+              placeholder='••••••••'
+              help='Must be the same as password above'
+              prepend={<Lock />}
+              required
+              error
+              touched
+            />
 
-                  <Field
-                    component={RadioField}
-                    name='billing'
-                    option='monthly'
-                    label='Bill me monthly ($20)'
-                  />
-                </div>
+            <Field
+              className='mc-mb-6'
+              component={CheckboxField}
+              name='terms'
+              label='I agree to the terms'
+            />
 
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='password'
-                    type='password'
-                    placeholder='Password'
-                    help='Must be at least 8 characters'
-                    prepend={<Lock />}
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='confirm-password'
-                    type='password'
-                    placeholder='Confirm Password'
-                    prepend={<Lock />}
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={CheckboxField}
-                    name='terms'
-                    label='I agree to the terms'
-                  />
-                </div>
-
-                <Button fullWidth>
-                  Register
-                </Button>
-              </div>
-            </div>
-          </div>
+            <Button
+              type='submit'
+              fullWidth
+            >
+              Register
+            </Button>
+          </InvertedMirror>
         </div>
       </div>
     </div>,

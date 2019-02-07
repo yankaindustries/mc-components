@@ -68,10 +68,13 @@
     }
   }
 
+  // Colors
+  &--error { color: $mc-color-error; }
+
   // Misc
   &--monospace { font-family: monospace !important; }
   &--nowrap { white-space: nowrap; }
-  &--underline { text-decoration: underline; }
+  &--link { text-decoration: underline; }
 }
 
 .mc-invert { color: $mc-color-dark; }

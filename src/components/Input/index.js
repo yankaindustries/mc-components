@@ -17,7 +17,6 @@ export default class Input extends PureComponent {
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
-    fieldText: PropTypes.string,
     touched: PropTypes.bool,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
@@ -68,7 +67,6 @@ export default class Input extends PureComponent {
       disabled,
       error,
       help,
-      fieldText,
       counter,
       label,
       name,
@@ -100,6 +98,7 @@ export default class Input extends PureComponent {
       <FormGroup
         disabled={disabled}
         error={error}
+        help={help}
         label={label}
         touched={touched}
         required={required}
@@ -133,26 +132,6 @@ export default class Input extends PureComponent {
             </div>
           }
         </div>
-
-        {(help || counter) &&
-          <div className='row no-gutters justify-content-between align-items-end mc-mb-2'>
-            <div className='col-auto'>
-              {help &&
-                <span className='mc-form-help'>
-                  {help}
-                </span>
-              }
-            </div>
-
-            <div className='col-auto'>
-              { counter &&
-                <span className='mc-form-counter'>
-                  {counter}
-                </span>
-              }
-            </div>
-          </div>
-        }
       </FormGroup>
     )
   }
