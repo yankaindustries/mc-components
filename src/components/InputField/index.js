@@ -11,9 +11,18 @@ const INPUT_PROP_TYPE = PropTypes.shape({
 })
 
 const META_PROP_TYPE = PropTypes.shape({
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
 })
 
+const parseError = (error) => {
+  if (!Array.isArray(error)) {
+    return error
+  }
+  return error.length > 0 ? error[0] : undefined
+}
 
 const InputField = ({
   input,
@@ -24,7 +33,7 @@ const InputField = ({
   ...props
 }) => (
   <Input
-    error={error}
+    error={parseError(error)}
     touched={touched}
     {...input}
     {...props}
