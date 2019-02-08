@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import FormGroup from '../FormGroup'
 
 export default class Textarea extends PureComponent {
   static propTypes = {
@@ -85,27 +84,20 @@ export default class Textarea extends PureComponent {
     })
 
     return (
-      <FormGroup
-        disabled={disabled}
-        error={error}
-        label={label}
-        touched={touched}
-      >
-        <div className={classes}>
-          <textarea
-            name={name}
-            id={name}
-            className='mc-form-element__element'
-            value={value}
-            disabled={disabled}
-            {...props}
+      <div className={classes}>
+        <textarea
+          name={name}
+          id={name}
+          className='mc-form-element__element'
+          value={value}
+          disabled={disabled}
+          {...props}
 
-            onChange={onChange}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-          />
-        </div>
-      </FormGroup>
+          onChange={onChange}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+        />
+      </div>
     )
   }
 }

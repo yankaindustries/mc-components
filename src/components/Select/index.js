@@ -1,24 +1,32 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import { find } from 'lodash'
+import ReactSelect from 'react-select'
 
 
-export default class Input extends PureComponent {
+const PROP_TYPE_OPTION = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+})
+
+const PROP_TYPE_OPTIONS = PropTypes.arrayOf(PROP_TYPE_OPTION)
+
+
+export default class Select extends PureComponent {
   static propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.string,
     ]),
-    help: PropTypes.string,
     label: PropTypes.string,
-    maxlength: PropTypes.number,
     name: PropTypes.string,
-    value: PropTypes.string,
+    options: PROP_TYPE_OPTIONS.isRequired,
     touched: PropTypes.bool,
-    onBlur: PropTypes.func,
+    value: PropTypes.string.isRequired,
+
     onChange: PropTypes.func,
-    onFocus: PropTypes.func,
   }
 
   static defaultProps = {
@@ -29,13 +37,16 @@ export default class Input extends PureComponent {
     focused: false,
   }
 
-  constructor (props) {
-    super(props)
+  getOptionByValue = value =>
+    find(this.props.options, ['value', value])
 
-    this.input = React.createRef()
+  handleChange = ({ value }, { action }) => {
+    if (action === 'select-option') {
+      this.props.onChange(value)
+    }
   }
 
-  onFocus = () => {
+  handleFocus = () => {
     const { onFocus } = this.props
 
     this.setState({ focused: true })
@@ -45,7 +56,7 @@ export default class Input extends PureComponent {
     }
   }
 
-  onBlur = () => {
+  handleBlur = () => {
     const { onBlur } = this.props
 
     this.setState({ focused: false })
@@ -55,20 +66,13 @@ export default class Input extends PureComponent {
     }
   }
 
-  focus = () => {
-    this.input.current.focus()
-  }
-
   render () {
     const {
-      append,
       disabled,
       error,
-      help,
       label,
-      maxlength,
       name,
-      prepend,
+      options,
       touched,
       value,
       required,
@@ -85,7 +89,7 @@ export default class Input extends PureComponent {
     const showError = error && touched
 
     const classes = cn({
-      'mc-form-input': true,
+      'mc-form-select': true,
       'mc-form-element': true,
       'mc-form-element--disabled': disabled,
       'mc-form-element--error': showError,
@@ -93,34 +97,20 @@ export default class Input extends PureComponent {
     })
 
     return (
-      <div
-        className={classes}
-        onClick={this.focus}
-      >
-        {prepend &&
-          <div className='mc-form-prepend'>
-            {prepend}
-          </div>
-        }
-
-        <input
-          name={name}
-          type='text'
-          value={value}
-          disabled={disabled}
+      <div className={classes}>
+        <ReactSelect
+          classNamePrefix='mc-form-select'
           className='mc-form-element__element'
+          name={name}
+          options={options}
+          disabled={disabled}
+          value={this.getOptionByValue(value)}
+          menuIsOpen={focused}
           {...props}
-          onChange={onChange}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          ref={this.input}
+          onChange={this.handleChange}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
         />
-
-        {append &&
-          <div className='mc-form-append'>
-            {append}
-          </div>
-        }
       </div>
     )
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Textarea from '../Textarea'
+import FormGroup from '../FormGroup'
 
 
 const INPUT_PROP_TYPE = PropTypes.shape({
@@ -16,20 +17,33 @@ const META_PROP_TYPE = PropTypes.shape({
 
 
 const TextareaField = ({
+  help,
   input,
+  label,
+  maxlength,
   meta: {
     error,
     touched,
   },
+  required,
   ...props
-}) => (
-  <Textarea
+}) =>
+  <FormGroup
+    disabled={input.disabled}
     error={error}
-    touched={touched}
-    {...input}
-    {...props}
-  />
-)
+    help={help}
+    label={label}
+    maxlength={maxlength}
+    touched={input.touched}
+    required={required}
+  >
+    <Textarea
+      error={error}
+      touched={touched}
+      {...input}
+      {...props}
+    />
+  </FormGroup>
 
 TextareaField.propTypes = {
   input: INPUT_PROP_TYPE,

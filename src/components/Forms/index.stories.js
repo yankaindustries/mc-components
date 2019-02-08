@@ -11,12 +11,28 @@ import { withProps } from '../../utils/addon-props'
 import InvertedMirror from '../../utils/InvertedMirror'
 
 import InputField from '../InputField'
+import SelectField from '../SelectField'
 import CheckboxField from '../CheckboxField'
 import RadioField from '../RadioField'
 import TextareaField from '../TextareaField'
 import Button from '../Button'
 import Lock from '../Icons/Lock'
 
+
+const membershipOptions = [
+  {
+    label: 'Silver',
+    value: '1',
+  },
+  {
+    label: 'Gold',
+    value: '2',
+  },
+  {
+    label: 'Platinum',
+    value: '3',
+  },
+]
 
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
@@ -64,6 +80,14 @@ const Form = reduxForm({
             />
 
             <Field
+              component={SelectField}
+              name='membership'
+              label='Membership Level'
+              options={membershipOptions}
+              required
+            />
+
+            <Field
               component={TextareaField}
               name='bio'
               label='Tell us about yourself'
@@ -93,9 +117,8 @@ const Form = reduxForm({
               placeholder='••••••••'
               help='Must be at least 8 characters'
               prepend={<Lock />}
+              error='Password is required'
               required
-              error
-              touched
             />
 
             <Field
@@ -106,9 +129,8 @@ const Form = reduxForm({
               placeholder='••••••••'
               help='Must be the same as password above'
               prepend={<Lock />}
+              error='Confirmation does not match'
               required
-              error
-              touched
             />
 
             <Field
