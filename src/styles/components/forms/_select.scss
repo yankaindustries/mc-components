@@ -74,11 +74,13 @@
     &__option--is-focused,
     &__option:active {
       background-color: transparent;
+      color: inherit;
     }
 
     &__option--is-selected,
     &__option:active {
       background-color: $mc-color-gray-200;
+      color: inherit;
 
       .mc-invert & {
         background-color: $mc-color-gray-700;

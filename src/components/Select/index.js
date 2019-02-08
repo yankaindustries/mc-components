@@ -105,7 +105,6 @@ export default class Select extends PureComponent {
           options={options}
           disabled={disabled}
           value={this.getOptionByValue(value)}
-          menuIsOpen={focused}
           {...props}
           onChange={this.handleChange}
           onFocus={this.handleFocus}
