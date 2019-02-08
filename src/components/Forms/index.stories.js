@@ -10,6 +10,7 @@ import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 import InvertedMirror from '../../utils/InvertedMirror'
 
+import FormGroup from '../FormGroup'
 import InputField from '../InputField'
 import SelectField from '../SelectField'
 import CheckboxField from '../CheckboxField'
@@ -94,28 +95,37 @@ const Form = reduxForm({
               placeholder='This is the story of a girl...'
             />
 
-            <Field
-              component={RadioField}
-              name='billing'
-              option='yearly'
-              label='Bill me yearly ($180)'
-            />
-
-            <Field
-              component={RadioField}
-              name='billing'
-              option='monthly'
-              label='Bill me monthly ($20)'
-            />
-
-            <Field
+            <FormGroup
               className='mc-mb-6'
-              component={RadioField}
               name='billing'
-              option='daily'
-              label='Bill me daily ($1)'
-              disabled
-            />
+              label='Billing Options'
+              required
+            >
+              <Field
+                className='mc-mb-4'
+                component={RadioField}
+                name='billing'
+                option='yearly'
+                label='Bill me yearly ($180)'
+              />
+
+              <Field
+                className='mc-mb-4'
+                component={RadioField}
+                name='billing'
+                option='monthly'
+                label='Bill me monthly ($20)'
+              />
+
+              <Field
+                className='mc-mb-4'
+                component={RadioField}
+                name='billing'
+                option='daily'
+                label='Bill me daily ($1)'
+                disabled
+              />
+            </FormGroup>
 
             <Field
               component={InputField}
