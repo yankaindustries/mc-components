@@ -36,6 +36,7 @@ const InputField = ({
     maxlength={maxlength}
     touched={input.touched}
     required={required}
+    value={input.value}
   >
     <Input
       error={error}

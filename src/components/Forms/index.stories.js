@@ -102,11 +102,19 @@ const Form = reduxForm({
             />
 
             <Field
-              className='mc-mb-6'
               component={RadioField}
               name='billing'
               option='monthly'
               label='Bill me monthly ($20)'
+            />
+
+            <Field
+              className='mc-mb-6'
+              component={RadioField}
+              name='billing'
+              option='daily'
+              label='Bill me daily ($1)'
+              disabled
             />
 
             <Field
@@ -115,10 +123,9 @@ const Form = reduxForm({
               type='password'
               label='Password'
               placeholder='••••••••'
-              help='Must be at least 8 characters'
               prepend={<Lock />}
               error='Password is required'
-              required
+              maxlength={20}
             />
 
             <Field

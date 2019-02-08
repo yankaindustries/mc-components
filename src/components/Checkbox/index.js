@@ -16,6 +16,9 @@ export default class Checkbox extends PureComponent {
     onChange: PropTypes.func.isRequired,
   }
 
+  handleClick = () =>
+    this.props.onChange(!this.props.checked)
+
   render () {
     const {
       label,
@@ -43,8 +46,7 @@ export default class Checkbox extends PureComponent {
           role='checkbox'
           aria-checked={checked}
           aria-labelledby={`${name}-label`}
-        >
-        </span>
+        />
         <input
           type='checkbox'
           id={name}

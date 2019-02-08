@@ -1,0 +1,77 @@
+.mc-input-radio {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+
+  &__realbox {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__fauxbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    background: $mc-color-gray-100;
+    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    cursor: pointer;
+    margin-right: 12px;
+
+    transition: box-shadow 200ms ease;
+
+    .mc-invert & {
+      background-color: $mc-color-light;
+      box-shadow: inset 0 0 0 1px $mc-color-gray-500;
+    }
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+    }
+
+    // "Selected" dot
+    &:after {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background: $mc-color-light;
+      transform: scale(0.5);
+      opacity: 0;
+      transition:
+        opacity 250ms ease,
+        transform 250ms ease;
+
+      .mc-invert & {
+        background: $mc-color-dark;
+      }
+    }
+  }
+
+  &--checked {
+    .mc-input-radio__button {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &--inline {
+    display: inline-flex;
+    margin-right: 40px;
+  }
+}

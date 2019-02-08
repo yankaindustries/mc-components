@@ -41,13 +41,14 @@ export default class FormGroup extends PureComponent {
     return (
       <div className='mc-form-group'>
         <div className='row no-gutters justify-content-between align-items-end mc-mb-4'>
-          <div className='col-10'>
+          <div className='col-9'>
             {label &&
               <label
                 htmlFor={name}
                 className='d-block mc-text-h8 mc-mb-2'
               >
                 {label}
+
               </label>
             }
           </div>
@@ -64,7 +65,7 @@ export default class FormGroup extends PureComponent {
             {children}
           </div>
 
-          <div className='col-10'>
+          <div className='col-9'>
             {showError &&
               <span className='mc-text-x-small mc-text--error'>
                 <IconError />
