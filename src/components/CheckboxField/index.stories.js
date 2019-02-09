@@ -35,26 +35,27 @@ const Form = reduxForm({
               <h5 className='mc-text-h5'>Default</h5>
               <Field
                 component={CheckboxField}
-                name='terms'
-                label='I agree to the terms'
+                name='salt'
+                label='Sale'
+                checked
               />
 
               <Field
                 component={CheckboxField}
-                name='twice'
-                label='I like checking things twice'
+                name='pepper'
+                label='Freshly ground black pepper'
               />
 
               <Field
                 component={CheckboxField}
-                name='lipsum'
+                name='longer'
+                checked
                 label='
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
-                  dui nibh. Morbi facilisis efficitur orci, in facilisis leo.
-                  Donec libero libero, egestas non lacus in, ullamcorper suscipit
-                  nisi. Aenean nisi erat, ultricies nec metus id, sagittis tortor.
-                  Suspendisse rutrum placerat lectus, sit amet faucibus augue
-                  elementum at. Aliquam congue non erat eu pellentesque.
+                  1 heaping cup cooked lobster meat, shells removed
+                  and reserved for sauce (this amount is equal to
+                  claw, knuckle and leg meat from two 11⁄2 lb lobsters
+                  OR all meat including tail from one 11⁄2 lb
+                  lobster)
                 '
               />
 
