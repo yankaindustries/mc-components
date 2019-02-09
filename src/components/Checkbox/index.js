@@ -62,6 +62,8 @@ export default class Checkbox extends PureComponent {
             type='checkbox'
             name={name}
             className='mc-input-checkbox__realbox'
+            value={checked}
+            disabled={disabled}
           />
         </div>
         <span>

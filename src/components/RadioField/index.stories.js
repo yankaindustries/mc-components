@@ -35,24 +35,49 @@ const Form = reduxForm({
       <InvertedMirror>
         <Field
           component={RadioField}
-          name='color'
-          label='Red'
-          option='red'
+          name='food'
+          option='salt'
+          label='Salt'
         />
 
         <Field
           component={RadioField}
-          name='color'
-          label='Green'
-          option='green'
+          name='food'
+          option='pepper'
+          label='Freshly ground black pepper'
         />
 
         <Field
           component={RadioField}
-          name='color'
-          label='Blue'
-          option='blue'
+          name='food'
+          option='longer'
+          label='
+            1 heaping cup cooked lobster meat, shells removed
+            and reserved for sauce (this amount is equal to
+            claw, knuckle and leg meat from two 11⁄2 lb lobsters
+            OR all meat including tail from one 11⁄2 lb
+            lobster)
+          '
+        />
+
+        <Field
+          component={RadioField}
+          name='food'
+          option='disabled'
           disabled
+          label='
+            This checkbox is disabled
+          '
+        />
+
+        <Field
+          component={RadioField}
+          name='food'
+          option='disabledChecked'
+          disabled
+          label='
+            This checkbox is disabled but checked
+          '
         />
       </InvertedMirror>
     </div>

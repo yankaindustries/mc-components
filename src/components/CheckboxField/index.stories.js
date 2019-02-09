@@ -8,6 +8,7 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
+import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
 import CheckboxField from '../CheckboxField'
 
@@ -23,64 +24,58 @@ const Form = reduxForm({
   },
 })(
   () =>
-    <div className='example-mc-type'>
-      <div className='container'>
-        <div className='example__heading'>
-          <h2 className='mc-text-h1'>CheckboxField</h2>
-        </div>
+    <div className='container'>
+      <DocHeader
+        title='CheckboxField'
+        description='I agree to the terms...'
+      />
 
-        <InvertedMirror>
-          <div className='row'>
-            <div className='col-12'>
-              <h5 className='mc-text-h5'>Default</h5>
-              <Field
-                component={CheckboxField}
-                name='salt'
-                label='Sale'
-                checked
-              />
+      <InvertedMirror>
+        <Field
+          component={CheckboxField}
+          name='salt'
+          label='Salt'
+          checked
+        />
 
-              <Field
-                component={CheckboxField}
-                name='pepper'
-                label='Freshly ground black pepper'
-              />
+        <Field
+          component={CheckboxField}
+          name='pepper'
+          label='Freshly ground black pepper'
+        />
 
-              <Field
-                component={CheckboxField}
-                name='longer'
-                checked
-                label='
-                  1 heaping cup cooked lobster meat, shells removed
-                  and reserved for sauce (this amount is equal to
-                  claw, knuckle and leg meat from two 11⁄2 lb lobsters
-                  OR all meat including tail from one 11⁄2 lb
-                  lobster)
-                '
-              />
+        <Field
+          component={CheckboxField}
+          name='longer'
+          checked
+          label='
+            1 heaping cup cooked lobster meat, shells removed
+            and reserved for sauce (this amount is equal to
+            claw, knuckle and leg meat from two 11⁄2 lb lobsters
+            OR all meat including tail from one 11⁄2 lb
+            lobster)
+          '
+        />
 
-              <Field
-                component={CheckboxField}
-                name='disabled'
-                disabled
-                label='
-                  This checkbox is disabled
-                '
-              />
+        <Field
+          component={CheckboxField}
+          name='disabled'
+          disabled
+          label='
+            This checkbox is disabled
+          '
+        />
 
-              <Field
-                component={CheckboxField}
-                name='disabledChecked'
-                disabled
-                checked
-                label='
-                  This checkbox is disabled but checked
-                '
-              />
-            </div>
-          </div>
-        </InvertedMirror>
-      </div>
+        <Field
+          component={CheckboxField}
+          name='disabledChecked'
+          disabled
+          checked
+          label='
+            This checkbox is disabled but checked
+          '
+        />
+      </InvertedMirror>
     </div>,
 )
 
