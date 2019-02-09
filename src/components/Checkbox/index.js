@@ -7,6 +7,7 @@ export default class Checkbox extends PureComponent {
   static propTypes = {
     checked: PropTypes.bool,
     className: PropTypes.string,
+    disabled: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
@@ -16,22 +17,31 @@ export default class Checkbox extends PureComponent {
     onChange: PropTypes.func.isRequired,
   }
 
-  handleClick = () =>
-    this.props.onChange(!this.props.checked)
+  handleClick = () => {
+    const {
+      checked,
+      disabled,
+      onChange,
+    } = this.props
+
+    return !disabled && onChange(!checked)
+  }
 
   render () {
     const {
-      label,
-      className,
-      name,
-      onChange,
       checked,
+      className,
+      disabled,
+      label,
+      name,
     } = this.props
 
     const classes = cn({
       [className]: className,
       'mc-input-checkbox': true,
       'mc-input-checkbox--checked': checked,
+      'mc-input-checkbox--disabled': disabled,
+      'mc-mb-5': true,
     })
 
     return (
@@ -39,20 +49,24 @@ export default class Checkbox extends PureComponent {
         className={classes}
         id={`${name}-label`}
         htmlFor={name}
-        onChange={() => onChange(!checked)}
+        onClick={this.handleClick}
       >
-        <span
-          className='mc-input-checkbox__fauxbox'
-          role='checkbox'
-          aria-checked={checked}
-          aria-labelledby={`${name}-label`}
-        />
-        <input
-          type='checkbox'
-          id={name}
-          className='mc-input-checkbox__realbox'
-        />
-        {label}
+        <div>
+          <span
+            className='mc-input-checkbox__fauxbox mc-mr-3'
+            role='checkbox'
+            aria-checked={checked}
+            aria-labelledby={`${name}-label`}
+          />
+          <input
+            type='checkbox'
+            name={name}
+            className='mc-input-checkbox__realbox'
+          />
+        </div>
+        <span>
+          {label}
+        </span>
       </label>
     )
   }
