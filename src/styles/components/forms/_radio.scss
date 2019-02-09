@@ -47,7 +47,7 @@
       height: 8px;
       border-radius: 100%;
       background: $mc-color-light;
-      transform: scale(0.5);
+      transform: scale(0);
       opacity: 0;
       transition:
         opacity 250ms ease,
@@ -70,8 +70,19 @@
     }
   }
 
-  &--inline {
-    display: inline-flex;
-    margin-right: 40px;
+  &--disabled {
+    .mc-input-radio__fauxbox {
+      background: $mc-color-gray-200;
+      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+
+      .mc-invert & {
+        background: $mc-color-gray-700;
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
+
+      &:after {
+        opacity: 0.3;
+      }
+    }
   }
 }

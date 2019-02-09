@@ -7,8 +7,10 @@ import {
   Field,
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
+
 import { withProps } from '../../utils/addon-props'
 import InvertedMirror from '../../utils/InvertedMirror'
+import DocHeader from '../../utils/DocHeader'
 
 import FormGroup from '../FormGroup'
 import InputField from '../InputField'
@@ -43,9 +45,10 @@ const Form = reduxForm({
   () =>
     <div className='example-mc-type'>
       <div className='container'>
-        <div className='example__heading'>
-          <h2 className='mc-text-h1'>Forms</h2>
-        </div>
+        <DocHeader
+          title='Forms'
+          description=''
+        />
 
         <div className='example__section'>
           <InvertedMirror>
@@ -96,13 +99,11 @@ const Form = reduxForm({
             />
 
             <FormGroup
-              className='mc-mb-6'
               name='billing'
               label='Billing Options'
               required
             >
               <Field
-                className='mc-mb-4'
                 component={RadioField}
                 name='billing'
                 option='yearly'
@@ -110,7 +111,6 @@ const Form = reduxForm({
               />
 
               <Field
-                className='mc-mb-4'
                 component={RadioField}
                 name='billing'
                 option='monthly'
@@ -118,7 +118,6 @@ const Form = reduxForm({
               />
 
               <Field
-                className='mc-mb-4'
                 component={RadioField}
                 name='billing'
                 option='daily'
@@ -151,10 +150,17 @@ const Form = reduxForm({
             />
 
             <Field
-              className='mc-mb-6'
+              className='mc-mb-4'
               component={CheckboxField}
               name='terms'
               label='I agree to the terms'
+            />
+
+            <Field
+              className='mc-mb-6'
+              component={CheckboxField}
+              name='newsletter'
+              label='I would like to sign up for the newsletter'
             />
 
             <Button

@@ -29,8 +29,8 @@ export default class InvertedMirror extends PureComponent {
         <div className='row'>
           <div className='col-lg-6'>
             <Background
-              color='dark'
-              className='mc-card'
+              color='light'
+              className='mc-card mc-invert'
             >
               {children}
             </Background>
@@ -38,8 +38,8 @@ export default class InvertedMirror extends PureComponent {
 
           <div className='col-lg-6'>
             <Background
-              color='light'
-              className='mc-card mc-invert'
+              color='dark'
+              className='mc-card'
             >
               {children}
             </Background>

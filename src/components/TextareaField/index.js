@@ -34,6 +34,7 @@ const TextareaField = ({
     help={help}
     label={label}
     maxlength={maxlength}
+    name={input.name}
     touched={input.touched}
     required={required}
   >

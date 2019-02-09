@@ -8,6 +8,10 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
+import { withProps } from '../../utils/addon-props'
+import DocHeader from '../../utils/DocHeader'
+import InvertedMirror from '../../utils/InvertedMirror'
+
 import RadioField from '../RadioField'
 
 
@@ -22,74 +26,43 @@ const Form = reduxForm({
   },
 })(
   () => (
-    <div className='example-mc-type'>
-      <div className='container'>
-        <div className='example__heading'>
-          <h1 className='mc-text-h1'>RadioField</h1>
-        </div>
+    <div className='container'>
+      <DocHeader
+        title='RadioField'
+        description='Remember multiple choice?'
+      />
 
-        <div className='row'>
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Default</h5>
+      <InvertedMirror>
+        <Field
+          component={RadioField}
+          name='color'
+          label='Red'
+          option='red'
+        />
 
-            <Field
-              component={RadioField}
-              name='color'
-              label='Red'
-              option='red'
-            />
+        <Field
+          component={RadioField}
+          name='color'
+          label='Green'
+          option='green'
+        />
 
-            <Field
-              component={RadioField}
-              name='color'
-              label='Green'
-              option='green'
-            />
-
-            <Field
-              component={RadioField}
-              name='color'
-              label='Blue'
-              option='blue'
-            />
-          </div>
-
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Inverted</h5>
-
-            <div className='rounded-box mc-invert'>
-              <Field
-                component={RadioField}
-                name='color'
-                label='Red'
-                option='red'
-              />
-
-              <Field
-                component={RadioField}
-                name='color'
-                label='Green'
-                option='green'
-              />
-
-              <Field
-                component={RadioField}
-                name='color'
-                label='Blue'
-                option='blue'
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+        <Field
+          component={RadioField}
+          name='color'
+          label='Blue'
+          option='blue'
+          disabled
+        />
+      </InvertedMirror>
     </div>
   ),
 )
 
 
 storiesOf('Components|Forms/RadioField', module)
-  .add('RadioField', () => (
+  .add('RadioField', withProps(RadioField)(() => (
     <Provider store={store}>
       <Form />
     </Provider>
-  ))
+  )))

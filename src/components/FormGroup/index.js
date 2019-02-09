@@ -39,7 +39,7 @@ export default class FormGroup extends PureComponent {
     const showError = error && touched
 
     return (
-      <div className='mc-form-group'>
+      <div className='mc-form-group mc-mb-5'>
         <div className='row no-gutters justify-content-between align-items-end mc-mb-4'>
           <div className='col-9'>
             {label &&
