@@ -20,7 +20,8 @@ const store = createStore(reducer)
 const Form = reduxForm({
   form: 'textarea',
   initialValues: {
-    bio: 'I am me, of course.',
+    value: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
   },
 })(
   () =>
@@ -32,36 +33,36 @@ const Form = reduxForm({
 
       <div className='example__section'>
         <InvertedMirror>
-          <div className='mc-mb-7'>
-            <Field
-              component={TextareaField}
-              name='demo'
-              label='Some Label'
-            />
-          </div>
+          <Field
+            component={TextareaField}
+            name='demo'
+            label='Label'
+            placeholder='Placeholder'
+          />
 
-          <div className='mc-mb-7'>
-            <Field
-              component={TextareaField}
-              name='bio'
-              label='Tell us more about yourself'
-            />
-          </div>
+          <hr />
 
-          <div className='mc-mb-7'>
-            <Field
-              component={TextareaField}
-              name='error'
-              label='What have we here?'
-              placeholder='I dont know, dont ask me!'
-              error='Something is wrong'
-            />
-          </div>
+          <Field
+            component={TextareaField}
+            name='value'
+            label='Value'
+            required
+          />
+
+          <Field
+            component={TextareaField}
+            name='error'
+            label='Error'
+            error='Error explanation'
+            required
+            touched
+          />
 
           <Field
             component={TextareaField}
             name='disabled'
-            label={'Can\'t touch this'}
+            label='Disabled'
+            required
             disabled
           />
         </InvertedMirror>

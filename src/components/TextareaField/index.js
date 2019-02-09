@@ -21,30 +21,33 @@ const TextareaField = ({
   input,
   label,
   maxlength,
-  meta: {
-    error,
-    touched,
-  },
+  meta,
   required,
   ...props
-}) =>
-  <FormGroup
-    disabled={input.disabled}
-    error={error}
-    help={help}
-    label={label}
-    maxlength={maxlength}
-    name={input.name}
-    touched={input.touched}
-    required={required}
-  >
-    <Textarea
+}) => {
+  const error = meta.error || props.error
+  const touched = meta.touched || props.touched
+
+  return (
+    <FormGroup
+      disabled={input.disabled}
       error={error}
+      help={help}
+      label={label}
+      maxlength={maxlength}
+      name={input.name}
       touched={touched}
-      {...input}
-      {...props}
-    />
-  </FormGroup>
+      required={required}
+    >
+      <Textarea
+        error={error}
+        touched={touched}
+        {...input}
+        {...props}
+      />
+    </FormGroup>
+  )
+}
 
 TextareaField.propTypes = {
   input: INPUT_PROP_TYPE,

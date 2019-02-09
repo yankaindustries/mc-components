@@ -21,31 +21,34 @@ const InputField = ({
   input,
   label,
   maxlength,
-  meta: {
-    error,
-    touched,
-  },
+  meta,
   required,
   ...props
-}) =>
-  <FormGroup
-    disabled={input.disabled}
-    error={error}
-    help={help}
-    label={label}
-    maxlength={maxlength}
-    name={input.name}
-    touched={input.touched}
-    required={required}
-    value={input.value}
-  >
-    <Input
+}) => {
+  const error = meta.error || props.error
+  const touched = meta.touched || props.touched
+
+  return (
+    <FormGroup
+      disabled={input.disabled}
       error={error}
+      help={help}
+      label={label}
+      maxlength={maxlength}
+      name={input.name}
       touched={touched}
-      {...input}
-      {...props}
-    />
-  </FormGroup>
+      required={required}
+      value={input.value}
+    >
+      <Input
+        error={error}
+        touched={touched}
+        {...input}
+        {...props}
+      />
+    </FormGroup>
+  )
+}
 
 InputField.propTypes = {
   input: INPUT_PROP_TYPE,
