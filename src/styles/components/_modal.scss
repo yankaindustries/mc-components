@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: center;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     z-index: $mc-zindex-modal;
   }
 
