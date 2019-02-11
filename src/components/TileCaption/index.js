@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 export default class TileCaption extends PureComponent {
@@ -9,6 +10,7 @@ export default class TileCaption extends PureComponent {
       PropTypes.arrayOf(PropTypes.node),
     ]),
     className: PropTypes.string,
+    flush: PropTypes.bool,
     position: PropTypes.oneOf([
       'left center',
       'left bottom',
@@ -21,16 +23,20 @@ export default class TileCaption extends PureComponent {
       'right bottom',
       'right below',
     ]),
+    padding: PropTypes.number,
   }
 
   static defaultProps = {
     position: 'left bottom',
+    padding: 3,
   }
 
   render () {
     const {
       children,
       className,
+      flush,
+      padding,
       position,
     } = this.props
 
@@ -42,18 +48,19 @@ export default class TileCaption extends PureComponent {
       y = 'center'
     }
 
-    const classes = [
-      'mc-tile__component',
-      'mc-tile-caption',
-      `mc-tile-caption--x-${x}`,
-      `mc-tile-caption--y-${y}`,
-      className || '',
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-tile__component': true,
+      'mc-tile-caption': true,
+      [`mc-tile-caption--x-${x}`]: true,
+      [`mc-tile-caption--y-${y}`]: true,
+      'mc-tile-caption--flush': flush,
+    })
 
     return (
       <div className={classes}>
         {children &&
-          <div className='mc-tile-caption__content'>
+          <div className={`mc-tile-caption__content mc-p-${padding}`}>
             {children}
           </div>
         }

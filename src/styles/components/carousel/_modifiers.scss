@@ -6,6 +6,20 @@
     }
   }
 
+  &--peek {
+    .slick-list {
+      width: 75%;
+
+      @media only screen and (min-width: $mc-bp-md) {
+        width: 80%;
+      }
+
+      @media only screen and (min-width: $mc-bp-lg) {
+        width: 85%;
+      }
+    }
+  }
+
   &--highlight-active {
     .slick-list {
       .slick-slide {

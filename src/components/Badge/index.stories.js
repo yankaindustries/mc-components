@@ -7,5 +7,7 @@ import Badge from '../Badge'
 
 storiesOf('Components|Badge', module)
   .add('default', withProps(Badge)(() =>
-    <Badge count={2} />,
+    <Badge>
+      6
+    </Badge>,
   ))

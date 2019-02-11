@@ -23,7 +23,7 @@ storiesOf('Components|Background', module)
               <h1 className='mc-text-h1'>
                 Background
                 {' '}
-                <Badge count='Experimental' />
+                <Badge>Experimental</Badge>
               </h1>
               <p className='mc-text-large mc-text--muted'>
                 Somewhat a utility component, Background is to be used when

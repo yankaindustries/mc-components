@@ -1,6 +1,17 @@
 import { Children, cloneElement } from 'react'
 import { isFunction } from 'lodash'
 
+export const ASPECT_RATIOS = [
+  'auto',
+  '1x1',
+  '2x3',
+  '3x4',
+  '4x3',
+  '9x16',
+  '16x9',
+  '21x9',
+]
+
 export const parseInputErrors = (error) => {
   if (!error) {
     return undefined
@@ -42,5 +53,25 @@ export const renderChildren = (children, props) => {
     return children(props)
   }
 
-  return Children.map(children, child => cloneElement(child, props))
+  return Children.map(children, (child) => {
+    const newProps = {
+      ...child.props,
+      ...props,
+      className: `${child.props.className || ''} ${props.className || ''}`,
+    }
+
+    return cloneElement(child, newProps)
+  })
+}
+
+export const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
+  if (gteLG) {
+    return lg
+  }
+
+  if (gteMD) {
+    return md
+  }
+
+  return sm
 }

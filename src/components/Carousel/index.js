@@ -1,6 +1,7 @@
-import React, { Children, Fragment, PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
+import cn from 'classnames'
 
 import ChevronLeft from '../Icons/ChevronLeft'
 import ChevronRight from '../Icons/ChevronRight'
@@ -37,28 +38,10 @@ class Arrow extends PureComponent {
         className={classes}
         onClick={onClick}
       >
-        {children}
+        <span className='mc-carousel__arrow-text'>
+          {children}
+        </span>
       </a>
-    )
-  }
-}
-
-
-class Slide extends PureComponent {
-  static propTypes = {
-    children: PropTypes.element,
-  }
-
-  render () {
-    const {
-      children,
-    } = this.props
-
-
-    return (
-      <Fragment>
-        {children}
-      </Fragment>
     )
   }
 }
@@ -76,6 +59,7 @@ export default class Carousel extends PureComponent {
     highlightOnHover: PropTypes.bool,
     loop: PropTypes.bool,
     overflow: PropTypes.bool,
+    peek: PropTypes.bool,
     scrollCount: PropTypes.number,
     showCount: PropTypes.number,
     sliderRef: PropTypes.func,
@@ -109,6 +93,7 @@ export default class Carousel extends PureComponent {
       highlightOnHover,
       loop,
       overflow,
+      peek,
       scrollCount,
       showCount,
       sliderRef,
@@ -116,15 +101,15 @@ export default class Carousel extends PureComponent {
       ...restProps
     } = this.props
 
-    const classes = [
-      className,
-      'mc-carousel',
-      `mc-carousel--${transition}`,
-      centered ? 'mc-carousel--centered' : '',
-      overflow ? 'mc-carousel--overflow' : '',
-      highlightOnActive ? 'mc-carousel--highlight-active' : '',
-      highlightOnHover ? 'mc-carousel--highlight-hover' : '',
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-carousel': true,
+      'mc-carousel--centered': centered,
+      'mc-carousel--highlight-active': highlightOnActive,
+      'mc-carousel--highlight-hover': highlightOnHover,
+      'mc-carousel--overflow': overflow || peek,
+      'mc-carousel--peek': peek,
+    })
 
     const arrows = controls
       ? {
@@ -145,26 +130,28 @@ export default class Carousel extends PureComponent {
       }
 
     return (
-      <div className='mc-carousel__container'>
-        <Slider
-          autoplay={autoPlay}
-          className={classes}
-          centerMode={centered}
-          centerPadding={0}
-          fade={transition === TRANSITION_FADE}
-          ref={sliderRef}
-          slidesToScroll={scrollCount}
-          slidesToShow={showCount}
-          infinite={loop}
-          draggable={false}
-          {...arrows}
-          {...restProps}
-        >
-          {Children.map(children, child => (
-            <Slide>{child}</Slide>
-          ))}
-        </Slider>
-      </div>
+      <Fragment>
+        <div className='mc-carousel__forced-spacing' />
+        <div className='mc-carousel__container'>
+          <Slider
+            autoplay={autoPlay}
+            className={classes}
+            centerMode={centered}
+            centerPadding={0}
+            fade={transition === TRANSITION_FADE}
+            ref={sliderRef}
+            slidesToScroll={scrollCount}
+            slidesToShow={showCount}
+            infinite={loop}
+            draggable={false}
+            {...arrows}
+            {...restProps}
+          >
+            {children}
+          </Slider>
+        </div>
+        <div className='mc-carousel__forced-spacing' />
+      </Fragment>
     )
   }
 }
