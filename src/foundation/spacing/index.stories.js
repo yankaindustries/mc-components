@@ -33,10 +33,10 @@ storiesOf('Foundation|Spacing', module)
       <DocSection title='Notation'>
         <p className='mc-text--hinted mc-mb-2'>
           Values shown in curly brackets are optional. The
-          default is <span className='mc-text--monospace'>mc-m-*</span>
-          where * is a number on the mc-components scale,
-          applied to all sides.  Using an example scale
-          of &ldquo;4&rdquo;, you would have the following options:
+          default is
+          <span className='mc-text--monospace'>mc-m-*</span>, where * is
+          a number on the mc-components scale,
+          applied to all sides.
         </p>
 
         <Highlight className='language-jsx mc-mb-6'>
