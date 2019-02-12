@@ -22,7 +22,12 @@ storiesOf('Foundation|Spacing', module)
           visual progression that is appealing and programmatic.
         </p>
 
-        <p className='mc-text--hinted mc-mb-5'>
+        <p className='mc-text--hinted mc-mb-2'>
+          The scale implementation logic and rules can be veiwed under
+          the &ldquo;Introduction &gt; Scale&rdquo; section.
+        </p>
+
+        <p className='mc-text--hinted'>
           Due to the decay, the computed values of each step are different
           for the three main breakpoints (LG, MD, SM). The decay does not
           apply to the smaller steps (4 and below).
@@ -32,20 +37,17 @@ storiesOf('Foundation|Spacing', module)
 
       <DocSection title='Notation'>
         <p className='mc-text--hinted mc-mb-2'>
-          Values shown in curly brackets are optional. The
-          default is
-          <span className='mc-text--monospace'>mc-m-*</span>, where * is
-          a number on the mc-components scale,
-          applied to all sides.
+          The helper margin and padding class is structured
+          using this format:
         </p>
 
         <Highlight className='language-jsx mc-mb-6'>
           {'<Element className=\'mc-{property}{sides}-{scale}\' />'}
         </Highlight>
 
-        <h5 className='mc-text-h5'>
-          Property
-        </h5>
+        <h6 className='mc-text-h6'>
+          Where property is one of:
+        </h6>
         <table className='example__table mc-mt-3 mc-mb-6'>
           <tbody>
             <tr>
@@ -64,9 +66,9 @@ storiesOf('Foundation|Spacing', module)
           </tbody>
         </table>
 
-        <h5 className='mc-text-h5'>
-          Sides
-        </h5>
+        <h6 className='mc-text-h6'>
+          Where sides is one of:
+        </h6>
         <table className='example__table mc-mt-3 mc-mb-6'>
           <tbody>
             <tr>
@@ -113,11 +115,11 @@ storiesOf('Foundation|Spacing', module)
           </tbody>
         </table>
 
-        <h5 className='mc-text-h5'>
+        <h6 className='mc-text-h6'>
           Scale
-        </h5>
-        <p>Any value on the mc-components scale shown
-          under &ldquo;Introduction &gt; Scale&rdquo; are valid.</p>
+        </h6>
+        <p>Any one of the values on the mc-components scale shown
+          under &ldquo;Introduction &gt; Scale&rdquo; is valid.</p>
       </DocSection>
 
       <DocSection title='Examples'>
