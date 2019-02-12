@@ -43,7 +43,7 @@ export default class Radio extends PureComponent {
       'mc-input-radio': true,
       'mc-input-radio--checked': checked,
       'mc-input-radio--disabled': disabled,
-      'mc-mb-5': true,
+      'mc-mb-2': true,
     })
 
     return (
