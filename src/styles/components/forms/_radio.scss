@@ -71,9 +71,16 @@
   }
 
   &--disabled {
+    &:hover .mc-input-radio__fauxbox {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    }
+
+    &:active .mc-input-radio__fauxbox {
+      box-shadow: inset 0 0 0 2px $mc-color-gray-200;
+    }
+
     .mc-input-radio__fauxbox {
       background: $mc-color-gray-200;
-      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
 
       .mc-invert & {
         background: $mc-color-gray-700;

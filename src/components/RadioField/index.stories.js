@@ -73,7 +73,8 @@ const Form = reduxForm({
         <Field
           component={RadioField}
           name='food'
-          option='disabledChecked'
+          option='disabledSelected'
+          checked
           disabled
           label='
             This checkbox is disabled but checked
