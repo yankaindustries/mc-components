@@ -47,7 +47,6 @@ const Form = reduxForm({
         <Field
           component={CheckboxField}
           name='longer'
-          checked
           label='
             1 heaping cup cooked lobster meat, shells removed
             and reserved for sauce (this amount is equal to

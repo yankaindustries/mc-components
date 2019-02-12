@@ -3,27 +3,19 @@
   align-items: flex-start;
   cursor: pointer;
 
-  &:hover .mc-input-checkbox__fauxbox {
-    box-shadow: inset 0 0 0 1px $mc-color-gray-400;
-
-    .mc-invert & {
-      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
-    }
-  }
-
-  // What appears as "the checkbox"
   &__fauxbox {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     vertical-align: middle;
-    background: $mc-color-gray-100;
+    margin-top: -4px; // vertically center box
     width: 20px;
     height: 20px;
-    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    background: $mc-color-gray-100;
     border-radius: 4px;
-    margin-top: -4px; // vertically center box
-    padding: 5px;
-    flex-shrink: 0;
+    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    cursor: pointer;
     transition:
       background 250ms ease,
       box-shadow 250ms ease;
@@ -38,7 +30,11 @@
       }
     }
 
-    // The check
+    .mc-input-checkbox:active & {
+      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+    }
+
+    // Check
     &:before,
     &:after {
       content: "";
@@ -76,13 +72,6 @@
     z-index: -1;
   }
 
-  // When checkbox is actively being "clicked"
-  &:active {
-    .mc-input-checkbox__fauxbox {
-      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
-    }
-  }
-
   &--checked {
     .mc-input-checkbox__fauxbox {
       &:before {
@@ -100,29 +89,16 @@
   &--disabled {
     cursor: not-allowed;
 
-    &:hover {
-      .mc-input-checkbox__fauxbox {
-        box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    &:active .mc-input-checkbox__fauxbox {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
 
-        .mc-invert & {
-          box-shadow: inset 0 0 0 1px $mc-color-gray-600;
-        }
-      }
-    }
-
-    &:active {
-      .mc-input-checkbox__fauxbox {
-        box-shadow: inset 0 0 0 1px $mc-color-gray-200;
-
-        .mc-invert & {
-          box-shadow: inset 0 0 0 1px $mc-color-gray-600;
-        }
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
       }
     }
 
     .mc-input-checkbox__fauxbox {
-      background: $mc-color-gray-200;
-      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+      opacity: 0.5;
 
       .mc-invert & {
         background: $mc-color-gray-700;
@@ -131,11 +107,7 @@
 
       &:before,
       &:after {
-        background: rgba($mc-color-light, 0.3);
-
-        .mc-invert & {
-          background: rgba($mc-color-gray-200, 0.3);
-        }
+        opacity: 0.3;
       }
     }
   }

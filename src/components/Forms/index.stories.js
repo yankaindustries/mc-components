@@ -161,6 +161,7 @@ const Form = reduxForm({
               component={CheckboxField}
               name='newsletter'
               label='I would like to sign up for the newsletter'
+              disabled
             />
 
             <Button
