@@ -44,18 +44,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     z-index: $mc-zindex-modal;
   }
 
   &__content-container-inner {
     flex: 1;
-    max-height: 100vh;
-    overflow: auto;
+    margin: auto;
   }
 
   &__content {
     &:focus {
       outline: none;
     }
+  }
+
+  &__body--open {
+    position: fixed;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
   }
 }
