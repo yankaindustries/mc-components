@@ -3,8 +3,6 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import IconClose from '../Icons/Close'
-
 
 const ModalContext = React.createContext('modal')
 
@@ -20,9 +18,10 @@ export default class Modal extends PureComponent {
       PropTypes.arrayOf(PropTypes.node),
     ]).isRequired,
     className: PropTypes.string,
+    closeButton: PropTypes.bool,
     show: PropTypes.bool,
     appendToBody: PropTypes.bool,
-    onCloseClick: PropTypes.func,
+    onClose: PropTypes.func,
   }
 
   static defaultProps = {
@@ -47,11 +46,11 @@ export default class Modal extends PureComponent {
 
   close = source => (event) => {
     const {
-      onCloseClick,
+      onClose,
     } = this.props
 
-    if (onCloseClick) {
-      onCloseClick(source, event)
+    if (onClose) {
+      onClose(source, event)
     }
   }
 
@@ -59,7 +58,6 @@ export default class Modal extends PureComponent {
     const {
       children,
       className,
-      onCloseClick,
     } = this.props
 
     return (
@@ -70,16 +68,6 @@ export default class Modal extends PureComponent {
           ref={this.container}
         >
           <div className='mc-modal__backdrop' />
-
-          {onCloseClick &&
-            <div
-              className='mc-modal__close'
-              onClick={this.close('close')}
-            >
-              <IconClose />
-            </div>
-          }
-
           <div className='mc-modal__content-container'>
             <div className='mc-modal__content-container-inner'>
               {children}
