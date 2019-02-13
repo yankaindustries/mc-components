@@ -55,7 +55,7 @@ class ModalExample extends Component {
             </div>
 
             <Modal
-              onCloseClick={this.hideModal('dialog')}
+              onClose={this.hideModal('dialog')}
               show={this.state.dialog}
             >
               <div className='container'>
@@ -126,7 +126,7 @@ class ModalExample extends Component {
             </div>
 
             <Modal
-              onCloseClick={this.hideModal('cinema')}
+              onClose={this.hideModal('cinema')}
               show={this.state.cinema}
             >
               <ModalClose />

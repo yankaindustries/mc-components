@@ -21,7 +21,7 @@ export default class Modal extends PureComponent {
     closeButton: PropTypes.bool,
     show: PropTypes.bool,
     appendToBody: PropTypes.bool,
-    onCloseClick: PropTypes.func,
+    onClose: PropTypes.func,
   }
 
   static defaultProps = {
@@ -46,11 +46,11 @@ export default class Modal extends PureComponent {
 
   close = source => (event) => {
     const {
-      onCloseClick,
+      onClose,
     } = this.props
 
-    if (onCloseClick) {
-      onCloseClick(source, event)
+    if (onClose) {
+      onClose(source, event)
     }
   }
 
