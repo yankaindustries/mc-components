@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react'
 import cn from 'classnames'
 
+import DocSection from '../../utils/DocSection'
 import CodeExample from '../../utils/CodeExample'
+import Placeholder from '../../utils/Placeholder'
 
+import Input from '../../components/Input'
 import Button from '../../components/Button'
 
 
@@ -15,23 +18,55 @@ const COLOR_HINTED = 'COLOR_HINTED'
 const COLOR_MUTED = 'COLOR_MUTED'
 const COLOR_SILENCED = 'COLOR_SILENCED'
 
+const SIZE_H1 = 'h1'
+const SIZE_H2 = 'h2'
+const SIZE_H3 = 'h3'
+const SIZE_H4 = 'h4'
+const SIZE_H5 = 'h5'
+const SIZE_H6 = 'h6'
+const SIZE_H7 = 'h7'
+const SIZE_H8 = 'h8'
+const SIZE_LARGE = 'large'
+const SIZE_NORMAL = 'normal'
+const SIZE_SMALL = 'small'
+const SIZE_XSMALL = 'x-small'
+
+const sizeOptions = [
+  { value: SIZE_H1, label: 'H1', },
+  { value: SIZE_H2, label: 'H2', },
+  { value: SIZE_H3, label: 'H3', },
+  { value: SIZE_H4, label: 'H4', },
+  { value: SIZE_H5, label: 'H5', },
+  { value: SIZE_H6, label: 'H6', },
+  { value: SIZE_H7, label: 'H7', },
+  { value: SIZE_H8, label: 'H8', },
+  { value: SIZE_LARGE, label: 'Large', },
+  { value: SIZE_NORMAL, label: 'Normal', },
+  { value: SIZE_SMALL, label: 'Small', },
+  { value: SIZE_XSMALL, label: 'Extra Small', },
+]
+
 
 export default class Summary extends PureComponent {
   state = {
     color: NONE,
     modifier: NONE,
+    size: SIZE_H1,
   }
 
-  toggle = (key, value) => () => {
+  toggle = (key, value) => () =>
     this.setState(state => ({
       [key]: state[key] === value ? NONE : value,
     }))
-  }
+
+  setSize = ({ target: { value }}) =>
+    this.setState({ size: value })
 
   render () {
     const {
       modifier,
       color,
+      size,
     } = this.state
 
     const modifierClass = cn({
@@ -56,168 +91,68 @@ export default class Summary extends PureComponent {
             </div>
 
             <div className='col-12'>
-              <div className='row'>
-                <div className='col-auto'>
-                  <Button
-                    onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
-                    secondary={modifier !== MODIFIER_UPPERCASE}
-                  >
-                    Uppercase
-                  </Button>
-                </div>
+              <DocSection title='Demo'>
+                <div className='row'>
+                  <div className='col-auto'>
+                    <Input
+                      options={sizeOptions}
+                      value={size}
+                      onChange={this.setSize}
+                    />
+                  </div>
 
-                <div className='col-auto'>
-                  <Button
-                    onClick={this.toggle('modifier', MODIFIER_AIRY)}
-                    secondary={modifier !== MODIFIER_AIRY}
-                  >
-                    Airy
-                  </Button>
-                </div>
+                  <div className='col-auto'>
+                    <Button
+                      onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
+                      secondary={modifier !== MODIFIER_UPPERCASE}
+                    >
+                      Uppercase
+                    </Button>
 
-                <div className='col-auto'>
-                  <Button
-                    onClick={this.toggle('color', COLOR_HINTED)}
-                    secondary={color !== COLOR_HINTED}
-                  >
-                    Hinted
-                  </Button>
-                </div>
+                    <Button
+                      onClick={this.toggle('modifier', MODIFIER_AIRY)}
+                      secondary={modifier !== MODIFIER_AIRY}
+                    >
+                      Airy
+                    </Button>
+                  </div>
 
-                <div className='col-auto'>
-                  <Button
-                    onClick={this.toggle('color', COLOR_MUTED)}
-                    secondary={color !== COLOR_MUTED}
-                  >
-                    Muted
-                  </Button>
-                </div>
+                  <div className='col-auto'>
+                    <Button
+                      onClick={this.toggle('color', COLOR_HINTED)}
+                      secondary={color !== COLOR_HINTED}
+                    >
+                      Hinted
+                    </Button>
 
-                <div className='col-auto'>
-                  <Button
-                    onClick={this.toggle('color', COLOR_SILENCED)}
-                    secondary={color !== COLOR_SILENCED}
-                  >
-                    Silenced
-                  </Button>
+                    <Button
+                      onClick={this.toggle('color', COLOR_MUTED)}
+                      secondary={color !== COLOR_MUTED}
+                    >
+                      Muted
+                    </Button>
+
+                    <Button
+                      onClick={this.toggle('color', COLOR_SILENCED)}
+                      secondary={color !== COLOR_SILENCED}
+                    >
+                      Silenced
+                    </Button>
+                  </div>
+
+                  <div className='col-12'>
+                    <div style={{ height: '200px', position: 'relative' }}>
+                      <Placeholder>
+                        <span className={`mc-text-${size} ${modifierClass}`}>
+                          Test
+                        </span>
+                      </Placeholder>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </DocSection>
             </div>
           </div>
-        </div>
-
-        <div className='example__section'>
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h1
-          </div>
-          <CodeExample>
-            <h1 className={`mc-text-h1 ${modifierClass}`}>
-              Gordon Ramsay
-            </h1>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h2
-          </div>
-          <CodeExample>
-            <h2 className={`mc-text-h2 ${modifierClass}`}>
-              All-Access Pass
-            </h2>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h3
-          </div>
-          <CodeExample>
-            <h3 className={`mc-text-h3 ${modifierClass}`}>
-              Now Available
-            </h3>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h4
-          </div>
-          <CodeExample>
-            <h4 className={`mc-text-h4 ${modifierClass}`}>
-              Diane Von Furstenburg
-            </h4>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h5
-          </div>
-          <CodeExample>
-            <h5 className={`mc-text-h5 ${modifierClass}`}>
-              Teaches Fashion
-            </h5>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h6
-          </div>
-          <CodeExample>
-            <h6 className={`mc-text-h6 ${modifierClass}`}>
-              Account Settings
-            </h6>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h7
-          </div>
-          <CodeExample>
-            <h6 className={`mc-text-h7 ${modifierClass}`}>
-              Account Settings
-            </h6>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-h8
-          </div>
-          <CodeExample>
-            <h6 className={`mc-text-h8 ${modifierClass}`}>
-              Account Settings
-            </h6>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-large
-          </div>
-          <CodeExample>
-            <p className='mc-text-large'>
-              Online classes taught by the world&#39;s greatest minds.<br />
-              Now get unlimited access to all classes.
-            </p>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            body
-          </div>
-          <CodeExample>
-            <p>
-              Online classes taught by the world&#39;s greatest minds.<br />
-              Now get unlimited access to all classes.
-            </p>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-small
-          </div>
-          <CodeExample>
-            <p className='mc-text-small'>
-              Online classes taught by the world&#39;s greatest minds.<br />
-              Now get unlimited access to all classes.
-            </p>
-          </CodeExample>
-
-          <div className='mc-text--muted mc-text--monospace'>
-            .mc-text-x-small
-          </div>
-          <CodeExample>
-            <p className='mc-text-x-small'>
-              Online classes taught by the world&#39;s greatest minds.<br />
-              Now get unlimited access to all classes.
-            </p>
-          </CodeExample>
         </div>
       </div>
     )
