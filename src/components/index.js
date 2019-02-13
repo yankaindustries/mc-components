@@ -64,9 +64,6 @@ export { default as IconUnmuted } from './Icons/Unmuted'
 
 // LEGACY
 export { default as LegacyCarousel } from './Legacy/Carousel'
-export { default as LegacyInput } from './Legacy/Input'
-export { default as LegacyRadioInput } from './Legacy/RadioInput'
-
 
 // UTILS
 export { Helpers }

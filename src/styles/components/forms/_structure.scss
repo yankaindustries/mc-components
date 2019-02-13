@@ -4,6 +4,13 @@
   justify-content: center;
   align-items: center;
   padding: $input-padding;
+  // Reset from 16px, so sizing is based on 24px square
+  font-size: 12px;
+  color: rgba($mc-color-light, 0.3);
+
+  .mc-invert & {
+    color: rgba($mc-color-dark, 0.3);
+  }
 }
 
 .mc-form-prepend {
@@ -12,24 +19,4 @@
 
 .mc-form-append {
   padding-left: 0;
-}
-
-.mc-form-group {
-  position: relative;
-  padding-bottom: $grid-gutter-width;
-
-  @media (min-width: $mc-bp-sm) {
-    padding-bottom: $grid-gutter-width-sm;
-  }
-
-  @media (min-width: $mc-bp-md) {
-    padding-bottom: $grid-gutter-width-md;
-  }
-}
-
-.mc-form-help {
-  margin-top: 8px;
-  font-size: 12px;
-  line-height: 15px;
-  color: $mc-color-gray-500;
 }

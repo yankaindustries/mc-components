@@ -10,6 +10,7 @@ import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 
 import TextareaField from '../TextareaField'
+import InvertedMirror from '../../utils/InvertedMirror'
 
 
 const reducer = combineReducers({ form: formReducer })
@@ -19,7 +20,8 @@ const store = createStore(reducer)
 const Form = reduxForm({
   form: 'textarea',
   initialValues: {
-    bio: 'I am me, of course.',
+    value: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
   },
 })(
   () =>
@@ -30,89 +32,40 @@ const Form = reduxForm({
       </div>
 
       <div className='example__section'>
-        <div className='mc-form'>
-          <div className='row'>
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Default</h5>
+        <InvertedMirror>
+          <Field
+            component={TextareaField}
+            name='demo'
+            label='Label'
+            placeholder='Placeholder'
+          />
 
-              <div className='mc-form-group'>
-                <Field
-                  component={TextareaField}
-                  name='demo'
-                  label='Some Label'
-                />
-              </div>
+          <hr />
 
-              <div className='mc-form-group'>
-                <Field
-                  component={TextareaField}
-                  name='bio'
-                  label='Tell us more about yourself'
-                />
-              </div>
+          <Field
+            component={TextareaField}
+            name='value'
+            label='Value'
+            required
+          />
 
-              <div className='mc-form-group'>
-                <Field
-                  component={TextareaField}
-                  name='error'
-                  label='What have we here?'
-                  placeholder='I dont know, dont ask me!'
-                  error='Something is wrong'
-                />
-              </div>
+          <Field
+            component={TextareaField}
+            name='error'
+            label='Error'
+            error='Error explanation'
+            required
+            touched
+          />
 
-              <div className='mc-form-group'>
-                <Field
-                  component={TextareaField}
-                  name='disabled'
-                  label={'Can\'t touch this'}
-                  disabled
-                />
-              </div>
-            </div>
-
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Inverted</h5>
-
-              <div className='rounded-box mc-invert'>
-                <div className='mc-form-group'>
-                  <Field
-                    component={TextareaField}
-                    name='demo'
-                    label='Some Label'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={TextareaField}
-                    name='bio'
-                    label='Tell us more about yourself'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={TextareaField}
-                    name='error'
-                    label='What have we here?'
-                    placeholder='I dont know, dont ask me!'
-                    error='Something is wrong'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={TextareaField}
-                    name='disabled'
-                    label={'Can\'t touch this'}
-                    disabled
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <Field
+            component={TextareaField}
+            name='disabled'
+            label='Disabled'
+            required
+            disabled
+          />
+        </InvertedMirror>
       </div>
     </div>,
 )

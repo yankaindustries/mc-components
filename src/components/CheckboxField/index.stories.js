@@ -8,6 +8,8 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
+import DocHeader from '../../utils/DocHeader'
+import InvertedMirror from '../../utils/InvertedMirror'
 import CheckboxField from '../CheckboxField'
 
 
@@ -22,77 +24,57 @@ const Form = reduxForm({
   },
 })(
   () =>
-    <div className='example-mc-type'>
-      <div className='container'>
-        <div className='example__heading'>
-          <h2 className='mc-text-h1'>CheckboxField</h2>
-        </div>
+    <div className='container'>
+      <DocHeader
+        title='CheckboxField'
+        description='I agree to the terms...'
+      />
 
-        <div className='row'>
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Default</h5>
+      <InvertedMirror>
+        <Field
+          component={CheckboxField}
+          name='salt'
+          label='Salt'
+          checked
+        />
 
-            <div className='form-group'>
-              <Field
-                component={CheckboxField}
-                name='terms'
-                label='I agree to the terms'
-              />
+        <Field
+          component={CheckboxField}
+          name='pepper'
+          label='Freshly ground black pepper'
+        />
 
-              <Field
-                component={CheckboxField}
-                name='twice'
-                label='I like checking things twice'
-              />
+        <Field
+          component={CheckboxField}
+          name='longer'
+          label='
+            1 heaping cup cooked lobster meat, shells removed
+            and reserved for sauce (this amount is equal to
+            claw, knuckle and leg meat from two 11⁄2 lb lobsters
+            OR all meat including tail from one 11⁄2 lb
+            lobster)
+          '
+        />
 
-              <Field
-                component={CheckboxField}
-                name='lipsum'
-                label='
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
-                  dui nibh. Morbi facilisis efficitur orci, in facilisis leo.
-                  Donec libero libero, egestas non lacus in, ullamcorper suscipit
-                  nisi. Aenean nisi erat, ultricies nec metus id, sagittis tortor.
-                  Suspendisse rutrum placerat lectus, sit amet faucibus augue
-                  elementum at. Aliquam congue non erat eu pellentesque.
-                '
-              />
-            </div>
-          </div>
+        <Field
+          component={CheckboxField}
+          name='disabled'
+          disabled
+          label='
+            This checkbox is disabled
+          '
+        />
 
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Inverted</h5>
-            <div className='rounded-box mc-invert'>
-              <div className='form-group'>
-                <Field
-                  component={CheckboxField}
-                  name='terms'
-                  label='I agree to the terms'
-                />
-
-                <Field
-                  component={CheckboxField}
-                  name='twice'
-                  label='I like checking things twice'
-                />
-
-                <Field
-                  component={CheckboxField}
-                  name='lipsum'
-                  label='
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
-                    dui nibh. Morbi facilisis efficitur orci, in facilisis leo.
-                    Donec libero libero, egestas non lacus in, ullamcorper suscipit
-                    nisi. Aenean nisi erat, ultricies nec metus id, sagittis tortor.
-                    Suspendisse rutrum placerat lectus, sit amet faucibus augue
-                    elementum at. Aliquam congue non erat eu pellentesque.
-                  '
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <Field
+          component={CheckboxField}
+          name='disabledChecked'
+          disabled
+          checked
+          label='
+            This checkbox is disabled but checked
+          '
+        />
+      </InvertedMirror>
     </div>,
 )
 

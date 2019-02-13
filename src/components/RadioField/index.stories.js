@@ -8,6 +8,10 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
+import { withProps } from '../../utils/addon-props'
+import DocHeader from '../../utils/DocHeader'
+import InvertedMirror from '../../utils/InvertedMirror'
+
 import RadioField from '../RadioField'
 
 
@@ -22,74 +26,69 @@ const Form = reduxForm({
   },
 })(
   () => (
-    <div className='example-mc-type'>
-      <div className='container'>
-        <div className='example__heading'>
-          <h1 className='mc-text-h1'>RadioField</h1>
-        </div>
+    <div className='container'>
+      <DocHeader
+        title='RadioField'
+        description='Remember multiple choice?'
+      />
 
-        <div className='row'>
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Default</h5>
+      <InvertedMirror>
+        <Field
+          component={RadioField}
+          name='food'
+          option='salt'
+          label='Salt'
+        />
 
-            <Field
-              component={RadioField}
-              name='color'
-              label='Red'
-              option='red'
-            />
+        <Field
+          component={RadioField}
+          name='food'
+          option='pepper'
+          label='Freshly ground black pepper'
+        />
 
-            <Field
-              component={RadioField}
-              name='color'
-              label='Green'
-              option='green'
-            />
+        <Field
+          component={RadioField}
+          name='food'
+          option='longer'
+          label='
+            1 heaping cup cooked lobster meat, shells removed
+            and reserved for sauce (this amount is equal to
+            claw, knuckle and leg meat from two 11⁄2 lb lobsters
+            OR all meat including tail from one 11⁄2 lb
+            lobster)
+          '
+        />
 
-            <Field
-              component={RadioField}
-              name='color'
-              label='Blue'
-              option='blue'
-            />
-          </div>
+        <Field
+          component={RadioField}
+          name='food'
+          option='disabled'
+          disabled
+          label='
+            This checkbox is disabled
+          '
+        />
 
-          <div className='col-sm-6'>
-            <h5 className='mc-text-h5'>Inverted</h5>
-
-            <div className='rounded-box mc-invert'>
-              <Field
-                component={RadioField}
-                name='color'
-                label='Red'
-                option='red'
-              />
-
-              <Field
-                component={RadioField}
-                name='color'
-                label='Green'
-                option='green'
-              />
-
-              <Field
-                component={RadioField}
-                name='color'
-                label='Blue'
-                option='blue'
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+        <Field
+          component={RadioField}
+          name='food'
+          option='disabledSelected'
+          checked
+          disabled
+          label='
+            This checkbox is disabled but checked
+          '
+        />
+      </InvertedMirror>
     </div>
   ),
 )
 
 
 storiesOf('Components|Forms/RadioField', module)
-  .add('RadioField', () => (
+  .add('RadioField', withProps(RadioField)(() => (
     <Provider store={store}>
       <Form />
     </Provider>
-  ))
+  )))

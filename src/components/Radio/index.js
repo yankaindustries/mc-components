@@ -6,24 +6,35 @@ import cn from 'classnames'
 export default class Radio extends PureComponent {
   static propTypes = {
     checked: PropTypes.bool,
+    className: PropTypes.string,
+    disabled: PropTypes.bool,
     label: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
     ]),
-    className: PropTypes.string,
     name: PropTypes.string,
     option: PropTypes.string,
 
     onChange: PropTypes.func.isRequired,
   }
 
+  handleClick = () => {
+    const {
+      disabled,
+      option,
+      onChange,
+    } = this.props
+
+    return !disabled && onChange(option)
+  }
+
   render () {
     const {
       checked,
-      label,
       className,
+      disabled,
+      label,
       name,
-      onChange,
       option,
     } = this.props
 
@@ -31,19 +42,35 @@ export default class Radio extends PureComponent {
       [className]: className,
       'mc-input-radio': true,
       'mc-input-radio--checked': checked,
+      'mc-input-radio--disabled': disabled,
+      'mc-mb-2': true,
     })
 
     return (
       <label
         className={classes}
+        id={`${option}-label`}
         htmlFor={name}
-        onClick={() => onChange(option)}
+        onClick={this.handleClick}
       >
-        <span
-          className='mc-input-radio__button'
-          name={name}
-        />
-        {label}
+        <div>
+          <span
+            className='mc-input-radio__fauxbox mc-mr-4'
+            role='radio'
+            aria-checked={checked}
+            aria-labelledby={`${option}-label`}
+          />
+          <input
+            type='radio'
+            name={name}
+            className='mc-input-radio__realbox'
+            value={option}
+            disabled={disabled}
+          />
+        </div>
+        <span>
+          {label}
+        </span>
       </label>
     )
   }

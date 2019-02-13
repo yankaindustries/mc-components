@@ -1,11 +1,6 @@
-// Legacy
-@import "input";
-@import "radio-input";
-
-// New
 @import "structure";
-@import "checkbox/checkbox";
-@import "radio/radio";
-@import "input/input";
-@import "textarea/textarea";
-
+@import "element";
+@import "textarea";
+@import "select";
+@import "radio";
+@import "checkbox";

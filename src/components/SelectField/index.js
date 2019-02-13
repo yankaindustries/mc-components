@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Textarea from '../Textarea'
+import Select from '../Select'
 import FormGroup from '../FormGroup'
 
 
@@ -16,7 +16,7 @@ const META_PROP_TYPE = PropTypes.shape({
 })
 
 
-const TextareaField = ({
+const SelectField = ({
   help,
   input,
   label,
@@ -39,7 +39,7 @@ const TextareaField = ({
       touched={touched}
       required={required}
     >
-      <Textarea
+      <Select
         error={error}
         touched={touched}
         {...input}
@@ -49,9 +49,9 @@ const TextareaField = ({
   )
 }
 
-TextareaField.propTypes = {
+SelectField.propTypes = {
   input: INPUT_PROP_TYPE,
   meta: META_PROP_TYPE,
 }
 
-export default TextareaField
+export default SelectField

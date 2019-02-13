@@ -1,0 +1,94 @@
+.mc-form-select {
+  &__element {
+    flex: 1;
+  }
+
+  .mc-form-element__element {
+    padding: 0;
+  }
+
+
+  // React Select overrides here
+  & .mc-form-select {
+    &__control {
+      background: none;
+      border: none;
+      min-height: 0;
+
+      color: inherit;
+
+      &:hover {
+        border: none;
+      }
+
+      &--is-focused {
+        box-shadow: none;
+      }
+    }
+
+    &__placeholder {
+      opacity: 0.3;
+    }
+
+    &__input {
+      height: 0;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    &__value-container {
+      padding: $input-padding;
+
+      > * {
+        margin: 0;
+        padding: 0;
+        color: inherit;
+      }
+    }
+
+    &__indicator-separator {
+      display: none;
+    }
+
+    &__dropdown-indicator {
+      padding: $input-padding;
+      padding-left: 0;
+      color: inherit;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    &__menu {
+      background-color: $mc-color-gray-100;
+      border: 1px solid $mc-color-gray-200;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+
+      .mc-invert & {
+        background-color: $mc-color-light;
+        border-color: $mc-color-gray-700;
+      }
+    }
+
+    &__option--is-focused,
+    &__option:active {
+      background-color: $mc-color-gray-200;
+      color: inherit;
+
+      .mc-invert & {
+        background-color: $mc-color-gray-700;
+      }
+    }
+
+    &__option--is-selected,
+    &__option:active {
+      background-color: $mc-color-gray-200;
+      color: inherit;
+
+      .mc-invert & {
+        background-color: $mc-color-gray-700;
+      }
+    }
+  }
+}
