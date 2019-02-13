@@ -25,10 +25,6 @@
       box-shadow: inset 0 0 0 1px $mc-color-gray-500;
     }
 
-    .mc-input-radio:active & {
-      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
-    }
-
     // Dot
     &:after {
       content: "";
@@ -57,10 +53,26 @@
     z-index: -1;
   }
 
+  // States
+  &:hover .mc-input-radio__fauxbox {
+    box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+
+    .mc-invert & {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+    }
+  }
+
+  &:active .mc-input-radio__fauxbox {
+    box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+
+    .mc-invert & {
+      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+    }
+  }
+
+
   &--checked {
     .mc-input-radio__fauxbox {
-      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
-
       &:after {
         opacity: 1;
         transform: scale(1);
@@ -71,16 +83,8 @@
   &--disabled {
     cursor: not-allowed;
 
-    &:active .mc-input-radio__fauxbox {
-      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
-
-      .mc-invert & {
-        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
-      }
-    }
-
     .mc-input-radio__fauxbox {
-      opacity: 0.5;
+      box-shadow: none;
       cursor: not-allowed;
 
       .mc-invert & {
@@ -90,6 +94,22 @@
 
       &:after {
         opacity: 0.3;
+      }
+    }
+
+    &:hover .mc-input-radio__fauxbox {
+      box-shadow: none;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
+    }
+
+    &:active .mc-input-radio__fauxbox {
+      box-shadow: none;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
       }
     }
   }

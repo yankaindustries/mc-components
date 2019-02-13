@@ -150,6 +150,17 @@ const Form = reduxForm({
             />
 
             <Field
+              component={InputField}
+              name='disabled-input'
+              type='disabled'
+              label='Disabled field'
+              placeholder=''
+              prepend={<Lock />}
+              required
+              disabled
+            />
+
+            <Field
               className='mc-mb-4'
               component={CheckboxField}
               name='terms'

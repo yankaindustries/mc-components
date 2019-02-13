@@ -44,6 +44,14 @@
     }
   }
 
+  &:hover {
+    box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+
+    .mc-invert & {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+    }
+  }
+
   &--focus {
     color: $mc-color-gray-600;
     box-shadow: inset 0 0 0 2px $mc-color-gray-400;
@@ -53,6 +61,15 @@
     // more specificity
     .mc-invert & {
       box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+    }
+
+    // And redundancy
+    &:hover {
+      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+      }
     }
   }
 
@@ -73,6 +90,15 @@
     .mc-invert & {
       background: $mc-color-gray-700;
       box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+    }
+
+    &:hover,
+    &:active {
+      box-shadow: none;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
     }
 
     .mc-form-element__element,
