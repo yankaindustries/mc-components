@@ -34,18 +34,6 @@ storiesOf('Components|Tiles/TileCheck', module)
                 </TileCheck>
               </Tile>
             </div>
-
-            <div className='col-sm-6'>
-              <Tile>
-                <TileCheck>
-                  {({ checked }) =>
-                    <Placeholder>
-                      {checked ? 'true' : 'false'}
-                    </Placeholder>
-                  }
-                </TileCheck>
-              </Tile>
-            </div>
           </div>
         </PropExample>
       </DocSection>

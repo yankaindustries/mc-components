@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { storiesOf } from '@storybook/react'
 import { times } from 'lodash'
 import Highlight from 'react-highlight'
 
@@ -200,4 +201,5 @@ class Scale extends PureComponent {
 }
 
 
-export default Scale
+storiesOf('Foundation|Scale', module)
+  .add('Summary', () => <Scale />)

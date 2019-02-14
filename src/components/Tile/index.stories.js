@@ -233,68 +233,109 @@ storiesOf('Components|Tiles/Tile', module)
         <h1 className='mc-text-h1'>Tile</h1>
       </div>
 
-      <DocSection title='Variations'>
+      <DocSection title='Props'>
         <PropExample
           name='aspectRatio'
           type='String'
         >
           <div className='row'>
-            <div className='col-sm-4'>
-              <Tile aspectRatio='16x9'>
-                <Placeholder>16x9</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-4'>
-              <Tile aspectRatio='16x9'>
-                <Placeholder>16x9</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-4'>
-              <Tile aspectRatio='16x9'>
-                <Placeholder>16x9</Placeholder>
-              </Tile>
-            </div>
-
-            <div className='col-sm-12'>
-              <Tile aspectRatio='519x187'>
-                <Placeholder>519x187</Placeholder>
-              </Tile>
-            </div>
-
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-
             <div className='col-sm-12'>
               <Tile aspectRatio='21x9'>
                 <Placeholder>21x9</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile aspectRatio='16x9'>
+                <Placeholder>16x9</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='16x9'>
+                <Placeholder>16x9</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='16x9'>
+                <Placeholder>16x9</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile aspectRatio='3x4'>
+                <Placeholder>3x4</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='3x4'>
+                <Placeholder>3x4</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='3x4'>
+                <Placeholder>3x4</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
               </Tile>
             </div>
           </div>

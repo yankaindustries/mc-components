@@ -101,7 +101,7 @@ storiesOf('Components|VideoPlayer', module)
         </div>
       </DocSection>
 
-      <DocSection title='Properties'>
+      <DocSection title='Props'>
         <PropExample
           name='accountId | playerId | videoId'
           type='string'

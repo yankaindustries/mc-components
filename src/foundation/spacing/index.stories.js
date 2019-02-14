@@ -7,10 +7,10 @@ import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
 storiesOf('Foundation|Spacing', module)
-  .add('default', () => (
+  .add('Summary', () => (
     <div className='container'>
       <DocHeader
-        title='Spacing helpers'
+        title='Spacing'
         description='Margin and padding helpers in mc-components.'
       />
 
@@ -42,23 +42,27 @@ storiesOf('Foundation|Spacing', module)
         </p>
 
         <Highlight className='language-jsx mc-mb-6'>
-          {'<Element className=\'mc-{property}{sides}-{scale}\' />'}
+          {'<Element className=\'mc-{property}{side}-{scale}\' />'}
         </Highlight>
 
         <h6 className='mc-text-h6'>
-          Where property is one of:
+          Properties
         </h6>
-        <table className='example__table mc-mt-3 mc-mb-6'>
+        <table className='example__table example__table--fixed mc-mt-3 mc-mb-6'>
           <tbody>
             <tr>
-              <th>m</th>
+              <th className='example__table--shrink'>
+                <span className='mc-code'>m</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced using margins
               </td>
             </tr>
 
             <tr>
-              <th>p</th>
+              <th className='example__table--shrink'>
+                <span className='mc-code'>p</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced using padding
               </td>
@@ -67,47 +71,59 @@ storiesOf('Foundation|Spacing', module)
         </table>
 
         <h6 className='mc-text-h6'>
-          Where sides is one of:
+          Sides
         </h6>
-        <table className='example__table mc-mt-3 mc-mb-6'>
+        <table className='example__table example__table--fixed mc-mt-3 mc-mb-6'>
           <tbody>
             <tr>
-              <th>x</th>
+              <th className='example__table--shrink'>
+                <span className='mc-code'>x</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced on x axis (left and right)
               </td>
             </tr>
 
             <tr>
-              <th>y</th>
+              <th className='example__table--shrink'>
+                <span className='mc-code'>y</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced on y-axis (top and bottom)
               </td>
             </tr>
 
             <tr>
-              <th>t</th>
+              <th className='example__table--shrink'>
+                <span className='mc-code'>t</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced only on top (margin-top)
               </td>
             </tr>
 
             <tr>
-              <th>r</th>
+              <th className='example__table--shrink'>
+                <span className='mc-code'>r</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced only on right (margin-right)
               </td>
             </tr>
 
             <tr>
-              <th>b</th>
+              <th>
+                <span className='mc-code'>b</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced only on bottom (margin-bottom)
               </td>
             </tr>
 
             <tr>
-              <th>l</th>
+              <th>
+                <span className='mc-code'>l</span>
+              </th>
               <td className='mc-text--muted'>
                 Spaced only on left (margin-left)
               </td>
@@ -118,8 +134,20 @@ storiesOf('Foundation|Spacing', module)
         <h6 className='mc-text-h6'>
           Scale
         </h6>
-        <p>Any one of the values on the mc-components scale shown
-          under &ldquo;Introduction &gt; Scale&rdquo; is valid.</p>
+        <table className='example__table example__table--fixed mc-mt-3 mc-mb-6'>
+          <tbody>
+            <tr>
+              <th className='example__table--shrink'>
+                <span className='mc-code'>#</span>
+              </th>
+
+              <td className='mc-text--muted'>
+                Any one of the values on the mc-components scale shown
+                under &ldquo;Introduction &gt; Scale&rdquo; is valid.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </DocSection>
 
       <DocSection title='Examples'>
