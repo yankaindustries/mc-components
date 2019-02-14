@@ -53,6 +53,7 @@ export default class TileVideo extends PureComponent {
 
   render () {
     const {
+      autoPlay,
       children,
       className,
       controls,
@@ -90,6 +91,7 @@ export default class TileVideo extends PureComponent {
         <div className='mc-tile-video__video'>
           <VideoPlayer
             accountId={ACCOUNT_ID}
+            hasAutoplay={autoPlay}
             hasControls={controls}
             isMuted={muted}
             playerId={PLAYER_ID}

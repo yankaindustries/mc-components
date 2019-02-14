@@ -44,7 +44,23 @@ a {
 }
 
 .hljs {
+  background: $mc-color-gray-100 !important;
   border-radius: 6px;
+  color: $mc-color-gray-600 !important;
+}
+
+.mc-code {
+  display: inline-block;
+  padding: 0 0.3em;
+  background: $mc-color-gray-100;
+  border-radius: 6px;
+  font-family: monospace;
+  color: $mc-color-gray-600;
+
+  .mc-invert & {
+    background: $mc-color-gray-600;
+    color: $mc-color-gray-300;
+  }
 }
 
 .example__heading {
@@ -84,6 +100,14 @@ a {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+
+  &--fixed {
+    table-layout: fixed;
+  }
+
+  &--shrink {
+    width: 2em;
+  }
 
   tbody {
     tr {
@@ -275,10 +299,15 @@ a {
 
   &--active {
     left: 22%;
-    transition: left $slide-duration ease;
+    transition: none;
   }
 }
 
 .example-instructor-card-content {
   width: 220px;
+}
+
+.example-grid-block {
+  position: relative;
+  height: 64px;
 }
