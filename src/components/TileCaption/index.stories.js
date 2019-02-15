@@ -17,7 +17,7 @@ storiesOf('Components|Tiles/TileCaption', module)
         <h1 className='mc-text-h1'>TileCaption</h1>
       </div>
 
-      <DocSection title='Variants'>
+      <DocSection title='Props'>
         <PropExample
           name='position'
           type='String'

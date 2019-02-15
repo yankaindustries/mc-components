@@ -42,6 +42,7 @@ export default class Background extends PureComponent {
       'auto',
       'contain',
       'cover',
+      'none',
     ]),
   }
 

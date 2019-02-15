@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
@@ -12,6 +12,7 @@ export default class Input extends PureComponent {
     ]),
     help: PropTypes.string,
     label: PropTypes.string,
+    maxlength: PropTypes.number,
     name: PropTypes.string,
     value: PropTypes.string,
     touched: PropTypes.bool,
@@ -65,10 +66,12 @@ export default class Input extends PureComponent {
       error,
       help,
       label,
+      maxlength,
       name,
       prepend,
       touched,
       value,
+      required,
 
       onChange,
 
@@ -80,65 +83,45 @@ export default class Input extends PureComponent {
     } = this.state
 
     const showError = error && touched
-    const hasLabel = label || showError
 
     const classes = cn({
       'mc-form-input': true,
-      'mc-form-input--disabled': disabled,
-      'mc-form-input--error': showError,
-      'mc-form-input--focus': focused,
-      'mc-form-input--modified': value,
-      'mc-form-input--no-label': !hasLabel,
+      'mc-form-element': true,
+      'mc-form-element--disabled': disabled,
+      'mc-form-element--error': showError,
+      'mc-form-element--focus': focused,
     })
 
     return (
-      <Fragment>
-        <div
-          className={classes}
-          onClick={this.focus}
-        >
-          {prepend &&
-            <div className='mc-form-prepend'>
-              {prepend}
-            </div>
-          }
-
-          <div className='mc-form-input__input'>
-            <input
-              name={name}
-              type='text'
-              value={value}
-              disabled={disabled}
-              {...props}
-              onChange={onChange}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              ref={this.input}
-            />
-
-            {hasLabel &&
-              <label
-                htmlFor={name}
-                className='mc-form-input__label'
-              >
-                {(touched && error) || label}
-              </label>
-            }
+      <div
+        className={classes}
+        onClick={this.focus}
+      >
+        {prepend &&
+          <div className='mc-form-prepend'>
+            {prepend}
           </div>
-
-          {append &&
-            <div className='mc-form-append'>
-              {append}
-            </div>
-          }
-        </div>
-
-        {help &&
-          <span className='mc-form-help'>
-            {help}
-          </span>
         }
-      </Fragment>
+
+        <input
+          name={name}
+          type='text'
+          value={value}
+          disabled={disabled}
+          className='mc-form-element__element'
+          {...props}
+          onChange={onChange}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          ref={this.input}
+        />
+
+        {append &&
+          <div className='mc-form-append'>
+            {append}
+          </div>
+        }
+      </div>
     )
   }
 }

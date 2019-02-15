@@ -1,6 +1,8 @@
 .mc-animation {
-  &--animating {
-    z-index: 1;
+  &--important {
+    &.mc-animation--animating {
+      z-index: 2;
+    }
   }
 
   &--zoom {
@@ -34,68 +36,94 @@
     }
   }
 
-  $slide-duration: 500ms;
-  $fade-duration: 300ms;
-  $delay-duration: $fade-duration + $slide-duration;
-  $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
+  &--zoom-tile {
+    $zoom-duration: 400ms;
+    $bg-duration: 400ms;
+    $extract-duration: 500ms;
+    $bezier: cubic-bezier(0.5, -0.11, 0.355, 1.01);
 
-  &--show {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity $fade-duration $bezier;
+    .mc-tile__content {
+      transition:
+        left $zoom-duration $bezier 0ms,
+        top $zoom-duration $bezier 0ms,
+        right $zoom-duration $bezier 0ms,
+        bottom $zoom-duration $bezier 0ms;
+    }
+
+    .mc-tile-caption__content {
+      background: transparent;
+      transition:
+        background $bg-duration $bezier 0ms,
+        padding $zoom-duration $bezier 0ms;
+    }
+
+    .mc-tile__reveal-on-hover {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(7px);
+      transition:
+        opacity $extract-duration $bezier 0ms,
+        transform $extract-duration $bezier 0ms,
+        max-height 0ms ease $extract-duration;
+    }
+
 
     &.mc-animation--animating {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: none;
+      .mc-tile__content {
+        top: -32px;
+        left: -32px;
+        right: -32px;
+        transition:
+          left $zoom-duration $bezier 0ms,
+          top $zoom-duration $bezier 0ms,
+          right $zoom-duration $bezier 0ms,
+          bottom $zoom-duration $bezier 0ms;
+      }
+
+      .mc-tile__darken-bg-on-hover {
+        .mc-tile-caption__content {
+          background: $mc-color-gray-100;
+          padding: 12px 32px 24px 32px;
+          transition:
+            background $bg-duration ease 0ms,
+            padding $zoom-duration $bezier 0ms;
+        }
+      }
+
+      .mc-tile__reveal-on-hover {
+        max-height: 9999999px;
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity $extract-duration ease $zoom-duration,
+          transform $extract-duration ease $zoom-duration,
+          max-height 0ms ease 0ms;
+      }
     }
   }
 
-  &--show-delayed {
+  // Show / Hide
+  $slide-duration: 650ms;
+  $fade-duration: 200ms;
+
+  &--show {
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition:
-      opacity $fade-duration $bezier 0ms,
-      visibility 0ms $slide-duration;
+    transition: opacity $fade-duration ease;
 
     &.mc-animation--animating {
       opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transition:
-        opacity $fade-duration $bezier $delay-duration,
-        visibility 0ms $fade-duration;
+      transition: opacity $fade-duration ease;
     }
   }
 
   &--hide {
     opacity: 1;
-    transition: opacity $fade-duration $bezier $delay-duration;
+    transition: opacity $fade-duration ease $slide-duration;
 
     &.mc-animation--animating {
       opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition:
-        opacity $fade-duration $bezier 0ms,
-        visibility 0ms $slide-duration;
-    }
-  }
-
-  &--hide-delayed {
-    opacity: 1;
-    transition:
-      opacity $fade-duration $bezier 0ms,
-      visibility 0ms 0ms;
-
-    &.mc-animation--animating {
-      opacity: 0;
-      visibility: hidden;
-      transition:
-        opacity $fade-duration $bezier $delay-duration,
-        visibility 0ms $delay-duration;
+      transition: opacity $fade-duration ease;
     }
   }
 }

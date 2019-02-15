@@ -14,7 +14,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba($mc-color-dark, 0.8);
+    background: rgba($mc-color-dark, 0.95);
     z-index: $mc-zindex-modal-backdrop;
   }
 
@@ -22,13 +22,17 @@
     position: absolute;
     right: 0;
     top: 0;
-    margin: 2rem;
-    padding: 1rem;
-    line-height: 1rem;
-    background: rgba($mc-color-dark, 0.5);
-    border-radius: 100%;
-    cursor: pointer;
+
+    @include step(margin, 4);
+    opacity: 0.5;
     z-index: $mc-zindex-modal + 2;
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
 
     svg {
       vertical-align: top;
@@ -44,18 +48,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     z-index: $mc-zindex-modal;
   }
 
   &__content-container-inner {
     flex: 1;
-    max-height: 100vh;
-    overflow: auto;
+    margin: auto;
   }
 
   &__content {
+    position: relative;
+
     &:focus {
       outline: none;
     }
+  }
+
+  &__body--open {
+    position: fixed;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
   }
 }

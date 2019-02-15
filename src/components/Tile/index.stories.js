@@ -13,7 +13,7 @@ import TileCaption from '../TileCaption'
 import TileCheck from '../TileCheck'
 import AnimationHandler from '../AnimationHandler'
 import HoverHandler from '../HoverHandler'
-import Background from '../Background'
+import Button from '../Button'
 
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
@@ -49,12 +49,12 @@ storiesOf('Components|Tiles', module)
           <DocSection title='TileCaption'>
             <Tile>
               <TileCaption>
-                <h3 className='mc-text-h5 mc-text--uppercase'>
+                <h5 className='mc-text-h5'>
                   Shonda Rhimes
-                </h3>
-                <h4 className='mc-text--muted'>
+                </h5>
+                <p className='mc-text--muted'>
                   Teaches Writing
-                </h4>
+                </p>
               </TileCaption>
               <Placeholder />
             </Tile>
@@ -89,7 +89,7 @@ storiesOf('Components|Tiles', module)
 
       <hr />
 
-      <div className='row'>
+      <div className='row mc-pb-10'>
         <div className='col-lg-4 col-md-6'>
           <DocSection title='Animations'>
             <HoverHandler>
@@ -103,21 +103,20 @@ storiesOf('Components|Tiles', module)
                           animating={hovering}
                         >
                           <TileImage imageUrl={shondaRhimesThumbnail} />
+                          <TileOverlay type='gradient-bottom' />
                         </AnimationHandler>
-
-                        <TileOverlay type='gradient-bottom' />
 
                         <AnimationHandler
                           type='lift'
                           animating={hovering}
                         >
                           <TileCaption>
-                            <h3 className='mc-text-h5 mc-text--uppercase'>
+                            <h5 className='mc-text-h5'>
                               Shonda Rhimes
-                            </h3>
-                            <h4 className='mc-text--muted'>
+                            </h5>
+                            <p className='mc-text--muted'>
                               Teaches Writing
-                            </h4>
+                            </p>
                           </TileCaption>
                         </AnimationHandler>
                       </Fragment>
@@ -159,19 +158,12 @@ storiesOf('Components|Tiles', module)
                         : 'left bottom'
                       }
                     >
-                      <Background
-                        color={intent
-                          ? 'dark'
-                          : 'transparent'
-                        }
-                      >
-                        <h3 className='mc-text-h5 mc-text--uppercase'>
-                          Shonda Rhimes
-                        </h3>
-                        <h4 className='mc-text--muted'>
-                          Teaches Writing
-                        </h4>
-                      </Background>
+                      <h5 className='mc-text-h5'>
+                        Shonda Rhimes
+                      </h5>
+                      <p className='mc-text--muted'>
+                        Teaches Writing
+                      </p>
                     </TileCaption>
                   </Tile>
                 </AnimationHandler>
@@ -181,29 +173,48 @@ storiesOf('Components|Tiles', module)
         </div>
 
         <div className='col-lg-4 col-md-6'>
-          <DocSection title='Extra'>
+          <DocSection title='Zoom Tile'>
             <HoverHandler>
               {({ hovering }) =>
                 <AnimationHandler
-                  type='zoom'
+                  type='zoom-tile'
                   animating={hovering}
                 >
                   <div>
                     <Tile>
                       <TileImage imageUrl={shondaRhimesThumbnail} />
-                      <TileOverlay type='gradient-bottom' />
-                    </Tile>
+                      <TileOverlay />
 
-                    <Background color={'medium'}>
-                      <div style={{ padding: '1em' }}>
-                        <h3 className='mc-text-h4 mc-text--uppercase'>
+                      <TileCaption
+                        position='center bottom'
+                      >
+                        <div className='mc-tile__reveal-on-hover'>
+                          <Button secondary>Resume</Button>
+                        </div>
+                      </TileCaption>
+
+                      <TileCaption
+                        position='left below'
+                        className='mc-tile__darken-bg-on-hover'
+                      >
+                        <h5 className='mc-text-h5'>
                           Shonda Rhimes
-                        </h3>
-                        <h4 className='mc-text-h5 mc-text--uppercase mc-text--muted mc-text--light mc-text--airy'>
+                        </h5>
+                        <p className='mc-text--muted'>
                           Teaches Writing
-                        </h4>
-                      </div>
-                    </Background>
+                        </p>
+
+                        <div className='mc-tile__reveal-on-hover'>
+                          <p className={`
+                            mc-mt-2
+                            mc-text-small
+                            mc-text--muted
+                          `}>
+                            Some other stuff...
+                          </p>
+                        </div>
+                      </TileCaption>
+                    </Tile>
                   </div>
                 </AnimationHandler>
               }
@@ -222,68 +233,109 @@ storiesOf('Components|Tiles/Tile', module)
         <h1 className='mc-text-h1'>Tile</h1>
       </div>
 
-      <DocSection title='Variations'>
+      <DocSection title='Props'>
         <PropExample
           name='aspectRatio'
           type='String'
         >
           <div className='row'>
-            <div className='col-sm-4'>
-              <Tile aspectRatio='16x9'>
-                <Placeholder>16x9</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-4'>
-              <Tile aspectRatio='16x9'>
-                <Placeholder>16x9</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-4'>
-              <Tile aspectRatio='16x9'>
-                <Placeholder>16x9</Placeholder>
-              </Tile>
-            </div>
-
-            <div className='col-sm-12'>
-              <Tile aspectRatio='519x187'>
-                <Placeholder>519x187</Placeholder>
-              </Tile>
-            </div>
-
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-            <div className='col-sm-2'>
-              <Tile aspectRatio='4x3'>
-                <Placeholder>4x3</Placeholder>
-              </Tile>
-            </div>
-
             <div className='col-sm-12'>
               <Tile aspectRatio='21x9'>
                 <Placeholder>21x9</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile aspectRatio='16x9'>
+                <Placeholder>16x9</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='16x9'>
+                <Placeholder>16x9</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='16x9'>
+                <Placeholder>16x9</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='4x3'>
+                <Placeholder>4x3</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-4'>
+              <Tile aspectRatio='3x4'>
+                <Placeholder>3x4</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='3x4'>
+                <Placeholder>3x4</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile aspectRatio='3x4'>
+                <Placeholder>3x4</Placeholder>
+              </Tile>
+            </div>
+
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
+              </Tile>
+            </div>
+            <div className='col-sm-2'>
+              <Tile aspectRatio='9x16'>
+                <Placeholder>9x16</Placeholder>
               </Tile>
             </div>
           </div>

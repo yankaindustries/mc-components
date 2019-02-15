@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-
 export default class Textarea extends PureComponent {
   static propTypes = {
     disabled: PropTypes.bool,
@@ -75,32 +74,21 @@ export default class Textarea extends PureComponent {
     } = this.state
 
     const showError = error && touched
-    const hasLabel = label || showError
 
     const classes = cn({
       'mc-form-textarea': true,
-      'mc-form-textarea--disabled': disabled,
-      'mc-form-textarea--error': showError,
-      'mc-form-textarea--focus': focused,
-      'mc-form-textarea--modified': value,
-      'mc-form-textarea--no-label': !hasLabel,
+      'mc-form-element': true,
+      'mc-form-element--disabled': disabled,
+      'mc-form-element--error': showError,
+      'mc-form-element--focus': focused,
     })
 
     return (
       <div className={classes}>
-      {hasLabel &&
-        <label
-          htmlFor={name}
-          className='mc-form-textarea__label'
-        >
-          {(touched && error) || label}
-        </label>
-      }
-
         <textarea
           name={name}
           id={name}
-          className='mc-form-textarea__textarea'
+          className='mc-form-element__element'
           value={value}
           disabled={disabled}
           {...props}

@@ -62,16 +62,4 @@ a {
     @include step(font-size, 3);
     line-height: $mc-lh-sm;
   }
-
-  &-link {
-    color: $mc-color-primary;
-
-    &:hover {
-      color: $mc-color-primary-hover;
-    }
-
-    &:active {
-      color: $mc-color-primary-active;
-    }
-  }
 }

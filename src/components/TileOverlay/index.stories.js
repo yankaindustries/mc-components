@@ -4,12 +4,10 @@ import { withProps } from '../../utils/addon-props'
 
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
+import Placeholder from '../../utils/Placeholder'
 
 import Tile from '../Tile'
-import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
-
-import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('Components|Tiles/TileOverlay', module)
@@ -22,12 +20,12 @@ storiesOf('Components|Tiles/TileOverlay', module)
       <DocSection title='Props'>
         <PropExample
           name='type'
-          type='String["gradient-bottom"]'
+          type='String("gradient-bottom")'
         >
           <div className='row'>
             <div className='col-sm-6'>
               <Tile>
-                <TileImage imageUrl={shondaRhimesThumbnail} />
+                <Placeholder />
                 <TileOverlay type='gradient-bottom' />
               </Tile>
             </div>

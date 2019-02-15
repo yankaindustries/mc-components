@@ -6,7 +6,7 @@ import { renderChildren } from '../helpers'
 
 export default class CarouselConnector extends PureComponent {
   static propTypes = {
-    children: PropTypes.func,
+    children: PropTypes.func.isRequired,
     className: PropTypes.string,
   }
 

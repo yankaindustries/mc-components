@@ -21,13 +21,12 @@ const RadioField = ({
     ...inputProps
   },
   ...props
-}) => (
+}) =>
   <Radio
     checked={value === props.option}
     {...inputProps}
     {...props}
   />
-)
 
 RadioField.propTypes = {
   input: INPUT_PROP_TYPE,

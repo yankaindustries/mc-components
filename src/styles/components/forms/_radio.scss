@@ -1,0 +1,116 @@
+.mc-input-radio {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &__fauxbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-top: -4px; // vertically center box
+    width: 20px;
+    height: 20px;
+    background: $mc-color-gray-100;
+    border-radius: 100%;
+    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    cursor: pointer;
+    transition:
+      background 250ms ease,
+      box-shadow 250ms ease;
+
+    .mc-invert & {
+      background: $mc-color-light;
+      box-shadow: inset 0 0 0 1px $mc-color-gray-500;
+    }
+
+    // Dot
+    &:after {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background: $mc-color-light;
+      transform: scale(0);
+      opacity: 0;
+      transition:
+        opacity 250ms ease,
+        transform 250ms ease;
+
+      .mc-invert & {
+        background: $mc-color-dark;
+      }
+    }
+  }
+
+  &__realbox {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  // States
+  &:hover .mc-input-radio__fauxbox {
+    box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+
+    .mc-invert & {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+    }
+  }
+
+  &:active .mc-input-radio__fauxbox {
+    box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+
+    .mc-invert & {
+      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+    }
+  }
+
+
+  &--checked {
+    .mc-input-radio__fauxbox {
+      &:after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+
+    .mc-input-radio__fauxbox {
+      box-shadow: none;
+      cursor: not-allowed;
+
+      .mc-invert & {
+        background: $mc-color-gray-700;
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
+
+      &:after {
+        opacity: 0.3;
+      }
+    }
+
+    &:hover .mc-input-radio__fauxbox {
+      box-shadow: none;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
+    }
+
+    &:active .mc-input-radio__fauxbox {
+      box-shadow: none;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
+    }
+  }
+}

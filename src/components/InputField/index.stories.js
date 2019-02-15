@@ -8,10 +8,9 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
+import InvertedMirror from '../../utils/InvertedMirror'
 
 import InputField from '../InputField'
-
-import Lock from '../Icons/Lock'
 import MagnifyingGlass from '../Icons/MagnifyingGlass'
 import Close from '../Icons/Close'
 
@@ -23,7 +22,7 @@ const store = createStore(reducer)
 const Form = reduxForm({
   form: 'input',
   initialValues: {
-    best: 'Madonna, obvi',
+    errors: 'Value',
   },
 })(
   () =>
@@ -34,183 +33,70 @@ const Form = reduxForm({
         </div>
 
         <div className='example__section'>
-          <div className='row'>
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Default</h5>
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='color'
-                  label='What is your favorite color?'
-                  placeholder='Red, orange, yellow, green, blue, violet, or something else?'
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='best'
-                  label='Who sang it best?'
-                  placeholder='Madonna or Britney?'
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='prepend'
-                  placeholder='Search'
-                  prepend={<MagnifyingGlass />}
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='prepend-password'
-                  type='password'
-                  placeholder='Password'
-                  help='You have a secret'
-                  prepend={<Lock />}
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='append'
-                  label='Field with appended icon'
-                  placeholder='Hint: It is a close icon!'
-                  append={<Close />}
-                />
-              </div>
-
-              <hr />
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='username'
-                  label='Username'
-                  placeholder='john@doe.com'
-                  error='Incorrect Username'
-                />
-              </div>
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='password'
-                  type='password'
-                  label='Password'
-                  placeholder='12345'
-                  prepend={<Lock />}
-                  error='Incorrect Password'
-                />
-              </div>
-
-              <hr />
-
-              <div className='mc-form-group'>
-                <Field
-                  component={InputField}
-                  name='disabled'
-                  label='Disabled field'
-                  placeholder='Not clickable!'
-                  disabled
-                />
-              </div>
+          <InvertedMirror>
+            <div className='mc-mb-7'>
+              <Field
+                component={InputField}
+                name='default'
+                label='Label'
+                placeholder='Placeholder'
+                help='Helper text'
+              />
             </div>
 
-            <div className='col-sm-6'>
-              <h5 className='mc-text-h5'>Inverted</h5>
-              <div className='rounded-box mc-invert'>
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='color'
-                    label='What is your favorite color?'
-                    placeholder='Red, orange, yellow, green, blue, violet, or something else?'
-                  />
-                </div>
+            <hr />
 
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='best'
-                    label='Who sang it best?'
-                    placeholder='Madonna or Britney?'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='prepend'
-                    placeholder='Search'
-                    prepend={<MagnifyingGlass />}
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='prepend-password'
-                    type='password'
-                    placeholder='Password'
-                    help='You have a secret'
-                    prepend={<Lock />}
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='append'
-                    label='Field with appended icon'
-                    placeholder='Hint: It is a close icon!'
-                    append={<Close />}
-                  />
-                </div>
-
-                <hr />
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='username'
-                    label='Username'
-                    placeholder='john@doe.com'
-                    error='Incorrect Username'
-                  />
-                </div>
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='password'
-                    type='password'
-                    label='Password'
-                    placeholder='12345'
-                    prepend={<Lock />}
-                    error='Incorrect Password'
-                  />
-                </div>
-
-                <hr />
-
-                <div className='mc-form-group'>
-                  <Field
-                    component={InputField}
-                    name='disabled'
-                    label='Disabled field'
-                    placeholder='Not clickable!'
-                    disabled
-                  />
-                </div>
-              </div>
+            <div className='mc-mb-7'>
+              <Field
+                component={InputField}
+                name='required'
+                label='Required'
+                placeholder='Placeholder'
+                required
+              />
             </div>
-          </div>
+
+            <div className='mc-mb-7'>
+              <Field
+                component={InputField}
+                name='prepend'
+                label='Prepended Icon'
+                placeholder='Placeholder'
+                prepend={<MagnifyingGlass />}
+              />
+            </div>
+
+            <div className='mc-mb-7'>
+              <Field
+                component={InputField}
+                name='append'
+                label='Appended Icon'
+                placeholder='Placeholder'
+                append={<Close />}
+              />
+            </div>
+
+            <div className='mc-mb-7'>
+              <Field
+                component={InputField}
+                name='errors'
+                label='Error'
+                placeholder='Placeholder'
+                error='Error explanation'
+                touched
+              />
+            </div>
+
+            <div className='mc-mb-7'>
+              <Field
+                component={InputField}
+                name='disabled'
+                label='Disabled'
+                placeholder='Not clickable!'
+                disabled
+              />
+            </div>
+          </InvertedMirror>
         </div>
       </div>
     </div>,

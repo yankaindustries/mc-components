@@ -1,0 +1,127 @@
+.mc-input-checkbox {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &__fauxbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-top: -4px; // vertically center box
+    width: 20px;
+    height: 20px;
+    background: $mc-color-gray-100;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    cursor: pointer;
+    transition:
+      background 250ms ease,
+      box-shadow 250ms ease;
+
+    .mc-invert & {
+      background: $mc-color-light;
+      box-shadow: inset 0 0 0 1px $mc-color-gray-500;
+
+      &:before,
+      &:after {
+        background: $mc-color-gray-200;
+      }
+    }
+
+    // Check
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      bottom: 5px;
+      width: 0;
+      height: 2px;
+      background: $mc-color-light;
+      border-radius: 3px;
+      transform-origin: center left;
+      transition: width 200ms ease;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+      left: 5px;
+      bottom: 9px;
+      transition-delay: 180ms;
+    }
+
+    &:after {
+      transform: rotate(-50deg);
+      transition-delay: 0ms;
+    }
+
+    .mc-input-checkbox:hover & {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-400;
+      }
+    }
+
+    .mc-input-checkbox:active & {
+      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+      }
+    }
+  }
+
+  // Actual input that's hidden
+  // Keeps checkbox accessible for screen readers
+  &__realbox {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &--checked {
+    .mc-input-checkbox__fauxbox {
+      &:before {
+        width: 4px;
+        transition-delay: 0ms;
+      }
+
+      &:after {
+        width: 10px;
+        transition-delay: 180ms;
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+
+    .mc-input-checkbox__fauxbox {
+      opacity: 0.5;
+
+      .mc-invert & {
+        background: $mc-color-gray-700;
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
+
+      &:before,
+      &:after {
+        opacity: 0.3;
+      }
+    }
+
+    &:hover .mc-input-checkbox__fauxbox,
+    &:active .mc-input-checkbox__fauxbox {
+      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+
+      .mc-invert & {
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      }
+    }
+  }
+}

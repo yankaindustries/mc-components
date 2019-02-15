@@ -7,7 +7,6 @@
 
 .mc-card {
   padding: $grid-gutter-width-xl / 2;
-  border-radius: 3px;
 
   &--equal-height {
     height: 100%;
@@ -45,7 +44,23 @@ a {
 }
 
 .hljs {
+  background: $mc-color-gray-100 !important;
   border-radius: 6px;
+  color: $mc-color-gray-600 !important;
+}
+
+.mc-code {
+  display: inline-block;
+  padding: 0 0.3em;
+  background: $mc-color-gray-100;
+  border-radius: 6px;
+  font-family: monospace;
+  color: $mc-color-gray-600;
+
+  .mc-invert & {
+    background: $mc-color-gray-600;
+    color: $mc-color-gray-300;
+  }
 }
 
 .example__heading {
@@ -85,6 +100,14 @@ a {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+
+  &--fixed {
+    table-layout: fixed;
+  }
+
+  &--shrink {
+    width: 2em;
+  }
 
   tbody {
     tr {
@@ -169,7 +192,6 @@ a {
     width: 35px;
     height: 35px;
     margin-right: 12px;
-    border-radius: 5px;
     border: 1px solid $mc-color-gray-100;
     flex-shrink: 0;
 
@@ -267,4 +289,25 @@ a {
 
 .d-inline-block {
   display: inline-block;
+}
+
+.example-offset-left-one-quarter {
+  $slide-duration: 650ms;
+
+  left: 0;
+  transition: left ($slide-duration / 2) ease;
+
+  &--active {
+    left: 22%;
+    transition: none;
+  }
+}
+
+.example-instructor-card-content {
+  width: 220px;
+}
+
+.example-grid-block {
+  position: relative;
+  height: 64px;
 }

@@ -42,12 +42,17 @@ $mc-color-background-invert:   $mc-color-light !default;
 $mc-color-text:                $mc-color-light !default;
 $mc-color-text-invert:         #8ca1c1 !default;
 
-$mc-color-error:        rgba($mc-color-primary, 0.6) !default;
+$mc-color-error:        $mc-color-primary !default;
+$mc-color-success:      #00c14e !default;
 $mc-color-warning:      rgba($mc-color-primary, 0.6) !default;
 
 // External brands
 $mc-color-facebook:     #3c5a99 !default;
+$mc-color-google:       #dc4e41 !default;
 $mc-color-twitter:      #2ba2ef !default;
+$mc-color-paypal:       #ffc439 !default;
+$mc-color-pinterest:    #bd081c !default;
+$mc-color-applepay:     #fff !default;
 
 // The yiq lightness value that determines when the
 // lightness of color changes from "dark" to "light".
@@ -127,4 +132,4 @@ $container-max-widths: (
 ) !default;
 
 // Forms
-$input-padding: 12px !default;
+$input-padding: 12px 16px !default;

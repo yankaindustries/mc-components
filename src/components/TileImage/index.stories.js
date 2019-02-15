@@ -21,7 +21,7 @@ storiesOf('Components|Tiles/TileImage', module)
       <DocSection title='Props'>
         <PropExample
           name='image'
-          type='String'
+          type='Element'
         >
           <div className='row'>
             <div className='col-sm-6'>
