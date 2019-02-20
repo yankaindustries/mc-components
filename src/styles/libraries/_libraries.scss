@@ -1,18 +1,4 @@
-// External or internal libraries
-
-// Reset
 @import "reset";
-
-// MC Variables
-@import "../base/variables";
-@import "../base/functions";
-@import "../base/mixins/mixins";
-
-// Bootstrap - the good parts
 @import "bootstrap-grid/bootstrap-grid";
-
-// Bootstrap overrides
 @import "bootstrap-overrides/grid";
-
-// Slick slider
 @import "slick-carousel/slick";
