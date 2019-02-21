@@ -138,6 +138,12 @@ storiesOf('Components|Button', module)
                   Link
                 </Button>
               </div>
+
+              <div className='col-auto'>
+                <Button kind='paypal' disabled>
+                  Paypal
+                </Button>
+              </div>
             </div>
           </PropExample>
 
@@ -185,20 +191,20 @@ storiesOf('Components|Button', module)
               </div>
 
               <div className='col-auto'>
-                <Button secondary>
+                <Button kind='secondary'>
                   <IconLock className='mc-mr-3' />
                   Secondary
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button tertiary>
+                <Button kind='tertiary'>
                   <IconMagnifyingGlass />
                 </Button>
               </div>
 
               <div className='col-auto'>
-                <Button link>
+                <Button kind='link'>
                   <IconClose />
                 </Button>
               </div>
