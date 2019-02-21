@@ -54,14 +54,6 @@
   }
 
   // States
-  &:hover .mc-input-radio__fauxbox {
-    box-shadow: inset 0 0 0 1px $mc-color-gray-400;
-
-    .mc-invert & {
-      box-shadow: inset 0 0 0 1px $mc-color-gray-400;
-    }
-  }
-
   &:active .mc-input-radio__fauxbox {
     box-shadow: inset 0 0 0 2px $mc-color-gray-400;
 
@@ -94,14 +86,6 @@
 
       &:after {
         opacity: 0.3;
-      }
-    }
-
-    &:hover .mc-input-radio__fauxbox {
-      box-shadow: none;
-
-      .mc-invert & {
-        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
       }
     }
 
