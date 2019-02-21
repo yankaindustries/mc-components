@@ -40,7 +40,6 @@ const Form = reduxForm({
                 name='default'
                 label='Label'
                 placeholder='Placeholder'
-                help='Helper text'
               />
             </div>
 
@@ -49,10 +48,20 @@ const Form = reduxForm({
             <div className='mc-mb-7'>
               <Field
                 component={InputField}
-                name='required'
-                label='Required'
+                name='helper-text'
+                label='Helper Text'
                 placeholder='Placeholder'
-                required
+                help='Helper text'
+              />
+            </div>
+
+            <div className='mc-mb-7'>
+              <Field
+                component={InputField}
+                name='optional'
+                label='Optional'
+                placeholder='Placeholder'
+                optional
               />
             </div>
 

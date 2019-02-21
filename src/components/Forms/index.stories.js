@@ -59,7 +59,6 @@ const Form = reduxForm({
                   name='firstName'
                   label='First name'
                   placeholder='John'
-                  required
                 />
               </div>
 
@@ -69,7 +68,6 @@ const Form = reduxForm({
                   name='lastName'
                   label='Last name'
                   placeholder='Doe'
-                  required
                 />
               </div>
             </div>
@@ -80,7 +78,6 @@ const Form = reduxForm({
               label='Email'
               type='email'
               placeholder='john@google.com'
-              required
             />
 
             <Field
@@ -88,7 +85,6 @@ const Form = reduxForm({
               name='membership'
               label='Membership Level'
               options={membershipOptions}
-              required
             />
 
             <Field
@@ -96,12 +92,12 @@ const Form = reduxForm({
               name='bio'
               label='Tell us about yourself'
               placeholder='This is the story of a girl...'
+              optional
             />
 
             <FormGroup
               name='billing'
               label='Billing Options'
-              required
             >
               <Field
                 component={RadioField}
@@ -146,7 +142,6 @@ const Form = reduxForm({
               help='Must be the same as password above'
               prepend={<Lock />}
               error='Confirmation does not match'
-              required
             />
 
             <Field
@@ -156,7 +151,6 @@ const Form = reduxForm({
               label='Disabled field'
               placeholder=''
               prepend={<Lock />}
-              required
               disabled
             />
 

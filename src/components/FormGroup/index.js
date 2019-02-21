@@ -55,7 +55,7 @@ export default class FormGroup extends PureComponent {
 
           {optional &&
             <div className='col-auto'>
-              <p className='mc-text-x-small mc-text--silenced mc-mb-2'>
+              <p className='mc-text-x-small mc-text--silenced mc-mb-1'>
                 (Optional)
               </p>
             </div>
