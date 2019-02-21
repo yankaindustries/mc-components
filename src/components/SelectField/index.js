@@ -22,7 +22,7 @@ const SelectField = ({
   label,
   maxlength,
   meta,
-  required,
+  optional,
   ...props
 }) => {
   const error = meta.error || props.error
@@ -37,7 +37,7 @@ const SelectField = ({
       maxlength={maxlength}
       name={input.name}
       touched={touched}
-      required={required}
+      optional={optional}
     >
       <Select
         error={error}

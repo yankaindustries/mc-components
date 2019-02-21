@@ -38,6 +38,7 @@
 
     &__value-container {
       padding: $input-padding;
+      cursor: text;
 
       > * {
         margin: 0;
@@ -52,8 +53,9 @@
 
     &__dropdown-indicator {
       padding: $input-padding;
-      padding-left: 0;
       color: inherit;
+
+      cursor: pointer;
 
       &:hover {
         color: inherit;
@@ -69,6 +71,10 @@
         background-color: $mc-color-light;
         border-color: $mc-color-gray-700;
       }
+    }
+
+    &__option {
+      cursor: pointer;
     }
 
     &__option--is-focused,

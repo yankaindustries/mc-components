@@ -31,7 +31,7 @@ const InputField = ({
   label,
   maxlength,
   meta,
-  required,
+  optional,
   ...props
 }) => {
   const error = meta.error || props.error
@@ -46,7 +46,7 @@ const InputField = ({
       maxlength={maxlength}
       name={input.name}
       touched={touched}
-      required={required}
+      optional={optional}
       value={input.value}
     >
       <Input

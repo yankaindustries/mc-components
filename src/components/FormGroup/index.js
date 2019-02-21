@@ -11,14 +11,14 @@ export default class FormGroup extends PureComponent {
       PropTypes.arrayOf(PropTypes.node),
     ]).isRequired,
     error: PropTypes.oneOfType([
-      PropTypes.bool,
       PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
     ]),
     help: PropTypes.string,
     label: PropTypes.string,
     maxlength: PropTypes.number,
     name: PropTypes.string.isRequired,
-    required: PropTypes.bool,
+    optional: PropTypes.bool,
     touched: PropTypes.bool,
     value: PropTypes.string,
   }
@@ -31,7 +31,7 @@ export default class FormGroup extends PureComponent {
       label,
       maxlength,
       name,
-      required,
+      optional,
       touched,
       value,
     } = this.props
@@ -45,7 +45,7 @@ export default class FormGroup extends PureComponent {
             {label &&
               <label
                 htmlFor={name}
-                className='d-block mc-text-h8 mc-mb-2'
+                className='d-block mc-text-h8 mc-mb-1'
               >
                 {label}
 
@@ -53,7 +53,7 @@ export default class FormGroup extends PureComponent {
             }
           </div>
 
-          {!required &&
+          {optional &&
             <div className='col-auto'>
               <p className='mc-text-x-small mc-text--silenced mc-mb-2'>
                 (Optional)
