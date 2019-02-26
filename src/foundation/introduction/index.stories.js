@@ -41,6 +41,16 @@ storiesOf('Introduction', module)
         </Highlight>
 
         <p className='mc-mb-2'>
+          Sometimes you&apos;ll need to reference color variables
+          or breakpoints. You can import the &ldquo;base&rdquo; scss
+          file (which does not add any weight to your page) like so:
+        </p>
+
+        <Highlight className='language-scss mc-mb-8'>
+          {'@import \'mc-components/src/styles/base/base\';'}
+        </Highlight>
+
+        <p className='mc-mb-2'>
           JSX
         </p>
 
