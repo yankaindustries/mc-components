@@ -81,7 +81,6 @@ a {
   @include step(padding-top, 4);
   @include step(padding-bottom, 4);
   @include step(margin-bottom, 4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
   .mc-invert & {
     border-bottom-color: rgba(0, 0, 0, 0.1)

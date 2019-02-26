@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Highlight from 'react-highlight'
 import jsxToString from 'jsx-to-string'
+import Separator from '../components/Separator'
 
 
 const toString = node =>
@@ -33,6 +34,8 @@ export default class CodeExample extends PureComponent {
         <div className='example__render'>
           {children}
         </div>
+
+        <Separator />
 
         <div className='example__trigger mc-text--monospace mc-text--right'>
           <a onClick={this.toggleCode}>
