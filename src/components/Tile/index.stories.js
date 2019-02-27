@@ -11,6 +11,7 @@ import TileVideo from '../TileVideo'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
 import TileCheck from '../TileCheck'
+import TileProgress from '../TileProgress'
 import AnimationHandler from '../AnimationHandler'
 import HoverHandler from '../HoverHandler'
 import Button from '../Button'
@@ -82,6 +83,15 @@ storiesOf('Components|Tiles', module)
           <DocSection title='TileVideo'>
             <Tile>
               <TileVideo videoId='5450137526001' autoPlay loop muted />
+            </Tile>
+          </DocSection>
+        </div>
+
+        <div className='col-lg-4 col-md-6'>
+          <DocSection title='TileProgress'>
+            <Tile>
+              <Placeholder>{'value={72}'}</Placeholder>
+              <TileProgress value={72}></TileProgress>
             </Tile>
           </DocSection>
         </div>
