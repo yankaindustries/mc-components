@@ -1,9 +1,10 @@
 html {
-  font-size: $mc-step-base * 1px;
+  /* stylelint-disable-next-line declaration-no-important */
+  font-size: $mc-step-base * 1px !important;
 }
 
 body {
-  @include step(font-size, 4);
+  @include step(font-size, 4, !important);
   font-weight: 400;
   font-family: $mc-font-default;
   font-variant-ligatures: none;
