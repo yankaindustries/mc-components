@@ -35,6 +35,12 @@ $brightcove-video-sizes: (
   &__wrapper {
     padding-bottom: 56.25%;
   }
+
+  @each $kind in $btn-kinds {
+    .c-button--#{$kind} {
+      @extend .c-button--#{$kind};
+    }
+  }
 }
 
 .bc-player__video {
