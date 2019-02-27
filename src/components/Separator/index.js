@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 const Separator = ({ className }) =>
-  <hr className={cn('mc-hr', { [className]: !!className })} />
+  <hr className={cn('mc-separator', { [className]: !!className })} />
 
 Separator.propTypes = {
   className: PropTypes.string,

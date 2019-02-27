@@ -44,6 +44,7 @@ export { default as TileProgress } from './TileProgress'
 export { default as TileVideo } from './TileVideo'
 export { default as ToggleHandler } from './ToggleHandler'
 export { default as VideoPlayer } from './VideoPlayer'
+export { default as Separator } from './Separator'
 
 
 // ICONS
