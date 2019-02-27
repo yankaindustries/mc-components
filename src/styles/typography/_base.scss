@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  @include step(font-size, 4);
+  @include step(font-size, 4, !important);
   font-weight: 400;
   font-family: $mc-font-default;
   font-variant-ligatures: none;
