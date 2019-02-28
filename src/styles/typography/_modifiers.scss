@@ -95,10 +95,17 @@
   // Colors
   &--error { color: $mc-color-error; }
 
+  // Links
+  &--link,
+  &--naked-link:hover,
+  .mc-text--naked-link-parent:hover &--naked-link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   // Misc
   &--monospace { font-family: monospace !important; }
   &--nowrap { white-space: nowrap; }
-  &--link { text-decoration: underline; }
 }
 
 .mc-invert { color: $mc-color-dark; }
