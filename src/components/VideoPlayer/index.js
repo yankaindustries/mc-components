@@ -24,7 +24,6 @@ export default class VideoPlayer extends PureComponent {
     pausescreenComponent: PropTypes.func,
 
     hasAutoplay: PropTypes.bool,
-    hasBreakpoints: PropTypes.bool,
     hasControls: PropTypes.bool,
     isLooped: PropTypes.bool,
     isMuted: PropTypes.bool,
@@ -43,12 +42,13 @@ export default class VideoPlayer extends PureComponent {
 
   static defaultProps = {
     accountId: '5344802162001',
-    playerId: 'rkcQq7gAe',
+    playerId: '1cMNiwC9oQ',
+    // playerId: 'rkcQq7gAe',
+    playerVersion: '6',
     videoId: '5450137526001',
 
-    hasAutoplay: true,
-    hasBreakpoints: false,
-    hasControls: true,
+    hasAutoplay: false,
+    hasControls: false,
     isMuted: false,
     isLooped: false,
   }
@@ -64,14 +64,17 @@ export default class VideoPlayer extends PureComponent {
     if (window.bc && window.videojs) {
       this.setupVideo()
     } else {
-      const { playerId, accountId } = this.props
+      const {
+        playerId,
+        accountId,
+      } = this.props
 
-      const bcScript = document.createElement('script')
-      bcScript.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
+      const script = document.createElement('script')
+      script.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
 
-      document.body.appendChild(bcScript)
+      document.body.appendChild(script)
       // Call a function to play the video once player's JavaScropt loaded
-      bcScript.onload = this.setupVideo
+      script.onload = this.setupVideo
     }
 
     const {
@@ -191,7 +194,9 @@ export default class VideoPlayer extends PureComponent {
     this.setState({ screen: SCREEN_NONE })
   }
 
-  resumeVideo = () => { this.video.play() }
+  resumeVideo = () => {
+    this.video.play()
+  }
 
   handleKeyDown = (e) => {
     const { target, key } = e
@@ -337,7 +342,6 @@ export default class VideoPlayer extends PureComponent {
       endscreenComponent,
       beforescreenComponent,
       pausescreenComponent,
-      hasBreakpoints,
       videoId,
       playerId,
       hasAutoplay,
@@ -352,15 +356,15 @@ export default class VideoPlayer extends PureComponent {
 
     const isScreenOpen = screen !== SCREEN_NONE
 
-    const containerClasses = cn('bc-player', {
+    const containerClasses = cn({
+      'bc-player': true,
       'bc-player--screen-open': isScreenOpen,
-      'bc-player--has-breakpoints': hasBreakpoints,
     })
 
     const playerClasses = cn(
-      'video-js',
       'bc-player__video',
       'bc-player__video--default',
+      'video-js',
     )
 
     // eslint-disable-next-line
@@ -419,9 +423,9 @@ export default class VideoPlayer extends PureComponent {
             data-video-id={videoId}
             data-player-id={playerId}
             data-account={accountId}
-            autoPlay={hasAutoplay ? 'autoplay' : ''}
-            muted={isMuted ? 'muted' : ''}
-            controls={hasControls ? 'controls' : ''}
+            autoPlay={hasAutoplay}
+            muted={isMuted}
+            controls={hasControls}
           />
         </div>
       </div>
