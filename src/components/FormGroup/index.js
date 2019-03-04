@@ -40,21 +40,20 @@ export default class FormGroup extends PureComponent {
 
     return (
       <div className='mc-form-group mc-mb-5'>
-        <div className='row no-gutters justify-content-between align-items-end mc-mb-4'>
-          <div className='col-9'>
+        <div className='row no-gutters justify-content-between align-items-center mc-mb-4'>
+          <div className='col align-self-end'>
             {label &&
               <label
                 htmlFor={name}
                 className='d-block mc-text-h8 mc-mb-1'
               >
                 {label}
-
               </label>
             }
           </div>
 
           {optional &&
-            <div className='col-auto'>
+            <div className='col-auto align-self-end'>
               <p className='mc-text-x-small mc-text--silenced mc-mb-1'>
                 (Optional)
               </p>
@@ -65,26 +64,26 @@ export default class FormGroup extends PureComponent {
             {children}
           </div>
 
-          <div className='col-9'>
+          <div className='col align-self-start'>
             {showError &&
-              <span className='mc-text-x-small mc-text--error'>
+              <p className='mc-text-x-small mc-text--error mc-mt-1'>
                 <IconError />
                 {error}
-              </span>
+              </p>
             }
 
             {!showError &&
-              <span className='mc-text-x-small mc-text--muted'>
+              <p className='mc-text-x-small mc-text--muted mc-mt-1'>
                 {help}
-              </span>
+              </p>
             }
           </div>
 
-          <div className='col-auto'>
+          <div className='col-auto align-self-start'>
             {maxlength &&
-              <span className='mc-text-x-small mc-text--muted'>
+              <p className='mc-text-x-small mc-text--muted mc-mt-1'>
                 {value.length} / {maxlength}
-              </span>
+              </p>
             }
           </div>
         </div>

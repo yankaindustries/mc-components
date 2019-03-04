@@ -90,7 +90,10 @@ const Form = reduxForm({
             <Field
               component={TextareaField}
               name='bio'
-              label='Tell us about yourself'
+              label={`
+                Tell us about yourself. It could be anything or nothing at all,
+                but we prefer anything.
+              `}
               placeholder='This is the story of a girl...'
               optional
             />
@@ -128,8 +131,9 @@ const Form = reduxForm({
               type='password'
               label='Password'
               placeholder='••••••••'
+              help='The longer the password, the more secure it is. Also, try to make it unique...'
               prepend={<Lock />}
-              error='Password is required'
+              error='Password is required. Where else in the world have you logged in without a password?'
               maxlength={20}
             />
 
