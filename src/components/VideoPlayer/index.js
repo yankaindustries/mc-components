@@ -13,6 +13,9 @@ const SCREEN_END = 'SCREEN_END'
 const SCREEN_PAUSE = 'SCREEN_PAUSE'
 const SCREEN_NONE = 'SCREEN_NONE'
 
+const STATUS_LOADING = 'STATUS_LOADING'
+const STATUS_READY = 'STATUS_READY'
+
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
     accountId: PropTypes.string,
@@ -57,29 +60,20 @@ export default class VideoPlayer extends PureComponent {
 
   state = {
     screen: SCREEN_NONE,
+    status: STATUS_LOADING,
   }
 
   componentDidMount () {
-    if (window.bc && window.videojs) {
-      this.setupVideo()
-      console.log('has video')
-    } else {
-      const {
-        playerId,
-        accountId,
-      } = this.props
-
-      console.log('no video yet')
-      const script = document.createElement('script')
-      script.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
-      document.body.appendChild(script)
-      script.onload = this.setupVideo
-    }
-
     const {
       progress,
       beforescreenComponent,
     } = this.props
+
+    if (window.bc && window.videojs) {
+      this.setupVideo()
+    } else {
+      this.setupScript()
+    }
 
     if (progress) {
       this.playerRef.current.currentTime = progress
@@ -105,6 +99,27 @@ export default class VideoPlayer extends PureComponent {
     this.video.off('fullscreenchange')
     // remove DOM element
     this.video.dispose()
+  }
+
+  setupScript = () => {
+    const {
+      playerId,
+      accountId,
+    } = this.props
+
+    const script = document.createElement('script')
+    script.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
+    document.body.appendChild(script)
+    script.onload = this.setupVideo
+  }
+
+  setupVideo = () => {
+    window.bc(this.playerRef.current, {
+      playbackRates: [0.5, 1, 1.5, 2],
+    })
+    this.video = window.videojs(this.playerRef.current)
+    this.video.ready(this.handlePlayerReady)
+    this.setState({ status: STATUS_READY })
   }
 
   handlePlayerReady = () => {
@@ -269,14 +284,6 @@ export default class VideoPlayer extends PureComponent {
     this.video.currentTime(newTime)
   }
 
-  setupVideo = () => {
-    window.bc(this.playerRef.current, {
-      playbackRates: [0.5, 1, 1.5, 2],
-    })
-    this.video = window.videojs(this.playerRef.current)
-    this.video.ready(this.handlePlayerReady)
-  }
-
   replaceWith = (videoId) => {
     if (this.video.customOverlay) {
       this.video.customOverlay.close()
@@ -374,45 +381,6 @@ export default class VideoPlayer extends PureComponent {
         className={containerClasses}
         onKeyDown={this.handleKeyDown}
       >
-        {endscreenComponent && videoRoot &&
-          <VideoPlayerScreen
-            isActive={screen === SCREEN_END}
-            variation='endscreen'
-            videoRoot={videoRoot}
-          >
-            {renderChildren(endscreenComponent, {
-              onReplay: this.handleReplayClick,
-              isActive: screen === SCREEN_END,
-            })}
-          </VideoPlayerScreen>
-        }
-
-        {beforescreenComponent && videoRoot &&
-          <VideoPlayerScreen
-            isActive={screen === SCREEN_BEFORE}
-            variation='beforescreen'
-            videoRoot={videoRoot}
-          >
-            {renderChildren(beforescreenComponent, {
-              onResume: this.resumeVideo,
-              isActive: screen === SCREEN_BEFORE,
-            })}
-          </VideoPlayerScreen>
-        }
-
-        {pausescreenComponent && videoRoot &&
-          <VideoPlayerScreen
-            isActive={screen === SCREEN_PAUSE}
-            variation='pausescreen'
-            videoRoot={videoRoot}
-          >
-            {renderChildren(pausescreenComponent, {
-              onResume: this.resumeVideo,
-              isActive: screen === SCREEN_PAUSE,
-            })}
-          </VideoPlayerScreen>
-        }
-
         <div className='bc-player__wrapper'>
           <video
             data-application-id
@@ -427,6 +395,45 @@ export default class VideoPlayer extends PureComponent {
             controls={hasControls}
           />
         </div>
+
+        {beforescreenComponent &&
+          <VideoPlayerScreen
+            isActive={screen === SCREEN_BEFORE}
+            variation='beforescreen'
+            videoRoot={videoRoot}
+          >
+            {renderChildren(beforescreenComponent, {
+              onResume: this.resumeVideo,
+              isActive: screen === SCREEN_BEFORE,
+            })}
+          </VideoPlayerScreen>
+        }
+
+        {pausescreenComponent &&
+          <VideoPlayerScreen
+            isActive={screen === SCREEN_PAUSE}
+            variation='pausescreen'
+            videoRoot={videoRoot}
+          >
+            {renderChildren(pausescreenComponent, {
+              onResume: this.resumeVideo,
+              isActive: screen === SCREEN_PAUSE,
+            })}
+          </VideoPlayerScreen>
+        }
+
+        {endscreenComponent &&
+          <VideoPlayerScreen
+            isActive={screen === SCREEN_END}
+            variation='endscreen'
+            videoRoot={videoRoot}
+          >
+            {renderChildren(endscreenComponent, {
+              onReplay: this.handleReplayClick,
+              isActive: screen === SCREEN_END,
+            })}
+          </VideoPlayerScreen>
+        }
       </div>
     )
   }

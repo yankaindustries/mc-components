@@ -10,6 +10,8 @@ const VideoPlayerScreen = ({
   children,
   videoRoot,
 }) => {
+  if (!videoRoot) { return null }
+
   const classNames = cn(
     'bc-player__screen',
     { [`bc-player__screen--${variation}`]: variation },
