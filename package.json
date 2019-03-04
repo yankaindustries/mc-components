@@ -25,7 +25,7 @@
     "build:scss": "NODE_ENV=development mkdir -p ./dist/styles/scss && postcss ./src/styles --base ./src/styles --dir ./dist/styles/scss",
     "build:styles": "yarn build:css && yarn build:scss",
     "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy": "storybook-to-ghpages",
     "precommit": "lint-staged",
     "lint:js": "eslint ./src --color --quiet",
     "lint:style": "stylelint ./src/styles/**/*.scss",

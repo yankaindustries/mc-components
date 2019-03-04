@@ -223,7 +223,10 @@ storiesOf('Components|VideoPlayer', module)
         >
           <div className='row'>
             <div className='col-lg-4'>
-              <VideoPlayer isLooped />
+              <VideoPlayer
+                isLooped
+                hasControls
+              />
             </div>
           </div>
         </PropExample>
