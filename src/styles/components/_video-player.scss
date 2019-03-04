@@ -1,6 +1,6 @@
 /* disabling because these are needed for overriding 3rd party styles */
 /* stylelint-disable declaration-no-important, selector-max-class */
-$mc-video-control-height: 4rem !default;
+$mc-video-control-height: 4.6rem !default;
 $mc-video-progress-height: 0.8rem !default;
 
 
@@ -46,10 +46,8 @@ $mc-video-progress-height: 0.8rem !default;
   font-size: inherit !important;
 
   .vjs-mouse & {
-    // display: flex !important;
     height: $mc-video-control-height !important;
-    transform: translateY(0) !important;
-    z-index: 6;
+    z-index: 2;
 
     .vjs-progress-control {
       .vjs-progress-holder,
@@ -70,7 +68,7 @@ $mc-video-progress-height: 0.8rem !default;
 
   .not-hover &,
   .vjs-user-inactive & {
-    // transform: translateY($mc-video-progress-height + $mc-video-progress-height) !important;
+    transform: translateY($mc-video-control-height + $mc-video-progress-height) !important;
   }
 }
 
@@ -199,18 +197,6 @@ $mc-video-progress-height: 0.8rem !default;
     padding: 3px;
   }
 
-  // .vjs-quality-menu-item-sub-label {
-  //   text-transform: uppercase;
-  // }
-
-  // .vjs-volume-menu-button {
-  //   &.vjs-slider-active,
-  //   &:hover,
-  //   &:focus {
-  //     width: 10em;
-  //   }
-  // }
-
   .vjs-current-time,
   .vjs-duration,
   .vjs-time-divider {
@@ -250,75 +236,17 @@ $mc-video-progress-height: 0.8rem !default;
     left: -2.6em;
 
     .vjs-menu-content {
-      padding-bottom: 0.75em;
+      padding-bottom: $mc-video-progress-height;
+      font-family: inherit !important;
     }
 
     .vjs-menu-item {
-      border-radius: 0;
       margin: 0;
-      font-size: 0.9em;
-      text-shadow: none !important;
-    }
-  }
-
-  .vjs-overlay-buttons {
-    position: absolute;
-    z-index: 1;
-    height: auto;
-    bottom: 10px;
-    left: 20px;
-    text-align: left;
-
-    .vjs-control {
-      width: 35px;
-      height: 35px;
-      margin: 0;
-
-      &:before {
-        font-size: 35px;
-        line-height: 1;
-      }
-    }
-  }
-
-
-
-
-
-
-
-  .vjs-progress-control .vjs-load-progress,
-  .vjs-progress-control .vjs-progress-holder {
-    background-color: rgba($mc-color-light, 0.3);
-  }
-
-  .vjs-progress-control .vjs-play-progress {
-    background-color: $mc-color-primary;
-  }
-
-  .vjs-load-progress div {
-    background-color: rgba($mc-color-light, 0.18);
-  }
-
-  .vjs-volume-level {
-    background-color: rgba($mc-color-light, 0.9);
-  }
-
-  .vjs-control-bar {
-    background: rgba($mc-color-dark, 0.4);
-  }
-
-  .vjs-menu-button-popup .vjs-menu {
-    .vjs-menu-content {
-      padding-bottom: 14px;
-    }
-
-    .vjs-menu-item {
-      font-family: $mc-font-default;
-      font-size: 16px;
-      letter-spacing: 0.02em;
-      text-transform: capitalize;
       background-color: rgba($mc-color-dark, 0.8);
+      border-radius: 0;
+      text-shadow: none !important;
+      // letter-spacing: inherit !important;
+      // text-transform: capitalize;
 
       &:first-child {
         border-top-right-radius: 4px;
@@ -343,6 +271,49 @@ $mc-video-progress-height: 0.8rem !default;
         background-color: rgba($mc-color-dark, 0.8);
       }
     }
+  }
+
+  .vjs-overlay-buttons {
+    position: absolute;
+    z-index: 1;
+    height: auto;
+    bottom: 10px;
+    left: 20px;
+    text-align: left;
+
+    .vjs-control {
+      width: 35px;
+      height: 35px;
+      margin: 0;
+
+      &:before {
+        font-size: 35px;
+        line-height: 1;
+      }
+    }
+  }
+
+
+  // PROGRESS BAR
+  .vjs-progress-control .vjs-load-progress,
+  .vjs-progress-control .vjs-progress-holder {
+    background-color: rgba($mc-color-light, 0.3);
+  }
+
+  .vjs-progress-control .vjs-play-progress {
+    background-color: $mc-color-primary;
+  }
+
+  .vjs-load-progress div {
+    background-color: rgba($mc-color-light, 0.18);
+  }
+
+  .vjs-volume-level {
+    background-color: rgba($mc-color-light, 0.9);
+  }
+
+  .vjs-control-bar {
+    background: rgba($mc-color-dark, 0.4);
   }
 }
 

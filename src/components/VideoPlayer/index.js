@@ -44,7 +44,6 @@ export default class VideoPlayer extends PureComponent {
     accountId: '5344802162001',
     playerId: '1cMNiwC9oQ',
     // playerId: 'rkcQq7gAe',
-    playerVersion: '6',
     videoId: '5450137526001',
 
     hasAutoplay: false,
@@ -63,17 +62,17 @@ export default class VideoPlayer extends PureComponent {
   componentDidMount () {
     if (window.bc && window.videojs) {
       this.setupVideo()
+      console.log('has video')
     } else {
       const {
         playerId,
         accountId,
       } = this.props
 
+      console.log('no video yet')
       const script = document.createElement('script')
       script.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
-
       document.body.appendChild(script)
-      // Call a function to play the video once player's JavaScropt loaded
       script.onload = this.setupVideo
     }
 

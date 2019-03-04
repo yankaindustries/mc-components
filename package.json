@@ -14,7 +14,7 @@
   "sideEffects": false,
   "scripts": {
     "prebuild": "rimraf ./dist",
-    "dev": "yarn dev:js && yarn dev:css && yarn dev:scss",
+    "dev": "concurrently -n js,css,scss 'yarn dev:js' 'yarn dev:css' 'yarn dev:scss'",
     "dev:js": "babel ./src/components --watch --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
     "dev:css": "mkdir -p ./dist/styles/css && nodemon -e scss,svg --watch src -x 'yarn build:css'",
     "dev:scss": "mkdir -p ./dist/styles/scss && nodemon -e scss,svg --watch src -x 'yarn build:scss'",
