@@ -46,7 +46,6 @@ export default class VideoPlayer extends PureComponent {
   static defaultProps = {
     accountId: '5344802162001',
     playerId: '1cMNiwC9oQ',
-    // playerId: 'rkcQq7gAe',
     videoId: '5450137526001',
 
     hasAutoplay: false,
