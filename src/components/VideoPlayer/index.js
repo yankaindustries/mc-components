@@ -13,6 +13,9 @@ const SCREEN_END = 'SCREEN_END'
 const SCREEN_PAUSE = 'SCREEN_PAUSE'
 const SCREEN_NONE = 'SCREEN_NONE'
 
+const STATUS_LOADING = 'STATUS_LOADING'
+const STATUS_READY = 'STATUS_READY'
+
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
     accountId: PropTypes.string,
@@ -24,7 +27,6 @@ export default class VideoPlayer extends PureComponent {
     pausescreenComponent: PropTypes.func,
 
     hasAutoplay: PropTypes.bool,
-    hasBreakpoints: PropTypes.bool,
     hasControls: PropTypes.bool,
     isLooped: PropTypes.bool,
     isMuted: PropTypes.bool,
@@ -43,12 +45,11 @@ export default class VideoPlayer extends PureComponent {
 
   static defaultProps = {
     accountId: '5344802162001',
-    playerId: 'rkcQq7gAe',
+    playerId: '1cMNiwC9oQ',
     videoId: '5450137526001',
 
-    hasAutoplay: true,
-    hasBreakpoints: false,
-    hasControls: true,
+    hasAutoplay: false,
+    hasControls: false,
     isMuted: false,
     isLooped: false,
   }
@@ -58,26 +59,20 @@ export default class VideoPlayer extends PureComponent {
 
   state = {
     screen: SCREEN_NONE,
+    status: STATUS_LOADING,
   }
 
   componentDidMount () {
-    if (window.bc && window.videojs) {
-      this.setupVideo()
-    } else {
-      const { playerId, accountId } = this.props
-
-      const bcScript = document.createElement('script')
-      bcScript.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
-
-      document.body.appendChild(bcScript)
-      // Call a function to play the video once player's JavaScropt loaded
-      bcScript.onload = this.setupVideo
-    }
-
     const {
       progress,
       beforescreenComponent,
     } = this.props
+
+    if (window.bc && window.videojs) {
+      this.setupVideo()
+    } else {
+      this.setupScript()
+    }
 
     if (progress) {
       this.playerRef.current.currentTime = progress
@@ -103,6 +98,27 @@ export default class VideoPlayer extends PureComponent {
     this.video.off('fullscreenchange')
     // remove DOM element
     this.video.dispose()
+  }
+
+  setupScript = () => {
+    const {
+      playerId,
+      accountId,
+    } = this.props
+
+    const script = document.createElement('script')
+    script.src = `//players.brightcove.net/${accountId}/${playerId}_default/index.min.js`
+    document.body.appendChild(script)
+    script.onload = this.setupVideo
+  }
+
+  setupVideo = () => {
+    window.bc(this.playerRef.current, {
+      playbackRates: [0.5, 1, 1.5, 2],
+    })
+    this.video = window.videojs(this.playerRef.current)
+    this.video.ready(this.handlePlayerReady)
+    this.setState({ status: STATUS_READY })
   }
 
   handlePlayerReady = () => {
@@ -191,7 +207,9 @@ export default class VideoPlayer extends PureComponent {
     this.setState({ screen: SCREEN_NONE })
   }
 
-  resumeVideo = () => { this.video.play() }
+  resumeVideo = () => {
+    this.video.play()
+  }
 
   handleKeyDown = (e) => {
     const { target, key } = e
@@ -265,14 +283,6 @@ export default class VideoPlayer extends PureComponent {
     this.video.currentTime(newTime)
   }
 
-  setupVideo = () => {
-    window.bc(this.playerRef.current, {
-      playbackRates: [0.5, 1, 1.5, 2],
-    })
-    this.video = window.videojs(this.playerRef.current)
-    this.video.ready(this.handlePlayerReady)
-  }
-
   replaceWith = (videoId) => {
     if (this.video.customOverlay) {
       this.video.customOverlay.close()
@@ -337,7 +347,6 @@ export default class VideoPlayer extends PureComponent {
       endscreenComponent,
       beforescreenComponent,
       pausescreenComponent,
-      hasBreakpoints,
       videoId,
       playerId,
       hasAutoplay,
@@ -352,15 +361,15 @@ export default class VideoPlayer extends PureComponent {
 
     const isScreenOpen = screen !== SCREEN_NONE
 
-    const containerClasses = cn('bc-player', {
+    const containerClasses = cn({
+      'bc-player': true,
       'bc-player--screen-open': isScreenOpen,
-      'bc-player--has-breakpoints': hasBreakpoints,
     })
 
     const playerClasses = cn(
-      'video-js',
       'bc-player__video',
       'bc-player__video--default',
+      'video-js',
     )
 
     // eslint-disable-next-line
@@ -371,20 +380,22 @@ export default class VideoPlayer extends PureComponent {
         className={containerClasses}
         onKeyDown={this.handleKeyDown}
       >
-        {endscreenComponent && videoRoot &&
-          <VideoPlayerScreen
-            isActive={screen === SCREEN_END}
-            variation='endscreen'
-            videoRoot={videoRoot}
-          >
-            {renderChildren(endscreenComponent, {
-              onReplay: this.handleReplayClick,
-              isActive: screen === SCREEN_END,
-            })}
-          </VideoPlayerScreen>
-        }
+        <div className='bc-player__wrapper'>
+          <video
+            data-application-id
+            ref={this.playerRef}
+            className={playerClasses}
+            data-embed='default'
+            data-video-id={videoId}
+            data-player-id={playerId}
+            data-account={accountId}
+            autoPlay={hasAutoplay}
+            muted={isMuted}
+            controls={hasControls}
+          />
+        </div>
 
-        {beforescreenComponent && videoRoot &&
+        {beforescreenComponent &&
           <VideoPlayerScreen
             isActive={screen === SCREEN_BEFORE}
             variation='beforescreen'
@@ -397,7 +408,7 @@ export default class VideoPlayer extends PureComponent {
           </VideoPlayerScreen>
         }
 
-        {pausescreenComponent && videoRoot &&
+        {pausescreenComponent &&
           <VideoPlayerScreen
             isActive={screen === SCREEN_PAUSE}
             variation='pausescreen'
@@ -410,20 +421,18 @@ export default class VideoPlayer extends PureComponent {
           </VideoPlayerScreen>
         }
 
-        <div className='bc-player__wrapper'>
-          <video
-            data-application-id
-            ref={this.playerRef}
-            className={playerClasses}
-            data-embed='default'
-            data-video-id={videoId}
-            data-player-id={playerId}
-            data-account={accountId}
-            autoPlay={hasAutoplay ? 'autoplay' : ''}
-            muted={isMuted ? 'muted' : ''}
-            controls={hasControls ? 'controls' : ''}
-          />
-        </div>
+        {endscreenComponent &&
+          <VideoPlayerScreen
+            isActive={screen === SCREEN_END}
+            variation='endscreen'
+            videoRoot={videoRoot}
+          >
+            {renderChildren(endscreenComponent, {
+              onReplay: this.handleReplayClick,
+              isActive: screen === SCREEN_END,
+            })}
+          </VideoPlayerScreen>
+        }
       </div>
     )
   }
