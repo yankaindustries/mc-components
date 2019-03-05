@@ -22,6 +22,11 @@
   padding: $grid-gutter-width / 2;
 }
 
+.col-auto-max {
+  @extend .col-auto;
+  max-width: 100%;
+}
+
 // Responsive
 @media only screen and (min-width: $mc-bp-sm) {
   .container,
