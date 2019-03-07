@@ -49,10 +49,8 @@ export default class Modal extends PureComponent {
       onClose,
     } = this.props
 
-    if (source === 'backdrop') {
-      event.preventDefault()
-      event.stopPropagation()
-    }
+    event.preventDefault()
+    event.stopPropagation()
 
     if (onClose) {
       onClose(source, event)
