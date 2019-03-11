@@ -32,35 +32,49 @@ storiesOf('utilities|AnimationHandler', module)
           name='animation'
           type='String["zoom", "lift", "ken-burns"]'
         >
-          <HoverHandler>
-            {({ hovering }) =>
-              <AnimationHandler type='zoom' animating={hovering}>
-                <Button>
-                  Zoom
-                </Button>
-              </AnimationHandler>
-            }
-          </HoverHandler>
+          <div className='row'>
+            <div className='col-auto'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <AnimationHandler type='zoom' animating={hovering}>
+                    <div>
+                      <Button>
+                        Zoom
+                      </Button>
+                    </div>
+                  </AnimationHandler>
+                }
+              </HoverHandler>
+            </div>
 
-          <HoverHandler>
-            {({ hovering }) =>
-              <AnimationHandler type='lift' animating={hovering}>
-                <Button secondary>
-                  Lift
-                </Button>
-              </AnimationHandler>
-            }
-          </HoverHandler>
+            <div className='col-auto'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <AnimationHandler type='lift' animating={hovering}>
+                    <div>
+                      <Button secondary>
+                        Lift
+                      </Button>
+                    </div>
+                  </AnimationHandler>
+                }
+              </HoverHandler>
+            </div>
 
-          <HoverHandler>
-            {({ hovering }) =>
-              <AnimationHandler type='ken-burns' animating={hovering}>
-                <Button tertiary>
-                  Ken Burns
-                </Button>
-              </AnimationHandler>
-            }
-          </HoverHandler>
+            <div className='col-auto'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <AnimationHandler type='ken-burns' animating={hovering}>
+                    <div>
+                      <Button tertiary>
+                        Ken Burns
+                      </Button>
+                    </div>
+                  </AnimationHandler>
+                }
+              </HoverHandler>
+            </div>
+          </div>
         </PropExample>
       </DocSection>
 
