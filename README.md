@@ -6,14 +6,33 @@
 
 mc-components aims to provide primitive components to build user interfaces in MasterClass.
 
-## Getting Started
+## mc-components in your project
 This component library is most easily imported as a dependency.  You can use `yarn` or `npm` to bring it in to your project.  This ensures all required `js` and styles are included.
 
-```bash
-yarn add mc-components
+`yarn add mc-components` or `npm install mc-components --save`
+
+Our components do **not** contain any styles.  The style library must also be imported manually into your root `scss` file.
+
+```scss
+@import 'mc-components';
 ```
 
-### Components
+### Font files
+We use Lato as our primary font for headings and body text in 300, 400, and 700 font weights.  You can import it in your css below, or import it into your asset pipeline.
+```
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+```
+
+### Standalone style usage
+If your project doesn't use yarn or npm for dependencies and you're only looking for masterclass css / style files, they can be imported manually by downloading the repository on github.  This will give you access to styles for buttons, the grid, typography, and more.  Save the contents of the `/dist/styles/scss/` folder to your own project, then import!
+
+**Note**: If your project doesn't have sass processing, there is a plain css file you can import here:
+
+```
+/dist/styles/css/mc-components.css
+```
+
+### Using a component
 ```javascript
 import { Button } from 'mc-components'
 
@@ -21,55 +40,42 @@ const Container = () =>
   <Button primary>Hello</Button>
 ```
 
-### Styles
+# Contributing
+1. Clone the repository
+2. Install dependencies with `yarn install`
+3. Create a branch off `develop`
+4. Start storybook: `yarn start`
 
-The style library must also be imported manually into your root `SCSS` file.
+All changes are hot-reloaded and you'll be able to see components being modified live as you work.
 
-```scss
-@import 'mc-components/dist/styles/scss/index'
+If you want to develop in `mc-components` and see your work compiled live in your own project (like the masterclass repo), you can run the following commands:
+
+In `mc-components`: (this creates a symlink to use in your project's repo, and also will let you hot-reload changes to styles and components in mc-components)
+
 ```
-
-We use Lato as our primary font for headings and body text.  You can import it in your CSS below, or import it into your asset pipeline.
-
-```scss
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700")
-```
-
-# Development
-
-`mc-components` utilizes [Storybook](https://storybook.js.org/), which provides a living version of the documentation for all components.
-
-```bash
 yarn install
-yarn start
-```
-
-To update the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
-
-```bash
-yarn deploy
-```
-
-If you want to develop in `mc-components` and see changes compiled into your own project you can utilize `yarn link` and the `dev` script:
-
-```bash
-# mc-components
 yarn link
 yarn dev
+```
 
-# other project
+In your own project (eg MasterClass) directory:
+
+```
 yarn link mc-components
+yarn webpack-dev
 ```
 
-To get back to an officially released version, run this in your project:
+(Run `yarn unlink "mc-components"` in your project's repo when you are done developing and want to unlink, and then run `yarn install` to reinstall the version of mc-components you were using previously)
 
-```bash
-yarn unlink mc-components
-yarn install
-```
-
-## PRs Welcome
+## Submit your code
   - Create a PR with your changes
   - Once approved, it will be merged into develop and released with the next version bump.
 
 For further information on linting, versioning, and releasing, please see the [wiki for documentation](https://github.com/yankaindustries/mc-components/wiki/Contributing)
+
+## Storybook
+Storybook provides a living version of the documentation for all components.  To update the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
+
+```
+yarn deploy-storybook
+```

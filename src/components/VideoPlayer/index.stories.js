@@ -11,7 +11,6 @@ import VideoPlayer from './'
 import Tile from '../Tile'
 import TileCaption from '../TileCaption'
 import TileImage from '../TileImage'
-import TileOverlay from '../TileOverlay'
 import TileVideo from '../TileVideo'
 import HoverHandler from '../HoverHandler'
 import AnimationHandler from '../AnimationHandler'
@@ -41,7 +40,7 @@ storiesOf('Components|VideoPlayer', module)
         <div className='row'>
           <div className='col-12'>
             <VideoPlayer
-              hasControls
+              hasAutoplay={false}
               beforescreenComponent={
                 ({ onResume }) =>
                   <div style={screenStyle}>
@@ -80,7 +79,6 @@ storiesOf('Components|VideoPlayer', module)
                     <Tile>
                       <Fragment>
                         <TileImage imageUrl={shondaRhimesThumbnail} />
-                        <TileOverlay />
                         <TileCaption>
                           <h5 className='mc-text-h5 mc-text--uppercase'>
                             Shonda Rhimes
@@ -92,7 +90,7 @@ storiesOf('Components|VideoPlayer', module)
                       </Fragment>
 
                       {intent &&
-                        <TileVideo hasAutoplay />
+                        <TileVideo />
                       }
                     </Tile>
                   </AnimationHandler>
@@ -114,12 +112,7 @@ storiesOf('Components|VideoPlayer', module)
         >
           <div className='row'>
             <div className='col-lg-4'>
-              <VideoPlayer
-                accountId='5344802162001'
-                playerId='1cMNiwC9oQ'
-                videoId='5450137526001'
-                hasControls
-              />
+              <VideoPlayer hasAutoplay={false} />
             </div>
           </div>
         </PropExample>
@@ -132,6 +125,7 @@ storiesOf('Components|VideoPlayer', module)
               description='Renders a component before the video plays.'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 beforescreenComponent={
                   ({ onResume }) =>
                     <div style={screenStyle}>
@@ -141,7 +135,6 @@ storiesOf('Components|VideoPlayer', module)
                       </button>
                     </div>
                 }
-                hasControls
               />
             </PropExample>
           </div>
@@ -153,6 +146,7 @@ storiesOf('Components|VideoPlayer', module)
               description='Renders a component when the video is paused.'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 pausescreenComponent={
                   ({ onResume }) =>
                     <div style={screenStyle}>
@@ -162,7 +156,6 @@ storiesOf('Components|VideoPlayer', module)
                       </button>
                     </div>
                 }
-                hasControls
               />
             </PropExample>
           </div>
@@ -174,6 +167,7 @@ storiesOf('Components|VideoPlayer', module)
               description='Renders a component when the video is done.'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 progress={11}
                 endscreenComponent={
                   ({ onReplay }) =>
@@ -184,7 +178,6 @@ storiesOf('Components|VideoPlayer', module)
                       </button>
                     </div>
                 }
-                hasControls
               />
             </PropExample>
           </div>
@@ -197,19 +190,7 @@ storiesOf('Components|VideoPlayer', module)
         >
           <div className='row'>
             <div className='col-lg-4'>
-              <VideoPlayer hasAutoplay />
-            </div>
-          </div>
-        </PropExample>
-
-        <PropExample
-          name='hasControls'
-          type='boolean'
-          description='Automatically plays the video when ready.'
-        >
-          <div className='row'>
-            <div className='col-lg-4'>
-              <VideoPlayer hasControls />
+              <VideoPlayer hasAutoplay={true} />
             </div>
           </div>
         </PropExample>
@@ -224,8 +205,8 @@ storiesOf('Components|VideoPlayer', module)
           <div className='row'>
             <div className='col-lg-4'>
               <VideoPlayer
-                isLooped
-                hasControls
+                hasAutoplay={false}
+                isLooped={true}
               />
             </div>
           </div>
@@ -239,8 +220,8 @@ storiesOf('Components|VideoPlayer', module)
           <div className='row'>
             <div className='col-lg-4'>
               <VideoPlayer
-                isMuted
-                hasControls
+                hasAutoplay={false}
+                isMuted={true}
               />
             </div>
           </div>
@@ -253,7 +234,10 @@ storiesOf('Components|VideoPlayer', module)
               type='function(video)'
               description='Callback event'
             >
-              <VideoPlayer onPlayerReady={action('onPlayerReady')} />
+              <VideoPlayer
+                hasAutoplay={false}
+                onPlayerReady={action('onPlayerReady')}
+              />
             </PropExample>
           </div>
 
@@ -264,8 +248,8 @@ storiesOf('Components|VideoPlayer', module)
               description='Callback event'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 onVideoReady={action('onVideoReady')}
-                hasControls
               />
             </PropExample>
           </div>
@@ -277,8 +261,8 @@ storiesOf('Components|VideoPlayer', module)
               description='Callback event'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 onPlay={action('onPlay')}
-                hasControls
               />
             </PropExample>
           </div>
@@ -290,8 +274,8 @@ storiesOf('Components|VideoPlayer', module)
               description='Callback event'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 onPause={action('onPause')}
-                hasControls
               />
             </PropExample>
           </div>
@@ -303,8 +287,8 @@ storiesOf('Components|VideoPlayer', module)
               description='Callback event'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 onEnd={action('onEnd')}
-                hasControls
               />
             </PropExample>
           </div>
@@ -316,8 +300,8 @@ storiesOf('Components|VideoPlayer', module)
               description='Callback event'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 onTimeChange={action('onTimeChange')}
-                hasControls
               />
             </PropExample>
           </div>
@@ -329,8 +313,8 @@ storiesOf('Components|VideoPlayer', module)
               description='Callback event'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 onError={action('onError')}
-                hasControls
               />
             </PropExample>
           </div>
@@ -342,8 +326,8 @@ storiesOf('Components|VideoPlayer', module)
               description='Callback event'
             >
               <VideoPlayer
+                hasAutoplay={false}
                 onSeek={action('onSeek')}
-                hasControls
               />
             </PropExample>
           </div>
