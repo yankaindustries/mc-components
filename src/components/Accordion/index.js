@@ -1,6 +1,6 @@
-import React, { Children, PureComponent } from 'react'
+import React, { Children, Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { isArray, isFunction } from 'lodash'
+import { isArray, isFunction, times } from 'lodash'
 import cn from 'classnames'
 
 import HoverHandler from '../HoverHandler'
@@ -24,11 +24,13 @@ export default class Accordion extends PureComponent {
       'hovering',
       'intent',
     ]),
+    showCount: PropTypes.number,
   }
 
   static defaultProps = {
     aspectRatio: '21x9',
     on: 'hovering',
+    showCount: 4,
   }
 
   mapChildren = (children, mapFn) => {
@@ -45,6 +47,7 @@ export default class Accordion extends PureComponent {
       children,
       className,
       on,
+      showCount,
       ...restProps
     } = this.props
 
@@ -62,6 +65,8 @@ export default class Accordion extends PureComponent {
         'mc-accordion__item--active': active,
       })
 
+    const filled = times(showCount).map((v, i) => children[i])
+
     return (
       <HoverHandler nowrap>
         {({ [on]: parentActive, props: parentProps }) =>
@@ -71,14 +76,22 @@ export default class Accordion extends PureComponent {
             {...parentProps}
           >
             <div className='mc-accordion__content'>
-              {this.mapChildren(children, child =>
-                <HoverHandler nowrap>
-                  {({ [on]: itemActive, props: itemProps }) =>
-                    <div className={itemClasses(itemActive)} {...itemProps}>
-                      {renderChildren(child, { itemActive, parentActive })}
-                    </div>
+              {this.mapChildren(filled, (child, key) =>
+                <Fragment key={key}>
+                  {child &&
+                    <HoverHandler nowrap>
+                      {({ [on]: itemActive, props: itemProps }) =>
+                        <div className={itemClasses(itemActive)} {...itemProps}>
+                          {renderChildren(child, { itemActive, parentActive })}
+                        </div>
+                      }
+                    </HoverHandler>
                   }
-                </HoverHandler>,
+
+                  {!child &&
+                    <div className={itemClasses()} />
+                  }
+                </Fragment>,
               )}
             </div>
           </div>
