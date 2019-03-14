@@ -3,8 +3,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
+
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
+import PropExample from '../../utils/PropExample'
 import Placeholder from '../../utils/Placeholder'
 
 import Accordion from '../Accordion'
@@ -31,6 +33,7 @@ storiesOf('Components|Accordion', module)
             <Accordion
               className='mc-mb-10'
               aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
+              showCount={responsiveValues(media, 4, 3, 2)}
             >
               {[1, 2, 3, 4]
                 .slice(0, responsiveValues(media, 4, 3, 2))
@@ -48,6 +51,61 @@ storiesOf('Components|Accordion', module)
                 )
               }
             </Accordion>
+          </DocSection>
+
+          <DocSection title='Props'>
+            <PropExample
+              name='showCount'
+              type='Number'
+              description={`
+                Set the number of items to render.  If there are more, crop the
+                list.  If there are less, fill with empty panes.
+              `}
+            >
+              <Accordion
+                className='mc-mb-10'
+                aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
+                showCount={responsiveValues(media, 6, 5, 4)}
+              >
+                {[1, 2, 3, 4]
+                  .slice(0, responsiveValues(media, 4, 3, 2))
+                  .map(key =>
+                    ({ itemActive }) =>
+                      <Placeholder className='mc-text--center'>
+                        <h3 className='mc-text-h3'>
+                          {key}
+                        </h3>
+
+                        <p>
+                          {itemActive ? 'Active' : 'Inactive'}
+                        </p>
+                      </Placeholder>,
+                  )
+                }
+              </Accordion>
+
+              <Accordion
+                className='mc-mb-10'
+                aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
+                showCount={responsiveValues(media, 3, 2, 1)}
+              >
+                {[1, 2, 3, 4]
+                  .slice(0, responsiveValues(media, 4, 3, 2))
+                  .map(key =>
+                    ({ itemActive }) =>
+                      <Placeholder className='mc-text--center'>
+                        <h3 className='mc-text-h3'>
+                          {key}
+                        </h3>
+
+                        <p>
+                          {itemActive ? 'Active' : 'Inactive'}
+                        </p>
+                      </Placeholder>,
+                  )
+                }
+              </Accordion>
+            </PropExample>
           </DocSection>
         </div>
       }
