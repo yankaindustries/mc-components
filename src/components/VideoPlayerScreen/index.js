@@ -10,12 +10,10 @@ const VideoPlayerScreen = ({
   children,
   videoRoot,
 }) => {
-  if (!videoRoot) { return null }
-
   const classNames = cn(
-    'bc-player__screen',
-    { [`bc-player__screen--${variation}`]: variation },
-    { 'bc-player__screen--is-open': isActive },
+    'bc-player-screen',
+    { [`bc-player-${variation}`]: variation },
+    { 'bc-player-screen--is-open': isActive },
   )
 
   return (
