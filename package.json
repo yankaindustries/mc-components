@@ -32,7 +32,7 @@
     "lint": "yarn lint:js && yarn lint:style",
     "preversion": "yarn lint",
     "version": "yarn build && git add -A .",
-    "postversion": "git push origin $(git symbolic-ref --short -q HEAD) && git push origin $(git symbolic-ref --short -q HEAD) --tags"
+    "postversion": "branch = $(git symbolic-ref --short -q HEAD) ; git push origin $branch && git push origin $branch --tags"
   },
   "dependencies": {
     "bootstrap": "^4.3.0",
