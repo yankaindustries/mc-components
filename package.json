@@ -66,6 +66,7 @@
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "concurrently": "^4.1.0",
     "cpx": "^1.5.0",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
