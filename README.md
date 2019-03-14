@@ -44,12 +44,6 @@ yarn install
 yarn start
 ```
 
-To update the [styleguide](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
-
-```bash
-yarn deploy
-```
-
 If you want to develop in `mc-components` and see changes compiled into your own project you can utilize `yarn link` and the `dev` script:
 
 ```bash
@@ -66,6 +60,12 @@ To get back to an officially released version, run this in your project:
 ```bash
 yarn unlink mc-components
 yarn install
+```
+
+To update the [live documentation](https://yankaindustries.github.io/mc-components), run the following command from the root directory:
+
+```bash
+yarn deploy
 ```
 
 ## PRs Welcome
