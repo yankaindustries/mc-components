@@ -1,12 +1,15 @@
 .c-button,
 .mc-c-btn {
+  @include step(padding-top, 3);
+  @include step(padding-right, 5);
+  @include step(padding-bottom, 3);
+  @include step(padding-left, 5);
+  @include step(height, 9);
+  @include step(font-size, 3);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1em 2em;
-  height: 4em;
   color: $mc-color-light;
-  font-size: 0.75em;
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.12em;
@@ -14,7 +17,7 @@
   border-radius: 4px;
   transition:
     background 250ms ease,
-    border 250ms ease,
+    box-shadow 250ms ease,
     opacity 250ms ease;
   vertical-align: middle;
 

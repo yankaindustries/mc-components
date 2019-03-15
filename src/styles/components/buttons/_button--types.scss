@@ -66,31 +66,31 @@
 
   &--tertiary {
     background: none;
-    border: 1px solid rgba($mc-color-light, 0.5);
+    box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
         background: none;
-        border: 1px solid $mc-color-light;
+        box-shadow: inset 0 0 0 1px $mc-color-light;
       }
 
       &:active {
         background: none;
-        border: 1px solid rgba($mc-color-light, 0.5);
+        box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
       }
     }
 
     .mc-invert & {
-      border: 1px solid rgba($mc-color-dark, 0.5);
+      box-shadow: inset 0 0 0 1px rgba($mc-color-dark, 0.5);
       color: $mc-color-dark;
 
       &:not(:disabled):not(.disabled) {
         &:hover {
-          border: 1px solid $mc-color-dark;
+          box-shadow: inset 0 0 0 1px $mc-color-dark;
         }
 
         &:active {
-          border: 1px solid rgba($mc-color-dark, 0.5);
+          box-shadow: inset 0 0 0 1px rgba($mc-color-dark, 0.5);
         }
       }
     }
@@ -246,7 +246,7 @@
     }
 
     .mc-invert & {
-      border: 1px solid #000;
+      box-shadow: inset 0 0 0 1px #000;
     }
   }
 }
