@@ -35,23 +35,27 @@ export default class Input extends PureComponent {
     this.input = React.createRef()
   }
 
-  onFocus = () => {
+  onFocus = (event) => {
     const { onFocus } = this.props
 
-    this.setState({ focused: true })
+    this.setState({
+      focused: true,
+    })
 
     if (onFocus) {
-      onFocus()
+      onFocus(event)
     }
   }
 
-  onBlur = () => {
+  onBlur = (event) => {
     const { onBlur } = this.props
 
-    this.setState({ focused: false })
+    this.setState({
+      focused: false,
+    })
 
     if (onBlur) {
-      onBlur()
+      onBlur(event)
     }
   }
 
