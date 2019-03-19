@@ -45,7 +45,7 @@ export default class FormGroup extends PureComponent {
             {label &&
               <label
                 htmlFor={name}
-                className='d-block mc-text-h8 mc-mb-1'
+                className='d-block mc-text-h8 mc-text--left mc-mb-1'
               >
                 {label}
               </label>
@@ -54,7 +54,7 @@ export default class FormGroup extends PureComponent {
 
           {optional &&
             <div className='col-auto align-self-end'>
-              <p className='mc-text-x-small mc-text--silenced mc-mb-1'>
+              <p className='mc-text-x-small mc-text--silenced mc-text--right mc-mb-1'>
                 (Optional)
               </p>
             </div>
@@ -66,14 +66,14 @@ export default class FormGroup extends PureComponent {
 
           <div className='col align-self-start'>
             {showError &&
-              <p className='mc-text-x-small mc-text--error mc-mt-1'>
+              <p className='mc-text-x-small mc-text--error mc-text--left mc-mt-1'>
                 <IconError />
                 {error}
               </p>
             }
 
             {!showError &&
-              <p className='mc-text-x-small mc-text--muted mc-mt-1'>
+              <p className='mc-text-x-small mc-text--muted mc-text--left mc-mt-1'>
                 {help}
               </p>
             }
@@ -81,7 +81,7 @@ export default class FormGroup extends PureComponent {
 
           <div className='col-auto align-self-start'>
             {maxlength &&
-              <p className='mc-text-x-small mc-text--muted mc-mt-1'>
+              <p className='mc-text-x-small mc-text--muted mc-text--right mc-mt-1'>
                 {value.length} / {maxlength}
               </p>
             }
