@@ -46,23 +46,23 @@ export default class Select extends PureComponent {
     }
   }
 
-  handleFocus = () => {
+  handleFocus = (event) => {
     const { onFocus } = this.props
 
     this.setState({ focused: true })
 
     if (onFocus) {
-      onFocus()
+      onFocus(event)
     }
   }
 
-  handleBlur = () => {
+  handleBlur = (event) => {
     const { onBlur } = this.props
 
     this.setState({ focused: false })
 
     if (onBlur) {
-      onBlur()
+      onBlur(event)
     }
   }
 
