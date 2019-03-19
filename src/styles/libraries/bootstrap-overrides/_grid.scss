@@ -55,7 +55,7 @@
   // Override for smaller gutters when using the
   // grid inside of an existing column (nested grids)
   .small-gutters {
-    margin: 0;
+    margin: $grid-gutter-width-xl / -4;
 
     .col,
     [class^="col-"],
