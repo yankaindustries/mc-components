@@ -47,7 +47,7 @@ $mc-video-progress-height: 0.8rem !default;
 
   .vjs-mouse & {
     height: $mc-video-control-height !important;
-    z-index: 2;
+    z-index: 10;
 
     .vjs-progress-control {
       .vjs-progress-holder,
@@ -66,8 +66,7 @@ $mc-video-progress-height: 0.8rem !default;
     }
   }
 
-  .not-hover &,
-  .vjs-user-inactive & {
+  .not-hover & {
     transform: translateY($mc-video-control-height + $mc-video-progress-height) !important;
   }
 }
