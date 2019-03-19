@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import get from 'lodash/get'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -90,13 +91,12 @@ export default class VideoPlayer extends PureComponent {
   }
 
   componentWillUnmount () {
-    // clean listeners
+    // clean listeners and DOM
     this.video.off('play')
     this.video.off('pause')
     this.video.off('ended')
     this.video.off('seeking')
     this.video.off('fullscreenchange')
-    // remove DOM element
     this.video.dispose()
   }
 
@@ -122,49 +122,14 @@ export default class VideoPlayer extends PureComponent {
   }
 
   handlePlayerReady = () => {
-    const {
-      onSeek,
-      onPause,
-      onPlay,
-      onPlayerReady,
-      onVideoReady,
-      pausescreenComponent,
-    } = this.props
+    const { onPlayerReady } = this.props
 
-    this.video.on('play', () => {
-      if (onPlay) {
-        onPlay(this.video)
-      }
-
-      this.setState({ screen: SCREEN_NONE })
-    })
-
-    this.video.on('pause', () => {
-      if (onPause) {
-        onPause(this.video)
-      }
-
-      if (pausescreenComponent) {
-        this.setState({ screen: SCREEN_PAUSE })
-      }
-    })
-
+    this.video.on('play', this.handlePlay)
+    this.video.on('pause', this.handlePause)
     this.video.on('fullscreenchange', this.handleFullscreenChange)
-    this.video.on('ended', this.handleVideoEnd)
-
-    this.video.on('seeking', () => {
-      this.setState({ screen: SCREEN_NONE })
-      if (onSeek) {
-        onSeek(this.video)
-      }
-    })
-
-    this.video.on('loadedmetadata', () => {
-      this.checkBuffers()
-      if (onVideoReady) {
-        onVideoReady(this.video)
-      }
-    })
+    this.video.on('ended', this.handleEnd)
+    this.video.on('seeking', this.handleSeeking)
+    this.video.on('loadedmetadata', this.handleReady)
 
     if (onPlayerReady) {
       onPlayerReady(this.video)
@@ -173,7 +138,60 @@ export default class VideoPlayer extends PureComponent {
     this.startSecondsTimer()
   }
 
-  handleVideoEnd = () => {
+  handlePlay = () => {
+    const { onPlay } = this.props
+
+    this.setState({
+      screen: SCREEN_NONE,
+    })
+
+    if (onPlay) {
+      onPlay(this.video)
+    }
+  }
+
+  handlePause = () => {
+    const { onPause } = this.props
+
+    this.setState({
+      screen: SCREEN_PAUSE,
+    })
+
+    if (onPause) {
+      onPause(this.video)
+    }
+  }
+
+  handleSeeking = () => {
+    const { onSeek } = this.props
+
+    this.setState({
+      screen: SCREEN_NONE,
+    })
+
+    if (onSeek) {
+      onSeek(this.video)
+    }
+  }
+
+  handleReady = () => {
+    const {
+      hasAutoplay,
+      onVideoReady,
+    } = this.props
+
+    this.checkBuffers()
+
+    if (hasAutoplay) {
+      this.video.play()
+    }
+
+    if (onVideoReady) {
+      onVideoReady(this.video)
+    }
+  }
+
+  handleEnd = () => {
     this.currentTime = 0
     this.hasEnded = true
 
@@ -186,7 +204,9 @@ export default class VideoPlayer extends PureComponent {
     if (isLooped) {
       this.video.play()
     } else if (endscreenComponent) {
-      this.setState({ screen: SCREEN_END })
+      this.setState({
+        screen: SCREEN_END,
+      })
     }
 
     if (onEnd) {
@@ -196,6 +216,7 @@ export default class VideoPlayer extends PureComponent {
 
   handleFullscreenChange = () => {
     const { onFullscreenChange } = this.props
+
     if (onFullscreenChange) {
       onFullscreenChange(this.video.isFullscreen())
     }
@@ -207,7 +228,7 @@ export default class VideoPlayer extends PureComponent {
     this.setState({ screen: SCREEN_NONE })
   }
 
-  resumeVideo = () => {
+  handleResume = () => {
     this.video.play()
   }
 
@@ -296,9 +317,11 @@ export default class VideoPlayer extends PureComponent {
       this.video.catalog.load(video)
       this.hasEnded = false
       this.currentTime = 0
+
       this.setState({
         screen: SCREEN_NONE,
       })
+
       this.video.play()
     })
   }
@@ -316,29 +339,27 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
-  // videoJS fix for buffers
   checkBuffers = () => {
-    const { videoId, hasAutoplay } = this.props
-    // eslint-disable-next-line
-    if (this.video && this.video.tech_.hls) {
-      // eslint-disable-next-line
-      const { mediaSource } = this.video.tech_.hls
-      // eslint-disable-next-line
-      const videoBuffer = mediaSource.videoBuffer_
-      // eslint-disable-next-line
-      const audioBuffer = mediaSource.audioBuffer_
-      if (videoBuffer && !audioBuffer) {
-        this.video.reset()
-        this.video.catalog.getVideo(
-          videoId,
-          (error, video) => {
-            this.video.catalog.load(video)
-            if (hasAutoplay) {
-              this.video.play()
-            }
-          },
-        )
-      }
+    const {
+      videoId,
+      hasAutoplay,
+    } = this.props
+
+    const hls = get(this.video, 'tech_.hls')
+    const videoBuffer = get(this.video, 'tech_.hls.mediaSource.videoBuffer_')
+    const audioBuffer = get(this.video, 'tech_.hls.mediaSource.videoBuffer_')
+
+    if (hls && videoBuffer && !audioBuffer) {
+      this.video.reset()
+      this.video.catalog.getVideo(
+        videoId,
+        (error, video) => {
+          this.video.catalog.load(video)
+          if (hasAutoplay) {
+            this.video.play()
+          }
+        },
+      )
     }
   }
 
@@ -349,7 +370,6 @@ export default class VideoPlayer extends PureComponent {
       pausescreenComponent,
       videoId,
       playerId,
-      hasAutoplay,
       hasControls,
       isMuted,
       accountId,
@@ -386,10 +406,9 @@ export default class VideoPlayer extends PureComponent {
             ref={this.playerRef}
             className={playerClasses}
             data-embed='default'
-            data-video-id={videoId}
-            data-player-id={playerId}
             data-account={accountId}
-            autoPlay={hasAutoplay}
+            data-player-id={playerId}
+            data-video-id={videoId}
             muted={isMuted}
             controls={hasControls}
           />
@@ -402,7 +421,7 @@ export default class VideoPlayer extends PureComponent {
             videoRoot={videoRoot}
           >
             {renderChildren(beforescreenComponent, {
-              onResume: this.resumeVideo,
+              onResume: this.handleResume,
               isActive: screen === SCREEN_BEFORE,
             })}
           </VideoPlayerScreen>
@@ -415,7 +434,7 @@ export default class VideoPlayer extends PureComponent {
             videoRoot={videoRoot}
           >
             {renderChildren(pausescreenComponent, {
-              onResume: this.resumeVideo,
+              onResume: this.handleResume,
               isActive: screen === SCREEN_PAUSE,
             })}
           </VideoPlayerScreen>
