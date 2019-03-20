@@ -216,7 +216,7 @@ $mc-video-progress-height: 0.8rem !default;
     height: auto;
     padding: 8px;
     border-radius: 2px;
-    transform: translate3d(0, 0, 0) scaleY(0.75);
+    transform: translate3d(0, 0, 0);
   }
 
   // captialize subtitle options
@@ -244,8 +244,6 @@ $mc-video-progress-height: 0.8rem !default;
       background-color: rgba($mc-color-dark, 0.8);
       border-radius: 0;
       text-shadow: none !important;
-      // letter-spacing: inherit !important;
-      // text-transform: capitalize;
 
       &:first-child {
         border-top-right-radius: 4px;
