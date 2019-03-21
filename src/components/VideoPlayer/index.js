@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import get from 'lodash/get'
+import times from 'lodash/times'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -14,8 +15,7 @@ const SCREEN_END = 'SCREEN_END'
 const SCREEN_PAUSE = 'SCREEN_PAUSE'
 const SCREEN_NONE = 'SCREEN_NONE'
 
-const STATUS_LOADING = 'STATUS_LOADING'
-const STATUS_READY = 'STATUS_READY'
+const CC_HIDDEN = 'hidden'
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
@@ -60,7 +60,6 @@ export default class VideoPlayer extends PureComponent {
 
   state = {
     screen: SCREEN_NONE,
-    status: STATUS_LOADING,
   }
 
   componentDidMount () {
@@ -118,7 +117,6 @@ export default class VideoPlayer extends PureComponent {
     })
     this.video = window.videojs(this.playerRef.current)
     this.video.ready(this.handlePlayerReady)
-    this.setState({ status: STATUS_READY })
   }
 
   handlePlayerReady = () => {
@@ -181,6 +179,7 @@ export default class VideoPlayer extends PureComponent {
     } = this.props
 
     this.checkBuffers()
+    this.turnOffCaptions()
 
     if (hasAutoplay) {
       this.video.play()
@@ -189,6 +188,14 @@ export default class VideoPlayer extends PureComponent {
     if (onVideoReady) {
       onVideoReady(this.video)
     }
+  }
+
+  turnOffCaptions = () => {
+    const tracks = this.video.textTracks()
+
+    times(tracks.length).forEach((i) => {
+      tracks[i].mode = CC_HIDDEN
+    })
   }
 
   handleEnd = () => {
