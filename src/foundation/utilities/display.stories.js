@@ -11,6 +11,8 @@ const Display = () =>
       description='The display utilities can show / hide content at various breakpoints'
     />
 
+    <p>For additional documentation, please reference the <a href='https://getbootstrap.com/docs/4.3/utilities/display' className='mc-text--link'>Bootstrap documentation</a>.</p>
+
     <DocSection title='Hiding Elements'>
       <table className='example__table'>
         <thead>
