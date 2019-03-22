@@ -121,7 +121,8 @@ $scrollbar-max-width: 17px !default;
     cursor: pointer;
     transition:
       background 200ms ease,
-      color 200ms ease;
+      color 200ms ease,
+      opacity 200ms ease;
 
 
     &:not(.slick-disabled):hover {
@@ -154,7 +155,8 @@ $scrollbar-max-width: 17px !default;
     // Disabled state for when you can't
     // advance the slide or "go back" anymore
     &.slick-disabled {
-      opacity: 0.5;
+      opacity: 0;
+      pointer-events: none;
     }
   }
 
