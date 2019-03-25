@@ -17,6 +17,9 @@ const SCREEN_NONE = 'SCREEN_NONE'
 
 const CC_HIDDEN = 'hidden'
 
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+
+
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
     accountId: PropTypes.string,
@@ -181,7 +184,7 @@ export default class VideoPlayer extends PureComponent {
     this.checkBuffers()
     this.turnOffCaptions()
 
-    if (hasAutoplay) {
+    if (hasAutoplay && !isSafari) {
       this.video.play()
     }
 
@@ -312,9 +315,14 @@ export default class VideoPlayer extends PureComponent {
   }
 
   replaceWith = (videoId) => {
+    // Close all overlays
     if (this.video.customOverlay) {
       this.video.customOverlay.close()
     }
+
+    this.setState({
+      screen: SCREEN_NONE,
+    })
 
     this.video.catalog.getVideo(videoId, (error, video) => {
       if (error && this.props.onError) {
@@ -324,10 +332,6 @@ export default class VideoPlayer extends PureComponent {
       this.video.catalog.load(video)
       this.hasEnded = false
       this.currentTime = 0
-
-      this.setState({
-        screen: SCREEN_NONE,
-      })
 
       this.video.play()
     })
