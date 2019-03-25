@@ -1,7 +1,7 @@
 .mc-animation {
   &--important {
     &.mc-animation--animating {
-      z-index: 2;
+      z-index: $mc-zindex-animating;
     }
   }
 
