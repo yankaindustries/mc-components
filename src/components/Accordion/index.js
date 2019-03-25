@@ -27,6 +27,10 @@ export default class Accordion extends PureComponent {
     showCount: PropTypes.number,
   }
 
+  state = {
+    hovering: false,
+  }
+
   static defaultProps = {
     aspectRatio: '21x9',
     on: 'hovering',
@@ -51,6 +55,8 @@ export default class Accordion extends PureComponent {
       ...restProps
     } = this.props
 
+    const { hovering } = this.state
+
     const parentClasses = active =>
       cn({
         [className]: className,
@@ -71,7 +77,7 @@ export default class Accordion extends PureComponent {
       <HoverHandler nowrap>
         {({ [on]: parentActive, props: parentProps }) =>
           <div
-            className={parentClasses(parentActive)}
+            className={parentClasses(hovering)}
             {...restProps}
             {...parentProps}
           >
@@ -82,7 +88,20 @@ export default class Accordion extends PureComponent {
                     <HoverHandler nowrap>
                       {({ [on]: itemActive, props: itemProps }) =>
                         <div className={itemClasses(itemActive)} {...itemProps}>
-                          {renderChildren(child, { itemActive, parentActive })}
+                          <div
+                            className='mc-accordion__item-wrapper'
+                            onMouseEnter={() => {
+                              this.setState({ hovering: true })
+                            }}
+                            onMouseLeave={() => {
+                              this.setState({ hovering: false })
+                            }}
+                          >
+                            {renderChildren(child, {
+                              itemActive,
+                              parentActive,
+                            })}
+                          </div>
                         </div>
                       }
                     </HoverHandler>
