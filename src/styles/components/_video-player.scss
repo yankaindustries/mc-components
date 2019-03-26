@@ -204,7 +204,6 @@ $brightcove-video-sizes: (
     border-radius: 4px;
   }
 
-  // capitalize HD label
   .vjs-quality-menu-item-sub-label {
     text-transform: uppercase;
   }
@@ -240,7 +239,6 @@ $brightcove-video-sizes: (
     transform: translate3d(0, 0, 0) scaleY(0.75);
   }
 
-  // captialize subtitle options
   .vjs-captions-button,
   .vjs-subs-caps-button {
     .vjs-menu-item {
@@ -405,4 +403,9 @@ $brightcove-video-sizes: (
   } 100% {
     opacity: 1;
   }
+}
+
+// TODO JJ: Remove this when BC player is updated
+.vjs-captions-button {
+  display: none;
 }
