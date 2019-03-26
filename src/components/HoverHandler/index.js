@@ -9,6 +9,7 @@ export default class HoverHandler extends PureComponent {
   static propTypes = {
     children: PropTypes.func.isRequired,
     nowrap: PropTypes.bool,
+    onChange: PropTypes.func,
   }
 
   state = {
@@ -20,19 +21,18 @@ export default class HoverHandler extends PureComponent {
     if (this.timer) this.timer = clearTimeout(this.timer)
   }
 
+  onChange = (state) => {
+    this.setState(state)
+    if (this.props.onChange) this.props.onChange(state)
+  }
+
   onEnter = () => {
     if (this.timer) this.timer = clearTimeout(this.timer)
 
-    this.setState({
-      hovering: true,
-    })
+    this.onChange({ hovering: true })
 
     this.timer = setTimeout(
-      () => {
-        this.setState({
-          intent: true,
-        })
-      },
+      () => this.onChange({ intent: true }),
       DELAY,
     )
   }
@@ -40,16 +40,10 @@ export default class HoverHandler extends PureComponent {
   onLeave = () => {
     if (this.timer) this.timer = clearTimeout(this.timer)
 
-    this.setState({
-      hovering: false,
-    })
+    this.onChange({ hovering: false })
 
     this.timer = setTimeout(
-      () => {
-        this.setState({
-          intent: false,
-        })
-      },
+      () => this.onChange({ intent: false }),
       DELAY,
     )
   }
