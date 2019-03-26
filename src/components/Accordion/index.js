@@ -27,14 +27,15 @@ export default class Accordion extends PureComponent {
     showCount: PropTypes.number,
   }
 
-  state = {
-    hovering: false,
-  }
-
   static defaultProps = {
     aspectRatio: '21x9',
     on: 'hovering',
     showCount: 4,
+  }
+
+  state = {
+    intent: false,
+    hovering: false,
   }
 
   mapChildren = (children, mapFn) => {
@@ -43,6 +44,14 @@ export default class Accordion extends PureComponent {
     }
 
     return Children.map(children, mapFn)
+  }
+
+  handleHoverChange = (args) => {
+    const { on } = this.props
+
+    this.setState({
+      [on]: args[on],
+    })
   }
 
   render () {
@@ -55,7 +64,9 @@ export default class Accordion extends PureComponent {
       ...restProps
     } = this.props
 
-    const { hovering } = this.state
+    const {
+      [on]: parentActive,
+    } = this.state
 
     const parentClasses = active =>
       cn({
@@ -71,51 +82,33 @@ export default class Accordion extends PureComponent {
         'mc-accordion__item--active': active,
       })
 
-    const filled = times(showCount).map((v, i) => children[i])
+    const countedChildren = times(showCount).map((v, i) => children[i])
 
     return (
-      <HoverHandler nowrap>
-        {({ [on]: parentActive, props: parentProps }) =>
-          <div
-            className={parentClasses(hovering)}
-            {...restProps}
-            {...parentProps}
-          >
-            <div className='mc-accordion__content'>
-              {this.mapChildren(filled, (child, key) =>
-                <Fragment key={key}>
-                  {child &&
-                    <HoverHandler nowrap>
-                      {({ [on]: itemActive, props: itemProps }) =>
-                        <div className={itemClasses(itemActive)} {...itemProps}>
-                          <div
-                            className='mc-accordion__item-wrapper'
-                            onMouseEnter={() => {
-                              this.setState({ hovering: true })
-                            }}
-                            onMouseLeave={() => {
-                              this.setState({ hovering: false })
-                            }}
-                          >
-                            {renderChildren(child, {
-                              itemActive,
-                              parentActive,
-                            })}
-                          </div>
-                        </div>
-                      }
-                    </HoverHandler>
+      <div className={parentClasses(parentActive)} {...restProps}>
+        <div className='mc-accordion__content'>
+          {this.mapChildren(countedChildren, (child, key) =>
+            <Fragment key={key}>
+              {child &&
+                <HoverHandler
+                  onChange={this.handleHoverChange}
+                  nowrap
+                >
+                  {({ [on]: itemActive, props: itemProps }) =>
+                    <div className={itemClasses(itemActive)} {...itemProps}>
+                      {renderChildren(child, { itemActive, parentActive })}
+                    </div>
                   }
+                </HoverHandler>
+              }
 
-                  {!child &&
-                    <div className={itemClasses()} />
-                  }
-                </Fragment>,
-              )}
-            </div>
-          </div>
-        }
-      </HoverHandler>
+              {!child &&
+                <div className={itemClasses()} />
+              }
+            </Fragment>,
+          )}
+        </div>
+      </div>
     )
   }
 }
