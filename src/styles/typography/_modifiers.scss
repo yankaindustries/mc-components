@@ -97,8 +97,8 @@
 
   // Links
   &--link,
-  &--naked-link:hover,
-  .mc-text--naked-link-parent:hover &--naked-link {
+  &--bare-link:hover,
+  .mc-text--bare-link-parent:hover &--bare-link {
     text-decoration: underline;
     cursor: pointer;
   }

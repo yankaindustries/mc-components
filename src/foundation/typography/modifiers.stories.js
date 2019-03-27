@@ -25,7 +25,7 @@ const Modifiers = () =>
         </h6>
       </PropExample>
 
-      <PropExample name='.mc-text--link / .mc-text--naked-link'>
+      <PropExample name='.mc-text--link / .mc-text--bare-link'>
         <p className='mc-text-large'>
           The quick
           {' '}
@@ -33,7 +33,7 @@ const Modifiers = () =>
           {' '}
           jumped over the
           {' '}
-          <a className='mc-text--naked-link'>lazy dog</a>.
+          <a className='mc-text--bare-link'>lazy dog</a>.
         </p>
       </PropExample>
     </DocSection>

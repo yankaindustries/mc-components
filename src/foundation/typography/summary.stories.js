@@ -167,8 +167,8 @@ export default class Summary extends PureComponent {
 
           <div className='row'>
             <div className='col-sm-6 offset-sm-1'>
-              <div className='mc-text--naked-link-parent mc-mb-9'>
-                <h3 className='mc-text-h3 mc-text--uppercase mc-text--naked-link mc-mb-2'>
+              <div className='mc-text--bare-link-parent mc-mb-9'>
+                <h3 className='mc-text-h3 mc-text--uppercase mc-text--bare-link mc-mb-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
                 <p className='mc-text--muted mc-mb-2'>
@@ -182,8 +182,8 @@ export default class Summary extends PureComponent {
                 </h6>
               </div>
 
-              <div className='mc-text--naked-link-parent mc-mb-9'>
-                <h3 className='mc-text-h5 mc-text--naked-link mc-mb-2'>
+              <div className='mc-text--bare-link-parent mc-mb-9'>
+                <h3 className='mc-text-h5 mc-text--bare-link mc-mb-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
                 <p className='mc-text--muted mc-mb-2'>
@@ -196,8 +196,8 @@ export default class Summary extends PureComponent {
                 </h6>
               </div>
 
-              <div className='mc-text--naked-link-parent mc-mb-9'>
-                <h3 className='mc-text-h5 mc-text--naked-link mc-mb-2'>
+              <div className='mc-text--bare-link-parent mc-mb-9'>
+                <h3 className='mc-text-h5 mc-text--bare-link mc-mb-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
                 <p className='mc-text--muted mc-mb-2'>
@@ -212,7 +212,7 @@ export default class Summary extends PureComponent {
             </div>
 
             <div className='col-sm-4'>
-              <div className='row mc-text--naked-link-parent'>
+              <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
                   <h6 className='mc-text-h7 mc-text--muted'>
                     3
@@ -224,7 +224,7 @@ export default class Summary extends PureComponent {
                     Up Next
                   </h6>
 
-                  <h6 className='mc-text-h6 mc-text--naked-link mc-mb-2'>
+                  <h6 className='mc-text-h6 mc-text--bare-link mc-mb-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
                   <p className='mc-text-x-small mc-text--muted'>
@@ -237,7 +237,7 @@ export default class Summary extends PureComponent {
 
               <hr />
 
-              <div className='row mc-text--naked-link-parent'>
+              <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
                   <h6 className='mc-text-h7 mc-text--muted'>
                     4
@@ -245,7 +245,7 @@ export default class Summary extends PureComponent {
                 </div>
 
                 <div className='col-10'>
-                  <h6 className='mc-text-h6 mc-text--naked-link mc-mb-2'>
+                  <h6 className='mc-text-h6 mc-text--bare-link mc-mb-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
                   <p className='mc-text-x-small mc-text--muted'>
@@ -258,7 +258,7 @@ export default class Summary extends PureComponent {
 
               <hr />
 
-              <div className='row mc-text--naked-link-parent'>
+              <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
                   <p className='mc-text--muted'>
                     5
@@ -266,7 +266,7 @@ export default class Summary extends PureComponent {
                 </div>
 
                 <div className='col-10'>
-                  <h6 className='mc-text-h6 mc-text--naked-link mc-mb-2'>
+                  <h6 className='mc-text-h6 mc-text--bare-link mc-mb-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
                   <p className='mc-text-x-small mc-text--muted'>
@@ -290,7 +290,7 @@ export default class Summary extends PureComponent {
                       type='zoom'
                       animating={hovering}
                     >
-                      <div className='mc-text--naked-link-parent'>
+                      <div className='mc-text--bare-link-parent'>
                         <Tile>
                           <TileImage imageUrl='https://placekitten.com/800/800' />
                         </Tile>
@@ -305,7 +305,7 @@ export default class Summary extends PureComponent {
                             Building Your Home Studio
                           </h6>
 
-                          <h4 className='mc-text-h4 mc-text--naked-link mc-mb-2'>
+                          <h4 className='mc-text-h4 mc-text--bare-link mc-mb-2'>
                             Margaret Atwood
                           </h4>
 
