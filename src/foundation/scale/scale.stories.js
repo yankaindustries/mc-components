@@ -186,7 +186,7 @@ class Scale extends PureComponent {
 
           <Highlight className='language-scss mc-mb-8'>
 {`.some-container {
-  @include scale(padding, 5)
+  @include step(padding, 5)
 }`}
           </Highlight>
 
