@@ -178,8 +178,6 @@
   display: flex;
 
   &__content {
-    @include step(padding, 4);
-
     position: absolute;
     width: 100%;
     transition:
