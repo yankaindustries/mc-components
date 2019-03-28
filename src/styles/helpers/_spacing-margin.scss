@@ -11,14 +11,14 @@
 
 // Margins all around
 .mc-m {
-  @for $i from 1 through 12 {
+  @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin, $i); }
   }
 }
 
 // Margins - x axis only
 .mc-mx {
-  @for $i from 1 through 12 {
+  @for $i from $scale-begin through $scale-end {
     &-#{$i} {
       @include step(margin-left, $i);
       @include step(margin-right, $i);
@@ -28,7 +28,7 @@
 
 // Margins - y axis only
 .mc-my {
-  @for $i from 1 through 12 {
+  @for $i from $scale-begin through $scale-end {
     &-#{$i} {
       @include step(margin-top, $i);
       @include step(margin-bottom, $i);
@@ -38,28 +38,28 @@
 
 // Margins - top only
 .mc-mt {
-  @for $i from 1 through 12 {
+  @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-top, $i); }
   }
 }
 
 // Margins - right only
 .mc-mr {
-  @for $i from 1 through 12 {
+  @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-right, $i); }
   }
 }
 
 // Margins - bottom only
 .mc-mb {
-  @for $i from 1 through 12 {
+  @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-bottom, $i); }
   }
 }
 
 // Margins - left only
 .mc-ml {
-  @for $i from 1 through 12 {
+  @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-left, $i); }
   }
 }
