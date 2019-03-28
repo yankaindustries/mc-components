@@ -30,12 +30,16 @@ export default class Modal extends PureComponent {
 
   componentDidUpdate (prevProps) {
     const { show } = this.props
-    const body = document.getElementsByTagName('body')[0]
+
     if (!prevProps.show && show) {
-      body.classList.add('mc-modal__body--open')
+      document.body.classList.add('mc-modal__body--open')
     } else if (prevProps.show && !show) {
-      body.classList.remove('mc-modal__body--open')
+      document.body.classList.remove('mc-modal__body--open')
     }
+  }
+
+  componentWillUnmount () {
+    document.body.classList.remove('mc-modal__body--open')
   }
 
   onKeyDown = (event) => {
