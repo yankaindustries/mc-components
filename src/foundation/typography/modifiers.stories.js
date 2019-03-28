@@ -24,6 +24,18 @@ const Modifiers = () =>
           The quick brown fox jumped over the lazy dog.
         </h6>
       </PropExample>
+
+      <PropExample name='.mc-text--link / .mc-text--bare-link'>
+        <p className='mc-text-large'>
+          The quick
+          {' '}
+          <a className='mc-text--link'>brown fox</a>
+          {' '}
+          jumped over the
+          {' '}
+          <a className='mc-text--bare-link'>lazy dog</a>.
+        </p>
+      </PropExample>
     </DocSection>
 
     <DocSection title='Color'>
