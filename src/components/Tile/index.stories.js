@@ -247,6 +247,7 @@ storiesOf('Components|Tiles/Tile', module)
         <PropExample
           name='aspectRatio'
           type='String'
+          description='auto, 1x1, 2x3, 3x4, 4x3, 9x16, 16x9, 21x9'
         >
           <div className='row'>
             <div className='col-sm-12'>
