@@ -346,6 +346,54 @@ storiesOf('Components|Carousels/Carousel', module)
                   {tiles()}
                 </Carousel>
             </PropExample>
+
+            <PropExample
+              name='scrollCount'
+              type='Number'
+            >
+                <Carousel
+                  className='row'
+                  scrollCount={2}
+                  controls
+                >
+                  {tiles()}
+                </Carousel>
+            </PropExample>
+
+            <PropExample
+              name='showCount'
+              type='Number'
+            >
+                <Carousel
+                  className='row'
+                  showCount={2}
+                  controls
+                >
+                  {tiles()}
+                </Carousel>
+            </PropExample>
+
+
+            <PropExample
+              name='transition'
+              type='String'
+            >
+                <Carousel
+                  className='row'
+                  transition='slide'
+                  controls
+                >
+                  {tiles()}
+                </Carousel>
+
+                <Carousel
+                  className='row'
+                  transition='fade'
+                  controls
+                >
+                  {tiles()}
+                </Carousel>
+            </PropExample>
           </DocSection>
         </div>
       }
