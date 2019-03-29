@@ -54,8 +54,8 @@ export default class TileOverlay extends PureComponent {
         background: `
           linear-gradient(
             to right,
-            rgba(${color}, 1) 0,
-            rgba(${color}, 0.6) 25%,
+            rgba(${color}, 1) 12%,
+            rgba(${color}, 0.9) 20%,
             rgba(${color}, 0) 45%
           ) center no-repeat
         `,
