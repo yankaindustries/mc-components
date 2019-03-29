@@ -22,7 +22,7 @@
 
   &--highlight-active {
     .slick-list {
-      .slick-slide {
+      .slick-active {
         opacity: 0.5;
         transition: opacity 250ms ease;
 
@@ -35,7 +35,7 @@
 
   &--highlight-hover {
     .slick-list:hover {
-      .slick-slide {
+      .slick-active {
         opacity: 0.5;
         transition: opacity 250ms ease;
 
