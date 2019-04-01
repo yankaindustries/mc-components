@@ -107,6 +107,36 @@ storiesOf('Components|Accordion', module)
                 }
               </Accordion>
             </PropExample>
+
+
+            <PropExample
+              name='aspectRatio'
+              type='String'
+              description={`
+                auto, 1x1, 2x3, 3x4, 4x3, 9x16, 16x9
+              `}
+            >
+              <Accordion
+                className='mc-mb-10'
+                aspectRatio={responsiveValues(media, '1x1', '16x9', '16x9')}
+              >
+                {[1, 2, 3, 4]
+                  .slice(0, responsiveValues(media, 4, 3, 2))
+                  .map(key =>
+                    ({ itemActive }) =>
+                      <Placeholder className='mc-text--center'>
+                        <h3 className='mc-text-h3'>
+                          {key}
+                        </h3>
+
+                        <p>
+                          {itemActive ? 'Active' : 'Inactive'}
+                        </p>
+                      </Placeholder>,
+                  )
+                }
+              </Accordion>
+            </PropExample>
           </DocSection>
         </div>
       }
