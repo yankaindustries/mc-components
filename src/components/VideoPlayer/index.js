@@ -34,6 +34,8 @@ export default class VideoPlayer extends PureComponent {
     hasControls: PropTypes.bool,
     isLooped: PropTypes.bool,
     isMuted: PropTypes.bool,
+    playerRef: PropTypes.obj,
+    progress: PropTypes.number,
 
     onPlayerReady: PropTypes.func,
     onVideoReady: PropTypes.func,
@@ -44,7 +46,6 @@ export default class VideoPlayer extends PureComponent {
     onFullscreenChange: PropTypes.func,
     onError: PropTypes.func,
     onSeek: PropTypes.func,
-    progress: PropTypes.number,
   }
 
   static defaultProps = {
@@ -58,11 +59,16 @@ export default class VideoPlayer extends PureComponent {
     isLooped: false,
   }
 
-  playerRef = React.createRef()
   currentTime = 0
 
   state = {
     screen: SCREEN_NONE,
+  }
+
+  constructor (props) {
+    super(props)
+
+    this.playerRef = props.playerRef || React.createRef()
   }
 
   componentDidMount () {
@@ -99,6 +105,7 @@ export default class VideoPlayer extends PureComponent {
     this.video.off('ended')
     this.video.off('seeking')
     this.video.off('fullscreenchange')
+    this.video.off('loadmetadata')
     this.video.dispose()
   }
 
@@ -127,9 +134,9 @@ export default class VideoPlayer extends PureComponent {
 
     this.video.on('play', this.handlePlay)
     this.video.on('pause', this.handlePause)
-    this.video.on('fullscreenchange', this.handleFullscreenChange)
     this.video.on('ended', this.handleEnd)
     this.video.on('seeking', this.handleSeeking)
+    this.video.on('fullscreenchange', this.handleFullscreenChange)
     this.video.on('loadedmetadata', this.handleReady)
 
     if (onPlayerReady) {

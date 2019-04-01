@@ -18,20 +18,8 @@
     z-index: 1;
   }
 
-  &--naked {
-    &:after {
-      display: none;
-    }
-  }
-
   &--crop {
     overflow: hidden;
-  }
-
-  &--active {
-    &:after {
-      box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.2);
-    }
   }
 
   &--auto {
@@ -98,20 +86,19 @@
 
 .mc-tile-video {
   overflow: hidden;
+  opacity: 0;
+  transition: 0.2s ease opacity;
+
+  &.mc-tile-video--show {
+    opacity: 1;
+  }
 
   &__mute {
     position: absolute;
     right: 0;
     top: 0;
-    // width: 24px;
-    // height: 24px;
     margin: 12px;
     z-index: 1;
-
-    svg {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   &__video {
@@ -120,19 +107,20 @@
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
+  }
 
-    transition: 0.2s ease opacity;
-
-
-    .mc-tile-video--ready & {
-      opacity: 1;
-    }
+  .bc-player {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
   }
 }
 
 .mc-tile-overlay {
   transform: scale(1.01);
+  pointer-events: none;
 
   &--gradient-bottom {
     background:
@@ -176,6 +164,7 @@
 
 .mc-tile-caption {
   display: flex;
+  pointer-events: none;
 
   &__content {
     position: absolute;
@@ -183,6 +172,7 @@
     transition:
       transform 0.2s ease,
       padding 0.2s ease;
+    pointer-events: auto;
   }
 
   // Modifiers
