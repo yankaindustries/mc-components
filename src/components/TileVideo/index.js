@@ -17,7 +17,7 @@ export default class TileVideo extends PureComponent {
     muted: PropTypes.bool,
     onVideoReady: PropTypes.func,
     playerRef: PropTypes.obj,
-    videoId: PropTypes.string,
+    videoId: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
