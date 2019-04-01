@@ -76,7 +76,6 @@ export default class Select extends PureComponent {
       touched,
       value,
       required,
-
       onChange,
 
       ...props
@@ -103,7 +102,7 @@ export default class Select extends PureComponent {
           className='mc-form-element__element'
           name={name}
           options={options}
-          disabled={disabled}
+          isDisabled={disabled}
           value={this.getOptionByValue(value)}
           {...props}
           onChange={this.handleChange}
