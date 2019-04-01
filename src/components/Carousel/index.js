@@ -64,7 +64,6 @@ export default class Carousel extends PureComponent {
     showCount: PropTypes.number,
     sliderRef: PropTypes.func,
     transition: PropTypes.string,
-    variableWidth: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -79,7 +78,6 @@ export default class Carousel extends PureComponent {
     scrollCount: 1,
     showCount: 3,
     transition: TRANSITION_SLIDE,
-    variableWidth: false,
   }
 
   render () {
