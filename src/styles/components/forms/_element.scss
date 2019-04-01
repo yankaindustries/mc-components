@@ -69,6 +69,10 @@
   &--disabled {
     background: $mc-color-gray-200;
     box-shadow: none;
+    cursor: not-allowed;
+
+    // Needed to select nested children
+    * { cursor: not-allowed; }
 
     .mc-invert & {
       background: $mc-color-gray-700;
@@ -94,8 +98,5 @@
         color: rgba($mc-color-dark, 0.3);
       }
     }
-
-    // disable cursor
-    * { cursor: not-allowed; }
   }
 }
