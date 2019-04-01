@@ -6,18 +6,17 @@ import VideoPlayer from '../VideoPlayer'
 import Unmute from '../Icons/Muted'
 import Mute from '../Icons/Unmuted'
 
-const ACCOUNT_ID = '5344802162001'
-const PLAYER_ID = 'rkcQq7gAe'
-
 
 export default class TileVideo extends PureComponent {
   static propTypes = {
     autoPlay: PropTypes.bool,
     children: PropTypes.element,
-    controls: PropTypes.bool,
     className: PropTypes.string,
+    controls: PropTypes.bool,
     loop: PropTypes.bool,
     muted: PropTypes.bool,
+    onVideoReady: PropTypes.func,
+    playerRef: PropTypes.obj,
     videoId: PropTypes.string.isRequired,
   }
 
@@ -31,10 +30,15 @@ export default class TileVideo extends PureComponent {
   constructor (props) {
     super(props)
 
-    this.playerRef = React.createRef()
-
     this.state = {
       muted: props.muted,
+      show: false,
+    }
+  }
+
+  componentDidUpdate (prevProps) {
+    if (this.props.muted !== prevProps.muted) {
+      this.setState({ muted: this.props.muted })
     }
   }
 
@@ -45,10 +49,24 @@ export default class TileVideo extends PureComponent {
     }))
   }
 
-  onReady = () => {
+  handleVideoReady = (args) => {
     this.setState({
-      ready: true,
+      show: true,
     })
+
+    if (this.props.onVideoReady) {
+      this.props.onVideoReady(args)
+    }
+  }
+
+  handleVideoEnd = (args) => {
+    this.setState({
+      show: false,
+    })
+
+    if (this.props.onEnd) {
+      this.props.onEnd(args)
+    }
   }
 
   render () {
@@ -57,20 +75,21 @@ export default class TileVideo extends PureComponent {
       children,
       className,
       controls,
+      playerRef,
       videoId,
       ...restProps
     } = this.props
 
     const {
       muted,
-      ready,
+      show,
     } = this.state
 
     const classes = cn({
       [className]: className,
       'mc-tile__component': true,
       'mc-tile-video': true,
-      'mc-tile-video--ready': ready,
+      'mc-tile-video--show': show,
       'mc-tile-video--muted': muted,
     })
 
@@ -90,14 +109,14 @@ export default class TileVideo extends PureComponent {
 
         <div className='mc-tile-video__video'>
           <VideoPlayer
-            accountId={ACCOUNT_ID}
+            {...restProps}
+            videoId={videoId}
             hasAutoplay={autoPlay}
             hasControls={controls}
             isMuted={muted}
-            playerId={PLAYER_ID}
-            videoId={videoId}
-            onVideoReady={this.onReady}
-            {...restProps}
+            onVideoReady={this.handleVideoReady}
+            onEnd={this.handleVideoEnd}
+            playerRef={playerRef}
           />
         </div>
 
