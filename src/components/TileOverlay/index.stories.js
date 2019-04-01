@@ -20,17 +20,62 @@ storiesOf('Components|Tiles/TileOverlay', module)
       <DocSection title='Props'>
         <PropExample
           name='type'
-          type='String("gradient-bottom")'
+          type='String'
         >
           <div className='row'>
-            <div className='col-sm-6'>
+            <div className='col-4'>
               <Tile>
-                <Placeholder />
+                <Placeholder>
+                  gradient-bottom
+                </Placeholder>
                 <TileOverlay type='gradient-bottom' />
+              </Tile>
+            </div>
+
+            <div className='col-4'>
+              <Tile>
+                <Placeholder>
+                  gradient-left
+                </Placeholder>
+                <TileOverlay type='gradient-left' />
+              </Tile>
+            </div>
+
+            <div className='col-4'>
+              <Tile>
+                <Placeholder>
+                  spotlight
+                </Placeholder>
+                <TileOverlay type='spotlight' />
               </Tile>
             </div>
           </div>
         </PropExample>
+
+        <PropExample
+          name='color'
+          type='String'
+        >
+          <div className='row'>
+            <div className='col-sm-6'>
+              <Tile>
+                <Placeholder>
+                  255,0,0
+                </Placeholder>
+                <TileOverlay color='255,0,0' />
+              </Tile>
+            </div>
+            <div className='col-sm-6'>
+              <Tile>
+                <Placeholder>
+                  0,0,255
+                </Placeholder>
+                <TileOverlay color='0,0,255' />
+              </Tile>
+            </div>
+          </div>
+        </PropExample>
+
       </DocSection>
     </div>
   )))
