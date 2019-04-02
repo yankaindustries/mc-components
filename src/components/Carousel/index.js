@@ -75,42 +75,48 @@ export default class Carousel extends PureComponent {
     highlightOnHover: false,
     loop: false,
     overflow: false,
-    scrollCount: 1,
+    scrollCount: 2,
     showCount: 3,
     transition: TRANSITION_SLIDE,
   }
 
   state = {
-    currentSlideIndex: 0,
+    currentSlide: 0,
   }
 
   constructor (props) {
     super(props)
 
     this.slider = props.sliderRef || React.createRef()
-    console.log(this.slider)
   }
 
   handlePrevClick = () => {
-    const { currentSlideIndex } = this.state
-    const prevIndex = currentSlideIndex - 2 < 0 ? 0 : currentSlideIndex - 2
+    const { scrollCount } = this.props
+    const { currentSlide } = this.state
 
-    this.slider.current.slickGoTo(prevIndex)
+    const goTo = currentSlide - scrollCount < 0
+      ? 0
+      : currentSlide - scrollCount
+
+    this.slider.current.slickGoTo(goTo)
   }
 
   handleNextClick = () => {
-    const { currentSlideIndex } = this.state
-    const nextIndex =
-      currentSlideIndex +
-      (this.props.children.length - this.state.currentSlideIndex > 4 ? 2 : 1)
+    const { children, scrollCount, showCount } = this.props
+    const { currentSlide } = this.state
 
-    console.log(this.slider)
+    const increment =
+      currentSlide + (showCount - 1) + scrollCount >= children.length
+        ? children.length - showCount
+        : scrollCount
 
-    this.slider.current.slickGoTo(nextIndex)
+    const goTo = currentSlide + increment
+
+    this.slider.current.slickGoTo(goTo)
   }
 
   handleAfterChange = (index) => {
-    this.setState({ currentSlideIndex: index })
+    this.setState({ currentSlide: index })
   }
 
   render () {
@@ -120,6 +126,7 @@ export default class Carousel extends PureComponent {
       children,
       className,
       controls,
+      focusOnSelect,
       highlightOnActive,
       highlightOnHover,
       loop,
@@ -175,6 +182,7 @@ export default class Carousel extends PureComponent {
             centerMode={centered}
             centerPadding={0}
             fade={transition === TRANSITION_FADE}
+            focusOnSelect={focusOnSelect || peek}
             ref={this.slider}
             slidesToScroll={scrollCount}
             slidesToShow={showCount}
