@@ -105,12 +105,10 @@ export default class Carousel extends PureComponent {
     const { children, scrollCount, showCount } = this.props
     const { currentSlide } = this.state
 
-    const increment =
-      currentSlide + (showCount - 1) + scrollCount >= children.length
+    const goTo =
+      currentSlide + showCount + scrollCount > children.length - 1
         ? children.length - showCount
-        : scrollCount
-
-    const goTo = currentSlide + increment
+        : currentSlide + scrollCount
 
     this.slider.current.slickGoTo(goTo)
   }
