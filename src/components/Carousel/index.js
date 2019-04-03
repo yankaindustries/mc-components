@@ -75,7 +75,7 @@ export default class Carousel extends PureComponent {
     highlightOnHover: false,
     loop: false,
     overflow: false,
-    scrollCount: 2,
+    scrollCount: 1,
     showCount: 3,
     transition: TRANSITION_SLIDE,
   }
