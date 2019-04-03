@@ -15,7 +15,7 @@ class Arrow extends PureComponent {
   static propTypes = {
     children: PropTypes.element,
     className: PropTypes.string,
-    direction: PropTypes.oneOf(['left', 'right']).isRequired,
+    direction: PropTypes.oneOf(['prev', 'next']).isRequired,
     onPress: PropTypes.func,
   }
 
@@ -80,37 +80,36 @@ export default class Carousel extends PureComponent {
     transition: TRANSITION_SLIDE,
   }
 
-  state = {
-    currentSlide: 0,
-  }
-
   constructor (props) {
     super(props)
 
     this.slider = props.sliderRef || React.createRef()
+    this.state = {
+      currentSlide: props.initialSlide || 0,
+    }
   }
 
   handlePrevClick = () => {
     const { scrollCount } = this.props
     const { currentSlide } = this.state
 
-    const goTo = currentSlide - scrollCount < 0
+    const targetSlide = currentSlide - scrollCount < 0
       ? 0
       : currentSlide - scrollCount
 
-    this.slider.current.slickGoTo(goTo)
+    this.slider.current.slickGoTo(targetSlide)
   }
 
   handleNextClick = () => {
     const { children, scrollCount, showCount } = this.props
     const { currentSlide } = this.state
 
-    const goTo =
+    const targetSlide =
       currentSlide + showCount + scrollCount > children.length - 1
         ? children.length - showCount
         : currentSlide + scrollCount
 
-    this.slider.current.slickGoTo(goTo)
+    this.slider.current.slickGoTo(targetSlide)
   }
 
   handleAfterChange = (index) => {
