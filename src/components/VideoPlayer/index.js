@@ -34,7 +34,7 @@ export default class VideoPlayer extends PureComponent {
     hasControls: PropTypes.bool,
     isLooped: PropTypes.bool,
     isMuted: PropTypes.bool,
-    playerRef: PropTypes.obj,
+    playerRef: PropTypes.any,
     progress: PropTypes.number,
 
     onPlayerReady: PropTypes.func,
@@ -106,7 +106,6 @@ export default class VideoPlayer extends PureComponent {
     this.video.off('seeking')
     this.video.off('fullscreenchange')
     this.video.off('loadmetadata')
-    this.video.dispose()
   }
 
   setupScript = () => {
