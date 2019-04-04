@@ -233,6 +233,8 @@
 }
 
 .mc-tile-progress {
+  pointer-events: none;
+
   &__content {
     position: absolute;
     left: 0;

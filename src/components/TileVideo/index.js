@@ -16,7 +16,7 @@ export default class TileVideo extends PureComponent {
     loop: PropTypes.bool,
     muted: PropTypes.bool,
     onVideoReady: PropTypes.func,
-    playerRef: PropTypes.obj,
+    playerRef: PropTypes.any,
     videoId: PropTypes.string.isRequired,
   }
 
@@ -44,6 +44,8 @@ export default class TileVideo extends PureComponent {
 
   onMuteClick = (event) => {
     event.preventDefault()
+    event.stopPropagation()
+
     this.setState(state => ({
       muted: !state.muted,
     }))
