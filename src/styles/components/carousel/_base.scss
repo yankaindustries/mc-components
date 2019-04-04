@@ -134,7 +134,7 @@ $scrollbar-max-width: 17px !default;
       }
     }
 
-    &--right {
+    &--next {
       right: $grid-gutter-width/2;
       transform: translate(50%, -50%);
 
@@ -143,7 +143,7 @@ $scrollbar-max-width: 17px !default;
       }
     }
 
-    &--left {
+    &--prev {
       left: $grid-gutter-width/2;
       transform: translate(-50%, -50%);
 

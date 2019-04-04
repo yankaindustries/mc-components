@@ -196,8 +196,8 @@ storiesOf('Components|Carousels')
             className='row'
             controls={responsiveValues(media, true, true, false)}
             peek={responsiveValues(media, false, false, true)}
-            showCount={responsiveValues(media, 3, 2, 1)}
-            focusOnSelect
+            showCount={responsiveValues(media, 3, 3, 1)}
+            scrollCount={responsiveValues(media, 2, 2, 1)}
           >
             {tiles()}
           </Carousel>

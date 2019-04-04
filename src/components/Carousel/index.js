@@ -15,8 +15,8 @@ class Arrow extends PureComponent {
   static propTypes = {
     children: PropTypes.element,
     className: PropTypes.string,
-    direction: PropTypes.oneOf(['left', 'right']).isRequired,
-    onClick: PropTypes.func,
+    direction: PropTypes.oneOf(['prev', 'next']).isRequired,
+    onPress: PropTypes.func,
   }
 
   render () {
@@ -24,19 +24,19 @@ class Arrow extends PureComponent {
       children,
       className,
       direction,
-      onClick,
+      onPress,
     } = this.props
 
-    const classes = [
-      className,
-      'mc-carousel__arrow',
-      `mc-carousel__arrow--${direction}`,
-    ].join(' ')
+    const classes = cn({
+      [className]: className,
+      'mc-carousel__arrow': true,
+      [`mc-carousel__arrow--${direction}`]: direction,
+    })
 
     return (
       <a
         className={classes}
-        onClick={onClick}
+        onClick={onPress}
       >
         <span className='mc-carousel__arrow-text'>
           {children}
@@ -80,6 +80,42 @@ export default class Carousel extends PureComponent {
     transition: TRANSITION_SLIDE,
   }
 
+  constructor (props) {
+    super(props)
+
+    this.slider = props.sliderRef || React.createRef()
+    this.state = {
+      currentSlide: props.initialSlide || 0,
+    }
+  }
+
+  handlePrevClick = () => {
+    const { scrollCount } = this.props
+    const { currentSlide } = this.state
+
+    const targetSlide = currentSlide - scrollCount < 0
+      ? 0
+      : currentSlide - scrollCount
+
+    this.slider.current.slickGoTo(targetSlide)
+  }
+
+  handleNextClick = () => {
+    const { children, scrollCount, showCount } = this.props
+    const { currentSlide } = this.state
+
+    const targetSlide =
+      currentSlide + showCount + scrollCount > children.length - 1
+        ? children.length - showCount
+        : currentSlide + scrollCount
+
+    this.slider.current.slickGoTo(targetSlide)
+  }
+
+  handleAfterChange = (index) => {
+    this.setState({ currentSlide: index })
+  }
+
   render () {
     const {
       autoPlay,
@@ -87,6 +123,7 @@ export default class Carousel extends PureComponent {
       children,
       className,
       controls,
+      focusOnSelect,
       highlightOnActive,
       highlightOnHover,
       loop,
@@ -94,7 +131,6 @@ export default class Carousel extends PureComponent {
       peek,
       scrollCount,
       showCount,
-      sliderRef,
       transition,
       ...restProps
     } = this.props
@@ -113,12 +149,18 @@ export default class Carousel extends PureComponent {
       ? {
         arrows: true,
         prevArrow: (
-          <Arrow direction='left'>
+          <Arrow
+            direction='left'
+            onPress={this.handlePrevClick}
+          >
             <ChevronLeft />
           </Arrow>
         ),
         nextArrow: (
-          <Arrow direction='right'>
+          <Arrow
+            direction='right'
+            onPress={this.handleNextClick}
+          >
             <ChevronRight />
           </Arrow>
         ),
@@ -137,11 +179,13 @@ export default class Carousel extends PureComponent {
             centerMode={centered}
             centerPadding={0}
             fade={transition === TRANSITION_FADE}
-            ref={sliderRef}
+            focusOnSelect={focusOnSelect || peek}
+            ref={this.slider}
             slidesToScroll={scrollCount}
             slidesToShow={showCount}
             infinite={loop}
             draggable={false}
+            afterChange={this.handleAfterChange}
             {...arrows}
             {...restProps}
           >
