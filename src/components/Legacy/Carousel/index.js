@@ -85,7 +85,7 @@ export default class Carousel extends Component {
       <div className={classNames}>
         { hasArrows &&
           <CarouselArrow
-            className='mc-carousel__arrow mc-carousel__arrow--left'
+            className='mc-carousel__arrow mc-carousel__arrow--prev'
             onClick={this.handlePrevious}
             direction='left'
           />
@@ -98,7 +98,7 @@ export default class Carousel extends Component {
         </Slider>
         { hasArrows &&
           <CarouselArrow
-            className='mc-carousel__arrow mc-carousel__arrow--right'
+            className='mc-carousel__arrow mc-carousel__arrow--next'
             onClick={this.handleNext}
             direction='right'
           />
