@@ -40,6 +40,10 @@ $mc-video-progress-height: 0.8rem !default;
       pointer-events: auto;
     }
   }
+
+  .c-button {
+    @include mc-button;
+  }
 }
 
 
