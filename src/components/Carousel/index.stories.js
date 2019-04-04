@@ -89,7 +89,7 @@ const tiles = () =>
   )
 
 
-storiesOf('Components|Carousels')
+storiesOf('Components|Carousels', module)
   .add('Summary', withProps(Carousel)(() =>
     <div className='container'>
       <CarouselConnector>
