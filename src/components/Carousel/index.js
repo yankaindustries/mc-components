@@ -150,7 +150,7 @@ export default class Carousel extends PureComponent {
         arrows: true,
         prevArrow: (
           <Arrow
-            direction='left'
+            direction='prev'
             onPress={this.handlePrevClick}
           >
             <ChevronLeft />
@@ -158,7 +158,7 @@ export default class Carousel extends PureComponent {
         ),
         nextArrow: (
           <Arrow
-            direction='right'
+            direction='next'
             onPress={this.handleNextClick}
           >
             <ChevronRight />
