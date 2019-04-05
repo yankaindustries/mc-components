@@ -10,12 +10,15 @@ import ChevronRight from '../Icons/ChevronRight'
 const TRANSITION_FADE = 'fade'
 const TRANSITION_SLIDE = 'slide'
 
+const DIRECTION_PREV = 'prev'
+const DIRECTION_NEXT = 'next'
+
 
 class Arrow extends PureComponent {
   static propTypes = {
     children: PropTypes.element,
     className: PropTypes.string,
-    direction: PropTypes.oneOf(['prev', 'next']).isRequired,
+    direction: PropTypes.oneOf([DIRECTION_PREV, DIRECTION_NEXT]).isRequired,
     onPress: PropTypes.func,
   }
 
@@ -103,10 +106,11 @@ export default class Carousel extends PureComponent {
   handleNextClick = () => {
     const { children, scrollCount, showCount } = this.props
     const { currentSlide } = this.state
+    const childrenCount = React.Children.count(children)
 
     const targetSlide =
-      currentSlide + showCount + scrollCount > children.length - 1
-        ? children.length - showCount
+      currentSlide + showCount + scrollCount > childrenCount - 1
+        ? childrenCount - showCount
         : currentSlide + scrollCount
 
     this.slider.current.slickGoTo(targetSlide)
@@ -150,7 +154,7 @@ export default class Carousel extends PureComponent {
         arrows: true,
         prevArrow: (
           <Arrow
-            direction='prev'
+            direction={DIRECTION_PREV}
             onPress={this.handlePrevClick}
           >
             <ChevronLeft />
@@ -158,7 +162,7 @@ export default class Carousel extends PureComponent {
         ),
         nextArrow: (
           <Arrow
-            direction='next'
+            direction={DIRECTION_NEXT}
             onPress={this.handleNextClick}
           >
             <ChevronRight />
