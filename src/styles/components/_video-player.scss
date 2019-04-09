@@ -50,10 +50,10 @@ $mc-video-progress-height: 0.8rem !default;
 // CONTROL BAR
 .vjs-control-bar {
   font-size: inherit !important;
+  z-index: 10;
 
   .vjs-mouse & {
     height: $mc-video-control-height !important;
-    z-index: 10;
 
     .vjs-progress-control {
       .vjs-progress-holder,
