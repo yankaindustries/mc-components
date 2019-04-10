@@ -184,13 +184,14 @@ export default class VideoPlayer extends PureComponent {
   handleReady = () => {
     const {
       hasAutoplay,
+      isMuted,
       onVideoReady,
     } = this.props
 
     this.checkBuffers()
     this.turnOffCaptions()
 
-    if (hasAutoplay && !isSafari) {
+    if (hasAutoplay && (!isSafari || isMuted)) {
       this.video.play()
     }
 
