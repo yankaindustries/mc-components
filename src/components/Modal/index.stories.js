@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import CodeExample from '../../utils/CodeExample'
 
 import Modal from '../Modal'
@@ -162,6 +162,9 @@ class ModalExample extends Component {
 
 
 storiesOf('Components|Modal', module)
-  .add('Summary', withProps(Modal)(() =>
+  .add('Summary', withAddons({
+    path: 'components/Modal/index.stories.js',
+    component: Modal,
+  })(() =>
     <ModalExample />,
   ))

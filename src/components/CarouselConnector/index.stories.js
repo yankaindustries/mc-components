@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
@@ -86,10 +86,13 @@ const tiles = () =>
 
 
 storiesOf('Components|Carousels/CarouselConnector', module)
-  .add('CarouselConnector', withProps(CarouselConnector)(() =>
+  .add('CarouselConnector', withAddons({
+    path: 'components/CarouselConnector/index.stories.js',
+    component: CarouselConnector,
+  })(() =>
     <div className='container'>
       <DocHeader
-        title='CarouselContainer'
+        title='CarouselConnector'
         description='Mechanism to keep two carousels in sync.'
       />
 

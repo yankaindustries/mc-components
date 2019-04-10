@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
@@ -90,7 +90,10 @@ const tiles = () =>
 
 
 storiesOf('Components|Carousels', module)
-  .add('Summary', withProps(Carousel)(() =>
+  .add('Summary', withAddons({
+    path: 'components/Carousel/index.stories.js',
+    component: Carousel,
+  })(() =>
     <div className='container'>
       <CarouselConnector>
         {({ sliderRef, asNavFor }) =>
@@ -208,7 +211,10 @@ storiesOf('Components|Carousels', module)
 
 
 storiesOf('Components|Carousels/Carousel', module)
-  .add('Carousel', withProps(Carousel)(() => (
+  .add('Carousel', withAddons({
+    path: 'components/Carousel/index.stories.js',
+    component: Carousel,
+  })(() => (
     <ResponsiveHandler>
       {media =>
         <div className='container'>

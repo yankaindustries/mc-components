@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
@@ -16,7 +16,10 @@ import { responsiveValues } from '../helpers'
 
 
 storiesOf('Components|Accordion', module)
-  .add('Summary', withProps(Accordion)(() => (
+  .add('Summary', withAddons({
+    path: 'components/Accordion/index.stories.js',
+    component: Accordion,
+  })(() => (
     <ResponsiveHandler>
       {media =>
         <div className='container'>

@@ -1,12 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 
 import ResponsiveHandler from './index'
-
 import Tile from '../Tile'
 import TileImage from '../TileImage'
 
@@ -14,7 +13,10 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('utilities|ResponsiveHandler', module)
-  .add('default', withProps(ResponsiveHandler)(() => (
+  .add('default', withAddons({
+    path: 'components/ResponsiveHandler/index.stories.js',
+    component: ResponsiveHandler,
+  })(() => (
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>ResponsiveHandler</h1>

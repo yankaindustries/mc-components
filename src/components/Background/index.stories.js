@@ -1,12 +1,13 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
+
+import withAddons from '../../utils/withAddons'
+import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import CodeExample from '../../utils/CodeExample'
 import PropExample from '../../utils/PropExample'
 
 import Background from './index'
-import Badge from '../Badge'
 
 import thomasKellerBackground from '../../utils/thomas-keller.jpg'
 import abstractBackground from '../../utils/abstract-background.jpg'
@@ -14,25 +15,21 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('Components|Background', module)
-  .add('Summary', withProps(Background)(() => (
+  .add('Summary', withAddons({
+    path: 'components/Background/index.stories.js',
+    component: Background,
+  })(() => (
     <div>
       <div className='container'>
-        <div className='example__heading'>
-          <div className='row'>
-            <div className='col-6'>
-              <h1 className='mc-text-h1'>
-                Background
-                {' '}
-                <Badge>Experimental</Badge>
-              </h1>
-              <p className='mc-text-large mc-text--muted'>
-                Somewhat a utility component, Background is to be used when
-                you need to generally apply a background color, image, or
-                some general elements behind content.
-              </p>
-            </div>
-          </div>
-        </div>
+        <DocHeader
+          title='Background'
+          description={`
+            Somewhat a utility component, Background is to be used when
+            you need to generally apply a background color, image, or
+            some general elements behind content.
+          `}
+          experimental
+        />
 
         <DocSection title='Demo'>
           <CodeExample>

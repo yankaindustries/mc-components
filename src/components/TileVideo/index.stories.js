@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 
@@ -10,7 +10,10 @@ import TileVideo from '../TileVideo'
 
 
 storiesOf('Components|Tiles/TileVideo', module)
-  .add('TileVideo', withProps(TileVideo)(() => (
+  .add('TileVideo', withAddons({
+    path: 'components/TileVideo/index.stories.js',
+    component: TileVideo,
+  })(() => (
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>TileVideo</h1>

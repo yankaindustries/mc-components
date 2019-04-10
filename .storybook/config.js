@@ -9,9 +9,9 @@ setOptions({
   hierarchySeparator: /\//,
   hierarchyRootSeparator: /\|/,
   sortStoriesByKind: true,
-  showAddonPanel: false,
+  showAddonPanel: true,
   addonPanelInRight: true,
-  // selectedAddonPanel: 'mc/props/panel',
+  selectedAddonPanel: 'mc/props/panel',
 });
 
 const req = require.context('../src', true, /\.stories\.js$/)

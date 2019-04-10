@@ -3,6 +3,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
+import withAddons from '../../utils/withAddons'
+
 import Accordion from '../../components/Accordion'
 import AnimationHandler from '../../components/AnimationHandler'
 import Badge from '../../components/Badge'
@@ -172,7 +174,9 @@ const playlist = [
 
 
 storiesOf('Playground|Pages', module)
-  .add('LIHP', () =>
+  .add('LIHP', withAddons({
+    path: 'playground/lihp/index.stories.js',
+  })(() =>
     <ResponsiveHandler>
       {media =>
         <div className='container mc-pt-6'>
@@ -457,4 +461,4 @@ storiesOf('Playground|Pages', module)
         </div>
       }
     </ResponsiveHandler>,
-  )
+  ))

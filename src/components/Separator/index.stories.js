@@ -1,16 +1,20 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import CodeExample from '../../utils/CodeExample'
 import InvertedMirror from '../../utils/InvertedMirror'
+
 import Separator from '../Separator'
 
 
 storiesOf('Components|Separator', module)
-  .add('Summary', withProps(Separator)(() => (
+  .add('Summary', withAddons({
+    path: 'components/Separator/index.stories.js',
+    component: Separator,
+  })(() => (
     <div className='container'>
       <DocHeader
         title='Separator'
