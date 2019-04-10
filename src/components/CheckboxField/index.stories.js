@@ -8,14 +8,15 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
+
 import CheckboxField from '../CheckboxField'
 
 
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
-
 
 const Form = reduxForm({
   form: 'checkbox',
@@ -80,8 +81,11 @@ const Form = reduxForm({
 
 
 storiesOf('Components|Forms/CheckboxField', module)
-  .add('CheckboxField', () => (
+  .add('CheckboxField', withAddons({
+    path: 'components/CheckboxField/index.stories.js',
+    component: CheckboxField,
+  })(() => (
     <Provider store={store}>
       <Form />
     </Provider>
-  ))
+  )))

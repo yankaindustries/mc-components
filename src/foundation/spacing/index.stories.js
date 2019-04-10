@@ -1,13 +1,15 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-
 import Highlight from 'react-highlight'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
 storiesOf('Foundation|Spacing', module)
-  .add('Summary', () => (
+  .add('Summary', withAddons({
+    path: 'foundation/spacing/index.stories.js',
+  })(() => (
     <div className='container'>
       <DocHeader
         title='Spacing'
@@ -189,4 +191,4 @@ storiesOf('Foundation|Spacing', module)
         </Highlight>
       </DocSection>
     </div>
-  ))
+  )))

@@ -1,10 +1,11 @@
 import React from 'react'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import PropExample from '../../utils/PropExample'
 
 
-const Modifiers = () =>
+const Sizes = () =>
   <div className='container'>
     <DocHeader
       title='Typography - Sizes'
@@ -89,4 +90,6 @@ const Modifiers = () =>
   </div>
 
 
-export default Modifiers
+export default withAddons({
+  path: 'foundation/typography/sizes.stories.js',
+})(() => <Sizes />)

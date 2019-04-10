@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
@@ -30,7 +30,10 @@ const screenStyle = {
 
 
 storiesOf('Components|VideoPlayer', module)
-  .add('Summary', withProps(VideoPlayer)(() =>
+  .add('Summary', withAddons({
+    path: 'components/VideoPlayer/index.stories.js',
+    component: VideoPlayer,
+  })(() =>
     <div className='container'>
       <DocHeader
         title='VideoPlayer'

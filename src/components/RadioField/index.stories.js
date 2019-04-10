@@ -8,7 +8,7 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
-import { withProps } from '../../utils/addon-props'
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
 
@@ -17,7 +17,6 @@ import RadioField from '../RadioField'
 
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
-
 
 const Form = reduxForm({
   form: 'radio',
@@ -87,7 +86,10 @@ const Form = reduxForm({
 
 
 storiesOf('Components|Forms/RadioField', module)
-  .add('RadioField', withProps(RadioField)(() => (
+  .add('RadioField', withAddons({
+    path: 'components/RadioField/index.stories.js',
+    component: RadioField,
+  })(() => (
     <Provider store={store}>
       <Form />
     </Provider>

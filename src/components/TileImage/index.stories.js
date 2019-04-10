@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 
@@ -12,7 +12,10 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('Components|Tiles/TileImage', module)
-  .add('TileImage', withProps(TileImage)(() => (
+  .add('TileImage', withAddons({
+    path: 'components/TileImage/index.stories.js',
+    component: TileImage,
+  })(() => (
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>TileImage</h1>

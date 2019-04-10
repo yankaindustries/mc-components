@@ -1,5 +1,6 @@
 import React from 'react'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
@@ -223,4 +224,6 @@ const Modifiers = () =>
   </div>
 
 
-export default Modifiers
+export default withAddons({
+  path: 'foundation/typography/modifiers.stories.js',
+})(() => <Modifiers />)

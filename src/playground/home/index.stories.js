@@ -1,6 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
+import withAddons from '../../utils/withAddons'
+
 import CarouselConnector from '../../components/CarouselConnector'
 import Carousel from '../../components/Carousel'
 import Footer from '../../components/Footer'
@@ -13,7 +15,6 @@ import AnimationHandler from '../../components/AnimationHandler'
 import HoverHandler from '../../components/HoverHandler'
 import ResponsiveHandler from '../../components/ResponsiveHandler'
 import Background from '../../components/Background'
-
 import Facebook from '../../components/Icons/Facebook'
 import Twitter from '../../components/Icons/Twitter'
 import Instagram from '../../components/Icons/Instagram'
@@ -69,7 +70,9 @@ const items = [
 
 
 storiesOf('Playground|Pages', module)
-  .add('Home', () =>
+  .add('Home', withAddons({
+    path: 'playground/home/index.stories.js',
+  })(() =>
     <div className='container'>
       <CarouselConnector>
         {({ sliderRef, asNavFor }) =>
@@ -664,4 +667,4 @@ storiesOf('Playground|Pages', module)
 
       <Footer />
     </div>,
-  )
+  ))

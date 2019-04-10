@@ -7,15 +7,15 @@ import {
   Field,
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
+
+import withAddons from '../../utils/withAddons'
+import InvertedMirror from '../../utils/InvertedMirror'
 
 import TextareaField from '../TextareaField'
-import InvertedMirror from '../../utils/InvertedMirror'
 
 
 const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
-
 
 const Form = reduxForm({
   form: 'textarea',
@@ -72,7 +72,10 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
 
 
 storiesOf('Components|Forms/TextareaField', module)
-  .add('TextareaField', withProps(TextareaField)(() => (
+  .add('TextareaField', withAddons({
+    path: 'components/TextareaField/index.stories.js',
+    component: TextareaField,
+  })(() => (
     <Provider store={store}>
       <Form />
     </Provider>

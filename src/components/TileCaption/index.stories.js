@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 import Placeholder from '../../utils/Placeholder'
@@ -11,7 +11,10 @@ import TileCaption from '../TileCaption'
 
 
 storiesOf('Components|Tiles/TileCaption', module)
-  .add('TileCaption', withProps(TileCaption)(() => (
+  .add('TileCaption', withAddons({
+    path: 'components/TileCaption/index.stories.js',
+    component: TileCaption,
+  })(() => (
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>TileCaption</h1>

@@ -7,7 +7,8 @@ import {
   Field,
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
+
+import withAddons from '../../utils/withAddons'
 import InvertedMirror from '../../utils/InvertedMirror'
 
 import InputField from '../InputField'
@@ -113,7 +114,10 @@ const Form = reduxForm({
 
 
 storiesOf('Components|Forms/InputField', module)
-  .add('InputField', withProps(InputField)(() => (
+  .add('InputField', withAddons({
+    path: 'components/InputField/index.stories.js',
+    component: InputField,
+  })(() => (
     <Provider store={store}>
       <Form />
     </Provider>

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import cn from 'classnames'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import CodeExample from '../../utils/CodeExample'
@@ -52,7 +53,7 @@ const sizeOptions = [
 ]
 
 
-export default class Summary extends PureComponent {
+class Summary extends PureComponent {
   state = {
     color: NONE,
     modifier: NONE,
@@ -331,3 +332,7 @@ export default class Summary extends PureComponent {
     )
   }
 }
+
+export default withAddons({
+  path: 'foundation/typography/summary.stories.js',
+})(() => <Summary />)

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
+import withAddons from '../../utils/withAddons'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 import Placeholder from '../../utils/Placeholder'
@@ -20,7 +21,9 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('Components|Tiles', module)
-  .add('Summary', () => (
+  .add('Summary', withAddons({
+    path: 'components/Tile/index.stories.js',
+  })(() => (
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>Tile</h1>
@@ -233,11 +236,14 @@ storiesOf('Components|Tiles', module)
         </div>
       </div>
     </div>
-  ))
+  )))
 
 
 storiesOf('Components|Tiles/Tile', module)
-  .add('Tile', () => (
+  .add('Tile', withAddons({
+    path: 'components/Tile/index.stories.js',
+    component: Tile,
+  })(() => (
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>Tile</h1>
@@ -353,4 +359,4 @@ storiesOf('Components|Tiles/Tile', module)
         </PropExample>
       </DocSection>
     </div>
-  ))
+  )))

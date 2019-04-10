@@ -34,7 +34,7 @@ export default class DocHeader extends PureComponent {
               {title}
               {' '}
               {experimental &&
-                <Badge count='Experimental' />
+                <Badge>Experimental</Badge>
               }
             </h1>
 

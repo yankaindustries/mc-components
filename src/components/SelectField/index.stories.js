@@ -8,6 +8,7 @@ import {
 } from 'redux-form'
 import { storiesOf } from '@storybook/react'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
 import SelectField from '../SelectField'
@@ -77,8 +78,11 @@ const Form = reduxForm({
 
 
 storiesOf('Components|Forms/SelectField', module)
-  .add('SelectField', () => (
+  .add('SelectField', withAddons({
+    path: 'components/SelectField/index.stories.js',
+    component: SelectField,
+  })(() => (
     <Provider store={store}>
       <Form />
     </Provider>
-  ))
+  )))

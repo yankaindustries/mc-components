@@ -1,14 +1,14 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
+import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 
 import AnimationHandler from './index'
 import HoverHandler from '../HoverHandler'
 import Button from '../Button'
-
 import Tile from '../Tile'
 import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
@@ -18,14 +18,15 @@ import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
 storiesOf('utilities|AnimationHandler', module)
-  .add('default', withProps(AnimationHandler)(() => (
+  .add('default', withAddons({
+    path: 'components/AnimationHandler/index.stories.js',
+    component: AnimationHandler,
+  })(() => (
     <div className='container'>
-      <div className='example__heading'>
-        <h1 className='mc-text-h1'>AnimationHandler</h1>
-        <p className='mc-text--muted'>
-          Easily apply unified animations to components
-        </p>
-      </div>
+      <DocHeader
+        title='AnimationHandler'
+        description='Easily apply unified animations to components'
+      />
 
       <DocSection title='Variations'>
         <PropExample

@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 
@@ -10,7 +10,10 @@ import Button from '../Button'
 
 
 storiesOf('utilities|ToggleHandler', module)
-  .add('default', withProps(ToggleHandler)(() => (
+  .add('default', withAddons({
+    path: 'components/ToggleHandler/index.stories.js',
+    component: ToggleHandler,
+  })(() => (
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>ToggleHandler</h1>

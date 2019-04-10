@@ -1,11 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withProps } from '../../utils/addon-props'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
+
 import Button from '../Button'
 import IconGoogle from '../Icons/Google'
 import IconFacebook from '../Icons/Facebook'
@@ -18,7 +19,10 @@ import IconClose from '../Icons/Close'
 
 
 storiesOf('Components|Button', module)
-  .add('Summary', withProps(Button)(() => (
+  .add('Summary', withAddons({
+    path: 'components/Button/index.stories.js',
+    component: Button,
+  })(() => (
     <div className='container'>
       <DocHeader
         title='Button'
