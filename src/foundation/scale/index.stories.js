@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { times } from 'lodash'
 import Highlight from 'react-highlight'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
@@ -202,4 +203,6 @@ class Scale extends PureComponent {
 
 
 storiesOf('Foundation|Scale', module)
-  .add('Summary', () => <Scale />)
+  .add('Summary', withAddons({
+    path: 'foundation/scale/index.stories.js',
+  })(() => <Scale />))

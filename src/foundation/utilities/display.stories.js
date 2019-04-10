@@ -1,5 +1,6 @@
 import React from 'react'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
@@ -120,4 +121,7 @@ const Display = () =>
     </DocSection>
   </div>
 
-export default Display
+
+export default withAddons({
+  path: 'foundation/utilities/display.stories.js',
+})(() => <Display />)

@@ -1,8 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import withAddons from '../../utils/withAddons'
 
 storiesOf('Foundation|Variables', module)
-  .add('All', () =>
+  .add('All', withAddons({
+    path: 'foundation/variables/index.stories.js',
+  })(() =>
     <div className='container'>
       <div className='example__heading'>
         <h2 className='mc-text-h1'>Variables</h2>
@@ -253,4 +256,4 @@ storiesOf('Foundation|Variables', module)
         </div>
       </div>
     </div>,
-  )
+  ))

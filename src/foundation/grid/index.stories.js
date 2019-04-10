@@ -1,13 +1,16 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
+import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import PropExample from '../../utils/PropExample'
 import Placeholder from '../../utils/Placeholder'
 
 
 storiesOf('Foundation|Grid', module)
-  .add('Summary', () => (
+  .add('Summary', withAddons({
+    path: 'foundation/grid/index.stories.js',
+  })(() => (
     <div className='container'>
       <DocHeader
         title='Grid'
@@ -222,4 +225,4 @@ storiesOf('Foundation|Grid', module)
         </div>
       </PropExample>
     </div>
-  ))
+  )))
