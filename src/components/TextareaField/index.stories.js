@@ -9,6 +9,7 @@ import {
 import { storiesOf } from '@storybook/react'
 
 import withAddons from '../../utils/withAddons'
+import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
 
 import TextareaField from '../TextareaField'
@@ -26,10 +27,10 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
 })(
   () =>
     <div className='container'>
-      <div className='example__section'>
-        <h1 className='mc-text-h1'>Textarea</h1>
-        <p className='mc-text--muted'>Some various textareas...</p>
-      </div>
+      <DocHeader
+        title='TextareaField'
+        description='Some various textareas...'
+      />
 
       <div className='example__section'>
         <InvertedMirror>
@@ -62,6 +63,7 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
           />
 
           <Field
+            className='mc-mb-4'
             component={TextareaField}
             name='disabled'
             label='Disabled'

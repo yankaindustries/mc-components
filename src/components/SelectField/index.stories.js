@@ -11,6 +11,7 @@ import { storiesOf } from '@storybook/react'
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
+
 import SelectField from '../SelectField'
 
 
@@ -42,7 +43,7 @@ const Form = reduxForm({
     <div className='container'>
       <DocHeader
         title='SelectField'
-        description='I agree to the terms...'
+        description='We got options people!'
       />
 
       <InvertedMirror>

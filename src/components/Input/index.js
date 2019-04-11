@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { getState } from '../Forms/utils'
+
 
 export default class Input extends PureComponent {
   static propTypes = {
@@ -73,9 +75,10 @@ export default class Input extends PureComponent {
       maxlength,
       name,
       prepend,
+      required,
+      success,
       touched,
       value,
-      required,
 
       onChange,
 
@@ -86,14 +89,13 @@ export default class Input extends PureComponent {
       focused,
     } = this.state
 
-    const showError = error && touched
-
+    const state = getState({ error, success, touched })
     const classes = cn({
       'mc-form-input': true,
       'mc-form-element': true,
       'mc-form-element--disabled': disabled,
-      'mc-form-element--error': showError,
       'mc-form-element--focus': focused,
+      [`mc-form-element--${state}`]: state,
     })
 
     return (

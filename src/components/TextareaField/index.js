@@ -5,17 +5,6 @@ import Textarea from '../Textarea'
 import FormGroup from '../FormGroup'
 
 
-const INPUT_PROP_TYPE = PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.any.isRequired,
-})
-
-const META_PROP_TYPE = PropTypes.shape({
-  error: PropTypes.string,
-})
-
-
 const TextareaField = ({
   className,
   help,
@@ -27,6 +16,7 @@ const TextareaField = ({
   ...props
 }) => {
   const error = meta.error || props.error
+  const success = meta.success || props.success
   const touched = meta.touched || props.touched
 
   return (
@@ -38,8 +28,9 @@ const TextareaField = ({
       label={label}
       maxlength={maxlength}
       name={input.name}
-      touched={touched}
       optional={optional}
+      success={success}
+      touched={touched}
     >
       <Textarea
         error={error}
@@ -50,6 +41,16 @@ const TextareaField = ({
     </FormGroup>
   )
 }
+
+const INPUT_PROP_TYPE = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.any.isRequired,
+})
+
+const META_PROP_TYPE = PropTypes.shape({
+  error: PropTypes.string,
+})
 
 TextareaField.propTypes = {
   className: PropTypes.string,
