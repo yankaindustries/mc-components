@@ -47,6 +47,7 @@ const Form = reduxForm({
 
       <InvertedMirror>
         <Field
+          className='mc-mb-4'
           component={SelectField}
           name='memberships'
           label='Membership Options'
@@ -54,6 +55,7 @@ const Form = reduxForm({
         />
 
         <Field
+          className='mc-mb-4'
           component={SelectField}
           name='disabled'
           disabled
@@ -63,6 +65,7 @@ const Form = reduxForm({
         />
 
         <Field
+          className='mc-mb-4'
           component={SelectField}
           name='disabledChecked'
           disabled

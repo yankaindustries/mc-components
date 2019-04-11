@@ -35,7 +35,7 @@ const Form = reduxForm({
 
         <div className='example__section'>
           <InvertedMirror>
-            <div className='mc-mb-7'>
+            <div className='mc-mb-4'>
               <Field
                 component={InputField}
                 name='default'
@@ -46,7 +46,7 @@ const Form = reduxForm({
 
             <hr />
 
-            <div className='mc-mb-7'>
+            <div className='mc-mb-4'>
               <Field
                 component={InputField}
                 name='helper-text'
@@ -56,7 +56,7 @@ const Form = reduxForm({
               />
             </div>
 
-            <div className='mc-mb-7'>
+            <div className='mc-mb-4'>
               <Field
                 component={InputField}
                 name='optional'
@@ -66,7 +66,7 @@ const Form = reduxForm({
               />
             </div>
 
-            <div className='mc-mb-7'>
+            <div className='mc-mb-4'>
               <Field
                 component={InputField}
                 name='prepend'
@@ -76,7 +76,7 @@ const Form = reduxForm({
               />
             </div>
 
-            <div className='mc-mb-7'>
+            <div className='mc-mb-4'>
               <Field
                 component={InputField}
                 name='append'
@@ -86,7 +86,7 @@ const Form = reduxForm({
               />
             </div>
 
-            <div className='mc-mb-7'>
+            <div className='mc-mb-4'>
               <Field
                 component={InputField}
                 name='errors'
@@ -97,7 +97,7 @@ const Form = reduxForm({
               />
             </div>
 
-            <div className='mc-mb-7'>
+            <div className='mc-mb-4'>
               <Field
                 component={InputField}
                 name='disabled'
