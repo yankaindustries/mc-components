@@ -117,7 +117,6 @@ const Form = reduxForm({
                   className='mc-mb-4'
                   name='billing'
                   label='Billing Options'
-                  className='mc-mb-4'
                 >
                   <Field
                     component={RadioField}
