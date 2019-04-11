@@ -3,6 +3,12 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import IconError from '../Icons/Error'
+import {
+  STATE_DEFAULT,
+  STATE_ERROR,
+  STATE_SUCCESS,
+} from '../Forms/constants'
+import { getState } from '../Forms/utils'
 
 
 export default class FormGroup extends PureComponent {
@@ -21,6 +27,10 @@ export default class FormGroup extends PureComponent {
     maxlength: PropTypes.number,
     name: PropTypes.string.isRequired,
     optional: PropTypes.bool,
+    success: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+    ]),
     touched: PropTypes.bool,
     value: PropTypes.string,
   }
@@ -35,13 +45,15 @@ export default class FormGroup extends PureComponent {
       maxlength,
       name,
       optional,
+      success,
       touched,
       value,
     } = this.props
 
-    const showError = error && touched
+    const state = getState({ error, success, touched })
     const classes = cn({
       'mc-form-group': true,
+      [`mc-form-group--${state}`]: state,
       [className]: className,
     })
 
@@ -72,16 +84,22 @@ export default class FormGroup extends PureComponent {
           </div>
 
           <div className='col align-self-start'>
-            {showError &&
+            {state === STATE_DEFAULT &&
+              <p className='mc-text-x-small mc-text--muted mc-text--left mc-mt-1'>
+                {help}
+              </p>
+            }
+
+            {state === STATE_ERROR &&
               <p className='mc-text-x-small mc-text--error mc-text--left mc-mt-1'>
                 <IconError />
                 {error}
               </p>
             }
 
-            {!showError &&
-              <p className='mc-text-x-small mc-text--muted mc-text--left mc-mt-1'>
-                {help}
+            {state === STATE_SUCCESS &&
+              <p className='mc-text-x-small mc-text--success mc-text--left mc-mt-1'>
+                {success}
               </p>
             }
           </div>

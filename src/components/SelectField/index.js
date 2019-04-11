@@ -5,17 +5,6 @@ import Select from '../Select'
 import FormGroup from '../FormGroup'
 
 
-const INPUT_PROP_TYPE = PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.any.isRequired,
-})
-
-const META_PROP_TYPE = PropTypes.shape({
-  error: PropTypes.string,
-})
-
-
 const SelectField = ({
   className,
   help,
@@ -27,6 +16,7 @@ const SelectField = ({
   ...props
 }) => {
   const error = meta.error || props.error
+  const success = meta.success || props.success
   const touched = meta.touched || props.touched
 
   return (
@@ -38,6 +28,7 @@ const SelectField = ({
       label={label}
       maxlength={maxlength}
       name={input.name}
+      success={success}
       touched={touched}
       optional={optional}
     >
@@ -50,6 +41,16 @@ const SelectField = ({
     </FormGroup>
   )
 }
+
+const INPUT_PROP_TYPE = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.any.isRequired,
+})
+
+const META_PROP_TYPE = PropTypes.shape({
+  error: PropTypes.string,
+})
 
 SelectField.propTypes = {
   className: PropTypes.string,

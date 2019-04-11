@@ -4,6 +4,8 @@ import cn from 'classnames'
 import { find } from 'lodash'
 import ReactSelect from 'react-select'
 
+import { getState } from '../Forms/utils'
+
 
 const PROP_TYPE_OPTION = PropTypes.shape({
   label: PropTypes.string.isRequired,
@@ -73,9 +75,11 @@ export default class Select extends PureComponent {
       label,
       name,
       options,
+      required,
+      success,
       touched,
       value,
-      required,
+
       onChange,
 
       ...props
@@ -85,14 +89,13 @@ export default class Select extends PureComponent {
       focused,
     } = this.state
 
-    const showError = error && touched
-
+    const state = getState({ error, success, touched })
     const classes = cn({
       'mc-form-select': true,
       'mc-form-element': true,
       'mc-form-element--disabled': disabled,
-      'mc-form-element--error': showError,
       'mc-form-element--focus': focused,
+      [`mc-form-element--${state}`]: state,
     })
 
     return (

@@ -56,13 +56,19 @@
     }
   }
 
-  // Error states
-  // Eventually should be   .mc-form-group--error &
   &--error {
-    box-shadow: inset 0 0 0 2px $mc-color-primary;
+    box-shadow: inset 0 0 0 2px $mc-color-error;
 
     .mc-invert & {
-      box-shadow: inset 0 0 0 2px $mc-color-primary;
+      box-shadow: inset 0 0 0 2px $mc-color-error;
+    }
+  }
+
+  &--success {
+    box-shadow: inset 0 0 0 2px $mc-color-success;
+
+    .mc-invert & {
+      box-shadow: inset 0 0 0 2px $mc-color-success;
     }
   }
 

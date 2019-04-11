@@ -35,77 +35,70 @@ const Form = reduxForm({
 
         <div className='example__section'>
           <InvertedMirror>
-            <div className='mc-mb-4'>
-              <Field
-                component={InputField}
-                name='default'
-                label='Label'
-                placeholder='Placeholder'
-              />
-            </div>
+            <Field
+              className='mc-mb-4'
+              component={InputField}
+              name='default'
+              label='Label'
+              placeholder='Placeholder'
+            />
 
             <hr />
 
-            <div className='mc-mb-4'>
-              <Field
-                component={InputField}
-                name='helper-text'
-                label='Helper Text'
-                placeholder='Placeholder'
-                help='Helper text'
-              />
-            </div>
+            <Field
+              className='mc-mb-4'
+              component={InputField}
+              name='helper-text'
+              label='Helper Text'
+              placeholder='Placeholder'
+              help='Helper text'
+            />
 
-            <div className='mc-mb-4'>
-              <Field
-                component={InputField}
-                name='optional'
-                label='Optional'
-                placeholder='Placeholder'
-                optional
-              />
-            </div>
+            <Field
+              className='mc-mb-4'
+              component={InputField}
+              name='optional'
+              label='Optional'
+              placeholder='Placeholder'
+              optional
+            />
 
-            <div className='mc-mb-4'>
-              <Field
-                component={InputField}
-                name='prepend'
-                label='Prepended Icon'
-                placeholder='Placeholder'
-                prepend={<MagnifyingGlass />}
-              />
-            </div>
+            <Field
+              className='mc-mb-4'
+              component={InputField}
+              name='prepend'
+              label='Prepended Icon'
+              placeholder='Placeholder'
+              prepend={<MagnifyingGlass />}
+            />
 
-            <div className='mc-mb-4'>
-              <Field
-                component={InputField}
-                name='append'
-                label='Appended Icon'
-                placeholder='Placeholder'
-                append={<Close />}
-              />
-            </div>
+            <Field
+              className='mc-mb-4'
+              component={InputField}
+              name='append'
+              label='Appended Icon'
+              placeholder='Placeholder'
+              append={<Close />}
+            />
 
-            <div className='mc-mb-4'>
-              <Field
-                component={InputField}
-                name='errors'
-                label='Error'
-                placeholder='Placeholder'
-                error='Error explanation'
-                touched
-              />
-            </div>
+            <Field
+              className='mc-mb-4'
+              component={InputField}
+              name='errors'
+              label='Error'
+              placeholder='Placeholder'
+              error='Error explanation'
+              touched
+            />
 
-            <div className='mc-mb-4'>
-              <Field
-                component={InputField}
-                name='disabled'
-                label='Disabled'
-                placeholder='Not clickable!'
-                disabled
-              />
-            </div>
+            <Field
+              className='mc-mb-4'
+              component={InputField}
+              name='disabled'
+              label='Disabled'
+              placeholder='Not clickable!'
+              disabled
+            />
           </InvertedMirror>
         </div>
       </div>

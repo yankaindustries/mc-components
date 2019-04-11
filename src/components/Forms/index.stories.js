@@ -41,6 +41,9 @@ const reducer = combineReducers({ form: formReducer })
 const store = createStore(reducer)
 const Form = reduxForm({
   form: 'summary',
+  initialValues: {
+    bio: 'Just a city boy, born and raised in South Detroit.',
+  },
 })(
   () =>
     <div className='example-mc-type'>
@@ -104,6 +107,7 @@ const Form = reduxForm({
                     but we prefer anything.
                   `}
                   placeholder='This is the story of a girl...'
+                  success='Dope!'
                   optional
                 />
               </div>
@@ -113,6 +117,7 @@ const Form = reduxForm({
                   className='mc-mb-4'
                   name='billing'
                   label='Billing Options'
+                  className='mc-mb-4'
                 >
                   <Field
                     component={RadioField}
@@ -191,7 +196,7 @@ const Form = reduxForm({
 
               <div className='col-12'>
                 <Field
-                  className='mc-mb-6'
+                  className='mc-mb-4'
                   component={CheckboxField}
                   name='newsletter'
                   label='I would like to sign up for the newsletter'
