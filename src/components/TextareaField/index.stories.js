@@ -34,6 +34,7 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
       <div className='example__section'>
         <InvertedMirror>
           <Field
+            className='mc-mb-4'
             component={TextareaField}
             name='demo'
             label='Label'
@@ -43,6 +44,7 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
           <hr />
 
           <Field
+            className='mc-mb-4'
             component={TextareaField}
             name='value'
             label='Value'
@@ -50,6 +52,7 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
           />
 
           <Field
+            className='mc-mb-4'
             component={TextareaField}
             name='error'
             label='Error'

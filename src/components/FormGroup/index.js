@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import IconError from '../Icons/Error'
 
@@ -10,6 +11,7 @@ export default class FormGroup extends PureComponent {
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
     ]).isRequired,
+    className: PropTypes.string,
     error: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.string),
@@ -26,6 +28,7 @@ export default class FormGroup extends PureComponent {
   render () {
     const {
       children,
+      className,
       error,
       help,
       label,
@@ -37,10 +40,14 @@ export default class FormGroup extends PureComponent {
     } = this.props
 
     const showError = error && touched
+    const classes = cn({
+      'mc-form-group': true,
+      [className]: className,
+    })
 
     return (
-      <div className='mc-form-group mc-mb-5'>
-        <div className='row no-gutters justify-content-between align-items-center mc-mb-4'>
+      <div className={classes}>
+        <div className='row no-gutters justify-content-between align-items-center'>
           <div className='col align-self-end'>
             {label &&
               <label

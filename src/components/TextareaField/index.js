@@ -17,6 +17,7 @@ const META_PROP_TYPE = PropTypes.shape({
 
 
 const TextareaField = ({
+  className,
   help,
   input,
   label,
@@ -30,6 +31,7 @@ const TextareaField = ({
 
   return (
     <FormGroup
+      className={className}
       disabled={input.disabled}
       error={error}
       help={help}
@@ -50,6 +52,7 @@ const TextareaField = ({
 }
 
 TextareaField.propTypes = {
+  className: PropTypes.string,
   input: INPUT_PROP_TYPE,
   meta: META_PROP_TYPE,
 }

@@ -26,6 +26,7 @@ const parseError = (error) => {
 }
 
 const InputField = ({
+  className,
   help,
   input,
   label,
@@ -39,6 +40,7 @@ const InputField = ({
 
   return (
     <FormGroup
+      className={className}
       disabled={input.disabled}
       error={error}
       help={help}
@@ -60,6 +62,7 @@ const InputField = ({
 }
 
 InputField.propTypes = {
+  className: PropTypes.string,
   input: INPUT_PROP_TYPE,
   meta: META_PROP_TYPE,
 }
