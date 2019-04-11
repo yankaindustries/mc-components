@@ -80,7 +80,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('Components|Forms/CheckboxField', module)
+storiesOf('Components|Forms/Checkbox', module)
   .add('CheckboxField', withAddons({
     path: 'components/CheckboxField/index.stories.js',
     component: CheckboxField,

@@ -1,8 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import Select from '../Select'
 import FormGroup from '../FormGroup'
+import { parseError } from '../Forms/utils'
+import { PROP_TYPE_REDUX_FORM_ELEMENT } from '../Forms/constants'
 
 
 const SelectField = ({
@@ -15,7 +16,7 @@ const SelectField = ({
   optional,
   ...props
 }) => {
-  const error = meta.error || props.error
+  const error = parseError(meta.error || props.error)
   const success = meta.success || props.success
   const touched = meta.touched || props.touched
 
@@ -42,20 +43,8 @@ const SelectField = ({
   )
 }
 
-const INPUT_PROP_TYPE = PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.any.isRequired,
-})
-
-const META_PROP_TYPE = PropTypes.shape({
-  error: PropTypes.string,
-})
-
 SelectField.propTypes = {
-  className: PropTypes.string,
-  input: INPUT_PROP_TYPE,
-  meta: META_PROP_TYPE,
+  ...PROP_TYPE_REDUX_FORM_ELEMENT,
 }
 
 export default SelectField

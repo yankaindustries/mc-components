@@ -1,16 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import Input from '../Input'
 import FormGroup from '../FormGroup'
+import { parseError } from '../Forms/utils'
+import { PROP_TYPE_REDUX_FORM_ELEMENT } from '../Forms/constants'
 
-
-const parseError = (error) => {
-  if (!Array.isArray(error)) {
-    return error
-  }
-  return error.length > 0 ? error[0] : undefined
-}
 
 const InputField = ({
   className,
@@ -22,7 +16,7 @@ const InputField = ({
   optional,
   ...props
 }) => {
-  const error = meta.error || props.error
+  const error = parseError(meta.error || props.error)
   const success = meta.success || props.success
   const touched = meta.touched || props.touched
 
@@ -41,7 +35,7 @@ const InputField = ({
       value={input.value}
     >
       <Input
-        error={parseError(error)}
+        error={error}
         success={success}
         touched={touched}
         {...input}
@@ -51,23 +45,8 @@ const InputField = ({
   )
 }
 
-const INPUT_PROP_TYPE = PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.any.isRequired,
-})
-
-const META_PROP_TYPE = PropTypes.shape({
-  error: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
-})
-
 InputField.propTypes = {
-  className: PropTypes.string,
-  input: INPUT_PROP_TYPE,
-  meta: META_PROP_TYPE,
+  ...PROP_TYPE_REDUX_FORM_ELEMENT,
 }
 
 export default InputField

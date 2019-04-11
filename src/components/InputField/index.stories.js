@@ -106,7 +106,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('Components|Forms/InputField', module)
+storiesOf('Components|Forms/Input', module)
   .add('InputField', withAddons({
     path: 'components/InputField/index.stories.js',
     component: InputField,

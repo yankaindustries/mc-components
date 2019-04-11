@@ -81,7 +81,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('Components|Forms/SelectField', module)
+storiesOf('Components|Forms/Select', module)
   .add('SelectField', withAddons({
     path: 'components/SelectField/index.stories.js',
     component: SelectField,

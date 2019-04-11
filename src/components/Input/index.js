@@ -1,26 +1,13 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_INPUT } from '../Forms/constants'
 import { getState } from '../Forms/utils'
 
 
 export default class Input extends PureComponent {
   static propTypes = {
-    disabled: PropTypes.bool,
-    error: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.string,
-    ]),
-    help: PropTypes.string,
-    label: PropTypes.string,
-    maxlength: PropTypes.number,
-    name: PropTypes.string,
-    value: PropTypes.string,
-    touched: PropTypes.bool,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    onFocus: PropTypes.func,
+    ...PROP_TYPE_INPUT,
   }
 
   static defaultProps = {
@@ -70,8 +57,8 @@ export default class Input extends PureComponent {
       append,
       disabled,
       error,
-      help,
-      label,
+      // help,
+      // label,
       maxlength,
       name,
       prepend,

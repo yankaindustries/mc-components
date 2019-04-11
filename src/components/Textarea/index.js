@@ -1,24 +1,13 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_INPUT } from '../Forms/constants'
 import { getState } from '../Forms/utils'
 
 
 export default class Textarea extends PureComponent {
   static propTypes = {
-    disabled: PropTypes.bool,
-    error: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.string,
-    ]),
-    label: PropTypes.string,
-    name: PropTypes.string,
-    value: PropTypes.string,
-
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    onFocus: PropTypes.func,
+    ...PROP_TYPE_INPUT,
   }
 
   static defaultProps = {

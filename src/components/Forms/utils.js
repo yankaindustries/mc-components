@@ -10,3 +10,10 @@ export const getState = ({ error, success, touched }) => {
   if (success) return STATE_SUCCESS
   return STATE_DEFAULT
 }
+
+export const parseError = (error) => {
+  if (!Array.isArray(error)) {
+    return error
+  }
+  return error.length > 0 ? error[0] : undefined
+}

@@ -76,7 +76,7 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
 )
 
 
-storiesOf('Components|Forms/TextareaField', module)
+storiesOf('Components|Forms/Textarea', module)
   .add('TextareaField', withAddons({
     path: 'components/TextareaField/index.stories.js',
     component: TextareaField,

@@ -1,34 +1,19 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import cn from 'classnames'
 import { find } from 'lodash'
 import ReactSelect from 'react-select'
 
+import {
+  PROP_TYPE_INPUT,
+  PROP_TYPE_OPTIONS,
+} from '../Forms/constants'
 import { getState } from '../Forms/utils'
-
-
-const PROP_TYPE_OPTION = PropTypes.shape({
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-})
-
-const PROP_TYPE_OPTIONS = PropTypes.arrayOf(PROP_TYPE_OPTION)
 
 
 export default class Select extends PureComponent {
   static propTypes = {
-    disabled: PropTypes.bool,
-    error: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.string,
-    ]),
-    label: PropTypes.string,
-    name: PropTypes.string,
+    ...PROP_TYPE_INPUT,
     options: PROP_TYPE_OPTIONS.isRequired,
-    touched: PropTypes.bool,
-    value: PropTypes.string.isRequired,
-
-    onChange: PropTypes.func,
   }
 
   static defaultProps = {
