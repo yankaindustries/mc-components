@@ -52,7 +52,7 @@ const Form = reduxForm({
 
         <div className='example__section'>
           <InvertedMirror>
-            <div className='row'>
+            <div className='row no-gutters-vertical'>
               <div className='col-sm-6'>
                 <Field
                   className='mc-mb-4'
@@ -110,6 +110,7 @@ const Form = reduxForm({
 
               <div className='col-12'>
                 <FormGroup
+                  className='mc-mb-4'
                   name='billing'
                   label='Billing Options'
                 >
@@ -139,6 +140,7 @@ const Form = reduxForm({
 
               <div className='col-12'>
                 <Field
+                  className='mc-mb-4'
                   component={InputField}
                   name='password'
                   type='password'
@@ -153,6 +155,7 @@ const Form = reduxForm({
 
               <div className='col-12'>
                 <Field
+                  className='mc-mb-4'
                   component={InputField}
                   name='confirm-password'
                   type='password'
@@ -166,6 +169,7 @@ const Form = reduxForm({
 
               <div className='col-12'>
                 <Field
+                  className='mc-mb-4'
                   component={InputField}
                   name='disabled-input'
                   type='disabled'
