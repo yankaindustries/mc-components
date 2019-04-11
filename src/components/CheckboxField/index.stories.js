@@ -28,7 +28,7 @@ const Form = reduxForm({
     <div className='container'>
       <DocHeader
         title='CheckboxField'
-        description='I agree to the terms...'
+        description='For use with ReduxForm. I agree to the terms...'
       />
 
       <InvertedMirror>

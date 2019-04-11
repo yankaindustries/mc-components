@@ -28,7 +28,7 @@ const Form = reduxForm({
     <div className='container'>
       <DocHeader
         title='RadioField'
-        description='Remember multiple choice?'
+        description='For use with ReduxForm. Remember multiple choice?'
       />
 
       <InvertedMirror>

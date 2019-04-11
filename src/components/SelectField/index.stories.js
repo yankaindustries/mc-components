@@ -43,7 +43,7 @@ const Form = reduxForm({
     <div className='container'>
       <DocHeader
         title='SelectField'
-        description='We got options people!'
+        description='For use with ReduxForm. We got options people!'
       />
 
       <InvertedMirror>
