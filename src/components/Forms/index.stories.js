@@ -117,7 +117,6 @@ const Form = reduxForm({
                   className='mc-mb-4'
                   name='billing'
                   label='Billing Options'
-                  className='mc-mb-4'
                 >
                   <Field
                     component={RadioField}
@@ -187,15 +186,12 @@ const Form = reduxForm({
 
               <div className='col-12'>
                 <Field
-                  className='mc-mb-4'
                   component={CheckboxField}
                   name='terms'
                   label='I agree to the terms'
                 />
-              </div>
-
-              <div className='col-12'>
                 <Field
+                  className='mc-mb-4'
                   component={CheckboxField}
                   name='newsletter'
                   label='I would like to sign up for the newsletter'

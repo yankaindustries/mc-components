@@ -5,18 +5,20 @@ export const STATE_DEFAULT = 'default'
 export const STATE_ERROR = 'error'
 export const STATE_SUCCESS = 'success'
 
+const PROP_TYPE_MESSAGE = PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.string,
+])
+
 export const PROP_TYPE_INPUT = {
   disabled: PropTypes.bool,
-  error: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-  ]),
-  help: PropTypes.string,
+  error: PROP_TYPE_MESSAGE,
+  help: PROP_TYPE_MESSAGE,
   label: PropTypes.string,
   maxlength: PropTypes.number,
   name: PropTypes.string,
   value: PropTypes.string,
-  success: PropTypes.string,
+  success: PROP_TYPE_MESSAGE,
   touched: PropTypes.bool,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,

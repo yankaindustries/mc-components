@@ -2,7 +2,7 @@ import React from 'react'
 
 import Select from '../Select'
 import FormGroup from '../FormGroup'
-import { parseError } from '../Forms/utils'
+import { parseMessage } from '../Forms/utils'
 import { PROP_TYPE_REDUX_FORM_ELEMENT } from '../Forms/constants'
 
 
@@ -16,8 +16,8 @@ const SelectField = ({
   optional,
   ...props
 }) => {
-  const error = parseError(meta.error || props.error)
-  const success = meta.success || props.success
+  const error = parseMessage(meta.error || props.error)
+  const success = parseMessage(meta.success || props.success)
   const touched = meta.touched || props.touched
 
   return (
