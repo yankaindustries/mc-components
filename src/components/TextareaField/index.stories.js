@@ -29,7 +29,7 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
     <div className='container'>
       <DocHeader
         title='TextareaField'
-        description='Some various textareas...'
+        description='For use with ReduxForm. Some various textareas...'
       />
 
       <div className='example__section'>
@@ -76,7 +76,7 @@ pretium consectetur risus eget feugiat. Ut faucibus id nunc vel tempor.`,
 )
 
 
-storiesOf('Components|Forms/TextareaField', module)
+storiesOf('Components|Forms/Textarea', module)
   .add('TextareaField', withAddons({
     path: 'components/TextareaField/index.stories.js',
     component: TextareaField,

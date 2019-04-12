@@ -9,6 +9,7 @@ import {
 import { storiesOf } from '@storybook/react'
 
 import withAddons from '../../utils/withAddons'
+import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
 
 import InputField from '../InputField'
@@ -29,9 +30,10 @@ const Form = reduxForm({
   () =>
     <div className='example-mc-type'>
       <div className='container'>
-        <div className='example__heading'>
-          <h1 className='mc-text-h1'>InputField</h1>
-        </div>
+        <DocHeader
+          title='InputField'
+          description='For use with ReduxForm. The most basic of form elements.'
+        />
 
         <div className='example__section'>
           <InvertedMirror>
@@ -106,7 +108,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('Components|Forms/InputField', module)
+storiesOf('Components|Forms/Input', module)
   .add('InputField', withAddons({
     path: 'components/InputField/index.stories.js',
     component: InputField,

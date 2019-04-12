@@ -1,8 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import Textarea from '../Textarea'
 import FormGroup from '../FormGroup'
+import { parseMessage } from '../Forms/utils'
+import { PROP_TYPE_REDUX_FORM_ELEMENT } from '../Forms/constants'
 
 
 const TextareaField = ({
@@ -15,8 +16,8 @@ const TextareaField = ({
   optional,
   ...props
 }) => {
-  const error = meta.error || props.error
-  const success = meta.success || props.success
+  const error = parseMessage(meta.error || props.error)
+  const success = parseMessage(meta.success || props.success)
   const touched = meta.touched || props.touched
 
   return (
@@ -42,20 +43,8 @@ const TextareaField = ({
   )
 }
 
-const INPUT_PROP_TYPE = PropTypes.shape({
-  name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.any.isRequired,
-})
-
-const META_PROP_TYPE = PropTypes.shape({
-  error: PropTypes.string,
-})
-
 TextareaField.propTypes = {
-  className: PropTypes.string,
-  input: INPUT_PROP_TYPE,
-  meta: META_PROP_TYPE,
+  ...PROP_TYPE_REDUX_FORM_ELEMENT,
 }
 
 export default TextareaField

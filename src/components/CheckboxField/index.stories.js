@@ -28,7 +28,7 @@ const Form = reduxForm({
     <div className='container'>
       <DocHeader
         title='CheckboxField'
-        description='I agree to the terms...'
+        description='For use with ReduxForm. I agree to the terms...'
       />
 
       <InvertedMirror>
@@ -80,7 +80,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('Components|Forms/CheckboxField', module)
+storiesOf('Components|Forms/Checkbox', module)
   .add('CheckboxField', withAddons({
     path: 'components/CheckboxField/index.stories.js',
     component: CheckboxField,

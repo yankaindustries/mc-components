@@ -41,7 +41,7 @@ export default class Checkbox extends PureComponent {
       'mc-input-checkbox': true,
       'mc-input-checkbox--checked': checked,
       'mc-input-checkbox--disabled': disabled,
-      'mc-mb-5': true,
+      'mc-mb-2': true,
     })
 
     return (

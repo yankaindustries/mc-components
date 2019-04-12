@@ -186,14 +186,10 @@ const Form = reduxForm({
 
               <div className='col-12'>
                 <Field
-                  className='mc-mb-4'
                   component={CheckboxField}
                   name='terms'
                   label='I agree to the terms'
                 />
-              </div>
-
-              <div className='col-12'>
                 <Field
                   className='mc-mb-4'
                   component={CheckboxField}

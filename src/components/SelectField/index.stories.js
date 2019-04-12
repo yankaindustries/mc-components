@@ -43,7 +43,7 @@ const Form = reduxForm({
     <div className='container'>
       <DocHeader
         title='SelectField'
-        description='We got options people!'
+        description='For use with ReduxForm. We got options people!'
       />
 
       <InvertedMirror>
@@ -81,7 +81,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('Components|Forms/SelectField', module)
+storiesOf('Components|Forms/Select', module)
   .add('SelectField', withAddons({
     path: 'components/SelectField/index.stories.js',
     component: SelectField,

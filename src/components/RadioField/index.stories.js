@@ -28,7 +28,7 @@ const Form = reduxForm({
     <div className='container'>
       <DocHeader
         title='RadioField'
-        description='Remember multiple choice?'
+        description='For use with ReduxForm. Remember multiple choice?'
       />
 
       <InvertedMirror>
@@ -85,7 +85,7 @@ const Form = reduxForm({
 )
 
 
-storiesOf('Components|Forms/RadioField', module)
+storiesOf('Components|Forms/Radio', module)
   .add('RadioField', withAddons({
     path: 'components/RadioField/index.stories.js',
     component: RadioField,
