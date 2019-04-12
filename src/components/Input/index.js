@@ -57,8 +57,6 @@ export default class Input extends PureComponent {
       append,
       disabled,
       error,
-      // help,
-      // label,
       maxlength,
       name,
       prepend,
