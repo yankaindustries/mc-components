@@ -19,7 +19,7 @@
     "dev:css": "mkdir -p ./dist/styles/css && nodemon -e scss,svg --watch src -x 'yarn build:css'",
     "dev:scss": "mkdir -p ./dist/styles/scss && nodemon -e scss,svg --watch src -x 'yarn build:scss'",
     "build": "yarn build:assets && yarn build:js && yarn build:styles",
-    "build:assets": "svgr ./src/assets/icons --out-dir ./src/components/Icons",
+    "build:assets": "npx babel-node ./build/assets.js && svgr ./src/assets/icons --out-dir ./src/components/Icons",
     "build:js": "babel ./src/components --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
     "build:css": "NODE_ENV=production mkdir -p ./dist/styles/css && node-sass ./src/styles/index.scss | postcss > ./dist/styles/css/index.css",
     "build:scss": "NODE_ENV=development mkdir -p ./dist/styles/scss && postcss ./src/styles --base ./src/styles --dir ./dist/styles/scss",
@@ -46,6 +46,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
+    "@babel/node": "^7.2.2",
     "@masterclass/eslint-config": "yankaindustries/eslint-config-masterclass#1.0.2",
     "@storybook/addon-backgrounds": "^3.4.5",
     "@storybook/addon-info": "^3.4.5",
