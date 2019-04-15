@@ -7,3 +7,17 @@ body {
   background: $mc-color-background;
   color: $mc-color-text;
 }
+
+// We want this behavior by default.
+a,
+a:hover {
+  text-decoration: none;
+}
+
+
+.mc-header {
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+}
