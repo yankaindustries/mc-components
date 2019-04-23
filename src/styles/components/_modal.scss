@@ -1,5 +1,6 @@
 .mc-modal {
   @include fade-in-opacity();
+  animation-fill-mode: none;
 
   position: fixed;
   left: 0;
