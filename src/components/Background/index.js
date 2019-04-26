@@ -112,9 +112,9 @@ export default class Background extends PureComponent {
       'mc-background': true,
       [`mc-background--color-${color}`]: color,
       'mc-background--loaded': loaded,
+      [`mc-background--fit-${fit}`]: fit,
       [`mc-background--position-x-${x}`]: element,
       [`mc-background--position-y-${y}`]: element,
-      [`mc-background--fit-${fit}`]: element,
       [`mc-background--size-${size}`]: element,
       [`mc-background--size-${size}-${sizeBy}`]: element,
     })
