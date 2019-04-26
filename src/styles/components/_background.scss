@@ -145,4 +145,8 @@
   &--color-transparent {
     background: transparent;
   }
+
+  &--color-dim {
+    background: rgba($mc-color-dark, 0.7);
+  }
 }

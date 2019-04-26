@@ -110,37 +110,56 @@ storiesOf('Components|Background', module)
           >
             <div style={{ background: '#31333b', padding: '1em' }}>
               <div className='row mc-text--center'>
-                <div className='col-3'>
+                <div className='col-4'>
                   <Background color='light' className='mc-invert'>
                     <br />
                     light
                     <br />
+                    ($mc-color-light, 100%)
+                    <br />
                     <br />
                   </Background>
                 </div>
 
-                <div className='col-3'>
+                <div className='col-4'>
                   <Background color='medium'>
                     <br />
                     medium
                     <br />
+                    ($mc-color-gray-100, 100%)
+                    <br />
                     <br />
                   </Background>
                 </div>
 
-                <div className='col-3'>
+                <div className='col-4'>
                   <Background color='dark'>
                     <br />
                     dark
                     <br />
+                    ($mc-color-dark, 100%)
+                    <br />
                     <br />
                   </Background>
                 </div>
 
-                <div className='col-3'>
+                <div className='col-4'>
                   <Background color='transparent'>
                     <br />
                     transparent
+                    <br />
+                    (0%)
+                    <br />
+                    <br />
+                  </Background>
+                </div>
+
+                <div className='col-4'>
+                  <Background color='dim'>
+                    <br />
+                    dim
+                    <br />
+                    ($mc-color-dark, 70%)
                     <br />
                     <br />
                   </Background>
