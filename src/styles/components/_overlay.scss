@@ -1,0 +1,47 @@
+.mc-overlay {
+  width: 100%;
+  height: 100%;
+
+  &--dim {
+    background: rgba($mc-color-dark, 0.7);
+  }
+
+  &--gradient-bottom {
+    background:
+      linear-gradient(
+        to top,
+        rgba($mc-color-dark, 1) 0,
+        rgba($mc-color-dark, 0.6) 25%,
+        rgba($mc-color-dark, 0) 45%
+      ) center no-repeat;
+  }
+
+  &--gradient-left {
+    background:
+      linear-gradient(
+        to right,
+        rgba($mc-color-dark, 1) 0,
+        rgba($mc-color-dark, 0.6) 25%,
+        rgba($mc-color-dark, 0) 45%
+      ) center no-repeat;
+  }
+
+  &--spotlight {
+    background:
+      radial-gradient(
+        farthest-side at center top,
+        rgba($mc-color-background, 0) 33%,
+        rgba($mc-color-background, 1) 100%
+      ),
+      linear-gradient(
+        to right,
+        rgba($mc-color-dark, 1) 0%,
+        rgba($mc-color-dark, 0) 10%
+      ),
+      linear-gradient(
+        to left,
+        rgba($mc-color-dark, 1) 0%,
+        rgba($mc-color-dark, 0) 10%
+      );
+  }
+}
