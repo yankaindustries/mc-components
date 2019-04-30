@@ -35,6 +35,8 @@ const Modifiers = () =>
           jumped over the
           {' '}
           <a className='mc-text--bare-link'>lazy dog</a>.
+          {' '}
+          <a>And this is an anchor without any classes.</a>
         </p>
       </PropExample>
     </DocSection>
