@@ -8,6 +8,7 @@ import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 
 import VideoPlayer from './'
+import Background from '../Background'
 import Tile from '../Tile'
 import TileCaption from '../TileCaption'
 import TileImage from '../TileImage'
@@ -47,30 +48,36 @@ storiesOf('Components|VideoPlayer', module)
               hasControls
               beforescreenComponent={
                 ({ onResume }) =>
-                  <div style={screenStyle}>
-                    <p>Start playing your video</p>
-                    <button onClick={onResume}>
-                      START
-                    </button>
-                  </div>
+                  <Background color='dim' fit='container'>
+                    <div style={screenStyle}>
+                      <p>Start playing your video</p>
+                      <button onClick={onResume}>
+                        START
+                      </button>
+                    </div>
+                  </Background>
               }
               pausescreenComponent={
                 ({ onResume }) =>
-                  <div style={screenStyle}>
-                    <p>Your video is paused</p>
-                    <button onClick={onResume}>
-                      CONTINUE
-                    </button>
-                  </div>
+                  <Background color='dim' fit='container'>
+                    <div style={screenStyle}>
+                      <p>Your video is paused</p>
+                      <button onClick={onResume}>
+                        CONTINUE
+                      </button>
+                    </div>
+                  </Background>
               }
               endscreenComponent={
                 ({ onReplay }) =>
-                  <div style={screenStyle}>
-                    <p>Your video has ended</p>
-                    <button onClick={onReplay}>
-                      REPLAY
-                    </button>
-                  </div>
+                  <Background color='dim' fit='container'>
+                    <div style={screenStyle}>
+                      <p>Your video has ended</p>
+                      <button onClick={onReplay}>
+                        REPLAY
+                      </button>
+                    </div>
+                  </Background>
               }
             />
           </div>
@@ -137,12 +144,14 @@ storiesOf('Components|VideoPlayer', module)
               <VideoPlayer
                 beforescreenComponent={
                   ({ onResume }) =>
-                    <div style={screenStyle}>
-                      <p>Start playing your video</p>
-                      <button onClick={onResume}>
-                        START
-                      </button>
-                    </div>
+                    <Background color='dim' fit='container'>
+                      <div style={screenStyle}>
+                        <p>Start playing your video</p>
+                        <button onClick={onResume}>
+                          START
+                        </button>
+                      </div>
+                    </Background>
                 }
                 hasControls
               />
@@ -158,12 +167,14 @@ storiesOf('Components|VideoPlayer', module)
               <VideoPlayer
                 pausescreenComponent={
                   ({ onResume }) =>
-                    <div style={screenStyle}>
-                      <p>Your video is paused</p>
-                      <button onClick={onResume}>
-                        CONTINUE
-                      </button>
-                    </div>
+                    <Background color='dim' fit='container'>
+                      <div style={screenStyle}>
+                        <p>Your video is paused</p>
+                        <button onClick={onResume}>
+                          CONTINUE
+                        </button>
+                      </div>
+                    </Background>
                 }
                 hasControls
               />
@@ -180,12 +191,14 @@ storiesOf('Components|VideoPlayer', module)
                 progress={11}
                 endscreenComponent={
                   ({ onReplay }) =>
-                    <div style={screenStyle}>
-                      <p>Your video has ended</p>
-                      <button onClick={onReplay}>
-                        REPLAY
-                      </button>
-                    </div>
+                    <Background color='dim' fit='container'>
+                      <div style={screenStyle}>
+                        <p>Your video has ended</p>
+                        <button onClick={onReplay}>
+                          REPLAY
+                        </button>
+                      </div>
+                    </Background>
                 }
                 hasControls
               />
