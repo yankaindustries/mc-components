@@ -1,6 +1,6 @@
 .rounded-box {
   background-color: $mc-color-light;
-  border-radius: 0.4rem;
+  border-radius: $default-radius;
   padding: $grid-gutter-width;
   color: $mc-color-dark;
 
