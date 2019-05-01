@@ -1,0 +1,13 @@
+.mc-corners {
+  &--rounded {
+    border-radius: 4px;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+}
