@@ -9,6 +9,7 @@ import PropExample from '../../utils/PropExample'
 
 import Button from '../Button'
 import Icon from '../Icons'
+import Separator from '../Separator'
 
 storiesOf('Components|Button', module)
   .add('Summary', withAddons({
@@ -64,32 +65,32 @@ storiesOf('Components|Button', module)
               </div>
 
               <div className='col-12'>
+                <Separator />
+              </div>
+
+              <div className='col-12'>
                 <h6 className='mc-text-h6'>
-                  Third-Party Support
+                  Third-Party
                 </h6>
               </div>
 
               <div className='col-auto'>
                 <Button kind='google'>
-                  <Icon kind='google' className='mc-mr-3' />
                   Google
                 </Button>
               </div>
               <div className='col-auto'>
                 <Button kind='facebook'>
-                  <Icon kind='facebook' className='mc-mr-3' />
                   Facebook
                 </Button>
               </div>
               <div className='col-auto'>
                 <Button kind='twitter'>
-                  <Icon kind='twitter' className='mc-mr-3' />
                   Twitter
                 </Button>
               </div>
               <div className='col-auto'>
                 <Button kind='pinterest'>
-                  <Icon kind='pinterest' className='mc-mr-3' />
                   Pinterest
                 </Button>
               </div>
@@ -134,12 +135,6 @@ storiesOf('Components|Button', module)
                   Link
                 </Button>
               </div>
-
-              <div className='col-auto'>
-                <Button kind='paypal' disabled>
-                  Paypal
-                </Button>
-              </div>
             </div>
           </PropExample>
 
@@ -181,7 +176,68 @@ storiesOf('Components|Button', module)
             <div className='row'>
               <div className='col-12'>
                 <Button fullWidth>
-                  Full Width
+                  Button
+                </Button>
+              </div>
+
+              <div className='col-6'>
+                <Button secondary fullWidth>
+                  Secondary
+                </Button>
+              </div>
+
+              <div className='col-6'>
+                <Button tertiary fullWidth>
+                  Tertiary
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='Icons'
+            description={
+              <span>
+                You can embed icons using the
+                {' '}
+                <span className='mc-code'>Icon</span>
+                {' '}
+                component.
+              </span>
+            }
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button>
+                  Next
+                  <Icon kind='chevron-right' className='mc-ml-3' />
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='secondary'>
+                  <Icon kind='lock' className='mc-mr-3' />
+                  Lock
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='tertiary'>
+                  <Icon kind='magnifying-glass' />
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='success'>
+                  <Icon kind='check' className='mc-mr-3' />
+                  Saved
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='link'>
+                  <Icon kind='close' className='mc-mr-3' />
+                  Close
                 </Button>
               </div>
             </div>
@@ -190,6 +246,7 @@ storiesOf('Components|Button', module)
           <PropExample
             name='symmetrical'
             type='boolean'
+            description='Applies the same padding all around the button'
           >
             <div className='row'>
               <div className='col-auto'>
@@ -242,57 +299,6 @@ storiesOf('Components|Button', module)
               </div>
             </div>
           </PropExample>
-
-          <PropExample
-            name='Embedded Icons'
-          >
-
-            <div className='row'>
-              <div className='col-12'>
-                <p>
-                  You can embed icons using the
-                  <span className='mc-code'>Icon</span>
-                  component.
-                </p>
-              </div>
-              <div className='col-auto'>
-                <Button>
-                  Button
-                  <Icon kind='chevron-right' className='mc-ml-3' />
-                </Button>
-              </div>
-
-              <div className='col-auto'>
-                <Button kind='secondary'>
-                  <Icon kind='lock' className='mc-mr-3' />
-                  Secondary
-                </Button>
-              </div>
-
-              <div className='col-auto'>
-                <Button kind='tertiary'>
-                  <Icon kind='magnifying-glass' />
-                </Button>
-              </div>
-
-              <div className='col-auto'>
-                <Button kind='link'>
-                  <Icon kind='close' />
-                </Button>
-              </div>
-            </div>
-          </PropExample>
-
-          <div className='row'>
-            <div className='col-12'>
-              <p>
-                You can also pass in a &ldquo;kind&rdquo;
-                of any of the following strings and get the
-                background color / text color combinations
-                shown here.
-              </p>
-            </div>
-          </div>
         </InvertedMirror>
       </DocSection>
     </div>
