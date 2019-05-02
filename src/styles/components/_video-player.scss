@@ -250,13 +250,13 @@ $mc-video-progress-height: 0.8rem !default;
       text-shadow: none !important;
 
       &:first-child {
-        border-top-right-radius: 4px;
-        border-top-left-radius: 4px;
+        border-top-right-radius: $default-radius;
+        border-top-left-radius: $default-radius;
       }
 
       &:last-child {
-        border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: $default-radius;
+        border-bottom-left-radius: $default-radius;
       }
 
       &.vjs-selected {

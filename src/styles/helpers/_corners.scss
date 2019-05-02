@@ -1,0 +1,13 @@
+.mc-corners {
+  &--rounded {
+    border-radius: $default-radius;
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+}
