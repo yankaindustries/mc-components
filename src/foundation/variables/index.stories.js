@@ -124,6 +124,14 @@ storiesOf('Foundation|Variables', module)
                 <p className='example-mc-swatch__hex mc-text-h6 mc-text--muted mc-text--monospace'></p>
               </div>
             </div>
+
+            <div className='example-mc-swatch example-mc-swatch--mc-color-gray-800 mc-mb-4'>
+              <span className='example-mc-swatch__color'></span>
+              <div>
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-800</p>
+                <p className='example-mc-swatch__hex mc-text-h6 mc-text--muted mc-text--monospace'></p>
+              </div>
+            </div>
           </div>
 
           <div className='col-md-6 col-lg-4'>
