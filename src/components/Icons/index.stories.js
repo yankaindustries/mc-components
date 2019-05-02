@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { keys } from 'lodash'
+import { keys, omit } from 'lodash'
 
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
@@ -9,7 +9,13 @@ import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
 
 import Icon from '../Icons'
-import { ICONS } from './constants'
+import {
+  DEPRECATED,
+  ICONS,
+} from './constants'
+
+
+const icons = omit(ICONS, DEPRECATED)
 
 
 storiesOf('Components|Icons', module)
@@ -31,7 +37,7 @@ storiesOf('Components|Icons', module)
             description='Choose the icon you would like to render.'
           >
             <div className='row'>
-              {keys(ICONS).map(kind =>
+              {keys(icons).map(kind =>
                 <div key={kind} className='col-3 mc-text--center'>
                   <Icon kind={kind} />
                   <br />
