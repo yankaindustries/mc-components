@@ -16,6 +16,7 @@ import SvgClose from './Close'
 import SvgCog from './Cog'
 import SvgCreditCard from './CreditCard'
 import SvgDownload from './Download'
+import SvgEdit from './Edit'
 import SvgError from './Error'
 import SvgFacebook from './Facebook'
 import SvgFilter from './Filter'
@@ -24,6 +25,7 @@ import SvgFullscreen from './Fullscreen'
 import SvgGoogleColor from './GoogleColor'
 import SvgGoogle from './Google'
 import SvgHamburger from './Hamburger'
+import SvgHelper from './Helper'
 import SvgInfo from './Info'
 import SvgInstagram from './Instagram'
 import SvgLoader from './Loader'
@@ -76,6 +78,7 @@ export const ICONS = {
   'cog': SvgCog,
   'credit-card': SvgCreditCard,
   'download': SvgDownload,
+  'edit': SvgEdit,
   'error': SvgError,
   'facebook': SvgFacebook,
   'filter': SvgFilter,
@@ -84,6 +87,7 @@ export const ICONS = {
   'google-color': SvgGoogleColor,
   'google': SvgGoogle,
   'hamburger': SvgHamburger,
+  'helper': SvgHelper,
   'info': SvgInfo,
   'instagram': SvgInstagram,
   'loader': SvgLoader,
@@ -118,15 +122,3 @@ export const ICONS = {
   'upload': SvgUpload,
   'whisk': SvgWhisk,
 }
-
-export const DEPRECATED = [
-  'arrow',
-  'back-arrow',
-  'check-circle',
-  'logo-wordmark',
-  'not-selected',
-  'play-circle',
-  'plus-circle',
-  'selected',
-  'ssl-badge',
-]
