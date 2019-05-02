@@ -12,7 +12,7 @@
   line-height: 2;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border-radius: 4px;
+  border-radius: $default-radius;
   transition:
     background 250ms ease,
     box-shadow 250ms ease,
@@ -172,6 +172,10 @@
         }
       }
     }
+  }
+
+  &--symmetrical {
+    @include step(padding, 3);
   }
 
   &--google {

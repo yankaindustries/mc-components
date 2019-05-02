@@ -14,7 +14,8 @@ const Button = ({
   fullWidth,
   link,
   loading,
-  Icon,
+  symmetrical,
+  rounded,
   kind,
   ...props
 }) => {
@@ -26,6 +27,8 @@ const Button = ({
     'c-button--full-width': fullWidth,
     'c-button--link': link,
     'c-button--loading': loading,
+    'c-button--symmetrical': symmetrical,
+    'c-button--symmetrical mc-corners--circle': rounded,
     [`c-button--${kind}`]: kind,
   })
 
@@ -63,7 +66,7 @@ Button.propTypes = {
   fullWidth: PropTypes.bool,
   link: PropTypes.bool,
   loading: PropTypes.bool,
-  Icon: PropTypes.node,
+  symmetrical: PropTypes.bool,
   kind: PropTypes.oneOf([
     'primary',
     'secondary',

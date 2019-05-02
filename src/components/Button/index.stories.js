@@ -8,15 +8,7 @@ import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
 
 import Button from '../Button'
-import IconGoogle from '../Icons/Google'
-import IconFacebook from '../Icons/Facebook'
-import IconPinterest from '../Icons/Pinterest'
-import IconTwitter from '../Icons/Twitter'
-import IconChevronRight from '../Icons/ChevronRight'
-import IconLock from '../Icons/Lock'
-import IconMagnifyingGlass from '../Icons/MagnifyingGlass'
-import IconClose from '../Icons/Close'
-
+import Icon from '../Icons'
 
 storiesOf('Components|Button', module)
   .add('Summary', withAddons({
@@ -79,25 +71,25 @@ storiesOf('Components|Button', module)
 
               <div className='col-auto'>
                 <Button kind='google'>
-                  <IconGoogle className='mc-mr-3' />
+                  <Icon kind='google' className='mc-mr-3' />
                   Google
                 </Button>
               </div>
               <div className='col-auto'>
                 <Button kind='facebook'>
-                  <IconFacebook className='mc-mr-3' />
+                  <Icon kind='facebook' className='mc-mr-3' />
                   Facebook
                 </Button>
               </div>
               <div className='col-auto'>
                 <Button kind='twitter'>
-                  <IconTwitter className='mc-mr-3' />
+                  <Icon kind='twitter' className='mc-mr-3' />
                   Twitter
                 </Button>
               </div>
               <div className='col-auto'>
                 <Button kind='pinterest'>
-                  <IconPinterest className='mc-mr-3' />
+                  <Icon kind='pinterest' className='mc-mr-3' />
                   Pinterest
                 </Button>
               </div>
@@ -183,39 +175,6 @@ storiesOf('Components|Button', module)
           </PropExample>
 
           <PropExample
-            name='icon'
-            type='children'
-          >
-            <div className='row'>
-              <div className='col-auto'>
-                <Button>
-                  Button
-                  <IconChevronRight className='mc-ml-3' />
-                </Button>
-              </div>
-
-              <div className='col-auto'>
-                <Button kind='secondary'>
-                  <IconLock className='mc-mr-3' />
-                  Secondary
-                </Button>
-              </div>
-
-              <div className='col-auto'>
-                <Button kind='tertiary'>
-                  <IconMagnifyingGlass />
-                </Button>
-              </div>
-
-              <div className='col-auto'>
-                <Button kind='link'>
-                  <IconClose />
-                </Button>
-              </div>
-            </div>
-          </PropExample>
-
-          <PropExample
             name='fullWidth'
             type='boolean'
           >
@@ -223,6 +182,102 @@ storiesOf('Components|Button', module)
               <div className='col-12'>
                 <Button fullWidth>
                   Full Width
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='symmetrical'
+            type='boolean'
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button symmetrical>
+                  <Icon kind='google' />
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='secondary' symmetrical>
+                  <Icon kind='plus' />
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='tertiary' symmetrical>
+                  <Icon kind='filter' />
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='link' symmetrical>
+                  <Icon kind='rewind' />
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='rounded'
+            type='boolean'
+          >
+            <div className='row'>
+              <div className='col-auto'>
+                <Button rounded>
+                  <Icon kind='google' />
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='secondary' rounded>
+                  <Icon kind='plus' />
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='tertiary' rounded>
+                  <Icon kind='filter' />
+                </Button>
+              </div>
+              <div className='col-auto'>
+                <Button kind='link' rounded>
+                  <Icon kind='rewind' />
+                </Button>
+              </div>
+            </div>
+          </PropExample>
+
+          <PropExample
+            name='Embedded Icons'
+          >
+
+            <div className='row'>
+              <div className='col-12'>
+                <p>
+                  You can embed icons using the
+                  <span className='mc-code'>Icon</span>
+                  component.
+                </p>
+              </div>
+              <div className='col-auto'>
+                <Button>
+                  Button
+                  <Icon kind='chevron-right' className='mc-ml-3' />
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='secondary'>
+                  <Icon kind='lock' className='mc-mr-3' />
+                  Secondary
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='tertiary'>
+                  <Icon kind='magnifying-glass' />
+                </Button>
+              </div>
+
+              <div className='col-auto'>
+                <Button kind='link'>
+                  <Icon kind='close' />
                 </Button>
               </div>
             </div>
