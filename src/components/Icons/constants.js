@@ -21,6 +21,7 @@ import SvgFacebook from './Facebook'
 import SvgFilter from './Filter'
 import SvgFullscreenExit from './FullscreenExit'
 import SvgFullscreen from './Fullscreen'
+import SvgGoogleColor from './GoogleColor'
 import SvgGoogle from './Google'
 import SvgHamburger from './Hamburger'
 import SvgInfo from './Info'
@@ -55,6 +56,7 @@ import SvgTrash from './Trash'
 import SvgTwitter from './Twitter'
 import SvgUnmuted from './Unmuted'
 import SvgUpload from './Upload'
+import SvgWhisk from './Whisk'
 
 export const ICONS = {
   'arrow-right': SvgArrowRight,
@@ -79,6 +81,7 @@ export const ICONS = {
   'filter': SvgFilter,
   'fullscreen-exit': SvgFullscreenExit,
   'fullscreen': SvgFullscreen,
+  'google-color': SvgGoogleColor,
   'google': SvgGoogle,
   'hamburger': SvgHamburger,
   'info': SvgInfo,
@@ -113,4 +116,17 @@ export const ICONS = {
   'twitter': SvgTwitter,
   'unmuted': SvgUnmuted,
   'upload': SvgUpload,
+  'whisk': SvgWhisk,
 }
+
+export const DEPRECATED = [
+  'arrow',
+  'back-arrow',
+  'check-circle',
+  'logo-wordmark',
+  'not-selected',
+  'play-circle',
+  'plus-circle',
+  'selected',
+  'ssl-badge',
+]
