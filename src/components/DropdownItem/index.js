@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 export default class DropdownItem extends PureComponent {
@@ -15,8 +16,13 @@ export default class DropdownItem extends PureComponent {
       ...restProps
     } = this.props
 
+    const classes = cn({
+      'mc-dropdown__item': true,
+      [className]: className,
+    })
+
     return (
-      <div className='mc-dropdown__item' {...restProps}>
+      <div className={classes} {...restProps}>
         {children}
       </div>
     )
