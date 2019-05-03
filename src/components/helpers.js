@@ -75,3 +75,12 @@ export const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
 
   return sm
 }
+
+export default {
+  responsiveValues,
+  renderChildren,
+  FormatClassTitle,
+  closeFullscreen,
+  NumberToPX,
+  parseInputErrors,
+}
