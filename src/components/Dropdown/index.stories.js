@@ -5,7 +5,6 @@ import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import CodeExample from '../../utils/CodeExample'
-import PropExample from '../../utils/PropExample'
 
 import Dropdown from '../Dropdown'
 import DropdownToggle from '../DropdownToggle'
@@ -24,7 +23,7 @@ storiesOf('Components|Dropdown', module)
       <div className='container'>
         <DocHeader
           title='Dropdown'
-          description={`you know, when you have shit you need to hide`}
+          description='you know, when you have shit you need to hide'
         />
 
         <DocSection title='Demo'>
@@ -35,13 +34,13 @@ storiesOf('Components|Dropdown', module)
               </DropdownToggle>
 
               <DropdownContent>
-                {[1, 2, 3].map(i =>
-                  <DropdownItem
+                {[1, 2, 3].map(n =>
+                  <DropdownItem key={n}
                     className='mc-py-3 mc-px-5'
                     onClick={console.log}
                   >
                     Test
-                  </DropdownItem>
+                  </DropdownItem>,
                 )}
               </DropdownContent>
             </Dropdown>

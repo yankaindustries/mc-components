@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 
 const DropdownContext = React.createContext('dropdown')
@@ -21,7 +22,7 @@ export default class Dropdown extends PureComponent {
 
   toggle = () => {
     this.setState(prevState => ({
-      show: !prevState.show
+      show: !prevState.show,
     }))
   }
 
@@ -33,12 +34,17 @@ export default class Dropdown extends PureComponent {
     } = this.props
 
     const {
-      show
+      show,
     } = this.state
+
+    const classes = cn({
+      'mc-dropdown': true,
+      [className]: className,
+    })
 
     return (
       <Provider value={{ show, toggle: this.toggle }}>
-        <div className='mc-dropdown' {...restProps}>
+        <div className={classes} {...restProps}>
           {children}
         </div>
       </Provider>

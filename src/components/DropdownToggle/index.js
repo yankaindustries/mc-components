@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import { Consumer } from '../Dropdown'
 
@@ -17,11 +18,16 @@ export default class DropdownToggle extends PureComponent {
       ...restProps
     } = this.props
 
+    const classes = cn({
+      'mc-dropdown__toggle': true,
+      [className]: className,
+    })
+
     return (
       <Consumer>
         {({ toggle }) =>
           <div
-            className='mc-dropdown__toggle'
+            className={classes}
             {...restProps}
             onClick={toggle}
           >
