@@ -21,7 +21,7 @@ export default class DropdownContent extends PureComponent {
       <Consumer>
         {({ show }) =>
           show &&
-            <div className='mc-dropdown__Content' {...restProps}>
+            <div className='mc-dropdown__content' {...restProps}>
               {children}
             </div>
         }

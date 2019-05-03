@@ -1,3 +1,23 @@
 .mc-dropdown {
-  
+  position: relative; // positions the dropdown content
+
+  &__content {
+    position: absolute;
+    @include step(bottom, -1);
+    transform: translateY(100%);
+    background: $mc-color-gray-100;
+    border: 1px solid $mc-color-gray-200;
+    border-radius: $default-radius;
+    max-width: 400px;
+  }
+
+  &__item {
+    cursor: pointer;
+    background: transparent;
+    transition: background 250ms ease;
+
+    &:hover {
+      background: $mc-color-gray-200;
+    }
+  }
 }
