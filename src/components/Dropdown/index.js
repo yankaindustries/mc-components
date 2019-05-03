@@ -22,7 +22,7 @@ export default class Dropdown extends PureComponent {
 
   toggle = () => {
     this.setState(prevState => ({
-      show: !prevState.show
+      show: !prevState.show,
     }))
   }
 
@@ -34,7 +34,7 @@ export default class Dropdown extends PureComponent {
     } = this.props
 
     const {
-      show
+      show,
     } = this.state
 
     const classes = cn({
