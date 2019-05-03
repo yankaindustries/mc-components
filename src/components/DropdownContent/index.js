@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import { Consumer } from '../Dropdown'
+import ClickOutside from '../ClickOutside'
 
 
 export default class DropdownContent extends PureComponent {
@@ -25,11 +26,13 @@ export default class DropdownContent extends PureComponent {
 
     return (
       <Consumer>
-        {({ show }) =>
+        {({ show, toggle }) =>
           show &&
-            <div className={classes} {...restProps}>
-              {children}
-            </div>
+            <ClickOutside onClickOutside={toggle}>
+              <div className={classes} {...restProps}>
+                {children}
+              </div>
+            </ClickOutside>
         }
       </Consumer>
     )
