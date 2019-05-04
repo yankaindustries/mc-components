@@ -19,7 +19,6 @@
   perspective: 2000px;
 
   &__content {
-    @include step(margin-top, 1);
     position: absolute;
     top: 100%;
     margin: 0;
@@ -34,6 +33,8 @@
     animation-duration: 250ms;
     animation-iteration-count: once;
     animation-timing-function: ease;
+
+    @include step(margin-top, 1);
   }
 
   &__item {
