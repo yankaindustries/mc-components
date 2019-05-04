@@ -20,7 +20,7 @@ export default class DropdownContent extends PureComponent {
     } = this.props
 
     const classes = cn({
-      'mc-dropdown__content mc-mt-1 mc-py-1': true,
+      'mc-dropdown__content mc-py-1': true,
       [className]: className,
     })
 

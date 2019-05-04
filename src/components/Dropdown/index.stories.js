@@ -12,6 +12,18 @@ import DropdownContent from '../DropdownContent'
 import DropdownItem from '../DropdownItem'
 
 import Button from '../Button'
+import Icon from '../Icons'
+
+
+const CATEGORIES = [
+  'Writing',
+  'Music & Entertainment',
+  'Sports & Games',
+  'Design, Photography & Fashion and a bunch of other stuff that will make this overflow.  or maybe not?  i thought for sure that would work',
+  'Politics & Society',
+  'Science & Technology',
+  'Telekenesis',
+]
 
 
 storiesOf('Components|Dropdown', module)
@@ -34,12 +46,20 @@ storiesOf('Components|Dropdown', module)
               </DropdownToggle>
 
               <DropdownContent>
-                {[1, 2, 3].map(n =>
-                  <DropdownItem key={n}
-                    className='mc-py-3 mc-px-5'
+                {CATEGORIES.map(category =>
+                  <DropdownItem key={category}
+                    className='mc-py-3 mc-px-5 mc-text-small'
                     onClick={console.log}
                   >
-                    Test
+                    <div className='row align-items-center justify-content-between flex-nowrap'>
+                      <div className='col-auto mc-text--nowrap'>
+                        {category}
+                      </div>
+
+                      <div className='col-auto'>
+                        <Icon kind='chevron-right' />
+                      </div>
+                    </div>
                   </DropdownItem>,
                 )}
               </DropdownContent>

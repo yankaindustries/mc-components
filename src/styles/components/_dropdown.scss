@@ -1,14 +1,28 @@
 .mc-dropdown {
   position: relative; // positions the dropdown content
+  display: inline-block;
 
   &__content {
-    position: absolute;
-    @include step(bottom, -1);
-    transform: translateY(100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: $container-margin;
+    max-width: calc(100vw - #{$container-margin * 2});
+    max-height: calc(100vh - #{$container-margin * 2});
+    overflow: auto;
     background: $mc-color-gray-100;
     border: 1px solid $mc-color-gray-200;
     border-radius: $default-radius;
-    max-width: 400px;
+
+    @media (min-width: $mc-bp-sm) {
+      @include step(margin-top, 1);
+      position: absolute;
+      top: 100%;
+      margin: 0;
+      max-width: 400px;
+      min-width: 100%;
+      max-height: 100vh;
+    }
   }
 
   &__item {
