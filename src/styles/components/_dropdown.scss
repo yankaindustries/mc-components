@@ -1,18 +1,3 @@
-// Let's flex how cool mc-components can be with custom animations
-// for a component!
-
-@keyframes mcAnimateDropdown {
-  from {
-    opacity: 0;
-    transform: rotateX(-15deg);
-  }
-
-  to   {
-    opacity: 1;
-    transform: rotateX(0deg);
-  }
-}
-
 .mc-dropdown {
   position: relative; // positions the dropdown content
   display: inline-block;
@@ -29,10 +14,11 @@
     border: 1px solid $mc-color-gray-200;
     border-radius: $default-radius;
     transform-origin: 50% -50px;
-    animation-name: mcAnimateDropdown;
-    animation-duration: 250ms;
-    animation-iteration-count: once;
-    animation-timing-function: ease;
+    transform: rotateX(-15deg);
+    opacity: 0;
+    transition:
+      opacity 250ms ease,
+      transform 250ms ease;
 
     @include step(margin-top, 1);
   }
@@ -44,6 +30,13 @@
 
     &:hover {
       background: $mc-color-gray-200;
+    }
+  }
+
+  &--active {
+    .mc-dropdown__content {
+      opacity: 1;
+      transform: rotateX(0deg);
     }
   }
 }
