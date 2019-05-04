@@ -27,12 +27,11 @@ export default class DropdownContent extends PureComponent {
     return (
       <Consumer>
         {({ show, toggle }) =>
-          show &&
-            <ClickOutside onClickOutside={toggle}>
-              <div className={classes} {...restProps}>
-                {children}
-              </div>
-            </ClickOutside>
+          <ClickOutside onClickOutside={show && toggle}>
+            <div className={classes} {...restProps}>
+              {children}
+            </div>
+          </ClickOutside>
         }
       </Consumer>
     )
