@@ -5,11 +5,15 @@ import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import CodeExample from '../../utils/CodeExample'
+import InvertedMirror from '../../utils/InvertedMirror'
 
 import Dropdown from '../Dropdown'
 import DropdownToggle from '../DropdownToggle'
+import DropdownBody from '../DropdownBody'
+import DropdownHeader from '../DropdownHeader'
 import DropdownContent from '../DropdownContent'
 import DropdownItem from '../DropdownItem'
+import DropdownFooter from '../DropdownFooter'
 
 import Button from '../Button'
 import Icon from '../Icons'
@@ -19,7 +23,7 @@ const CATEGORIES = [
   'Writing',
   'Music & Entertainment',
   'Sports & Games',
-  'Design, Photography & Fashion and a bunch of other stuff that will make this overflow.  or maybe not?  i thought for sure that would work',
+  'Design, Photography & Fashion',
   'Politics & Society',
   'Science & Technology',
   'Telekenesis',
@@ -39,32 +43,81 @@ storiesOf('Components|Dropdown', module)
         />
 
         <DocSection title='Demo'>
-          <CodeExample>
-            <Dropdown>
-              <DropdownToggle>
-                <Button>Click me...</Button>
-              </DropdownToggle>
+          <InvertedMirror>
+            <CodeExample>
+              <div className='row'>
+                <div className='col-auto'>
+                  <Dropdown>
+                    <DropdownToggle>
+                      <Button>Click Me</Button>
+                    </DropdownToggle>
 
-              <DropdownContent>
-                {CATEGORIES.map(category =>
-                  <DropdownItem key={category}
-                    className='mc-py-3 mc-px-5 mc-text-small'
-                    onClick={console.log}
-                  >
-                    <div className='row align-items-center justify-content-between flex-nowrap'>
-                      <div className='col-auto mc-text--nowrap'>
-                        {category}
-                      </div>
+                    <DropdownBody>
+                      <DropdownHeader className='mc-p-5 mc-text-h8 mc-text--uppercase mc-text--muted  mc-text-center'>
+                        Categories
+                      </DropdownHeader>
 
-                      <div className='col-auto'>
-                        <Icon kind='chevron-right' />
-                      </div>
-                    </div>
-                  </DropdownItem>,
-                )}
-              </DropdownContent>
-            </Dropdown>
-          </CodeExample>
+                      <DropdownContent>
+                        {CATEGORIES.concat(CATEGORIES).map((category, key) =>
+                          <DropdownItem key={key}
+                            className='mc-py-3 mc-px-5 mc-text-small'
+                            onClick={console.log}
+                          >
+                            <div className='row align-items-center justify-content-between flex-nowrap'>
+                              <div className='col'>
+                                <div className='mc-text--2-lines-max'>
+                                  {category}
+                                </div>
+                              </div>
+
+                              <div className='col-auto'>
+                                <Icon kind='chevron-right' />
+                              </div>
+                            </div>
+                          </DropdownItem>,
+                        )}
+                      </DropdownContent>
+
+                      <DropdownFooter className='mc-text--center'>
+                        <Button kind='link'>
+                          View All
+                        </Button>
+                      </DropdownFooter>
+                    </DropdownBody>
+                  </Dropdown>
+                </div>
+
+                <div className='col-auto'>
+                  <Dropdown>
+                    <DropdownToggle>
+                      <Button>Or Me</Button>
+                    </DropdownToggle>
+
+                    <DropdownBody>
+                      {CATEGORIES.map((category, key) =>
+                        <DropdownItem key={key}
+                          className='mc-py-3 mc-px-5 mc-text-small'
+                          onClick={console.log}
+                        >
+                          <div className='row align-items-center justify-content-between flex-nowrap'>
+                            <div className='col'>
+                              <div className='mc-text--2-lines-max'>
+                                {category}
+                              </div>
+                            </div>
+
+                            <div className='col-auto'>
+                              <Icon kind='chevron-right' />
+                            </div>
+                          </div>
+                        </DropdownItem>,
+                      )}
+                    </DropdownBody>
+                  </Dropdown>
+                </div>
+              </div>
+            </CodeExample>
+          </InvertedMirror>
         </DocSection>
       </div>
     </div>

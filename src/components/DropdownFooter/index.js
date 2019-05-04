@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 
-export default class DropdownContent extends PureComponent {
+export default class DropdownHeader extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -17,7 +17,7 @@ export default class DropdownContent extends PureComponent {
     } = this.props
 
     const classes = cn({
-      'mc-dropdown__content': true,
+      'mc-dropdown__footer': true,
       [className]: className,
     })
 
