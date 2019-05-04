@@ -19,7 +19,7 @@ const CATEGORIES = [
   'Writing',
   'Music & Entertainment',
   'Sports & Games',
-  'Design, Photography & Fashion and a bunch of other stuff that will make this overflow.  or maybe not?  i thought for sure that would work',
+  'Design, Photography &',
   'Politics & Society',
   'Science & Technology',
   'Telekenesis',
