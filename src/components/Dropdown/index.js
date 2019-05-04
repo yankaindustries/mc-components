@@ -39,6 +39,7 @@ export default class Dropdown extends PureComponent {
 
     const classes = cn({
       'mc-dropdown': true,
+      'mc-dropdown--active': show,
       [className]: className,
     })
 
