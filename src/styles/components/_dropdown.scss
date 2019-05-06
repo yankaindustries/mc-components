@@ -93,10 +93,10 @@ $dropdown-speed: 300ms !default;
   // For fixing scroll on mobile
   @media (max-width: $mc-bp-sm) {
     &__body--open {
-      position: static;
-      overflow: auto;
-      height: auto;
-      width: auto;
+      position: fixed;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
 
       // Overlay on mobile dropdown if dropdown
       // isn't tall enough to cover content
