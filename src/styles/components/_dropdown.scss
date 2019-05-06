@@ -1,10 +1,16 @@
+$dropdown-speed: 300ms !default;
+
 .mc-dropdown {
   $mc-dropdown-body-margin: 1;
   $mc-dropdown-body-padding: 1;
 
   position: relative; // positions the dropdown content
   display: inline-block;
+  z-index: 0;
   perspective: 2000px;
+  // Wait til animation finishes to
+  // change z-index back to default
+  transition: z-index 0ms $dropdown-speed linear;
 
   &__body {
     position: absolute;
@@ -24,8 +30,8 @@
     transform: rotateX(-15deg);
     opacity: 0;
     transition:
-      opacity 250ms ease,
-      transform 250ms ease;
+      opacity $dropdown-speed ease,
+      transform $dropdown-speed ease;
     overflow: auto;
     pointer-events: none;
 
@@ -65,7 +71,7 @@
   &__item {
     cursor: pointer;
     background: transparent;
-    transition: background 250ms ease;
+    transition: background $dropdown-speed ease;
 
     &:hover {
       background: $mc-color-gray-200;
@@ -78,6 +84,9 @@
 
   &--active {
     z-index: $mc-zindex-dropdown;
+    // Wait til animation finishes to
+    // change z-index back to default
+    transition: z-index 0s 0s linear;
 
     .mc-dropdown__body {
       opacity: 1;
