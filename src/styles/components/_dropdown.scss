@@ -77,6 +77,8 @@
   }
 
   &--active {
+    z-index: $mc-zindex-dropdown;
+
     .mc-dropdown__body {
       opacity: 1;
       transform: rotateX(0deg);
