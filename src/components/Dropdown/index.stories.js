@@ -18,6 +18,8 @@ import DropdownFooter from '../DropdownFooter'
 import Button from '../Button'
 import Icon from '../Icons'
 
+import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
+
 
 const CATEGORIES = [
   'Writing',
@@ -49,6 +51,33 @@ storiesOf('Components|Dropdown', module)
                 <div className='col-auto'>
                   <Dropdown>
                     <DropdownToggle>
+                      <Button>I am Cool</Button>
+                    </DropdownToggle>
+
+                    <DropdownBody>
+                      {CATEGORIES.concat(CATEGORIES).map((category, key) =>
+                        <DropdownItem key={key}
+                          className='mc-py-3 mc-px-5 mc-text-small'
+                          onClick={console.log}
+                        >
+                          <div className='row'>
+                            <div className='col-4'>
+                              <img src={shondaRhimesThumbnail} className='mc-img-responsive' />
+                            </div>
+
+                            <div className='col-8'>
+                              {category}
+                            </div>
+                          </div>
+                        </DropdownItem>,
+                      )}
+                    </DropdownBody>
+                  </Dropdown>
+                </div>
+
+                <div className='col-auto'>
+                  <Dropdown>
+                    <DropdownToggle>
                       <Button>Click Me</Button>
                     </DropdownToggle>
 
@@ -63,11 +92,9 @@ storiesOf('Components|Dropdown', module)
                             className='mc-py-3 mc-px-5 mc-text-small'
                             onClick={console.log}
                           >
-                            <div className='row align-items-center justify-content-between'>
+                            <div className='row align-items-center justify-content-between flex-nowrap'>
                               <div className='col-9'>
-                                <div className='mc-text--1-line'>
-                                  {category}
-                                </div>
+                                {category}
                               </div>
 
                               <div className='col-auto'>
@@ -99,9 +126,7 @@ storiesOf('Components|Dropdown', module)
                           className='mc-py-3 mc-px-5 mc-text-small'
                           onClick={console.log}
                         >
-                          <p>
-                            {category}
-                          </p>
+                          {category}
                         </DropdownItem>,
                       )}
                     </DropdownBody>

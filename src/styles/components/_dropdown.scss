@@ -4,22 +4,18 @@ $dropdown-speed: 300ms !default;
   $mc-dropdown-body-margin: 1;
   $mc-dropdown-body-padding: 1;
 
-  position: relative; // positions the dropdown content
   display: inline-block;
   z-index: 0;
   perspective: 2000px;
-  // Wait til animation finishes to
-  // change z-index back to default
-  transition: z-index 0ms $dropdown-speed linear;
 
   &__body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 100%;
+    left: 0;
+    top: 0;
     margin: 0;
     max-width: 400px;
-    min-width: 100%;
     max-height: 50vh;
     background: $mc-color-gray-100;
     border: 1px solid $mc-color-gray-200;
@@ -33,10 +29,17 @@ $dropdown-speed: 300ms !default;
       transform $dropdown-speed ease;
     overflow: auto;
     pointer-events: none;
+    z-index: $mc-zindex-dropdown;
 
     @include step(margin-top, $mc-dropdown-body-margin);
     @include step(padding-top, $mc-dropdown-body-padding);
     @include step(padding-bottom, $mc-dropdown-body-padding);
+
+    &--active {
+      opacity: 1;
+      transform: rotateX(0deg);
+      pointer-events: auto;
+    }
 
     .mc-invert & {
       background: $mc-color-light;
@@ -78,19 +81,6 @@ $dropdown-speed: 300ms !default;
       .mc-invert & {
         background: $mc-color-gray-700;
       }
-    }
-  }
-
-  &--active {
-    z-index: $mc-zindex-dropdown;
-    // Wait til animation finishes to
-    // change z-index back to default
-    transition: z-index 0s 0s linear;
-
-    .mc-dropdown__body {
-      opacity: 1;
-      transform: rotateX(0deg);
-      pointer-events: auto;
     }
   }
 }

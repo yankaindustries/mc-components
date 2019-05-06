@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
+import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+
 
 import { Consumer } from '../Dropdown'
 
@@ -11,22 +13,34 @@ export default class DropdownBody extends PureComponent {
     className: PropTypes.string,
   }
 
-  render () {
+  renderDropdown = () => {
     const {
       children,
       className,
       ...restProps
     } = this.props
 
-    const classes = cn({
+    const classes = show => cn({
       'mc-dropdown__body': true,
+      'mc-dropdown__body--active': show,
       [className]: className,
     })
 
     return (
-      <div className={classes} {...restProps}>
-        {children}
-      </div>
+      <Consumer>
+        {({ show }) =>
+          <div className={classes(show)} {...restProps}>
+            {children}
+          </div>
+        }
+      </Consumer>
+    )
+  }
+
+  render () {
+    return createPortal(
+      this.renderDropdown(),
+      document.body,
     )
   }
 }
