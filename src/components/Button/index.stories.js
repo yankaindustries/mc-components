@@ -209,8 +209,8 @@ storiesOf('Components|Button', module)
             <div className='row'>
               <div className='col-auto'>
                 <Button>
-                  Next
-                  <Icon kind='chevron-right' className='mc-ml-3' />
+                  <span className='d-none d-sm-block mc-mr-3'>Next</span>
+                  <Icon kind='chevron-right' />
                 </Button>
               </div>
 
