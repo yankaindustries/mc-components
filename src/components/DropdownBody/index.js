@@ -6,6 +6,7 @@ import cn from 'classnames'
 
 import { Consumer } from '../Dropdown'
 import ClickOutside from '../ClickOutside'
+import Icon from '../Icons'
 
 
 export default class DropdownBody extends PureComponent {
@@ -45,6 +46,11 @@ export default class DropdownBody extends PureComponent {
               style={style(position)}
               {...restProps}
             >
+              <div className='mc-text--right'>
+                <a className='d-inline-block mc-p-2' onClick={toggle}>
+                  <Icon kind='close' />
+                </a>
+              </div>
               {children}
             </div>
           </ClickOutside>
