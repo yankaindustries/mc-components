@@ -64,7 +64,7 @@ a {
 }
 
 .example__heading {
-  @include step(margin-top, 8);
+  @include step(padding-top, 8);
   @include step(margin-bottom, 8);
 }
 

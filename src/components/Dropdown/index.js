@@ -2,10 +2,18 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import ClickOutside from '../ClickOutside'
-
 
 const DropdownContext = React.createContext('dropdown')
+
+const getPosition = (el) => {
+  const bodyRect = document.body.getBoundingClientRect()
+  const elRect = el.getBoundingClientRect()
+
+  return {
+    left: elRect.left - bodyRect.left,
+    top: (elRect.top - bodyRect.top) + el.offsetHeight,
+  }
+}
 
 export const {
   Provider,
@@ -22,8 +30,23 @@ export default class Dropdown extends PureComponent {
     show: false,
   }
 
+  componentWillUnmount () {
+    document.body.classList.remove('mc-dropdown__body--open')
+  }
+
+
   toggle = (event) => {
-    event.stopPropagation()
+    const { show } = this.state
+    const position = getPosition(event.target)
+
+    if (!show) {
+      event.persist()
+      this.setState({ position })
+      document.body.classList.add('mc-dropdown__body--open')
+    } else {
+      document.body.classList.remove('mc-dropdown__body--open')
+    }
+
     this.setState(prevState => ({
       show: !prevState.show,
     }))
@@ -37,6 +60,7 @@ export default class Dropdown extends PureComponent {
     } = this.props
 
     const {
+      position,
       show,
     } = this.state
 
@@ -46,12 +70,10 @@ export default class Dropdown extends PureComponent {
     })
 
     return (
-      <Provider value={{ show, toggle: this.toggle }}>
-        <ClickOutside onClickOutside={show ? this.toggle : () => {}}>
-          <div className={classes} {...restProps}>
-            {children}
-          </div>
-        </ClickOutside>
+      <Provider value={{ position, show, toggle: this.toggle }}>
+        <div className={classes} {...restProps}>
+          {children}
+        </div>
       </Provider>
     )
   }

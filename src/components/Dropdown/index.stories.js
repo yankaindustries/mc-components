@@ -25,7 +25,7 @@ const CATEGORIES = [
   'Writing',
   'Music & Entertainment',
   'Sports & Games',
-  'Design, Photography & Fashion and a bunch of stuff that the whatever whatever',
+  'Design, Photography & Fashion',
   'Politics & Society',
   'Science & Technology',
   'Telekenesis',
@@ -60,13 +60,21 @@ storiesOf('Components|Dropdown', module)
                           className='mc-py-3 mc-px-5 mc-text-small'
                           onClick={console.log}
                         >
-                          <div className='row'>
+                          <div className='row align-items-center'>
                             <div className='col-4'>
                               <img src={shondaRhimesThumbnail} className='mc-img-responsive' />
                             </div>
 
                             <div className='col-8'>
-                              {category}
+                              <h5 className='mc-text-h6'>
+                                {category}
+                              </h5>
+                              <p className='mc-text-sm mc-text--muted mc-text--3-lines'>
+                                Pellentesque auctor nibh eu justo condimentum,
+                                in iaculis ligula ultricies. Aenean enim metus,
+                                feugiat a risus non, vulputate venenatis justo.
+                                Nullam malesuada ut tortor porttitor congue.
+                              </p>
                             </div>
                           </div>
                         </DropdownItem>,

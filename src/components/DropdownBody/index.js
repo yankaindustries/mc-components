@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 
 import { Consumer } from '../Dropdown'
+import ClickOutside from '../ClickOutside'
 
 
 export default class DropdownBody extends PureComponent {
@@ -26,12 +27,27 @@ export default class DropdownBody extends PureComponent {
       [className]: className,
     })
 
+
+    const style = (position) => {
+      if (window.innerWidth >= 576) {
+        return position
+      }
+
+      return {}
+    }
+
     return (
       <Consumer>
-        {({ show }) =>
-          <div className={classes(show)} {...restProps}>
-            {children}
-          </div>
+        {({ position, show, toggle }) =>
+          <ClickOutside onClickOutside={show ? toggle : () => {}}>
+            <div
+              className={classes(show)}
+              style={style(position)}
+              {...restProps}
+            >
+              {children}
+            </div>
+          </ClickOutside>
         }
       </Consumer>
     )
