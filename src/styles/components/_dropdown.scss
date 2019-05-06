@@ -12,11 +12,11 @@ $dropdown-speed: 300ms !default;
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 0;
     top: 0;
+    left: 0;
+    width: 100vw;
+    max-height: 100vh;
     margin: 0;
-    max-width: 400px;
-    max-height: 50vh;
     background: $mc-color-gray-100;
     border: 1px solid $mc-color-gray-200;
     border-radius: $default-radius;
@@ -31,9 +31,15 @@ $dropdown-speed: 300ms !default;
     pointer-events: none;
     z-index: $mc-zindex-dropdown;
 
-    @include step(margin-top, $mc-dropdown-body-margin);
-    @include step(padding-top, $mc-dropdown-body-padding);
-    @include step(padding-bottom, $mc-dropdown-body-padding);
+    @media (min-width: $mc-bp-sm) {
+      width: auto;
+      max-width: 400px;
+      max-height: 50vh;
+
+      @include step(margin-top, $mc-dropdown-body-margin);
+      @include step(padding-top, $mc-dropdown-body-padding);
+      @include step(padding-bottom, $mc-dropdown-body-padding);
+    }
 
     &--active {
       opacity: 1;
@@ -80,6 +86,29 @@ $dropdown-speed: 300ms !default;
 
       .mc-invert & {
         background: $mc-color-gray-700;
+      }
+    }
+  }
+
+  // For fixing scroll on mobile
+  @media (max-width: $mc-bp-sm) {
+    &__body--open {
+      position: static;
+      overflow: auto;
+      height: auto;
+      width: auto;
+
+      // Overlay on mobile dropdown if dropdown
+      // isn't tall enough to cover content
+      &:after {
+        position: fixed;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: rgba($mc-color-dark, 0.9);
       }
     }
   }
