@@ -20,7 +20,6 @@ $dropdown-speed: 300ms !default;
     margin: 0;
     max-width: 400px;
     min-width: 100%;
-    width: calc(100vw - #{$container-margin * 2});
     max-height: 50vh;
     background: $mc-color-gray-100;
     border: 1px solid $mc-color-gray-200;

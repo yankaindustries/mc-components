@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import { Consumer } from '../Dropdown'
-import ClickOutside from '../ClickOutside'
 
 
 export default class DropdownBody extends PureComponent {
@@ -25,15 +24,9 @@ export default class DropdownBody extends PureComponent {
     })
 
     return (
-      <Consumer>
-        {({ show, toggle }) =>
-          <ClickOutside onClickOutside={show ? toggle : () => {}}>
-            <div className={classes} {...restProps}>
-              {children}
-            </div>
-          </ClickOutside>
-        }
-      </Consumer>
+      <div className={classes} {...restProps}>
+        {children}
+      </div>
     )
   }
 }

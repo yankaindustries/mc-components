@@ -23,7 +23,7 @@ const CATEGORIES = [
   'Writing',
   'Music & Entertainment',
   'Sports & Games',
-  'Design, Photography & Fashion',
+  'Design, Photography & Fashion and a bunch of stuff that the whatever whatever',
   'Politics & Society',
   'Science & Technology',
   'Telekenesis',
@@ -63,9 +63,9 @@ storiesOf('Components|Dropdown', module)
                             className='mc-py-3 mc-px-5 mc-text-small'
                             onClick={console.log}
                           >
-                            <div className='row align-items-center justify-content-between flex-nowrap'>
-                              <div className='col'>
-                                <div className='mc-text--2-lines-max'>
+                            <div className='row align-items-center justify-content-between'>
+                              <div className='col-9'>
+                                <div className='mc-text--1-line'>
                                   {category}
                                 </div>
                               </div>
@@ -99,17 +99,9 @@ storiesOf('Components|Dropdown', module)
                           className='mc-py-3 mc-px-5 mc-text-small'
                           onClick={console.log}
                         >
-                          <div className='row align-items-center justify-content-between flex-nowrap'>
-                            <div className='col'>
-                              <div className='mc-text--2-lines-max'>
-                                {category}
-                              </div>
-                            </div>
-
-                            <div className='col-auto'>
-                              <Icon kind='chevron-right' />
-                            </div>
-                          </div>
+                          <p>
+                            {category}
+                          </p>
                         </DropdownItem>,
                       )}
                     </DropdownBody>

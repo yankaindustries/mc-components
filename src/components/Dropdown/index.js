@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import ClickOutside from '../ClickOutside'
+
 
 const DropdownContext = React.createContext('dropdown')
 
@@ -46,9 +48,11 @@ export default class Dropdown extends PureComponent {
 
     return (
       <Provider value={{ show, toggle: this.toggle }}>
-        <div className={classes} {...restProps}>
-          {children}
-        </div>
+        <ClickOutside onClickOutside={show ? this.toggle : () => {}}>
+          <div className={classes} {...restProps}>
+            {children}
+          </div>
+        </ClickOutside>
       </Provider>
     )
   }
