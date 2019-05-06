@@ -46,7 +46,7 @@ export default class DropdownBody extends PureComponent {
               style={style(position)}
               {...restProps}
             >
-              <div className='mc-text--right'>
+              <div className='d-block d-sm-none mc-text--right'>
                 <a className='d-inline-block mc-p-2' onClick={toggle}>
                   <Icon kind='close' />
                 </a>
