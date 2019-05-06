@@ -30,18 +30,34 @@ export default class Dropdown extends PureComponent {
     show: false,
   }
 
+  componentDidMount () {
+    window.addEventListener('resize', this.handleResize)
+  }
+
   componentWillUnmount () {
+    window.removeEventListener('resize', this.handleResize)
     document.body.classList.remove('mc-dropdown__body--open')
   }
 
+  handleResize = () => {
+    const { target } = this.state
+
+    if (target) {
+      this.setState({
+        position: getPosition(target),
+      })
+    }
+  }
 
   toggle = (event) => {
     const { show } = this.state
-    const position = getPosition(event.target)
 
     if (!show) {
       event.persist()
-      this.setState({ position })
+      this.setState({
+        position: getPosition(event.target),
+        target: event.target,
+      })
       document.body.classList.add('mc-dropdown__body--open')
     } else {
       document.body.classList.remove('mc-dropdown__body--open')
