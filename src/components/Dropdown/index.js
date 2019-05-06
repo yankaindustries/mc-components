@@ -20,7 +20,8 @@ export default class Dropdown extends PureComponent {
     show: false,
   }
 
-  toggle = () => {
+  toggle = (event) => {
+    event.stopPropagation()
     this.setState(prevState => ({
       show: !prevState.show,
     }))
