@@ -322,6 +322,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $mc-color-light;
-  color: $mc-color-dark;
+  background: $mc-color-gray-100;
+  color: $mc-color-gray-400;
+  line-height: 1;
+  border-radius: 6px 0 0 0;
 }

@@ -11,7 +11,7 @@ const SourceLink = ({ path }) =>
     target='_blank'
     rel='noopener noreferrer'
   >
-    {'View Source Code'}
+    {'View Source'}
   </a>
 
 
