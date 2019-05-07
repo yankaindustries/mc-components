@@ -1,6 +1,3 @@
-import * as Helpers from './helpers'
-
-
 // COMPONENTS
 export { default as Accordion } from './Accordion'
 export { default as AnimationHandler } from './AnimationHandler'
@@ -81,4 +78,4 @@ export { default as IconUnmuted } from './Icons/Unmuted'
 export { default as LegacyCarousel } from './Legacy/Carousel'
 
 // UTILS
-export { Helpers }
+export { default as Helpers } from './helpers'
