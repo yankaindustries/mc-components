@@ -40,12 +40,13 @@ export default class DropdownBody extends PureComponent {
     return (
       <Consumer>
         {({ position, show, toggle }) =>
-          <ClickOutside onClickOutside={show ? toggle : () => {}}>
-            <div
-              className={classes(show)}
-              style={style(position)}
-              {...restProps}
-            >
+          <ClickOutside
+            className={classes(show)}
+            onClickOutside={show ? toggle : () => {}}
+            style={style(position)}
+            {...restProps}
+          >
+            <div className={'mc-dropdown__body-inner'}>
               <div className='d-block d-sm-none mc-text--right'>
                 <a className='d-inline-block mc-p-2' onClick={toggle}>
                   <Icon kind='close' />

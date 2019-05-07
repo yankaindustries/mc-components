@@ -5,51 +5,56 @@ $dropdown-speed: 300ms !default;
   $mc-dropdown-body-padding: 1;
 
   display: inline-block;
-  z-index: 0;
-  perspective: 2000px;
 
   &__body {
     position: absolute;
-    display: flex;
-    flex-direction: column;
     top: 0;
     left: 0;
-    width: 100vw;
-    max-height: 100vh;
     margin: 0;
-    background: $mc-color-gray-100;
-    border: 1px solid $mc-color-gray-200;
-    border-radius: $default-radius;
-    box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
-    transform-origin: 50% -50px;
-    transform: rotateX(-15deg);
-    opacity: 0;
-    transition:
-      opacity $dropdown-speed ease,
-      transform $dropdown-speed ease;
-    overflow: auto;
+
     pointer-events: none;
+    perspective: 2000px;
     z-index: $mc-zindex-dropdown;
 
-    @media (min-width: $mc-bp-sm) {
-      width: auto;
-      max-width: 400px;
-      max-height: 50vh;
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      max-height: 100vh;
+      overflow: auto;
 
-      @include step(margin-top, $mc-dropdown-body-margin);
-      @include step(padding-top, $mc-dropdown-body-padding);
-      @include step(padding-bottom, $mc-dropdown-body-padding);
-    }
+      background: $mc-color-gray-100;
+      border: 1px solid $mc-color-gray-200;
+      border-radius: $default-radius;
+      box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
+      opacity: 0;
 
-    &--active {
-      opacity: 1;
-      transform: rotateX(0deg);
-      pointer-events: auto;
-    }
+      transform-origin: 50% -50px;
+      transform: rotateX(-15deg);
+      transition:
+        opacity $dropdown-speed ease,
+        transform $dropdown-speed ease;
 
-    .mc-invert & {
-      background: $mc-color-light;
-      border-color: $mc-color-gray-700;
+      @media (min-width: $mc-bp-sm) {
+        width: auto;
+        max-width: 400px;
+        max-height: 50vh;
+
+        @include step(margin-top, $mc-dropdown-body-margin);
+        @include step(padding-top, $mc-dropdown-body-padding);
+        @include step(padding-bottom, $mc-dropdown-body-padding);
+      }
+
+      .mc-dropdown__body--active & {
+        opacity: 1;
+        transform: rotateX(0deg);
+        pointer-events: auto;
+      }
+
+      .mc-invert & {
+        background: $mc-color-light;
+        border-color: $mc-color-gray-700;
+      }
     }
   }
 

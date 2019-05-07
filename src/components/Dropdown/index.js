@@ -52,6 +52,8 @@ export default class Dropdown extends PureComponent {
   toggle = (event) => {
     const { show } = this.state
 
+    event.stopPropagation()
+
     if (!show) {
       event.persist()
       this.setState({
