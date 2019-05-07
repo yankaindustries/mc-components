@@ -36,14 +36,18 @@ export default class ClickOutside extends Component {
   box = React.createRef()
 
   render () {
-    const { children, divRef } = this.props
+    const {
+      children,
+      divRef,
+      ...restProps
+    } = this.props
 
     if (divRef) {
       return children
     }
 
     return (
-      <div ref={this.box}>
+      <div ref={this.box} {...restProps}>
         {children}
       </div>
     )

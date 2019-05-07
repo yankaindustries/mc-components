@@ -64,7 +64,7 @@ a {
 }
 
 .example__heading {
-  @include step(margin-top, 8);
+  @include step(padding-top, 8);
   @include step(margin-bottom, 8);
 }
 
@@ -316,13 +316,14 @@ a {
 .example__source-link {
   position: fixed;
   right: 0;
-  top: 0;
-  width: 32px;
-  height: 32px;
+  bottom: 0;
+  @include step(padding, 2);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $mc-color-light;
-  color: $mc-color-dark;
+  background: $mc-color-gray-100;
+  color: $mc-color-gray-400;
+  line-height: 1;
+  border-radius: 6px 0 0 0;
 }

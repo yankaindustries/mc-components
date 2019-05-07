@@ -1,14 +1,13 @@
 .mc-background {
   position: relative;
-  overflow: hidden;
 
   &__background-container {
     position: relative;
     display: flex;
     width: 100%;
     height: 100%;
-    z-index: 0;
     visibility: hidden;
+    overflow: hidden;
   }
 
   &__content-container {
@@ -16,7 +15,6 @@
     display: flex;
     width: 100%;
     height: 100%;
-    z-index: 1;
   }
 
   &__content {
