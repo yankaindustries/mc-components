@@ -64,9 +64,9 @@ storiesOf('Components|Dropdown', module)
                             <div className='row align-items-center'>
                               <div className='col-4'>
                                 <img
-                                qsrc={shondaRhimesThumbnail}
-                                className='mc-img-responsive'
-                              />
+                                  src={shondaRhimesThumbnail}
+                                  className='mc-img-responsive'
+                                />
                               </div>
 
                               <div className='col-8'>
