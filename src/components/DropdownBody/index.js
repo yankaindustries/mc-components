@@ -49,7 +49,7 @@ export default class DropdownBody extends PureComponent {
             <div className={'mc-dropdown__body-inner'}>
               <div className='d-block d-sm-none mc-text--right'>
                 <a className='d-inline-block mc-p-2' onClick={toggle}>
-                  <Icon kind='close' />
+                  <Icon kind='close' className='mc-dropdown__close' />
                 </a>
               </div>
               {children}
