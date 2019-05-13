@@ -41,7 +41,7 @@ storiesOf('Components|Dropdown', module)
       <div className='container'>
         <DocHeader
           title='Dropdown'
-          description='you know, when you have shit you need to hide'
+          description='Toggle, fullscreen, and mobile supported!'
         />
 
         <DocSection title='Demo'>
@@ -62,18 +62,26 @@ storiesOf('Components|Dropdown', module)
                         >
                           <div className='row align-items-center'>
                             <div className='col-4'>
-                              <img src={shondaRhimesThumbnail} className='mc-img-responsive' />
+                              <img
+                                src={shondaRhimesThumbnail}
+                                className='mc-img-responsive'
+                              />
                             </div>
 
                             <div className='col-8'>
                               <h5 className='mc-text-h6'>
                                 {category}
                               </h5>
-                              <p className='mc-text-sm mc-text--muted mc-text--3-lines'>
+                              <p className={`
+                                mc-text-sm
+                                mc-text--muted
+                                mc-text--3-lines
+                              `}>
                                 Pellentesque auctor nibh eu justo condimentum,
-                                in iaculis ligula ultricies. Aenean enim metus,
-                                feugiat a risus non, vulputate venenatis justo.
-                                Nullam malesuada ut tortor porttitor congue.
+                                in iaculis ligula ultricies. Aenean
+                                enim metus, feugiat a risus non, vulputate
+                                venenatis justo. Nullam malesuada ut
+                                tortor porttitor congue.
                               </p>
                             </div>
                           </div>
@@ -90,7 +98,13 @@ storiesOf('Components|Dropdown', module)
                     </DropdownToggle>
 
                     <DropdownBody>
-                      <DropdownHeader className='mc-p-5 mc-text-h8 mc-text--uppercase mc-text--muted  mc-text-center'>
+                      <DropdownHeader className={`
+                          mc-p-5
+                          mc-text-h8
+                          mc-text--uppercase
+                          mc-text--muted
+                          mc-text-center
+                      `}>
                         Categories
                       </DropdownHeader>
 
@@ -100,7 +114,12 @@ storiesOf('Components|Dropdown', module)
                             className='mc-py-3 mc-px-5 mc-text-small'
                             onClick={console.log}
                           >
-                            <div className='row align-items-center justify-content-between flex-nowrap'>
+                            <div className={`
+                              row
+                              align-items-center
+                              justify-content-between
+                              flex-nowrap
+                            `}>
                               <div className='col-9'>
                                 {category}
                               </div>

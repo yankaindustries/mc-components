@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import cn from 'classnames'
 
 
 const DropdownContext = React.createContext('dropdown')
@@ -15,15 +14,16 @@ const getPosition = (el) => {
   }
 }
 
+
 export const {
   Provider,
   Consumer,
 } = DropdownContext
 
+
 export default class Dropdown extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string,
   }
 
   state = {
@@ -71,27 +71,16 @@ export default class Dropdown extends PureComponent {
   }
 
   render () {
-    const {
-      children,
-      className,
-      ...restProps
-    } = this.props
+    const { children } = this.props
 
     const {
       position,
       show,
     } = this.state
 
-    const classes = cn({
-      'mc-dropdown': true,
-      [className]: className,
-    })
-
     return (
       <Provider value={{ position, show, toggle: this.toggle }}>
-        <div className={classes} {...restProps}>
-          {children}
-        </div>
+        {children}
       </Provider>
     )
   }
