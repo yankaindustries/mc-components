@@ -55,40 +55,38 @@ storiesOf('Components|Dropdown', module)
                     </DropdownToggle>
 
                     <DropdownBody>
-                      <DropdownContent>
-                        {CATEGORIES.concat(CATEGORIES).map((category, key) =>
-                          <DropdownItem key={key}
-                            className='mc-py-3 mc-px-5 mc-text-small'
-                            onClick={console.log}
-                          >
-                            <div className='row align-items-center'>
-                              <div className='col-4'>
-                                <img
-                                  src={shondaRhimesThumbnail}
-                                  className='mc-img-responsive'
-                                />
-                              </div>
-
-                              <div className='col-8'>
-                                <h5 className='mc-text-h6'>
-                                  {category}
-                                </h5>
-                                <p className={`
-                                  mc-text-sm
-                                  mc-text--muted
-                                  mc-text--3-lines
-                                `}>
-                                  Pellentesque auctor nibh eu justo condimentum,
-                                  in iaculis ligula ultricies. Aenean
-                                  enim metus, feugiat a risus non, vulputate
-                                  venenatis justo. Nullam malesuada ut
-                                  tortor porttitor congue.
-                                </p>
-                              </div>
+                      {CATEGORIES.concat(CATEGORIES).map((category, key) =>
+                        <DropdownItem key={key}
+                          className='mc-py-3 mc-px-5 mc-text-small'
+                          onClick={console.log}
+                        >
+                          <div className='row align-items-center'>
+                            <div className='col-4'>
+                              <img
+                                src={shondaRhimesThumbnail}
+                                className='mc-img-responsive'
+                              />
                             </div>
-                          </DropdownItem>,
-                        )}
-                      </DropdownContent>
+
+                            <div className='col-8'>
+                              <h5 className='mc-text-h6'>
+                                {category}
+                              </h5>
+                              <p className={`
+                                mc-text-sm
+                                mc-text--muted
+                                mc-text--3-lines
+                              `}>
+                                Pellentesque auctor nibh eu justo condimentum,
+                                in iaculis ligula ultricies. Aenean
+                                enim metus, feugiat a risus non, vulputate
+                                venenatis justo. Nullam malesuada ut
+                                tortor porttitor congue.
+                              </p>
+                            </div>
+                          </div>
+                        </DropdownItem>,
+                      )}
                     </DropdownBody>
                   </Dropdown>
                 </div>

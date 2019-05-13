@@ -23,8 +23,8 @@ export default class DropdownBody extends PureComponent {
     } = this.props
 
     const classes = show => cn({
-      'mc-dropdown__body': true,
-      'mc-dropdown__body--active': show,
+      'mc-dropdown': true,
+      'mc-dropdown--active': show,
       [className]: className,
     })
 
@@ -46,13 +46,15 @@ export default class DropdownBody extends PureComponent {
             style={style(position)}
             {...restProps}
           >
-            <div className={'mc-dropdown__body-inner'}>
-              <div className='d-block d-sm-none mc-text--right'>
+            <div className='mc-dropdown__inner'>
+              <div className='d-block d-sm-none mc-dropdown__close'>
                 <a className='d-inline-block mc-p-2' onClick={toggle}>
-                  <Icon kind='close' className='mc-dropdown__close' />
+                  <Icon kind='close' className='mc-dropdown__close-icon' />
                 </a>
               </div>
-              {children}
+              <div className='mc-dropdown__body'>
+                {children}
+              </div>
             </div>
           </ClickOutside>
         }

@@ -1,7 +1,6 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-
 
 const DropdownContext = React.createContext('dropdown')
 
@@ -89,9 +88,9 @@ export default class Dropdown extends PureComponent {
 
     return (
       <Provider value={{ position, show, toggle: this.toggle }}>
-        <div className={classes} {...restProps}>
+        <Fragment>
           {children}
-        </div>
+        </Fragment>
       </Provider>
     )
   }

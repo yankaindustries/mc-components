@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import { Consumer } from '../Dropdown'
+import { renderChildren } from '../helpers'
 
 
 export default class DropdownToggle extends PureComponent {
@@ -25,15 +26,7 @@ export default class DropdownToggle extends PureComponent {
 
     return (
       <Consumer>
-        {({ toggle }) =>
-          <div
-            className={classes}
-            {...restProps}
-            onClick={toggle}
-          >
-            {children}
-          </div>
-        }
+        {({ toggle }) => renderChildren(children, { onClick: toggle })}
       </Consumer>
     )
   }
