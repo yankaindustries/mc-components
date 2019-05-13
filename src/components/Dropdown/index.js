@@ -1,5 +1,6 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+
 
 const DropdownContext = React.createContext('dropdown')
 
@@ -13,10 +14,12 @@ const getPosition = (el) => {
   }
 }
 
+
 export const {
   Provider,
   Consumer,
 } = DropdownContext
+
 
 export default class Dropdown extends PureComponent {
   static propTypes = {
@@ -77,9 +80,7 @@ export default class Dropdown extends PureComponent {
 
     return (
       <Provider value={{ position, show, toggle: this.toggle }}>
-        <Fragment>
-          {children}
-        </Fragment>
+        {children}
       </Provider>
     )
   }

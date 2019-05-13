@@ -76,11 +76,32 @@ export const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
   return sm
 }
 
+export const getClosest = (elem, selector) => {
+  if (!Element.prototype.matches) {
+    Element.prototype.matches =
+      Element.prototype.matchesSelector ||
+      Element.prototype.mozMatchesSelector ||
+      Element.prototype.msMatchesSelector ||
+      Element.prototype.oMatchesSelector ||
+      Element.prototype.webkitMatchesSelector
+  }
+
+  let check = elem
+
+  // Get closest match
+  for (; check && check !== document; check = check.parentNode) {
+    if (check.matches(selector)) return check
+  }
+
+  return null
+}
+
 export default {
-  responsiveValues,
-  renderChildren,
-  FormatClassTitle,
   closeFullscreen,
+  FormatClassTitle,
+  getClosest,
   NumberToPX,
   parseInputErrors,
+  renderChildren,
+  responsiveValues,
 }
