@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 
-const DELAY = 300
+const DELAY = 600
 
 
 export default class HoverHandler extends PureComponent {
@@ -16,6 +16,8 @@ export default class HoverHandler extends PureComponent {
     hovering: false,
     intent: false,
   }
+
+  container = React.createRef()
 
   componentWillUnmount () {
     if (this.timer) this.timer = clearTimeout(this.timer)
@@ -53,6 +55,7 @@ export default class HoverHandler extends PureComponent {
       children,
       nowrap,
     } = this.props
+
     const {
       hovering,
       intent,
@@ -61,6 +64,7 @@ export default class HoverHandler extends PureComponent {
     const content = children({
       hovering,
       intent,
+      ref: this.container,
       props: {
         onMouseEnter: this.onEnter,
         onMouseLeave: this.onLeave,
@@ -75,6 +79,7 @@ export default class HoverHandler extends PureComponent {
       <span
         onMouseEnter={this.onEnter}
         onMouseLeave={this.onLeave}
+        ref={this.container}
       >
         {content}
       </span>

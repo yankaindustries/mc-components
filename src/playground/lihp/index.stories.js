@@ -1,7 +1,7 @@
 /* eslint react/display-name:0, react/prop-types:0 */
-
-import React from 'react'
+import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
+import { times } from 'lodash'
 
 import withAddons from '../../utils/withAddons'
 
@@ -259,111 +259,115 @@ storiesOf('Playground|Pages', module)
             </Carousel>
           </div>
 
-          <h5 className={`
-            mc-text-h5
-            mc-text--airy
-            mc-mb-6
-          `}>
-            Creative Writing
-          </h5>
+          {times(2, () =>
+            <Fragment>
+              <h5 className={`
+                mc-text-h5
+                mc-text--airy
+                mc-mb-6
+              `}>
+                Creative Writing
+              </h5>
 
-          <Accordion
-            className='mc-mb-10'
-            aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
-            on='intent'
-          >
-            {instructors
-              .slice(0, responsiveValues(media, 4, 3, 2))
-              .map((item, key) =>
-                ({ itemActive, parentActive }) =>
-                  <Tile
-                    aspectRatio='auto'
-                    key={key}
-                    style={{ background: `rgb(${item.color})` }}
-                    crop
-                  >
-                    <TileImage
-                      imageUrl={item.image}
-                      className={itemActive
-                        ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
-                        : 'example-offset-left-one-quarter'
-                      }
-                    />
-
-                    <AnimationHandler
-                      type='hide'
-                      animating={parentActive}
-                    >
-                      <TileOverlay
-                        type='gradient-bottom'
-                        color={item.color}
-                      />
-                      <TileCaption position='center bottom'>
-                        <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                          {item.instructor}
-                        </h6>
-                        <p className='mc-text-small mc-text--hinted'>
-                          {item.course}
-                        </p>
-                      </TileCaption>
-                    </AnimationHandler>
-
-                    <AnimationHandler
-                      type='show'
-                      animating={itemActive}
-                      important
-                    >
-                      <div>
-                        <TileOverlay
-                          type='gradient-left'
-                          color={item.color}
+              <Accordion
+                className='mc-mb-10'
+                aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
+                on='intent'
+              >
+                {instructors
+                  .slice(0, responsiveValues(media, 4, 3, 2))
+                  .map((item, key) =>
+                    ({ itemActive, parentActive }) =>
+                      <Tile
+                        aspectRatio='auto'
+                        key={key}
+                        style={{ background: `rgb(${item.color})` }}
+                        crop
+                      >
+                        <TileImage
+                          imageUrl={item.image}
                           className={itemActive
                             ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
                             : 'example-offset-left-one-quarter'
                           }
                         />
-                      </div>
-                    </AnimationHandler>
 
-                    <AnimationHandler
-                      type='show'
-                      animating={itemActive}
-                      important
-                    >
-                      <TileCaption position='left center'>
-                        <div className='row'>
-                          <div className='col-4 offset-1'>
-                            <div className='example-instructor-card-content'>
-                              <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                                {item.instructor}
-                              </h6>
-                              <p className='mc-text-small mc-text--hinted mc-mb-2'>
-                                {item.course}
-                              </p>
-                              <p className='mc-text-x-small mc-mb-8'>
-                                {item.description}
-                              </p>
-                              <Button
-                                className='mc-mc-3'
-                                fullWidth
-                              >
-                                Start Class
-                              </Button>
-                              <Button
-                                fullWidth
-                                link
-                              >
-                                Watch Trailer
-                              </Button>
-                            </div>
+                        <AnimationHandler
+                          type='hide'
+                          animating={parentActive}
+                        >
+                          <TileOverlay
+                            type='gradient-bottom'
+                            color={item.color}
+                          />
+                          <TileCaption position='center bottom'>
+                            <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
+                              {item.instructor}
+                            </h6>
+                            <p className='mc-text-small mc-text--hinted'>
+                              {item.course}
+                            </p>
+                          </TileCaption>
+                        </AnimationHandler>
+
+                        <AnimationHandler
+                          type='show'
+                          animating={itemActive}
+                          important
+                        >
+                          <div>
+                            <TileOverlay
+                              type='gradient-left'
+                              color={item.color}
+                              className={itemActive
+                                ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
+                                : 'example-offset-left-one-quarter'
+                              }
+                            />
                           </div>
-                        </div>
-                      </TileCaption>
-                    </AnimationHandler>
-                  </Tile>,
-              )
-            }
-          </Accordion>
+                        </AnimationHandler>
+
+                        <AnimationHandler
+                          type='show'
+                          animating={itemActive}
+                          important
+                        >
+                          <TileCaption position='left center'>
+                            <div className='row'>
+                              <div className='col-4 offset-1'>
+                                <div className='example-instructor-card-content'>
+                                  <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
+                                    {item.instructor}
+                                  </h6>
+                                  <p className='mc-text-small mc-text--hinted mc-mb-2'>
+                                    {item.course}
+                                  </p>
+                                  <p className='mc-text-x-small mc-mb-8'>
+                                    {item.description}
+                                  </p>
+                                  <Button
+                                    className='mc-mc-3'
+                                    fullWidth
+                                  >
+                                    Start Class
+                                  </Button>
+                                  <Button
+                                    fullWidth
+                                    link
+                                  >
+                                    Watch Trailer
+                                  </Button>
+                                </div>
+                              </div>
+                            </div>
+                          </TileCaption>
+                        </AnimationHandler>
+                      </Tile>,
+                  )
+                }
+              </Accordion>
+            </Fragment>,
+          )}
 
           <div className='uncontainer'>
             <Tile aspectRatio='21x9' className='mc-mb-10'>
