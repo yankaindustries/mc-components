@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 
-const DELAY = 300
+const DELAY = 600
 
 
 export default class HoverHandler extends PureComponent {
@@ -53,6 +53,7 @@ export default class HoverHandler extends PureComponent {
       children,
       nowrap,
     } = this.props
+
     const {
       hovering,
       intent,

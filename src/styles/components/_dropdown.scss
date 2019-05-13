@@ -105,6 +105,10 @@
   &__close {
     border-bottom: 1px solid $mc-color-gray-200;
     text-align: right;
+
+    .mc-invert & {
+      border-color: $mc-color-gray-700;
+    }
   }
 
   &__close-icon {
