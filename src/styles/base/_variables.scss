@@ -67,6 +67,7 @@ $yiq-text-light:            #fff !default;
 $mc-default-ease: cubic-bezier(0.25, 0.1, 0.25, 1) !default;
 
 // Z-indexes
+$mc-zindex-dropdown-backdrop:  900 !default;
 $mc-zindex-dropdown:          1000 !default;
 $mc-zindex-sticky:            1020 !default;
 $mc-zindex-fixed:             1030 !default;

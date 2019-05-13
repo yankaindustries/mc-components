@@ -12,12 +12,40 @@
   perspective: 2000px;
   z-index: $mc-zindex-dropdown;
 
-  &__inner {
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: $mc-zindex-dropdown-backdrop;
+
+    background: rgba($mc-color-dark, 0.9);
+    opacity: 0;
+
+    transition: opacity $dropdown-speed ease;
+
+    pointer-events: none;
+
+    .mc-dropdown--active & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (min-width: $mc-bp-sm) {
+      display: none;
+    }
+  }
+
+  &__body-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100vw;
     max-height: 100vh;
     overflow: auto;
+    z-index: $mc-zindex-dropdown;
 
     background: $mc-color-gray-100;
     border: 1px solid $mc-color-gray-200;
@@ -118,23 +146,6 @@
       overflow: hidden;
       height: 100vh;
       width: 100vw;
-
-      &:after {
-        position: fixed;
-        top: 0;
-        left: 0;
-        content: "";
-        display: block;
-        width: 100vw;
-        height: 100vh;
-        background: rgba($mc-color-dark, 0.9);
-      }
-    }
-
-    // Overlay on mobile dropdown if dropdown
-    // isn't tall enough to cover content
-    &.mc-dropdown--active {
-      pointer-events: auto;
     }
   }
 }
