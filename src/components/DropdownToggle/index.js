@@ -11,9 +11,7 @@ export default class DropdownToggle extends PureComponent {
   }
 
   render () {
-    const {
-      children,
-    } = this.props
+    const { children } = this.props
 
     return (
       <Consumer>

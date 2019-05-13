@@ -68,9 +68,7 @@ export default class Dropdown extends PureComponent {
   }
 
   render () {
-    const {
-      children,
-    } = this.props
+    const { children } = this.props
 
     const {
       position,
