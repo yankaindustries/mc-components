@@ -4,6 +4,7 @@ import SvgArrow from './Arrow'
 import SvgAvatar from './Avatar'
 import SvgBackArrow from './BackArrow'
 import SvgBookmark from './Bookmark'
+import SvgBookmarked from './Bookmarked'
 import SvgCalendar from './Calendar'
 import SvgChat from './Chat'
 import SvgCheckCircle from './CheckCircle'
@@ -66,6 +67,7 @@ export const ICONS = {
   'avatar': SvgAvatar,
   'back-arrow': SvgBackArrow,
   'bookmark': SvgBookmark,
+  'bookmarked': SvgBookmarked,
   'calendar': SvgCalendar,
   'chat': SvgChat,
   'check-circle': SvgCheckCircle,
