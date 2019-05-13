@@ -17,8 +17,6 @@ export default class HoverHandler extends PureComponent {
     intent: false,
   }
 
-  container = React.createRef()
-
   componentWillUnmount () {
     if (this.timer) this.timer = clearTimeout(this.timer)
   }
@@ -64,7 +62,6 @@ export default class HoverHandler extends PureComponent {
     const content = children({
       hovering,
       intent,
-      ref: this.container,
       props: {
         onMouseEnter: this.onEnter,
         onMouseLeave: this.onLeave,
@@ -79,7 +76,6 @@ export default class HoverHandler extends PureComponent {
       <span
         onMouseEnter={this.onEnter}
         onMouseLeave={this.onLeave}
-        ref={this.container}
       >
         {content}
       </span>
