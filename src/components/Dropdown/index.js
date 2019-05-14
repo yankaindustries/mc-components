@@ -28,6 +28,7 @@ export default class Dropdown extends PureComponent {
 
   state = {
     show: false,
+    // lastTimestamp: 0,
   }
 
   componentDidMount () {
@@ -50,12 +51,20 @@ export default class Dropdown extends PureComponent {
   }
 
   toggle = (event) => {
-    const { show } = this.state
+    const {
+      lastTimeStamp,
+      show,
+    } = this.state
 
-    event.stopPropagation()
+    if (event.persist) {
+      event.persist()
+    }
+
+    if (event.timeStamp === lastTimeStamp) {
+      return
+    }
 
     if (!show) {
-      event.persist()
       this.setState({
         position: getPosition(event.target),
         target: event.target,
@@ -66,6 +75,7 @@ export default class Dropdown extends PureComponent {
     }
 
     this.setState(prevState => ({
+      lastTimeStamp: event.timeStamp,
       show: !prevState.show,
     }))
   }
