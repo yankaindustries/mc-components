@@ -28,7 +28,7 @@ export default class Dropdown extends PureComponent {
 
   state = {
     show: false,
-    // lastTimestamp: 0,
+    lastTimestamp: 0,
   }
 
   componentDidMount () {
