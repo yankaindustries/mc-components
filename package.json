@@ -109,5 +109,11 @@
       "stylelint --fix",
       "git add"
     ]
-  }
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/styles/css/index.css",
+      "maxSize": "30 kB"
+    }
+  ]
 }
