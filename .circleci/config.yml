@@ -16,7 +16,10 @@ jobs:
           command: yarn
       - run:
           name: Run linter
-          command: yarn lint
+          command: yarn run lint
+      - run:
+          name: Analyze bundle(s)
+          command: yarn run analyze
       - save_cache:
           key: dependency-cache
           paths:
