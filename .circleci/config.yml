@@ -18,6 +18,9 @@ jobs:
           name: Run linter
           command: yarn run lint
       - run:
+          name: Build dist
+          command: yarn run build
+      - run:
           name: Analyze bundle(s)
           command: yarn run analyze
       - save_cache:
