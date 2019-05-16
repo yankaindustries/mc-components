@@ -1,61 +1,90 @@
-
 .mc-dropdown {
   $dropdown-speed: 300ms !default;
   $mc-dropdown-body-margin: 1;
   $mc-dropdown-body-padding: 1;
 
-  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
 
-  &__body {
-    position: absolute;
+  pointer-events: none;
+  perspective: 2000px;
+  z-index: $mc-zindex-dropdown;
+
+  &__backdrop {
+    position: fixed;
     top: 0;
     left: 0;
-    margin: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: $mc-zindex-dropdown-backdrop;
+
+    background: rgba($mc-color-dark, 0.9);
+    opacity: 0;
+
+    transition: opacity $dropdown-speed ease;
 
     pointer-events: none;
-    perspective: 2000px;
+
+    .mc-dropdown--active & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (min-width: $mc-bp-sm) {
+      display: none;
+    }
+  }
+
+  &__body-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-height: 100vh;
+    overflow: auto;
     z-index: $mc-zindex-dropdown;
 
-    &-inner {
-      display: flex;
-      flex-direction: column;
-      width: 100vw;
-      max-height: 100vh;
-      overflow: auto;
+    background: $mc-color-gray-100;
+    border: 1px solid $mc-color-gray-200;
+    border-radius: $default-radius;
+    box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
+    opacity: 0;
 
-      background: $mc-color-gray-100;
-      border: 1px solid $mc-color-gray-200;
-      border-radius: $default-radius;
-      box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
-      opacity: 0;
+    transform-origin: 50% -50px;
+    transform: rotateX(-15deg);
+    transition:
+      opacity $dropdown-speed ease,
+      transform $dropdown-speed ease;
 
-      transform-origin: 50% -50px;
-      transform: rotateX(-15deg);
-      transition:
-        opacity $dropdown-speed ease,
-        transform $dropdown-speed ease;
+    @media (min-width: $mc-bp-sm) {
+      width: auto;
+      max-width: 400px;
+      max-height: 50vh;
 
-      @media (min-width: $mc-bp-sm) {
-        width: auto;
-        max-width: 400px;
-        max-height: 50vh;
-
-        @include step(margin-top, $mc-dropdown-body-margin);
-        @include step(padding-top, $mc-dropdown-body-padding);
-        @include step(padding-bottom, $mc-dropdown-body-padding);
-      }
-
-      .mc-dropdown__body--active & {
-        opacity: 1;
-        transform: rotateX(0deg);
-        pointer-events: auto;
-      }
-
-      .mc-invert & {
-        background: $mc-color-light;
-        border-color: $mc-color-gray-700;
-      }
+      @include step(margin-top, $mc-dropdown-body-margin);
+      @include step(padding-top, $mc-dropdown-body-padding);
+      @include step(padding-bottom, $mc-dropdown-body-padding);
     }
+
+    .mc-dropdown--active & {
+      opacity: 1;
+      transform: rotateX(0deg);
+      pointer-events: auto;
+    }
+
+    .mc-invert & {
+      background: $mc-color-light;
+      border-color: $mc-color-gray-700;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
   }
 
   &__header {
@@ -70,6 +99,24 @@
   &__content {
     flex: 1;
     overflow: auto;
+  }
+
+  &__close {
+    border-bottom: 1px solid $mc-color-gray-200;
+    text-align: right;
+
+    .mc-invert & {
+      border-color: $mc-color-gray-700;
+    }
+  }
+
+  &__close-icon {
+    opacity: 0.5;
+    transition: opacity 250ms ease;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__footer {
@@ -102,19 +149,6 @@
       overflow: hidden;
       height: 100vh;
       width: 100vw;
-
-      // Overlay on mobile dropdown if dropdown
-      // isn't tall enough to cover content
-      &:after {
-        position: fixed;
-        top: 0;
-        left: 0;
-        content: "";
-        display: block;
-        width: 100vw;
-        height: 100vh;
-        background: rgba($mc-color-dark, 0.9);
-      }
     }
   }
 }
