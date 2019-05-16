@@ -10,7 +10,7 @@ jobs:
           name: Setup Environment Variables
           command: |
             echo 'export PATH=${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin:$PATH' >> $BASH_ENV
-            echo 'export BUNDLESIZE_GITHUB_TOKEN="f5fcce1e1e269e1e04cba6abe0619189b600ae43"' >> $BASH_ENV
+            echo 'export BUNDLESIZE_GITHUB_TOKEN="2dd2800ad8c791d7756dd4b1851379e869dfc47e"' >> $BASH_ENV
       - run:
           name: Install dependencies
           command: yarn
