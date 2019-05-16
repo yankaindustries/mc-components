@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ICONS } from './constants'
+import { ICONS } from './icons'
 
 
 const Icon = ({ kind, ...props }) => {
