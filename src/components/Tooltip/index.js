@@ -86,6 +86,15 @@ export default class Tooltip extends PureComponent {
     return data
   }
 
+  applyStyle = (data) => {
+    this.setState({
+      arrowStyles: data.arrowStyles,
+      attributes: data.attributes,
+      styles: data.styles,
+    })
+    return data
+  }
+
   render () {
     const { children } = this.props
     const {
