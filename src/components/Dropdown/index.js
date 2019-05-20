@@ -1,18 +1,10 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+import Popper from 'popper.js'
+
 
 const DropdownContext = React.createContext('dropdown')
-
-const getPosition = (el) => {
-  const bodyRect = document.body.getBoundingClientRect()
-  const elRect = el.getBoundingClientRect()
-
-  return {
-    left: elRect.left - bodyRect.left,
-    top: (elRect.top - bodyRect.top) + el.offsetHeight,
-  }
-}
 
 
 export const {
@@ -24,6 +16,11 @@ export const {
 export default class Dropdown extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
+    placement: PropTypes.string,
+  }
+
+  static defaultProps = {
+    placement: 'bottom-start',
   }
 
   state = {
@@ -31,26 +28,16 @@ export default class Dropdown extends PureComponent {
     lastTimestamp: 0,
   }
 
-  componentDidMount () {
-    window.addEventListener('resize', this.handleResize)
-  }
+  dropdownRef = React.createRef()
 
   componentWillUnmount () {
-    window.removeEventListener('resize', this.handleResize)
     document.body.classList.remove('mc-dropdown__body--open')
   }
 
-  handleResize = () => {
-    const { target } = this.state
-
-    if (target) {
-      this.setState({
-        position: getPosition(target),
-      })
-    }
-  }
-
   toggle = (event) => {
+    const {
+      placement,
+    } = this.props
     const {
       lastTimeStamp,
       show,
@@ -64,11 +51,25 @@ export default class Dropdown extends PureComponent {
       return
     }
 
+    if (this.dropdown) {
+      this.dropdown.update()
+    } else {
+      this.dropdown = new Popper(
+        event.currentTarget,
+        this.dropdownRef.current,
+        {
+          placement,
+          modifiers: {
+            applyStyle: {
+              enabled: true,
+              fn: this.applyStyle,
+            },
+          },
+        },
+      )
+    }
+
     if (!show) {
-      this.setState({
-        position: getPosition(event.target),
-        target: event.target,
-      })
       document.body.classList.add('mc-dropdown__body--open')
     } else {
       document.body.classList.remove('mc-dropdown__body--open')
@@ -80,16 +81,31 @@ export default class Dropdown extends PureComponent {
     }))
   }
 
+  applyStyle = (data) => {
+    this.setState({
+      attributes: data.attributes,
+      styles: data.styles,
+    })
+    return data
+  }
+
   render () {
     const { children } = this.props
 
     const {
-      position,
+      attributes,
       show,
+      styles,
     } = this.state
 
     return (
-      <Provider value={{ position, show, toggle: this.toggle }}>
+      <Provider value={{
+        attributes,
+        dropdownRef: this.dropdownRef,
+        show,
+        styles,
+        toggle: this.toggle,
+      }}>
         {children}
       </Provider>
     )

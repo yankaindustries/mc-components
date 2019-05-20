@@ -9,9 +9,9 @@ import InvertedMirror from '../../utils/InvertedMirror'
 
 import Dropdown from '../Dropdown'
 import DropdownToggle from '../DropdownToggle'
-import DropdownBody from '../DropdownBody'
-import DropdownHeader from '../DropdownHeader'
 import DropdownContent from '../DropdownContent'
+import DropdownHeader from '../DropdownHeader'
+import DropdownBody from '../DropdownBody'
 import DropdownItem from '../DropdownItem'
 import DropdownFooter from '../DropdownFooter'
 
@@ -54,7 +54,7 @@ storiesOf('Components|Dropdown', module)
                       <Button>I am Cool</Button>
                     </DropdownToggle>
 
-                    <DropdownBody>
+                    <DropdownContent>
                       {CATEGORIES.concat(CATEGORIES).map((category, key) =>
                         <DropdownItem key={key}
                           className='mc-py-3 mc-px-5 mc-text-small'
@@ -87,17 +87,17 @@ storiesOf('Components|Dropdown', module)
                           </div>
                         </DropdownItem>,
                       )}
-                    </DropdownBody>
+                    </DropdownContent>
                   </Dropdown>
                 </div>
 
                 <div className='col-auto'>
-                  <Dropdown>
+                  <Dropdown placement='bottom'>
                     <DropdownToggle>
                       <Button>Click Me</Button>
                     </DropdownToggle>
 
-                    <DropdownBody>
+                    <DropdownContent>
                       <DropdownHeader className={`
                           mc-p-5
                           mc-text-h8
@@ -108,7 +108,7 @@ storiesOf('Components|Dropdown', module)
                         Categories
                       </DropdownHeader>
 
-                      <DropdownContent>
+                      <DropdownBody>
                         {CATEGORIES.concat(CATEGORIES).map((category, key) =>
                           <DropdownItem key={key}
                             className='mc-py-3 mc-px-5 mc-text-small'
@@ -130,33 +130,33 @@ storiesOf('Components|Dropdown', module)
                             </div>
                           </DropdownItem>,
                         )}
-                      </DropdownContent>
+                      </DropdownBody>
 
                       <DropdownFooter className='mc-text--center'>
                         <Button kind='link'>
                           View All
                         </Button>
                       </DropdownFooter>
-                    </DropdownBody>
+                    </DropdownContent>
                   </Dropdown>
                 </div>
 
                 <div className='col-auto'>
-                  <Dropdown>
+                  <Dropdown placement='bottom-end'>
                     <DropdownToggle>
                       <Button>Or Me</Button>
                     </DropdownToggle>
 
-                    <DropdownBody>
+                    <DropdownContent>
                       {CATEGORIES.map((category, key) =>
-                        <DropdownItem key={key}
+                        <DropdownItem
+                          key={key}
                           className='mc-py-3 mc-px-5 mc-text-small'
-                          onClick={console.log}
                         >
                           {category}
                         </DropdownItem>,
                       )}
-                    </DropdownBody>
+                    </DropdownContent>
                   </Dropdown>
                 </div>
               </div>
