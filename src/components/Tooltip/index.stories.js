@@ -11,7 +11,6 @@ import Tooltip from '../Tooltip'
 import TooltipToggle from '../TooltipToggle'
 import TooltipBody from '../TooltipBody'
 import Button from '../Button'
-import Icon from '../Icons'
 
 
 const placements = [
@@ -45,9 +44,7 @@ storiesOf('Components|Tooltip', module)
                       {placement &&
                         <Tooltip placement={placement}>
                           <TooltipToggle>
-                            <Button symmetrical>
-                              <Icon kind='close' />
-                            </Button>
+                            <Button symmetrical />
                           </TooltipToggle>
 
                           <TooltipBody className='mc-text-small'>
@@ -64,9 +61,7 @@ storiesOf('Components|Tooltip', module)
                       }
 
                       {!placement &&
-                        <Button kind='link' symmetrical>
-                          <Icon kind='not-selected' />
-                        </Button>
+                        <Button kind='link' symmetrical />
                       }
                     </div>,
                   )}
