@@ -21,6 +21,8 @@ $mc-video-progress-height: 0.8rem !default;
     top: 0;
     width: 100%;
     height: 100%;
+    // Fix "not full width" issue
+    transform: scale(1.01);
   }
 
   &__screen {
