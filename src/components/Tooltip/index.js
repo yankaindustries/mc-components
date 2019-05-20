@@ -50,7 +50,6 @@ export default class Tooltip extends PureComponent {
 
   toggle = (event) => {
     const { placement } = this.props
-    const { show } = this.state
 
     if (this.tooltip) {
       this.tooltip.update()
@@ -73,7 +72,18 @@ export default class Tooltip extends PureComponent {
       )
     }
 
-    this.setState({ show: !show })
+    this.setState(prevState => ({
+      show: !prevState.show,
+    }))
+  }
+
+  applyStyle = (data) => {
+    this.setState({
+      arrowStyles: data.arrowStyles,
+      attributes: data.attributes,
+      styles: data.styles,
+    })
+    return data
   }
 
   applyStyle = (data) => {
