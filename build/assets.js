@@ -5,7 +5,7 @@ import { camelCase, upperFirst } from 'lodash'
 
 
 const src = path.resolve('./src/assets/icons')
-const dest = path.resolve('./src/components/Icons/constants.js')
+const dest = path.resolve('./src/components/Icons/icons.js')
 
 const files = fs.readdirSync(src)
 

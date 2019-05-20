@@ -1,0 +1,138 @@
+.mc-tooltip {
+  position: absolute;
+  max-width: 400px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  &--show {
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+
+  &__content {
+    @include step(padding, 3);
+
+    background: $mc-color-gray-200;
+    border: 1px solid $mc-color-gray-400;
+    border-radius: 3px;
+    box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
+
+    .mc-invert & {
+      background-color: $mc-color-light;
+      border-color: $mc-color-gray-700;
+    }
+  }
+
+  &__arrow,
+  &__arrow:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+    border-color: $mc-color-gray-400;
+
+    .mc-invert & {
+      border-color: $mc-color-gray-700;
+    }
+  }
+
+  &__arrow:after {
+    content: "";
+    position: absolute;
+
+    border-style: solid;
+    border-color: $mc-color-gray-200;
+
+    .mc-invert & {
+      border-color: $mc-color-light;
+    }
+  }
+
+  &[x-placement^="top"] {
+    margin-bottom: 5px;
+
+    .mc-tooltip__arrow {
+      &,
+      &:after {
+        left: calc(50% - 5px);
+        bottom: -5px;
+
+        border-width: 5px 5px 0 5px;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      &:after {
+        bottom: 1px;
+      }
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: 5px;
+
+    .mc-tooltip__arrow {
+      &,
+      &:after {
+        left: calc(50% - 5px);
+        top: -5px;
+
+        border-width: 0 5px 5px 5px;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+      }
+
+      &:after {
+        top: 1px;
+      }
+    }
+  }
+
+  &[x-placement^="right"] {
+    margin-left: 5px;
+
+    .mc-tooltip__arrow {
+      &,
+      &:after {
+        left: -5px;
+        top: calc(50% - 5px);
+
+        border-width: 5px 5px 5px 0;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      &:after {
+        left: 1px;
+      }
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-right: 5px;
+
+    .mc-tooltip__arrow {
+      &,
+      &:after {
+        right: -5px;
+        top: calc(50% - 5px);
+
+        border-width: 5px 0 5px 5px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      &:after {
+        right: 1px;
+      }
+    }
+  }
+}
