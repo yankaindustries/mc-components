@@ -85,8 +85,7 @@ storiesOf('Components|Tiles', module)
         <div className='col-lg-4 col-md-6'>
           <DocSection title='TileVideo'>
             <Tile>
-              <TileImage imageUrl={shondaRhimesThumbnail} />
-              <TileVideo videoId='5450137526001' autoPlay muted />
+              <TileVideo videoId='5450137526001' autoPlay loop muted />
             </Tile>
           </DocSection>
         </div>
