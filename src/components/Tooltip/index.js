@@ -12,9 +12,33 @@ export const {
 } = TooltipContext
 
 
+const PROP_TYPE_PLACEMENT = PropTypes.oneOf([
+  'auto',
+  'auto-end',
+  'auto-start',
+  'bottom',
+  'bottom-end',
+  'bottom-start',
+  'left',
+  'left-end',
+  'left-start',
+  'right',
+  'right-end',
+  'right-start',
+  'top',
+  'top-end',
+  'top-start',
+])
+
+
 export default class Tooltip extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
+    placement: PROP_TYPE_PLACEMENT,
+  }
+
+  static defaultProps = {
+    placement: 'top',
   }
 
   state = {
@@ -22,30 +46,63 @@ export default class Tooltip extends PureComponent {
   }
 
   tooltipRef = React.createRef()
+  arrowRef = React.createRef()
 
   toggle = (event) => {
+    const { placement } = this.props
     const { show } = this.state
 
-    if (!show) {
+    if (this.tooltip) {
+      this.tooltip.update()
+    } else {
       this.tooltip = new Popper(
         event.currentTarget,
         this.tooltipRef.current,
-        { placement: 'top' },
+        {
+          placement,
+          modifiers: {
+            arrow: {
+              element: this.arrowRef.current,
+            },
+            applyStyle: {
+              enabled: true,
+              fn: this.applyStyle,
+            },
+          },
+        },
       )
     }
 
     this.setState({ show: !show })
   }
 
+  applyStyle = (data) => {
+    this.setState({
+      arrowStyles: data.arrowStyles,
+      attributes: data.attributes,
+      styles: data.styles,
+    })
+    return data
+  }
+
   render () {
     const { children } = this.props
-    const { show } = this.state
+    const {
+      arrowStyles,
+      attributes,
+      show,
+      styles,
+    } = this.state
 
     return (
       <Provider value={{
+        arrowRef: this.arrowRef,
+        arrowStyles,
+        attributes,
         show,
-        tooltipRef: this.tooltipRef,
+        styles,
         toggle: this.toggle,
+        tooltipRef: this.tooltipRef,
       }}>
         {children}
       </Provider>

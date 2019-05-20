@@ -13,6 +13,15 @@ import TooltipBody from '../TooltipBody'
 import Button from '../Button'
 
 
+const placements = [
+  [undefined, 'top-start', 'top', 'top-end', undefined],
+  ['left-start', undefined, undefined, undefined, 'right-start'],
+  ['left', undefined, 'auto', undefined, 'right'],
+  ['left-end', undefined, undefined, undefined, 'right-end'],
+  [undefined, 'bottom-start', 'bottom', 'bottom-end', undefined],
+]
+
+
 storiesOf('Components|Tooltip', module)
   .add('Summary', withAddons({
     path: 'components/Tooltip/index.stories.js',
@@ -28,19 +37,36 @@ storiesOf('Components|Tooltip', module)
         <DocSection title='Demo'>
           <InvertedMirror>
             <CodeExample>
-              <div className='row'>
-                <div className='col-auto'>
-                  <Tooltip>
-                    <TooltipToggle>
-                      <Button>Hover Me</Button>
-                    </TooltipToggle>
+              {placements.map((row, i) =>
+                <div className='row justify-content-center' key={i}>
+                  {row.map((placement, j) =>
+                    <div className='col-auto' key={j}>
+                      {placement &&
+                        <Tooltip placement={placement}>
+                          <TooltipToggle>
+                            <Button symmetrical />
+                          </TooltipToggle>
 
-                    <TooltipBody className='mc-text-small'>
-                      <p>But I have nothing to say...</p>
-                    </TooltipBody>
-                  </Tooltip>
-                </div>
-              </div>
+                          <TooltipBody className='mc-text-small'>
+                            <h6 className='mc-text-h6'>
+                              {placement}
+                            </h6>
+                            <p>
+                              Lorem ipsum dolor sit amet,
+                              <br />
+                              consectetur adipiscing elit.
+                            </p>
+                          </TooltipBody>
+                        </Tooltip>
+                      }
+
+                      {!placement &&
+                        <Button kind='link' symmetrical />
+                      }
+                    </div>,
+                  )}
+                </div>,
+              )}
             </CodeExample>
           </InvertedMirror>
         </DocSection>
