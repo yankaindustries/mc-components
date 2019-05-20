@@ -9,10 +9,8 @@ import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
 
 import Icon from '../Icons'
-import {
-  DEPRECATED,
-  ICONS,
-} from './constants'
+import { ICONS } from './icons'
+import { DEPRECATED } from './deprecated'
 
 
 const icons = omit(ICONS, DEPRECATED)
