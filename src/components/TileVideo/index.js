@@ -79,6 +79,7 @@ export default class TileVideo extends PureComponent {
       children,
       className,
       controls,
+      loop,
       playerRef,
       videoId,
       ...restProps
@@ -117,6 +118,7 @@ export default class TileVideo extends PureComponent {
             videoId={videoId}
             hasAutoplay={autoPlay}
             hasControls={controls}
+            isLooped={loop}
             isMuted={muted}
             onVideoReady={this.handleVideoReady}
             onEnd={this.handleVideoEnd}
