@@ -62,12 +62,14 @@ export default class TileVideo extends PureComponent {
   }
 
   handleVideoEnd = (args) => {
-    this.setState({
-      show: false,
-    })
+    if (!this.props.loop) {
+      this.setState({
+        show: false,
+      })
 
-    if (this.props.onEnd) {
-      this.props.onEnd(args)
+      if (this.props.onEnd) {
+        this.props.onEnd(args)
+      }
     }
   }
 
@@ -77,6 +79,7 @@ export default class TileVideo extends PureComponent {
       children,
       className,
       controls,
+      loop,
       playerRef,
       videoId,
       ...restProps
@@ -115,6 +118,7 @@ export default class TileVideo extends PureComponent {
             videoId={videoId}
             hasAutoplay={autoPlay}
             hasControls={controls}
+            isLooped={loop}
             isMuted={muted}
             onVideoReady={this.handleVideoReady}
             onEnd={this.handleVideoEnd}
