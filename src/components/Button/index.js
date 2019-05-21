@@ -68,7 +68,7 @@ export default class Button extends PureComponent {
     })
 
     return (
-      <a
+      <button
         className={classNames}
         {...restProps}
       >
@@ -83,7 +83,7 @@ export default class Button extends PureComponent {
             <Loader className='c-button__loader' />
           </Fragment>
         }
-      </a>
+      </button>
     )
   }
 }
