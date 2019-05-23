@@ -45,31 +45,44 @@ export default class Tooltip extends PureComponent {
     show: false,
   }
 
+  toggleRef = React.createRef()
   tooltipRef = React.createRef()
   arrowRef = React.createRef()
 
-  toggle = (event) => {
+  createPopper = (base) => {
     const { placement } = this.props
 
+    console.log(base)
+
+    return new Popper(
+      base,
+      this.tooltipRef.current,
+      {
+        placement,
+        modifiers: {
+          arrow: {
+            element: this.arrowRef.current,
+          },
+          applyStyle: {
+            enabled: true,
+            fn: this.applyStyle,
+          },
+        },
+      },
+    )
+  }
+
+  componentDidMount () {
+    if (this.tooltipRef.current) {
+      this.tooltip = this.createPopper(this.toggleRef.current)
+    }
+  }
+
+  toggle = (event) => {
     if (this.tooltip) {
       this.tooltip.update()
     } else {
-      this.tooltip = new Popper(
-        event.currentTarget,
-        this.tooltipRef.current,
-        {
-          placement,
-          modifiers: {
-            arrow: {
-              element: this.arrowRef.current,
-            },
-            applyStyle: {
-              enabled: true,
-              fn: this.applyStyle,
-            },
-          },
-        },
-      )
+      this.tooltip = this.createPopper(event.currentTarget)
     }
 
     this.setState(prevState => ({
@@ -112,6 +125,7 @@ export default class Tooltip extends PureComponent {
         show,
         styles,
         toggle: this.toggle,
+        toggleRef: this.toggleRef,
         tooltipRef: this.tooltipRef,
       }}>
         {children}

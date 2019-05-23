@@ -10,6 +10,7 @@ import InvertedMirror from '../../utils/InvertedMirror'
 import Tooltip from '../Tooltip'
 import TooltipToggle from '../TooltipToggle'
 import TooltipContent from '../TooltipContent'
+import TooltipContentControlled from '../TooltipContentControlled'
 import Button from '../Button'
 
 
@@ -47,7 +48,7 @@ storiesOf('Components|Tooltip', module)
                             <Button symmetrical />
                           </TooltipToggle>
 
-                          <TooltipContent className='mc-text-small'>
+                          <TooltipContentControlled className='mc-text-small' show>
                             <h6 className='mc-text-h6'>
                               {placement}
                             </h6>
@@ -56,7 +57,7 @@ storiesOf('Components|Tooltip', module)
                               <br />
                               consectetur adipiscing elit.
                             </p>
-                          </TooltipContent>
+                          </TooltipContentControlled>
                         </Tooltip>
                       }
 

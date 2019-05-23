@@ -15,10 +15,11 @@ export default class TooltipToggle extends PureComponent {
 
     return (
       <Consumer>
-        {({ toggle }) =>
+        {({ toggle, toggleRef }) =>
           renderChildren(children, {
             onMouseOver: toggle,
             onMouseOut: toggle,
+            ref: toggleRef,
           })
         }
       </Consumer>
