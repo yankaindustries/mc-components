@@ -29,7 +29,6 @@ export default class Dropdown extends PureComponent {
 
   toggleRef = React.createRef()
   dropdownRef = React.createRef()
-  arrowRef = React.createRef()
 
   componentDidMount () {
     this.renderDropdown()
@@ -74,9 +73,6 @@ export default class Dropdown extends PureComponent {
       {
         placement,
         modifiers: {
-          arrow: {
-            element: this.arrowRef.current,
-          },
           applyStyle: {
             enabled: true,
             fn: this.applyStyle,
@@ -93,7 +89,6 @@ export default class Dropdown extends PureComponent {
         styles: data.styles,
       })
     }
-
     return data
   }
 
@@ -108,11 +103,9 @@ export default class Dropdown extends PureComponent {
 
     return (
       <Provider value={{
-        arrowRef: this.arrowRef,
         dropdownRef: this.dropdownRef,
         toggle: this.toggle,
         toggleRef: this.toggleRef,
-        arrowStyles,
         attributes,
         show,
         styles,
