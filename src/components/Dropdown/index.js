@@ -82,10 +82,12 @@ export default class Dropdown extends PureComponent {
   }
 
   applyStyle = (data) => {
-    this.setState({
-      attributes: data.attributes,
-      styles: data.styles,
-    })
+    if (window.width > 576) {
+      this.setState({
+        attributes: data.attributes,
+        styles: data.styles,
+      })
+    }
     return data
   }
 
