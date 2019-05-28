@@ -11,8 +11,7 @@ export const {
   Consumer,
 } = TooltipContext
 
-
-const PROP_TYPE_PLACEMENT = PropTypes.oneOf([
+export const PLACEMENTS = [
   'auto',
   'auto-end',
   'auto-start',
@@ -28,7 +27,9 @@ const PROP_TYPE_PLACEMENT = PropTypes.oneOf([
   'top',
   'top-end',
   'top-start',
-])
+]
+
+const PROP_TYPE_PLACEMENT = PropTypes.oneOf(PLACEMENTS)
 
 
 export default class Tooltip extends PureComponent {
@@ -49,41 +50,52 @@ export default class Tooltip extends PureComponent {
   tooltipRef = React.createRef()
   arrowRef = React.createRef()
 
-  createPopper = (base) => {
+  componentDidMount () {
     const { placement } = this.props
 
-    console.log(base)
-
-    return new Popper(
-      base,
-      this.tooltipRef.current,
-      {
-        placement,
-        modifiers: {
-          arrow: {
-            element: this.arrowRef.current,
-          },
-          applyStyle: {
-            enabled: true,
-            fn: this.applyStyle,
+    if (this.toggleRef.current) {
+      this.tooltip = new Popper(
+        this.toggleRef.current,
+        this.tooltipRef.current,
+        {
+          placement,
+          modifiers: {
+            arrow: {
+              element: this.arrowRef.current,
+            },
+            applyStyle: {
+              enabled: true,
+              fn: this.applyStyle,
+            },
           },
         },
-      },
-    )
-  }
-
-  componentDidMount () {
-    if (this.tooltipRef.current) {
-      this.tooltip = this.createPopper(this.toggleRef.current)
+      )
     }
   }
 
-  toggle = (event) => {
-    if (this.tooltip) {
-      this.tooltip.update()
-    } else {
-      this.tooltip = this.createPopper(event.currentTarget)
+  componentWillReceiveProps (newProps) {
+    if (newProps.placement !== this.props.placement) {
+      this.tooltip = new Popper(
+        this.toggleRef.current,
+        this.tooltipRef.current,
+        {
+          placement: newProps.placement,
+          modifiers: {
+            arrow: {
+              element: this.arrowRef.current,
+            },
+            applyStyle: {
+              enabled: true,
+              fn: this.applyStyle,
+            },
+          },
+        },
+      )
     }
+  }
+
+  toggle = () => {
+    this.tooltip.update()
 
     this.setState(prevState => ({
       show: !prevState.show,

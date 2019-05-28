@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Loader from '../Icons/Loader'
 
 
-export default class Button extends PureComponent {
+class Button extends PureComponent {
   static propTypes = {
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
@@ -43,15 +43,16 @@ export default class Button extends PureComponent {
     const {
       children,
       className,
-      secondary,
-      tertiary,
       fullWidth,
+      forwardRef,
+      kind,
       link,
       loading,
-      symmetrical,
       rounded,
-      kind,
-      ...restProps
+      secondary,
+      symmetrical,
+      tertiary,
+      ...props
     } = this.props
 
     const classNames = cn({
@@ -70,7 +71,8 @@ export default class Button extends PureComponent {
     return (
       <button
         className={classNames}
-        {...restProps}
+        ref={forwardRef}
+        {...props}
       >
         {!loading &&
           children
@@ -87,3 +89,10 @@ export default class Button extends PureComponent {
     )
   }
 }
+
+const ButtonWithRef = React.forwardRef((props, ref) =>
+  <Button forwardRef={ref} {...props} />,
+)
+ButtonWithRef.displayName = 'Button'
+
+export default ButtonWithRef
