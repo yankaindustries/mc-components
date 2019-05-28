@@ -16,11 +16,15 @@ export default class TooltipToggle extends PureComponent {
     return (
       <Consumer>
         {({ toggle, toggleRef }) =>
-          renderChildren(children, {
-            onMouseOver: toggle,
-            onMouseOut: toggle,
-            ref: toggleRef,
-          })
+          <div
+            className='mc-tooltip__toggle'
+            ref={toggleRef}
+          >
+            {renderChildren(children, {
+              onMouseOver: toggle,
+              onMouseOut: toggle,
+            })}
+          </div>
         }
       </Consumer>
     )

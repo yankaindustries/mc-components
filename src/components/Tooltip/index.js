@@ -12,9 +12,6 @@ export const {
 } = TooltipContext
 
 export const PLACEMENTS = [
-  'auto',
-  'auto-end',
-  'auto-start',
   'bottom',
   'bottom-end',
   'bottom-start',
@@ -51,47 +48,34 @@ export default class Tooltip extends PureComponent {
   arrowRef = React.createRef()
 
   componentDidMount () {
-    const { placement } = this.props
-
-    if (this.toggleRef.current) {
-      this.tooltip = new Popper(
-        this.toggleRef.current,
-        this.tooltipRef.current,
-        {
-          placement,
-          modifiers: {
-            arrow: {
-              element: this.arrowRef.current,
-            },
-            applyStyle: {
-              enabled: true,
-              fn: this.applyStyle,
-            },
-          },
-        },
-      )
-    }
+    this.renderTooltip()
   }
 
   componentWillReceiveProps (newProps) {
     if (newProps.placement !== this.props.placement) {
-      this.tooltip = new Popper(
-        this.toggleRef.current,
-        this.tooltipRef.current,
-        {
-          placement: newProps.placement,
-          modifiers: {
-            arrow: {
-              element: this.arrowRef.current,
-            },
-            applyStyle: {
-              enabled: true,
-              fn: this.applyStyle,
-            },
+      this.renderTooltip()
+    }
+  }
+
+  renderTooltip = () => {
+    const { placement } = this.props
+
+    this.tooltip = new Popper(
+      this.toggleRef.current,
+      this.tooltipRef.current,
+      {
+        placement,
+        modifiers: {
+          arrow: {
+            element: this.arrowRef.current,
+          },
+          applyStyle: {
+            enabled: true,
+            fn: this.applyStyle,
           },
         },
-      )
-    }
+      },
+    )
   }
 
   toggle = () => {

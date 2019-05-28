@@ -12,6 +12,10 @@
     pointer-events: auto;
   }
 
+  &__toggle {
+    display: inline-block;
+  }
+
   &__content {
     @include step(padding, 3);
 
