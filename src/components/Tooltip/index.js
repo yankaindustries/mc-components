@@ -74,8 +74,8 @@ export default class Tooltip extends PureComponent {
             fn: this.applyStyle,
           },
         },
-      },
-    )
+      )
+    }
   }
 
   toggle = () => {
