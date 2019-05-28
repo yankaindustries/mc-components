@@ -48,8 +48,7 @@
     z-index: $mc-zindex-dropdown;
 
     background: $mc-color-gray-100;
-    border: 1px solid $mc-color-gray-200;
-    border-radius: $default-radius;
+
     box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
     opacity: 0;
 
@@ -63,6 +62,9 @@
       width: auto;
       max-width: 400px;
       max-height: 50vh;
+
+      border: 1px solid $mc-color-gray-200;
+      border-radius: $default-radius;
 
       @include step(padding-top, $mc-dropdown-body-padding);
       @include step(padding-bottom, $mc-dropdown-body-padding);
