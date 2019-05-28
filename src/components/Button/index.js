@@ -7,6 +7,10 @@ import Loader from '../Icons/Loader'
 
 export default class Button extends PureComponent {
   static propTypes = {
+    as: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.element,
+    ]),
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
@@ -27,20 +31,23 @@ export default class Button extends PureComponent {
       'tertiary',
       'twitter',
     ]),
-    link: PropTypes.bool,
+    link: PropTypes.bool, // DEPRECATED
     loading: PropTypes.bool,
     onClick: PropTypes.func,
-    secondary: PropTypes.bool,
+    rounded: PropTypes.bool,
+    secondary: PropTypes.bool, // DEPRECATED
     symmetrical: PropTypes.bool,
-    tertiary: PropTypes.bool,
+    tertiary: PropTypes.bool, // DEPRECATED
   }
 
   static defaultProps = {
+    as: 'button',
     kind: 'primary',
   }
 
   render () {
     const {
+      as,
       children,
       className,
       secondary,
@@ -67,11 +74,10 @@ export default class Button extends PureComponent {
       [className]: Boolean(className),
     })
 
-    return (
-      <button
-        className={classNames}
-        {...restProps}
-      >
+    return React.createElement(
+      as,
+      { className: classNames, ...restProps },
+      <Fragment>
         {!loading &&
           children
         }
@@ -83,7 +89,7 @@ export default class Button extends PureComponent {
             <Loader className='c-button__loader' />
           </Fragment>
         }
-      </button>
+      </Fragment>,
     )
   }
 }
