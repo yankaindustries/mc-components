@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Loader from '../Icons/Loader'
 
 
-class Button extends PureComponent {
+export default class Button extends PureComponent {
   static propTypes = {
     as: PropTypes.oneOfType([
       PropTypes.string,
@@ -93,10 +93,3 @@ class Button extends PureComponent {
     )
   }
 }
-
-const ButtonWithRef = React.forwardRef((props, ref) =>
-  <Button forwardRef={ref} {...props} />,
-)
-ButtonWithRef.displayName = 'Button'
-
-export default ButtonWithRef
