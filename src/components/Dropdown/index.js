@@ -28,16 +28,19 @@ export default class Dropdown extends PureComponent {
     lastTimestamp: 0,
   }
 
+  toggleRef = React.createRef()
   dropdownRef = React.createRef()
+  arrowRef = React.createRef()
+
+  componentDidMount () {
+    this.renderDropdown()
+  }
 
   componentWillUnmount () {
     document.body.classList.remove('mc-dropdown__body--open')
   }
 
   toggle = (event) => {
-    const {
-      placement,
-    } = this.props
     const {
       lastTimeStamp,
       show,
@@ -49,24 +52,6 @@ export default class Dropdown extends PureComponent {
 
     if (event.timeStamp === lastTimeStamp) {
       return
-    }
-
-    if (this.dropdown) {
-      this.dropdown.update()
-    } else {
-      this.dropdown = new Popper(
-        event.currentTarget,
-        this.dropdownRef.current,
-        {
-          placement,
-          modifiers: {
-            applyStyle: {
-              enabled: true,
-              fn: this.applyStyle,
-            },
-          },
-        },
-      )
     }
 
     if (!show) {
@@ -81,20 +66,42 @@ export default class Dropdown extends PureComponent {
     }))
   }
 
+  renderDropdown = () => {
+    const { placement } = this.props
+
+    this.tooltip = new Popper(
+      this.toggleRef.current,
+      this.dropdownRef.current,
+      {
+        placement,
+        modifiers: {
+          arrow: {
+            element: this.arrowRef.current,
+          },
+          applyStyle: {
+            enabled: true,
+            fn: this.applyStyle,
+          },
+        },
+      },
+    )
+  }
+
   applyStyle = (data) => {
-    if (window.width > 576) {
+    if (window.innerWidth > 576) {
       this.setState({
         attributes: data.attributes,
         styles: data.styles,
       })
     }
+
     return data
   }
 
   render () {
     const { children } = this.props
-
     const {
+      arrowStyles,
       attributes,
       show,
       styles,
@@ -102,11 +109,14 @@ export default class Dropdown extends PureComponent {
 
     return (
       <Provider value={{
-        attributes,
+        arrowRef: this.arrowRef,
         dropdownRef: this.dropdownRef,
+        toggle: this.toggle,
+        toggleRef: this.toggleRef,
+        arrowStyles,
+        attributes,
         show,
         styles,
-        toggle: this.toggle,
       }}>
         {children}
       </Provider>
