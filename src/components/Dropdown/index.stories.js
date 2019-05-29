@@ -190,6 +190,7 @@ class DropdownStory extends PureComponent {
                         <DropdownItem
                           key={key}
                           className='mc-py-3 mc-px-5 mc-text-small'
+                          onClick={this.toggleShow}
                         >
                           {category}
                         </DropdownItem>,

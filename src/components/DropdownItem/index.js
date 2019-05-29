@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { Consumer } from '../Dropdown'
+
 
 export default class DropdownItem extends PureComponent {
   static propTypes = {
@@ -9,11 +11,19 @@ export default class DropdownItem extends PureComponent {
     className: PropTypes.string,
   }
 
+  handleClick = ({ toggle }) => (event) => {
+    if (this.props.onClick) {
+      this.props.onClick(event)
+    }
+
+    toggle(event)
+  }
+
   render () {
     const {
       children,
       className,
-      ...restProps
+      ...props
     } = this.props
 
     const classes = cn({
@@ -22,9 +32,17 @@ export default class DropdownItem extends PureComponent {
     })
 
     return (
-      <div className={classes} {...restProps}>
-        {children}
-      </div>
+      <Consumer>
+        {dropdownProps =>
+          <div
+            className={classes}
+            {...props}
+            onClick={this.handleClick(dropdownProps)}
+          >
+            {children}
+          </div>
+        }
+      </Consumer>
     )
   }
 }

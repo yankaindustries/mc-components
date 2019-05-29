@@ -8,9 +8,7 @@ export default class DropdownContent extends PureComponent {
   render () {
     return (
       <Consumer>
-        {({ show }) =>
-          <DropdownContentControlled {...this.props} show={show} />
-        }
+        {props => <DropdownContentControlled {...this.props} {...props} />}
       </Consumer>
     )
   }

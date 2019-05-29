@@ -6,7 +6,6 @@ import Popper from 'popper.js'
 
 const DropdownContext = React.createContext('dropdown')
 
-
 export const {
   Provider,
   Consumer,
