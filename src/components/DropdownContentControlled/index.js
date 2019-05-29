@@ -16,11 +16,13 @@ export default class DropdownContent extends PureComponent {
     className: PropTypes.string,
     inverted: PropTypes.bool,
     show: PropTypes.bool,
+    onClose: PropTypes.func,
   }
 
   state = {
     checkedInvert: false,
     inverted: false,
+    onClose: noop,
   }
 
   placeholder = React.createRef()
@@ -33,6 +35,17 @@ export default class DropdownContent extends PureComponent {
     }
 
     this.setState({ checkedInvert: true })
+  }
+
+  handleClose = (source, toggle) => (event) => {
+    const { show, onClose } = this.props
+
+    if (!show) {
+      return
+    }
+
+    onClose(source, event)
+    toggle(event)
   }
 
   renderDropdown = () => {
@@ -62,7 +75,7 @@ export default class DropdownContent extends PureComponent {
           styles,
           toggle,
         }) =>
-          <ClickOutside onClickOutside={show ? toggle : noop}>
+          <ClickOutside onClickOutside={this.handleClose('backdrop', toggle)}>
             <div
               className={classes}
               ref={dropdownRef}
@@ -72,7 +85,10 @@ export default class DropdownContent extends PureComponent {
             >
               <div className='mc-dropdown__content-container'>
                 <div className='d-block d-sm-none mc-dropdown__close'>
-                  <a className='d-inline-block mc-p-2' onClick={toggle}>
+                  <a
+                    className='d-inline-block mc-p-2'
+                    onClick={this.handleClose('close', toggle)}
+                  >
                     <Icon kind='close' className='mc-dropdown__close-icon' />
                   </a>
                 </div>

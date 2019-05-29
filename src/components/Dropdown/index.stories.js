@@ -185,7 +185,10 @@ class DropdownStory extends PureComponent {
                       <Button>Controlled</Button>
                     </DropdownToggle>
 
-                    <DropdownContentControlled show={show}>
+                    <DropdownContentControlled
+                      show={show}
+                      onClose={this.toggleShow}
+                    >
                       {CATEGORIES.map((category, key) =>
                         <DropdownItem
                           key={key}
