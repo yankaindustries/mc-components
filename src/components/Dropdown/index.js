@@ -29,6 +29,11 @@ export default class Dropdown extends PureComponent {
 
   toggleRef = React.createRef()
   dropdownRef = React.createRef()
+  arrowRef = React.createRef()
+
+  componentDidMount () {
+    this.renderDropdown()
+  }
 
   componentDidMount () {
     this.renderDropdown()
@@ -85,10 +90,12 @@ export default class Dropdown extends PureComponent {
   applyStyle = (data) => {
     if (window.innerWidth > 576) {
       this.setState({
+        arrowStyles: data.arrowStyles,
         attributes: data.attributes,
         styles: data.styles,
       })
     }
+
     return data
   }
 
