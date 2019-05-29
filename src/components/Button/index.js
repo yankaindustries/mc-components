@@ -50,15 +50,15 @@ export default class Button extends PureComponent {
       as,
       children,
       className,
-      secondary,
-      tertiary,
       fullWidth,
+      kind,
       link,
       loading,
-      symmetrical,
       rounded,
-      kind,
-      ...restProps
+      secondary,
+      symmetrical,
+      tertiary,
+      ...props
     } = this.props
 
     const classNames = cn({
@@ -76,7 +76,7 @@ export default class Button extends PureComponent {
 
     return React.createElement(
       as,
-      { className: classNames, ...restProps },
+      { className: classNames, ...props },
       <Fragment>
         {!loading &&
           children

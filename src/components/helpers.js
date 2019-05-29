@@ -53,7 +53,7 @@ export const renderChildren = (children, props) => {
     return children(props)
   }
 
-  return Children.map(children, (child) => {
+  const results = Children.map(children, (child) => {
     const newProps = {
       ...child.props,
       ...props,
@@ -62,6 +62,8 @@ export const renderChildren = (children, props) => {
 
     return cloneElement(child, newProps)
   })
+
+  return results
 }
 
 export const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {

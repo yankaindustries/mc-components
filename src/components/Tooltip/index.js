@@ -11,11 +11,7 @@ export const {
   Consumer,
 } = TooltipContext
 
-
-const PROP_TYPE_PLACEMENT = PropTypes.oneOf([
-  'auto',
-  'auto-end',
-  'auto-start',
+export const PLACEMENTS = [
   'bottom',
   'bottom-end',
   'bottom-start',
@@ -28,7 +24,9 @@ const PROP_TYPE_PLACEMENT = PropTypes.oneOf([
   'top',
   'top-end',
   'top-start',
-])
+]
+
+const PROP_TYPE_PLACEMENT = PropTypes.oneOf(PLACEMENTS)
 
 
 export default class Tooltip extends PureComponent {
@@ -45,33 +43,42 @@ export default class Tooltip extends PureComponent {
     show: false,
   }
 
+  toggleRef = React.createRef()
   tooltipRef = React.createRef()
   arrowRef = React.createRef()
 
-  toggle = (event) => {
+  componentDidMount () {
+    this.renderTooltip()
+  }
+
+  componentWillReceiveProps (newProps) {
+    if (newProps.placement !== this.props.placement) {
+      this.renderTooltip()
+    }
+  }
+
+  renderTooltip = () => {
     const { placement } = this.props
 
-    if (this.tooltip) {
-      this.tooltip.update()
-    } else {
-      this.tooltip = new Popper(
-        event.currentTarget,
-        this.tooltipRef.current,
-        {
-          placement,
-          modifiers: {
-            arrow: {
-              element: this.arrowRef.current,
-            },
-            applyStyle: {
-              enabled: true,
-              fn: this.applyStyle,
-            },
+    this.tooltip = new Popper(
+      this.toggleRef.current,
+      this.tooltipRef.current,
+      {
+        placement,
+        modifiers: {
+          arrow: {
+            element: this.arrowRef.current,
+          },
+          applyStyle: {
+            enabled: true,
+            fn: this.applyStyle,
           },
         },
-      )
-    }
+      },
+    )
+  }
 
+  toggle = () => {
     this.setState(prevState => ({
       show: !prevState.show,
     }))
@@ -112,6 +119,7 @@ export default class Tooltip extends PureComponent {
         show,
         styles,
         toggle: this.toggle,
+        toggleRef: this.toggleRef,
         tooltipRef: this.tooltipRef,
       }}>
         {children}
