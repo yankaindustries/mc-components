@@ -7,7 +7,7 @@ import { Consumer } from '../Tooltip'
 import { getClosest } from '../helpers'
 
 
-export default class TooltipContent extends PureComponent {
+export default class TooltipContentControlled extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,

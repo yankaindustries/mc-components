@@ -8,6 +8,10 @@ export default class ClickOutside extends Component {
     divRef: object,
   }
 
+  static defaultProps = {
+    onClickOutside: () => {},
+  }
+
   state = { isTouch: false }
 
   componentDidMount () {
@@ -39,6 +43,7 @@ export default class ClickOutside extends Component {
     const {
       children,
       divRef,
+      onClickOutside,
       ...restProps
     } = this.props
 

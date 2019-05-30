@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
-import { storiesOf } from '@storybook/react'
 import Highlight from 'react-highlight'
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
@@ -96,7 +97,7 @@ class DropdownStory extends PureComponent {
                       {CATEGORIES.concat(CATEGORIES).map((category, key) =>
                         <DropdownItem key={key}
                           className='mc-py-3 mc-px-5 mc-text-small'
-                          onClick={console.log}
+                          onClick={action('item')}
                         >
                           <div className='row align-items-center'>
                             <div className='col-4'>
@@ -150,7 +151,7 @@ class DropdownStory extends PureComponent {
                         {CATEGORIES.concat(CATEGORIES).map((category, key) =>
                           <DropdownItem key={key}
                             className='mc-py-3 mc-px-5 mc-text-small'
-                            onClick={console.log}
+                            onClick={action('item')}
                           >
                             <div className={`
                               row

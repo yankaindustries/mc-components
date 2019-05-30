@@ -9,14 +9,16 @@ export default class DropdownItem extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
+    onClick: PropTypes.func,
   }
 
-  handleClick = ({ toggle }) => (event) => {
-    if (this.props.onClick) {
-      this.props.onClick(event)
-    }
+  static defaultProps = {
+    onClick: () => {},
+  }
 
+  handleClick = toggle => (event) => {
     toggle(event)
+    this.props.onClick(event)
   }
 
   render () {
@@ -33,11 +35,11 @@ export default class DropdownItem extends PureComponent {
 
     return (
       <Consumer>
-        {dropdownProps =>
+        {({ toggle }) =>
           <div
             className={classes}
             {...props}
-            onClick={this.handleClick(dropdownProps)}
+            onClick={this.handleClick(toggle)}
           >
             {children}
           </div>

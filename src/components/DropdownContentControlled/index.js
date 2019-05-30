@@ -2,7 +2,6 @@ import React, { Fragment, PureComponent } from 'react'
 import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
-import { noop } from 'lodash'
 
 import { Consumer } from '../Dropdown'
 import ClickOutside from '../ClickOutside'
@@ -10,7 +9,7 @@ import Icon from '../Icons'
 import { getClosest } from '../helpers'
 
 
-export default class DropdownContent extends PureComponent {
+export default class DropdownContentControlled extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -19,10 +18,13 @@ export default class DropdownContent extends PureComponent {
     onClose: PropTypes.func,
   }
 
+  static defaultProps = {
+    onClose: () => {},
+  }
+
   state = {
     checkedInvert: false,
     inverted: false,
-    onClose: noop,
   }
 
   placeholder = React.createRef()
@@ -37,7 +39,7 @@ export default class DropdownContent extends PureComponent {
     this.setState({ checkedInvert: true })
   }
 
-  handleClose = (source, toggle) => (event) => {
+  handleClose = source => (event) => {
     const { show, onClose } = this.props
 
     if (!show) {
@@ -45,7 +47,6 @@ export default class DropdownContent extends PureComponent {
     }
 
     onClose(source, event)
-    toggle(event)
   }
 
   renderDropdown = () => {
@@ -56,7 +57,9 @@ export default class DropdownContent extends PureComponent {
       ...props
     } = this.props
 
-    const { inverted } = this.state
+    const {
+      inverted,
+    } = this.state
 
     const classes = cn({
       'mc-dropdown': true,
@@ -73,9 +76,8 @@ export default class DropdownContent extends PureComponent {
           attributes,
           dropdownRef,
           styles,
-          toggle,
         }) =>
-          <ClickOutside onClickOutside={this.handleClose('backdrop', toggle)}>
+          <ClickOutside onClickOutside={this.handleClose('outside')}>
             <div
               className={classes}
               ref={dropdownRef}
@@ -87,11 +89,12 @@ export default class DropdownContent extends PureComponent {
                 <div className='d-block d-sm-none mc-dropdown__close'>
                   <a
                     className='d-inline-block mc-p-2'
-                    onClick={this.handleClose('close', toggle)}
+                    onClick={this.handleClose('close')}
                   >
                     <Icon kind='close' className='mc-dropdown__close-icon' />
                   </a>
                 </div>
+
                 <div className='mc-dropdown__content'>
                   {children}
                 </div>
@@ -99,7 +102,7 @@ export default class DropdownContent extends PureComponent {
 
               <div
                 className='mc-dropdown__backdrop'
-                onClick={toggle}
+                onClick={this.handleClose('backdrop')}
               />
 
               <div
