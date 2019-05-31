@@ -6,7 +6,6 @@ import Popper from 'popper.js'
 
 const DropdownContext = React.createContext('dropdown')
 
-
 export const {
   Provider,
   Consumer,
@@ -28,16 +27,25 @@ export default class Dropdown extends PureComponent {
     lastTimestamp: 0,
   }
 
+  toggleRef = React.createRef()
   dropdownRef = React.createRef()
+  arrowRef = React.createRef()
+
+  componentDidMount () {
+    this.renderDropdown()
+  }
 
   componentWillUnmount () {
     document.body.classList.remove('mc-dropdown__body--open')
   }
 
+  componentDidUpdate (prevProps) {
+    if (prevProps.placement !== this.props.placement) {
+      this.renderDropdown()
+    }
+  }
+
   toggle = (event) => {
-    const {
-      placement,
-    } = this.props
     const {
       lastTimeStamp,
       show,
@@ -49,24 +57,6 @@ export default class Dropdown extends PureComponent {
 
     if (event.timeStamp === lastTimeStamp) {
       return
-    }
-
-    if (this.dropdown) {
-      this.dropdown.update()
-    } else {
-      this.dropdown = new Popper(
-        event.currentTarget,
-        this.dropdownRef.current,
-        {
-          placement,
-          modifiers: {
-            applyStyle: {
-              enabled: true,
-              fn: this.applyStyle,
-            },
-          },
-        },
-      )
     }
 
     if (!show) {
@@ -81,19 +71,37 @@ export default class Dropdown extends PureComponent {
     }))
   }
 
+  renderDropdown = () => {
+    const { placement } = this.props
+
+    this.tooltip = new Popper(
+      this.toggleRef.current,
+      this.dropdownRef.current,
+      {
+        placement,
+        modifiers: {
+          applyStyle: {
+            enabled: true,
+            fn: this.applyStyle,
+          },
+        },
+      },
+    )
+  }
+
   applyStyle = (data) => {
-    if (window.width > 576) {
+    if (window.innerWidth > 576) {
       this.setState({
         attributes: data.attributes,
         styles: data.styles,
       })
     }
+
     return data
   }
 
   render () {
     const { children } = this.props
-
     const {
       attributes,
       show,
@@ -102,11 +110,12 @@ export default class Dropdown extends PureComponent {
 
     return (
       <Provider value={{
-        attributes,
         dropdownRef: this.dropdownRef,
+        toggle: this.toggle,
+        toggleRef: this.toggleRef,
+        attributes,
         show,
         styles,
-        toggle: this.toggle,
       }}>
         {children}
       </Provider>

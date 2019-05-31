@@ -51,8 +51,8 @@ export default class Tooltip extends PureComponent {
     this.renderTooltip()
   }
 
-  componentWillReceiveProps (newProps) {
-    if (newProps.placement !== this.props.placement) {
+  componentDidUpdate (prevProps) {
+    if (prevProps.placement !== this.props.placement) {
       this.renderTooltip()
     }
   }
@@ -82,15 +82,6 @@ export default class Tooltip extends PureComponent {
     this.setState(prevState => ({
       show: !prevState.show,
     }))
-  }
-
-  applyStyle = (data) => {
-    this.setState({
-      arrowStyles: data.arrowStyles,
-      attributes: data.attributes,
-      styles: data.styles,
-    })
-    return data
   }
 
   applyStyle = (data) => {
