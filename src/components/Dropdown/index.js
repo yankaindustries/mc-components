@@ -35,10 +35,6 @@ export default class Dropdown extends PureComponent {
     this.renderDropdown()
   }
 
-  componentDidMount () {
-    this.renderDropdown()
-  }
-
   componentWillUnmount () {
     document.body.classList.remove('mc-dropdown__body--open')
   }
@@ -90,7 +86,6 @@ export default class Dropdown extends PureComponent {
   applyStyle = (data) => {
     if (window.innerWidth > 576) {
       this.setState({
-        arrowStyles: data.arrowStyles,
         attributes: data.attributes,
         styles: data.styles,
       })
@@ -102,7 +97,6 @@ export default class Dropdown extends PureComponent {
   render () {
     const { children } = this.props
     const {
-      arrowStyles,
       attributes,
       show,
       styles,
