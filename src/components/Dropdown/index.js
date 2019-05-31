@@ -39,6 +39,12 @@ export default class Dropdown extends PureComponent {
     document.body.classList.remove('mc-dropdown__body--open')
   }
 
+  componentDidUpdate (prevProps) {
+    if (prevProps.placement !== this.props.placement) {
+      this.renderDropdown()
+    }
+  }
+
   toggle = (event) => {
     const {
       lastTimeStamp,

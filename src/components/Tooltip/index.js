@@ -51,8 +51,8 @@ export default class Tooltip extends PureComponent {
     this.renderTooltip()
   }
 
-  componentWillReceiveProps (newProps) {
-    if (newProps.placement !== this.props.placement) {
+  componentDidUpdate (prevProps) {
+    if (prevProps.placement !== this.props.placement) {
       this.renderTooltip()
     }
   }
