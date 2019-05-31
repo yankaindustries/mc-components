@@ -71,8 +71,6 @@ export default class DropdownContentControlled extends PureComponent {
     return (
       <Consumer>
         {({
-          arrowRef,
-          arrowStyles,
           attributes,
           dropdownRef,
           styles,
@@ -103,12 +101,6 @@ export default class DropdownContentControlled extends PureComponent {
               <div
                 className='mc-dropdown__backdrop'
                 onClick={this.handleClose('backdrop')}
-              />
-
-              <div
-                className='mc-dropdown__arrow'
-                ref={arrowRef}
-                style={arrowStyles}
               />
             </div>
           </ClickOutside>
