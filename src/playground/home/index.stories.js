@@ -5,7 +5,6 @@ import withAddons from '../../utils/withAddons'
 
 import CarouselConnector from '../../components/CarouselConnector'
 import Carousel from '../../components/Carousel'
-import Footer from '../../components/Footer'
 import Button from '../../components/Button'
 import Tile from '../../components/Tile'
 import TileImage from '../../components/TileImage'
@@ -664,7 +663,5 @@ storiesOf('Playground|Pages', module)
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>,
   ))
