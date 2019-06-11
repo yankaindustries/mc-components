@@ -36,6 +36,10 @@ export default class Button extends PureComponent {
     onClick: PropTypes.func,
     rounded: PropTypes.bool,
     secondary: PropTypes.bool, // DEPRECATED
+    size: PropTypes.oneOf([
+      'small',
+      'medium',
+    ]),
     symmetrical: PropTypes.bool,
     tertiary: PropTypes.bool, // DEPRECATED
   }
@@ -43,6 +47,7 @@ export default class Button extends PureComponent {
   static defaultProps = {
     as: 'button',
     kind: 'primary',
+    size: 'medium',
   }
 
   render () {
@@ -52,26 +57,22 @@ export default class Button extends PureComponent {
       className,
       fullWidth,
       kind,
-      link,
       loading,
       rounded,
-      secondary,
+      size,
       symmetrical,
-      tertiary,
       ...props
     } = this.props
 
     const classNames = cn({
       'c-button': true,
-      'c-button--secondary': secondary,
-      'c-button--tertiary': tertiary,
       'c-button--full-width': fullWidth,
-      'c-button--link': link,
       'c-button--loading': loading,
       'c-button--symmetrical': symmetrical,
       'c-button--symmetrical mc-corners--circle': rounded,
       [`c-button--${kind}`]: kind,
-      [className]: Boolean(className),
+      [`c-button--${size}`]: size,
+      [className]: className,
     })
 
     return React.createElement(

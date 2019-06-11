@@ -1,8 +1,8 @@
 @mixin mc-button {
   @include step(padding-top, 3);
-  @include step(padding-right, 5);
   @include step(padding-bottom, 3);
   @include step(padding-left, 5);
+  @include step(padding-right, 5);
   @include step(font-size, 3);
   display: inline-flex;
   align-items: center;
@@ -34,7 +34,14 @@
     cursor: pointer;
   }
 
-  // TYPES
+  // Variations
+
+  &--small {
+    @include step(padding-top, 1);
+    @include step(padding-bottom, 1);
+    @include step(padding-left, 3);
+    @include step(padding-right, 3);
+  }
 
   &--full-width {
     width: 100%;
@@ -176,6 +183,11 @@
 
   &--symmetrical {
     @include step(padding, 3);
+
+    /* stylelint-disable-next-line */
+    &.c-button--small {
+      @include step(padding, 1);
+    }
   }
 
   &--google {
