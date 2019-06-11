@@ -1,5 +1,8 @@
 /* eslint-disable quote-props */
+import SvgArrowDown from './ArrowDown'
+import SvgArrowLeft from './ArrowLeft'
 import SvgArrowRight from './ArrowRight'
+import SvgArrowTop from './ArrowTop'
 import SvgArrow from './Arrow'
 import SvgAvatar from './Avatar'
 import SvgBackArrow from './BackArrow'
@@ -62,7 +65,10 @@ import SvgUpload from './Upload'
 import SvgWhisk from './Whisk'
 
 export const ICONS = {
+  'arrow-down': SvgArrowDown,
+  'arrow-left': SvgArrowLeft,
   'arrow-right': SvgArrowRight,
+  'arrow-top': SvgArrowTop,
   'arrow': SvgArrow,
   'avatar': SvgAvatar,
   'back-arrow': SvgBackArrow,
