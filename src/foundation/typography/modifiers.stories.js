@@ -102,13 +102,17 @@ const Modifiers = () =>
 
     <DocSection
       title='Lines'
-      description={`
-        We can max the number of lines a paragraph will have so that it better
-        fits smaller areas, and brings consistency to block heights. It even
-        works when the window is resized. The sample text used is much longer
-        than number of lines needed for demonstrative purposes.
-      `}
     >
+      <p className='mc-mb-8'>
+        This helper brings consistency to block heights. It even
+        works when the window is resized. The sample text used is much longer
+        than number of lines needed for demonstrative purposes. The main differences between <span className='mc-code'>--1-line</span>
+        and <span className='mc-code'>--1-line-max</span> is whether the space
+        the text occupies is collapsed or not.  You can see an example in the
+        <span className='mc-code'>--2-lines</span> section of each example
+        below.
+      </p>
+
       <div className='row'>
         <div className='col-4'>
           <PropExample name='.mc-text--1-line'>
@@ -137,6 +141,10 @@ const Modifiers = () =>
 
         <div className='col-4'>
           <PropExample name='.mc-text--2-lines'>
+            <p className='mc-text-large mc-text--2-lines'>
+              This holds two lines of space.
+            </p>
+
             <h4 className='mc-text-h4 mc-text--2-lines mc-mb-4'>
               This is a heading: Four score and seven years ago our
               fathers brought forth on this continent, a new nation,
@@ -162,6 +170,10 @@ const Modifiers = () =>
 
         <div className='col-4'>
           <PropExample name='.mc-text--3-lines'>
+            <p className='mc-text-large mc-text--3-lines'>
+              This holds three lines of space.
+            </p>
+
             <h4 className='mc-text-h4 mc-text--3-lines mc-mb-4'>
               This is a heading: Four score and seven years ago our
               fathers brought forth on this continent, a new nation,
@@ -177,6 +189,91 @@ const Modifiers = () =>
             </p>
 
             <p className='mc-text-large mc-text--3-lines'>
+              This is mc-text-large: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+          </PropExample>
+        </div>
+      </div>
+
+      <div className='row'>
+        <div className='col-4'>
+          <PropExample name='.mc-text--1-line-max'>
+            <h4 className='mc-text-h4 mc-text--1-line-max mc-mb-4'>
+              This is a heading: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </h4>
+
+            <p className='mc-text--1-line-max mc-mb-4'>
+              This is body text: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+
+            <p className='mc-text-large mc-text--1-line-max'>
+              This is mc-text-large: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+          </PropExample>
+        </div>
+
+        <div className='col-4'>
+          <PropExample name='.mc-text--2-lines-max'>
+            <p className='mc-text-large mc-text--2-lines-max'>
+              This line collapses.
+            </p>
+
+            <h4 className='mc-text-h4 mc-text--2-lines-max mc-mb-4'>
+              This is a heading: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </h4>
+
+            <p className='mc-text--2-lines-max mc-mb-4'>
+              This is body text: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+
+            <p className='mc-text-large mc-text--2-lines-max'>
+              This is mc-text-large: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+          </PropExample>
+        </div>
+
+        <div className='col-4'>
+          <PropExample name='.mc-text--3-lines-max'>
+            <p className='mc-text-large mc-text--3-lines-max'>
+              This line collapses.
+            </p>
+
+            <h4 className='mc-text-h4 mc-text--3-lines-max mc-mb-4'>
+              This is a heading: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </h4>
+
+            <p className='mc-text--3-lines-max mc-mb-4'>
+              This is body text: Four score and seven years ago our
+              fathers brought forth on this continent, a new nation,
+              conceived in Liberty, and dedicated to the proposition
+              that all men are created equal.
+            </p>
+
+            <p className='mc-text-large mc-text--3-lines-max'>
               This is mc-text-large: Four score and seven years ago our
               fathers brought forth on this continent, a new nation,
               conceived in Liberty, and dedicated to the proposition
