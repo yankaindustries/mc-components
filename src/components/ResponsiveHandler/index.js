@@ -1,7 +1,7 @@
 import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import { renderChildren } from '../helpers'
+import { renderChildren, responsiveValues } from '../helpers'
 
 
 const BP = {
@@ -75,11 +75,17 @@ export default class ResponsiveHandler extends PureComponent {
     this.setState(sizes)
   }
 
+  handleHelper = (xs, s, m, l) =>
+    responsiveValues(this.state, l, m, s, xs)
+
   render () {
     const {
       children,
     } = this.props
 
-    return renderChildren(children, this.state)
+    return renderChildren(children, {
+      ...this.state,
+      responsive: this.handleHelper,
+    })
   }
 }
