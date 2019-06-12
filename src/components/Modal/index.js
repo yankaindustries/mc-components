@@ -13,6 +13,10 @@ export const {
 
 export default class Modal extends PureComponent {
   static propTypes = {
+    backdrop: PropTypes.oneOf([
+      'dark',
+      'extra-dark',
+    ]),
     children: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.arrayOf(PropTypes.node),
@@ -26,6 +30,7 @@ export default class Modal extends PureComponent {
 
   static defaultProps = {
     appendToBody: true,
+    backdrop: 'dark',
   }
 
   componentDidUpdate (prevProps) {
@@ -63,20 +68,27 @@ export default class Modal extends PureComponent {
 
   renderModal = () => {
     const {
+      backdrop,
       children,
       className,
     } = this.props
 
+    const modalClasses = cn(className, 'mc-modal')
+    const backdropClasses = cn({
+      'mc-modal__backdrop': true,
+      'mc-backdrop': true,
+      [`mc-backdrop--${backdrop}`]: backdrop,
+    })
+
     return (
       <Provider value={{ close: this.close }}>
         <div
-          className={cn(className, 'mc-modal')}
+          className={modalClasses}
           onKeyDown={this.onKeyDown}
           ref={this.container}
         >
-          <div className='mc-modal__backdrop' />
-          <div className='mc-modal__content-container'>
-            <div className='mc-modal__content-container-inner'>
+          <div className={backdropClasses}>
+            <div className='mc-modal__content-container'>
               {children}
             </div>
           </div>

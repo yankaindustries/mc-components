@@ -1,3 +1,27 @@
+.mc-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  z-index: $mc-zindex-modal-backdrop;
+
+  &--dark {
+    background: rgba($mc-color-dark, 0.8);
+  }
+
+  &--extra-dark {
+    background: rgba($mc-color-dark, 0.95);
+  }
+}
+
 .mc-modal {
   @include fade-in-opacity();
   animation-fill-mode: none;
@@ -8,16 +32,6 @@
   width: 100%;
   height: 100%;
   z-index: $mc-zindex-modal-backdrop;
-
-  &__backdrop {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba($mc-color-dark, 0.95);
-    z-index: $mc-zindex-modal-backdrop;
-  }
 
   &__close {
     position: absolute;
@@ -41,22 +55,9 @@
   }
 
   &__content-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    z-index: $mc-zindex-modal;
-  }
-
-  &__content-container-inner {
     flex: 1;
     margin: auto;
+    z-index: $mc-zindex-modal;
   }
 
   &__content {

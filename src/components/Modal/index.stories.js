@@ -81,6 +81,7 @@ class ModalExample extends Component {
                           name='email'
                           label='Email'
                           placeholder='john@doe.com'
+                          className='mc-mb-4'
                           input={{}}
                           meta={{}}
                           required
@@ -90,6 +91,7 @@ class ModalExample extends Component {
                           name='password'
                           label='Password'
                           placeholder='••••••••'
+                          className='mc-mb-4'
                           input={{}}
                           meta={{}}
                           required
@@ -126,6 +128,7 @@ class ModalExample extends Component {
             </div>
 
             <Modal
+              backdrop='extra-dark'
               onClose={this.hideModal('cinema')}
               show={this.state.cinema}
             >
