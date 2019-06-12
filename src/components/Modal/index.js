@@ -3,6 +3,8 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import Backdrop from '../Backdrop'
+
 
 const ModalContext = React.createContext('modal')
 
@@ -73,25 +75,23 @@ export default class Modal extends PureComponent {
       className,
     } = this.props
 
-    const modalClasses = cn(className, 'mc-modal')
-    const backdropClasses = cn({
-      'mc-modal__backdrop': true,
-      'mc-backdrop': true,
-      [`mc-backdrop--${backdrop}`]: backdrop,
-    })
+    const classes = cn(className, 'mc-modal')
 
     return (
       <Provider value={{ close: this.close }}>
         <div
-          className={modalClasses}
+          className={classes}
           onKeyDown={this.onKeyDown}
           ref={this.container}
         >
-          <div className={backdropClasses}>
+          <Backdrop
+            className='mc-modal__backdrop'
+            kind={backdrop}
+          >
             <div className='mc-modal__content-container'>
               {children}
             </div>
-          </div>
+          </Backdrop>
         </div>
       </Provider>
     )
