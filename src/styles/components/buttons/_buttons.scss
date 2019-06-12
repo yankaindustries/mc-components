@@ -34,7 +34,14 @@
     cursor: pointer;
   }
 
-  // TYPES
+  // Variations
+
+  &--small {
+    @include step(padding-top, 1);
+    @include step(padding-bottom, 1);
+    @include step(padding-left, 3);
+    @include step(padding-right, 3);
+  }
 
   &--full-width {
     width: 100%;
@@ -56,6 +63,7 @@
 
     .c-button__content {
       opacity: 0;
+      display: inherit;
     }
 
     .c-button__loader {
@@ -176,6 +184,11 @@
 
   &--symmetrical {
     @include step(padding, 3);
+
+    /* stylelint-disable-next-line */
+    &.c-button--small {
+      @include step(padding, 1);
+    }
   }
 
   &--google {
