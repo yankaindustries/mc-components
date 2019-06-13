@@ -291,14 +291,17 @@ storiesOf('Playground|Pages', module)
                           }
                         />
 
-                        <AnimationHandler
-                          type='hide'
-                          animating={parentActive}
-                        >
+                        {!itemActive &&
                           <TileOverlay
                             type='gradient-bottom'
                             color={item.color}
                           />
+                        }
+
+                        <AnimationHandler
+                          type='hide'
+                          animating={parentActive}
+                        >
                           <TileCaption position='center bottom'>
                             <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
                               {item.instructor}
@@ -309,10 +312,7 @@ storiesOf('Playground|Pages', module)
                           </TileCaption>
                         </AnimationHandler>
 
-                        <AnimationHandler
-                          type='show'
-                          animating={itemActive}
-                        >
+                        {itemActive &&
                           <TileOverlay
                             type='gradient-left'
                             color={item.color}
@@ -321,7 +321,12 @@ storiesOf('Playground|Pages', module)
                               : 'example-offset-left-one-quarter'
                             }
                           />
+                        }
 
+                        <AnimationHandler
+                          type='show'
+                          animating={itemActive}
+                        >
                           <TileCaption position='left center'>
                             <div className='row'>
                               <div className='col-4 offset-1'>
