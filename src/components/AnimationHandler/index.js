@@ -9,9 +9,9 @@ export default class AnimationHandler extends PureComponent {
   static propTypes = {
     animating: PropTypes.bool,
     children: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.element,
-    ]),
+      PropTypes.node,
+      PropTypes.arrayOf(PropTypes.node),
+    ]).isRequired,
     important: PropTypes.bool,
     type: PropTypes.oneOf([
       'zoom',

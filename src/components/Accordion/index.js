@@ -48,9 +48,12 @@ export default class Accordion extends PureComponent {
 
   handleHoverChange = (args) => {
     const { on } = this.props
+    const value = args[on]
+
+    if (typeof value === 'undefined') return
 
     this.setState({
-      [on]: args[on],
+      [on]: value,
     })
   }
 
