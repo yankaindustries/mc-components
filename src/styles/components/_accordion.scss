@@ -1,5 +1,5 @@
 .mc-accordion {
-  $slide-duration: 650ms;
+  $slide-duration: 600ms;
 
   position: relative;
 
@@ -78,6 +78,22 @@
 
     &:last-child {
       padding-right: 0;
+    }
+  }
+
+  .mc-animation--show {
+    transition-delay: 0ms;
+
+    &.mc-animation--animating {
+      transition-delay: $slide-duration;
+    }
+  }
+
+  .mc-animation--hide {
+    transition-delay: $slide-duration;
+
+    &.mc-animation--animating {
+      transition-delay: 0ms;
     }
   }
 }
