@@ -30,12 +30,23 @@
   &--2-lines-max,
   &--3-lines,
   &--3-lines-max {
+    // https://css-tricks.com/almanac/properties/l/line-clamp/
     display: block;
+    /* stylelint-disable */
+    display: -webkit-box;
+
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+
+    /* stylelint-enable */
     overflow: hidden;
   }
 
   &--1-line,
   &--1-line-max {
+    // For single lines, reset back to just a block element
+    // so the standard ellipsis overflow will work (ignore webkit box)
+    display: block;
     text-overflow: ellipsis;
     white-space: nowrap;
 
@@ -91,6 +102,7 @@
   &--2-lines-max {
     // Default body / anything not defined
     height: #{2 * $mc-lh-md}em;
+    -webkit-line-clamp: 2;
 
     // Headings
     &[class^="mc-text-h"],
@@ -142,6 +154,7 @@
   &--3-lines-max {
     // Default body / anything not defined
     height: #{3 * $mc-lh-md}em;
+    -webkit-line-clamp: 3;
 
     // Headings
     &[class^="mc-text-h"],
