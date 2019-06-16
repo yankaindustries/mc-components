@@ -1,6 +1,16 @@
 html {
   /* stylelint-disable-next-line declaration-no-important */
-  font-size: $mc-step-base * 1px !important;
+  font-size: $mc-step-base-sm * 1px !important;
+
+  @media (min-width: $mc-bp-md) {
+    /* stylelint-disable-next-line declaration-no-important */
+    font-size: $mc-step-base-md * 1px !important;
+  }
+
+  @media (min-width: $mc-bp-lg) {
+    /* stylelint-disable-next-line declaration-no-important */
+    font-size: $mc-step-base-lg * 1px !important;
+  }
 }
 
 body {
@@ -46,21 +56,21 @@ a {
   &-h7,
   &-h8 {
     font-weight: 700;
-    line-height: $mc-lh-sm;
+    line-height: $mc-lh-md;
   }
 
   &-large {
     @include step(font-size, 5);
-    line-height: $mc-lh-lg;
+    line-height: $mc-lh-md;
   }
 
   &-small {
     @include step(font-size, 3.5);
-    line-height: $mc-lh-sm;
+    line-height: $mc-lh-md;
   }
 
   &-x-small {
     @include step(font-size, 3);
-    line-height: $mc-lh-sm;
+    line-height: $mc-lh-md;
   }
 }

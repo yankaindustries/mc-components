@@ -42,13 +42,28 @@
 }
 
 
-// Returns the value relative to `rem` for a given step
-@function calc-step($step, $decay) {
-  $times: ceil($step / $mc-step-multipliers);
-  $level: if($step > $mc-step-multipliers, $step - $mc-step-multipliers + 1, $step);
-  $factor: if($times > 1, $mc-step-scale, 1);
-  $less: (max($step - $mc-step-min-resize, 0) * $decay) / $mc-step-base;
-  $value: $level * $mc-step-scale * $factor / $mc-step-base;
+@function pow($number, $exponent) {
+  $value: 1;
 
-  @return $value - $less;
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+// Returns the value relative to `rem` for a given step
+@function calc-step($step) {
+  @if ($step <= $mc-step-min-resize) {
+    @return $step / $mc-step-scale;
+  }
+
+  @else {
+    $ratio: 1.25;
+    $multiplier: pow($ratio, $step - $mc-step-scale);
+
+    @return $multiplier;
+  }
 }

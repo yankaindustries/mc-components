@@ -77,13 +77,11 @@ $mc-zindex-popover:           1060 !default;
 $mc-zindex-tooltip:           1070 !default;
 
 // Step measurements
-$mc-step-base: 10 !default;
 $mc-step-scale: 4 !default;
-$mc-step-multipliers: 7 !default;
+$mc-step-base-lg: 16 !default;
+$mc-step-base-md: 14 !default;
+$mc-step-base-sm: 13 !default;
 $mc-step-min-resize: 4 !default;
-$mc-step-decay-sm: 2 !default;
-$mc-step-decay-md: 1 !default;
-$mc-step-decay-lg: 0 !default;
 
 // Custom bootstrap grid overrides
 $enable-grid-classes:    true !default;

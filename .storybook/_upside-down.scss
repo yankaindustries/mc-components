@@ -211,44 +211,42 @@ a {
       @include step(height, $i);
     }
 
-    $rem-sm: calc-step($i, $mc-step-decay-sm);
-    $rem-md: calc-step($i, $mc-step-decay-md);
-    $rem-lg: calc-step($i, $mc-step-decay-lg);
+    $rem: calc-step($i);
 
     &__label-#{$i}-sm-px:before {
-      content: "#{$rem-sm * $mc-step-base}";
+      content: "#{round($rem * $mc-step-base-sm)}";
     }
 
     &__label-#{$i}-sm-rem:before {
-      content: "#{$rem-sm}";
+      content: "#{$rem}";
     }
 
     &__label-#{$i}-sm-em:before {
-      content: "#{$rem-sm * $mc-step-base / (4 * $mc-step-scale)}";
+      content: "#{$rem / (4 * $mc-step-scale)}";
     }
 
     &__label-#{$i}-md-px:before {
-      content: "#{$rem-md * $mc-step-base}";
+      content: "#{round($rem * $mc-step-base-md)}";
     }
 
     &__label-#{$i}-md-rem:before {
-      content: "#{$rem-md}";
+      content: "#{$rem}";
     }
 
     &__label-#{$i}-md-em:before {
-      content: "#{$rem-md * $mc-step-base / (4 * $mc-step-scale)}";
+      content: "#{$rem / (4 * $mc-step-scale)}";
     }
 
     &__label-#{$i}-lg-px:before {
-      content: "#{$rem-lg * $mc-step-base}";
+      content: "#{round($rem * $mc-step-base-lg)}";
     }
 
     &__label-#{$i}-lg-rem:before {
-      content: "#{$rem-lg}";
+      content: "#{$rem}";
     }
 
     &__label-#{$i}-lg-em:before {
-      content: "#{$rem-lg * $mc-step-base / (4 * $mc-step-scale)}";
+      content: "#{$rem / (4 * $mc-step-scale)}";
     }
   }
 }
