@@ -105,7 +105,6 @@
   }
 
   // Show / Hide
-  $slide-duration: 1200ms;
   $fade-duration: 200ms;
 
   &--show {
@@ -120,7 +119,7 @@
 
   &--hide {
     opacity: 1;
-    transition: opacity $fade-duration ease $slide-duration;
+    transition: opacity $fade-duration ease;
 
     &.mc-animation--animating {
       opacity: 0;

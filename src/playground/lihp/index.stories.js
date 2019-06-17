@@ -201,7 +201,6 @@ storiesOf('Playground|Pages', module)
                       <AnimationHandler
                         type='zoom-tile'
                         animating={intent}
-                        important
                       >
                         <Tile key={item.id}>
                           <TileImage imageUrl={item.thumbnail} />
@@ -220,7 +219,7 @@ storiesOf('Playground|Pages', module)
                             padding={4}
                             className='mc-tile__reveal-on-hover'
                           >
-                            <Button secondary>Resume</Button>
+                            <Button kind='secondary'>Resume</Button>
                           </TileCaption>
 
                           <TileCaption
@@ -292,14 +291,17 @@ storiesOf('Playground|Pages', module)
                           }
                         />
 
-                        <AnimationHandler
-                          type='hide'
-                          animating={parentActive}
-                        >
+                        {!itemActive &&
                           <TileOverlay
                             type='gradient-bottom'
                             color={item.color}
                           />
+                        }
+
+                        <AnimationHandler
+                          type='hide'
+                          animating={parentActive}
+                        >
                           <TileCaption position='center bottom'>
                             <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
                               {item.instructor}
@@ -310,27 +312,20 @@ storiesOf('Playground|Pages', module)
                           </TileCaption>
                         </AnimationHandler>
 
-                        <AnimationHandler
-                          type='show'
-                          animating={itemActive}
-                          important
-                        >
-                          <div>
-                            <TileOverlay
-                              type='gradient-left'
-                              color={item.color}
-                              className={itemActive
-                                ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
-                                : 'example-offset-left-one-quarter'
-                              }
-                            />
-                          </div>
-                        </AnimationHandler>
+                        {itemActive &&
+                          <TileOverlay
+                            type='gradient-left'
+                            color={item.color}
+                            className={itemActive
+                              ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
+                              : 'example-offset-left-one-quarter'
+                            }
+                          />
+                        }
 
                         <AnimationHandler
                           type='show'
                           animating={itemActive}
-                          important
                         >
                           <TileCaption position='left center'>
                             <div className='row'>
@@ -353,7 +348,7 @@ storiesOf('Playground|Pages', module)
                                   </Button>
                                   <Button
                                     fullWidth
-                                    link
+                                    kind='link'
                                   >
                                     Watch Trailer
                                   </Button>

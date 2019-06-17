@@ -32,6 +32,7 @@ import SvgHamburger from './Hamburger'
 import SvgHelper from './Helper'
 import SvgInfo from './Info'
 import SvgInstagram from './Instagram'
+import SvgLink from './Link'
 import SvgLoader from './Loader'
 import SvgLock from './Lock'
 import SvgLocked from './Locked'
@@ -55,6 +56,7 @@ import SvgReplay from './Replay'
 import SvgRewind from './Rewind'
 import SvgSearch from './Search'
 import SvgSelected from './Selected'
+import SvgSms from './Sms'
 import SvgSslBadge from './SslBadge'
 import SvgStar from './Star'
 import SvgStarred from './Starred'
@@ -98,6 +100,7 @@ export const ICONS = {
   'helper': SvgHelper,
   'info': SvgInfo,
   'instagram': SvgInstagram,
+  'link': SvgLink,
   'loader': SvgLoader,
   'lock': SvgLock,
   'locked': SvgLocked,
@@ -121,6 +124,7 @@ export const ICONS = {
   'rewind': SvgRewind,
   'search': SvgSearch,
   'selected': SvgSelected,
+  'sms': SvgSms,
   'ssl-badge': SvgSslBadge,
   'star': SvgStar,
   'starred': SvgStarred,
