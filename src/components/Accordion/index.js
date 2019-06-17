@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 import HoverHandler from '../HoverHandler'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
 import {
   renderChildren,
   ASPECT_RATIOS,
@@ -14,11 +15,7 @@ import {
 export default class Accordion extends PureComponent {
   static propTypes = {
     aspectRatio: PropTypes.oneOf(ASPECT_RATIOS),
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.arrayOf(PropTypes.func),
-    ]),
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     on: PropTypes.oneOf([
       'hovering',

@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-
 import Popper from 'popper.js'
+
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 const TooltipContext = React.createContext('tooltip')
@@ -31,7 +32,7 @@ const PROP_TYPE_PLACEMENT = PropTypes.oneOf(PLACEMENTS)
 
 export default class Tooltip extends PureComponent {
   static propTypes = {
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     placement: PROP_TYPE_PLACEMENT,
   }
 

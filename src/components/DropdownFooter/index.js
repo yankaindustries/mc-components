@@ -2,10 +2,12 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
+
 
 export default class DropdownHeader extends PureComponent {
   static propTypes = {
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
   }
 

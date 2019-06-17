@@ -1,6 +1,6 @@
 import { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
 import { renderChildren } from '../helpers'
 
 
@@ -15,10 +15,7 @@ const BP = {
 
 export default class ResponsiveHandler extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.element,
-    ]),
+    children: PROP_TYPE_CHILDREN,
   }
 
   state = {

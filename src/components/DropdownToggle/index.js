@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 
 import { Consumer } from '../Dropdown'
+import { PROP_TYPE_CHILDREN } from '../constants'
 import { renderChildren } from '../helpers'
 
 
 export default class DropdownToggle extends PureComponent {
   static propTypes = {
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
   }
 
   render () {

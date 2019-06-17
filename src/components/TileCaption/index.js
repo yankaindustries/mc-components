@@ -2,13 +2,11 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 export default class TileCaption extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]),
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     flush: PropTypes.bool,
     position: PropTypes.oneOf([

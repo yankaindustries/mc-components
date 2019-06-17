@@ -2,19 +2,16 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { noop } from 'lodash'
 
+import ToggleHandler from '../ToggleHandler'
+import Check from '../Icons/CheckCircle'
+import { PROP_TYPE_CHILDREN } from '../constants'
 import { renderChildren } from '../helpers'
 
-import ToggleHandler from '../ToggleHandler'
-
-import Check from '../Icons/CheckCircle'
 
 export default class TileCheck extends PureComponent {
   static propTypes = {
     checked: PropTypes.bool,
-    children: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.func,
-    ]),
+    children: PROP_TYPE_CHILDREN,
     onChange: PropTypes.func,
   }
 

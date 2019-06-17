@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { func, node, object, oneOfType, arrayOf } from 'prop-types'
+import { func, object } from 'prop-types'
+
+import { PROP_TYPE_CHILDREN } from '../constants'
+
 
 export default class ClickOutside extends Component {
   static propTypes = {
     onClickOutside: func.isRequired,
-    children: oneOfType([arrayOf(node), node]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     divRef: object,
   }
 

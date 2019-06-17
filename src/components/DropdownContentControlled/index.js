@@ -6,12 +6,13 @@ import cn from 'classnames'
 import { Consumer } from '../Dropdown'
 import ClickOutside from '../ClickOutside'
 import Icon from '../Icons'
+import { PROP_TYPE_CHILDREN } from '../constants'
 import { getClosest } from '../helpers'
 
 
 export default class DropdownContentControlled extends PureComponent {
   static propTypes = {
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     inverted: PropTypes.bool,
     show: PropTypes.bool,
