@@ -16,12 +16,10 @@ export default class DropdownToggle extends PureComponent {
     return (
       <Consumer>
         {({ toggle, toggleRef }) =>
-          <div
-            className='mc-dropdown__toggle'
-            ref={toggleRef}
-          >
-            {renderChildren(children, { onClick: toggle })}
-          </div>
+          renderChildren(children, {
+            onClick: toggle,
+            ref: toggleRef,
+          })
         }
       </Consumer>
     )
