@@ -6,20 +6,26 @@ import { camelCase, upperFirst } from 'lodash'
 
 const src = path.resolve('./src/assets/icons')
 const dest = path.resolve('./src/components/Icons/icons.js')
-
 const files = fs.readdirSync(src)
 
-const icons = files.map((file) => {
-  const key = file.replace('.svg', '')
-  const path = upperFirst(camelCase(key))
-  const component = upperFirst(camelCase(`svg-${key}`))
+const icons = files
+  .filter((file) => {
+    if (/^\./.test(file)) return false
+    return true
+  })
+  .map((file) => {
+    if(! /^\..*/.test(file)) {
+      const key = file.replace('.svg', '')
+      const path = upperFirst(camelCase(key))
+      const component = upperFirst(camelCase(`svg-${key}`))
 
-  return {
-    key,
-    path,
-    component,
-  }
-})
+      return {
+        key,
+        path,
+        component,
+      }
+    }
+  })
 
 const header = '/* eslint-disable quote-props */'
 
