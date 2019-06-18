@@ -1,7 +1,10 @@
 import { PureComponent } from 'react'
 
 import { PROP_TYPE_CHILDREN } from '../constants'
-import { renderChildren } from '../helpers'
+import {
+  renderChildren,
+  responsiveValues,
+} from '../helpers'
 
 
 const BP = {
