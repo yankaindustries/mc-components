@@ -72,11 +72,17 @@ export default class ResponsiveHandler extends PureComponent {
     this.setState(sizes)
   }
 
+  handleHelper = (xs, s, m, l) =>
+    responsiveValues(this.state, l, m, s, xs)
+
   render () {
     const {
       children,
     } = this.props
 
-    return renderChildren(children, this.state)
+    return renderChildren(children, {
+      ...this.state,
+      responsive: this.handleHelper,
+    })
   }
 }

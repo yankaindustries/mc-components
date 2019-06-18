@@ -66,7 +66,7 @@ export const renderChildren = (children, props) => {
   return results
 }
 
-export const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
+export const responsiveValues = ({ gteLG, gteMD, gteSM }, lg, md, sm, xs) => {
   if (gteLG) {
     return lg
   }
@@ -75,7 +75,11 @@ export const responsiveValues = ({ gteLG, gteMD }, lg, md, sm) => {
     return md
   }
 
-  return sm
+  if (gteSM) {
+    return sm
+  }
+
+  return xs || sm || md || lg
 }
 
 export const getClosest = (elem, selector) => {
