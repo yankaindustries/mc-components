@@ -1,7 +1,9 @@
 .mc-separator {
-  border: 0.5px solid $mc-color-gray-200;
+  height: 1px;
+  border: none;
+  background: rgba($mc-color-light, 0.3);
 
   .mc-invert & {
-    border-color: $mc-color-gray-600;
+    background: rgba($mc-color-dark, 0.3);
   }
 }
