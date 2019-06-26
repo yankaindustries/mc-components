@@ -33,6 +33,7 @@ import SvgHelper from './Helper'
 import SvgInfo from './Info'
 import SvgInstagram from './Instagram'
 import SvgLink from './Link'
+import SvgList from './List'
 import SvgLoader from './Loader'
 import SvgLock from './Lock'
 import SvgLocked from './Locked'
@@ -102,6 +103,7 @@ export const ICONS = {
   'info': SvgInfo,
   'instagram': SvgInstagram,
   'link': SvgLink,
+  'list': SvgList,
   'loader': SvgLoader,
   'lock': SvgLock,
   'locked': SvgLocked,
