@@ -56,6 +56,7 @@ import SvgReplay from './Replay'
 import SvgRewind from './Rewind'
 import SvgSearch from './Search'
 import SvgSelected from './Selected'
+import SvgShare from './Share'
 import SvgSms from './Sms'
 import SvgSslBadge from './SslBadge'
 import SvgStar from './Star'
@@ -124,6 +125,7 @@ export const ICONS = {
   'rewind': SvgRewind,
   'search': SvgSearch,
   'selected': SvgSelected,
+  'share': SvgShare,
   'sms': SvgSms,
   'ssl-badge': SvgSslBadge,
   'star': SvgStar,
