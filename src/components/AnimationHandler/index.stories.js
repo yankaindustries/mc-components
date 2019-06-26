@@ -96,7 +96,7 @@ storiesOf('utilities|AnimationHandler', module)
                       <h2 className='mc-text-h2 mc-text--uppercase'>
                         Shonda Rhimes
                       </h2>
-                      <h4 className='mc-text-h4 mc-text--uppercase mc-text--muted mc-text--normal mc-text--airy'>
+                      <h4 className='mc-text-h4 mc-text--uppercase mc-opacity--muted mc-text--normal mc-text--airy'>
                         Teaches Writing for Television
                       </h4>
                     </TileCaption>

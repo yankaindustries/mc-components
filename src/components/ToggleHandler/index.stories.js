@@ -17,7 +17,7 @@ storiesOf('utilities|ToggleHandler', module)
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>ToggleHandler</h1>
-        <p className='mc-text--muted'>
+        <p className='mc-opacity--muted'>
           Simplified way of tracking a toggle state
         </p>
       </div>

@@ -80,7 +80,7 @@ const tiles = () =>
           <h6 className='mc-text-h6 mc-text--uppercase'>
             {item.instructor}
           </h6>
-          <h6 className='mc-text-h8 mc-text--airy mc-text--muted'>
+          <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
             {item.teaches}
           </h6>
         </TileCaption>
@@ -126,10 +126,10 @@ storiesOf('Components|Carousels', module)
                             <h2 className='mc-text-h1 mc-text--uppercase'>
                               {item.instructor}
                             </h2>
-                            <h3 className='mc-text-h3 mc-text--muted mc-text--airy mc-mb-4'>
+                            <h3 className='mc-text-h3 mc-opacity--muted mc-text--airy mc-mb-4'>
                               Teaches {item.teaches}
                             </h3>
-                            <p className='mc-text-intro mc-text--hinted mc-mb-8'>
+                            <p className='mc-text-intro mc-opacity--hinted mc-mb-8'>
                               Online classes taught by the world&apos;s
                               greatest minds.<br /> Learn from
                               {item.instructor} and all 35+ other
@@ -173,7 +173,7 @@ storiesOf('Components|Carousels', module)
                             <h6 className='mc-text-h6 mc-text--uppercase'>
                               {item.instructor}
                             </h6>
-                            <h6 className='mc-text-h8 mc-text--airy mc-text--muted'>
+                            <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
                               {item.teaches}
                             </h6>
                           </TileCaption>
