@@ -9,14 +9,12 @@ import {
   STATE_SUCCESS,
 } from '../Forms/constants'
 import { getState } from '../Forms/utils'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 export default class FormGroup extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     className: PropTypes.string,
     error: PropTypes.oneOfType([
       PropTypes.string,

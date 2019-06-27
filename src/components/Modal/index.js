@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import Backdrop from '../Backdrop'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 const ModalContext = React.createContext('modal')
@@ -19,13 +20,16 @@ export default class Modal extends PureComponent {
       'dark',
       'extra-dark',
     ]),
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     className: PropTypes.string,
     closeButton: PropTypes.bool,
     show: PropTypes.bool,
+    size: PropTypes.oneOf([
+      'small',
+      'medium',
+      'large',
+      'full',
+    ]),
     appendToBody: PropTypes.bool,
     onClose: PropTypes.func,
   }
@@ -33,6 +37,7 @@ export default class Modal extends PureComponent {
   static defaultProps = {
     appendToBody: true,
     backdrop: 'dark',
+    size: 'full',
   }
 
   componentDidUpdate (prevProps) {
@@ -73,9 +78,14 @@ export default class Modal extends PureComponent {
       backdrop,
       children,
       className,
+      size,
     } = this.props
 
-    const classes = cn(className, 'mc-modal')
+    const classes = cn({
+      'mc-modal': true,
+      [`mc-modal--${size}`]: size,
+      [className]: className,
+    })
 
     return (
       <Provider value={{ close: this.close }}>
@@ -88,7 +98,7 @@ export default class Modal extends PureComponent {
             className='mc-modal__backdrop'
             kind={backdrop}
           >
-            <div className='mc-modal__content-container'>
+            <div className='container'>
               {children}
             </div>
           </Backdrop>

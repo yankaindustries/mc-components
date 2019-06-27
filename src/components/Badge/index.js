@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
+
+
 const Badge = ({
   children,
   className,
@@ -22,10 +25,7 @@ const Badge = ({
 }
 
 Badge.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
+  children: PROP_TYPE_CHILDREN,
   className: PropTypes.string,
   primary: PropTypes.bool,
 }

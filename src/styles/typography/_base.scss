@@ -54,6 +54,11 @@ a {
     line-height: $mc-lh-lg;
   }
 
+  &-medium {
+    @include step(font-size, 4);
+    line-height: $mc-lh-md;
+  }
+
   &-small {
     @include step(font-size, 3.5);
     line-height: $mc-lh-sm;

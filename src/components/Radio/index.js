@@ -2,16 +2,15 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
+
 
 export default class Radio extends PureComponent {
   static propTypes = {
     checked: PropTypes.bool,
     className: PropTypes.string,
     disabled: PropTypes.bool,
-    label: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]),
+    label: PROP_TYPE_CHILDREN,
     name: PropTypes.string,
     option: PropTypes.string,
 

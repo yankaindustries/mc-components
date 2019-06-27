@@ -2,16 +2,14 @@ import { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
 import { renderChildren } from '../helpers'
 
 
 export default class AnimationHandler extends PureComponent {
   static propTypes = {
     animating: PropTypes.bool,
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     important: PropTypes.bool,
     type: PropTypes.oneOf([
       'zoom',

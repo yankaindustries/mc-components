@@ -33,7 +33,7 @@ const SIZE_H6 = 'h6'
 const SIZE_H7 = 'h7'
 const SIZE_H8 = 'h8'
 const SIZE_LARGE = 'large'
-const SIZE_NORMAL = 'normal'
+const SIZE_MEDIUM = 'medium'
 const SIZE_SMALL = 'small'
 const SIZE_XSMALL = 'x-small'
 
@@ -47,7 +47,7 @@ const sizeOptions = [
   { value: SIZE_H7, label: 'H7' },
   { value: SIZE_H8, label: 'H8' },
   { value: SIZE_LARGE, label: 'Large' },
-  { value: SIZE_NORMAL, label: 'Normal' },
+  { value: SIZE_MEDIUM, label: 'Medium (Body)' },
   { value: SIZE_SMALL, label: 'Small' },
   { value: SIZE_XSMALL, label: 'Extra Small' },
 ]
@@ -92,7 +92,7 @@ class Summary extends PureComponent {
 
         <DocSection title='Demo'>
           <div className='row'>
-            <div className='col-2'>
+            <div className='col-4 col-sm-3'>
               <Select
                 options={sizeOptions}
                 value={size}
@@ -101,42 +101,56 @@ class Summary extends PureComponent {
             </div>
 
             <div className='col-auto'>
-              <Button
-                onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
-                secondary={modifier !== MODIFIER_UPPERCASE}
-              >
-                Uppercase
-              </Button>
+              <div className='row small-gutters'>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
+                    kind={modifier === MODIFIER_UPPERCASE ? 'primary' : 'secondary'}
+                  >
+                    Uppercase
+                  </Button>
+                </div>
 
-              <Button
-                onClick={this.toggle('modifier', MODIFIER_AIRY)}
-                secondary={modifier !== MODIFIER_AIRY}
-              >
-                Airy
-              </Button>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('modifier', MODIFIER_AIRY)}
+                    kind={modifier === MODIFIER_AIRY ? 'primary' : 'secondary'}
+                  >
+                    Airy
+                  </Button>
+                </div>
+              </div>
             </div>
 
             <div className='col-auto'>
-              <Button
-                onClick={this.toggle('color', COLOR_HINTED)}
-                secondary={color !== COLOR_HINTED}
-              >
-                Hinted
-              </Button>
+              <div className='row small-gutters'>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_HINTED)}
+                    kind={color === COLOR_HINTED ? 'primary' : 'secondary'}
+                  >
+                    Hinted
+                  </Button>
+                </div>
 
-              <Button
-                onClick={this.toggle('color', COLOR_MUTED)}
-                secondary={color !== COLOR_MUTED}
-              >
-                Muted
-              </Button>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_MUTED)}
+                    kind={color === COLOR_MUTED ? 'primary' : 'secondary'}
+                  >
+                    Muted
+                  </Button>
+                </div>
 
-              <Button
-                onClick={this.toggle('color', COLOR_SILENCED)}
-                secondary={color !== COLOR_SILENCED}
-              >
-                Silenced
-              </Button>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_SILENCED)}
+                    kind={color === COLOR_SILENCED ? 'primary' : 'secondary'}
+                  >
+                    Silenced
+                  </Button>
+                </div>
+              </div>
             </div>
 
             <div className='col-12'>
@@ -155,7 +169,7 @@ class Summary extends PureComponent {
           <div className='mc-mb-9'>
             <div className='row'>
               <div className='col-sm-6 offset-sm-1'>
-                <h2 className='mc-text-h5 mc-text--muted mc-text--normal mc-text--airy mc-text--uppercase'>
+                <h2 className='mc-text-h5 mc-text--muted mc-text--airy'>
                   Lorem Ipsum
                 </h2>
 
@@ -178,7 +192,7 @@ class Summary extends PureComponent {
                   obstacles</a>. Learn how to build the &quot;drive shaft&quot;
                   that will set your script in motion.
                 </p>
-                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
+                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-mb-3'>
                   Lesson 16 // 5min 40s
                 </h6>
               </div>
@@ -192,7 +206,7 @@ class Summary extends PureComponent {
                   Learn how to build the &quot;drive shaft&quot; that will
                   set your script in motion.
                 </p>
-                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
+                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-mb-3'>
                   Lesson 16 // 5min 40s
                 </h6>
               </div>
@@ -206,7 +220,7 @@ class Summary extends PureComponent {
                   Learn how to build the &quot;drive shaft&quot; that will
                   set your script in motion.
                 </p>
-                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
+                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-mb-3'>
                   Lesson 16 // 5min 40s
                 </h6>
               </div>
