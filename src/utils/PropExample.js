@@ -34,7 +34,7 @@ export default class Definition extends PureComponent {
         }
 
         {description &&
-          <p className='example__definition-description mc-text--muted'>
+          <p className='example__definition-description mc-opacity--muted'>
             {description}
           </p>
         }

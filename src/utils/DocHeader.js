@@ -38,7 +38,7 @@ export default class DocHeader extends PureComponent {
               }
             </h1>
 
-            <p className='mc-text-large mc-text--muted'>
+            <p className='mc-text-large mc-opacity--muted'>
               {description}
             </p>
           </div>

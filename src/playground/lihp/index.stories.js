@@ -229,7 +229,7 @@ storiesOf('Playground|Pages', module)
                             <h6 className={`
                               mc-text-h7
                               mc-text--uppercase
-                              mc-text--muted
+                              mc-opacity--muted
                               mc-mb-2
                             `}>
                               {item.instructor}
@@ -242,7 +242,7 @@ storiesOf('Playground|Pages', module)
                               <p className={`
                                 mc-mt-2
                                 mc-text-small
-                                mc-text--muted
+                                mc-opacity--muted
                               `}>
                                 {`${item.extract}`}
                               </p>
@@ -306,7 +306,7 @@ storiesOf('Playground|Pages', module)
                             <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
                               {item.instructor}
                             </h6>
-                            <p className='mc-text-small mc-text--hinted'>
+                            <p className='mc-text-small mc-opacity--hinted'>
                               {item.course}
                             </p>
                           </TileCaption>
@@ -334,7 +334,7 @@ storiesOf('Playground|Pages', module)
                                   <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
                                     {item.instructor}
                                   </h6>
-                                  <p className='mc-text-small mc-text--hinted mc-mb-2'>
+                                  <p className='mc-text-small mc-opacity--hinted mc-mb-2'>
                                     {item.course}
                                   </p>
                                   <p className='mc-text-x-small mc-mb-8'>
@@ -386,7 +386,7 @@ storiesOf('Playground|Pages', module)
                 `}>
                   Natalie Portman
                 </h2>
-                <p className='mc-mb-6 mc-text--hinted'>
+                <p className='mc-mb-6 mc-opacity--hinted'>
                   Teaches Cooking Techniques II: Meats, Stocks, And Sauces
                 </p>
                 <Button>
@@ -431,7 +431,7 @@ storiesOf('Playground|Pages', module)
                       <h6 className={`
                         mc-text-h8
                         mc-text--uppercase
-                        mc-text--hinted
+                        mc-opacity--hinted
                       `}>
                         {item.playlist}
                       </h6>
@@ -447,7 +447,7 @@ storiesOf('Playground|Pages', module)
                     <p className={`
                       mc-mt-2
                       mc-text-small
-                      mc-text--hinted
+                      mc-opacity--hinted
                       mc-text--3-lines
                     `}>
                       {`${item.extract}`}

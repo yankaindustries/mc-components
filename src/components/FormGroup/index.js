@@ -9,14 +9,12 @@ import {
   STATE_SUCCESS,
 } from '../Forms/constants'
 import { getState } from '../Forms/utils'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 export default class FormGroup extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     className: PropTypes.string,
     error: PropTypes.oneOfType([
       PropTypes.string,
@@ -73,7 +71,7 @@ export default class FormGroup extends PureComponent {
 
           {optional &&
             <div className='col-auto align-self-end'>
-              <p className='mc-text-x-small mc-text--silenced mc-text--right mc-mb-1'>
+              <p className='mc-text-x-small mc-opacity--silenced mc-text--right mc-mb-1'>
                 (Optional)
               </p>
             </div>
@@ -85,7 +83,7 @@ export default class FormGroup extends PureComponent {
 
           <div className='col align-self-start'>
             {state === STATE_DEFAULT &&
-              <p className='mc-text-x-small mc-text--muted mc-text--left mc-mt-1'>
+              <p className='mc-text-x-small mc-opacity--muted mc-text--left mc-mt-1'>
                 {help}
               </p>
             }
@@ -106,7 +104,7 @@ export default class FormGroup extends PureComponent {
 
           <div className='col-auto align-self-start'>
             {maxlength &&
-              <p className='mc-text-x-small mc-text--muted mc-text--right mc-mt-1'>
+              <p className='mc-text-x-small mc-opacity--muted mc-text--right mc-mt-1'>
                 {value.length} / {maxlength}
               </p>
             }

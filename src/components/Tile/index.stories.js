@@ -56,7 +56,7 @@ storiesOf('Components|Tiles', module)
                 <h5 className='mc-text-h5'>
                   Shonda Rhimes
                 </h5>
-                <p className='mc-text--muted'>
+                <p className='mc-opacity--muted'>
                   Teaches Writing
                 </p>
               </TileCaption>
@@ -127,7 +127,7 @@ storiesOf('Components|Tiles', module)
                             <h5 className='mc-text-h5'>
                               Shonda Rhimes
                             </h5>
-                            <p className='mc-text--muted'>
+                            <p className='mc-opacity--muted'>
                               Teaches Writing
                             </p>
                           </TileCaption>
@@ -174,7 +174,7 @@ storiesOf('Components|Tiles', module)
                       <h5 className='mc-text-h5'>
                         Shonda Rhimes
                       </h5>
-                      <p className='mc-text--muted'>
+                      <p className='mc-opacity--muted'>
                         Teaches Writing
                       </p>
                     </TileCaption>
@@ -213,7 +213,7 @@ storiesOf('Components|Tiles', module)
                         <h5 className='mc-text-h5'>
                           Shonda Rhimes
                         </h5>
-                        <p className='mc-text--muted'>
+                        <p className='mc-opacity--muted'>
                           Teaches Writing
                         </p>
 
@@ -221,7 +221,7 @@ storiesOf('Components|Tiles', module)
                           <p className={`
                             mc-mt-2
                             mc-text-small
-                            mc-text--muted
+                            mc-opacity--muted
                           `}>
                             Some other stuff...
                           </p>

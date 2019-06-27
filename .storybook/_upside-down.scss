@@ -23,18 +23,6 @@ pre {
   font-family: monospace;
 }
 
-hr {
-  height: 1px;
-  border: none;
-  background: $mc-color-gray-100;
-  @include step(margin-top, 4);
-  @include step(margin-bottom, 4);
-
-  .mc-invert & {
-    background: $mc-color-gray-600;
-  }
-}
-
 a {
   color: inherit;
 }

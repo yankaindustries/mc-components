@@ -95,7 +95,7 @@ storiesOf('Components|VideoPlayer', module)
                           <h5 className='mc-text-h5 mc-text--uppercase'>
                             Shonda Rhimes
                           </h5>
-                          <p className='mc-text--muted'>
+                          <p className='mc-opacity--muted'>
                             Teaches Writing For Television
                           </p>
                         </TileCaption>

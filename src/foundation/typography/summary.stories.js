@@ -33,7 +33,7 @@ const SIZE_H6 = 'h6'
 const SIZE_H7 = 'h7'
 const SIZE_H8 = 'h8'
 const SIZE_LARGE = 'large'
-const SIZE_NORMAL = 'normal'
+const SIZE_MEDIUM = 'medium'
 const SIZE_SMALL = 'small'
 const SIZE_XSMALL = 'x-small'
 
@@ -47,7 +47,7 @@ const sizeOptions = [
   { value: SIZE_H7, label: 'H7' },
   { value: SIZE_H8, label: 'H8' },
   { value: SIZE_LARGE, label: 'Large' },
-  { value: SIZE_NORMAL, label: 'Normal' },
+  { value: SIZE_MEDIUM, label: 'Medium (Body)' },
   { value: SIZE_SMALL, label: 'Small' },
   { value: SIZE_XSMALL, label: 'Extra Small' },
 ]
@@ -78,9 +78,9 @@ class Summary extends PureComponent {
     const modifierClass = cn({
       'mc-text--airy': modifier === MODIFIER_AIRY,
       'mc-text--uppercase': modifier === MODIFIER_UPPERCASE,
-      'mc-text--hinted': color === COLOR_HINTED,
-      'mc-text--muted': color === COLOR_MUTED,
-      'mc-text--silenced': color === COLOR_SILENCED,
+      'mc-opacity--hinted': color === COLOR_HINTED,
+      'mc-opacity--muted': color === COLOR_MUTED,
+      'mc-opacity--silenced': color === COLOR_SILENCED,
     })
 
     return (
@@ -92,7 +92,7 @@ class Summary extends PureComponent {
 
         <DocSection title='Demo'>
           <div className='row'>
-            <div className='col-2'>
+            <div className='col-4 col-sm-3'>
               <Select
                 options={sizeOptions}
                 value={size}
@@ -101,42 +101,56 @@ class Summary extends PureComponent {
             </div>
 
             <div className='col-auto'>
-              <Button
-                onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
-                secondary={modifier !== MODIFIER_UPPERCASE}
-              >
-                Uppercase
-              </Button>
+              <div className='row small-gutters'>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
+                    kind={modifier === MODIFIER_UPPERCASE ? 'primary' : 'secondary'}
+                  >
+                    Uppercase
+                  </Button>
+                </div>
 
-              <Button
-                onClick={this.toggle('modifier', MODIFIER_AIRY)}
-                secondary={modifier !== MODIFIER_AIRY}
-              >
-                Airy
-              </Button>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('modifier', MODIFIER_AIRY)}
+                    kind={modifier === MODIFIER_AIRY ? 'primary' : 'secondary'}
+                  >
+                    Airy
+                  </Button>
+                </div>
+              </div>
             </div>
 
             <div className='col-auto'>
-              <Button
-                onClick={this.toggle('color', COLOR_HINTED)}
-                secondary={color !== COLOR_HINTED}
-              >
-                Hinted
-              </Button>
+              <div className='row small-gutters'>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_HINTED)}
+                    kind={color === COLOR_HINTED ? 'primary' : 'secondary'}
+                  >
+                    Hinted
+                  </Button>
+                </div>
 
-              <Button
-                onClick={this.toggle('color', COLOR_MUTED)}
-                secondary={color !== COLOR_MUTED}
-              >
-                Muted
-              </Button>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_MUTED)}
+                    kind={color === COLOR_MUTED ? 'primary' : 'secondary'}
+                  >
+                    Muted
+                  </Button>
+                </div>
 
-              <Button
-                onClick={this.toggle('color', COLOR_SILENCED)}
-                secondary={color !== COLOR_SILENCED}
-              >
-                Silenced
-              </Button>
+                <div className='col-auto'>
+                  <Button
+                    onClick={this.toggle('color', COLOR_SILENCED)}
+                    kind={color === COLOR_SILENCED ? 'primary' : 'secondary'}
+                  >
+                    Silenced
+                  </Button>
+                </div>
+              </div>
             </div>
 
             <div className='col-12'>
@@ -155,7 +169,7 @@ class Summary extends PureComponent {
           <div className='mc-mb-9'>
             <div className='row'>
               <div className='col-sm-6 offset-sm-1'>
-                <h2 className='mc-text-h5 mc-text--muted mc-text--normal mc-text--airy mc-text--uppercase'>
+                <h2 className='mc-text-h5 mc-opacity--muted mc-text--airy'>
                   Lorem Ipsum
                 </h2>
 
@@ -172,13 +186,13 @@ class Summary extends PureComponent {
                 <h3 className='mc-text-h3 mc-text--uppercase mc-text--bare-link mc-mb-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
-                <p className='mc-text--muted mc-mb-2'>
+                <p className='mc-opacity--muted mc-mb-2'>
                   Every great story is born
                   from <a className='mc-text--link'>intentions and
                   obstacles</a>. Learn how to build the &quot;drive shaft&quot;
                   that will set your script in motion.
                 </p>
-                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
+                <h6 className='mc-text-small mc-opacity--silenced mc-text--uppercase mc-mb-3'>
                   Lesson 16 // 5min 40s
                 </h6>
               </div>
@@ -187,12 +201,12 @@ class Summary extends PureComponent {
                 <h3 className='mc-text-h5 mc-text--bare-link mc-mb-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
-                <p className='mc-text--muted mc-mb-2'>
+                <p className='mc-opacity--muted mc-mb-2'>
                   Every great story is born from intentions and obstacles.
                   Learn how to build the &quot;drive shaft&quot; that will
                   set your script in motion.
                 </p>
-                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
+                <h6 className='mc-text-small mc-opacity--silenced mc-text--uppercase mc-mb-3'>
                   Lesson 16 // 5min 40s
                 </h6>
               </div>
@@ -201,12 +215,12 @@ class Summary extends PureComponent {
                 <h3 className='mc-text-h5 mc-text--bare-link mc-mb-2'>
                   Group Workshop: From Here To Alli By Corey Wright
                 </h3>
-                <p className='mc-text--muted mc-mb-2'>
+                <p className='mc-opacity--muted mc-mb-2'>
                   Every great story is born from intentions and obstacles.
                   Learn how to build the &quot;drive shaft&quot; that will
                   set your script in motion.
                 </p>
-                <h6 className='mc-text-small mc-text--silenced mc-text--uppercase mc-text--normal mc-mb-3'>
+                <h6 className='mc-text-small mc-opacity--silenced mc-text--uppercase mc-mb-3'>
                   Lesson 16 // 5min 40s
                 </h6>
               </div>
@@ -215,20 +229,20 @@ class Summary extends PureComponent {
             <div className='col-sm-4'>
               <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
-                  <h6 className='mc-text-h7 mc-text--muted'>
+                  <h6 className='mc-text-h7 mc-opacity--muted'>
                     3
                   </h6>
                 </div>
 
                 <div className='col-10'>
-                  <h6 className='mc-text-h7 mc-text--muted mc-text--uppercase mc-mb-2'>
+                  <h6 className='mc-text-h7 mc-opacity--muted mc-text--uppercase mc-mb-2'>
                     Up Next
                   </h6>
 
                   <h6 className='mc-text-h6 mc-text--bare-link mc-mb-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
-                  <p className='mc-text-x-small mc-text--muted'>
+                  <p className='mc-text-x-small mc-opacity--muted'>
                     Do ugly vegetables taste better? Which are the most
                     versatile herbs? Gordon shows you how to select great
                     produce to create phenomenal dishes.
@@ -240,7 +254,7 @@ class Summary extends PureComponent {
 
               <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
-                  <h6 className='mc-text-h7 mc-text--muted'>
+                  <h6 className='mc-text-h7 mc-opacity--muted'>
                     4
                   </h6>
                 </div>
@@ -249,7 +263,7 @@ class Summary extends PureComponent {
                   <h6 className='mc-text-h6 mc-text--bare-link mc-mb-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
-                  <p className='mc-text-x-small mc-text--muted'>
+                  <p className='mc-text-x-small mc-opacity--muted'>
                     Do ugly vegetables taste better? Which are the most
                     versatile herbs? Gordon shows you how to select great
                     produce to create phenomenal dishes.
@@ -261,7 +275,7 @@ class Summary extends PureComponent {
 
               <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
-                  <p className='mc-text--muted'>
+                  <p className='mc-opacity--muted'>
                     5
                   </p>
                 </div>
@@ -270,7 +284,7 @@ class Summary extends PureComponent {
                   <h6 className='mc-text-h6 mc-text--bare-link mc-mb-2'>
                     Mastering Ingredients: Vegetables &amp; Herbs
                   </h6>
-                  <p className='mc-text-x-small mc-text--muted'>
+                  <p className='mc-text-x-small mc-opacity--muted'>
                     Do ugly vegetables taste better? Which are the most
                     versatile herbs? Gordon shows you how to select great
                     produce to create phenomenal dishes.
@@ -299,7 +313,7 @@ class Summary extends PureComponent {
                         <div className='mc-card mc-background mc-background--dark'>
                           <h6 className={`
                             mc-text-h7
-                            mc-text--muted
+                            mc-opacity--muted
                             mc-text--uppercase
                             mc-mb-2
                           `}>
@@ -310,13 +324,13 @@ class Summary extends PureComponent {
                             Margaret Atwood
                           </h4>
 
-                          <p className='mc-text--muted mc-mb-2'>
+                          <p className='mc-opacity--muted mc-mb-2'>
                             Mixtape tumblr chartreuse snackwave 8-bit
                             selfies, glossier mumblecore fingerstache church-key
                             kombucha. Hot chocolate.
                           </p>
 
-                          <p className='mc-text-small mc-text--silenced'>
+                          <p className='mc-text-small mc-opacity--silenced'>
                             12 Lessons • Music
                           </p>
                         </div>

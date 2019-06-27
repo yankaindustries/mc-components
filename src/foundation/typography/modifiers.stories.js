@@ -41,34 +41,6 @@ const Modifiers = () =>
       </PropExample>
     </DocSection>
 
-    <DocSection title='Color'>
-      <div className='row'>
-        <div className='col-md-4'>
-          <PropExample name='.mc-text--hinted'>
-            <h6 className='mc-text-h5 mc-text--hinted'>
-              The quick brown fox jumped over the lazy dog.
-            </h6>
-          </PropExample>
-        </div>
-
-        <div className='col-md-4'>
-          <PropExample name='.mc-text--muted'>
-            <h6 className='mc-text-h5 mc-text--muted'>
-              The quick brown fox jumped over the lazy dog.
-            </h6>
-          </PropExample>
-        </div>
-
-        <div className='col-md-4'>
-          <PropExample name='.mc-text--silenced'>
-            <h6 className='mc-text-h5 mc-text--silenced'>
-              The quick brown fox jumped over the lazy dog.
-            </h6>
-          </PropExample>
-        </div>
-      </div>
-    </DocSection>
-
     <DocSection
       title='Alignment'
       description='Modifier classes to aid you in text alignment.'

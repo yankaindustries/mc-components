@@ -4,14 +4,12 @@ import cn from 'classnames'
 
 import { Consumer } from '../Modal'
 import ClickOutside from '../ClickOutside'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 export default class ModalContent extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     className: PropTypes.string,
   }
 
@@ -35,7 +33,10 @@ export default class ModalContent extends PureComponent {
     return (
       <Consumer>
         {({ close }) =>
-          <ClickOutside onClickOutside={close('backdrop')}>
+          <ClickOutside
+            divRef={this.content}
+            onClickOutside={close('backdrop')}
+          >
             <div
               className={classes}
               ref={this.content}

@@ -4,12 +4,13 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import { Consumer } from '../Tooltip'
+import { PROP_TYPE_CHILDREN } from '../constants'
 import { getClosest } from '../helpers'
 
 
 export default class TooltipContentControlled extends PureComponent {
   static propTypes = {
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
   }
 
