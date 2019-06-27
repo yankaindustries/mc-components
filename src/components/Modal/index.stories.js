@@ -52,7 +52,7 @@ class ModalExample extends Component {
                     kind='secondary'
                     onClick={this.toggleModal('rate')}
                   >
-                    Rate
+                    Small
                   </Button>
                 </div>
 
@@ -98,7 +98,7 @@ class ModalExample extends Component {
                     kind='secondary'
                     onClick={this.toggleModal('cart')}
                   >
-                    Purchase
+                    Medium
                   </Button>
                 </div>
 
@@ -174,7 +174,7 @@ class ModalExample extends Component {
                     kind='secondary'
                     onClick={this.toggleModal('welcome')}
                   >
-                    Welcome
+                    Large
                   </Button>
                 </div>
 
@@ -183,7 +183,6 @@ class ModalExample extends Component {
                   show={this.state.welcome}
                   onClose={this.toggleModal('welcome')}
                 >
-                  <ModalClose />
                   <ModalContent>
                     <Background color='light'>
                       <div className='row no-gutters mc-text--center'>
@@ -204,6 +203,7 @@ class ModalExample extends Component {
                         </div>
 
                         <div className='col-sm-6 mc-invert'>
+                          <ModalClose />
                           <div className='mc-px-4 mc-py-9'>
                             <img
                               src={instructorGrid}
@@ -233,7 +233,7 @@ class ModalExample extends Component {
                     kind='secondary'
                     onClick={this.toggleModal('trailer')}
                   >
-                    Trailer
+                    Full
                   </Button>
                 </div>
 
