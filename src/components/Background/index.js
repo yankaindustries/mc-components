@@ -2,15 +2,13 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
 import { renderChildren as renderProp } from '../helpers'
 
 
 export default class Background extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]),
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     color: PropTypes.oneOf([
       'dark',

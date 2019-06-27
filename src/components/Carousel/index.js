@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 import ChevronLeft from '../Icons/ChevronLeft'
 import ChevronRight from '../Icons/ChevronRight'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 const TRANSITION_FADE = 'fade'
@@ -16,7 +17,7 @@ const DIRECTION_NEXT = 'next'
 
 class Arrow extends PureComponent {
   static propTypes = {
-    children: PropTypes.element,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     direction: PropTypes.oneOf([DIRECTION_PREV, DIRECTION_NEXT]).isRequired,
     onPress: PropTypes.func,
@@ -54,7 +55,7 @@ export default class Carousel extends PureComponent {
   static propTypes = {
     autoPlay: PropTypes.bool,
     centered: PropTypes.bool,
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     controls: PropTypes.bool,
     focusOnSelect: PropTypes.bool,

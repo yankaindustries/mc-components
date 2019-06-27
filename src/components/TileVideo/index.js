@@ -5,12 +5,13 @@ import cn from 'classnames'
 import VideoPlayer from '../VideoPlayer'
 import Unmute from '../Icons/Muted'
 import Mute from '../Icons/Unmuted'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 export default class TileVideo extends PureComponent {
   static propTypes = {
     autoPlay: PropTypes.bool,
-    children: PropTypes.element,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     controls: PropTypes.bool,
     loop: PropTypes.bool,

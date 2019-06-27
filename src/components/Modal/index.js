@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import Backdrop from '../Backdrop'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 const ModalContext = React.createContext('modal')
@@ -19,10 +20,7 @@ export default class Modal extends PureComponent {
       'dark',
       'extra-dark',
     ]),
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     className: PropTypes.string,
     closeButton: PropTypes.bool,
     show: PropTypes.bool,

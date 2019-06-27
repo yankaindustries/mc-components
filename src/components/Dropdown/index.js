@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-
 import Popper from 'popper.js'
+
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 const DropdownContext = React.createContext('dropdown')
@@ -14,7 +15,7 @@ export const {
 
 export default class Dropdown extends PureComponent {
   static propTypes = {
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     placement: PropTypes.string,
   }
 

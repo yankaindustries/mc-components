@@ -4,14 +4,12 @@ import cn from 'classnames'
 
 import { Consumer } from '../Modal'
 import ClickOutside from '../ClickOutside'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 export default class ModalContent extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    children: PROP_TYPE_CHILDREN.isRequired,
     className: PropTypes.string,
   }
 

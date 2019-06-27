@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
+
 
 export default class TileOverlay extends PureComponent {
   static propTypes = {
-    children: PropTypes.element,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     color: PropTypes.string,
     type: PropTypes.oneOf([

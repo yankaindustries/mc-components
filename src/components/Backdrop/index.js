@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import { PROP_TYPE_CHILDREN } from '../constants'
+
 
 const Backdrop = ({
   className,
@@ -22,10 +24,7 @@ const Backdrop = ({
 }
 
 Backdrop.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node),
-  ]),
+  children: PROP_TYPE_CHILDREN,
   className: PropTypes.string,
   kind: PropTypes.oneOf([
     'dark',

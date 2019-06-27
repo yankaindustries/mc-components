@@ -2,11 +2,13 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import Background from '../Background'
+import { PROP_TYPE_CHILDREN } from '../constants'
+
 
 export default class TileImage extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     image: PropTypes.node,
     imageUrl: PropTypes.string,
   }

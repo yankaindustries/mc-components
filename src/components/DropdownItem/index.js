@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import { Consumer } from '../Dropdown'
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 export default class DropdownItem extends PureComponent {
   static propTypes = {
-    children: PropTypes.node,
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     onClick: PropTypes.func,
   }
