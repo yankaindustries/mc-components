@@ -1,9 +1,6 @@
 .mc-tile {
   position: relative;
   backface-visibility: hidden;
-  box-shadow:
-    0 3px 6px rgba($mc-color-dark, 0.16),
-    0 3px 6px rgba($mc-color-dark, 0.23);
   cursor: pointer;
 
   &__content {
