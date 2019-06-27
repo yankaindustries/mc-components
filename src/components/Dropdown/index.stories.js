@@ -71,9 +71,7 @@ class DropdownStory extends PureComponent {
                 <div className='col-auto'>
                   <Dropdown placement='bottom-start'>
                     <DropdownToggle>
-                      <div>
-                        <Button>Basic</Button>
-                      </div>
+                      <Button>Basic</Button>
                     </DropdownToggle>
 
                     <DropdownContent>
