@@ -55,6 +55,7 @@ export default class Input extends PureComponent {
   render () {
     const {
       append,
+      className,
       disabled,
       error,
       maxlength,
@@ -81,6 +82,7 @@ export default class Input extends PureComponent {
       'mc-form-element--disabled': disabled,
       'mc-form-element--focus': focused,
       [`mc-form-element--${state}`]: state,
+      [className]: className,
     })
 
     return (
