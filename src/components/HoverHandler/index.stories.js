@@ -17,7 +17,7 @@ storiesOf('utilities|HoverHandler', module)
     <div className='container'>
       <div className='example__heading'>
         <h1 className='mc-text-h1'>HoverHandler</h1>
-        <p className='mc-text--muted'>
+        <p className='mc-opacity--muted'>
           Get access to hover as a property
         </p>
       </div>

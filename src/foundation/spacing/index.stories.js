@@ -17,19 +17,19 @@ storiesOf('Foundation|Spacing', module)
       />
 
       <DocSection title='Theory'>
-        <p className='mc-text--hinted mc-mb-2'>
+        <p className='mc-opacity--hinted mc-mb-2'>
           mc-components uses a 4px decaying step scale to space
           and size components.  The scale is a a mix of
           linear and exponential steps, which helps acheive a
           visual progression that is appealing and programmatic.
         </p>
 
-        <p className='mc-text--hinted mc-mb-2'>
+        <p className='mc-opacity--hinted mc-mb-2'>
           The scale implementation logic and rules can be veiwed under
           the &ldquo;Introduction &gt; Scale&rdquo; section.
         </p>
 
-        <p className='mc-text--hinted'>
+        <p className='mc-opacity--hinted'>
           Due to the decay, the computed values of each step are different
           for the three main breakpoints (LG, MD, SM). The decay does not
           apply to the smaller steps (4 and below).
@@ -38,7 +38,7 @@ storiesOf('Foundation|Spacing', module)
 
 
       <DocSection title='Notation'>
-        <p className='mc-text--hinted mc-mb-2'>
+        <p className='mc-opacity--hinted mc-mb-2'>
           The helper margin and padding class is structured
           using this format:
         </p>
@@ -56,7 +56,7 @@ storiesOf('Foundation|Spacing', module)
               <th className='example__table--shrink'>
                 <span className='mc-code'>m</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced using margins
               </td>
             </tr>
@@ -65,7 +65,7 @@ storiesOf('Foundation|Spacing', module)
               <th className='example__table--shrink'>
                 <span className='mc-code'>p</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced using padding
               </td>
             </tr>
@@ -81,7 +81,7 @@ storiesOf('Foundation|Spacing', module)
               <th className='example__table--shrink'>
                 <span className='mc-code'>x</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced on x axis (left and right)
               </td>
             </tr>
@@ -90,7 +90,7 @@ storiesOf('Foundation|Spacing', module)
               <th className='example__table--shrink'>
                 <span className='mc-code'>y</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced on y-axis (top and bottom)
               </td>
             </tr>
@@ -99,7 +99,7 @@ storiesOf('Foundation|Spacing', module)
               <th className='example__table--shrink'>
                 <span className='mc-code'>t</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced only on top (margin-top)
               </td>
             </tr>
@@ -108,7 +108,7 @@ storiesOf('Foundation|Spacing', module)
               <th className='example__table--shrink'>
                 <span className='mc-code'>r</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced only on right (margin-right)
               </td>
             </tr>
@@ -117,7 +117,7 @@ storiesOf('Foundation|Spacing', module)
               <th>
                 <span className='mc-code'>b</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced only on bottom (margin-bottom)
               </td>
             </tr>
@@ -126,7 +126,7 @@ storiesOf('Foundation|Spacing', module)
               <th>
                 <span className='mc-code'>l</span>
               </th>
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Spaced only on left (margin-left)
               </td>
             </tr>
@@ -143,7 +143,7 @@ storiesOf('Foundation|Spacing', module)
                 <span className='mc-code'>#</span>
               </th>
 
-              <td className='mc-text--muted'>
+              <td className='mc-opacity--muted'>
                 Any one of the values on the mc-components scale shown
                 under &ldquo;Introduction &gt; Scale&rdquo; is valid.
               </td>
@@ -153,12 +153,12 @@ storiesOf('Foundation|Spacing', module)
       </DocSection>
 
       <DocSection title='Examples'>
-        <p className='mc-text--hinted mc-mb-5'>
+        <p className='mc-opacity--hinted mc-mb-5'>
           All examples shown use the margin option and
           a use case of scale(4) for consistency.
         </p>
 
-        <p className='mc-text--hinted mc-mb-2'>
+        <p className='mc-opacity--hinted mc-mb-2'>
           For margins with scale(4) on all sides:
         </p>
 
@@ -166,7 +166,7 @@ storiesOf('Foundation|Spacing', module)
           {'<Element className=\'mc-m-4\' />'}
         </Highlight>
 
-        <p className='mc-text--hinted mc-mb-2'>
+        <p className='mc-opacity--hinted mc-mb-2'>
           Margins with scale(4) on x-axis only:
         </p>
 
@@ -174,7 +174,7 @@ storiesOf('Foundation|Spacing', module)
           {'<Element className=\'mc-mx-4\' />'}
         </Highlight>
 
-        <p className='mc-text--hinted mc-mb-2'>
+        <p className='mc-opacity--hinted mc-mb-2'>
           Margins with scale(4) on y-axis only:
         </p>
 
@@ -182,7 +182,7 @@ storiesOf('Foundation|Spacing', module)
           {'<Element className=\'mc-my-4\' />'}
         </Highlight>
 
-        <p className='mc-text--hinted mc-mb-2'>
+        <p className='mc-opacity--hinted mc-mb-2'>
           Margins with scale(4) on top only:
         </p>
 

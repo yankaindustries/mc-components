@@ -76,7 +76,7 @@ const tiles = () =>
           <h6 className='mc-text-h6 mc-text--uppercase'>
             {item.instructor}
           </h6>
-          <h6 className='mc-text-h8 mc-text--airy mc-text--muted'>
+          <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
             {item.teaches}
           </h6>
         </TileCaption>

@@ -52,7 +52,7 @@ storiesOf('Components|Background', module)
 
                   <br />
 
-                  <p className='mc-text--muted'>
+                  <p className='mc-opacity--muted'>
                     Chef Thomas Keller is the only American chef to hold
                     multiple Michelin three-star ratings. In his MasterClass,
                     the chef behind The French Laundry teaches you the
@@ -85,7 +85,7 @@ storiesOf('Components|Background', module)
                     Learn From The Best
                   </h2>
 
-                  <p className='mc-text--muted mc-mb-5'>
+                  <p className='mc-opacity--muted mc-mb-5'>
                     Visit our blog for a deeper dive
                     into all things MasterClass.
                   </p>

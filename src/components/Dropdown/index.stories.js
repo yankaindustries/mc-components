@@ -113,7 +113,7 @@ class DropdownStory extends PureComponent {
                               </h5>
                               <p className={`
                                 mc-text-sm
-                                mc-text--muted
+                                mc-opacity--muted
                                 mc-text--3-lines
                               `}>
                                 Pellentesque auctor nibh eu justo condimentum,
@@ -141,7 +141,7 @@ class DropdownStory extends PureComponent {
                           mc-p-5
                           mc-text-h8
                           mc-text--uppercase
-                          mc-text--muted
+                          mc-opacity--muted
                           mc-text-center
                       `}>
                         Categories

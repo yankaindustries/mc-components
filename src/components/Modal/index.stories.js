@@ -67,14 +67,14 @@ class ModalExample extends Component {
                       color='light'
                       className='mc-px-4 mc-py-9 mc-text--center'
                     >
-                      <h6 className='mc-text-h8 mc-text--airy mc-text--muted mc-mb-2'>
+                      <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted mc-mb-2'>
                         You completed the playlist
                       </h6>
                       <h3 className='mc-text-h3 mc-mb-8'>
                         How did you like it?
                       </h3>
 
-                      <div className='mc-text--silenced mc-mb-6'>
+                      <div className='mc-opacity--silenced mc-mb-6'>
                         <Icon kind='starred' />
                         <Icon kind='starred' />
                         <Icon kind='starred' />
@@ -123,7 +123,7 @@ class ModalExample extends Component {
                             Payment Method
                           </h6>
 
-                          <p className='mc-text--muted mc-mb-4'>
+                          <p className='mc-opacity--muted mc-mb-4'>
                             Update your payment method to be used for your
                             future purchases.
                           </p>
@@ -253,7 +253,7 @@ class ModalExample extends Component {
                         <h6 className='mc-text-h6 mc-text--uppercase'>
                           Instructor Name
                         </h6>
-                        <p className='mc-text--muted'>
+                        <p className='mc-opacity--muted'>
                           Teaches A Class
                         </p>
                       </div>

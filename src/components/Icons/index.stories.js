@@ -39,7 +39,7 @@ storiesOf('Components|Icons', module)
                 <div key={kind} className='col-3 mc-text--center'>
                   <Icon kind={kind} />
                   <br />
-                  <span className='mc-text-x-small mc-text--muted mc-text--nowrap'>
+                  <span className='mc-text-x-small mc-opacity--muted mc-text--nowrap'>
                     {kind}
                   </span>
                 </div>,

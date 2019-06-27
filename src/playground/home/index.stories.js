@@ -104,10 +104,10 @@ storiesOf('Playground|Pages', module)
                             <h2 className='mc-text-h1 mc-text--uppercase'>
                               {item.instructor}
                             </h2>
-                            <h3 className='mc-text-h3 mc-text--muted mc-text--airy mc-mb-4'>
+                            <h3 className='mc-text-h3 mc-opacity--muted mc-text--airy mc-mb-4'>
                               Teaches {item.teaches}
                             </h3>
-                            <p className='mc-text-intro mc-text--hinted mc-mb-8'>
+                            <p className='mc-text-intro mc-opacity--hinted mc-mb-8'>
                               Online classes taught by the world&apos;s
                               greatest minds.<br /> Learn from
                               {item.instructor} and all 35+ other
@@ -151,7 +151,7 @@ storiesOf('Playground|Pages', module)
                             <h6 className='mc-text-h6 mc-text--uppercase'>
                               {item.instructor}
                             </h6>
-                            <h6 className='mc-text-h8 mc-text--airy mc-text--muted'>
+                            <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
                               {item.teaches}
                             </h6>
                           </TileCaption>
@@ -174,22 +174,22 @@ storiesOf('Playground|Pages', module)
         </div>
 
         <div className='row justify-content-center'>
-          <div className='col-auto mc-text--muted mc-text--center'>
+          <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/today-4d4e4dfc0db7fa08e4e18e4b0ae9f8598e674c0de4f3349d9b74f02138604276.svg' />
           </div>
-          <div className='col-auto mc-text--muted mc-text--center'>
+          <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/nbc-e43bb6ae09ed3b16c8e6509a76ed454e7cb9289c3723288a84d4b31e34785222.svg' />
           </div>
-          <div className='col-auto mc-text--muted mc-text--center'>
+          <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/new_york_times-8e2107a8c7cb51f1ea6dff352bbe21ad7c414e2348b2fa88b0c506b5ddc80ed9.svg' />
           </div>
-          <div className='col-auto mc-text--muted mc-text--center'>
+          <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/billboard-afafead87dedb11a8a2c8684e2a9714dc4add1f508b91ea5ad06789197e6e8ee.svg' />
           </div>
-          <div className='col-auto mc-text--muted mc-text--center'>
+          <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/espn-2aca223117c3e92562149a240ff5dab1619562b8de78ed05cae0ce69c50afae8.svg' />
           </div>
-          <div className='col-auto mc-text--muted mc-text--center'>
+          <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/vanity_fair-cdfde3c2628fa297d4bba5cf9aaa5786cc0f0fb8c66a593bb5da88afe407ec99.svg' />
           </div>
         </div>
@@ -220,7 +220,7 @@ storiesOf('Playground|Pages', module)
                           <h4 className='mc-text-h4 mc-text--uppercase'>
                             Malcom Gladwell
                           </h4>
-                          <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                          <h5 className='mc-text-h5 mc-text--normal mc-opacity--muted'>
                             Teaches Writing
                           </h5>
                         </TileCaption>
@@ -247,7 +247,7 @@ storiesOf('Playground|Pages', module)
                       <h4 className='mc-text-h4 mc-text--uppercase'>
                         Alice Waters
                       </h4>
-                      <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                      <h5 className='mc-text-h5 mc-text--normal mc-opacity--muted'>
                         Teaches the Art of Home Cooking
                       </h5>
                     </TileCaption>
@@ -272,7 +272,7 @@ storiesOf('Playground|Pages', module)
                       <h4 className='mc-text-h4 mc-text--uppercase'>
                         Annie Leibovitz
                       </h4>
-                      <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                      <h5 className='mc-text-h5 mc-text--normal mc-opacity--muted'>
                         Teaches Photography
                       </h5>
                     </TileCaption>
@@ -302,7 +302,7 @@ storiesOf('Playground|Pages', module)
                   <h6 className='mc-text-h6 mc-text--uppercase'>
                     Annie Leibovitz
                   </h6>
-                  <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-text--muted'>
+                  <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-opacity--muted'>
                     Photography
                   </h5>
                 </div>
@@ -320,7 +320,7 @@ storiesOf('Playground|Pages', module)
                   <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
                 </div>
                 <div className='col'>
-                  <h6 className='mc-text-h6 mc-text--muted'>
+                  <h6 className='mc-text-h6 mc-opacity--muted'>
                     Jesse L.
                   </h6>
                 </div>
@@ -338,7 +338,7 @@ storiesOf('Playground|Pages', module)
                   <h6 className='mc-text-h6 mc-text--uppercase'>
                     Gordon Ramsay
                   </h6>
-                  <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-text--muted'>
+                  <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-opacity--muted'>
                     Cooking
                   </h5>
                 </div>
@@ -356,7 +356,7 @@ storiesOf('Playground|Pages', module)
                   <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
                 </div>
                 <div className='col'>
-                  <h6 className='mc-text-h6 mc-text--muted'>
+                  <h6 className='mc-text-h6 mc-opacity--muted'>
                     Pamela E.
                   </h6>
                 </div>
@@ -374,7 +374,7 @@ storiesOf('Playground|Pages', module)
                   <h6 className='mc-text-h6'>
                     James Patterson
                   </h6>
-                  <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-text--muted'>
+                  <h5 className='mc-text-h7 mc-text--uppercase mc-text--normal mc-opacity--muted'>
                     Writing
                   </h5>
                 </div>
@@ -391,7 +391,7 @@ storiesOf('Playground|Pages', module)
                   <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
                 </div>
                 <div className='col'>
-                  <h6 className='mc-text-h6 mc-text--muted'>
+                  <h6 className='mc-text-h6 mc-opacity--muted'>
                     Jean-Paul W.
                   </h6>
                 </div>
@@ -426,7 +426,7 @@ storiesOf('Playground|Pages', module)
                           <h4 className='mc-text-h4 mc-text--uppercase'>
                             Spike Lee
                           </h4>
-                          <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                          <h5 className='mc-text-h5 mc-text--normal mc-opacity--muted'>
                             Teaches Filmmaking
                           </h5>
                         </TileCaption>
@@ -453,7 +453,7 @@ storiesOf('Playground|Pages', module)
                       <h4 className='mc-text-h4 mc-text--uppercase'>
                         Daniel Negreanu
                       </h4>
-                      <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                      <h5 className='mc-text-h5 mc-text--normal mc-opacity--muted'>
                         Teaches Poker
                       </h5>
                     </TileCaption>
@@ -478,7 +478,7 @@ storiesOf('Playground|Pages', module)
                       <h4 className='mc-text-h4 mc-text--uppercase'>
                         Margaret Atwood
                       </h4>
-                      <h5 className='mc-text-h5 mc-text--normal mc-text--muted'>
+                      <h5 className='mc-text-h5 mc-text--normal mc-opacity--muted'>
                         Teaches Creative Writing
                       </h5>
                     </TileCaption>
@@ -497,14 +497,14 @@ storiesOf('Playground|Pages', module)
               <h3 className='mc-text-h3 mc-text--center mc-text-lg--left'>
                 Instructor Announcements
               </h3>
-              <p className='mc-text--center mc-text-lg--left mc-text--muted'>
+              <p className='mc-text--center mc-text-lg--left mc-opacity--muted'>
                 Learn from the world’s greatest minds.
               </p>
               <br />
 
               <div className='row small-gutters justify-content-center justify-content-lg-start'>
                 <div className='col-auto'>
-                  <ChevronLeft className='mc-icon--5 mc-icon--circled mc-text--muted' />
+                  <ChevronLeft className='mc-icon--5 mc-icon--circled mc-opacity--muted' />
                 </div>
 
                 <div className='col-auto'>
@@ -528,7 +528,7 @@ storiesOf('Playground|Pages', module)
                           <h6 className='mc-text-h6'>
                             Malcom Gladwell
                           </h6>
-                          <h6 className='mc-text-h8 mc-text--normal mc-text--muted'>
+                          <h6 className='mc-text-h8 mc-text--normal mc-opacity--muted'>
                             @Gladwell
                           </h6>
                         </div>
@@ -557,7 +557,7 @@ storiesOf('Playground|Pages', module)
                           <h6 className='mc-text-h6'>
                             Armin Van Buuren
                           </h6>
-                          <h6 className='mc-text-h8 mc-text--normal mc-text--muted'>
+                          <h6 className='mc-text-h8 mc-text--normal mc-opacity--muted'>
                             @arminvanbuuren
                           </h6>
                         </div>
@@ -653,13 +653,13 @@ storiesOf('Playground|Pages', module)
 
         <div className='row justify-content-center'>
           <div className='col-auto'>
-            <Twitter className='mc-icon--8 mc-icon--circled mc-text--muted' />
+            <Twitter className='mc-icon--8 mc-icon--circled mc-opacity--muted' />
           </div>
           <div className='col-auto'>
-            <Facebook className='mc-icon--8 mc-icon--circled mc-text--muted' />
+            <Facebook className='mc-icon--8 mc-icon--circled mc-opacity--muted' />
           </div>
           <div className='col-auto'>
-            <Instagram className='mc-icon--8 mc-icon--circled mc-text--muted' />
+            <Instagram className='mc-icon--8 mc-icon--circled mc-opacity--muted' />
           </div>
         </div>
       </div>
