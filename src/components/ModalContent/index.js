@@ -33,7 +33,10 @@ export default class ModalContent extends PureComponent {
     return (
       <Consumer>
         {({ close }) =>
-          <ClickOutside onClickOutside={close('backdrop')}>
+          <ClickOutside
+            divRef={this.content}
+            onClickOutside={close('backdrop')}
+          >
             <div
               className={classes}
               ref={this.content}
