@@ -73,11 +73,12 @@ export default class Dropdown extends PureComponent {
 
   renderDropdown = () => {
     const { placement } = this.props
-
-    console.log(this.toggleRef.current)
+    const toggle = this.toggleRef.current.element
+      ? this.toggleRef.current.element.current
+      : this.toggleRef.current
 
     this.tooltip = new Popper(
-      this.toggleRef.current,
+      toggle,
       this.dropdownRef.current,
       {
         placement,

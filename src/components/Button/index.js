@@ -50,6 +50,8 @@ export default class Button extends PureComponent {
     size: 'medium',
   }
 
+  element = React.createRef()
+
   render () {
     const {
       as,
@@ -77,7 +79,11 @@ export default class Button extends PureComponent {
 
     return React.createElement(
       as,
-      { className: classNames, ...props },
+      {
+        className: classNames,
+        ref: this.element,
+        ...props,
+      },
       <Fragment>
         {!loading &&
           children
