@@ -8,8 +8,8 @@
 
   &--show {
     opacity: 1;
-
     pointer-events: auto;
+    z-index: $mc-zindex-tooltip;
   }
 
   &__toggle {
