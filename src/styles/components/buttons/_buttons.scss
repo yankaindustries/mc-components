@@ -19,6 +19,11 @@
     opacity 250ms ease;
   vertical-align: middle;
 
+  // needed to correct the
+  // input type='submit' styles
+  border: 0;
+  font-family: $mc-font-default;
+
   &:focus,
   &.focus {
     outline: 0;
