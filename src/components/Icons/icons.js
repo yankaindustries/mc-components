@@ -49,6 +49,7 @@ import SvgNotSelected from './NotSelected'
 import SvgPause from './Pause'
 import SvgPinterest from './Pinterest'
 import SvgPlayCircle from './PlayCircle'
+import SvgPlayStroke from './PlayStroke'
 import SvgPlay from './Play'
 import SvgPlusCircle from './PlusCircle'
 import SvgPlus from './Plus'
@@ -119,6 +120,7 @@ export const ICONS = {
   'pause': SvgPause,
   'pinterest': SvgPinterest,
   'play-circle': SvgPlayCircle,
+  'play-stroke': SvgPlayStroke,
   'play': SvgPlay,
   'plus-circle': SvgPlusCircle,
   'plus': SvgPlus,
