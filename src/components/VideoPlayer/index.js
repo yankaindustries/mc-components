@@ -131,6 +131,9 @@ export default class VideoPlayer extends PureComponent {
   handlePlayerReady = () => {
     const { onPlayerReady } = this.props
 
+    // eslint-disable-next-line
+    this.setState({ videoRoot: this.video.el_ })
+
     this.video.on('play', this.handlePlay)
     this.video.on('pause', this.handlePause)
     this.video.on('ended', this.handleEnd)
@@ -383,18 +386,21 @@ export default class VideoPlayer extends PureComponent {
 
   render () {
     const {
-      endscreenComponent,
       beforescreenComponent,
       pausescreenComponent,
-      videoId,
+      endscreenComponent,
+
+      accountId,
       playerId,
+      videoId,
+
       hasControls,
       isMuted,
-      accountId,
     } = this.props
 
     const {
       screen,
+      videoRoot,
     } = this.state
 
     const isScreenOpen = screen !== SCREEN_NONE
@@ -409,9 +415,6 @@ export default class VideoPlayer extends PureComponent {
       'bc-player__video--default',
       'video-js',
     )
-
-    // eslint-disable-next-line
-    const videoRoot = this.video ? this.video.el_ : undefined
 
     return (
       <div
