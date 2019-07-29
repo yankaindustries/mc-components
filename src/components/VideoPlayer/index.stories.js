@@ -188,7 +188,6 @@ storiesOf('Components|VideoPlayer', module)
               description='Renders a component when the video is done.'
             >
               <VideoPlayer
-                progress={11}
                 endscreenComponent={
                   ({ onReplay }) =>
                     <Background color='dim' fit='container'>
