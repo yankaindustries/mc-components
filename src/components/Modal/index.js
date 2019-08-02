@@ -40,6 +40,14 @@ export default class Modal extends PureComponent {
     size: 'full',
   }
 
+  componentDidMount () {
+    const { show } = this.props
+
+    if (show) {
+      document.body.classList.add('mc-modal__body--open')
+    }
+  }
+
   componentDidUpdate (prevProps) {
     const { show } = this.props
 
