@@ -107,11 +107,16 @@
   }
 
   .bc-player {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
+    height: 100%;
+
+    .vjs-tech {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: auto;
+      min-height: 100%;
+      transform: translateX(-50%);
+    }
   }
 }
 

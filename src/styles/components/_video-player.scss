@@ -318,8 +318,12 @@ $mc-video-progress-height: 0.8rem !default;
   .vjs-control-bar {
     background: rgba($mc-color-dark, 0.4);
   }
-}
 
+  // POSTER
+  .vjs-poster {
+    background-size: cover;
+  }
+}
 
 // HIDE
 .vjs-contextmenu-ui-menu {
