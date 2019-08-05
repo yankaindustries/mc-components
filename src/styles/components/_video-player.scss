@@ -188,8 +188,33 @@ $mc-video-progress-height: 0.8rem !default;
 }
 
 
-// MENUS
 .video-js {
+  // VIDEO
+  .vjs-tech {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+
+    &.vjs-fill-width {
+      width: 100%;
+      height: auto;
+    }
+
+    &.vjs-fill-height {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  // POSTER
+  .vjs-poster {
+    background-size: cover;
+  }
+
+  // MENUS
   &.vjs-quality-menu .vjs-quality-menu-button-4K-flag:after,
   &.vjs-quality-menu .vjs-quality-menu-button-HD-flag:after {
     font-size: 0.6em;
@@ -317,11 +342,6 @@ $mc-video-progress-height: 0.8rem !default;
 
   .vjs-control-bar {
     background: rgba($mc-color-dark, 0.4);
-  }
-
-  // POSTER
-  .vjs-poster {
-    background-size: cover;
   }
 }
 
