@@ -9,3 +9,6 @@
 
 ## Issue
 <Does this PR fix an existing issue? If so, link to it here>
+
+## Breaking change?
+<Is this a breaking change, or is it backwards compatible? | *BREAKING* / Backwards Compatible>
