@@ -15,6 +15,10 @@ const SCREEN_END = 'SCREEN_END'
 const SCREEN_PAUSE = 'SCREEN_PAUSE'
 const SCREEN_NONE = 'SCREEN_NONE'
 
+const FILL_WIDTH = 'width'
+const FILL_HEIGHT = 'height'
+const FILL_NONE = null
+
 const CC_HIDDEN = 'hidden'
 
 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
@@ -63,6 +67,7 @@ export default class VideoPlayer extends PureComponent {
 
   state = {
     screen: SCREEN_NONE,
+    fill: FILL_NONE,
   }
 
   constructor (props) {
@@ -146,6 +151,7 @@ export default class VideoPlayer extends PureComponent {
     }
 
     this.startSecondsTimer()
+    this.calculateFill()
   }
 
   handlePlay = () => {
@@ -384,6 +390,17 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
+  calculateFill = () => {
+    const container = this.playerRef.current
+
+    const videoRatio = 16 / 9
+    const playerRatio = container.offsetWidth / container.offsetHeight
+
+    const fill = playerRatio > videoRatio ? FILL_WIDTH : FILL_HEIGHT
+
+    this.setState({ fill })
+  }
+
   render () {
     const {
       beforescreenComponent,
@@ -401,6 +418,7 @@ export default class VideoPlayer extends PureComponent {
     const {
       screen,
       videoRoot,
+      fill,
     } = this.state
 
     const isScreenOpen = screen !== SCREEN_NONE
@@ -410,11 +428,12 @@ export default class VideoPlayer extends PureComponent {
       'bc-player--screen-open': isScreenOpen,
     })
 
-    const playerClasses = cn(
-      'bc-player__video',
-      'bc-player__video--default',
-      'video-js',
-    )
+    const playerClasses = cn({
+      'bc-player__video': true,
+      'bc-player__video--default': true,
+      'video-js': true,
+      [`vjs-fill-${fill}`]: !!fill,
+    })
 
     return (
       <div
