@@ -17,12 +17,21 @@ $mc-video-progress-height: 0.8rem !default;
   &__video {
     font-family: inherit;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
     width: 100%;
     height: 100%;
-    // Fix "not full width" issue
-    transform: scale(1.01);
+    transform: translate(-50%, -50%) scale(1.01);
+
+    &.vjs-fill-width {
+      width: 100%;
+      height: auto;
+    }
+
+    &.vjs-fill-height {
+      height: 100%;
+      width: auto;
+    }
   }
 
   &__screen {
@@ -189,26 +198,6 @@ $mc-video-progress-height: 0.8rem !default;
 
 
 .video-js {
-  // VIDEO
-  .vjs-tech {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-
-    &.vjs-fill-width {
-      width: 100%;
-      height: auto;
-    }
-
-    &.vjs-fill-height {
-      height: 100%;
-      width: auto;
-    }
-  }
-
   // POSTER
   .vjs-poster {
     background-size: cover;
