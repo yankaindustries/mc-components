@@ -36,6 +36,30 @@ export default class Button extends PureComponent {
     kind: 'default',
   }
 
+  state = {
+    hide: false,
+  }
+
+  startCountdown = () =>
+    window.setTimeout(
+      () => this.setState({ hide: true }),
+      4000,
+    )
+
+  componentDidMount () {
+    if (this.props.show) {
+      this.startCountdown()
+    }
+  }
+
+  componentWillReceiveProps (newProps) {
+    console.log('componentWillReceiveProps')
+
+    if (newProps.show && newProps.show !== this.props.show) {
+      this.startCountdown()
+    }
+  }
+
   render () {
     const {
       children,
@@ -45,9 +69,13 @@ export default class Button extends PureComponent {
       ...props
     } = this.props
 
+    const {
+      hide,
+    } = this.state
+
     const classNames = cn({
       'mc-toast mc-mt-2 mc-py-1 mc-px-3': true,
-      'mc-toast--show': show,
+      'mc-toast--show': show && !hide,
       [`mc-toast--${kind}`]: kind,
       [className]: className,
     })
