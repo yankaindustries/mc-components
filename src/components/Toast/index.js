@@ -7,9 +7,17 @@ import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 // TODO JJ: figure out if this violates best practices
-const toasterEl = document.createElement('div')
-toasterEl.className = 'mc-toaster'
-document.body.appendChild(toasterEl)
+const existingToaster = document.querySelectorAll('mc-toaster')
+let toaster
+
+if (existingToaster.length) {
+  toaster = existingToaster[0]
+} else {
+  toaster = document.createElement('div')
+  toaster.className = 'mc-toaster'
+  document.body.appendChild(toaster)
+}
+
 
 
 export default class Button extends PureComponent {
@@ -52,7 +60,7 @@ export default class Button extends PureComponent {
           </div>
         </div>
       </div>,
-      toasterEl,
+      toaster,
     )
   }
 }
