@@ -53,8 +53,6 @@ export default class Button extends PureComponent {
   }
 
   componentWillReceiveProps (newProps) {
-    console.log('componentWillReceiveProps')
-
     if (newProps.show && newProps.show !== this.props.show) {
       this.startCountdown()
     }
