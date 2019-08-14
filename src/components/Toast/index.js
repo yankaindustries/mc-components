@@ -38,15 +38,19 @@ export default class Button extends PureComponent {
     } = this.props
 
     const classNames = cn({
-      'mc-toast': true,
+      'mc-toast mc-mt-2 mc-py-1 mc-px-3': true,
       'mc-toast--show': show,
       [`mc-toast--${kind}`]: kind,
       [className]: className,
     })
 
     return createPortal(
-      <div className={classNames} {...props}>
-        {children}
+      <div className='container'>
+        <div className={classNames} {...props}>
+          <div className='mc-toast__content'>
+            {children}
+          </div>
+        </div>
       </div>,
       toasterEl,
     )

@@ -3,10 +3,9 @@ import { storiesOf } from '@storybook/react'
 
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
-import DocSection from '../../utils/DocSection'
-import PropExample from '../../utils/PropExample'
 
 import Toast from '../Toast'
+import Icon from '../Icons'
 
 
 storiesOf('Components|Toast', module)
@@ -20,27 +19,23 @@ storiesOf('Components|Toast', module)
         description='Part of a balanced breakfast.'
       />
 
-      <DocSection title='Props'>
-        <PropExample
-          name='image'
-          type='Element'
-        >
-          <div className='row'>
-            <div className='col-sm-6'>
-              <Toast show>
-                Hello!
-              </Toast>
+      <Toast show kind='success'>
+        <Icon kind='check' className='mc-mr-2' /> Hello!
+      </Toast>
 
-              <Toast show>
-                And good day!
-              </Toast>
+      <Toast show>
+        And good day!
+      </Toast>
 
-              <Toast show>
-                I SAID GOOD DAY!!!
-              </Toast>
-            </div>
-          </div>
-        </PropExample>
-      </DocSection>
+      <Toast show kind='error'>
+        I SAID GOOD DAY!!!
+      </Toast>
+
+      <Toast show>
+        Quis esse et laboris anim nulla ea nostrud sunt aute nulla
+        adipisicing enim culpa est qui amet fugiat duis minim officia
+        commodo ad culpa consectetur eiusmod aliqua et est esse esse.
+      </Toast>
+
     </div>
   )))

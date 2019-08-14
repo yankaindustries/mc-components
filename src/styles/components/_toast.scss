@@ -1,0 +1,44 @@
+.mc-toaster {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: $mc-zindex-toast;
+
+  @include step(bottom, 8);
+}
+
+.mc-toast {
+  background: $mc-color-gray-200;
+  border-radius: $default-radius;
+  line-height: 2;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(5px);
+  overflow: hidden;
+  transition: all 500ms ease;
+
+  &__content {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 500ms ease;
+  }
+
+  &--success {
+    background: $mc-color-success;
+  }
+
+  &--error {
+    background: $mc-color-error;
+  }
+
+  &--show {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+
+    .mc-toast__content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
