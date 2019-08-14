@@ -15,7 +15,10 @@ storiesOf('Components|Toast', module)
     component: Toast,
   })(() => (
     <div className='container'>
-      <DocHeader title='Toast' />
+      <DocHeader
+        title='Toast'
+        description='Part of a balanced breakfast.'
+      />
 
       <DocSection title='Props'>
         <PropExample
@@ -24,8 +27,16 @@ storiesOf('Components|Toast', module)
         >
           <div className='row'>
             <div className='col-sm-6'>
-              <Toast show={false}>
+              <Toast show>
                 Hello!
+              </Toast>
+
+              <Toast show>
+                And good day!
+              </Toast>
+
+              <Toast show>
+                I SAID GOOD DAY!!!
               </Toast>
             </div>
           </div>

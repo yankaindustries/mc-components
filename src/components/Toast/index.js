@@ -6,13 +6,15 @@ import PropTypes from 'prop-types'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
 
+// TODO JJ: figure out if this violates best practices
+const toasterEl = document.createElement('div')
+toasterEl.className = 'mc-toaster'
+document.body.appendChild(toasterEl)
+
+
 export default class Button extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-      PropTypes.string,
-    ]),
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     kind: PropTypes.oneOf([
       'default',
@@ -43,10 +45,10 @@ export default class Button extends PureComponent {
     })
 
     return createPortal(
-      <div className={classNames}>
+      <div className={classNames} {...props}>
         {children}
       </div>,
-      document.body,
+      toasterEl,
     )
   }
 }
