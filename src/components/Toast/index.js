@@ -11,13 +11,12 @@ const existingToaster = document.querySelectorAll('mc-toaster')
 let toaster
 
 if (existingToaster.length) {
-  toaster = existingToaster[0]
+  [toaster] = existingToaster
 } else {
   toaster = document.createElement('div')
   toaster.className = 'mc-toaster'
   document.body.appendChild(toaster)
 }
-
 
 
 export default class Button extends PureComponent {
@@ -37,24 +36,37 @@ export default class Button extends PureComponent {
   }
 
   state = {
-    hide: false,
+    show: false,
   }
 
-  startCountdown = () =>
-    window.setTimeout(
-      () => this.setState({ hide: true }),
-      4000,
-    )
+  show = () => {
+    this.setState({ show: true })
+    this.timer = window.setTimeout(this.hide, 4000)
+  }
+
+  hide = () => {
+    this.setState({ show: false })
+  }
 
   componentDidMount () {
     if (this.props.show) {
-      this.startCountdown()
+      this.show()
     }
   }
 
   componentWillReceiveProps (newProps) {
     if (newProps.show && newProps.show !== this.props.show) {
-      this.startCountdown()
+      this.show()
+    }
+  }
+
+  pauseHide = () => {
+    window.clearTimeout(this.timer)
+  }
+
+  resumeHide = () => {
+    if (this.state.show) {
+      this.show()
     }
   }
 
@@ -63,23 +75,25 @@ export default class Button extends PureComponent {
       children,
       className,
       kind,
-      show,
       ...props
     } = this.props
 
     const {
-      hide,
+      show,
     } = this.state
 
     const classNames = cn({
       'mc-toast mc-mt-2 mc-py-1 mc-px-3': true,
-      'mc-toast--show': show && !hide,
+      'mc-toast--show': show,
       [`mc-toast--${kind}`]: kind,
       [className]: className,
     })
 
     return createPortal(
-      <div className='container'>
+      <div className='container'
+        onMouseOver={this.pauseHide}
+        onMouseOut={this.resumeHide}
+      >
         <div className={classNames} {...props}>
           <div className='mc-toast__content'>
             {children}

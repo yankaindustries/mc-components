@@ -10,21 +10,21 @@ import Button from '../Button'
 import Icon from '../Icons'
 
 
-const sampleKinds = ['default', 'success', 'error']
-const sampleIcons = ['check', 'info', undefined]
+const sampleKinds = ['default', 'default', 'default', 'default', 'success', 'error']
+const sampleIcons = ['check', 'info', undefined, undefined, undefined, undefined]
 const sampleTexts = [
   'Hello!',
   'And good day!',
   'I SAID GOOD DAY!!!',
-  'Quis esse et laboris anim nulla ea nostrud sunt aute nulla\
-  adipisicing enim culpa est qui amet fugiat duis minim officia\
-  commodo ad culpa consectetur eiusmod aliqua et est esse esse.'
+  `Quis esse et laboris anim nulla ea nostrud sunt aute nulla
+  adipisicing enim culpa est qui amet fugiat duis minim officia
+  commodo ad culpa consectetur eiusmod aliqua et est esse esse.`,
 ]
 
 
 class ToastStory extends PureComponent {
   state = {
-    toasts: []
+    toasts: [],
   }
 
   handleClick = () => {
@@ -61,33 +61,16 @@ class ToastStory extends PureComponent {
               <Icon kind={toast.icon} className='mc-mr-2' />
             }
             {toast.text}
-          </Toast>
+          </Toast>,
         )}
       </div>
     )
   }
 }
 
-// <Toast show kind='success'>
-//   <Icon kind='check' className='mc-mr-2' /> Hello!
-// </Toast>
-//
-// <Toast show>
-//   And good day!
-// </Toast>
-//
-// <Toast show kind='error'>
-//   I SAID GOOD DAY!!!
-// </Toast>
-//
-// <Toast show>
-//   Quis esse et laboris anim nulla ea nostrud sunt aute nulla
-//   adipisicing enim culpa est qui amet fugiat duis minim officia
-//   commodo ad culpa consectetur eiusmod aliqua et est esse esse.
-// </Toast>
 
 storiesOf('Components|Toast', module)
   .add('Summary', withAddons({
     path: 'components/Toast/index.stories.js',
     component: Toast,
-  })(() => <ToastStory /> ))
+  })(() => <ToastStory />))
