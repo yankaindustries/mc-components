@@ -35,6 +35,8 @@ export default class Button extends PureComponent {
     kind: 'default',
   }
 
+  toastRef = React.createRef()
+
   state = {
     show: false,
   }
@@ -52,6 +54,10 @@ export default class Button extends PureComponent {
     if (this.props.show) {
       this.show()
     }
+
+    this.setState({
+      height: this.toastRef.current.offsetHeight,
+    })
   }
 
   componentWillReceiveProps (newProps) {
@@ -75,11 +81,11 @@ export default class Button extends PureComponent {
       children,
       className,
       kind,
-      ...props
     } = this.props
 
     const {
       show,
+      height,
     } = this.state
 
     const classNames = cn({
@@ -91,9 +97,11 @@ export default class Button extends PureComponent {
 
     return createPortal(
       <div
-        className={classNames} {...props}
+        className={classNames}
         onMouseOver={this.pauseHide}
         onMouseOut={this.resumeHide}
+        ref={this.toastRef}
+        style={{ maxHeight: height }}
       >
         <div className='mc-toast__content'>
           {children}

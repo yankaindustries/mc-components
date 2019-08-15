@@ -42,8 +42,6 @@ class ToastStory extends PureComponent {
   render () {
     const { toasts } = this.state
 
-    console.log('toasts', toasts)
-
     return (
       <div className='container'>
         <DocHeader
