@@ -1,10 +1,10 @@
-$toast-delay: 150ms !default;
-$toast-speed: 1500ms !default;
+$toast-delay: 500ms !default;
+$toast-speed: 1250ms !default;
 
 @keyframes toast-in {
   0% {
     opacity: 0;
-    transform: translateY(7px);
+    transform: translateY(100%);
   }
 
   100% {
@@ -21,10 +21,21 @@ $toast-speed: 1500ms !default;
 
   100% {
     opacity: 0;
-    transform: translateY(-7px);
+    transform: translateY(-20px);
   }
 }
 
+@keyframes toast-content-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .mc-toaster {
   position: fixed;
@@ -48,14 +59,6 @@ $toast-speed: 1500ms !default;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 
-  &__content {
-    animation-name: toast-out;
-    animation-duration: $toast-speed;
-    animation-iteration-count: once;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
-  }
-
   &--success {
     background: $mc-color-success;
   }
@@ -75,7 +78,8 @@ $toast-speed: 1500ms !default;
     pointer-events: auto;
 
     .mc-toast__content {
-      animation-name: toast-in;
+      animation-name: toast-content-in;
+      animation-delay: 0ms;
       animation-duration: $toast-speed;
       animation-iteration-count: once;
       animation-timing-function: ease;
