@@ -1,7 +1,36 @@
+$toast-delay: 150ms !default;
+$toast-speed: 1500ms !default;
+
+@keyframes toast-in {
+  0% {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toast-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+}
+
+
 .mc-toaster {
   position: fixed;
   left: 0;
   width: 100%;
+  pointer-events: none;
   z-index: $mc-zindex-toast;
 
   @include step(bottom, 8);
@@ -11,16 +40,20 @@
   background: $mc-color-gray-200;
   border-radius: $default-radius;
   line-height: 2;
-  opacity: 0;
-  max-height: 0;
-  transform: translateY(5px);
   overflow: hidden;
-  transition: all 500ms ease;
+  animation-name: toast-out;
+  animation-delay: $toast-delay;
+  animation-duration: $toast-speed;
+  animation-iteration-count: once;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 
   &__content {
-    opacity: 0;
-    transform: translateY(5px);
-    transition: all 500ms ease;
+    animation-name: toast-out;
+    animation-duration: $toast-speed;
+    animation-iteration-count: once;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
   }
 
   &--success {
@@ -32,13 +65,21 @@
   }
 
   &--show {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 500px;
+    animation-name: toast-in;
+    animation-delay: 0ms;
+    animation-duration: $toast-speed;
+    animation-iteration-count: once;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    // Allow us to click when it's visible
+    pointer-events: auto;
 
     .mc-toast__content {
-      transform: translateY(0);
-      opacity: 1;
+      animation-name: toast-in;
+      animation-duration: $toast-speed;
+      animation-iteration-count: once;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
     }
   }
 }

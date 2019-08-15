@@ -14,7 +14,7 @@ if (existingToaster.length) {
   [toaster] = existingToaster
 } else {
   toaster = document.createElement('div')
-  toaster.className = 'mc-toaster'
+  toaster.className = 'mc-toaster container'
   document.body.appendChild(toaster)
 }
 
@@ -90,14 +90,13 @@ export default class Button extends PureComponent {
     })
 
     return createPortal(
-      <div className='container'
+      <div
+        className={classNames} {...props}
         onMouseOver={this.pauseHide}
         onMouseOut={this.resumeHide}
       >
-        <div className={classNames} {...props}>
-          <div className='mc-toast__content'>
-            {children}
-          </div>
+        <div className='mc-toast__content'>
+          {children}
         </div>
       </div>,
       toaster,
