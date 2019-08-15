@@ -19,6 +19,10 @@ $toast-speed: 1250ms !default;
     transform: translateY(0);
   }
 
+  20% {
+    max-width: 550px;
+  }
+
   100% {
     opacity: 0;
     transform: translateY(-20px);
@@ -52,19 +56,34 @@ $toast-speed: 1250ms !default;
   border-radius: $default-radius;
   line-height: 2;
   overflow: hidden;
+  margin: 0 auto;
+  max-width: 550px;
   animation-name: toast-out;
   animation-delay: $toast-delay;
   animation-duration: $toast-speed;
   animation-iteration-count: once;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
+  transition: background 200ms ease;
+
+  &:hover {
+    background: $mc-color-gray-300;
+  }
 
   &--success {
     background: $mc-color-success;
+
+    &:hover {
+      background: lighten($mc-color-success, 5%);
+    }
   }
 
   &--error {
     background: $mc-color-error;
+
+    &:hover {
+      background: lighten($mc-color-error, 5%);
+    }
   }
 
   &--show {
