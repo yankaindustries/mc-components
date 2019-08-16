@@ -14,7 +14,7 @@ if (existingToaster.length) {
   [toaster] = existingToaster
 } else {
   toaster = document.createElement('div')
-  toaster.className = 'mc-toaster container'
+  toaster.className = 'mc-toaster container mc-pb-8'
   document.body.appendChild(toaster)
 }
 
@@ -43,7 +43,7 @@ export default class Button extends PureComponent {
 
   show = () => {
     this.setState({ show: true })
-    this.timer = window.setTimeout(this.hide, 4000)
+    this.timer = window.setTimeout(this.hide, 6000)
   }
 
   hide = () => {
