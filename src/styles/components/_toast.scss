@@ -2,7 +2,13 @@ $toast-delay: 300ms !default;
 $toast-speed: 1500ms !default;
 $toast-curve: cubic-bezier(0.455, 0.03, 0.515, 0.955) !default;
 
+
 @keyframes toast-in {
+  // 0% represents the start of the animation.  If values
+  // aren't specified in later keyframes, the CSS animates
+  // to whatever values are computer or inline without
+  // animations. So in our case, the max-height value
+  // that is set on the element, for a smooth transition
   0% {
     max-height: 0;
     margin-top: 0;
