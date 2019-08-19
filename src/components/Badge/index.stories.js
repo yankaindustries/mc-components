@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withProps } from '../../utils/addon-props'
 import DocHeader from '../../utils/DocHeader'
-import DocSection from '../../utils/DocSection'
+import InvertedMirror from '../../utils/InvertedMirror'
 
 import Badge from '../Badge'
 
@@ -17,16 +17,26 @@ storiesOf('Components|Badge', module)
         '
       />
 
-      <DocSection title='Default'>
-        <Badge>
-          Default Badge
-        </Badge>
-      </DocSection>
+      <InvertedMirror>
+        <div className='row mc-text--center'>
+          <div className='col-12 col-sm-4'>
+            <Badge>
+              Default Badge
+            </Badge>
+          </div>
 
-      <DocSection title='Secondary'>
-        <Badge kind='secondary'>
-          Secondary Example
-        </Badge>
-      </DocSection>
+          <div className='col-12 col-sm-4'>
+            <Badge kind='secondary'>
+              Secondary Example
+            </Badge>
+          </div>
+
+          <div className='col-12 col-sm-4'>
+            <Badge kind='tertiary'>
+              Just an outline
+            </Badge>
+          </div>
+        </div>
+      </InvertedMirror>
     </div>,
   ))

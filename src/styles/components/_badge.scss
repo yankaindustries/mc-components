@@ -1,7 +1,6 @@
 .mc-badge {
   display: inline-block;
   vertical-align: middle;
-  background: rgba($mc-color-gray-200, 0.5);
   color: $mc-color-light;
   border-radius: 20px;
 
@@ -12,5 +11,22 @@
 
   &--primary {
     background: $mc-color-primary;
+  }
+
+  &--secondary {
+    background: $mc-color-secondary;
+
+    .mc-invert & {
+      background: $mc-color-gray-400;
+    }
+  }
+
+  &--tertiary {
+    border: 1px solid $mc-color-gray-400;
+
+    .mc-invert & {
+      color: $mc-color-dark;
+      border-color: $mc-color-gray-200;
+    }
   }
 }
