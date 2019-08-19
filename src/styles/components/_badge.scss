@@ -15,18 +15,14 @@
 
   &--secondary {
     background: $mc-color-secondary;
-
-    .mc-invert & {
-      background: $mc-color-gray-400;
-    }
   }
 
   &--tertiary {
-    border: 1px solid $mc-color-gray-400;
+    box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
 
     .mc-invert & {
       color: $mc-color-dark;
-      border-color: $mc-color-gray-200;
+      box-shadow: inset 0 0 0 1px rgba($mc-color-dark, 0.5);
     }
   }
 }
