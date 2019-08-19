@@ -109,6 +109,10 @@ class ButtonStory extends PureComponent {
               </Button>
             </div>
 
+            <Button>
+              test
+            </Button>
+
             <div className='col-2'>
               <Select
                 options={shapeOptions}
