@@ -1,0 +1,109 @@
+$toast-delay: 200ms !default;
+$toast-speed: 1000ms !default;
+$toast-curve: cubic-bezier(0.455, 0.03, 0.515, 0.955) !default;
+
+
+@keyframes toast-in {
+  // 0% represents the start of the animation.  If values
+  // aren't specified in later keyframes, the CSS animates
+  // to whatever values are computer or inline without
+  // animations. So in our case, the max-height value
+  // that is set on the element, for a smooth transition
+  0% {
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toast-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes toast-content-in {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mc-toaster {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: $mc-zindex-toast;
+}
+
+.mc-toast {
+  background: $mc-color-gray-200;
+  border-radius: $default-radius;
+  margin: 0 auto;
+  max-width: 550px;
+  // For hiding content as the animation happens
+  overflow: hidden;
+  cursor: default;
+  animation: $toast-speed $toast-curve 0ms 1 forwards toast-out;
+  transition: background 200ms $toast-curve;
+
+  &:hover {
+    background: $mc-color-gray-300;
+  }
+
+  &--success {
+    background: $mc-color-success;
+
+    &:hover {
+      background: lighten($mc-color-success, 5%);
+    }
+  }
+
+  &--error {
+    background: $mc-color-error;
+
+    &:hover {
+      background: lighten($mc-color-error, 5%);
+    }
+  }
+
+  &--show {
+    animation: $toast-speed $toast-curve 0ms 1 forwards toast-in;
+
+    // Allow us to click when it's visible
+    pointer-events: auto;
+
+    .mc-toast__content {
+      animation: $toast-speed $toast-curve $toast-delay 1 forwards toast-content-in;
+    }
+  }
+}
