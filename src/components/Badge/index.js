@@ -23,7 +23,7 @@ export default class Badge extends PureComponent {
 
   static defaultProps = {
     as: 'badge',
-    kind: 'primary',
+    kind: 'default',
   }
 
   element = React.createRef()

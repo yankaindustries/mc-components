@@ -21,19 +21,19 @@ storiesOf('Components|Badge', module)
         <div className='row mc-text--center'>
           <div className='col-12 col-sm-4'>
             <Badge>
-              Default Badge
+              Default
             </Badge>
           </div>
 
           <div className='col-12 col-sm-4'>
-            <Badge kind='secondary'>
-              Secondary Example
+            <Badge kind='primary'>
+              Primary
             </Badge>
           </div>
 
           <div className='col-12 col-sm-4'>
-            <Badge kind='tertiary'>
-              Just an outline
+            <Badge kind='transparent'>
+              Transparent
             </Badge>
           </div>
         </div>

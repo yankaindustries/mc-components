@@ -9,15 +9,15 @@
   @include step(padding-bottom, 1);
   @include step(padding-left, 3);
 
+  &--default {
+    background: $mc-color-secondary;
+  }
+
   &--primary {
     background: $mc-color-primary;
   }
 
-  &--secondary {
-    background: $mc-color-secondary;
-  }
-
-  &--tertiary {
+  &--transparent {
     box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
 
     .mc-invert & {
