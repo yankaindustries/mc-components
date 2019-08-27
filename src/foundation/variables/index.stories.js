@@ -220,10 +220,17 @@ storiesOf('Foundation|Variables', module)
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
-            <div className='example-mc-swatch example-mc-swatch--mc-color-warning mc-mb-4'>
+            <div className='example-mc-swatch example-mc-swatch--mc-color-success mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>$mc-color-warning</p>
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-success</p>
+                <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
+              </div>
+            </div>
+            <div className='example-mc-swatch example-mc-swatch--mc-color-highlight mc-mb-4'>
+              <span className='example-mc-swatch__color'></span>
+              <div>
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-highlight</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
