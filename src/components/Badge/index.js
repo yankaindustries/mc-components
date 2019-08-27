@@ -1,13 +1,9 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import cn from 'classnames'
 import PropTypes from 'prop-types'
 
 export default class Badge extends PureComponent {
   static propTypes = {
-    as: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.element,
-    ]),
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
       PropTypes.node,
@@ -22,15 +18,11 @@ export default class Badge extends PureComponent {
   }
 
   static defaultProps = {
-    as: 'badge',
     kind: 'default',
   }
 
-  element = React.createRef()
-
   render () {
     const {
-      as,
       children,
       className,
       kind,
@@ -43,16 +35,10 @@ export default class Badge extends PureComponent {
       [className]: className,
     })
 
-    return React.createElement(
-      as,
-      {
-        className: classNames,
-        ref: this.element,
-        ...props,
-      },
-      <Fragment>
-        { children }
-      </Fragment>,
+    return (
+      <div className={classNames} {...props}>
+        {children}
+      </div>
     )
   }
 }
