@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react'
-import cn from 'classnames'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
+
+import { PROP_TYPE_CHILDREN } from '../constants'
 
 export default class Badge extends PureComponent {
   static propTypes = {
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node,
-      PropTypes.string,
-    ]),
+    children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     kind: PropTypes.oneOf([
       'primary',
