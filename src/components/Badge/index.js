@@ -1,33 +1,42 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import { PROP_TYPE_CHILDREN } from '../constants'
 
+export default class Badge extends PureComponent {
+  static propTypes = {
+    children: PROP_TYPE_CHILDREN,
+    className: PropTypes.string,
+    kind: PropTypes.oneOf([
+      'default',
+      'primary',
+      'transparent',
+    ]),
+  }
 
-const Badge = ({
-  children,
-  className,
-  primary,
-}) => {
-  const classes = cn({
-    [className]: className,
-    'mc-badge': true,
-    'mc-badge--primary': primary,
-    'mc-text-x-small': true,
-  })
+  static defaultProps = {
+    kind: 'default',
+  }
 
-  return (
-    <span className={classes}>
-      {children}
-    </span>
-  )
+  render () {
+    const {
+      children,
+      className,
+      kind,
+      ...props
+    } = this.props
+
+    const classNames = cn({
+      'mc-badge mc-text-x-small': true,
+      [`mc-badge--${kind}`]: kind,
+      [className]: className,
+    })
+
+    return (
+      <div className={classNames} {...props}>
+        {children}
+      </div>
+    )
+  }
 }
-
-Badge.propTypes = {
-  children: PROP_TYPE_CHILDREN,
-  className: PropTypes.string,
-  primary: PropTypes.bool,
-}
-
-export default Badge
