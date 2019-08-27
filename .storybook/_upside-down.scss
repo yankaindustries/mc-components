@@ -158,7 +158,8 @@ a {
     mc-color-gray-700: $mc-color-gray-700,
     mc-color-gray-800: $mc-color-gray-800,
     mc-color-error: $mc-color-error,
-    mc-color-warning: $mc-color-warning
+    mc-color-success: $mc-color-success,
+    mc-color-highlight: $mc-color-highlight
   );
 
   @each $colorKey, $colorVal in $colors {
