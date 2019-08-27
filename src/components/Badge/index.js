@@ -38,7 +38,7 @@ export default class Badge extends PureComponent {
     } = this.props
 
     const classNames = cn({
-      'mc-badge mc-text-h8': true,
+      'mc-badge mc-text-x-small': true,
       [`mc-badge--${kind}`]: kind,
       [className]: className,
     })
