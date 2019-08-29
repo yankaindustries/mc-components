@@ -60,9 +60,12 @@ export default class Tooltip extends PureComponent {
 
   renderTooltip = () => {
     const { placement } = this.props
+    const toggle = this.toggleRef.current.element
+      ? this.toggleRef.current.element.current
+      : this.toggleRef.current
 
     this.tooltip = new Popper(
-      this.toggleRef.current,
+      toggle,
       this.tooltipRef.current,
       {
         placement,
