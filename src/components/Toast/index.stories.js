@@ -4,6 +4,7 @@ import { sample } from 'lodash'
 
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
+import DocSection from '../../utils/DocSection'
 
 import Toast from '../Toast'
 import Button from '../Button'
@@ -25,13 +26,15 @@ const sampleTexts = [
 class ToastStory extends PureComponent {
   state = {
     toasts: [],
+    show: false,
   }
 
-  handleClick = () => {
+  makeToast = () => {
     const newToast = {
       kind: sample(sampleKinds),
       icon: sample(sampleIcons),
       text: sample(sampleTexts),
+      show: sample([true, false]),
     }
 
     this.setState(prevState => ({
@@ -39,8 +42,22 @@ class ToastStory extends PureComponent {
     }))
   }
 
+  makeToasts = () => {
+    this.makeToast()
+    window.setTimeout(this.makeToast, 200)
+    window.setTimeout(this.makeToast, 400)
+    window.setTimeout(this.makeToast, 600)
+    window.setTimeout(this.makeToast, 800)
+  }
+
+  toggleToast = () => {
+    this.setState(prevState => ({ show: !prevState.show }))
+  }
+
   render () {
-    const { toasts } = this.state
+    const { toasts, show } = this.state
+
+    console.log(show)
 
     return (
       <div className='container'>
@@ -49,18 +66,34 @@ class ToastStory extends PureComponent {
           description='Part of a balanced breakfast.'
         />
 
-        <Button onClick={this.handleClick}>
-          Show Toast
-        </Button>
+        <DocSection title='Demo'>
+          <div className='row'>
+            <div className='col-auto'>
+              <Button onClick={this.makeToasts}>
+                Make Toast
+              </Button>
+            </div>
 
-        {toasts.map((toast, key) =>
-          <Toast show kind={toast.kind} key={key}>
-            {toast.icon &&
-              <Icon kind={toast.icon} className='mc-mr-2' />
-            }
-            {toast.text}
-          </Toast>,
-        )}
+            <div className='col-auto'>
+              <Button onClick={this.toggleToast}>
+                Toggle Toast
+              </Button>
+            </div>
+          </div>
+
+          {toasts.map((toast, key) =>
+            <Toast show={toast.show} kind={toast.kind} key={key}>
+              {toast.icon &&
+                <Icon kind={toast.icon} className='mc-mr-2' />
+              }
+              {toast.text} {toast.show ? 'yes' : 'no'}
+            </Toast>,
+          )}
+
+          <Toast show={show}>
+            This is a Toast that was hiding in the shadows, waiting for you...
+          </Toast>
+        </DocSection>
       </div>
     )
   }
