@@ -1,20 +1,21 @@
 import React, { PureComponent } from 'react'
 import { createPortal } from 'react-dom'
-import cn from 'classnames'
+import { CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
 import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 // TODO JJ: figure out if this violates best practices
-const existingToaster = document.querySelectorAll('mc-toaster')
 let toaster
 
+const existingToaster = document.querySelectorAll('mc-toaster')
 if (existingToaster.length) {
   [toaster] = existingToaster
 } else {
   toaster = document.createElement('div')
-  toaster.className = 'mc-toaster container mc-pb-8'
+  toaster.className = 'mc-toaster'
   document.body.appendChild(toaster)
 }
 
@@ -35,14 +36,17 @@ export default class Button extends PureComponent {
     kind: 'default',
   }
 
-  toastRef = React.createRef()
+  containerRef = React.createRef()
 
   state = {
     show: false,
   }
 
   show = () => {
-    this.setState({ show: true })
+    this.setState({
+      height: this.containerRef.current.offsetHeight,
+      show: true,
+    })
     this.timer = window.setTimeout(this.hide, 6000)
   }
 
@@ -55,15 +59,23 @@ export default class Button extends PureComponent {
       this.show()
     }
 
-    this.setState({
-      height: this.toastRef.current.offsetHeight,
-    })
+    if (this.containerRef.current) {
+      this.setState({ height: this.containerRef.current.offsetHeight })
+    }
   }
 
   componentWillReceiveProps (newProps) {
     if (newProps.show && newProps.show !== this.props.show) {
       this.show()
     }
+
+    if (!newProps.show && newProps.show !== this.props.show) {
+      this.hide()
+    }
+  }
+
+  endListener = (node, done) => {
+    node.addEventListener('transitionend', done, false)
   }
 
   pauseHide = () => {
@@ -84,29 +96,36 @@ export default class Button extends PureComponent {
     } = this.props
 
     const {
-      show,
       height,
+      show,
     } = this.state
 
     const classNames = cn({
-      'mc-toast mc-mt-2 mc-py-1 mc-px-3': true,
-      'mc-toast--show': show,
+      'mc-toast': true,
+      'mc-toast--appear': show,
       [`mc-toast--${kind}`]: kind,
       [className]: className,
     })
 
     return createPortal(
-      <div
-        className={classNames}
-        onMouseOver={this.pauseHide}
-        onMouseOut={this.resumeHide}
-        ref={this.toastRef}
-        style={{ maxHeight: height }}
+      <CSSTransition
+        addEndListener={this.endListener}
+        classNames='mc-toast-'
+        in={show}
       >
-        <div className='mc-toast__content'>
-          {children}
+        <div
+          className={classNames}
+          onMouseOver={this.pauseHide}
+          onMouseOut={this.resumeHide}
+          style={{ height }}
+        >
+          <div className='mc-toast__container' ref={this.containerRef}>
+            <div className='mc-toast__content'>
+              {children}
+            </div>
+          </div>
         </div>
-      </div>,
+      </CSSTransition>,
       toaster,
     )
   }
