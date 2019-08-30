@@ -13,6 +13,9 @@ jobs:
       - run:
           name: Run linter
           command: yarn lint
+      - run:
+          name: Attempt a build
+          command: yarn build
 
       - save_cache:
           key: dependency-cache
