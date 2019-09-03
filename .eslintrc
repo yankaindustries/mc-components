@@ -12,6 +12,7 @@
     "react/forbid-prop-types": 0,
     "react/jsx-handler-names": 0,
     "react/jsx-wrap-multilines": 0,
+    "react/no-find-dom-node": 0,
     "react/require-default-props": 0,
   },
   "globals": {

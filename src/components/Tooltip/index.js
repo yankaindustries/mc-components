@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { findDOMNode } from 'react-dom'
 import PropTypes from 'prop-types'
 import Popper from 'popper.js'
 
@@ -60,12 +61,9 @@ export default class Tooltip extends PureComponent {
 
   renderTooltip = () => {
     const { placement } = this.props
-    const toggle = this.toggleRef.current.element
-      ? this.toggleRef.current.element.current
-      : this.toggleRef.current
 
     this.tooltip = new Popper(
-      toggle,
+      findDOMNode(this.toggleRef.current),
       this.tooltipRef.current,
       {
         placement,
