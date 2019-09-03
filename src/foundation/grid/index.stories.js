@@ -17,6 +17,93 @@ storiesOf('Foundation|Grid', module)
         description='A demo of the grid system in mc-components.'
       />
 
+      <p>
+        mc-components uses Bootstrap, a grid system based on a 12 column grid.
+      </p>
+
+      <p>Their full documentation on the grid is <a
+          href='https://getbootstrap.com/docs/4.0/layout/grid'
+          className='mc-text--link'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          available here
+        </a> but the basics are distilled below.
+      </p>
+
+      <h4 className='mc-text-h4 mc-mt-7'>
+        Display
+      </h4>
+
+      <p>
+        In addition to the basic grid, we also use a number of bootstrap
+        utilities.  The display helpers can set a number of different states for
+        DOM elements or combintations based on responsive breakpoints.
+      </p>
+
+      <ul className='mc-my-3'>
+        <li>
+          <span className='mc-code'>.d-none</span>
+        </li>
+        <li>
+          <span className='mc-code'>.d-block</span>
+        </li>
+        <li>
+          <span className='mc-code'>.d-flex</span>
+        </li>
+        <li>
+          <span className='mc-code'>.d-inline-flex</span>
+        </li>
+      </ul>
+
+      <p>
+        You can also combine these classes with the responsive helpers to
+        show or hide elements based on screen size:
+      </p>
+      <p>
+        <span className='mc-code'>.d-none.d-sm-block</span>
+      </p>
+
+      <p className='mc-mt-3'>For more, please <a
+        href='https://getbootstrap.com/docs/4.0/utilities/display'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='mc-text--link'
+        >view the full documentation.</a>
+      </p>
+
+      <h4 className='mc-text-h4 mc-mt-6'>
+        Flex
+      </h4>
+
+      <p>
+        Flex helpers also exist to make layouts easier when the grid is not
+        <i>flexible</i> (lol) enough.  You can use helpers like the following:
+      </p>
+
+      <ul className='mc-my-3'>
+        <li>
+          <span className='mc-code'>.justify-content-center</span>
+        </li>
+        <li>
+          <span className='mc-code'>.justify-content-between</span>
+        </li>
+        <li>
+          <span className='mc-code'>.align-items-center</span>
+        </li>
+        <li>
+          <span className='mc-code'>.align-self-stretch</span>
+        </li>
+      </ul>
+
+      <p className='mc-mb-8'>For more, please <a
+        href='https://getbootstrap.com/docs/4.0/utilities/flex'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='mc-text--link'
+        >view the full documentation.</a>
+      </p>
+
       <PropExample name='.row / .col-$breakpoint-$size'>
         <div className='row'>
           <div className='col-6'>
