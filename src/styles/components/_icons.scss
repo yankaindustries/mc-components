@@ -3,9 +3,8 @@ svg {
 }
 
 .mc-icon {
-  fill: currentColor;
-  width: 16px;
-  height: 16px;
+  width: 2em;
+  height: 2em;
 
   @for $i from 1 through 16 {
     &--#{$i} {
