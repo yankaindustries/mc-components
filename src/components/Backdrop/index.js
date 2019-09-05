@@ -29,6 +29,7 @@ Backdrop.propTypes = {
   kind: PropTypes.oneOf([
     'dark',
     'extra-dark',
+    'solid',
   ]),
 }
 
