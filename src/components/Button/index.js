@@ -31,17 +31,14 @@ export default class Button extends PureComponent {
       'tertiary',
       'twitter',
     ]),
-    link: PropTypes.bool, // DEPRECATED
     loading: PropTypes.bool,
     onClick: PropTypes.func,
     rounded: PropTypes.bool,
-    secondary: PropTypes.bool, // DEPRECATED
     size: PropTypes.oneOf([
       'small',
       'medium',
     ]),
     symmetrical: PropTypes.bool,
-    tertiary: PropTypes.bool, // DEPRECATED
   }
 
   static defaultProps = {

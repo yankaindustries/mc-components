@@ -7,7 +7,7 @@ const Icon = ({ kind, ...props }) => {
   const Component = ICONS[kind]
 
   return (
-    <Component {...props} />
+    <Component className='mc-icon' {...props} />
   )
 }
 
