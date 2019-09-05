@@ -40,7 +40,7 @@ class ModalExample extends Component {
       <div className='container'>
         <DocHeader
           title='Modal'
-          description='A flexible controlled modal.'
+          description='A flexible controlled modal, BOOM!'
         />
 
         <DocSection title='Demo'>
