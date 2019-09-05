@@ -25,6 +25,7 @@ export default class Modal extends PureComponent {
     closeButton: PropTypes.bool,
     show: PropTypes.bool,
     size: PropTypes.oneOf([
+      'tiny',
       'small',
       'medium',
       'large',
