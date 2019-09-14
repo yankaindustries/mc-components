@@ -1,76 +1,68 @@
-const path = require("path");
+const path = require("path")
 
-module.exports = {
-  module: {
-    rules: [
+module.exports = async ({ config, mode }) => {
+  config.module.rules.push({
+    test: /\.svg$/,
+    oneOf: [
       {
-        test: /\.svg$/,
-        oneOf: [
-          {
-            include: path.resolve(__dirname, '../src/assets/icons'),
-            use: [
-              {
-                loader: '@svgr/webpack',
-                options: {
-                  icon: true,
-                  replaceAttrValues: {
-                    '#000': 'currentColor',
-                  }
-                },
-              },
-            ],
-          },
-          {
-            exclude: path.resolve(__dirname, '../src/assets/icons'),
-            use: [
-              {
-                loader: '@svgr/webpack',
-                options: {
-                  replaceAttrValues: {
-                    '#000': 'currentColor',
-                  }
-                },
-              },
-            ],
-          },
-        ],
-      },
-      {
-        test: /\.(jpe?g|png|gif)$/i,
-        loader: 'file-loader?name=[name].[ext]'
-      },
-      {
-        test: /\.s?css$/,
+        include: path.resolve(__dirname, '../src/assets/icons'),
         use: [
-          'style-loader',
           {
-            loader: 'css-loader',
+            loader: '@svgr/webpack',
             options: {
-              sourceMap: true,
-            },
-          },
-          'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
+              icon: true,
+              replaceAttrValues: {
+                '#000': 'currentColor',
+              }
             },
           },
         ],
-        include: path.resolve(__dirname, "../")
       },
       {
-        test: /\.eot(\?v=\d+.\d+.\d+)?$/,
-        loader: 'file-loader'
+        exclude: path.resolve(__dirname, '../src/assets/icons'),
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              replaceAttrValues: {
+                '#000': 'currentColor',
+              }
+            },
+          },
+        ],
       },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-      },
-    ]
-  }
-};
+    ],
+  })
+
+  config.module.rules.push({
+    test: /\.(jpe?g|png|gif)$/i,
+    loader: 'file-loader?name=[name].[ext]'
+  })
+
+  config.module.rules.push({
+    test: /\.s[ac]ss$/i,
+    use: [
+      'style-loader',
+      'css-loader',
+      'sass-loader'
+    ],
+    include: path.resolve(__dirname, '../'),
+  })
+
+  config.module.rules.push({
+    test: /\.eot(\?v=\d+.\d+.\d+)?$/,
+    loader: 'file-loader'
+  })
+
+  config.module.rules.push({
+    test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+    loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+  })
+
+  config.module.rules.push({
+    test: /\.[ot]tf(\?v=\d+.\d+.\d+)?$/,
+    loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
+  })
+
+  return config
+}
