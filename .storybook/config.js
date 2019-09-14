@@ -1,45 +1,8 @@
-// import { configure, addDecorator } from '@storybook/react';
-// import { setOptions } from '@storybook/addon-options';
-//
-// import './styles.scss'
-// import 'highlight.js/styles/tomorrow-night.css'
-//
-// // Option Defaults
-// setOptions({
-//   hierarchySeparator: /\//,
-//   hierarchyRootSeparator: /\|/,
-//   sortStoriesByKind: true,
-//   showAddonPanel: true,
-//   addonPanelInRight: true,
-//   selectedAddonPanel: 'mc/props/panel',
-// });
-//
-// const req = require.context('../src', true, /\.stories\.js$/)
-//
-// function loadStories() {
-//   // Force the introduction to load first!
-//   require('../src/foundation/introduction/index.stories.js');
-//   req.keys().forEach((filename) => req(filename))
-// }
-//
-// configure(loadStories, module)
-
-
-import { addParameters, configure } from '@storybook/react';
+import { addParameters, configure } from '@storybook/react'
+import { themes } from '@storybook/theming'
 
 import './styles.scss'
-import 'highlight.js/styles/tomorrow-night.css'
 
-// automatically import all files ending in *.stories.js
-const req = require.context('../src', true, /\.stories\.js$/)
-
-function loadStories() {
-  // Force the introduction to load first!
-  require('../src/foundation/introduction/index.stories.js');
-  req.keys().forEach((filename) => req(filename))
-}
-
-configure(loadStories, module);
 
 addParameters({
   options: {
@@ -49,5 +12,18 @@ addParameters({
     showAddonPanel: true,
     addonPanelInRight: true,
     selectedAddonPanel: 'mc/props/panel',
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind
+        ? 0
+        : a[1].id.localeCompare(b[1].id, { numeric: true }),
   },
-});
+})
+
+
+const req = require.context('../src', true, /\.stories\.js$/)
+
+function loadStories() {
+  req.keys().forEach((filename) => req(filename))
+}
+
+configure(loadStories, module)
