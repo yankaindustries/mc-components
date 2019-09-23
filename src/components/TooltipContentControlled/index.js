@@ -12,6 +12,7 @@ export default class TooltipContentControlled extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
+    show: PropTypes.bool,
   }
 
   state = {

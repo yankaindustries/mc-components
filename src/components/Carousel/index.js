@@ -61,6 +61,7 @@ export default class Carousel extends PureComponent {
     focusOnSelect: PropTypes.bool,
     highlightOnActive: PropTypes.bool,
     highlightOnHover: PropTypes.bool,
+    initialSlide: PropTypes.number,
     loop: PropTypes.bool,
     overflow: PropTypes.bool,
     peek: PropTypes.bool,

@@ -5,7 +5,7 @@ const SvgLock = props => (
     <path
       fillRule='evenodd'
       clipRule='evenodd'
-      d='M6 11.625a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 .75.75V18a.75.75 0 0 1-.75.75H6.75A.75.75 0 0 1 6 18v-6.375zm1.5.75v4.875h9v-4.875h-9z'
+      d='M6 11.625a.75.75 0 01.75-.75h10.5a.75.75 0 01.75.75V18a.75.75 0 01-.75.75H6.75A.75.75 0 016 18v-6.375zm1.5.75v4.875h9v-4.875h-9z'
       fill='currentColor'
     />
     <path
