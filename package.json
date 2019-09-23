@@ -4,9 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "react-select": "^3.0.4",
+    "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "popper.js": "^1.15.0",
+    "react-select": "^3.0.5",
     "react-slick": "^0.25.2",
-    "react-transition-group": "^4.3.0"
+    "react-transition-group": "^4.3.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
