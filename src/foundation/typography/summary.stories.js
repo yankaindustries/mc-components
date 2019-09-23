@@ -13,6 +13,7 @@ import HoverHandler from '../../components/HoverHandler'
 import Select from '../../components/Select'
 import Tile from '../../components/Tile'
 import TileImage from '../../components/TileImage'
+import Separator from '../../components/Separator'
 
 
 const NONE = 'NONE'
@@ -24,6 +25,9 @@ const COLOR_HINTED = 'COLOR_HINTED'
 const COLOR_MUTED = 'COLOR_MUTED'
 const COLOR_SILENCED = 'COLOR_SILENCED'
 
+const SIZE_D3 = 'd3'
+const SIZE_D2 = 'd2'
+const SIZE_D1 = 'd1'
 const SIZE_H1 = 'h1'
 const SIZE_H2 = 'h2'
 const SIZE_H3 = 'h3'
@@ -38,6 +42,9 @@ const SIZE_SMALL = 'small'
 const SIZE_XSMALL = 'x-small'
 
 const sizeOptions = [
+  { value: SIZE_D3, label: 'D3' },
+  { value: SIZE_D2, label: 'D2' },
+  { value: SIZE_D1, label: 'D1' },
   { value: SIZE_H1, label: 'H1' },
   { value: SIZE_H2, label: 'H2' },
   { value: SIZE_H3, label: 'H3' },
@@ -250,7 +257,7 @@ class Summary extends PureComponent {
                 </div>
               </div>
 
-              <hr />
+              <Separator />
 
               <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
@@ -271,7 +278,7 @@ class Summary extends PureComponent {
                 </div>
               </div>
 
-              <hr />
+              <Separator />
 
               <div className='row mc-text--bare-link-parent'>
                 <div className='col-auto'>
@@ -294,7 +301,7 @@ class Summary extends PureComponent {
             </div>
           </div>
 
-          <hr />
+          <Separator />
 
           <div className='row'>
             {[1, 2, 3].map(key =>

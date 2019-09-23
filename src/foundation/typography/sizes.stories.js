@@ -38,6 +38,24 @@ class Sizes extends PureComponent {
           description='Available heading and body size options.'
         />
 
+        <PropExample name='.mc-text-d3'>
+          <h1 className='mc-text-d3'>
+            Gordon Ramsay <CalcSize />
+          </h1>
+        </PropExample>
+
+        <PropExample name='.mc-text-d2'>
+          <h1 className='mc-text-d2'>
+            Gordon Ramsay <CalcSize />
+          </h1>
+        </PropExample>
+
+        <PropExample name='.mc-text-d1'>
+          <h1 className='mc-text-d1'>
+            Gordon Ramsay <CalcSize />
+          </h1>
+        </PropExample>
+
         <PropExample name='.mc-text-h1'>
           <h1 className='mc-text-h1'>
             Gordon Ramsay <CalcSize />
