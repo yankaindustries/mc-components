@@ -7,11 +7,11 @@ module.exports = ctx => ({
   plugins: ctx.env === 'development'
     ? [
       autoprefixer({ grid: true }),
-      inlineSVG({ path: './src/assets' }),
+      inlineSVG({ paths: ['./src/assets'] }),
     ]
     : [
       autoprefixer({ grid: true }),
       cssnano({ preset: 'default' }),
-      inlineSVG({ path: './src/assets' }),
+      inlineSVG({ paths: ['./src/assets'] }),
     ],
 })

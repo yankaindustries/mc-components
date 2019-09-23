@@ -35,11 +35,6 @@ module.exports = async ({ config, mode }) => {
   })
 
   config.module.rules.push({
-    test: /\.(jpe?g|png|gif)$/i,
-    loader: 'file-loader?name=[name].[ext]'
-  })
-
-  config.module.rules.push({
     test: /\.s[ac]ss$/i,
     use: [
       'style-loader',
