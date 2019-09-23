@@ -140,14 +140,19 @@ export default class Carousel extends PureComponent {
       ...restProps
     } = this.props
 
+    const {
+      currentSlide,
+    } = this.state
+
     const classes = cn({
       [className]: className,
       'mc-carousel': true,
       'mc-carousel--centered': centered,
       'mc-carousel--highlight-active': highlightOnActive,
       'mc-carousel--highlight-hover': highlightOnHover,
-      'mc-carousel--overflow': overflow || peek,
+      'mc-carousel--overflow': overflow,
       'mc-carousel--peek': peek,
+      [`mc-carousel--index-${currentSlide}`]: true,
     })
 
     const arrows = controls
