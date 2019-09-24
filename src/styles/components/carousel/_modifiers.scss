@@ -7,8 +7,6 @@
   }
 
   &--peek {
-    overflow: hidden;
-
     &:before,
     &:after {
       content: "";
@@ -44,6 +42,15 @@
           rgba($mc-color-dark, 1) 0,
           rgba($mc-color-dark, 0) 100%
         ) center no-repeat;
+    }
+
+    &.mc-carousel__after {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: red;
     }
 
     .slick-list {

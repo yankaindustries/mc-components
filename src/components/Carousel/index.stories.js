@@ -294,6 +294,7 @@ storiesOf('Components|Carousels/Carousel', module)
                 <Carousel
                   className='row'
                   showCount={responsiveValues(media, 3, 2, 1)}
+                  controls
                   peek
                 >
                   {tiles()}

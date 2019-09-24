@@ -183,6 +183,7 @@ export default class Carousel extends PureComponent {
       <Fragment>
         <div className='mc-carousel__forced-spacing' />
         <div className='mc-carousel__container'>
+          <div className='mc-carousel__before' />
           <Slider
             autoplay={autoPlay}
             className={classes}
@@ -201,6 +202,7 @@ export default class Carousel extends PureComponent {
           >
             {children}
           </Slider>
+          <div className='mc-carousel__after' />
         </div>
         <div className='mc-carousel__forced-spacing' />
       </Fragment>
