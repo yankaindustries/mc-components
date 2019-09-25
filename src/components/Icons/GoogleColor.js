@@ -2,7 +2,7 @@ import React from 'react'
 
 const SvgGoogleColor = props => (
   <svg width='2em' height='2em' viewBox='0 0 24 24' fill='none' {...props}>
-    <rect width={24} height={24} rx={2} fill='#fff' />
+    <rect width={24} height={24} rx={2} fill='currentColor' />
     <path
       fillRule='evenodd'
       clipRule='evenodd'

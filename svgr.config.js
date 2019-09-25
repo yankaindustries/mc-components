@@ -4,6 +4,7 @@ module.exports = {
   // icon: true,
   replaceAttrValues: {
     '#000': 'currentColor',
+    '#fff': 'currentColor',
   },
   svgProps: {
     width: '2em',
