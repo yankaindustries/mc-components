@@ -33,7 +33,7 @@
     "preversion": "yarn lint",
     "version": "yarn build && git add -A .",
     "postversion": "git push origin $(git symbolic-ref --short -q HEAD) && git push origin $(git symbolic-ref --short -q HEAD) --tags"
-},
+  },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
@@ -83,6 +83,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.0.0",
     "prettier-eslint-cli": "^5.0.0",
+    "react": "^16.9.0",
     "react-highlight": "^0.12.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
