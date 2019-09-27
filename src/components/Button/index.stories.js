@@ -63,6 +63,8 @@ class ButtonStory extends PureComponent {
       shape,
     } = this.state
 
+    console.log("hi")
+
     return (
       <div className='container'>
         <DocHeader
