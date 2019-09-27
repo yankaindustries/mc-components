@@ -73,6 +73,7 @@
     "eslint": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
     "file-loader": "^4.2.0",
+    "husky": "^3.0.5",
     "jsx-to-string": "^1.4.0",
     "lint-staged": "^9.2.5",
     "node-sass": "^4.12.0",
@@ -104,10 +105,5 @@
       "stylelint --fix",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-    }
   }
 }
