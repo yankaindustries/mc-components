@@ -26,7 +26,6 @@
     "build:styles": "yarn build:css && yarn build:scss",
     "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
     "deploy": "storybook-to-ghpages",
-    "precommit": "lint-staged",
     "lint:js": "eslint ./src --color --quiet",
     "lint:style": "stylelint ./src/styles/**/*.scss",
     "lint": "yarn lint:js && yarn lint:style",
@@ -105,5 +104,10 @@
       "stylelint --fix",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+    }
   }
 }
