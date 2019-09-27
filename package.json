@@ -54,7 +54,9 @@
     "@babel/preset-react": "^7.0.0",
     "@masterclass/eslint-config": "yankaindustries/eslint-config-masterclass#1.0.2",
     "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-info": "^5.2.1",
     "@storybook/addon-links": "^5.1.11",
+    "@storybook/addon-options": "^5.2.1",
     "@storybook/addons": "^5.1.11",
     "@storybook/preset-scss": "^1.0.2",
     "@storybook/react": "^5.1.11",
@@ -84,7 +86,6 @@
     "postcss-loader": "^3.0.0",
     "postcss-scss": "^2.0.0",
     "prettier-eslint-cli": "^5.0.0",
-    "react": "^16.9.0",
     "react-highlight": "^0.12.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
@@ -105,5 +106,9 @@
       "stylelint --fix",
       "git add"
     ]
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }
