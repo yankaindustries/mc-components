@@ -63,7 +63,7 @@ class ButtonStory extends PureComponent {
       shape,
     } = this.state
 
-    console.log("hi")
+    console.log("hi or whatever")
 
     return (
       <div className='container'>
