@@ -277,13 +277,13 @@ storiesOf('Components|Carousels/Carousel', module)
               name='overflow'
               type='Boolean'
             >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  overflow
-                >
-                  {tiles()}
-                </Carousel>
+              <Carousel
+                className='row'
+                showCount={responsiveValues(media, 3, 2, 1)}
+                overflow
+              >
+                {tiles()}
+              </Carousel>
             </PropExample>
 
 
