@@ -51,10 +51,17 @@ export default class Modal extends PureComponent {
   componentDidUpdate (prevProps) {
     const { show } = this.props
 
+    // a little hackery here to prevent scrolling/reset
+
     if (!prevProps.show && show) {
+      const scrollOffset = window.scrollY
+      document.body.style.top = -scrollOffset + 'px'
       document.body.classList.add('mc-modal__body--open')
     } else if (prevProps.show && !show) {
+      const scrollOffset = -parseInt(document.body.style.top)
       document.body.classList.remove('mc-modal__body--open')
+      document.body.style.top = undefined
+      window.scrollTo(0, scrollOffset)
     }
   }
 
