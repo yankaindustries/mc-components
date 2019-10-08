@@ -33,8 +33,6 @@ class Arrow extends PureComponent {
       onPress,
     } = this.props
 
-    console.log('arrow', location)
-
     if (!location) { return null }
 
     const classes = cn({
@@ -161,7 +159,6 @@ export default class Carousel extends PureComponent {
       'mc-carousel--highlight-hover': highlightOnHover,
       'mc-carousel--overflow': overflow,
       'mc-carousel--peek': peek,
-      [`mc-carousel--index-${currentSlide}`]: true,
     })
 
     const arrows = controls
