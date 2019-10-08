@@ -19,6 +19,7 @@ import SvgChevronUp from './ChevronUp'
 import SvgClose from './Close'
 import SvgCog from './Cog'
 import SvgCreditCard from './CreditCard'
+import SvgDocument from './Document'
 import SvgDownload from './Download'
 import SvgEdit from './Edit'
 import SvgError from './Error'
@@ -32,6 +33,8 @@ import SvgHamburger from './Hamburger'
 import SvgHelper from './Helper'
 import SvgInfo from './Info'
 import SvgInstagram from './Instagram'
+import SvgLessons from './Lessons'
+import SvgLevels from './Levels'
 import SvgLink from './Link'
 import SvgList from './List'
 import SvgLoader from './Loader'
@@ -90,6 +93,7 @@ export const ICONS = {
   'close': SvgClose,
   'cog': SvgCog,
   'credit-card': SvgCreditCard,
+  'document': SvgDocument,
   'download': SvgDownload,
   'edit': SvgEdit,
   'error': SvgError,
@@ -103,6 +107,8 @@ export const ICONS = {
   'helper': SvgHelper,
   'info': SvgInfo,
   'instagram': SvgInstagram,
+  'lessons': SvgLessons,
+  'levels': SvgLevels,
   'link': SvgLink,
   'list': SvgList,
   'loader': SvgLoader,
