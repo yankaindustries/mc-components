@@ -1,0 +1,15 @@
+.mc-sticky {
+  position: fixed;
+  width: inherit;
+  max-width: inherit;
+  left: 0;
+  right: 0;
+
+  &--top {
+    top: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+}
