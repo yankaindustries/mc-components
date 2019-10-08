@@ -9,6 +9,7 @@ export default class Sticky extends PureComponent {
     ]),
     className: PropTypes.string,
     position: PropTypes.oneOf(['top', 'bottom']),
+    offset: PropTypes.number,
   }
 
   render () {
@@ -16,16 +17,20 @@ export default class Sticky extends PureComponent {
       children,
       className,
       position,
+      offset,
     } = this.props
+
+    const positionStyle = {
+      [position]: `${offset || 0}px`,
+    }
 
     const classes = [
       className,
       'mc-sticky',
-      `mc-sticky--${position}`,
     ].join(' ')
 
     return (
-      <div className={classes}>
+      <div className={classes} style={positionStyle}>
         {children}
       </div>
     )

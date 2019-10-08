@@ -6,6 +6,7 @@ import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import withAddons from '../../utils/withAddons'
 import Button from '../Button'
+import Input from '../Input'
 import Select from '../Select'
 
 const positionOptions = [
@@ -16,7 +17,7 @@ const positionOptions = [
 class StickyStory extends PureComponent {
   state = {
     position: 'top',
-    width: '100%',
+    offset: '0',
   }
 
   set = name => value =>
@@ -24,18 +25,14 @@ class StickyStory extends PureComponent {
       [name]: value,
     })
 
+  handleInputOnChange = (event) => {
+    this.setState({ offset: parseInt(event.target.value || 0, 10) })
+  }
+
   render () {
-    const { position } = this.state
-    const containerStyle = {
-      paddingTop: '60px',
-      paddingBottom: '1000px',
-    }
-    const navbarStyle = {
-      padding: '4px 10px',
-      backgroundColor: '#fff',
-    }
+    const { position, offset } = this.state
     return (
-      <div className='container' style={containerStyle}>
+      <div className='container mc-sticky--container'>
         <DocHeader
           title='Sticky'
           description='A wrapper for fixing your component&apos;s position'
@@ -50,14 +47,21 @@ class StickyStory extends PureComponent {
                 onChange={this.set('position')}
               />
             </div>
+            <div className='col-2'>
+              <Input
+                value={offset}
+                onChange={this.handleInputOnChange}
+              />
+            </div>
           </div>
 
           <CodeExample>
             <div className='mc-py-12 mc-text--center'>
               <Sticky
                 position={position}
+                offset={offset}
               >
-                <div style={navbarStyle}>
+                <div className='mc-sticky--navbar'>
                  <div className='row'>
                     <div className='col-auto'>
                       <Button kind='google'>
