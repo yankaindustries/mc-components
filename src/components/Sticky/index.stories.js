@@ -17,7 +17,7 @@ const positionOptions = [
 class StickyStory extends PureComponent {
   state = {
     position: 'top',
-    offset: '0',
+    offset: 0,
   }
 
   set = name => value =>
@@ -49,7 +49,7 @@ class StickyStory extends PureComponent {
             </div>
             <div className='col-2'>
               <Input
-                value={offset}
+                value={`${offset}`}
                 onChange={this.handleInputOnChange}
               />
             </div>
