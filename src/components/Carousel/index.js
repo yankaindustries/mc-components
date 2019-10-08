@@ -21,6 +21,7 @@ class Arrow extends PureComponent {
     children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     direction: PropTypes.oneOf([DIRECTION_PREV, DIRECTION_NEXT]).isRequired,
+    location: PropTypes.node,
     onPress: PropTypes.func,
   }
 
@@ -50,7 +51,7 @@ class Arrow extends PureComponent {
           {children}
         </span>
       </a>,
-      location
+      location,
     )
   }
 }
@@ -146,10 +147,6 @@ export default class Carousel extends PureComponent {
       transition,
       ...restProps
     } = this.props
-
-    const {
-      currentSlide,
-    } = this.state
 
     const classes = cn({
       [className]: className,
