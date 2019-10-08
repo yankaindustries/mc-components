@@ -4,6 +4,7 @@
   max-width: inherit;
   left: 0;
   right: 0;
+  z-index: $mc-zindex-sticky;
 
   &--top {
     top: 0;
