@@ -194,29 +194,31 @@ export default class Carousel extends PureComponent {
       <Fragment>
         <div className='mc-carousel__forced-spacing' />
         <div className='mc-carousel__container'>
-          <Slider
-            autoplay={autoPlay}
-            className={classes}
-            centerMode={centered}
-            centerPadding={0}
-            fade={transition === TRANSITION_FADE}
-            focusOnSelect={focusOnSelect || peek}
-            ref={this.slider}
-            slidesToScroll={scrollCount}
-            slidesToShow={showCount}
-            infinite={loop}
-            draggable={false}
-            afterChange={this.handleAfterChange}
-            onInit={() => this.setState({ initialized: true })}
-            {...arrows}
-            {...restProps}
-          >
-            {children}
-          </Slider>
-          <div
-            className='mc-carousel__arrow-container'
-            ref={this.arrowContainerRef}
-          />
+          <div className='mc-carousel__inner-container'>
+            <Slider
+              autoplay={autoPlay}
+              className={classes}
+              centerMode={centered}
+              centerPadding={0}
+              fade={transition === TRANSITION_FADE}
+              focusOnSelect={focusOnSelect || peek}
+              ref={this.slider}
+              slidesToScroll={scrollCount}
+              slidesToShow={showCount}
+              infinite={loop}
+              draggable={false}
+              afterChange={this.handleAfterChange}
+              onInit={() => this.setState({ initialized: true })}
+              {...arrows}
+              {...restProps}
+            >
+              {children}
+            </Slider>
+            <div
+              className='mc-carousel__arrow-container'
+              ref={this.arrowContainerRef}
+            />
+          </div>
         </div>
         <div className='mc-carousel__forced-spacing' />
       </Fragment>

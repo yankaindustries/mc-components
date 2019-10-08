@@ -8,14 +8,13 @@
 
   &--peek {
     overflow: hidden;
-    
-    &:before,
+
     &:after {
       content: "";
       position: absolute;
       left: 0;
       top: 0;
-      width: $grid-gutter-width * 5;
+      width: 120px;
       height: 100%;
       background:
         linear-gradient(
@@ -24,15 +23,6 @@
           rgba($mc-color-dark, 0) 100%
         ) center no-repeat;
       z-index: 1;
-      opacity: 1;
-      transition: 0.3s ease opacity;
-    }
-
-    &.mc-carousel--index-0 {
-      &:before {
-        opacity: 0;
-        pointer-events: 0;
-      }
     }
 
     &:after {

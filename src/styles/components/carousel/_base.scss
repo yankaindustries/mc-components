@@ -39,11 +39,15 @@ $scrollbar-max-width: 17px !default;
   }
 
   &__container {
-    position: relative;
+    // position: relative;
     margin: -999px calc(50% - 50vw + #{$scrollbar-max-width / 2});
     padding: 999px calc(50vw - 50% - #{$scrollbar-max-width / 2});
     overflow: hidden;
     pointer-events: none;
+  }
+
+  &__inner-container {
+    position: relative;
   }
 
   // The padding hack above that allows us to have
@@ -136,25 +140,23 @@ $scrollbar-max-width: 17px !default;
       }
     }
 
-    &--next {
-      // right: $grid-gutter-width/2;
-      right: 50%;
-      transform: translate(50%, -50%);
-
-      @media (min-width: $mc-bp-xl) {
-        // right: $grid-gutter-width-xl/2;
-      }
-    }
-
     &--prev {
-      // left: $grid-gutter-width/2;
-      left: 50%;
+      left: 0;
       transform: translate(-50%, -50%);
 
       @media (min-width: $mc-bp-xl) {
-        // left: $grid-gutter-width-xl/2;
       }
     }
+
+    &--next {
+      right: 0;
+      transform: translate(50%, -50%);
+
+      @media (min-width: $mc-bp-xl) {
+      }
+    }
+
+
 
     // Disabled state for when you can't
     // advance the slide or "go back" anymore
