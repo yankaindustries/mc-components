@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
+import CodeExample from '../../utils/CodeExample'
 import Loader from '.'
 
 class LoaderStory extends PureComponent {
@@ -17,10 +18,12 @@ class LoaderStory extends PureComponent {
 
         <DocSection title='Demo'>
           <div className='row'>
-            <div className='col-2'>
-              <Loader
-                color={'#cc0000'}
-              />
+            <div className='col-12'>
+              <CodeExample>
+                <Loader
+                  color={'#cc0000'}
+                />
+              </CodeExample>
             </div>
           </div>
         </DocSection>
