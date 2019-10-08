@@ -7,6 +7,34 @@
   }
 
   &--peek {
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 120px;
+      height: 100%;
+      background:
+        linear-gradient(
+          to left,
+          rgba($mc-color-dark, 1) 0,
+          rgba($mc-color-dark, 0) 100%
+        ) center no-repeat;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    &.mc-carousel__after {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      background: red;
+    }
+
     .slick-list {
       width: 75%;
 
@@ -17,6 +45,11 @@
       @media only screen and (min-width: $mc-bp-lg) {
         width: 85%;
       }
+    }
+
+    .slick-active + .slick-slide {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 
