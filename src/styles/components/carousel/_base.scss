@@ -39,10 +39,15 @@ $scrollbar-max-width: 17px !default;
   }
 
   &__container {
+    // position: relative;
     margin: -999px calc(50% - 50vw + #{$scrollbar-max-width / 2});
     padding: 999px calc(50vw - 50% - #{$scrollbar-max-width / 2});
     overflow: hidden;
     pointer-events: none;
+  }
+
+  &__inner-container {
+    position: relative;
   }
 
   // The padding hack above that allows us to have
@@ -117,8 +122,9 @@ $scrollbar-max-width: 17px !default;
     background: $mc-color-gray-200;
     color: $mc-color-gray-500;
     text-align: center;
-    z-index: 5;
+    z-index: 1000;
     cursor: pointer;
+    pointer-events: auto;
     transition:
       background 200ms ease,
       color 200ms ease,
@@ -134,21 +140,19 @@ $scrollbar-max-width: 17px !default;
       }
     }
 
-    &--next {
-      right: $grid-gutter-width/2;
-      transform: translate(50%, -50%);
-
-      @media (min-width: $mc-bp-xl) {
-        right: $grid-gutter-width-xl/2;
-      }
-    }
-
     &--prev {
-      left: $grid-gutter-width/2;
+      left: 0;
       transform: translate(-50%, -50%);
 
       @media (min-width: $mc-bp-xl) {
-        left: $grid-gutter-width-xl/2;
+      }
+    }
+
+    &--next {
+      right: 0;
+      transform: translate(50%, -50%);
+
+      @media (min-width: $mc-bp-xl) {
       }
     }
 
