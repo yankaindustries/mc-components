@@ -1,4 +1,5 @@
 import React, { Fragment, PureComponent } from 'react'
+import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import cn from 'classnames'
@@ -20,6 +21,7 @@ class Arrow extends PureComponent {
     children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     direction: PropTypes.oneOf([DIRECTION_PREV, DIRECTION_NEXT]).isRequired,
+    location: PropTypes.node,
     onPress: PropTypes.func,
   }
 
@@ -28,8 +30,11 @@ class Arrow extends PureComponent {
       children,
       className,
       direction,
+      location,
       onPress,
     } = this.props
+
+    if (!location) { return null }
 
     const classes = cn({
       [className]: className,
@@ -37,7 +42,7 @@ class Arrow extends PureComponent {
       [`mc-carousel__arrow--${direction}`]: direction,
     })
 
-    return (
+    return createPortal(
       <a
         className={classes}
         onClick={onPress}
@@ -45,7 +50,8 @@ class Arrow extends PureComponent {
         <span className='mc-carousel__arrow-text'>
           {children}
         </span>
-      </a>
+      </a>,
+      location,
     )
   }
 }
@@ -83,6 +89,8 @@ export default class Carousel extends PureComponent {
     showCount: 3,
     transition: TRANSITION_SLIDE,
   }
+
+  arrowContainerRef = React.createRef()
 
   constructor (props) {
     super(props)
@@ -146,7 +154,7 @@ export default class Carousel extends PureComponent {
       'mc-carousel--centered': centered,
       'mc-carousel--highlight-active': highlightOnActive,
       'mc-carousel--highlight-hover': highlightOnHover,
-      'mc-carousel--overflow': overflow || peek,
+      'mc-carousel--overflow': overflow,
       'mc-carousel--peek': peek,
     })
 
@@ -157,6 +165,7 @@ export default class Carousel extends PureComponent {
           <Arrow
             direction={DIRECTION_PREV}
             onPress={this.handlePrevClick}
+            location={this.arrowContainerRef.current}
           >
             <ChevronLeft />
           </Arrow>
@@ -165,6 +174,7 @@ export default class Carousel extends PureComponent {
           <Arrow
             direction={DIRECTION_NEXT}
             onPress={this.handleNextClick}
+            location={this.arrowContainerRef.current}
           >
             <ChevronRight />
           </Arrow>
@@ -178,24 +188,31 @@ export default class Carousel extends PureComponent {
       <Fragment>
         <div className='mc-carousel__forced-spacing' />
         <div className='mc-carousel__container'>
-          <Slider
-            autoplay={autoPlay}
-            className={classes}
-            centerMode={centered}
-            centerPadding={0}
-            fade={transition === TRANSITION_FADE}
-            focusOnSelect={focusOnSelect || peek}
-            ref={this.slider}
-            slidesToScroll={scrollCount}
-            slidesToShow={showCount}
-            infinite={loop}
-            draggable={false}
-            afterChange={this.handleAfterChange}
-            {...arrows}
-            {...restProps}
-          >
-            {children}
-          </Slider>
+          <div className='mc-carousel__inner-container'>
+            <Slider
+              autoplay={autoPlay}
+              className={classes}
+              centerMode={centered}
+              centerPadding={0}
+              fade={transition === TRANSITION_FADE}
+              focusOnSelect={focusOnSelect || peek}
+              ref={this.slider}
+              slidesToScroll={scrollCount}
+              slidesToShow={showCount}
+              infinite={loop}
+              draggable={false}
+              afterChange={this.handleAfterChange}
+              onInit={() => this.setState({ initialized: true })}
+              {...arrows}
+              {...restProps}
+            >
+              {children}
+            </Slider>
+            <div
+              className='mc-carousel__arrow-container'
+              ref={this.arrowContainerRef}
+            />
+          </div>
         </div>
         <div className='mc-carousel__forced-spacing' />
       </Fragment>
