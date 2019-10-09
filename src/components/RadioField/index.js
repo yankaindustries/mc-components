@@ -31,6 +31,7 @@ const RadioField = ({
 RadioField.propTypes = {
   input: INPUT_PROP_TYPE,
   meta: META_PROP_TYPE,
+  option: PropTypes.string,
 }
 
 export default RadioField

@@ -13,7 +13,6 @@ export default class Radio extends PureComponent {
     label: PROP_TYPE_CHILDREN,
     name: PropTypes.string,
     option: PropTypes.string,
-
     onChange: PropTypes.func.isRequired,
   }
 

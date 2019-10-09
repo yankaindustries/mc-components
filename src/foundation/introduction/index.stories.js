@@ -6,7 +6,7 @@ import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
 
-storiesOf('Introduction', module)
+storiesOf('Introduction|Introduction', module)
   .add('Getting Started', () =>
     <div className='container'>
       <DocHeader
