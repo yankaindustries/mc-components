@@ -1,0 +1,13 @@
+.mc-reveal-on-scroll {
+  opacity: 0;
+  visibility: hidden;
+
+  &--transition {
+    transition: opacity 500ms ease, visibility 0s linear 500ms;
+  }
+  &--show {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
