@@ -316,3 +316,14 @@ a {
   line-height: 1;
   border-radius: 6px 0 0 0;
 }
+
+.mc-sticky {
+  &--container {
+    padding-top: 60px;
+    padding-bottom: 1000px;
+  }
+  &--navbar {
+    padding: 4px 10px;
+    background-color: #fff;
+  }
+}
