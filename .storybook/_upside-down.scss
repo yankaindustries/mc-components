@@ -1,3 +1,5 @@
+@import '~highlight.js/styles/tomorrow-night';
+
 // This file contains the styles
 // and overrides that need to be integrated
 // more cleanly.  We don't know where to put them
@@ -315,4 +317,15 @@ a {
   color: $mc-color-gray-400;
   line-height: 1;
   border-radius: 6px 0 0 0;
+}
+
+.mc-sticky {
+  &--container {
+    padding-top: 60px;
+    padding-bottom: 1000px;
+  }
+  &--navbar {
+    padding: 4px 10px;
+    background-color: #fff;
+  }
 }

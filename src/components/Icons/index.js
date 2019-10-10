@@ -1,7 +1,6 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import { ICONS } from './icons'
-
 
 const Icon = ({ kind, ...props }) => {
   const Component = ICONS[kind]
@@ -11,5 +10,8 @@ const Icon = ({ kind, ...props }) => {
   )
 }
 
+Icon.propTypes = {
+  kind: PropTypes.string,
+}
 
 export default Icon
