@@ -1,8 +1,8 @@
 .mc-form-element {
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 0 1px $mc-color-gray-200;
-  background: $mc-color-gray-100;
+  box-shadow: inset 0 0 0 1px var(--mc-color-gray-200);
+  background: var(--mc-color-gray-100);
   border-radius: $default-radius;
   width: 100%;
   cursor: text;
@@ -11,8 +11,8 @@
     box-shadow 200ms ease;
 
   .mc-invert & {
-    background: $mc-color-light;
-    box-shadow: inset 0 0 0 1px $mc-color-gray-500;
+    background: var(--mc-color-light);
+    box-shadow: inset 0 0 0 1px var(--mc-color-gray-500);
   }
 
   // The "actual" element, (input, textarea, select, etc)
@@ -23,7 +23,7 @@
     border: 0;
     margin: 0;
     padding: $input-padding;
-    color: $mc-color-light;
+    color: var(--mc-color-light);
     width: 100%;
     font-size: 16px;
     line-height: 1.5;
@@ -32,48 +32,48 @@
     resize: none;
 
     .mc-invert & {
-      color: $mc-color-dark;
+      color: var(--mc-color-dark);
     }
 
     &::placeholder {
-      color: rgba($mc-color-light, 0.5);
+      color: rgba(var(--mc-color-light-rgb), 0.5);
 
       .mc-invert & {
-        color: rgba($mc-color-dark, 0.3);
+        color: rgba(var(--mc-color-dark-rgb), 0.3);
       }
     }
   }
 
   &--focus {
-    color: $mc-color-gray-600;
-    box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+    color: var(--mc-color-gray-600);
+    box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
 
     // Even though it's the same color,
     // base invert resets this to 1px so it needs
     // more specificity
     .mc-invert & {
-      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+      box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
     }
   }
 
   &--error {
-    box-shadow: inset 0 0 0 2px $mc-color-error;
+    box-shadow: inset 0 0 0 2px var(--mc-color-error);
 
     .mc-invert & {
-      box-shadow: inset 0 0 0 2px $mc-color-error;
+      box-shadow: inset 0 0 0 2px var(--mc-color-error);
     }
   }
 
   &--success {
-    box-shadow: inset 0 0 0 2px $mc-color-success;
+    box-shadow: inset 0 0 0 2px var(--mc-color-success);
 
     .mc-invert & {
-      box-shadow: inset 0 0 0 2px $mc-color-success;
+      box-shadow: inset 0 0 0 2px var(--mc-color-success);
     }
   }
 
   &--disabled {
-    background: $mc-color-gray-200;
+    background: var(--mc-color-gray-200);
     box-shadow: none;
     cursor: not-allowed;
 
@@ -81,8 +81,8 @@
     * { cursor: not-allowed; }
 
     .mc-invert & {
-      background: $mc-color-gray-700;
-      box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+      background: var(--mc-color-gray-700);
+      box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
     }
 
     &:hover,
@@ -90,18 +90,18 @@
       box-shadow: none;
 
       .mc-invert & {
-        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+        box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
       }
     }
 
     .mc-form-element__element,
     .mc-form-element__element::selection {
       background: transparent;
-      color: rgba($mc-color-light, 0.5);
+      color: rgba(var(--mc-color-light-rgb), 0.5);
 
       .mc-invert & {
         background: transparent;
-        color: rgba($mc-color-dark, 0.3);
+        color: rgba(var(--mc-color-dark-rgb), 0.3);
       }
     }
   }

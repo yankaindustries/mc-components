@@ -140,7 +140,7 @@ $mc-video-progress-height: 0.8rem !default;
   &:before {
     font-size: $mc-video-control-height / 2 + 1.6rem !important;
     line-height: inherit !important;
-    color: $mc-color-light;
+    color: var(--mc-color-light);
 
     .vjs-play-control & {
       content: svg-load("video-player-icons/play.svg") !important;
@@ -266,7 +266,7 @@ $mc-video-progress-height: 0.8rem !default;
 
     .vjs-menu-item {
       margin: 0;
-      background-color: rgba($mc-color-dark, 0.8);
+      background-color: rgba(var(--mc-color-dark-rgb), 0.8);
       border-radius: 0;
       text-shadow: none !important;
 
@@ -281,16 +281,16 @@ $mc-video-progress-height: 0.8rem !default;
       }
 
       &.vjs-selected {
-        color: $mc-color-light;
-        background-color: $mc-color-gray-300;
+        color: var(--mc-color-light);
+        background-color: var(--mc-color-gray-300);
 
         &:hover {
-          background-color: $mc-color-gray-300;
+          background-color: var(--mc-color-gray-300);
         }
       }
 
       &:hover {
-        background-color: rgba($mc-color-dark, 0.8);
+        background-color: rgba(var(--mc-color-dark-rgb), 0.8);
       }
     }
   }
@@ -319,23 +319,23 @@ $mc-video-progress-height: 0.8rem !default;
   // PROGRESS BAR
   .vjs-progress-control .vjs-load-progress,
   .vjs-progress-control .vjs-progress-holder {
-    background-color: rgba($mc-color-light, 0.3);
+    background-color: rgba(var(--mc-color-light-rgb), 0.3);
   }
 
   .vjs-progress-control .vjs-play-progress {
-    background-color: $mc-color-primary;
+    background-color: var(--mc-color-primary);
   }
 
   .vjs-load-progress div {
-    background-color: rgba($mc-color-light, 0.18);
+    background-color: rgba(var(--mc-color-light-rgb), 0.18);
   }
 
   .vjs-volume-level {
-    background-color: rgba($mc-color-light, 0.9);
+    background-color: rgba(var(--mc-color-light-rgb), 0.9);
   }
 
   .vjs-control-bar {
-    background: rgba($mc-color-dark, 0.4);
+    background: rgba(var(--mc-color-dark-rgb), 0.4);
   }
 }
 

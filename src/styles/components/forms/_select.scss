@@ -63,13 +63,13 @@
     }
 
     &__menu {
-      background-color: $mc-color-gray-100;
-      border: 1px solid $mc-color-gray-200;
+      background-color: var(--mc-color-gray-100);
+      border: 1px solid var(--mc-color-gray-200);
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 
       .mc-invert & {
-        background-color: $mc-color-light;
-        border-color: $mc-color-gray-700;
+        background-color: var(--mc-color-light);
+        border-color: var(--mc-color-gray-700);
       }
     }
 
@@ -79,21 +79,21 @@
 
     &__option--is-focused,
     &__option:active {
-      background-color: $mc-color-gray-200;
+      background-color: var(--mc-color-gray-200);
       color: inherit;
 
       .mc-invert & {
-        background-color: $mc-color-gray-700;
+        background-color: var(--mc-color-gray-700);
       }
     }
 
     &__option--is-selected,
     &__option:active {
-      background-color: $mc-color-gray-200;
+      background-color: var(--mc-color-gray-200);
       color: inherit;
 
       .mc-invert & {
-        background-color: $mc-color-gray-700;
+        background-color: var(--mc-color-gray-700);
       }
     }
   }

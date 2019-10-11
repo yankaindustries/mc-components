@@ -200,9 +200,9 @@
   }
 
   // Colors
-  &--error { color: $mc-color-error; }
-  &--success { color: $mc-color-success; }
-  &--highlight { color: $mc-color-highlight; }
+  &--error { color: var(--mc-color-error); }
+  &--success { color: var(--mc-color-success); }
+  &--highlight { color: var(--mc-color-highlight); }
 
   // Links
   &--link,
@@ -218,7 +218,7 @@
   &--nowrap { white-space: nowrap; }
 }
 
-.mc-invert { color: $mc-color-dark; }
+.mc-invert { color: var(--mc-color-dark); }
 
 
 // Responsive

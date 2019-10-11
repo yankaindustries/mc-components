@@ -4,8 +4,8 @@ html {
 }
 
 body {
-  background: $mc-color-background;
-  color: $mc-color-text;
+  background: var(--mc-theme-background);
+  color: var(--mc-theme-text);
 }
 
 // We want this behavior by default.

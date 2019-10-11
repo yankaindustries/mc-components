@@ -58,7 +58,7 @@ $toast-curve: cubic-bezier(0.455, 0.03, 0.515, 0.955) !default;
   }
 
   &__content {
-    background: $mc-color-gray-200;
+    background: var(--mc-color-gray-200);
     border-radius: $default-radius;
     margin-bottom: 10px;
     padding: 10px;
@@ -84,11 +84,11 @@ $toast-curve: cubic-bezier(0.455, 0.03, 0.515, 0.955) !default;
     }
 
     .mc-toast--success & {
-      background: $mc-color-success;
+      background: var(--mc-color-success);
     }
 
     .mc-toast--error & {
-      background: $mc-color-error;
+      background: var(--mc-color-error);
     }
   }
 }

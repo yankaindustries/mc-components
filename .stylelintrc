@@ -19,6 +19,7 @@
     "declaration-block-semicolon-newline-after": "always-multi-line",
     "declaration-block-semicolon-newline-before": "never-multi-line",
     "declaration-block-semicolon-space-after": "always-single-line",
+    "declaration-colon-space-after": null,
     "declaration-empty-line-before": null,
     "declaration-no-important": true,
     "font-family-name-quotes": "always-unless-keyword",

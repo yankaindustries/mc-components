@@ -13,48 +13,6 @@ $mc-lh-sm:  1.25 !default;
 $mc-lh-md:  1.5 !default;
 $mc-lh-lg:  1.7 !default;
 
-// Colors
-$mc-color-light:             #fff !default;
-$mc-color-dark:              #000 !default;
-
-$mc-color-gray-100:           #191c21 !default;
-$mc-color-gray-200:           #272c33 !default;
-$mc-color-gray-300:           #31333b !default;
-$mc-color-gray-400:           #596170 !default;
-$mc-color-gray-500:           #949aa4 !default;
-$mc-color-gray-600:           #dbdde1 !default;
-$mc-color-gray-700:           #f3f3f3 !default;
-$mc-color-gray-800:           #f8f8f8 !default;
-
-$mc-color-primary:           #c83232 !default;
-$mc-color-primary-hover:     #d63636 !default;
-$mc-color-primary-active:    #c83232 !default;
-
-$mc-color-secondary:           $mc-color-gray-200 !default;
-$mc-color-secondary-hover:     $mc-color-gray-300 !default;
-$mc-color-secondary-active:    $mc-color-gray-200 !default;
-
-$mc-color-tertiary:            $mc-color-gray-400 !default;
-$mc-color-tertiary-hover:      $mc-color-gray-300 !default;
-$mc-color-tertiary-active:     $mc-color-gray-200 !default;
-
-$mc-color-background:          $mc-color-dark !default;
-$mc-color-background-invert:   $mc-color-light !default;
-$mc-color-text:                $mc-color-light !default;
-$mc-color-text-invert:         #8ca1c1 !default;
-
-$mc-color-error:        $mc-color-primary !default;
-$mc-color-success:      #00c14e !default;
-$mc-color-highlight:    #fcd549 !default;
-
-// External brands
-$mc-color-facebook:     #3c5a99 !default;
-$mc-color-google:       #4285f4 !default;
-$mc-color-twitter:      #2ba2ef !default;
-$mc-color-paypal:       #ffc439 !default;
-$mc-color-pinterest:    #bd081c !default;
-$mc-color-applepay:     #fff !default;
-
 // The yiq lightness value that determines when the
 // lightness of color changes from "dark" to "light".
 // Acceptable values are between 0 and 255.

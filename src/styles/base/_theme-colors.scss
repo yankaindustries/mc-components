@@ -1,0 +1,85 @@
+// Colors
+:root {
+  // Grayscale colors
+  --mc-color-light:             #fff;
+  --mc-color-light-rgb:         255, 255, 255;
+  --mc-color-dark:              #000;
+  --mc-color-dark-rgb:          0, 0, 0;
+  --mc-color-gray-100:          #191c21;
+  --mc-color-gray-200:          #272c33;
+  --mc-color-gray-300:          #31333b;
+  --mc-color-gray-400:          #596170;
+  --mc-color-gray-500:          #949aa4;
+  --mc-color-gray-500-rgb:      148, 154, 164;
+  --mc-color-gray-600:          #dbdde1;
+  --mc-color-gray-700:          #f3f3f3;
+  --mc-color-gray-800:          #f8f8f8;
+  // Main colors
+  --mc-color-primary:           #c83232;
+  --mc-color-primary-hover:     #d63636;
+  --mc-color-primary-active:    #c83232;
+  --mc-color-success:           #00c14e;
+  --mc-color-success-hover:     #00e05a;
+  --mc-color-highlight:         #fcd549;
+  --mc-color-highlight-hover:   #fddd68;
+  --mc-color-text-invert:       #8ca1c1;
+  // External brands
+  --mc-color-facebook:          #3c5a99;
+  --mc-color-facebook-hover:    #4567b0;
+  --mc-color-google:            #4285f4;
+  --mc-color-google-hover:      #6099f6;
+  --mc-color-twitter:           #2ba2ef;
+  --mc-color-twitter-hover:     #46adf1;
+  --mc-color-paypal:            #ffc439;
+  --mc-color-paypal-hover:      #ffcd57;
+  --mc-color-pinterest:         #bd081c;
+  --mc-color-pinterest-hover:   #dc0922;
+  --mc-color-applepay:          #fff;
+  --mc-color-applepay-hover:    #fff;
+}
+
+// Themes
+:root,
+.mc-theme-dark {
+  --mc-theme-primary:             var(--mc-color-primary);
+  --mc-theme-primary-hover:       var(--mc-color-primary-hover);
+  --mc-theme-primary-active:      var(--mc-color-primary-active);
+  --mc-theme-primary-text:        var(--mc-color-light);
+  --mc-theme-secondary:           var(--mc-color-gray-200);
+  --mc-theme-secondary-hover:     var(--mc-color-gray-300);
+  --mc-theme-secondary-active:    var(--mc-color-gray-200);
+  --mc-theme-secondary-text:      var(--mc-color-light);
+  --mc-theme-tertiary:            var(--mc-color-gray-400);
+  --mc-theme-tertiary-hover:      var(--mc-color-gray-300);
+  --mc-theme-tertiary-active:     var(--mc-color-gray-200);
+  --mc-theme-tertiary-text:       var(--mc-color-dark);
+  --mc-theme-error:               var(--mc-color-primary);
+  --mc-theme-success:             var(--mc-color-success);
+  --mc-theme-highlight:           var(--mc-color-highlight);
+  --mc-theme-background:          var(--mc-color-dark);
+  --mc-theme-background-invert:   var(--mc-color-light);
+  --mc-theme-text:                var(--mc-color-light);
+  --mc-theme-text-rgb:            var(--mc-color-light-rgb);
+  --mc-theme-text-invert:         var(--mc-color-dark);
+  --mc-theme-border-contrast:     var(--mc-color-light-rgb);
+  --mc-theme-border-blended:      var(--mc-color-dark-rgb);
+  --mc-theme-dropdown-backdrop:     var(--mc-color-dark-rgb);
+  --mc-theme-dropdown-border:       var(--mc-color-gray-200);
+  --mc-theme-dropdown-cont-bg:      var(--mc-color-gray-100);
+  --mc-theme-dropdown-cont-shadow:  var(--mc-color-dark);
+  --mc-theme-dropdown-itm-hover-bg: var(--mc-color-gray-200);
+}
+
+.mc-theme-light,
+.mc-invert {
+  --mc-theme-background:          var(--mc-color-light);
+  --mc-theme-background-invert:   var(--mc-color-dark);
+  --mc-theme-text:                var(--mc-color-dark);
+  --mc-theme-text-rgb:            var(--mc-color-dark-rgb);
+  --mc-theme-text-invert:         var(--mc-color-light);
+  --mc-theme-border-contrast:     var(--mc-color-dark-rgb);
+  --mc-theme-border-blended:      var(--mc-color-light-rgb);
+  --mc-theme-dropdown-border:       var(--mc-color-gray-700);
+  --mc-theme-dropdown-cont-bg:      var(--mc-color-light);
+  --mc-theme-dropdown-itm-hover-bg: var(--mc-color-gray-700);
+}

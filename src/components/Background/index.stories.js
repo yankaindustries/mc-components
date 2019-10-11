@@ -115,7 +115,7 @@ storiesOf('Components|Background', module)
                     <br />
                     light
                     <br />
-                    ($mc-color-light, 100%)
+                    (var(--mc-color-light), 100%)
                     <br />
                     <br />
                   </Background>
@@ -126,7 +126,7 @@ storiesOf('Components|Background', module)
                     <br />
                     medium
                     <br />
-                    ($mc-color-gray-100, 100%)
+                    (var(--mc-color-gray-100), 100%)
                     <br />
                     <br />
                   </Background>
@@ -137,7 +137,7 @@ storiesOf('Components|Background', module)
                     <br />
                     dark
                     <br />
-                    ($mc-color-dark, 100%)
+                    (var(--mc-color-dark), 100%)
                     <br />
                     <br />
                   </Background>
@@ -159,7 +159,7 @@ storiesOf('Components|Background', module)
                     <br />
                     dim
                     <br />
-                    ($mc-color-dark, 70%)
+                    (var(--mc-color-dark), 70%)
                     <br />
                     <br />
                   </Background>

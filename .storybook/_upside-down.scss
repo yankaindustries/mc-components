@@ -34,22 +34,22 @@ a {
 }
 
 .hljs {
-  background: $mc-color-gray-100 !important;
+  background: var(--mc-color-gray-100) !important;
   border-radius: 6px;
-  color: $mc-color-gray-600 !important;
+  color: var(--mc-color-gray-600) !important;
 }
 
 .mc-code {
   display: inline-block;
   padding: 0 0.3em;
-  background: $mc-color-gray-100;
+  background: var(--mc-color-gray-100);
   border-radius: 6px;
   font-family: monospace;
-  color: $mc-color-gray-600;
+  color: var(--mc-color-gray-600);
 
   .mc-invert & {
-    background: $mc-color-gray-600;
-    color: $mc-color-gray-300;
+    background: var(--mc-color-gray-600);
+    color: var(--mc-color-gray-300);
   }
 }
 
@@ -137,31 +137,31 @@ a {
   align-items: center;
 
   $colors: (
-    mc-color-light: $mc-color-light,
-    mc-color-dark: $mc-color-dark,
-    mc-color-primary: $mc-color-primary,
-    mc-color-primary-hover: $mc-color-primary-hover,
-    mc-color-primary-active: $mc-color-primary-active,
-    mc-color-secondary: $mc-color-secondary,
-    mc-color-secondary-hover: $mc-color-secondary-hover,
-    mc-color-secondary-active: $mc-color-secondary-active,
-    mc-color-tertiary: $mc-color-tertiary,
-    mc-color-tertiary-hover: $mc-color-tertiary-hover,
-    mc-color-background: $mc-color-background,
-    mc-color-background-invert: $mc-color-background-invert,
-    mc-color-text: $mc-color-text,
-    mc-color-text-invert: $mc-color-text-invert,
-    mc-color-gray-100: $mc-color-gray-100,
-    mc-color-gray-200: $mc-color-gray-200,
-    mc-color-gray-300: $mc-color-gray-300,
-    mc-color-gray-400: $mc-color-gray-400,
-    mc-color-gray-500: $mc-color-gray-500,
-    mc-color-gray-600: $mc-color-gray-600,
-    mc-color-gray-700: $mc-color-gray-700,
-    mc-color-gray-800: $mc-color-gray-800,
-    mc-color-error: $mc-color-error,
-    mc-color-success: $mc-color-success,
-    mc-color-highlight: $mc-color-highlight
+    mc-color-light: var(--mc-color-light),
+    mc-color-dark: var(--mc-color-dark),
+    mc-color-primary: var(--mc-color-primary),
+    mc-color-primary-hover: var(--mc-color-primary-hover),
+    mc-color-primary-active: var(--mc-color-primary-active),
+    mc-color-secondary: var(--mc-color-secondary),
+    mc-color-secondary-hover: var(--mc-color-secondary-hover),
+    mc-color-secondary-active: var(--mc-color-secondary-active),
+    mc-color-tertiary: var(--mc-color-tertiary),
+    mc-color-tertiary-hover: var(--mc-color-tertiary-hover),
+    mc-color-background: var(--mc-color-background),
+    mc-color-background-invert: var(--mc-color-background-invert),
+    mc-color-text: var(--mc-color-text),
+    mc-color-text-invert: var(--mc-color-text-invert),
+    mc-color-gray-100: var(--mc-color-gray-100),
+    mc-color-gray-200: var(--mc-color-gray-200),
+    mc-color-gray-300: var(--mc-color-gray-300),
+    mc-color-gray-400: var(--mc-color-gray-400),
+    mc-color-gray-500: var(--mc-color-gray-500),
+    mc-color-gray-600: var(--mc-color-gray-600),
+    mc-color-gray-700: var(--mc-color-gray-700),
+    mc-color-gray-800: var(--mc-color-gray-800),
+    mc-color-error: var(--mc-color-error),
+    mc-color-success: var(--mc-color-success),
+    mc-color-highlight: var(--mc-color-highlight)
   );
 
   @each $colorKey, $colorVal in $colors {
@@ -184,7 +184,7 @@ a {
     width: 35px;
     height: 35px;
     margin-right: 12px;
-    border: 1px solid $mc-color-gray-100;
+    border: 1px solid var(--mc-color-gray-100);
     flex-shrink: 0;
 
   }
@@ -194,7 +194,7 @@ a {
   @for $i from 1 through 16 {
     &__box {
       display: inline-block;
-      background: $mc-color-primary;
+      background: var(--mc-color-primary);
     }
 
     &__box-#{$i} {
@@ -313,8 +313,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $mc-color-gray-100;
-  color: $mc-color-gray-400;
+  background: var(--mc-color-gray-100);
+  color: var(--mc-color-gray-400);
   line-height: 1;
   border-radius: 6px 0 0 0;
 }

@@ -7,7 +7,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: $mc-color-light;
+  color: var(--mc-color-light);
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.12em;
@@ -82,71 +82,57 @@
   }
 
   &--primary {
-    background-color: $mc-color-primary;
+    background-color: var(--mc-theme-primary);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background: $mc-color-primary-hover;
+        background: var(--mc-theme-primary-hover);
         // Needed to override old previously defined
         // hover color in masterclass repo
-        color: $mc-color-light;
+        color: var(--mc-color-light);
       }
 
       &:active {
-        background: $mc-color-primary-active;
+        background: var(--mc-theme-primary-active);
       }
     }
   }
 
   &--secondary {
-    background: $mc-color-gray-200;
+    background: var(--mc-theme-secondary);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background: $mc-color-gray-300;
+        background: var(--mc-theme-secondary-hover);
       }
 
       &:active {
-        background: $mc-color-gray-200;
+        background: var(--mc-theme-secondary-active);
       }
     }
   }
 
   &--tertiary {
     background: none;
-    box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
+    box-shadow: inset 0 0 0 1px rgba(var(--mc-theme-border-contrast), 0.5);
+    color: var(--mc-theme-text);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
         background: none;
-        box-shadow: inset 0 0 0 1px $mc-color-light;
+        box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast);
       }
 
       &:active {
         background: none;
-        box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
-      }
-    }
-
-    .mc-invert & {
-      box-shadow: inset 0 0 0 1px rgba($mc-color-dark, 0.5);
-      color: $mc-color-dark;
-
-      &:not(:disabled):not(.disabled) {
-        &:hover {
-          box-shadow: inset 0 0 0 1px $mc-color-dark;
-        }
-
-        &:active {
-          box-shadow: inset 0 0 0 1px rgba($mc-color-dark, 0.5);
-        }
+        box-shadow: inset 0 0 0 1px rgba(var(--mc-theme-border-contrast), 0.5);
       }
     }
   }
 
   &--link {
     background: none;
-    color: $mc-color-light;
+    color: var(--mc-theme-text);
 
     span {
       position: relative;
@@ -160,7 +146,7 @@
         width: 100%;
         height: 1px;
         pointer-events: none;
-        background: $mc-color-light;
+        background: var(--mc-theme-background);
         opacity: 0;
         transition: opacity 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
       }
@@ -175,16 +161,6 @@
         opacity: 1;
       }
     }
-
-    .mc-invert & {
-      color: $mc-color-dark;
-
-      span {
-        &:after {
-          background: $mc-color-dark;
-        }
-      }
-    }
   }
 
   &--symmetrical {
@@ -197,110 +173,111 @@
   }
 
   &--google {
-    background-color: $mc-color-google;
+    background-color: var(--mc-color-google);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: lighten($mc-color-google, 6.5%);
+        background-color: var(--mc-color-google-hover);
       }
 
       &:active {
-        background-color: $mc-color-google;
+        background-color: var(--mc-color-google);
       }
     }
   }
 
   &--facebook {
-    background-color: $mc-color-facebook;
+    background-color: var(--mc-color-facebook);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: lighten($mc-color-facebook, 6.5%);
+        background-color: var(--mc-color-facebook-hover);
       }
 
       &:active {
-        background-color: $mc-color-facebook;
+        background-color: var(--mc-color-facebook);
       }
     }
   }
 
   &--twitter {
-    background-color: $mc-color-twitter;
+    background-color: var(--mc-color-twitter);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: lighten($mc-color-twitter, 6.5%);
+        background-color: var(--mc-color-twitter-hover);
       }
 
       &:active {
-        background-color: $mc-color-twitter;
+        background-color: var(--mc-color-twitter);
       }
     }
   }
 
   &--pinterest {
-    background-color: $mc-color-pinterest;
+    background-color: var(--mc-color-pinterest);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: lighten($mc-color-pinterest, 6.5%);
+        background-color: var(--mc-color-pinterest-hover);
       }
 
       &:active {
-        background-color: $mc-color-pinterest;
+        background-color: var(--mc-color-pinterest);
       }
     }
   }
 
   &--paypal {
-    background-color: $mc-color-paypal;
-    color: $mc-color-dark;
+    background-color: var(--mc-color-paypal);
+    color: var(--mc-color-dark);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: lighten($mc-color-paypal, 6.5%);
-        color: $mc-color-dark;
+        background-color: var(--mc-color-paypal-hover);
+        color: var(--mc-color-dark);
       }
 
       &:active {
-        background-color: $mc-color-paypal;
-        color: $mc-color-dark;
+        background-color: var(--mc-color-paypal);
+        color: var(--mc-color-dark);
       }
     }
   }
 
   &--success {
-    background-color: $mc-color-success;
+    background-color: var(--mc-color-success);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: lighten($mc-color-success, 6.5%);
+        background-color: var(--mc-color-success-hover);
       }
 
       &:active {
-        background-color: $mc-color-success;
+        background-color: var(--mc-color-success);
       }
     }
   }
 
   &--applepay {
-    background-color: $mc-color-applepay;
-    color: $mc-color-dark;
+    background-color: var(--mc-color-applepay);
+    color: var(--mc-color-dark);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: lighten($mc-color-applepay, 6.5%);
-        color: $mc-color-dark;
+        background-color: var(--mc-color-applepay-hover);
+        color: var(--mc-color-dark);
       }
 
       &:active {
-        background-color: $mc-color-applepay;
-        color: $mc-color-dark;
+        background-color: var(--mc-color-applepay);
+        color: var(--mc-color-dark);
       }
     }
 
+    .mc-theme-light &,
     .mc-invert & {
-      box-shadow: inset 0 0 0 1px $mc-color-dark;
+      box-shadow: inset 0 0 0 1px var(--mc-color-dark);
     }
   }
 }

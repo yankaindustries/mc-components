@@ -12,20 +12,20 @@
     margin-top: -4px; // vertically center box
     width: 20px;
     height: 20px;
-    background: $mc-color-gray-100;
+    background: var(--mc-color-gray-100);
     border-radius: $default-radius;
-    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    box-shadow: inset 0 0 0 1px var(--mc-color-gray-200);
     transition:
       background 250ms ease,
       box-shadow 250ms ease;
 
     .mc-invert & {
-      background: $mc-color-light;
-      box-shadow: inset 0 0 0 1px $mc-color-gray-500;
+      background: var(--mc-color-light);
+      box-shadow: inset 0 0 0 1px var(--mc-color-gray-500);
 
       &:before,
       &:after {
-        background: $mc-color-gray-200;
+        background: var(--mc-color-gray-200);
       }
     }
 
@@ -38,7 +38,7 @@
       bottom: 5px;
       width: 0;
       height: 2px;
-      background: $mc-color-light;
+      background: var(--mc-color-light);
       border-radius: 3px;
       transform-origin: center left;
       transition: width 200ms ease;
@@ -57,10 +57,10 @@
     }
 
     .mc-input-checkbox:active & {
-      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+      box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
 
       .mc-invert & {
-        box-shadow: inset 0 0 0 2px $mc-color-gray-400;
+        box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
       }
     }
   }
@@ -96,8 +96,8 @@
       opacity: 0.5;
 
       .mc-invert & {
-        background: $mc-color-gray-700;
-        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+        background: var(--mc-color-gray-700);
+        box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
       }
 
       &:before,
@@ -107,10 +107,10 @@
     }
 
     &:active .mc-input-checkbox__fauxbox {
-      box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+      box-shadow: inset 0 0 0 1px var(--mc-color-gray-200);
 
       .mc-invert & {
-        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
+        box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
       }
     }
   }

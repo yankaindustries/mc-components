@@ -12,10 +12,10 @@
   padding: $input-padding;
   // Reset from 16px, so sizing is based on 24px square
   font-size: 12px;
-  color: rgba($mc-color-light, 0.3);
+  color: rgba(var(--mc-color-light-rgb), 0.3);
 
   .mc-invert & {
-    color: rgba($mc-color-dark, 0.3);
+    color: rgba(var(--mc-color-dark-rgb), 0.3);
   }
 }
 

@@ -17,7 +17,7 @@
       top: 50%;
       width: 9999px;
       height: 1px;
-      background: rgba($mc-color-light, 0.3);
+      background: rgba(var(--mc-color-light-rgb), 0.3);
     }
 
     &:before {
@@ -33,7 +33,7 @@
     span {
       &:before,
       &:after {
-        background: $mc-color-gray-600;
+        background: var(--mc-color-gray-600);
       }
     }
   }

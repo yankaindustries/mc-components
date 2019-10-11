@@ -1,7 +1,7 @@
 .mc-badge {
   display: inline-block;
   vertical-align: middle;
-  color: $mc-color-light;
+  color: var(--mc-color-light);
   border-radius: 20px;
 
   @include step(padding-top, 1);
@@ -10,19 +10,15 @@
   @include step(padding-left, 3);
 
   &--default {
-    background: $mc-color-secondary;
+    background: var(--mc-theme-secondary);
   }
 
   &--primary {
-    background: $mc-color-primary;
+    background: var(--mc-theme-primary);
   }
 
   &--transparent {
-    box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
-
-    .mc-invert & {
-      color: $mc-color-dark;
-      box-shadow: inset 0 0 0 1px rgba($mc-color-dark, 0.5);
-    }
+    color: var(--mc-theme-text);
+    box-shadow: inset 0 0 0 1px rgba(var(--mc-theme-border-contrast), 0.5);
   }
 }
