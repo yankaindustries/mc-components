@@ -11,6 +11,10 @@
   "module": "./dist/components/index.js",
   "style": "dist/styles/css/index.css",
   "sass": "dist/styles/scss/index.scss",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
   "scripts": {
     "prebuild": "rimraf ./dist",
     "dev": "concurrently -n js,css,scss 'yarn dev:js' 'yarn dev:css' 'yarn dev:scss'",
