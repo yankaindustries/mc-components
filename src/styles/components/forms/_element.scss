@@ -1,19 +1,14 @@
 .mc-form-element {
   display: flex;
   align-items: center;
-  box-shadow: inset 0 0 0 1px var(--mc-color-gray-200);
-  background: var(--mc-color-gray-100);
+  box-shadow: inset 0 0 0 1px var(--mc-theme-form-border);
+  background: var(--mc-theme-form-bg);
   border-radius: $default-radius;
   width: 100%;
   cursor: text;
   transition:
     color 200ms ease,
     box-shadow 200ms ease;
-
-  .mc-invert & {
-    background: var(--mc-color-light);
-    box-shadow: inset 0 0 0 1px var(--mc-color-gray-500);
-  }
 
   // The "actual" element, (input, textarea, select, etc)
   &__element {
@@ -23,7 +18,7 @@
     border: 0;
     margin: 0;
     padding: $input-padding;
-    color: var(--mc-color-light);
+    color: var(--mc-theme-form-elem-color);
     width: 100%;
     font-size: 16px;
     line-height: 1.5;
@@ -31,50 +26,27 @@
     text-overflow: ellipsis;
     resize: none;
 
-    .mc-invert & {
-      color: var(--mc-color-dark);
-    }
-
     &::placeholder {
-      color: rgba(var(--mc-color-light-rgb), 0.5);
-
-      .mc-invert & {
-        color: rgba(var(--mc-color-dark-rgb), 0.3);
-      }
+      color: rgba(var(--mc-theme-form-elem-placehold-color), 0.5);
     }
   }
 
   &--focus {
-    color: var(--mc-color-gray-600);
+    color: var(--mc-theme-form-focus-color);
     box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
-
-    // Even though it's the same color,
-    // base invert resets this to 1px so it needs
-    // more specificity
-    .mc-invert & {
-      box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
-    }
   }
 
   &--error {
     box-shadow: inset 0 0 0 2px var(--mc-color-error);
-
-    .mc-invert & {
-      box-shadow: inset 0 0 0 2px var(--mc-color-error);
-    }
   }
 
   &--success {
     box-shadow: inset 0 0 0 2px var(--mc-color-success);
-
-    .mc-invert & {
-      box-shadow: inset 0 0 0 2px var(--mc-color-success);
-    }
   }
 
   &--disabled {
-    background: var(--mc-color-gray-200);
-    box-shadow: none;
+    background: var(--mc-theme-form-dis-bg);
+    box-shadow: var(--mc-theme-form-dis-border);
     cursor: not-allowed;
 
     // Needed to select nested children
@@ -87,22 +59,13 @@
 
     &:hover,
     &:active {
-      box-shadow: none;
-
-      .mc-invert & {
-        box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
-      }
+      box-shadow: var(--mc-theme-form-dis-active);
     }
 
     .mc-form-element__element,
     .mc-form-element__element::selection {
       background: transparent;
-      color: rgba(var(--mc-color-light-rgb), 0.5);
-
-      .mc-invert & {
-        background: transparent;
-        color: rgba(var(--mc-color-dark-rgb), 0.3);
-      }
+      color: rgba(var(--mc-theme-form-dis-elem), 0.5);
     }
   }
 }
