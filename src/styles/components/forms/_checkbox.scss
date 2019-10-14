@@ -12,9 +12,9 @@
     margin-top: -4px; // vertically center box
     width: 20px;
     height: 20px;
-    background: var(--mc-theme-checkbox-fb-bg);
+    background: var(--mc-theme-checkbox-bg);
     border-radius: $default-radius;
-    box-shadow: inset 0 0 0 1px var(--mc-theme-checkbox-fb-border);
+    box-shadow: inset 0 0 0 1px var(--mc-theme-checkbox-border);
     transition:
       background 250ms ease,
       box-shadow 250ms ease;
@@ -28,7 +28,7 @@
       bottom: 5px;
       width: 0;
       height: 2px;
-      background: var(--mc-theme-checkbox-fb-after-bg);
+      background: var(--mc-theme-checkbox-checked);
       border-radius: 3px;
       transform-origin: center left;
       transition: width 200ms ease;
@@ -47,7 +47,7 @@
     }
 
     .mc-input-checkbox:active & {
-      box-shadow: inset 0 0 0 2px var(--mc-theme-checkbox-fb-active-border);
+      box-shadow: inset 0 0 0 2px var(--mc-theme-checkbox-active-border);
     }
   }
 

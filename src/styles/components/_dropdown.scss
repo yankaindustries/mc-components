@@ -61,8 +61,8 @@
       overflow: auto;
       z-index: $mc-zindex-dropdown;
 
-      background: var(--mc-theme-dropdown-cont-bg);
-      box-shadow: 0 4px 24px rgba(var(--mc-theme-dropdown-cont-shadow), 0.3);
+      background: var(--mc-theme-dropdown-bg);
+      box-shadow: 0 4px 24px rgba(var(--mc-theme-dropdown-shadow), 0.3);
       opacity: 0;
 
       transform-origin: 50% -50px;
@@ -142,7 +142,7 @@
     transition: background $dropdown-speed ease;
 
     &:hover {
-      background: var(--mc-theme-dropdown-itm-hover-bg);
+      background: var(--mc-theme-dropdown-hover-bg);
     }
   }
 

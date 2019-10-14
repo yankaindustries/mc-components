@@ -19,8 +19,8 @@
   &__content {
     @include step(padding, 3);
 
-    background: var(--mc-theme-tooltip-cont-bg);
-    border: 1px solid var(--mc-theme-tooltip-cont-border);
+    background: var(--mc-theme-tooltip-bg);
+    border: 1px solid var(--mc-theme-tooltip-border);
     border-radius: 3px;
     box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
   }

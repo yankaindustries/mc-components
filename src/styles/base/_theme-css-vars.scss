@@ -10,21 +10,21 @@
   --mc-theme-border-contrast-hover:   #{$mc-color-light};
   --mc-theme-applepay-border:         none;
   // Dropdown colors
-  --mc-theme-dropdown-backdrop:       #{rgba($mc-color-dark, 0.9)};
-  --mc-theme-dropdown-border:         #{$mc-color-gray-200};
-  --mc-theme-dropdown-cont-bg:        #{$mc-color-gray-100};
-  --mc-theme-dropdown-cont-shadow:    #{$mc-color-dark};
-  --mc-theme-dropdown-itm-hover-bg:   #{$mc-color-gray-200};
+  --mc-theme-dropdown-backdrop:   #{rgba($mc-color-dark, 0.9)};
+  --mc-theme-dropdown-border:     #{$mc-color-gray-200};
+  --mc-theme-dropdown-bg:         #{$mc-color-gray-100};
+  --mc-theme-dropdown-shadow:     #{$mc-color-dark};
+  --mc-theme-dropdown-hover-bg:   #{$mc-color-gray-200};
   // Tooltip colors
-  --mc-theme-tooltip-cont-bg:       #{$mc-color-gray-200};
-  --mc-theme-tooltip-cont-border:   #{$mc-color-gray-400};
+  --mc-theme-tooltip-bg:            #{$mc-color-gray-200};
+  --mc-theme-tooltip-border:        #{$mc-color-gray-400};
   --mc-theme-tooltip-arrow:         #{$mc-color-gray-400};
   --mc-theme-tooltip-arrow-after:   #{$mc-color-gray-200};
   // Checkbox colors
-  --mc-theme-checkbox-fb-bg:              #{$mc-color-gray-100};
-  --mc-theme-checkbox-fb-border:          #{$mc-color-gray-200};
-  --mc-theme-checkbox-fb-after-bg:        #{$mc-color-light};
-  --mc-theme-checkbox-fb-active-border:   #{$mc-color-gray-400};
+  --mc-theme-checkbox-bg:                 #{$mc-color-gray-100};
+  --mc-theme-checkbox-border:             #{$mc-color-gray-200};
+  --mc-theme-checkbox-checked:            #{$mc-color-light};
+  --mc-theme-checkbox-active-border:      #{$mc-color-gray-400};
   --mc-theme-checkbox-dis-bg:             #{$mc-color-gray-700};
   --mc-theme-checkbox-dis-border:         #{$mc-color-gray-600};
   --mc-theme-checkbox-dis-active-border:  #{$mc-color-gray-200};
@@ -39,11 +39,11 @@
   --mc-theme-form-dis-elem:               #{rgba($mc-color-light, 0.5)};
   --mc-theme-form-append:                 #{rgba($mc-color-light, 0.3)};
   // Radio colors
-  --mc-theme-radio-fb-bg:                 #{$mc-color-gray-100};
-  --mc-theme-radio-fb-border:             #{$mc-color-gray-200};
-  --mc-theme-radio-fb-after-bg:           #{$mc-color-light};
-  --mc-theme-radio-dis-fb-bg:             var(--mc-theme-radio-fb-bg);
-  --mc-theme-radio-dis-fb-border:         none;
+  --mc-theme-radio-bg:          #{$mc-color-gray-100};
+  --mc-theme-radio-border:      #{$mc-color-gray-200};
+  --mc-theme-radio-checked:     #{$mc-color-light};
+  --mc-theme-radio-dis-bg:      var(--mc-theme-radio-bg);
+  --mc-theme-radio-dis-border:  none;
   // Select colors
   --mc-theme-select-menu-bg:      #{$mc-color-gray-100};
   --mc-theme-select-menu-border:  #{$mc-color-gray-200};
@@ -65,18 +65,18 @@
   --mc-theme-applepay-border:         inset 0 0 0 1px #{$mc-color-dark};
   // Dropdown colors
   --mc-theme-dropdown-border:         #{$mc-color-gray-700};
-  --mc-theme-dropdown-cont-bg:        #{$mc-color-light};
-  --mc-theme-dropdown-itm-hover-bg:   #{$mc-color-gray-700};
+  --mc-theme-dropdown-bg:        #{$mc-color-light};
+  --mc-theme-dropdown-hover-bg:   #{$mc-color-gray-700};
   // Tooltip colors
-  --mc-theme-tooltip-cont-bg:       #{$mc-color-light};
-  --mc-theme-tooltip-cont-border:   #{$mc-color-gray-700};
+  --mc-theme-tooltip-bg:       #{$mc-color-light};
+  --mc-theme-tooltip-border:   #{$mc-color-gray-700};
   --mc-theme-tooltip-arrow:         #{$mc-color-gray-700};
   --mc-theme-tooltip-arrow-after:   #{$mc-color-light};
   // Checkbox colors
-  --mc-theme-checkbox-fb-bg:              #{$mc-color-light};
-  --mc-theme-checkbox-fb-border:          #{$mc-color-gray-500};
-  --mc-theme-checkbox-fb-after-bg:        #{$mc-color-gray-200};
-  --mc-theme-checkbox-fb-active-border:   #{$mc-color-gray-400};
+  --mc-theme-checkbox-bg:                 #{$mc-color-light};
+  --mc-theme-checkbox-border:             #{$mc-color-gray-500};
+  --mc-theme-checkbox-checked:            #{$mc-color-gray-200};
+  --mc-theme-checkbox-active-border:      #{$mc-color-gray-400};
   --mc-theme-checkbox-dis-bg:             #{$mc-color-gray-700};
   --mc-theme-checkbox-dis-border:         #{$mc-color-gray-600};
   --mc-theme-checkbox-dis-active-border:  #{$mc-color-gray-600};
@@ -91,11 +91,11 @@
   --mc-theme-form-dis-elem:               #{rgba($mc-color-dark, 0.3)};
   --mc-theme-form-append:                 #{rgba($mc-color-dark, 0.3)};
   // Radio colors
-  --mc-theme-radio-fb-bg:                 #{$mc-color-light};
-  --mc-theme-radio-fb-border:             #{$mc-color-gray-500};
-  --mc-theme-radio-fb-after-bg:           #{$mc-color-dark};
-  --mc-theme-radio-dis-fb-bg:             #{$mc-color-gray-700};
-  --mc-theme-radio-dis-fb-border:         inset 0 0 0 1px #{$mc-color-gray-600};
+  --mc-theme-radio-bg:          #{$mc-color-light};
+  --mc-theme-radio-border:      #{$mc-color-gray-500};
+  --mc-theme-radio-checked:     #{$mc-color-dark};
+  --mc-theme-radio-dis-bg:      #{$mc-color-gray-700};
+  --mc-theme-radio-dis-border:  inset 0 0 0 1px #{$mc-color-gray-600};
   // Select colors
   --mc-theme-select-menu-bg:      #{$mc-color-light};
   --mc-theme-select-menu-border:  #{$mc-color-gray-700};
