@@ -84,7 +84,7 @@
 
       .mc-tile__darken-bg-on-hover {
         .mc-tile-caption__content {
-          background: var(--mc-color-gray-100);
+          background: $mc-color-gray-100;
           padding: 12px 32px 24px 32px;
           transition:
             background $bg-duration ease 0ms,

@@ -1,0 +1,74 @@
+// Themes
+:root,
+.mc-theme-dark {
+  // Main colors
+  --mc-theme-background:              #{$mc-color-dark};
+  --mc-theme-text:                    #{$mc-color-light};
+  --mc-theme-separator:               #{rgba($mc-color-light, 0.3)};
+  --mc-theme-border-contrast:         #{rgba($mc-color-light, 0.5)};
+  --mc-theme-border-contrast-hover:   #{$mc-color-light};
+  // Dropdown colors
+  --mc-theme-dropdown-backdrop:       #{rgba($mc-color-dark, 0.9)};
+  --mc-theme-dropdown-border:         #{$mc-color-gray-200};
+  --mc-theme-dropdown-cont-bg:        #{$mc-color-gray-100};
+  --mc-theme-dropdown-cont-shadow:    #{$mc-color-dark};
+  --mc-theme-dropdown-itm-hover-bg:   #{$mc-color-gray-200};
+  // Tooltip colors
+  --mc-theme-tooltip-cont-bg:       #{$mc-color-gray-200};
+  --mc-theme-tooltip-cont-border:   #{$mc-color-gray-400};
+  --mc-theme-tooltip-arrow:         #{$mc-color-gray-400};
+  --mc-theme-tooltip-arrow-after:   #{$mc-color-gray-200};
+  // Checkbox colors
+  --mc-theme-checkbox-fb-bg:              #{$mc-color-gray-100};
+  --mc-theme-checkbox-fb-border:          #{$mc-color-gray-200};
+  --mc-theme-checkbox-fb-after-bg:        #{$mc-color-light};
+  --mc-theme-checkbox-fb-active-border:   #{$mc-color-gray-400};
+  --mc-theme-checkbox-dis-bg:             #{$mc-color-gray-700};
+  --mc-theme-checkbox-dis-border:         #{$mc-color-gray-600};
+  --mc-theme-checkbox-dis-active-border:  #{$mc-color-gray-200};
+  // Form element colors
+  --mc-theme-form-bg:                     #{$mc-color-gray-100};
+  --mc-theme-form-border:                 #{$mc-color-gray-200};
+  --mc-theme-form-elem-color:             #{$mc-color-light};
+  --mc-theme-form-elem-placehold-color:   #{rgba($mc-color-light, 0.5)};
+  --mc-theme-form-dis-bg:                 #{$mc-color-gray-200};
+  --mc-theme-form-dis-border:             none;
+  --mc-theme-form-dis-active:             none;
+  --mc-theme-form-dis-elem:               #{rgba($mc-color-light, 0.5)};
+}
+
+.mc-theme-light,
+.mc-invert {
+  // Main colors
+  --mc-theme-background:              #{$mc-color-light};
+  --mc-theme-text:                    #{$mc-color-dark};
+  --mc-theme-separator:               #{rgba($mc-color-dark, 0.3)};
+  --mc-theme-border-contrast:         #{rgba($mc-color-dark, 0.5)};
+  --mc-theme-border-contrast-hover:   #{$mc-color-dark};
+  // Dropdown colors
+  --mc-theme-dropdown-border:         #{$mc-color-gray-700};
+  --mc-theme-dropdown-cont-bg:        #{$mc-color-light};
+  --mc-theme-dropdown-itm-hover-bg:   #{$mc-color-gray-700};
+  // Tooltip colors
+  --mc-theme-tooltip-cont-bg:       #{$mc-color-light};
+  --mc-theme-tooltip-cont-border:   #{$mc-color-gray-700};
+  --mc-theme-tooltip-arrow:         #{$mc-color-gray-700};
+  --mc-theme-tooltip-arrow-after:   #{$mc-color-light};
+  // Checkbox colors
+  --mc-theme-checkbox-fb-bg:              #{$mc-color-light};
+  --mc-theme-checkbox-fb-border:          #{$mc-color-gray-500};
+  --mc-theme-checkbox-fb-after-bg:        #{$mc-color-gray-200};
+  --mc-theme-checkbox-fb-active-border:   #{$mc-color-gray-400};
+  --mc-theme-checkbox-dis-bg:             #{$mc-color-gray-700};
+  --mc-theme-checkbox-dis-border:         #{$mc-color-gray-600};
+  --mc-theme-checkbox-dis-active-border:  #{$mc-color-gray-600};
+  // Form element colors
+  --mc-theme-form-bg:                     #{$mc-color-light};
+  --mc-theme-form-border:                 #{$mc-color-gray-500};
+  --mc-theme-form-elem-color:             #{$mc-color-dark};
+  --mc-theme-form-elem-placehold-color:   #{rgba($mc-color-dark, 0.3)};
+  --mc-theme-form-dis-bg:                 #{$mc-color-gray-700};
+  --mc-theme-form-dis-border:             #{$mc-color-gray-600};
+  --mc-theme-form-dis-active:             #{$mc-color-gray-600};
+  --mc-theme-form-dis-elem:               #{rgba($mc-color-dark, 0.5)};
+}

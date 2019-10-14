@@ -129,15 +129,15 @@
   }
 
   &--color-light {
-    background: var(--mc-color-light);
+    background: $mc-color-light;
   }
 
   &--color-medium {
-    background: var(--mc-color-gray-100);
+    background: $mc-color-gray-100;
   }
 
   &--color-dark {
-    background: var(--mc-color-dark);
+    background: $mc-color-dark;
   }
 
   &--color-transparent {
@@ -145,6 +145,6 @@
   }
 
   &--color-dim {
-    background: rgba(var(--mc-color-dark-rgb), 0.7);
+    background: rgba($mc-color-dark, 0.7);
   }
 }

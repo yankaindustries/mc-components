@@ -20,7 +20,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-dark mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-dark</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-dark</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -28,7 +28,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-light mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-light</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-light</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -36,7 +36,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-background mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-background</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-background</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -44,7 +44,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-background-invert mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-background-invert</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-background-invert</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -52,7 +52,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-text mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-text</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-text</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -60,7 +60,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-text-invert mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-text-invert</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-text-invert</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -72,7 +72,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-100 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-100</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-100</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -80,7 +80,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-200 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-200</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-200</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -88,7 +88,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-300 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-300</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-300</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -96,7 +96,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-400 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-400</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-400</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -104,7 +104,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-500 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-500</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-500</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -112,7 +112,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-600 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-600</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-600</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -120,7 +120,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-700 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-700</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-700</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -128,7 +128,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-gray-800 mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-gray-800</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-gray-800</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -140,7 +140,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-primary mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-primary</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-primary</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -148,7 +148,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-primary-hover mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-primary-hover</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-primary-hover</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -156,7 +156,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-primary-active mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-primary-active</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-primary-active</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -168,7 +168,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-secondary mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-secondary</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-secondary</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -176,7 +176,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-secondary-hover mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-secondary-hover</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-secondary-hover</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -184,7 +184,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-secondary-active mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-secondary-active</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-secondary-active</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -196,7 +196,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-tertiary mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-tertiary</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-tertiary</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -204,7 +204,7 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-tertiary-hover mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-tertiary-hover</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-tertiary-hover</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
@@ -216,21 +216,21 @@ storiesOf('Foundation|Variables', module)
             <div className='example-mc-swatch example-mc-swatch--mc-color-error mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-error</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-error</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
             <div className='example-mc-swatch example-mc-swatch--mc-color-success mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-success</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-success</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>
             <div className='example-mc-swatch example-mc-swatch--mc-color-highlight mc-mb-4'>
               <span className='example-mc-swatch__color'></span>
               <div>
-                <p className='mc-text-h6 mc-text--monospace'>var(--mc-color-highlight</p>)
+                <p className='mc-text-h6 mc-text--monospace'>$mc-color-highlight</p>
                 <p className='example-mc-swatch__hex mc-text-h6 mc-opacity--muted mc-text--monospace'></p>
               </div>
             </div>

@@ -25,7 +25,7 @@
     height: 100vh;
     z-index: $mc-zindex-dropdown-backdrop;
 
-    background: rgba(var(--mc-theme-dropdown-backdrop), 0.9);
+    background: var(--mc-theme-dropdown-backdrop);
     opacity: 0;
 
     transition: opacity $dropdown-speed ease;

@@ -89,7 +89,7 @@ $scrollbar-max-width: 17px !default;
     }
 
     button {
-      background: var(--mc-color-gray-400);
+      background: $mc-color-gray-400;
       width: 6px;
       height: 6px;
       border-radius: 6px;
@@ -101,12 +101,12 @@ $scrollbar-max-width: 17px !default;
       outline: 0;
 
       &:hover {
-        background: var(--mc-color-gray-300);
+        background: $mc-color-gray-300;
       }
     }
 
     .slick-active button {
-      background: var(--mc-color-gray-500);
+      background: $mc-color-gray-500;
     }
   }
 
@@ -119,8 +119,8 @@ $scrollbar-max-width: 17px !default;
     width: 3em;
     height: 3em;
     border-radius: 3em;
-    background: var(--mc-color-gray-200);
-    color: var(--mc-color-gray-500);
+    background: $mc-color-gray-200;
+    color: $mc-color-gray-500;
     text-align: center;
     z-index: 1000;
     cursor: pointer;
@@ -132,8 +132,8 @@ $scrollbar-max-width: 17px !default;
 
 
     &:not(.slick-disabled):hover {
-      background: var(--mc-color-gray-300);
-      color: var(--mc-color-light);
+      background: $mc-color-gray-300;
+      color: $mc-color-light;
 
       .mc-carousel__arrow-text {
         opacity: 1;

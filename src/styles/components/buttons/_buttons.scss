@@ -7,7 +7,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--mc-color-light);
+  color: $mc-color-light;
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.12em;
@@ -82,50 +82,50 @@
   }
 
   &--primary {
-    background-color: var(--mc-theme-primary);
+    background-color: $mc-color-primary;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background: var(--mc-theme-primary-hover);
+        background: $mc-color-primary-hover;
         // Needed to override old previously defined
         // hover color in masterclass repo
-        color: var(--mc-color-light);
+        color: $mc-color-light;
       }
 
       &:active {
-        background: var(--mc-theme-primary-active);
+        background: $mc-color-primary-active;
       }
     }
   }
 
   &--secondary {
-    background: var(--mc-theme-secondary);
+    background: $mc-color-secondary;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background: var(--mc-theme-secondary-hover);
+        background: $mc-color-secondary-hover;
       }
 
       &:active {
-        background: var(--mc-theme-secondary-active);
+        background: $mc-color-secondary-active;
       }
     }
   }
 
   &--tertiary {
     background: none;
-    box-shadow: inset 0 0 0 1px rgba(var(--mc-theme-border-contrast), 0.5);
+    box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast);
     color: var(--mc-theme-text);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
         background: none;
-        box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast);
+        box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast-hover);
       }
 
       &:active {
         background: none;
-        box-shadow: inset 0 0 0 1px rgba(var(--mc-theme-border-contrast), 0.5);
+        box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast);
       }
     }
   }
@@ -173,111 +173,111 @@
   }
 
   &--google {
-    background-color: var(--mc-color-google);
+    background-color: $mc-color-google;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: var(--mc-color-google-hover);
+        background-color: lighten($mc-color-google, 6.5%);
       }
 
       &:active {
-        background-color: var(--mc-color-google);
+        background-color: $mc-color-google;
       }
     }
   }
 
   &--facebook {
-    background-color: var(--mc-color-facebook);
+    background-color: $mc-color-facebook;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: var(--mc-color-facebook-hover);
+        background-color: lighten($mc-color-facebook, 6.5%);
       }
 
       &:active {
-        background-color: var(--mc-color-facebook);
+        background-color: $mc-color-facebook;
       }
     }
   }
 
   &--twitter {
-    background-color: var(--mc-color-twitter);
+    background-color: $mc-color-twitter;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: var(--mc-color-twitter-hover);
+        background-color: lighten($mc-color-twitter, 6.5%);
       }
 
       &:active {
-        background-color: var(--mc-color-twitter);
+        background-color: $mc-color-twitter;
       }
     }
   }
 
   &--pinterest {
-    background-color: var(--mc-color-pinterest);
+    background-color: $mc-color-pinterest;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: var(--mc-color-pinterest-hover);
+        background-color: lighten($mc-color-pinterest, 6.5%);
       }
 
       &:active {
-        background-color: var(--mc-color-pinterest);
+        background-color: $mc-color-pinterest;
       }
     }
   }
 
   &--paypal {
-    background-color: var(--mc-color-paypal);
-    color: var(--mc-color-dark);
+    background-color: $mc-color-paypal;
+    color: $mc-color-dark;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: var(--mc-color-paypal-hover);
-        color: var(--mc-color-dark);
+        background-color: lighten($mc-color-paypal, 6.5%);
+        color: $mc-color-dark;
       }
 
       &:active {
-        background-color: var(--mc-color-paypal);
-        color: var(--mc-color-dark);
+        background-color: $mc-color-paypal;
+        color: $mc-color-dark;
       }
     }
   }
 
   &--success {
-    background-color: var(--mc-color-success);
+    background-color: $mc-color-success;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: var(--mc-color-success-hover);
+        background-color: lighten($mc-color-success, 6.5%);
       }
 
       &:active {
-        background-color: var(--mc-color-success);
+        background-color: $mc-color-success;
       }
     }
   }
 
   &--applepay {
-    background-color: var(--mc-color-applepay);
-    color: var(--mc-color-dark);
+    background-color: $mc-color-applepay;
+    color: $mc-color-dark;
 
     &:not(:disabled):not(.disabled) {
       &:hover {
-        background-color: var(--mc-color-applepay-hover);
-        color: var(--mc-color-dark);
+        background-color: lighten($mc-color-applepay, 6.5%);
+        color: $mc-color-dark;
       }
 
       &:active {
-        background-color: var(--mc-color-applepay);
-        color: var(--mc-color-dark);
+        background-color: $mc-color-applepay;
+        color: $mc-color-dark;
       }
     }
 
     .mc-theme-light &,
     .mc-invert & {
-      box-shadow: inset 0 0 0 1px var(--mc-color-dark);
+      box-shadow: inset 0 0 0 1px $mc-color-dark;
     }
   }
 }

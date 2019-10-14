@@ -27,21 +27,21 @@
     resize: none;
 
     &::placeholder {
-      color: rgba(var(--mc-theme-form-elem-placehold-color), 0.5);
+      color: var(--mc-theme-form-elem-placehold-color);
     }
   }
 
   &--focus {
     color: var(--mc-theme-form-focus-color);
-    box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
+    box-shadow: inset 0 0 0 2px $mc-color-gray-400;
   }
 
   &--error {
-    box-shadow: inset 0 0 0 2px var(--mc-color-error);
+    box-shadow: inset 0 0 0 2px $mc-color-error;
   }
 
   &--success {
-    box-shadow: inset 0 0 0 2px var(--mc-color-success);
+    box-shadow: inset 0 0 0 2px $mc-color-success;
   }
 
   &--disabled {
@@ -53,8 +53,8 @@
     * { cursor: not-allowed; }
 
     .mc-invert & {
-      background: var(--mc-color-gray-700);
-      box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
+      background: $mc-color-gray-700;
+      box-shadow: inset 0 0 0 1px $mc-color-gray-600;
     }
 
     &:hover,
@@ -65,7 +65,7 @@
     .mc-form-element__element,
     .mc-form-element__element::selection {
       background: transparent;
-      color: rgba(var(--mc-theme-form-dis-elem), 0.5);
+      color: var(--mc-theme-form-dis-elem);
     }
   }
 }

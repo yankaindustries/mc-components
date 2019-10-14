@@ -12,17 +12,17 @@
     margin-top: -4px; // vertically center box
     width: 20px;
     height: 20px;
-    background: var(--mc-color-gray-100);
+    background: $mc-color-gray-100;
     border-radius: 100%;
-    box-shadow: inset 0 0 0 1px var(--mc-color-gray-200);
+    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
     cursor: pointer;
     transition:
       background 250ms ease,
       box-shadow 250ms ease;
 
     .mc-invert & {
-      background: var(--mc-color-light);
-      box-shadow: inset 0 0 0 1px var(--mc-color-gray-500);
+      background: $mc-color-light;
+      box-shadow: inset 0 0 0 1px $mc-color-gray-500;
     }
 
     // Dot
@@ -32,7 +32,7 @@
       width: 8px;
       height: 8px;
       border-radius: 100%;
-      background: var(--mc-color-light);
+      background: $mc-color-light;
       transform: scale(0);
       opacity: 0;
       transition:
@@ -40,7 +40,7 @@
         transform 250ms ease;
 
       .mc-invert & {
-        background: var(--mc-color-dark);
+        background: $mc-color-dark;
       }
     }
   }
@@ -55,10 +55,10 @@
 
   // States
   &:active .mc-input-radio__fauxbox {
-    box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
+    box-shadow: inset 0 0 0 2px $mc-color-gray-400;
 
     .mc-invert & {
-      box-shadow: inset 0 0 0 2px var(--mc-color-gray-400);
+      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
     }
   }
 
@@ -80,8 +80,8 @@
       cursor: not-allowed;
 
       .mc-invert & {
-        background: var(--mc-color-gray-700);
-        box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
+        background: $mc-color-gray-700;
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
       }
 
       &:after {
@@ -93,7 +93,7 @@
       box-shadow: none;
 
       .mc-invert & {
-        box-shadow: inset 0 0 0 1px var(--mc-color-gray-600);
+        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
       }
     }
   }

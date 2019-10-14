@@ -1,8 +1,8 @@
 .rounded-box {
-  background-color: var(--mc-color-light);
+  background-color: $mc-color-light;
   border-radius: $default-radius;
   padding: $grid-gutter-width;
-  color: var(--mc-color-dark);
+  color: $mc-color-dark;
 
   @media (max-width: $mc-bp-sm) {
     padding: 2rem;
@@ -20,7 +20,7 @@
     font-weight: 400;
     line-height: 2.4rem;
     font-size: 1.6rem;
-    color: rgba(var(--mc-color-dark-rgb), 0.5);
+    color: rgba($mc-color-dark, 0.5);
     margin: 0;
   }
 }

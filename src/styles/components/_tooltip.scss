@@ -22,7 +22,7 @@
     background: var(--mc-theme-tooltip-cont-bg);
     border: 1px solid var(--mc-theme-tooltip-cont-border);
     border-radius: 3px;
-    box-shadow: 0 4px 24px rgba(var(--mc-color-dark-rgb), 0.3);
+    box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
   }
 
   &__arrow,

@@ -14,11 +14,11 @@
   z-index: $mc-zindex-modal-backdrop;
 
   &--dark {
-    background: rgba(var(--mc-color-dark-rgb), 0.8);
+    background: rgba($mc-color-dark, 0.8);
   }
 
   &--extra-dark {
-    background: rgba(var(--mc-color-dark-rgb), 0.95);
+    background: rgba($mc-color-dark, 0.95);
   }
 }
 

@@ -19,8 +19,8 @@
       background:
         linear-gradient(
           to left,
-          rgba(var(--mc-color-dark-rgb), 1) 0,
-          rgba(var(--mc-color-dark-rgb), 0) 100%
+          rgba($mc-color-dark, 1) 0,
+          rgba($mc-color-dark, 0) 100%
         ) center no-repeat;
       z-index: 1;
       pointer-events: none;
