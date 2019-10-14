@@ -17,7 +17,7 @@
       top: 50%;
       width: 9999px;
       height: 1px;
-      background: rgba($mc-color-light, 0.3);
+      background: var(--mc-theme-text-hr-span-after);
     }
 
     &:before {
@@ -26,15 +26,6 @@
 
     &:after {
       right: 100%;
-    }
-  }
-
-  .mc-invert & {
-    span {
-      &:before,
-      &:after {
-        background: $mc-color-gray-600;
-      }
     }
   }
 }

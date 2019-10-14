@@ -12,18 +12,13 @@
     margin-top: -4px; // vertically center box
     width: 20px;
     height: 20px;
-    background: $mc-color-gray-100;
+    background: var(--mc-theme-radio-fb-bg);
     border-radius: 100%;
-    box-shadow: inset 0 0 0 1px $mc-color-gray-200;
+    box-shadow: inset 0 0 0 1px var(--mc-theme-radio-fb-border);
     cursor: pointer;
     transition:
       background 250ms ease,
       box-shadow 250ms ease;
-
-    .mc-invert & {
-      background: $mc-color-light;
-      box-shadow: inset 0 0 0 1px $mc-color-gray-500;
-    }
 
     // Dot
     &:after {
@@ -32,16 +27,12 @@
       width: 8px;
       height: 8px;
       border-radius: 100%;
-      background: $mc-color-light;
+      background: var(--mc-theme-radio-fb-after-bg);
       transform: scale(0);
       opacity: 0;
       transition:
         opacity 250ms ease,
         transform 250ms ease;
-
-      .mc-invert & {
-        background: $mc-color-dark;
-      }
     }
   }
 
@@ -56,10 +47,6 @@
   // States
   &:active .mc-input-radio__fauxbox {
     box-shadow: inset 0 0 0 2px $mc-color-gray-400;
-
-    .mc-invert & {
-      box-shadow: inset 0 0 0 2px $mc-color-gray-400;
-    }
   }
 
 
@@ -76,13 +63,9 @@
     cursor: not-allowed;
 
     .mc-input-radio__fauxbox {
-      box-shadow: none;
+      background: var(--mc-theme-radio-dis-fb-bg);
+      box-shadow: var(--mc-theme-radio-dis-fb-border);
       cursor: not-allowed;
-
-      .mc-invert & {
-        background: $mc-color-gray-700;
-        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
-      }
 
       &:after {
         opacity: 0.3;
@@ -90,11 +73,7 @@
     }
 
     &:active .mc-input-radio__fauxbox {
-      box-shadow: none;
-
-      .mc-invert & {
-        box-shadow: inset 0 0 0 1px $mc-color-gray-600;
-      }
+      box-shadow: var(--mc-theme-radio-dis-fb-border);
     }
   }
 }

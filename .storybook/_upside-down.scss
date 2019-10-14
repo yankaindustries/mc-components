@@ -47,6 +47,7 @@ a {
   font-family: monospace;
   color: $mc-color-gray-600;
 
+  .mc-theme-light,
   .mc-invert & {
     background: $mc-color-gray-600;
     color: $mc-color-gray-300;
@@ -72,6 +73,7 @@ a {
   @include step(padding-bottom, 4);
   @include step(margin-bottom, 4);
 
+  .mc-theme-light,
   .mc-invert & {
     border-bottom-color: rgba(0, 0, 0, 0.1)
   }

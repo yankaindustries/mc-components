@@ -262,6 +262,7 @@
   &--applepay {
     background-color: $mc-color-applepay;
     color: $mc-color-dark;
+    box-shadow: var(--mc-theme-applepay-border);
 
     &:not(:disabled):not(.disabled) {
       &:hover {
@@ -273,11 +274,6 @@
         background-color: $mc-color-applepay;
         color: $mc-color-dark;
       }
-    }
-
-    .mc-theme-light &,
-    .mc-invert & {
-      box-shadow: inset 0 0 0 1px $mc-color-dark;
     }
   }
 }
