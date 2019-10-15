@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
@@ -75,6 +75,7 @@ export default class Carousel extends PureComponent {
     showCount: PropTypes.number,
     sliderRef: PropTypes.func,
     transition: PropTypes.string,
+    variableWidth: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -146,6 +147,7 @@ export default class Carousel extends PureComponent {
       scrollCount,
       showCount,
       transition,
+      variableWidth,
       ...restProps
     } = this.props
 
@@ -157,6 +159,7 @@ export default class Carousel extends PureComponent {
       'mc-carousel--highlight-hover': highlightOnHover,
       'mc-carousel--overflow': overflow,
       'mc-carousel--peek': peek,
+      'mc-carousel--variable-width': variableWidth,
     })
 
     const arrows = controls
@@ -186,37 +189,43 @@ export default class Carousel extends PureComponent {
       }
 
     return (
-      <Fragment>
+      <div className={classes}>
         <div className='mc-carousel__forced-spacing' />
         <div className='mc-carousel__container'>
           <div className='mc-carousel__inner-container'>
-            <Slider
-              autoplay={autoPlay}
-              className={classes}
-              centerMode={centered}
-              centerPadding={0}
-              fade={transition === TRANSITION_FADE}
-              focusOnSelect={focusOnSelect || peek}
-              ref={this.slider}
-              slidesToScroll={scrollCount}
-              slidesToShow={showCount}
-              infinite={loop}
-              draggable={false}
-              afterChange={this.handleAfterChange}
-              onInit={() => this.setState({ initialized: true })}
-              {...arrows}
-              {...restProps}
-            >
-              {children}
-            </Slider>
-            <div
-              className='mc-carousel__arrow-container'
-              ref={this.arrowContainerRef}
-            />
+            <div className='mc-carousel__slider-container'>
+              <Slider
+                autoplay={autoPlay}
+                className='mc-carousel__slider'
+                centerMode={centered}
+                centerPadding={0}
+                fade={transition === TRANSITION_FADE}
+                focusOnSelect={focusOnSelect || peek}
+                ref={this.slider}
+                slidesToScroll={scrollCount}
+                slidesToShow={variableWidth ? 1 : showCount}
+                infinite={loop}
+                draggable={false}
+                afterChange={this.handleAfterChange}
+                onInit={() => this.setState({ initialized: true })}
+                variableWidth={variableWidth}
+                {...arrows}
+                {...restProps}
+              >
+                {children}
+              </Slider>
+            </div>
+
+            {controls &&
+              <div
+                className='mc-carousel__arrow-container'
+                ref={this.arrowContainerRef}
+              />
+            }
           </div>
         </div>
         <div className='mc-carousel__forced-spacing' />
-      </Fragment>
+      </div>
     )
   }
 }

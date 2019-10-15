@@ -2,40 +2,19 @@ $mc-carousel-centered-padding: 100px !default;
 $scrollbar-max-width: 17px !default;
 
 .mc-carousel {
-  position: relative;
-  pointer-events: auto;
-  z-index: 0;
-  transition: z-index 0ms 1s;
-
-  // Make sure that when you hover on a carousel
-  // row, the hover effects are z-indexed correctly
-  // (they have to be set higher here to work)
-  &:hover {
-    z-index: 1;
-    transition: z-index 0ms 0ms;
-  }
-
-  // We need to override slick sliders default scss
-  // so that we can have cool hover effects and not cut off
-  // tiles that overflow the slick container
-  .slick-list {
-    overflow: visible;
-  }
-
-  .slick-slide {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 250ms ease;
-  }
-
-  // Align carousel items to left
-  .slick-track {
-    margin: 0;
-  }
-
-  .slick-active {
-    opacity: 1;
+  &__slider {
+    position: relative;
     pointer-events: auto;
+    z-index: 0;
+    transition: z-index 0ms 1s;
+
+    // Make sure that when you hover on a carousel
+    // row, the hover effects are z-indexed correctly
+    // (they have to be set higher here to work)
+    &:hover {
+      z-index: 1;
+      transition: z-index 0ms 0ms;
+    }
   }
 
   &__container {
@@ -59,6 +38,29 @@ $scrollbar-max-width: 17px !default;
   &__forced-spacing {
     height: 1px;
     margin-bottom: -1px;
+  }
+
+  // We need to override slick sliders default scss
+  // so that we can have cool hover effects and not cut off
+  // tiles that overflow the slick container
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-slide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+  }
+
+  // Align carousel items to left
+  .slick-track {
+    margin: 0;
+  }
+
+  .slick-active {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .slick-dots {
@@ -143,17 +145,11 @@ $scrollbar-max-width: 17px !default;
     &--prev {
       left: 0;
       transform: translate(-50%, -50%);
-
-      @media (min-width: $mc-bp-xl) {
-      }
     }
 
     &--next {
       right: 0;
       transform: translate(50%, -50%);
-
-      @media (min-width: $mc-bp-xl) {
-      }
     }
 
     // Disabled state for when you can't
