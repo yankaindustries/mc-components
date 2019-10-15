@@ -1,6 +1,6 @@
 {
   "name": "mc-components",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "author": "Masterclass <engineering@masterclass.com>",
   "homepage": "https://github.com/yankaindustries/mc-components",
   "license": "MIT",
@@ -11,7 +11,10 @@
   "module": "./dist/components/index.js",
   "style": "dist/styles/css/index.css",
   "sass": "dist/styles/scss/index.scss",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "scripts": {
     "prebuild": "rimraf ./dist",
     "dev": "concurrently -n js,css,scss 'yarn dev:js' 'yarn dev:css' 'yarn dev:scss'",
@@ -60,7 +63,7 @@
     "@storybook/addons": "^5.1.11",
     "@storybook/preset-scss": "^1.0.2",
     "@storybook/react": "^5.1.11",
-    "@storybook/storybook-deployer": "^2.3.0",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/theming": "^5.2.0",
     "@svgr/cli": "^4.3.2",
     "@svgr/webpack": "^4.3.2",
