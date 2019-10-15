@@ -52,8 +52,8 @@
 
 .mc-theme-light,
 .mc-invert {
-  // NOTE: we have to set this here, since the <body> tag
-  // is almost always out of scope
+  // NOTE: we have to set this here, since the <body> tag is out of scope
+  background: var(--mc-theme-background);
   color: var(--mc-theme-text);
   // Main colors
   --mc-theme-background:              #{$mc-color-light};
