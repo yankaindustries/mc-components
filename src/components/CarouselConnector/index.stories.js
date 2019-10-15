@@ -85,7 +85,7 @@ const tiles = () =>
   )
 
 
-storiesOf('Components|Carousels/CarouselConnector', module)
+storiesOf('Components|Carousel', module)
   .add('CarouselConnector', withAddons({
     path: 'components/CarouselConnector/index.stories.js',
     component: CarouselConnector,

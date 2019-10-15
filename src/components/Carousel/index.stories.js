@@ -7,12 +7,10 @@ import DocSection from '../../utils/DocSection'
 import PropExample from '../../utils/PropExample'
 
 import Carousel from '../Carousel'
-import CarouselConnector from '../CarouselConnector'
 import Tile from '../Tile'
 import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
-import Button from '../Button'
 import ResponsiveHandler from '../ResponsiveHandler'
 
 import { responsiveValues } from '../helpers'
@@ -88,133 +86,15 @@ const tiles = () =>
     </div>,
   )
 
-
-storiesOf('Components|Carousels', module)
-  .add('Summary', withAddons({
-    path: 'components/Carousel/index.stories.js',
-    component: Carousel,
-  })(() =>
-    <div className='container'>
-      <CarouselConnector>
-        {({ sliderRef, asNavFor }) =>
-          <ResponsiveHandler>
-            {({ gteMD }) =>
-              <div>
-                <Carousel
-                  sliderRef={sliderRef('hero')}
-                  asNavFor={asNavFor('thumbs')}
-                  transition='fade'
-                  loop
-                >
-                  {items.map((item, key) =>
-                    <Tile
-                      key={key}
-                      className='mc-hero__image'
-                      aspectRatio={gteMD ? '16x9' : '1x1'}
-                    >
-                      <TileImage
-                        className='example-offset-left-one-quarter example-offset-left-one-quarter--actives'
-                        imageUrl={item.image}
-                      />
-                      <TileOverlay
-                        className='example-offset-left-one-quarter example-offset-left-one-quarter--actives'
-                        type='spotlight'
-                      />
-                      <TileCaption position='left center'>
-                        <div className='row row--fill align-items-center mc-text--center mc-text-md--left'>
-                          <div className='col-xl-5 col-md-8 col-lg-6'>
-                            <h2 className='mc-text-h1 mc-text--uppercase'>
-                              {item.instructor}
-                            </h2>
-                            <h3 className='mc-text-h3 mc-opacity--muted mc-text--airy mc-mb-4'>
-                              Teaches {item.teaches}
-                            </h3>
-                            <p className='mc-text-intro mc-opacity--hinted mc-mb-8'>
-                              Online classes taught by the world&apos;s
-                              greatest minds.<br /> Learn from
-                              {item.instructor} and all 35+ other
-                              instructors.
-                            </p>
-                            <div className='row justify-content-center justify-content-md-start'>
-                              <div className='col-auto'>
-                                <Button>
-                                  All Access Pass
-                                </Button>
-                              </div>
-                              <div className='col-auto'>
-                                <Button secondary>
-                                  Learn More
-                                </Button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </TileCaption>
-                    </Tile>,
-                  )}
-                </Carousel>
-
-                <Carousel
-                  className='row'
-                  sliderRef={sliderRef('thumbs')}
-                  asNavFor={asNavFor('hero')}
-                  controls={gteMD}
-                  centered
-                  focusOnSelect
-                  loop
-                >
-                  {items.map((item, key) => (
-                    <div key={key} className='col-auto'>
-                      <Tile key={item.id}>
-                        <TileImage imageUrl={item.thumbnail} />
-                        {gteMD && <TileOverlay />}
-                        {gteMD &&
-                          <TileCaption>
-                            <h6 className='mc-text-h6 mc-text--uppercase'>
-                              {item.instructor}
-                            </h6>
-                            <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
-                              {item.teaches}
-                            </h6>
-                          </TileCaption>
-                        }
-                      </Tile>
-                    </div>
-                  ))}
-                </Carousel>
-              </div>
-            }
-          </ResponsiveHandler>
-        }
-      </CarouselConnector>
-
-      <hr className='mc-my-8' />
-
-      <h4 className='mc-text-h4 mc-text--uppercase mc-text--center mc-mb-8'>
-        Instructors
-      </h4>
-      <ResponsiveHandler>
-        {media =>
-          <Carousel
-            className='row'
-            controls={responsiveValues(media, true, true, false)}
-            peek={responsiveValues(media, false, false, true)}
-            showCount={responsiveValues(media, 3, 3, 1)}
-            scrollCount={responsiveValues(media, 2, 2, 1)}
-          >
-            {tiles()}
-          </Carousel>
-        }
-      </ResponsiveHandler>
-    </div>,
-  ))
+const random = (min, max) =>
+  Math.floor(min + (Math.random() * (max - min)))
 
 
-storiesOf('Components|Carousels/Carousel', module)
+storiesOf('Components|Carousel', module)
   .add('Carousel', withAddons({
     path: 'components/Carousel/index.stories.js',
     component: Carousel,
-  })(() => (
+  })(() =>
     <ResponsiveHandler>
       {media =>
         <div className='container'>
@@ -400,8 +280,35 @@ storiesOf('Components|Carousels/Carousel', module)
                   {tiles()}
                 </Carousel>
             </PropExample>
+
+            <PropExample
+              name='variableWidth'
+              type='Boolean'
+            >
+                <Carousel
+                  className='row'
+                  variableWidth
+                >
+                  {items.map(item =>
+                    <div key={item.id} className='col-auto' style={{ width: random(200, 600) }}>
+                      <Tile>
+                        <TileImage imageUrl={item.thumbnail} />
+                        <TileOverlay />
+                        <TileCaption>
+                          <h6 className='mc-text-h6 mc-text--uppercase'>
+                            {item.instructor}
+                          </h6>
+                          <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
+                            {item.teaches}
+                          </h6>
+                        </TileCaption>
+                      </Tile>
+                    </div>,
+                  )}
+                </Carousel>
+            </PropExample>
           </DocSection>
         </div>
       }
-    </ResponsiveHandler>
-  )))
+    </ResponsiveHandler>,
+  ))
