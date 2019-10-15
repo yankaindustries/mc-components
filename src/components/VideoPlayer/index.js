@@ -111,6 +111,7 @@ export default class VideoPlayer extends PureComponent {
     this.video.off('seeking')
     this.video.off('fullscreenchange')
     this.video.off('loadmetadata')
+    this.video.dispose()
   }
 
   setupScript = () => {
