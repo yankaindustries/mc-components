@@ -41,12 +41,10 @@ class ScrollHandlerStory extends PureComponent {
 
           <CodeExample>
             <div className='mc-py-12 mc-text--center'>
-
               <Sticky
                 position={'top'}
                 offset={0}
               >
-
                 <ScrollHandler to={scrolledTo}>
                 {({ scrolled }) => {
                     const classNames = cn({
@@ -87,7 +85,6 @@ class ScrollHandlerStory extends PureComponent {
                     )
                   }}
                 </ScrollHandler>
-
               </Sticky>
             </div>
           </CodeExample>
