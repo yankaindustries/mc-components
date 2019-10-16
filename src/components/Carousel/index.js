@@ -221,12 +221,10 @@ export default class Carousel extends PureComponent {
               </Slider>
             </div>
 
-            {controls &&
-              <div
-                className='mc-carousel__arrow-container'
-                ref={this.arrowContainerRef}
-              />
-            }
+            <div
+              className='mc-carousel__arrow-container'
+              ref={this.arrowContainerRef}
+            />
           </div>
         </div>
         <div className='mc-carousel__forced-spacing' />
