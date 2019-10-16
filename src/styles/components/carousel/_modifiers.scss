@@ -8,14 +8,14 @@
 
   &--peek {
     .mc-carousel__slider-container {
-      width: 75%;
+      padding-right: 25%;
 
       @media only screen and (min-width: $mc-bp-md) {
-        width: 80%;
+        padding-right: 20%;
       }
 
       @media only screen and (min-width: $mc-bp-lg) {
-        width: 85%;
+        padding-right: 15%;
       }
 
       &:after {
@@ -39,7 +39,9 @@
 
   &--peek,
   &--variable-width {
-    overflow: hidden;
+    .mc-carousel__slider-container {
+      overflow: hidden;
+    }
 
     .slick-slide {
       opacity: 1;
