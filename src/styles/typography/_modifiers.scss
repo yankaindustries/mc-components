@@ -218,9 +218,6 @@
   &--nowrap { white-space: nowrap; }
 }
 
-.mc-invert { color: $mc-color-dark; }
-
-
 // Responsive
 @each $breakpoint in map-keys($grid-breakpoints) {
   @media (min-width: map-get($grid-breakpoints, $breakpoint)) {

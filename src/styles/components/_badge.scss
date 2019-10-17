@@ -18,11 +18,7 @@
   }
 
   &--transparent {
-    box-shadow: inset 0 0 0 1px rgba($mc-color-light, 0.5);
-
-    .mc-invert & {
-      color: $mc-color-dark;
-      box-shadow: inset 0 0 0 1px rgba($mc-color-dark, 0.5);
-    }
+    color: var(--mc-theme-text);
+    box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast);
   }
 }
