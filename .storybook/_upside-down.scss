@@ -331,3 +331,17 @@ a {
     background-color: #fff;
   }
 }
+
+.mc-scroll-handler {
+  &--navbar {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 500ms ease, visibility 0s linear 500ms;
+
+    &--show {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+    }
+  }
+}

@@ -90,6 +90,7 @@ export default class Carousel extends PureComponent {
     scrollCount: 1,
     showCount: 3,
     transition: TRANSITION_SLIDE,
+    variableWidth: false,
   }
 
   arrowContainerRef = React.createRef()
@@ -151,8 +152,7 @@ export default class Carousel extends PureComponent {
       ...restProps
     } = this.props
 
-    const classes = cn({
-      [className]: className,
+    const containerClasses = cn({
       'mc-carousel': true,
       'mc-carousel--centered': centered,
       'mc-carousel--highlight-active': highlightOnActive,
@@ -160,6 +160,11 @@ export default class Carousel extends PureComponent {
       'mc-carousel--overflow': overflow,
       'mc-carousel--peek': peek,
       'mc-carousel--variable-width': variableWidth,
+    })
+
+    const carouselClasses = cn({
+      [className]: className,
+      'mc-carousel__slider': true,
     })
 
     const arrows = controls
@@ -189,14 +194,14 @@ export default class Carousel extends PureComponent {
       }
 
     return (
-      <div className={classes}>
+      <div className={containerClasses}>
         <div className='mc-carousel__forced-spacing' />
         <div className='mc-carousel__container'>
           <div className='mc-carousel__inner-container'>
             <div className='mc-carousel__slider-container'>
               <Slider
                 autoplay={autoPlay}
-                className='mc-carousel__slider'
+                className={carouselClasses}
                 centerMode={centered}
                 centerPadding={0}
                 fade={transition === TRANSITION_FADE}
@@ -216,12 +221,10 @@ export default class Carousel extends PureComponent {
               </Slider>
             </div>
 
-            {controls &&
-              <div
-                className='mc-carousel__arrow-container'
-                ref={this.arrowContainerRef}
-              />
-            }
+            <div
+              className='mc-carousel__arrow-container'
+              ref={this.arrowContainerRef}
+            />
           </div>
         </div>
         <div className='mc-carousel__forced-spacing' />
