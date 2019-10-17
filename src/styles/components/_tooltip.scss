@@ -19,15 +19,10 @@
   &__content {
     @include step(padding, 3);
 
-    background: $mc-color-gray-200;
-    border: 1px solid $mc-color-gray-400;
+    background: var(--mc-theme-tooltip-bg);
+    border: 1px solid var(--mc-theme-tooltip-border);
     border-radius: 3px;
     box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
-
-    .mc-invert & {
-      background-color: $mc-color-light;
-      border-color: $mc-color-gray-700;
-    }
   }
 
   &__arrow,
@@ -37,23 +32,12 @@
     height: 0;
 
     border-style: solid;
-    border-color: $mc-color-gray-400;
-
-    .mc-invert & {
-      border-color: $mc-color-gray-700;
-    }
+    border-color: var(--mc-theme-tooltip-arrow);
   }
 
   &__arrow:after {
     content: "";
-    position: absolute;
-
-    border-style: solid;
-    border-color: $mc-color-gray-200;
-
-    .mc-invert & {
-      border-color: $mc-color-light;
-    }
+    border-color: var(--mc-theme-tooltip-arrow-after);
   }
 
   &[x-placement^="top"] {

@@ -25,7 +25,7 @@
     height: 100vh;
     z-index: $mc-zindex-dropdown-backdrop;
 
-    background: rgba($mc-color-dark, 0.9);
+    background: var(--mc-theme-dropdown-backdrop);
     opacity: 0;
 
     transition: opacity $dropdown-speed ease;
@@ -61,8 +61,8 @@
       overflow: auto;
       z-index: $mc-zindex-dropdown;
 
-      background: $mc-color-gray-100;
-      box-shadow: 0 4px 24px rgba($mc-color-dark, 0.3);
+      background: var(--mc-theme-dropdown-bg);
+      box-shadow: 0 4px 24px rgba(var(--mc-theme-dropdown-shadow), 0.3);
       opacity: 0;
 
       transform-origin: 50% -50px;
@@ -76,7 +76,7 @@
         max-width: 400px;
         max-height: 50vh;
 
-        border: 1px solid $mc-color-gray-200;
+        border: 1px solid var(--mc-theme-dropdown-border);
         border-radius: $default-radius;
 
         @include step(padding-top, $mc-dropdown-body-padding);
@@ -104,21 +104,12 @@
         transform: rotateX(0deg);
         pointer-events: auto;
       }
-
-      .mc-invert & {
-        background: $mc-color-light;
-        border-color: $mc-color-gray-700;
-      }
     }
   }
 
   &__header {
     @include step(margin-top, -$mc-dropdown-body-padding);
-    border-bottom: 1px solid $mc-color-gray-200;
-
-    .mc-invert & {
-      border-color: $mc-color-gray-700;
-    }
+    border-bottom: 1px solid var(--mc-theme-dropdown-border);
   }
 
   &__body {
@@ -127,12 +118,8 @@
   }
 
   &__close {
-    border-bottom: 1px solid $mc-color-gray-200;
+    border-bottom: 1px solid var(--mc-theme-dropdown-border);
     text-align: right;
-
-    .mc-invert & {
-      border-color: $mc-color-gray-700;
-    }
   }
 
   &__close-icon {
@@ -146,11 +133,7 @@
 
   &__footer {
     @include step(margin-bottom, -$mc-dropdown-body-padding);
-    border-top: 1px solid $mc-color-gray-200;
-
-    .mc-invert & {
-      border-color: $mc-color-gray-700;
-    }
+    border-top: 1px solid var(--mc-theme-dropdown-border);
   }
 
   &__item {
@@ -159,11 +142,7 @@
     transition: background $dropdown-speed ease;
 
     &:hover {
-      background: $mc-color-gray-200;
-
-      .mc-invert & {
-        background: $mc-color-gray-700;
-      }
+      background: var(--mc-theme-dropdown-hover-bg);
     }
   }
 
