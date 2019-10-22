@@ -32,6 +32,7 @@ export default class Tile extends PureComponent {
       'mc-tile': true,
       [`mc-tile--${aspectRatio}`]: aspectRatio,
       'mc-tile--crop': crop,
+      'mc-tile--pointer': typeof restProps.onClick === 'function',
     })
 
     return (
