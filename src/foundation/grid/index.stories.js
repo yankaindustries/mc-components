@@ -228,9 +228,6 @@ storiesOf('Foundation|Grid', module)
           <div className='col-6'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
-        </div>
-
-        <div className='row gutters-vertical'>
           <div className='col-sm-12 col-md-4'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
@@ -240,9 +237,6 @@ storiesOf('Foundation|Grid', module)
           <div className='col-sm-12 col-md-4'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
-        </div>
-
-        <div className='row gutters-vertical'>
           <div className='col-md'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>

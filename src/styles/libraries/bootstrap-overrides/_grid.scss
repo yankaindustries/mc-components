@@ -75,6 +75,11 @@
 }
 
 .gutters-vertical {
+  &.row {
+    margin-top: $grid-gutter-width / -2;
+    margin-bottom: $grid-gutter-width / -2;
+  }
+
   > .col,
   > [class^="col-"],
   > [class*=" col-"] {
