@@ -19,3 +19,4 @@ yarn-debug.log*
 
 # Tests
 __diff_output__
+coverage
