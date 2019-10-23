@@ -1,21 +1,21 @@
-# dependencies
+# NPM
 /node_modules
-
 /dist
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# debugging
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 package-lock.json
 
-# IDE Sharing
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# IDE
 .floo
 .flooignore
+
+# Environment
+.DS_Store
+.env*
+
+# Tests
+__diff_output__

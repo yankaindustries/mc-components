@@ -14,9 +14,11 @@ jobs:
           name: Run linter
           command: yarn lint
       - run:
+          name: Run tests
+          command: yarn test
+      - run:
           name: Attempt a build
           command: yarn build
-
       - save_cache:
           key: dependency-cache
           paths:
