@@ -1,25 +1,7 @@
-// We need to support responsive gutter sizing, so this
-// override file sets the gutter sizing from mobile to
-// desktop.
-
-
-.container,
-.container-fluid {
-  padding: 0 ($grid-gutter-width);
-}
-
 .row {
-  margin: $grid-gutter-width / -2;
-
   &--fill {
     height: 100%;
   }
-}
-
-.col,
-[class^="col-"],
-[class*=" col-"] {
-  padding: $grid-gutter-width / 2;
 }
 
 .col-auto-max {
@@ -27,61 +9,75 @@
   max-width: 100%;
 }
 
-// Responsive
-@media only screen and (min-width: $mc-bp-sm) {
-  .container,
-  .container-fluid { padding: 0 ($grid-gutter-width-sm * 2); }
+// Grid modifiers
+.gutters {
+  &.container,
+  &.container-fluid {
+    padding: 0 ($grid-gutter-width);
+  }
+
+  &.row{
+    margin: $grid-gutter-width / -2;
+
+    > .col,
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding: $grid-gutter-width / 2;
+    }
+  }
+
+  // Responsive
+  @media only screen and (min-width: $mc-bp-sm) {
+    &.container,
+    &.container-fluid { padding: 0 ($grid-gutter-width-sm * 2); }
+  }
+
+  @media only screen and (min-width: $mc-bp-md) {
+    &.container,
+    &.container-fluid { padding: 0 ($grid-gutter-width-md * 2); }
+  }
+
+  @media only screen and (min-width: $mc-bp-lg) {
+    &.container,
+    &.container-fluid { padding: 0 ($grid-gutter-width-lg * 2); }
+  }
+
+  @media only screen and (min-width: $mc-bp-xl) {
+    &.container,
+    &.container-fluid { padding: 0 ($grid-gutter-width-xl * 2); }
+    &.row { margin: $grid-gutter-width-xl / -2; }
+  }
 }
 
-@media only screen and (min-width: $mc-bp-md) {
-  .container,
-  .container-fluid { padding: 0 ($grid-gutter-width-md * 2); }
+.gutters-vertical {
+  &.row{
+    > .col,
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding: $grid-gutter-width / 2 0;
+    }
+  }
 }
 
-@media only screen and (min-width: $mc-bp-lg) {
-  .container,
-  .container-fluid { padding: 0 ($grid-gutter-width-lg * 2); }
+.gutters-horizontal {
+  &.row{
+    margin: 0 $grid-gutter-width / -2;
+
+    > .col,
+    > [class^="col-"],
+    > [class*=" col-"] {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  }
 }
 
-@media only screen and (min-width: $mc-bp-xl) {
-  .container,
-  .container-fluid { padding: 0 ($grid-gutter-width-xl * 2); }
-  .row { margin: $grid-gutter-width-xl / -2; }
-
-  .col,
-  [class^="col-"],
-  [class*=" col-"] { padding: $grid-gutter-width-xl / 2; }
-
-  // Override for smaller gutters when using the
-  // grid inside of an existing column (nested grids)
-  .small-gutters {
+.small-gutters {
+  &.row {
     margin: $grid-gutter-width-xl / -4;
 
-    .col,
+    > .col,
     [class^="col-"],
     [class*=" col-"] { padding: $grid-gutter-width-xl / 4; }
-  }
-}
-
-// Grid modifiers
-.no-gutters {
-  margin: 0;
-
-  > .col,
-  > [class^="col-"],
-  > [class*=" col-"] {
-    padding: 0;
-  }
-}
-
-.no-gutters-vertical {
-  margin-top: 0;
-  margin-bottom: 0;
-
-  > .col,
-  > [class^="col-"],
-  > [class*=" col-"] {
-    padding-top: 0;
-    padding-bottom: 0;
   }
 }

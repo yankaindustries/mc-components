@@ -11,7 +11,7 @@ storiesOf('Foundation|Grid', module)
   .add('Summary', withAddons({
     path: 'foundation/grid/index.stories.js',
   })(() => (
-    <div className='container'>
+    <div className='container gutters'>
       <DocHeader
         title='Grid'
         description='A demo of the grid system in mc-components.'
@@ -162,8 +162,8 @@ storiesOf('Foundation|Grid', module)
         </div>
       </PropExample>
 
-      <PropExample name='.row.no-gutters'>
-        <div className='row no-gutters'>
+      <PropExample name='.row.gutters'>
+        <div className='row gutters'>
           <div className='col-6'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
@@ -220,8 +220,8 @@ storiesOf('Foundation|Grid', module)
         </div>
       </PropExample>
 
-      <PropExample name='.row.no-gutters-vertical'>
-        <div className='row no-gutters-vertical'>
+      <PropExample name='.row.gutters-horizontal'>
+        <div className='row gutters-horizontal'>
           <div className='col-6'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
@@ -230,7 +230,7 @@ storiesOf('Foundation|Grid', module)
           </div>
         </div>
 
-        <div className='row no-gutters-vertical'>
+        <div className='row gutters-horizontal'>
           <div className='col-sm-12 col-md-4'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
@@ -242,7 +242,127 @@ storiesOf('Foundation|Grid', module)
           </div>
         </div>
 
-        <div className='row no-gutters-vertical'>
+        <div className='row gutters-horizontal'>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+        </div>
+      </PropExample>
+
+      <PropExample name='.row.gutters-vertical'>
+        <div className='row gutters-vertical'>
+          <div className='col-6'>
+            <Placeholder className='example-grid-block'>.col-6</Placeholder>
+          </div>
+          <div className='col-6'>
+            <Placeholder className='example-grid-block'>.col-6</Placeholder>
+          </div>
+        </div>
+
+        <div className='row gutters-vertical'>
+          <div className='col-sm-12 col-md-4'>
+            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+          </div>
+          <div className='col-sm-12 col-md-4'>
+            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+          </div>
+          <div className='col-sm-12 col-md-4'>
+            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+          </div>
+        </div>
+
+        <div className='row gutters-vertical'>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+          <div className='col-md'>
+            <Placeholder className='example-grid-block'>.col-md</Placeholder>
+          </div>
+        </div>
+      </PropExample>
+
+      <PropExample name='.row.small-gutters'>
+        <div className='row small-gutters'>
+          <div className='col-6'>
+            <Placeholder className='example-grid-block'>.col-6</Placeholder>
+          </div>
+          <div className='col-6'>
+            <Placeholder className='example-grid-block'>.col-6</Placeholder>
+          </div>
+
+          <div className='col-sm-12 col-md-4'>
+            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+          </div>
+          <div className='col-sm-12 col-md-4'>
+            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+          </div>
+          <div className='col-sm-12 col-md-4'>
+            <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
+          </div>
+
           <div className='col-md'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
@@ -284,7 +404,7 @@ storiesOf('Foundation|Grid', module)
 
       <PropExample name='.container / .container-fluid / .uncontainer'>
         <div className='uncontainer'>
-          <div className='container mc-mb-4'>
+          <div className='container gutters mc-mb-4'>
             <h5 className='mc-text-h5'>Contained Content</h5>
             <p className='mc-opacity--muted'>
               Containers will keep the edge of your content lined up, as well
@@ -293,7 +413,7 @@ storiesOf('Foundation|Grid', module)
             </p>
           </div>
 
-          <div className='container-fluid mc-mb-4'>
+          <div className='container-fluid gutters mc-mb-4'>
             <h5 className='mc-text-h5'>Fluidly Contained Content</h5>
             <p className='mc-opacity--muted'>
               Identical to a normal container, but the width does not max out.
