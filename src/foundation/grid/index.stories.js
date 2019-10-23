@@ -220,8 +220,8 @@ storiesOf('Foundation|Grid', module)
         </div>
       </PropExample>
 
-      <PropExample name='.row.no-gutters-vertical'>
-        <div className='row no-gutters-vertical'>
+      <PropExample name='.row.gutters-vertical'>
+        <div className='row gutters-vertical'>
           <div className='col-6'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
@@ -230,7 +230,7 @@ storiesOf('Foundation|Grid', module)
           </div>
         </div>
 
-        <div className='row no-gutters-vertical'>
+        <div className='row gutters-vertical'>
           <div className='col-sm-12 col-md-4'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
@@ -242,7 +242,7 @@ storiesOf('Foundation|Grid', module)
           </div>
         </div>
 
-        <div className='row no-gutters-vertical'>
+        <div className='row gutters-vertical'>
           <div className='col-md'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>

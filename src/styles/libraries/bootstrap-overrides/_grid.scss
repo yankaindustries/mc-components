@@ -9,7 +9,7 @@
 }
 
 .row {
-  margin: $grid-gutter-width / -2;
+  margin: 0 $grid-gutter-width / -2;
 
   &--fill {
     height: 100%;
@@ -19,7 +19,7 @@
 .col,
 [class^="col-"],
 [class*=" col-"] {
-  padding: $grid-gutter-width / 2;
+  padding: 0 $grid-gutter-width / 2;
 }
 
 .col-auto-max {
@@ -50,16 +50,16 @@
 
   .col,
   [class^="col-"],
-  [class*=" col-"] { padding: $grid-gutter-width-xl / 2; }
+  [class*=" col-"] { padding: 0 $grid-gutter-width-xl / 2; }
 
   // Override for smaller gutters when using the
   // grid inside of an existing column (nested grids)
   .small-gutters {
-    margin: $grid-gutter-width-xl / -4;
+    margin: 0 $grid-gutter-width-xl / -4;
 
     .col,
     [class^="col-"],
-    [class*=" col-"] { padding: $grid-gutter-width-xl / 4; }
+    [class*=" col-"] { padding: 0 $grid-gutter-width-xl / 4; }
   }
 }
 
@@ -74,14 +74,11 @@
   }
 }
 
-.no-gutters-vertical {
-  margin-top: 0;
-  margin-bottom: 0;
-
+.gutters-vertical {
   > .col,
   > [class^="col-"],
   > [class*=" col-"] {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: $grid-gutter-width / 2;
+    padding-bottom: $grid-gutter-width / 2;
   }
 }
