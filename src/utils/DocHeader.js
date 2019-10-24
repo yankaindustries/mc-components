@@ -28,7 +28,7 @@ export default class DocHeader extends PureComponent {
 
     return (
       <div className={classes}>
-        <div className='row'>
+        <div className='row gutters-vertical'>
           <div className='col-lg-6'>
             <h1 className='mc-text-h1'>
               {title}

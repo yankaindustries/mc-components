@@ -99,7 +99,7 @@ storiesOf('Playground|Pages', module)
                         type='spotlight'
                       />
                       <TileCaption position='left center'>
-                        <div className='row row--fill align-items-center mc-text--center mc-text-md--left'>
+                        <div className='row gutters-vertical row--fill align-items-center mc-text--center mc-text-md--left'>
                           <div className='col-xl-5 col-md-8 col-lg-6'>
                             <h2 className='mc-text-h1 mc-text--uppercase'>
                               {item.instructor}
@@ -113,7 +113,7 @@ storiesOf('Playground|Pages', module)
                               {item.instructor} and all 35+ other
                               instructors.
                             </p>
-                            <div className='row justify-content-center justify-content-md-start'>
+                            <div className='row gutters-vertical justify-content-center justify-content-md-start'>
                               <div className='col-auto'>
                                 <Button>
                                   All Access Pass
@@ -173,7 +173,7 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row justify-content-center'>
+        <div className='row gutters-vertical justify-content-center'>
           <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/today-4d4e4dfc0db7fa08e4e18e4b0ae9f8598e674c0de4f3349d9b74f02138604276.svg' />
           </div>
@@ -202,7 +202,7 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row'>
+        <div className='row gutters-vertical'>
           <div className='col-12'>
             <ResponsiveHandler>
               {({ gteMD }) =>
@@ -291,10 +291,10 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row'>
+        <div className='row gutters-vertical'>
           <div className='col-md-4'>
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-              <div className='row align-items-center small-gutters'>
+              <div className='row gutters-vertical align-items-center small-gutters'>
                 <div className='col col-auto'>
                   <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-al-300e6379265c09b2f4b659df27a10cace702dd3beb031af97178f4f1b683adc3.png' />
                 </div>
@@ -330,7 +330,7 @@ storiesOf('Playground|Pages', module)
 
           <div className='col-md-4'>
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-              <div className='row align-items-center small-gutters'>
+              <div className='row gutters-vertical align-items-center small-gutters'>
                 <div className='col col-auto'>
                   <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-gr-24c1d9b59bbeadd671a0ef5140e137d07e26368f5b0984a0b90fe5f794700de0.png' />
                 </div>
@@ -366,7 +366,7 @@ storiesOf('Playground|Pages', module)
 
           <div className='col-md-4'>
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-              <div className='row align-items-center small-gutters'>
+              <div className='row gutters-vertical align-items-center small-gutters'>
                 <div className='col col-auto'>
                   <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-jp-cde7e157ed95191ad3167e5dea00394798decee7462fc897d71ac6e450cd8b79.png' />
                 </div>
@@ -408,7 +408,7 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row'>
+        <div className='row gutters-vertical'>
           <div className='col-12'>
             <ResponsiveHandler>
               {({ gteMD }) =>
@@ -491,7 +491,7 @@ storiesOf('Playground|Pages', module)
       </div>
 
       <div className='mc-section'>
-        <div className='row align-items-center'>
+        <div className='row gutters-vertical align-items-center'>
           <div className='col-lg-4'>
             <div className='mc-section__header'>
               <h3 className='mc-text-h3 mc-text--center mc-text-lg--left'>
@@ -502,7 +502,7 @@ storiesOf('Playground|Pages', module)
               </p>
               <br />
 
-              <div className='row small-gutters justify-content-center justify-content-lg-start'>
+              <div className='row gutters-vertical small-gutters justify-content-center justify-content-lg-start'>
                 <div className='col-auto'>
                   <ChevronLeft className='mc-icon--5 mc-icon--circled mc-opacity--muted' />
                 </div>
@@ -515,12 +515,12 @@ storiesOf('Playground|Pages', module)
           </div>
 
           <div className='col-lg-8'>
-            <div className='row'>
+            <div className='row gutters-vertical'>
               <div className='col-lg-6'>
-                <div className='row'>
+                <div className='row gutters-vertical'>
                   <div className='col-12'>
                     <div className='mc-card mc-background--color-light mc-invert'>
-                      <div className='row align-items-center small-gutters'>
+                      <div className='row gutters-vertical align-items-center small-gutters'>
                         <div className='col col-auto'>
                           <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1429/original/1518557721-Slide_Thumb.jpg?1518557721' />
                         </div>
@@ -549,7 +549,7 @@ storiesOf('Playground|Pages', module)
 
                   <div className='col-12'>
                     <div className='mc-card mc-background--color-light mc-invert'>
-                      <div className='row align-items-center small-gutters'>
+                      <div className='row gutters-vertical align-items-center small-gutters'>
                         <div className='col col-auto'>
                           <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1194/original/1512075998-Slide_Thumb.jpg?1512075998' />
                         </div>
@@ -586,7 +586,7 @@ storiesOf('Playground|Pages', module)
 
               <div className='col-lg-6'>
                 <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-                  <div className='row align-items-center small-gutters'>
+                  <div className='row gutters-vertical align-items-center small-gutters'>
                     <div className='col col-auto'>
                       <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/528/original/1488402263-1488323293-SM_SlideThumb_V1_A.jpg?1488402263' />
                     </div>
@@ -651,7 +651,7 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row justify-content-center'>
+        <div className='row gutters-vertical justify-content-center'>
           <div className='col-auto'>
             <Twitter className='mc-icon--8 mc-icon--circled mc-opacity--muted' />
           </div>

@@ -34,7 +34,7 @@ storiesOf('Components|Icons', module)
             type='string'
             description='Choose the icon you would like to render.'
           >
-            <div className='row'>
+            <div className='row gutters-vertical'>
               {keys(icons).map(kind =>
                 <div key={kind} className='col-3 mc-text--center'>
                   <Icon kind={kind} />

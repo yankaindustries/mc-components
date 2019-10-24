@@ -98,7 +98,7 @@ class Summary extends PureComponent {
         />
 
         <DocSection title='Demo'>
-          <div className='row'>
+          <div className='row gutters-vertical'>
             <div className='col-4 col-sm-3'>
               <Select
                 options={sizeOptions}
@@ -303,7 +303,7 @@ class Summary extends PureComponent {
 
           <Separator />
 
-          <div className='row'>
+          <div className='row gutters-vertical'>
             {[1, 2, 3].map(key =>
               <div key={key} className='col-sm-6 col-lg-4'>
                 <HoverHandler>

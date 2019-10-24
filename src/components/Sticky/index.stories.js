@@ -62,7 +62,7 @@ class StickyStory extends PureComponent {
                 offset={offset}
               >
                 <div className='mc-sticky--navbar'>
-                 <div className='row'>
+                 <div className='row gutters-vertical'>
                     <div className='col-auto'>
                       <Button kind='google'>
                         Google

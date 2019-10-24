@@ -26,7 +26,7 @@ export default class InvertedMirror extends PureComponent {
 
     return (
       <div className={classes}>
-        <div className='row'>
+        <div className='row gutters-vertical'>
           <div className='col-md-6'>
             <Background
               color='light'
