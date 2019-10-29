@@ -7,6 +7,7 @@ import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import InvertedMirror from '../../utils/InvertedMirror'
 import PropExample from '../../utils/PropExample'
+import CodeExample from '../../utils/CodeExample'
 
 import Icon from '../Icons'
 import { ICONS } from './icons'
@@ -40,35 +41,39 @@ storiesOf('Components|Icons', module)
           <a
             href='?path=/story/foundation-scale--summary'
             className='mc-text--link'
-          >scale</a>.
+          >
+            scale
+          </a>.
         </p>
 
-        <div className='row'>
-          <div className='col-auto'>
-            <h5 className='mc-text-h5'>
-              <span className='mc-code'>mc-icon--1</span>
-            </h5>
-            <Icon kind='star' className='mc-icon--1' />
+        <CodeExample>
+          <div className='row'>
+            <div className='col-auto'>
+              <h5 className='mc-text-h5'>
+                <span className='mc-code'>mc-icon--1</span>
+              </h5>
+              <Icon kind='star' className='mc-icon--1' />
+            </div>
+            <div className='col-auto'>
+              <h5 className='mc-text-h5'>
+                <span className='mc-code'>mc-icon--5</span>
+              </h5>
+              <Icon kind='star' className='mc-icon--5' />
+            </div>
+            <div className='col-auto'>
+              <h5 className='mc-text-h5'>
+                <span className='mc-code'>mc-icon--9</span>
+              </h5>
+              <Icon kind='star' className='mc-icon--9' />
+            </div>
+            <div className='col-auto'>
+              <h5 className='mc-text-h5'>
+                <span className='mc-code'>mc-icon--10</span>
+              </h5>
+              <Icon kind='star' className='mc-icon--10' />
+            </div>
           </div>
-          <div className='col-auto'>
-            <h5 className='mc-text-h5'>
-              <span className='mc-code'>mc-icon--5</span>
-            </h5>
-            <Icon kind='star' className='mc-icon--5' />
-          </div>
-          <div className='col-auto'>
-            <h5 className='mc-text-h5'>
-              <span className='mc-code'>mc-icon--9</span>
-            </h5>
-            <Icon kind='star' className='mc-icon--9' />
-          </div>
-          <div className='col-auto'>
-            <h5 className='mc-text-h5'>
-              <span className='mc-code'>mc-icon--10</span>
-            </h5>
-            <Icon kind='star' className='mc-icon--10' />
-          </div>
-        </div>
+        </CodeExample>
       </DocSection>
 
       <DocSection title='Properties'>
