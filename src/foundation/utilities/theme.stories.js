@@ -5,6 +5,7 @@ import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 import Button from '../../components/Button'
 import Background from '../../components/Background'
+import CodeExample from '../../utils/CodeExample'
 
 
 const Theme = () =>
@@ -28,50 +29,7 @@ const Theme = () =>
         </span>
          or no specific class set
       </h6>
-      <div className='row'>
-        <div className='col-4'>
-          <Button kind='primary'>
-            Button
-          </Button>
-        </div>
-
-        <div className='col-4'>
-          <Button kind='secondary'>
-            Button
-          </Button>
-        </div>
-
-        <div className='col-4'>
-          <Button kind='tertiary'>
-            Button
-          </Button>
-        </div>
-      </div>
-
-      <div className='row'>
-        <div className='col-12'>
-          <p>
-            Sed dolor nulla pariatur laboris nulla sit in sint velit
-            est magna officia deserunt cupidatat commodo ea nostrud
-            occaecat magna adipisicing sed culpa ut fugiat non minim
-            ut sint laboris est laboris commodo tempor excepteur
-            non pariatur.
-          </p>
-        </div>
-      </div>
-    </DocSection>
-
-    <DocSection title='Light theme'>
-      <h6 className='mc-text-h6 mc-mb-6'>
-        <span className='mc-code mc-mr-3'>
-          className=&apos;mc-theme-light&apos;
-        </span>
-      </h6>
-
-      <Background
-        color='light'
-        className='mc-theme-light mc-p-4'
-      >
+      <CodeExample>
         <div className='row'>
           <div className='col-4'>
             <Button kind='primary'>
@@ -103,40 +61,67 @@ const Theme = () =>
             </p>
           </div>
         </div>
-      </Background>
+      </CodeExample>
+    </DocSection>
+
+    <DocSection title='Light theme'>
+      <h6 className='mc-text-h6 mc-mb-6'>
+        <span className='mc-code mc-mr-3'>
+          className=&apos;mc-theme-light&apos;
+        </span>
+      </h6>
+
+      <CodeExample>
+        <Background
+          color='light'
+          className='mc-theme-light mc-p-4'
+        >
+          <div className='row'>
+            <div className='col-4'>
+              <Button kind='primary'>
+                Button
+              </Button>
+            </div>
+
+            <div className='col-4'>
+              <Button kind='secondary'>
+                Button
+              </Button>
+            </div>
+
+            <div className='col-4'>
+              <Button kind='tertiary'>
+                Button
+              </Button>
+            </div>
+          </div>
+
+          <div className='row'>
+            <div className='col-12'>
+              <p>
+                Sed dolor nulla pariatur laboris nulla sit in sint velit
+                est magna officia deserunt cupidatat commodo ea nostrud
+                occaecat magna adipisicing sed culpa ut fugiat non minim
+                ut sint laboris est laboris commodo tempor excepteur
+                non pariatur.
+              </p>
+            </div>
+          </div>
+        </Background>
+      </CodeExample>
     </DocSection>
 
     <DocSection title='Nested themes'>
-      <Background
-        color='light'
-        className='mc-theme-light mc-p-4 mc-mt-4'
-      >
-        <h6 className='mc-text-h6 mc-mb-6'>
-          <span className='mc-code mc-mr-3'>
-            className=&apos;mc-theme-light&apos;
-          </span>
-        </h6>
-        <p>
-          Sed dolor nulla pariatur laboris nulla sit in sint velit
-          est magna officia deserunt cupidatat commodo ea nostrud
-          occaecat magna adipisicing sed culpa ut fugiat non minim
-          ut sint laboris est laboris commodo tempor excepteur
-          non pariatur.
-        </p>
-        <Button kind='tertiary' size='small' className='mc-mt-3'>
-          Button
-        </Button>
-
+      <CodeExample>
         <Background
-          color='dark'
-          className='mc-theme-dark mc-p-4 mc-mt-4'
+          color='light'
+          className='mc-theme-light mc-p-4 mc-mt-4'
         >
           <h6 className='mc-text-h6 mc-mb-6'>
             <span className='mc-code mc-mr-3'>
-              className=&apos;mc-theme-dark&apos;
+              className=&apos;mc-theme-light&apos;
             </span>
           </h6>
-
           <p>
             Sed dolor nulla pariatur laboris nulla sit in sint velit
             est magna officia deserunt cupidatat commodo ea nostrud
@@ -144,18 +129,17 @@ const Theme = () =>
             ut sint laboris est laboris commodo tempor excepteur
             non pariatur.
           </p>
-
           <Button kind='tertiary' size='small' className='mc-mt-3'>
             Button
           </Button>
 
           <Background
-            color='light'
-            className='mc-theme-light mc-p-4 mc-mt-4'
+            color='dark'
+            className='mc-theme-dark mc-p-4 mc-mt-4'
           >
             <h6 className='mc-text-h6 mc-mb-6'>
               <span className='mc-code mc-mr-3'>
-                className=&apos;mc-theme-light&apos;
+                className=&apos;mc-theme-dark&apos;
               </span>
             </h6>
 
@@ -166,12 +150,35 @@ const Theme = () =>
               ut sint laboris est laboris commodo tempor excepteur
               non pariatur.
             </p>
+
             <Button kind='tertiary' size='small' className='mc-mt-3'>
               Button
             </Button>
+
+            <Background
+              color='light'
+              className='mc-theme-light mc-p-4 mc-mt-4'
+            >
+              <h6 className='mc-text-h6 mc-mb-6'>
+                <span className='mc-code mc-mr-3'>
+                  className=&apos;mc-theme-light&apos;
+                </span>
+              </h6>
+
+              <p>
+                Sed dolor nulla pariatur laboris nulla sit in sint velit
+                est magna officia deserunt cupidatat commodo ea nostrud
+                occaecat magna adipisicing sed culpa ut fugiat non minim
+                ut sint laboris est laboris commodo tempor excepteur
+                non pariatur.
+              </p>
+              <Button kind='tertiary' size='small' className='mc-mt-3'>
+                Button
+              </Button>
+            </Background>
           </Background>
         </Background>
-      </Background>
+      </CodeExample>
     </DocSection>
   </div>
 
