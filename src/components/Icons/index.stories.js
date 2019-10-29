@@ -26,6 +26,50 @@ storiesOf('Components|Icons', module)
         title='Icon'
         description='Hieroglyphics for the modern age.'
       />
+      <DocSection title='Sizing'>
+        <p className='mc-mb-5'>
+          Use the supporting className format
+          <span className='mc-code mc-mx-2'>
+            className=&apos;mc-icon--x&apos;
+          </span>
+          where
+          <span className='mc-code mc-mx-2'>
+            x
+          </span>
+          is a value between 1-16 correlating to the&nbsp;
+          <a
+            href='?path=/story/foundation-scale--summary'
+            className='mc-text--link'
+          >scale</a>.
+        </p>
+
+        <div className='row'>
+          <div className='col-auto'>
+            <h5 className='mc-text-h5'>
+              <span className='mc-code'>mc-icon--1</span>
+            </h5>
+            <Icon kind='star' className='mc-icon--1' />
+          </div>
+          <div className='col-auto'>
+            <h5 className='mc-text-h5'>
+              <span className='mc-code'>mc-icon--5</span>
+            </h5>
+            <Icon kind='star' className='mc-icon--5' />
+          </div>
+          <div className='col-auto'>
+            <h5 className='mc-text-h5'>
+              <span className='mc-code'>mc-icon--9</span>
+            </h5>
+            <Icon kind='star' className='mc-icon--9' />
+          </div>
+          <div className='col-auto'>
+            <h5 className='mc-text-h5'>
+              <span className='mc-code'>mc-icon--10</span>
+            </h5>
+            <Icon kind='star' className='mc-icon--10' />
+          </div>
+        </div>
+      </DocSection>
 
       <DocSection title='Properties'>
         <InvertedMirror>
