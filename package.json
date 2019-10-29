@@ -27,7 +27,7 @@
     "build:css": "NODE_ENV=production mkdir -p ./dist/styles/css && node-sass ./src/styles/index.scss | postcss > ./dist/styles/css/index.css",
     "build:scss": "NODE_ENV=development mkdir -p ./dist/styles/scss && postcss ./src/styles --base ./src/styles --dir ./dist/styles/scss",
     "build:styles": "yarn build:css && yarn build:scss",
-    "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook",
+    "start": "NODE_ENV=development start-storybook -p 9001 -c .storybook -s ./storybook-static",
     "deploy": "storybook-to-ghpages",
     "lint:js": "eslint ./src --color --quiet",
     "lint:style": "stylelint ./src/styles/**/*.scss",
