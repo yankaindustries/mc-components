@@ -59,7 +59,7 @@
   // Main colors
   --mc-theme-background:              #{$mc-color-light};
   --mc-theme-text:                    #{$mc-color-dark};
-  --mc-theme-text-hr-span-after:      #{$mc-color-gray-600};
+  --mc-theme-text-hr-span-after:      #{rgba($mc-color-dark, 0.3)};
   --mc-theme-separator:               #{rgba($mc-color-dark, 0.3)};
   --mc-theme-border-contrast:         #{rgba($mc-color-dark, 0.5)};
   --mc-theme-border-contrast-hover:   #{$mc-color-dark};
