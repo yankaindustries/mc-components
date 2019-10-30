@@ -92,8 +92,8 @@ $grid-columns:             12 !default;
 $grid-gutter-width:      16px !default;
 $grid-gutter-width-sm:   16px !default;
 $grid-gutter-width-md:   16px !default;
-$grid-gutter-width-lg:   32px !default;
-$grid-gutter-width-xl:   32px !default;
+$grid-gutter-width-lg:   16px !default;
+$grid-gutter-width-xl:   16px !default;
 
 $grid-gutter-widths: (
   xs: $grid-gutter-width,
@@ -115,7 +115,7 @@ $mc-bp-xs:     0 !default;
 $mc-bp-sm:     576px !default;
 $mc-bp-md:     768px !default;
 $mc-bp-lg:     960px !default;
-$mc-bp-xl:     1200px !default;
+$mc-bp-xl:     1400px !default;
 // NOTE: If we change these breakpoint values, we
 // also need to update them for ResponsiveHandler.
 
