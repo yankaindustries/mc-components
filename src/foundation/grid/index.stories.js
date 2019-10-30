@@ -105,58 +105,58 @@ storiesOf('Foundation|Grid', module)
       </p>
 
       <PropExample name='.row / .col-$breakpoint-$size'>
-        <div className='row'>
-          <div className='col-6'>
+        <div className='row grid-example__row'>
+          <div className='col-6 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
-          <div className='col-6'>
+          <div className='col-6 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
 
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
 
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
         </div>
@@ -164,57 +164,57 @@ storiesOf('Foundation|Grid', module)
 
       <PropExample name='.row.no-gutters'>
         <div className='row no-gutters'>
-          <div className='col-6'>
+          <div className='col-6 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
-          <div className='col-6'>
+          <div className='col-6 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
 
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
 
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
         </div>
@@ -222,61 +222,61 @@ storiesOf('Foundation|Grid', module)
 
       <PropExample name='.row.no-gutters-vertical'>
         <div className='row no-gutters-vertical'>
-          <div className='col-6'>
+          <div className='col-6 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
-          <div className='col-6'>
+          <div className='col-6 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>
         </div>
 
         <div className='row no-gutters-vertical'>
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
-          <div className='col-sm-12 col-md-4'>
+          <div className='col-sm-12 col-md-4 grid-example__col'>
             <Placeholder className='example-grid-block'>.col-sm-12.col-md-4</Placeholder>
           </div>
         </div>
 
         <div className='row no-gutters-vertical'>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
-          <div className='col-md'>
+          <div className='col-md grid-example__col'>
             <Placeholder className='example-grid-block'>.col-md</Placeholder>
           </div>
         </div>
