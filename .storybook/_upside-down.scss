@@ -305,19 +305,14 @@ a {
   position: relative;
   height: 64px;
   background: rgb(76, 116, 147);
-  box-shadow: inset 0 0 1px 1px blue;
+  box-shadow: inset 0 0 0 1px rgba(blue, 0.5);
+  border: 0;
 }
 
 // Examples to visually illustrate the grid
 .grid-example {
   &__row {
     position: relative;
-    z-index: -2;
-  }
-
-  &__col {
-    background: rgb(96, 129, 85);
-    box-shadow: inset 0 0 1px 1px lime;
     z-index: -2;
   }
 }
