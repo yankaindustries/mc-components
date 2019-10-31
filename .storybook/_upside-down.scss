@@ -309,14 +309,6 @@ a {
   border: 0;
 }
 
-// Examples to visually illustrate the grid
-.grid-example {
-  &__row {
-    position: relative;
-    z-index: -2;
-  }
-}
-
 .example__source-link {
   position: fixed;
   right: 0;
