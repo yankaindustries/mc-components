@@ -10,6 +10,7 @@ export default class DropdownItem extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
+    closeOnClick: PropTypes.bool,
     onClick: PropTypes.func,
   }
 
@@ -18,7 +19,10 @@ export default class DropdownItem extends PureComponent {
   }
 
   handleClick = toggle => (event) => {
-    toggle(event)
+    if (this.props.closeOnClick) {
+      toggle(event)
+    }
+
     this.props.onClick(event)
   }
 

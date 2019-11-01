@@ -35,17 +35,61 @@ const CATEGORIES = [
 ]
 
 
-class DropdownStory extends PureComponent {
+class Controlled extends PureComponent {
   state = {
     show: false,
   }
 
   toggleShow = () =>
+    console.log('toggleShow') ||
     this.setState(prevState => ({ show: !prevState.show }))
 
   render () {
     const { show } = this.state
 
+    return (
+      <div className='row'>
+        <div className='col-auto'>
+          <Button
+            kind='secondary'
+            onClick={this.toggleShow}
+          >
+            Controller
+          </Button>
+        </div>
+
+        <div className='col-auto'>
+          <Dropdown placement='bottom-end'>
+            <DropdownToggle>
+              <Button onClick={this.toggleShow}>
+                Controlled
+              </Button>
+            </DropdownToggle>
+
+            <DropdownContentControlled
+              show={show}
+              onClose={this.toggleShow}
+            >
+              {CATEGORIES.map((category, key) =>
+                <DropdownItem
+                  key={key}
+                  className='mc-py-3 mc-px-5 mc-text-small'
+                  onClick={this.toggleShow}
+                >
+                  {category}
+                </DropdownItem>,
+              )}
+            </DropdownContentControlled>
+          </Dropdown>
+        </div>
+      </div>
+    )
+  }
+}
+
+
+class DropdownStory extends PureComponent {
+  render () {
     return (
       <div className='container'>
         <DocHeader
@@ -54,17 +98,6 @@ class DropdownStory extends PureComponent {
         />
 
         <DocSection title='Demo'>
-          <div className='row'>
-            <div className='col-sm-3'>
-              <Button
-                kind='secondary'
-                onClick={this.toggleShow}
-              >
-                {show ? 'Hide' : 'Show'}
-              </Button>
-            </div>
-          </div>
-
           <InvertedMirror>
             <CodeExample>
               <div className='row justify-content-center'>
@@ -79,6 +112,7 @@ class DropdownStory extends PureComponent {
                         <DropdownItem
                           key={key}
                           className='mc-py-3 mc-px-5 mc-text-small'
+                          closeOnClick
                         >
                           {category}
                         </DropdownItem>,
@@ -98,6 +132,7 @@ class DropdownStory extends PureComponent {
                         <DropdownItem key={key}
                           className='mc-py-3 mc-px-5 mc-text-small'
                           onClick={action('item')}
+                          closeOnClick
                         >
                           <div className='row align-items-center'>
                             <div className='col-4'>
@@ -181,26 +216,7 @@ class DropdownStory extends PureComponent {
                 </div>
 
                 <div className='col-auto'>
-                  <Dropdown placement='bottom-end'>
-                    <DropdownToggle>
-                      <Button>Controlled</Button>
-                    </DropdownToggle>
-
-                    <DropdownContentControlled
-                      show={show}
-                      onClose={this.toggleShow}
-                    >
-                      {CATEGORIES.map((category, key) =>
-                        <DropdownItem
-                          key={key}
-                          className='mc-py-3 mc-px-5 mc-text-small'
-                          onClick={this.toggleShow}
-                        >
-                          {category}
-                        </DropdownItem>,
-                      )}
-                    </DropdownContentControlled>
-                  </Dropdown>
+                  <Controlled />
                 </div>
               </div>
             </CodeExample>
