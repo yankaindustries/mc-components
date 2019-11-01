@@ -20,7 +20,7 @@ storiesOf('Introduction|Introduction', module)
           {' '}
           <a
             className='mc-text--link'
-            href='http://npm.com/package/mc-components'
+            href='//npmjs.org/package/mc-components'
           >
             NPM package
           </a>
