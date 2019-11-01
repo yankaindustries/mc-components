@@ -23,45 +23,44 @@ import ChevronRight from '../../components/Icons/ChevronRight'
 
 const items = [
   {
-    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/920/original/1509413132-Slide_Thumb.jpg%3F1509413132',
-    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1096/original/1510703201-RH_Class_Hero.jpg%3F1510703201',
+    thumbnail: '/images/instructors/thumb-rh.jpg',
+    image: '/images/instructors/full-rh.jpg',
     instructor: 'Ron Howard',
     class: 'Directing',
   },
   {
-    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/332/original/1477793873-wh-tile.jpg%3F1477793873',
-    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/331/original/1495558129-hero-wh-v3.jpg%3F1495558129',
+    thumbnail: '/images/instructors/thumb-wh.jpg',
+    image: '/images/instructors/full-wh.jpg',
     instructor: 'Werner Herzog',
     class: 'Filmmaking',
-
   },
   {
-    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/628/original/1493844712-DVF_SlideThumb_V1_A.jpg%3F1493844712',
-    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/627/original/1495558421-hero-dvf-v3.jpg%3F1495558421',
+    thumbnail: '/images/instructors/thumb-dvf.jpg',
+    image: '/images/instructors/full-dvf.jpg',
     instructor: 'Diane Von Furstenberg',
     class: 'Building a Fashion Brand',
   },
   {
-    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/354/original/1479173180-DM5_SlideThumb_V2_A_%25281%2529.jpg%3F1479173180',
-    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/561/original/1489515027-DM5_CM_Hero_V1_A.jpg%3F1489515027',
+    thumbnail: '/images/instructors/thumb-dm.jpg',
+    image: '/images/instructors/full-dm.jpg',
     instructor: 'deadmau5',
     class: 'Electronic Music Production',
   },
   {
-    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/867/original/1508818886-SLJ_SlideThumb_V2_A.jpg%3F1508818886',
-    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/866/original/1508818329-SLJ_class_hero_no_gradient.jpg%3F1508818329',
+    thumbnail: '/images/instructors/thumb-slj.jpg',
+    image: '/images/instructors/full-slj.jpg',
     instructor: 'Samuel L. Jackson',
     class: 'Acting',
   },
   {
-    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/1087/original/1510618603-Slide_Thumb.jpg%3F1510618603',
-    image: 'https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1070/original/1510618084-Class_Hero.jpg%3F1510618084',
+    thumbnail: '/images/instructors/thumb-tk.jpg',
+    image: '/images/instructors/full-tk.jpg',
     instructor: 'Thomas Keller',
     class: 'Cooking Techniques',
   },
   {
-    thumbnail: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/428/original/1481770014-SR_SlideThumb_V1_B.jpg%3F1481770014',
-    image: 'http://res.cloudinary.com/drr3rfplf/image/fetch/dpr_auto,f_auto,q_auto:best/https://masterclass-development.s3-us-west-1.amazonaws.com/images/429/original/1495558277-hero-sr-v3.jpg%3F1495558277',
+    thumbnail: '/images/instructors/thumb-sr.jpg',
+    image: '/images/instructors/full-sr.jpg',
     instructor: 'Shonda Rhimes',
     class: 'Writing for Television',
   },
@@ -175,22 +174,22 @@ storiesOf('Playground|Pages', module)
 
         <div className='row gutters-vertical justify-content-center'>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/today-4d4e4dfc0db7fa08e4e18e4b0ae9f8598e674c0de4f3349d9b74f02138604276.svg' />
+            <img height='20' src='/images/in-the-news/today.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/nbc-e43bb6ae09ed3b16c8e6509a76ed454e7cb9289c3723288a84d4b31e34785222.svg' />
+            <img height='20' src='/images/in-the-news/nbc.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/new_york_times-8e2107a8c7cb51f1ea6dff352bbe21ad7c414e2348b2fa88b0c506b5ddc80ed9.svg' />
+            <img height='20' src='/images/in-the-news/nyt.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/billboard-afafead87dedb11a8a2c8684e2a9714dc4add1f508b91ea5ad06789197e6e8ee.svg' />
+            <img height='20' src='/images/in-the-news/bb.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/espn-2aca223117c3e92562149a240ff5dab1619562b8de78ed05cae0ce69c50afae8.svg' />
+            <img height='20' src='/images/in-the-news/espn.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/mc_press/vanity_fair-cdfde3c2628fa297d4bba5cf9aaa5786cc0f0fb8c66a593bb5da88afe407ec99.svg' />
+            <img height='20' src='/images/in-the-news/vf.svg' />
           </div>
         </div>
       </div>
@@ -210,7 +209,7 @@ storiesOf('Playground|Pages', module)
                   {({ hovering }) =>
                     <Tile aspectRatio={gteMD ? '21x9' : '16x9'}>
                       <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1473/original/1520466687-Featured_Tile.jpg%3F1520466687' />
+                        <TileImage imageUrl='/images/playground/tile-full-mg.jpeg' />
                       </AnimationHandler>
 
                       <TileOverlay />
@@ -237,7 +236,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1049/original/1510617187-Class_Tile.jpg%3F1510617187' />
+                    <TileImage imageUrl='/images/playground/tile-aw.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -262,7 +261,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/343/original/1513219465-Class_Tile.jpg%3F1513219465' />
+                    <TileImage imageUrl='/images/playground/tile-al.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -296,7 +295,7 @@ storiesOf('Playground|Pages', module)
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
               <div className='row gutters-vertical align-items-center small-gutters'>
                 <div className='col col-auto'>
-                  <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-al-300e6379265c09b2f4b659df27a10cace702dd3beb031af97178f4f1b683adc3.png' />
+                  <img width='56' src='/images/playground/saying-al.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-text--uppercase'>
@@ -317,7 +316,7 @@ storiesOf('Playground|Pages', module)
                 </div>
 
                 <div className='col-auto'>
-                  <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                  <img src='/images/playground/saying-student.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-opacity--muted'>
@@ -332,7 +331,7 @@ storiesOf('Playground|Pages', module)
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
               <div className='row gutters-vertical align-items-center small-gutters'>
                 <div className='col col-auto'>
-                  <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-gr-24c1d9b59bbeadd671a0ef5140e137d07e26368f5b0984a0b90fe5f794700de0.png' />
+                  <img width='56' src='/images/playground/saying-gr.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-text--uppercase'>
@@ -353,7 +352,7 @@ storiesOf('Playground|Pages', module)
                 </div>
 
                 <div className='col-auto'>
-                  <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                  <img src='/images/playground/saying-student.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-opacity--muted'>
@@ -368,7 +367,7 @@ storiesOf('Playground|Pages', module)
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
               <div className='row gutters-vertical align-items-center small-gutters'>
                 <div className='col col-auto'>
-                  <img width='56' src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/instructor-jp-cde7e157ed95191ad3167e5dea00394798decee7462fc897d71ac6e450cd8b79.png' />
+                  <img width='56' src='/images/playground/saying-jp.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6'>
@@ -388,7 +387,7 @@ storiesOf('Playground|Pages', module)
                 </div>
 
                 <div className='col-auto'>
-                  <img src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/stars/user-al-9f00247416a322eee5fcefe147d2c9172a018cda43240ab2bdb383fa84100db7.png' />
+                  <img src='/images/playground/saying-student.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-opacity--muted'>
@@ -416,7 +415,7 @@ storiesOf('Playground|Pages', module)
                   {({ hovering }) =>
                     <Tile aspectRatio={gteMD ? '21x9' : '16x9'}>
                       <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1532/original/1521243500-Featured_Tile.jpg%3F1521243500' />
+                        <TileImage imageUrl='/images/playground/tile-full-sl.jpeg' />
                       </AnimationHandler>
 
                       <TileOverlay />
@@ -443,7 +442,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1689/original/1528446991-Class_Tile.jpg%3F1528446991' />
+                    <TileImage imageUrl='/images/playground/tile-dn.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -468,7 +467,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='https://res.cloudinary.com/static-masterclass/image/fetch/dpr_auto,f_auto,q_auto:best/https://d3e9iqx18mbphw.cloudfront.net/images/1752/original/1530892888-Class_Tile.jpg%3F1530892888' />
+                    <TileImage imageUrl='/images/playground/tile-ma.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -522,7 +521,7 @@ storiesOf('Playground|Pages', module)
                     <div className='mc-card mc-background--color-light mc-invert'>
                       <div className='row gutters-vertical align-items-center small-gutters'>
                         <div className='col col-auto'>
-                          <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1429/original/1518557721-Slide_Thumb.jpg?1518557721' />
+                          <img width='56' src='/images/instructors/thumb-mg.jpg' />
                         </div>
                         <div className='col'>
                           <h6 className='mc-text-h6'>
@@ -551,7 +550,7 @@ storiesOf('Playground|Pages', module)
                     <div className='mc-card mc-background--color-light mc-invert'>
                       <div className='row gutters-vertical align-items-center small-gutters'>
                         <div className='col col-auto'>
-                          <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/1194/original/1512075998-Slide_Thumb.jpg?1512075998' />
+                          <img width='56' src='/images/instructors/thumb-avb.jpg' />
                         </div>
                         <div className='col'>
                           <h6 className='mc-text-h6'>
@@ -588,7 +587,7 @@ storiesOf('Playground|Pages', module)
                 <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
                   <div className='row gutters-vertical align-items-center small-gutters'>
                     <div className='col col-auto'>
-                      <img width='56' src='https://d3e9iqx18mbphw.cloudfront.net/images/528/original/1488402263-1488323293-SM_SlideThumb_V1_A.jpg?1488402263' />
+                      <img width='56' src='/images/instructors/thumb-sm.jpg' />
                     </div>
                     <div className='col'>
                       <h6 className='mc-text-h6'>
@@ -599,7 +598,7 @@ storiesOf('Playground|Pages', module)
                     <div className='col-12'>
                       <img
                         className='mc-card__image mc-mb-4'
-                        src='https://do6eyjibs3jse.cloudfront.net/assets/experiments/instructor-announcements/steve-martin-7ff79ae2d7ec7677b76aa0dfe1c51b47c8b54d6065d330be11c49388e68624ad.jpg'
+                        src='/images/instructors/thumb-sm.jpg'
                       />
                       <p>
                         I&apos;m told people are signing up in droves (a car
@@ -623,7 +622,7 @@ storiesOf('Playground|Pages', module)
 
       <div className='uncontainer'>
         <Background
-          element={<img src='//do6eyjibs3jse.cloudfront.net/assets/refresh/global/access-banner-beae18cd64a4314956e144c51150616d3b8a44ef1c429013a922aa23010f46f6.jpg' />}
+          element={<img src='/images/playground/learn-from-the-best.jpg' />}
           size='cover'
         >
           <div className='mc-section mc-text--center'>

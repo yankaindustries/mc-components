@@ -58,6 +58,12 @@ export const renderChildren = (children, props) => {
       ...child.props,
       ...props,
       className: `${child.props.className || ''} ${props.className || ''}`,
+      onClick: child.props.onClick || props.onClick
+        ? (event) => {
+          if (child.props.onClick) { child.props.onClick(event) }
+          if (props.onClick) { props.onClick(event) }
+        }
+        : undefined,
     }),
   )
 
