@@ -61,7 +61,9 @@ class Controlled extends PureComponent {
         <div className='col-auto'>
           <Dropdown placement='bottom-end'>
             <DropdownToggle>
-              <Button>Controlled</Button>
+              <Button onClick={this.toggleShow}>
+                Controlled
+              </Button>
             </DropdownToggle>
 
             <DropdownContentControlled
