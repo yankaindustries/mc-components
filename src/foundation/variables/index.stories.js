@@ -13,7 +13,7 @@ storiesOf('Foundation|Variables', module)
       </div>
 
       <div className='example__section'>
-        <div className='row gutters-vertical'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-md-6 col-lg-4'>
             <h2 className='mc-text-h4 mc-mb-4'>Base</h2>
 
@@ -241,7 +241,7 @@ storiesOf('Foundation|Variables', module)
       <div className='example__section'>
         <h4 className='mc-text-h4 mc-mb-4'>Breakpoints</h4>
 
-        <div className='row gutters-vertical'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-md-6 col-lg-4'>
             <table className='example__table'>
               <tbody>

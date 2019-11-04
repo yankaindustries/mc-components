@@ -74,7 +74,7 @@ class ButtonStory extends PureComponent {
         />
 
         <DocSection title='Demo'>
-          <div className='row gutters-vertical'>
+          <div className='row gutters-vertical-deprecated'>
             <div className='col-2'>
               <Select
                 options={kindOptions}
@@ -147,7 +147,7 @@ class ButtonStory extends PureComponent {
                 Change the way your button looks by adjusting the 'kind' property.
               `}
             >
-              <div className='row gutters-vertical'>
+              <div className='row gutters-vertical-deprecated'>
                 <div className='col-auto'>
                   <Button>
                     Button
@@ -317,7 +317,7 @@ class ButtonStory extends PureComponent {
               name='fullWidth'
               type='boolean'
             >
-              <div className='row gutters-vertical'>
+              <div className='row gutters-vertical-deprecated'>
                 <div className='col-12'>
                   <Button fullWidth>
                     Button
@@ -350,7 +350,7 @@ class ButtonStory extends PureComponent {
                 </span>
               }
             >
-              <div className='row gutters-vertical'>
+              <div className='row gutters-vertical-deprecated'>
                 <div className='col-auto'>
                   <Button>
                     <span className='d-none d-sm-block mc-mr-3'>Next (on desktop)</span>

@@ -128,7 +128,7 @@ class ModalExample extends Component {
                             future purchases.
                           </p>
 
-                          <div className='row small-gutters no-gutters-vertical'>
+                          <div className='row small-gutters no-gutters'>
                             <div className='col-12'>
                               <Input
                                 name='number'

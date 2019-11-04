@@ -220,8 +220,8 @@ storiesOf('Foundation|Grid', module)
         </div>
       </PropExample>
 
-      <PropExample name='.row.gutters-vertical'>
-        <div className='row gutters-vertical'>
+      <PropExample name='.row.gutters-vertical-deprecated'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-6'>
             <Placeholder className='example-grid-block'>.col-6</Placeholder>
           </div>

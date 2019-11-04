@@ -29,7 +29,7 @@ storiesOf('utilities|ResponsiveHandler', module)
         <PropExample>
           <ResponsiveHandler>
             {({ responsive }) =>
-              <div className='row gutters-vertical'>
+              <div className='row gutters-vertical-deprecated'>
                 <div className='col-12'>
                   <Tile aspectRatio={responsive('1x1', '21x9', '21x9', '21x9')}>
                     <TileImage imageUrl={shondaRhimesThumbnail} />

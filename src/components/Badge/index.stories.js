@@ -18,7 +18,7 @@ storiesOf('Components|Badge', module)
       />
 
       <InvertedMirror>
-        <div className='row mc-text--center gutters-vertical'>
+        <div className='row mc-text--center gutters-vertical-deprecated'>
           <div className='col-12 col-sm-4'>
             <Badge>
               Default

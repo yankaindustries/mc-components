@@ -109,7 +109,7 @@ storiesOf('Components|Background', module)
             description='A named color to fill the background with.'
           >
             <div style={{ background: '#31333b', padding: '1em' }}>
-              <div className='row mc-text--center gutters-vertical'>
+              <div className='row mc-text--center gutters-vertical-deprecated'>
                 <div className='col-4'>
                   <Background color='light' className='mc-invert'>
                     <br />

@@ -85,7 +85,7 @@ const Modifiers = () =>
         below.
       </p>
 
-      <div className='row gutters-vertical'>
+      <div className='row gutters-vertical-deprecated'>
         <div className='col-4'>
           <PropExample name='.mc-text--1-line'>
             <h4 className='mc-text-h4 mc-text--1-line mc-mb-4'>
@@ -170,7 +170,7 @@ const Modifiers = () =>
         </div>
       </div>
 
-      <div className='row gutters-vertical'>
+      <div className='row gutters-vertical-deprecated'>
         <div className='col-4'>
           <PropExample name='.mc-text--1-line-max'>
             <h4 className='mc-text-h4 mc-text--1-line-max mc-mb-4'>
@@ -265,7 +265,7 @@ const Modifiers = () =>
       `}>
 
       <PropExample name='.mc-text-hr'>
-        <div className='row gutters-vertical'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-sm-4'>
             <p className='mc-text-hr mc-text--uppercase'>
             <span>The</span>

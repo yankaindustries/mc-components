@@ -57,7 +57,7 @@ export default class FormGroup extends PureComponent {
 
     return (
       <div className={classes}>
-        <div className='row no-gutters justify-content-between align-items-center'>
+        <div className='row justify-content-between align-items-center'>
           <div className='col align-self-end'>
             {label &&
               <label

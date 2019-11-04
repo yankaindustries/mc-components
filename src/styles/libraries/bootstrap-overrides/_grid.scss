@@ -74,19 +74,17 @@
   }
 }
 
-.gutters-vertical {
-  &.row {
-    &:not([class*="mc-mt-"]) {
-      margin-top: $grid-gutter-width / -2;
-    }
-    &:not([class*="mc-mb-"]) {
-      margin-bottom: $grid-gutter-width / -2;
-    }
+.gutters-vertical-deprecated {
+  &:not([class*="mc-mt-"]) {
+    margin-top: $grid-gutter-width / -2;
+  }
+  &:not([class*="mc-mb-"]) {
+    margin-bottom: $grid-gutter-width / -2;
   }
 
-  > .col,
-  > [class^="col-"],
-  > [class*=" col-"] {
+  .col,
+  [class^="col-"],
+  [class*=" col-"] {
     padding-top: $grid-gutter-width / 2;
     padding-bottom: $grid-gutter-width / 2;
   }

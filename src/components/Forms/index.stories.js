@@ -55,7 +55,7 @@ const Form = reduxForm({
 
         <div className='example__section'>
           <InvertedMirror>
-            <div className='row no-gutters-vertical'>
+            <div className='row'>
               <div className='col-sm-6'>
                 <Field
                   className='mc-mb-4'
