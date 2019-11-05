@@ -30,6 +30,7 @@ export default class DropdownItem extends PureComponent {
     const {
       children,
       className,
+      closeOnClick,
       ...props
     } = this.props
 
