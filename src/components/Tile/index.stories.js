@@ -255,7 +255,7 @@ storiesOf('Components|Tiles/Tile', module)
           type='String'
           description='auto, 1x1, 2x3, 3x4, 4x3, 9x16, 16x9, 21x9'
         >
-          <div className='row'>
+          <div className='row gutters-vertical-deprecated'>
             <div className='col-sm-12'>
               <Tile aspectRatio='21x9'>
                 <Placeholder>21x9</Placeholder>

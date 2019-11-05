@@ -98,7 +98,7 @@ storiesOf('Playground|Pages', module)
                         type='spotlight'
                       />
                       <TileCaption position='left center'>
-                        <div className='row gutters-vertical row--fill align-items-center mc-text--center mc-text-md--left'>
+                        <div className='row gutters-vertical-deprecated row--fill align-items-center mc-text--center mc-text-md--left'>
                           <div className='col-xl-5 col-md-8 col-lg-6'>
                             <h2 className='mc-text-h1 mc-text--uppercase'>
                               {item.instructor}
@@ -112,7 +112,7 @@ storiesOf('Playground|Pages', module)
                               {item.instructor} and all 35+ other
                               instructors.
                             </p>
-                            <div className='row gutters-vertical justify-content-center justify-content-md-start'>
+                            <div className='row gutters-vertical-deprecated justify-content-center justify-content-md-start'>
                               <div className='col-auto'>
                                 <Button>
                                   All Access Pass
@@ -172,7 +172,7 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row gutters-vertical justify-content-center'>
+        <div className='row gutters-vertical-deprecated justify-content-center'>
           <div className='col-auto mc-opacity--muted mc-text--center'>
             <img height='20' src='/images/in-the-news/today.svg' />
           </div>
@@ -290,10 +290,10 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row gutters-vertical'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-md-4'>
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-              <div className='row gutters-vertical align-items-center small-gutters'>
+              <div className='row gutters-vertical-deprecated align-items-center small-gutters'>
                 <div className='col col-auto'>
                   <img width='56' src='/images/playground/saying-al.png' />
                 </div>
@@ -329,7 +329,7 @@ storiesOf('Playground|Pages', module)
 
           <div className='col-md-4'>
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-              <div className='row gutters-vertical align-items-center small-gutters'>
+              <div className='row gutters-vertical-deprecated align-items-center small-gutters'>
                 <div className='col col-auto'>
                   <img width='56' src='/images/playground/saying-gr.png' />
                 </div>
@@ -365,7 +365,7 @@ storiesOf('Playground|Pages', module)
 
           <div className='col-md-4'>
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-              <div className='row gutters-vertical align-items-center small-gutters'>
+              <div className='row gutters-vertical-deprecated align-items-center small-gutters'>
                 <div className='col col-auto'>
                   <img width='56' src='/images/playground/saying-jp.png' />
                 </div>
@@ -490,7 +490,7 @@ storiesOf('Playground|Pages', module)
       </div>
 
       <div className='mc-section'>
-        <div className='row gutters-vertical align-items-center'>
+        <div className='row gutters-vertical-deprecated align-items-center'>
           <div className='col-lg-4'>
             <div className='mc-section__header'>
               <h3 className='mc-text-h3 mc-text--center mc-text-lg--left'>
@@ -501,7 +501,7 @@ storiesOf('Playground|Pages', module)
               </p>
               <br />
 
-              <div className='row gutters-vertical small-gutters justify-content-center justify-content-lg-start'>
+              <div className='row gutters-vertical-deprecated small-gutters justify-content-center justify-content-lg-start'>
                 <div className='col-auto'>
                   <ChevronLeft className='mc-icon--5 mc-icon--circled mc-opacity--muted' />
                 </div>
@@ -519,7 +519,7 @@ storiesOf('Playground|Pages', module)
                 <div className='row gutters-vertical'>
                   <div className='col-12'>
                     <div className='mc-card mc-background--color-light mc-invert'>
-                      <div className='row gutters-vertical align-items-center small-gutters'>
+                      <div className='row gutters-vertical-deprecated align-items-center small-gutters'>
                         <div className='col col-auto'>
                           <img width='56' src='/images/instructors/thumb-mg.jpg' />
                         </div>
@@ -548,7 +548,7 @@ storiesOf('Playground|Pages', module)
 
                   <div className='col-12'>
                     <div className='mc-card mc-background--color-light mc-invert'>
-                      <div className='row gutters-vertical align-items-center small-gutters'>
+                      <div className='row gutters-vertical-deprecated align-items-center small-gutters'>
                         <div className='col col-auto'>
                           <img width='56' src='/images/instructors/thumb-avb.jpg' />
                         </div>
@@ -585,7 +585,7 @@ storiesOf('Playground|Pages', module)
 
               <div className='col-lg-6'>
                 <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
-                  <div className='row gutters-vertical align-items-center small-gutters'>
+                  <div className='row gutters-vertical-deprecated align-items-center small-gutters'>
                     <div className='col col-auto'>
                       <img width='56' src='/images/instructors/thumb-sm.jpg' />
                     </div>
@@ -650,7 +650,7 @@ storiesOf('Playground|Pages', module)
           </h5>
         </div>
 
-        <div className='row gutters-vertical justify-content-center'>
+        <div className='row gutters-vertical-deprecated justify-content-center'>
           <div className='col-auto'>
             <Twitter className='mc-icon--8 mc-icon--circled mc-opacity--muted' />
           </div>

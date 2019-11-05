@@ -49,7 +49,7 @@ class TooltipStory extends PureComponent {
         />
 
         <DocSection title='Demo'>
-          <div className='row'>
+          <div className='row gutters-vertical-deprecated'>
             <div className='col-sm-4 col-md-3'>
               <Select
                 placeholder='Select placement...'
@@ -75,7 +75,7 @@ class TooltipStory extends PureComponent {
               <br />
               <br />
               <br />
-              <div className='row justify-content-center mc-text-center'>
+              <div className='row gutters-vertical-deprecated justify-content-center mc-text-center'>
                 <div className='col-auto'>
                   <Tooltip placement={placement}>
                     <TooltipToggle>

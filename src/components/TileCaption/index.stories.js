@@ -25,7 +25,7 @@ storiesOf('Components|Tiles/TileCaption', module)
           name='position'
           type='String'
         >
-          <div className='row'>
+          <div className='row gutters-vertical-deprecated'>
             <div className='col-sm-4'>
               <Tile>
                 <TileCaption position='left center'>
@@ -54,7 +54,7 @@ storiesOf('Components|Tiles/TileCaption', module)
             </div>
           </div>
 
-          <div className='row'>
+          <div className='row gutters-vertical-deprecated'>
             <div className='col-sm-4'>
               <Tile>
                 <TileCaption position='left bottom'>
@@ -83,7 +83,7 @@ storiesOf('Components|Tiles/TileCaption', module)
             </div>
           </div>
 
-          <div className='row'>
+          <div className='row gutters-vertical-deprecated'>
             <div className='col-sm-4'>
               <Tile>
                 <TileCaption position='left below'>

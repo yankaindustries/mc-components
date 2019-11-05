@@ -100,7 +100,7 @@ class DropdownStory extends PureComponent {
         <DocSection title='Demo'>
           <InvertedMirror>
             <CodeExample>
-              <div className='row justify-content-center'>
+              <div className='row no-gutters-vertical-deprecated justify-content-center'>
                 <div className='col-auto'>
                   <Dropdown placement='bottom-start'>
                     <DropdownToggle>

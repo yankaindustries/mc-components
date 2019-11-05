@@ -42,7 +42,7 @@ storiesOf('Components|VideoPlayer', module)
       />
 
       <DocSection title='Demo'>
-        <div className='row'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-12'>
             <VideoPlayer
               hasControls

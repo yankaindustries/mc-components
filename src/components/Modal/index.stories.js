@@ -44,7 +44,7 @@ class ModalExample extends Component {
         />
 
         <DocSection title='Demo'>
-          <div className='row'>
+          <div className='row gutters-vertical-deprecated'>
             <div className='col-md-3'>
               <CodeExample>
                 <div className='mc-text--center'>

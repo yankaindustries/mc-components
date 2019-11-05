@@ -52,7 +52,7 @@ class Scale extends PureComponent {
             apply to the smaller steps (4 and below).
           </p>
 
-          <div className='row justify-content-center'>
+          <div className='row gutters-vertical-deprecated justify-content-center'>
             <div className='col-12'>
               <table className='example__table mc-text--center'>
                 <thead>

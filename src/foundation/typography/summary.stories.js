@@ -108,7 +108,7 @@ class Summary extends PureComponent {
             </div>
 
             <div className='col-auto'>
-              <div className='row small-gutters'>
+              <div className='row no-gutters-vertical-deprecated small-gutters'>
                 <div className='col-auto'>
                   <Button
                     onClick={this.toggle('modifier', MODIFIER_UPPERCASE)}
@@ -130,7 +130,7 @@ class Summary extends PureComponent {
             </div>
 
             <div className='col-auto'>
-              <div className='row small-gutters'>
+              <div className='row no-gutters-vertical-deprecated small-gutters'>
                 <div className='col-auto'>
                   <Button
                     onClick={this.toggle('color', COLOR_HINTED)}

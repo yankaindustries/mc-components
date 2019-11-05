@@ -30,7 +30,7 @@ const Theme = () =>
          or no specific class set
       </h6>
       <CodeExample>
-        <div className='row'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-4'>
             <Button kind='primary'>
               Button
@@ -50,7 +50,7 @@ const Theme = () =>
           </div>
         </div>
 
-        <div className='row'>
+        <div className='row gutters-vertical-deprecated'>
           <div className='col-12'>
             <p>
               Sed dolor nulla pariatur laboris nulla sit in sint velit

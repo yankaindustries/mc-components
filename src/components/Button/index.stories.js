@@ -224,7 +224,7 @@ class ButtonStory extends PureComponent {
               name='size'
               type='string'
             >
-              <div className='row'>
+              <div className='row no-gutters-vertical-deprecated'>
                 <div className='col-auto'>
                   <Button size='small'>
                     Button
@@ -255,7 +255,7 @@ class ButtonStory extends PureComponent {
               name='disabled'
               type='boolean'
             >
-              <div className='row'>
+              <div className='row no-gutters-vertical-deprecated'>
                 <div className='col-auto'>
                   <Button disabled>
                     Button
@@ -286,7 +286,7 @@ class ButtonStory extends PureComponent {
               name='loading'
               type='boolean'
             >
-              <div className='row'>
+              <div className='row no-gutters-vertical-deprecated'>
                 <div className='col-auto'>
                   <Button loading>
                     Button
@@ -399,7 +399,7 @@ class ButtonStory extends PureComponent {
               type='boolean'
               description='Applies the same padding all around the button'
             >
-              <div className='row'>
+              <div className='row no-gutters-vertical-deprecated'>
                 <div className='col-auto'>
                   <Button symmetrical>
                     <Icon kind='google' />
@@ -427,7 +427,7 @@ class ButtonStory extends PureComponent {
               name='rounded'
               type='boolean'
             >
-              <div className='row'>
+              <div className='row no-gutters-vertical-deprecated'>
                 <div className='col-auto'>
                   <Button rounded>
                     <Icon kind='google' />

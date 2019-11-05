@@ -63,17 +63,6 @@
   }
 }
 
-// Grid modifiers
-.no-gutters {
-  margin: 0;
-
-  > .col,
-  > [class^="col-"],
-  > [class*=" col-"] {
-    padding: 0;
-  }
-}
-
 .gutters-vertical-deprecated {
   &:not([class*="mc-mt-"]) {
     margin-top: $grid-gutter-width / -2;
@@ -87,5 +76,32 @@
   [class*=" col-"] {
     padding-top: $grid-gutter-width / 2;
     padding-bottom: $grid-gutter-width / 2;
+  }
+}
+
+// Grid modifiers
+.no-gutters {
+  margin: 0;
+
+  > .col,
+  > [class^="col-"],
+  > [class*=" col-"] {
+    padding: 0;
+  }
+}
+
+.no-gutters-vertical-deprecated {
+  &:not([class*="mc-mt-"]) {
+    margin-top: 0;
+  }
+  &:not([class*="mc-mb-"]) {
+    margin-bottom: 0;
+  }
+
+  .col,
+  [class^="col-"],
+  [class*=" col-"] {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
