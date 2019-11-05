@@ -31,6 +31,7 @@ export default class DropdownItem extends PureComponent {
       children,
       className,
       closeOnClick,
+      onClick,
       ...props
     } = this.props
 
@@ -44,8 +45,8 @@ export default class DropdownItem extends PureComponent {
         {({ toggle }) =>
           <div
             className={classes}
-            {...props}
             onClick={this.handleClick(toggle)}
+            {...props}
           >
             {children}
           </div>
