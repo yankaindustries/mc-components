@@ -108,7 +108,6 @@ const Form = reduxForm({
                   `}
                   placeholder='This is the story of a girl...'
                   success='Dope!'
-                  maxlength={80}
                   optional
                 />
               </div>
