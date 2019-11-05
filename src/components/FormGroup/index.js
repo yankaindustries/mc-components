@@ -102,7 +102,7 @@ export default class FormGroup extends PureComponent {
             }
           </div>
 
-          <div className='col-auto align-self-start'>
+          <div className='col-auto align-self-start mc-ml-auto'>
             {maxlength &&
               <p className='mc-text-x-small mc-opacity--muted mc-text--right mc-mt-1'>
                 {value.length} / {maxlength}
