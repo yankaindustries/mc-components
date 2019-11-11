@@ -452,6 +452,7 @@ export default class VideoPlayer extends PureComponent {
             data-video-id={videoId}
             muted={isMuted}
             controls={hasControls}
+            {...this.props}
           />
         </div>
 
