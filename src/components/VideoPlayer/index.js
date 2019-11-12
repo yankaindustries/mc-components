@@ -414,7 +414,7 @@ export default class VideoPlayer extends PureComponent {
 
       hasControls,
       isMuted,
-      ...restProps,
+      ...restProps
     } = this.props
 
     const {
