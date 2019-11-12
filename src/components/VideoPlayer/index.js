@@ -414,6 +414,7 @@ export default class VideoPlayer extends PureComponent {
 
       hasControls,
       isMuted,
+      ...restProps,
     } = this.props
 
     const {
@@ -452,7 +453,7 @@ export default class VideoPlayer extends PureComponent {
             data-video-id={videoId}
             muted={isMuted}
             controls={hasControls}
-            {...this.props}
+            {...restProps}
           />
         </div>
 
