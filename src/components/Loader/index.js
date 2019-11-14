@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Loader = ({ color }) => (
+const Loader = ({ color, ...props }) => (
   <div className='loader'>
     <svg
       width='120'
@@ -9,6 +9,7 @@ const Loader = ({ color }) => (
       viewBox='0 0 120 30'
       xmlns='http://www.w3.org/2000/svg'
       fill={color}
+      {...props}
     >
       <circle cx='15' cy='15' r='15'>
         <animate
