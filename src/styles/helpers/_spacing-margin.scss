@@ -24,6 +24,11 @@
       @include step(margin-right, $i);
     }
   }
+
+  &-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 // Margins - y axis only
@@ -34,6 +39,11 @@
       @include step(margin-bottom, $i);
     }
   }
+
+  &-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
 
 // Margins - top only
@@ -41,6 +51,8 @@
   @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-top, $i); }
   }
+
+  &-auto { margin-top: auto; }
 }
 
 // Margins - right only
@@ -48,6 +60,8 @@
   @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-right, $i); }
   }
+
+  &-auto { margin-right: auto; }
 }
 
 // Margins - bottom only
@@ -55,6 +69,8 @@
   @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-bottom, $i); }
   }
+
+  &-auto { margin-bottom: auto; }
 }
 
 // Margins - left only
@@ -62,4 +78,6 @@
   @for $i from $scale-begin through $scale-end {
     &-#{$i} { @include step(margin-left, $i); }
   }
+
+  &-auto { margin-left: auto; }
 }

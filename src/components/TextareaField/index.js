@@ -32,6 +32,7 @@ const TextareaField = ({
       optional={optional}
       success={success}
       touched={touched}
+      value={input.value}
     >
       <Textarea
         error={error}
