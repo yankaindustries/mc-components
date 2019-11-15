@@ -10,6 +10,8 @@ export default class Button extends PureComponent {
     as: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element,
+      PropTypes.node,
+      PropTypes.func,
     ]),
     children: PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.node),
