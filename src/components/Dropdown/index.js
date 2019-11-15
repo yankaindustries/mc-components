@@ -95,7 +95,7 @@ export default class Dropdown extends PureComponent {
   applyStyle = (data) => {
     if (window.innerWidth > 576) {
       this.setState({
-        attributes: data.attributes,
+        attributes: { 'x-placement': data.attributes['x-placement'] },
         styles: data.styles,
       })
     }
