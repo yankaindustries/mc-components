@@ -27,6 +27,7 @@ class ModalExample extends Component {
     rate: false,
     trailer: false,
     welcome: false,
+    scrolling: false,
   }
 
   toggleModal = name => () => {
@@ -44,8 +45,8 @@ class ModalExample extends Component {
         />
 
         <DocSection title='Demo'>
-          <div className='row'>
-            <div className='col-md-3'>
+          <div className='row' style={{ height: '2000px' }}>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -91,7 +92,7 @@ class ModalExample extends Component {
               </CodeExample>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -167,7 +168,7 @@ class ModalExample extends Component {
               </CodeExample>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -226,7 +227,7 @@ class ModalExample extends Component {
               </CodeExample>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -262,6 +263,61 @@ class ModalExample extends Component {
                         <Button>All-Access Pass</Button>
                       </div>
                     </div>
+                  </ModalContent>
+                </Modal>
+              </CodeExample>
+            </div>
+
+            <div className='col-md-2'>
+              <CodeExample>
+                <div className='mc-text--center'>
+                  <Button
+                    kind='secondary'
+                    onClick={this.toggleModal('scrolling')}
+                  >
+                    Scrolling
+                  </Button>
+                </div>
+
+                <Modal
+                  backdrop='extra-dark'
+                  show={this.state.scrolling}
+                  onClose={this.toggleModal('scrolling')}
+                  size='small'
+                >
+                  <ModalContent className='mc-theme-light'>
+                    <ModalClose />
+                    <Background
+                      color='light'
+                      className='mc-px-4 mc-py-9 mc-text--center'
+                    >
+                      <div className='row align-items-center justify-content-between'>
+
+                        <div className='col-auto'>
+                          <h6 className='mc-text-h6 mc-text--uppercase'>
+                            Super Long Modal
+                          </h6>
+                          <p
+                            className='mc-opacity--muted'
+                            style={{ height: '400px' }}
+                          >
+                            Seems to stretch...
+                          </p>
+                          <p
+                            className='mc-opacity--muted'
+                            style={{ height: '400px' }}
+                          >
+                            Forever...
+                          </p>
+                          <p
+                            className='mc-opacity--muted'
+                            style={{ height: '1000px' }}
+                          >
+                            ...
+                          </p>
+                        </div>
+                      </div>
+                    </Background>
                   </ModalContent>
                 </Modal>
               </CodeExample>
