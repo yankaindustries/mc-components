@@ -45,7 +45,7 @@ class ModalExample extends Component {
         />
 
         <DocSection title='Demo'>
-          <div className='row' style={{ height: '2000px' }}>
+          <div className='row'>
             <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
@@ -297,13 +297,22 @@ class ModalExample extends Component {
                           <h6 className='mc-text-h2 mc-text--uppercase mc-text--center'>
                             Super Long Modal
                           </h6>
-                          <p className='mc-opacity--muted mc-text--center'>
+                          <p
+                            className='mc-opacity--muted mc-text--center'
+                            style={{ height: '400px' }}
+                          >
                             Seems to stretch...
                           </p>
-                          <p className='mc-opacity--muted mc-text--center'>
+                          <p
+                            className='mc-opacity--muted mc-text--center'
+                            style={{ height: '400px' }}
+                          >
                             Forever...
                           </p>
-                          <p className='mc-opacity--muted mc-text--center'>
+                          <p
+                            className='mc-opacity--muted mc-text--center'
+                            style={{ height: '1000px' }}
+                          >
                             ...
                           </p>
                         </div>
@@ -312,10 +321,10 @@ class ModalExample extends Component {
                   </ModalContent>
                 </Modal>
               </CodeExample>
-              <div style={{ height: '1500px' }} />
             </div>
           </div>
         </DocSection>
+        <div style={{ height: '2000px' }} />
       </div>
     )
   }

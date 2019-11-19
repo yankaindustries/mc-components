@@ -114,7 +114,9 @@ export default class Modal extends PureComponent {
             kind={backdrop}
           />
           <div className='mc-modal__viewport'>
-            {children}
+            <div className='container'>
+              {children}
+            </div>
           </div>
         </div>
       </Provider>
