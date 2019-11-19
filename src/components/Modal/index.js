@@ -53,10 +53,8 @@ export default class Modal extends PureComponent {
     const rootHtml = document.getElementsByTagName('html')[0]
 
     if (!prevProps.show && show) {
-      document.body.classList.add('mc-modal__body--open')
       rootHtml.classList.add('mc-modal__html--open')
     } else if (prevProps.show && !show) {
-      document.body.classList.remove('mc-modal__body--open')
       rootHtml.classList.remove('mc-modal__html--open')
     }
 

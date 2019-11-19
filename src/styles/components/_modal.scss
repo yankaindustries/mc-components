@@ -94,8 +94,8 @@
     }
   }
 
-  &__body--open,
   &__html--open {
     overflow: hidden;
+    body { overflow: hidden; }
   }
 }
