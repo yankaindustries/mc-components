@@ -297,22 +297,13 @@ class ModalExample extends Component {
                           <h6 className='mc-text-h2 mc-text--uppercase mc-text--center'>
                             Super Long Modal
                           </h6>
-                          <p
-                            className='mc-opacity--muted mc-text--center'
-                            style={{ height: '400px' }}
-                          >
+                          <p className='mc-opacity--muted mc-text--center'>
                             Seems to stretch...
                           </p>
-                          <p
-                            className='mc-opacity--muted mc-text--center'
-                            style={{ height: '400px' }}
-                          >
+                          <p className='mc-opacity--muted mc-text--center'>
                             Forever...
                           </p>
-                          <p
-                            className='mc-opacity--muted mc-text--center'
-                            style={{ height: '1000px' }}
-                          >
+                          <p className='mc-opacity--muted mc-text--center'>
                             ...
                           </p>
                         </div>
@@ -321,6 +312,7 @@ class ModalExample extends Component {
                   </ModalContent>
                 </Modal>
               </CodeExample>
+              <div style={{ height: '1500px' }} />
             </div>
           </div>
         </DocSection>
