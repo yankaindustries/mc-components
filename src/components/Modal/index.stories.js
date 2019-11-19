@@ -283,34 +283,34 @@ class ModalExample extends Component {
                   backdrop='extra-dark'
                   show={this.state.scrolling}
                   onClose={this.toggleModal('scrolling')}
-                  size='small'
+                  size='medium'
                 >
                   <ModalContent className='mc-theme-light'>
                     <ModalClose />
                     <Background
                       color='light'
-                      className='mc-px-4 mc-py-9 mc-text--center'
+                      className='mc-px-4 mc-py-9'
                     >
                       <div className='row align-items-center justify-content-between'>
 
-                        <div className='col-auto'>
-                          <h6 className='mc-text-h6 mc-text--uppercase'>
+                        <div className='offset-sm-1 col-sm-10'>
+                          <h6 className='mc-text-h2 mc-text--uppercase mc-text--center'>
                             Super Long Modal
                           </h6>
                           <p
-                            className='mc-opacity--muted'
+                            className='mc-opacity--muted mc-text--center'
                             style={{ height: '400px' }}
                           >
                             Seems to stretch...
                           </p>
                           <p
-                            className='mc-opacity--muted'
+                            className='mc-opacity--muted mc-text--center'
                             style={{ height: '400px' }}
                           >
                             Forever...
                           </p>
                           <p
-                            className='mc-opacity--muted'
+                            className='mc-opacity--muted mc-text--center'
                             style={{ height: '1000px' }}
                           >
                             ...

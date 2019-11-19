@@ -50,18 +50,18 @@ export default class Modal extends PureComponent {
 
   componentDidUpdate (prevProps) {
     const { show } = this.props
-
-    // a little hackery here to prevent scrolling/reset
+    const rootHtml = document.getElementsByTagName('html')[0]
 
     if (!prevProps.show && show) {
-      const scrollOffset = window.scrollY
-      document.body.style.top = `-${scrollOffset}px`
       document.body.classList.add('mc-modal__body--open')
+      rootHtml.classList.add('mc-modal__html--open')
     } else if (prevProps.show && !show) {
-      const scrollOffset = -parseInt(document.body.style.top, 10)
       document.body.classList.remove('mc-modal__body--open')
-      document.body.style.top = undefined
-      window.scrollTo(0, scrollOffset)
+      rootHtml.classList.remove('mc-modal__html--open')
+    }
+
+    if (show) {
+      this.container.current.scrollTop = 0
     }
   }
 
@@ -88,6 +88,8 @@ export default class Modal extends PureComponent {
     }
   }
 
+  container = React.createRef()
+
   renderModal = () => {
     const {
       backdrop,
@@ -112,11 +114,10 @@ export default class Modal extends PureComponent {
           <Backdrop
             className='mc-modal__backdrop'
             kind={backdrop}
-          >
-            <div className='container'>
-              {children}
-            </div>
-          </Backdrop>
+          />
+          <div className='mc-modal__viewport'>
+            {children}
+          </div>
         </div>
       </Provider>
     )
