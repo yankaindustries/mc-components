@@ -59,7 +59,10 @@ export default class Modal extends PureComponent {
     }
 
     if (show) {
-      this.container.current.scrollTop = 0
+      const elem = this.container.current
+      window.setTimeout(() => {
+        elem.scrollTop = 0
+      }, 0)
     }
   }
 
