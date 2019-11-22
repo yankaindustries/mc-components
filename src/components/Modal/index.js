@@ -132,9 +132,15 @@ export default class Modal extends PureComponent {
       return null
     }
 
+    // possibly attach modal to FS element in 'appendToBody' mode
+    // TODO: probably make this FS check a component
+    const fullscreenElement = document.fullscreenElement
+      || document.mozFullScreenElement
+      || document.webkitFullscreenElement
+
     return appendToBody ? createPortal(
       this.renderModal(),
-      document.body,
+      fullscreenElement || document.body,
     ) : this.renderModal()
   }
 }
