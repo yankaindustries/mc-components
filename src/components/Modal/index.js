@@ -32,6 +32,7 @@ export default class Modal extends PureComponent {
     ]),
     appendToBody: PropTypes.bool,
     onClose: PropTypes.func,
+    allowFullscreen: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -126,6 +127,7 @@ export default class Modal extends PureComponent {
     const {
       show,
       appendToBody,
+      allowFullscreen,
     } = this.props
 
     if (!show) {
@@ -134,9 +136,12 @@ export default class Modal extends PureComponent {
 
     // possibly attach modal to FS element in 'appendToBody' mode
     // TODO: probably make this FS check a component
-    const fullscreenElement = document.fullscreenElement
-      || document.mozFullScreenElement
-      || document.webkitFullscreenElement
+    let fullscreenElement
+    if (allowFullscreen) {
+      fullscreenElement = document.fullscreenElement
+        || document.mozFullScreenElement
+        || document.webkitFullscreenElement
+    }
 
     return appendToBody ? createPortal(
       this.renderModal(),
