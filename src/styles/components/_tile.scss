@@ -157,6 +157,10 @@
         rgba($mc-color-dark, 0) 10%
       );
   }
+
+  &--solid {
+    background: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .mc-tile-caption {
