@@ -97,9 +97,9 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (this.props.videoId !== nextProps.videoId) {
-      this.replaceWith(nextProps.videoId)
+  componentDidUpdate (prevProps) {
+    if (this.props.videoId !== prevProps.videoId) {
+      this.replaceWith(this.props.videoId)
     }
   }
 
