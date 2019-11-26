@@ -32,14 +32,14 @@ export default class Modal extends PureComponent {
     ]),
     appendToBody: PropTypes.bool,
     onClose: PropTypes.func,
-    allowFullscreen: PropTypes.bool,
+    disableFullscreen: PropTypes.bool,
   }
 
   static defaultProps = {
     appendToBody: true,
     backdrop: 'dark',
     size: 'full',
-    allowFullscreen: true,
+    disableFullscreen: false,
   }
 
   state = {
@@ -77,11 +77,11 @@ export default class Modal extends PureComponent {
   }
 
   checkFullscreenState = () => {
-    const { allowFullscreen } = this.props
+    const { disableFullscreen } = this.props
 
     // TODO: probably make this FS check a component
     let fullscreenElement
-    if (allowFullscreen) {
+    if (!disableFullscreen) {
       fullscreenElement = document.fullscreenElement
         || document.mozFullScreenElement
         || document.webkitFullscreenElement
