@@ -54,12 +54,26 @@ export default class Modal extends PureComponent {
     }
 
     this.checkFullscreenState()
-    document.addEventListener('fullscreenchange', this.checkFullscreenState)
+    this.bindFullscreenChange()
   }
 
   componentWillUnmount () {
     document.body.classList.remove('mc-modal__body--open')
-    window.removeEventListener('fullscreenchange', this.checkFullscreenState)
+    this.unbindFullscreenChange()
+  }
+
+  bindFullscreenChange () {
+    document.addEventListener('fullscreenchange', this.checkFullscreenState)
+    document.addEventListener('mozfullscreenchange', this.checkFullscreenState)
+    document.addEventListener('webkitfullscreenchange', this.checkFullscreenState)
+    document.addEventListener('msfullscreenchange', this.checkFullscreenState)
+  }
+
+  unbindFullscreenChange () {
+    document.removeEventListener('fullscreenchange', this.checkFullscreenState)
+    document.removeEventListener('mozfullscreenchange', this.checkFullscreenState)
+    document.removeEventListener('webkitfullscreenchange', this.checkFullscreenState)
+    document.removeEventListener('msfullscreenchange', this.checkFullscreenState)
   }
 
   checkFullscreenState = () => {
