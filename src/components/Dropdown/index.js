@@ -17,10 +17,12 @@ export const {
 export default class Dropdown extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
+    fixed: PropTypes.bool,
     placement: PropTypes.string,
   }
 
   static defaultProps = {
+    fixed: false,
     placement: 'bottom-start',
   }
 
@@ -74,7 +76,7 @@ export default class Dropdown extends PureComponent {
   }
 
   renderDropdown = () => {
-    const { placement } = this.props
+    const { fixed, placement } = this.props
 
 
     this.tooltip = new Popper(
@@ -82,6 +84,7 @@ export default class Dropdown extends PureComponent {
       this.dropdownRef.current,
       {
         placement,
+        positionFixed: fixed,
         modifiers: {
           applyStyle: {
             enabled: true,
@@ -95,7 +98,7 @@ export default class Dropdown extends PureComponent {
   applyStyle = (data) => {
     if (window.innerWidth > 576) {
       this.setState({
-        attributes: data.attributes,
+        attributes: { 'x-placement': data.attributes['x-placement'] },
         styles: data.styles,
       })
     }
