@@ -21,6 +21,8 @@ import DropdownFooter from '../DropdownFooter'
 import Button from '../Button'
 import Icon from '../Icons'
 
+import Sticky from '../Sticky'
+
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
@@ -98,6 +100,30 @@ class DropdownStory extends PureComponent {
         />
 
         <DocSection title='Demo'>
+          <CodeExample>
+            <h6 className='mc-text-h6'>Fixed parent dropdown (above)</h6>
+            <Sticky
+              position={'top'}
+            >
+              <Dropdown fixed>
+                <DropdownToggle>
+                  <Button>Fixed Parent</Button>
+                </DropdownToggle>
+                <DropdownContent>
+                  {CATEGORIES.map((category, key) =>
+                    <DropdownItem
+                      key={key}
+                      className='mc-py-3 mc-px-5 mc-text-small'
+                      closeOnClick
+                    >
+                      {category}
+                    </DropdownItem>,
+                  )}
+                </DropdownContent>
+              </Dropdown>
+            </Sticky>
+          </CodeExample>
+
           <InvertedMirror>
             <CodeExample>
               <div className='row justify-content-center'>
