@@ -39,6 +39,11 @@ export default class Modal extends PureComponent {
     appendToBody: true,
     backdrop: 'dark',
     size: 'full',
+    allowFullscreen: true,
+  }
+
+  state = {
+    fullscreenElement: undefined,
   }
 
   componentDidMount () {
@@ -47,6 +52,28 @@ export default class Modal extends PureComponent {
     if (show) {
       document.body.classList.add('mc-modal__body--open')
     }
+
+    this.checkFullscreenState()
+    document.addEventListener('fullscreenchange', this.checkFullscreenState)
+  }
+
+  componentWillUnmount () {
+    document.body.classList.remove('mc-modal__body--open')
+    window.removeEventListener('fullscreenchange', this.checkFullscreenState)
+  }
+
+  checkFullscreenState = () => {
+    const { allowFullscreen } = this.props
+
+    // TODO: probably make this FS check a component
+    let fullscreenElement
+    if (allowFullscreen) {
+      fullscreenElement = document.fullscreenElement
+        || document.mozFullScreenElement
+        || document.webkitFullscreenElement
+    }
+
+    this.setState({ fullscreenElement })
   }
 
   componentDidUpdate (prevProps) {
@@ -65,10 +92,6 @@ export default class Modal extends PureComponent {
         elem.scrollTop = 0
       }, 0)
     }
-  }
-
-  componentWillUnmount () {
-    document.body.classList.remove('mc-modal__body--open')
   }
 
   onKeyDown = (event) => {
@@ -128,25 +151,14 @@ export default class Modal extends PureComponent {
   }
 
   render () {
-    const {
-      show,
-      appendToBody,
-      allowFullscreen,
-    } = this.props
+    const { show, appendToBody } = this.props
+    const { fullscreenElement } = this.state
 
     if (!show) {
       return null
     }
 
     // possibly attach modal to FS element in 'appendToBody' mode
-    // TODO: probably make this FS check a component
-    let fullscreenElement
-    if (allowFullscreen) {
-      fullscreenElement = document.fullscreenElement
-        || document.mozFullScreenElement
-        || document.webkitFullscreenElement
-    }
-
     return appendToBody ? createPortal(
       this.renderModal(),
       fullscreenElement || document.body,
