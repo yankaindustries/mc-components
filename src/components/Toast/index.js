@@ -64,12 +64,12 @@ export default class Button extends PureComponent {
     }
   }
 
-  componentWillReceiveProps (newProps) {
-    if (newProps.show && newProps.show !== this.props.show) {
+  componentDidUpdate (prevProps) {
+    if (this.props.show && this.props.show !== prevProps.show) {
       this.show()
     }
 
-    if (!newProps.show && newProps.show !== this.props.show) {
+    if (!this.props.show && this.props.show !== prevProps.show) {
       this.hide()
     }
   }
