@@ -27,6 +27,7 @@ class ModalExample extends Component {
     rate: false,
     trailer: false,
     welcome: false,
+    scrolling: false,
   }
 
   toggleModal = name => () => {
@@ -45,7 +46,7 @@ class ModalExample extends Component {
 
         <DocSection title='Demo'>
           <div className='row'>
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -91,7 +92,7 @@ class ModalExample extends Component {
               </CodeExample>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -167,7 +168,7 @@ class ModalExample extends Component {
               </CodeExample>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -226,7 +227,7 @@ class ModalExample extends Component {
               </CodeExample>
             </div>
 
-            <div className='col-md-3'>
+            <div className='col-md-2'>
               <CodeExample>
                 <div className='mc-text--center'>
                   <Button
@@ -266,8 +267,64 @@ class ModalExample extends Component {
                 </Modal>
               </CodeExample>
             </div>
+
+            <div className='col-md-2'>
+              <CodeExample>
+                <div className='mc-text--center'>
+                  <Button
+                    kind='secondary'
+                    onClick={this.toggleModal('scrolling')}
+                  >
+                    Scrolling
+                  </Button>
+                </div>
+
+                <Modal
+                  backdrop='extra-dark'
+                  show={this.state.scrolling}
+                  onClose={this.toggleModal('scrolling')}
+                  size='medium'
+                >
+                  <ModalContent className='mc-theme-light'>
+                    <ModalClose />
+                    <Background
+                      color='light'
+                      className='mc-px-4 mc-py-9'
+                    >
+                      <div className='row align-items-center justify-content-between'>
+
+                        <div className='offset-sm-1 col-sm-10'>
+                          <h6 className='mc-text-h2 mc-text--uppercase mc-text--center'>
+                            Super Long Modal
+                          </h6>
+                          <p
+                            className='mc-opacity--muted mc-text--center'
+                            style={{ height: '400px' }}
+                          >
+                            Seems to stretch...
+                          </p>
+                          <p
+                            className='mc-opacity--muted mc-text--center'
+                            style={{ height: '400px' }}
+                          >
+                            Forever...
+                          </p>
+                          <p
+                            className='mc-opacity--muted mc-text--center'
+                            style={{ height: '1000px' }}
+                          >
+                            ...
+                          </p>
+                        </div>
+                      </div>
+                    </Background>
+                  </ModalContent>
+                </Modal>
+              </CodeExample>
+            </div>
           </div>
         </DocSection>
+        <div style={{ height: '2000px' }} />
       </div>
     )
   }
