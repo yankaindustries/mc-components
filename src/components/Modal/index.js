@@ -63,6 +63,8 @@ export default class Modal extends PureComponent {
   }
 
   bindFullscreenChange () {
+    if (this.props.disableFullscreen) return
+
     document.addEventListener('fullscreenchange', this.checkFullscreenState)
     document.addEventListener('mozfullscreenchange', this.checkFullscreenState)
     document.addEventListener('webkitfullscreenchange', this.checkFullscreenState)
@@ -70,6 +72,8 @@ export default class Modal extends PureComponent {
   }
 
   unbindFullscreenChange () {
+    if (this.props.disableFullscreen) return
+
     document.removeEventListener('fullscreenchange', this.checkFullscreenState)
     document.removeEventListener('mozfullscreenchange', this.checkFullscreenState)
     document.removeEventListener('webkitfullscreenchange', this.checkFullscreenState)
@@ -77,15 +81,12 @@ export default class Modal extends PureComponent {
   }
 
   checkFullscreenState = () => {
-    const { disableFullscreen } = this.props
+    if (this.props.disableFullscreen) return
 
     // TODO: probably make this FS check a component
-    let fullscreenElement
-    if (!disableFullscreen) {
-      fullscreenElement = document.fullscreenElement
-        || document.mozFullScreenElement
-        || document.webkitFullscreenElement
-    }
+    const fullscreenElement = document.fullscreenElement
+      || document.mozFullScreenElement
+      || document.webkitFullscreenElement
 
     this.setState({ fullscreenElement })
   }
