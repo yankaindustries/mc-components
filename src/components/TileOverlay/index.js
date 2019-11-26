@@ -13,6 +13,7 @@ export default class TileOverlay extends PureComponent {
       'gradient-bottom',
       'gradient-left',
       'spotlight',
+      'solid',
     ]),
   }
 
