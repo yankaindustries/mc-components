@@ -41,10 +41,6 @@ export default class Modal extends PureComponent {
     size: 'full',
   }
 
-  state = {
-    fullscreenElement: undefined,
-  }
-
   componentDidMount () {
     const { show } = this.props
 
