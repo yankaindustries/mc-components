@@ -4,12 +4,12 @@ import { CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
-import { FullscreenHandler } from '../FullscreenHandler'
+import FullscreenHandler from '../FullscreenHandler'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
 const getOrCreateToaster = function (parentNode) {
   let toaster
-  const existingToaster = document.querySelectorAll('mc-toaster')
+  const existingToaster = document.querySelectorAll('.mc-toaster')
   if (existingToaster.length) {
     [toaster] = existingToaster
     const existingParent = toaster.parentNode
@@ -26,7 +26,7 @@ const getOrCreateToaster = function (parentNode) {
   return toaster
 }
 
-export default class Button extends PureComponent {
+export default class Toast extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
