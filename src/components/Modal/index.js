@@ -33,14 +33,12 @@ export default class Modal extends PureComponent {
     ]),
     appendToBody: PropTypes.bool,
     onClose: PropTypes.func,
-    disableFullscreen: PropTypes.bool,
   }
 
   static defaultProps = {
     appendToBody: true,
     backdrop: 'dark',
     size: 'full',
-    disableFullscreen: false,
   }
 
   state = {
