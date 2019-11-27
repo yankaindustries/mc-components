@@ -138,19 +138,10 @@ export default class Toast extends PureComponent {
   render () {
     return (
       <FullscreenHandler>
-        {({ fullscreenElement }) => {
-          if (fullscreenElement) {
-            return createPortal(
-              this.renderToast(),
-              getOrCreateToaster(fullscreenElement),
-            )
-          }
-
-          return createPortal(
-            this.renderToast(),
-            getOrCreateToaster(document.body),
-          )
-        }}
+        {({ fullscreenElement }) => createPortal(
+          this.renderToast(),
+          getOrCreateToaster(fullscreenElement || document.body),
+        )}
       </FullscreenHandler>
     )
   }
