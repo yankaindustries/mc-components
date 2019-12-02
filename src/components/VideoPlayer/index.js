@@ -21,8 +21,6 @@ const FILL_NONE = null
 
 const CC_HIDDEN = 'hidden'
 
-const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
@@ -192,18 +190,10 @@ export default class VideoPlayer extends PureComponent {
   }
 
   handleReady = () => {
-    const {
-      hasAutoplay,
-      isMuted,
-      onVideoReady,
-    } = this.props
+    const { onVideoReady } = this.props
 
     this.checkBuffers()
     this.turnOffCaptions()
-
-    if (hasAutoplay && (!isSafari || isMuted)) {
-      this.video.play()
-    }
 
     if (onVideoReady) {
       onVideoReady(this.video)
@@ -412,6 +402,7 @@ export default class VideoPlayer extends PureComponent {
       playerId,
       videoId,
 
+      hasAutoplay,
       hasControls,
       isMuted,
       ...restProps
@@ -451,8 +442,9 @@ export default class VideoPlayer extends PureComponent {
             data-account={accountId}
             data-player-id={playerId}
             data-video-id={videoId}
-            muted={isMuted}
+            autoPlay={hasAutoplay}
             controls={hasControls}
+            muted={isMuted}
             {...restProps}
           />
         </div>
