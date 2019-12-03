@@ -428,6 +428,8 @@ export default class VideoPlayer extends PureComponent {
       [`vjs-fill-${fill}`]: !!fill,
     })
 
+    console.log(restProps)
+
     return (
       <div
         className={containerClasses}
