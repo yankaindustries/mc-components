@@ -63,10 +63,11 @@ export default class Dropdown extends PureComponent {
       return
     }
 
+    const rootHtml = document.getElementsByTagName('html')[0]
     if (!show) {
-      document.body.classList.add('mc-dropdown__body--open')
+      rootHtml.classList.add('mc-dropdown__html--open')
     } else {
-      document.body.classList.remove('mc-dropdown__body--open')
+      rootHtml.classList.remove('mc-dropdown__html--open')
     }
 
     this.setState(prevState => ({
@@ -78,13 +79,12 @@ export default class Dropdown extends PureComponent {
   renderDropdown = () => {
     const { fixed, placement } = this.props
 
-
     this.tooltip = new Popper(
       findDOMNode(this.toggleRef.current),
       this.dropdownRef.current,
       {
         placement,
-        positionFixed: fixed,
+        positionFixed: fixed || window.innerWidth <= 576,
         modifiers: {
           applyStyle: {
             enabled: true,
