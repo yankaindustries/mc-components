@@ -145,6 +145,14 @@ export default class VideoPlayer extends PureComponent {
     this.video.on('fullscreenchange', this.handleFullscreenChange)
     this.video.on('loadedmetadata', this.handleReady)
 
+    if (this.props.isMuted) {
+      this.video.muted(true)
+    }
+
+    if (this.props.hasAutoplay) {
+      this.video.play()
+    }
+
     if (onPlayerReady) {
       onPlayerReady(this.video)
     }
@@ -405,6 +413,7 @@ export default class VideoPlayer extends PureComponent {
       hasAutoplay,
       hasControls,
       isMuted,
+      isLooped,
       ...restProps
     } = this.props
 
@@ -428,8 +437,6 @@ export default class VideoPlayer extends PureComponent {
       [`vjs-fill-${fill}`]: !!fill,
     })
 
-    console.log(restProps)
-
     return (
       <div
         className={containerClasses}
@@ -447,6 +454,7 @@ export default class VideoPlayer extends PureComponent {
             autoPlay={hasAutoplay}
             controls={hasControls}
             muted={isMuted}
+            loop={isLooped}
             {...restProps}
           />
         </div>
