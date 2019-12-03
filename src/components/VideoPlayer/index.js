@@ -133,7 +133,7 @@ export default class VideoPlayer extends PureComponent {
   }
 
   handlePlayerReady = () => {
-    const { onPlayerReady } = this.props
+    const { hasAutoplay, isMuted, onPlayerReady } = this.props
 
     // eslint-disable-next-line
     this.setState({ videoRoot: this.video.el_ })
@@ -145,11 +145,11 @@ export default class VideoPlayer extends PureComponent {
     this.video.on('fullscreenchange', this.handleFullscreenChange)
     this.video.on('loadedmetadata', this.handleReady)
 
-    if (this.props.isMuted) {
+    if (isMuted) {
       this.video.muted(true)
     }
 
-    if (this.props.hasAutoplay) {
+    if (hasAutoplay) {
       this.video.play()
     }
 
