@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { instanceOf } from 'prop-types'
+import { object } from 'prop-types'
 
 import { PROP_TYPE_CHILDREN } from '../constants'
 
@@ -8,7 +8,7 @@ import { PROP_TYPE_CHILDREN } from '../constants'
 export default class VideoPlayerPortalScreen extends Component {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
-    videoRoot: instanceOf(Element),
+    videoRoot: object,
   }
 
   render () {
