@@ -1,5 +1,5 @@
 import React from 'react'
-import { bool, oneOf, node } from 'prop-types'
+import { bool, oneOf, object } from 'prop-types'
 import cn from 'classnames'
 
 import VideoPlayerPortalScreen from '../VideoPlayerPortalScreen'
@@ -35,7 +35,7 @@ const VideoPlayerScreen = ({
 VideoPlayerScreen.propTypes = {
   children: PROP_TYPE_CHILDREN.isRequired,
   variation: oneOf(['endscreen', 'beforescreen', 'pausescreen']),
-  videoRoot: node,
+  videoRoot: object,
   isActive: bool,
 }
 

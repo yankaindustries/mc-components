@@ -414,6 +414,13 @@ export default class VideoPlayer extends PureComponent {
       hasControls,
       isMuted,
       isLooped,
+
+      // Pull out all of the props we don't want to pass along to the <video />
+      onPlayerReady,
+      onVideoReady,
+      onEnd,
+      onTimeChange,
+      onSeek,
       ...restProps
     } = this.props
 
