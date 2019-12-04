@@ -208,7 +208,10 @@ storiesOf('Components|VideoPlayer', module)
         <PropExample
           name='hasAutoplay'
           type='boolean'
-          description='Automatically plays the video when ready.'
+          description='
+            Automatically plays the video when ready. NOTE: this will not work
+            alone on mobile browsers. Must be accompanied by `isMuted`
+          '
         >
           <div className='row'>
             <div className='col-lg-4'>
