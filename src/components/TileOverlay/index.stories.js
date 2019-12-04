@@ -26,7 +26,7 @@ storiesOf('Components|Tiles/TileOverlay', module)
           type='String'
         >
           <div className='row'>
-            <div className='col-4'>
+            <div className='col-3'>
               <Tile>
                 <Placeholder>
                   gradient-bottom
@@ -35,7 +35,7 @@ storiesOf('Components|Tiles/TileOverlay', module)
               </Tile>
             </div>
 
-            <div className='col-4'>
+            <div className='col-3'>
               <Tile>
                 <Placeholder>
                   gradient-left
@@ -44,12 +44,21 @@ storiesOf('Components|Tiles/TileOverlay', module)
               </Tile>
             </div>
 
-            <div className='col-4'>
+            <div className='col-3'>
               <Tile>
                 <Placeholder>
                   spotlight
                 </Placeholder>
                 <TileOverlay type='spotlight' />
+              </Tile>
+            </div>
+
+            <div className='col-3'>
+              <Tile>
+                <Placeholder>
+                  solid
+                </Placeholder>
+                <TileOverlay type='solid' />
               </Tile>
             </div>
           </div>
