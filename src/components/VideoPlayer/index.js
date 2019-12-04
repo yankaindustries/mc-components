@@ -133,17 +133,28 @@ export default class VideoPlayer extends PureComponent {
   }
 
   handlePlayerReady = () => {
-    const { hasAutoplay, isMuted, onPlayerReady } = this.props
+    const { onPlayerReady } = this.props
 
     // eslint-disable-next-line
     this.setState({ videoRoot: this.video.el_ })
 
+    this.video.on('loadedmetadata', this.handleReady)
     this.video.on('play', this.handlePlay)
     this.video.on('pause', this.handlePause)
     this.video.on('ended', this.handleEnd)
     this.video.on('seeking', this.handleSeeking)
     this.video.on('fullscreenchange', this.handleFullscreenChange)
-    this.video.on('loadedmetadata', this.handleReady)
+
+    if (onPlayerReady) {
+      onPlayerReady(this.video)
+    }
+
+    this.startSecondsTimer()
+    this.calculateFill()
+  }
+
+  handleReady = () => {
+    const { hasAutoplay, isMuted, onVideoReady } = this.props
 
     if (isMuted) {
       this.video.muted(true)
@@ -153,12 +164,20 @@ export default class VideoPlayer extends PureComponent {
       this.video.play()
     }
 
-    if (onPlayerReady) {
-      onPlayerReady(this.video)
-    }
+    this.checkBuffers()
+    this.turnOffCaptions()
 
-    this.startSecondsTimer()
-    this.calculateFill()
+    if (onVideoReady) {
+      onVideoReady(this.video)
+    }
+  }
+
+  turnOffCaptions = () => {
+    const tracks = this.video.textTracks()
+
+    times(tracks.length).forEach((i) => {
+      tracks[i].mode = CC_HIDDEN
+    })
   }
 
   handlePlay = () => {
@@ -195,25 +214,6 @@ export default class VideoPlayer extends PureComponent {
     if (onSeek) {
       onSeek(this.video)
     }
-  }
-
-  handleReady = () => {
-    const { onVideoReady } = this.props
-
-    this.checkBuffers()
-    this.turnOffCaptions()
-
-    if (onVideoReady) {
-      onVideoReady(this.video)
-    }
-  }
-
-  turnOffCaptions = () => {
-    const tracks = this.video.textTracks()
-
-    times(tracks.length).forEach((i) => {
-      tracks[i].mode = CC_HIDDEN
-    })
   }
 
   handleEnd = () => {
