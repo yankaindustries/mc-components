@@ -22,6 +22,8 @@ export default class ResponsiveHandler extends PureComponent {
   }
 
   state = {
+    isMounted: false,
+
     isXS: false,
 
     isSM: false,
@@ -42,6 +44,7 @@ export default class ResponsiveHandler extends PureComponent {
 
   componentDidMount () {
     window.addEventListener('resize', this.calculateSizes)
+    this.setState({ isMounted: true })
     this.calculateSizes()
   }
 
@@ -79,6 +82,10 @@ export default class ResponsiveHandler extends PureComponent {
     responsiveValues(this.state, l, m, s, xs)
 
   render () {
+    if (!this.state.isMounted) {
+      return null
+    }
+
     const {
       children,
     } = this.props
