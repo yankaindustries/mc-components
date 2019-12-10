@@ -10,7 +10,11 @@
 
   pointer-events: none;
   perspective: 2000px;
-  z-index: $mc-zindex-dropdown;
+  z-index: $mc-zindex-modal;
+
+  @media (min-width: $mc-bp-sm) {
+    z-index: $mc-zindex-dropdown;
+  }
 
   &__toggle {
     display: inline-block;
@@ -48,6 +52,7 @@
       flex-direction: column;
       width: 100vw;
       max-height: 100vh;
+      max-height: -webkit-fill-available; /* stylelint-disable-line value-no-vendor-prefix */
       z-index: $mc-zindex-dropdown;
 
       background: var(--mc-theme-dropdown-bg);
@@ -63,7 +68,7 @@
       @media (min-width: $mc-bp-sm) {
         width: auto;
         max-width: 400px;
-        max-height: 50vh;
+        max-height: 75vh;
 
         border: 1px solid var(--mc-theme-dropdown-border);
         border-radius: $default-radius;
