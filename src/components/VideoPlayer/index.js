@@ -21,8 +21,6 @@ const FILL_NONE = null
 
 const CC_HIDDEN = 'hidden'
 
-const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-
 
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
@@ -140,12 +138,12 @@ export default class VideoPlayer extends PureComponent {
     // eslint-disable-next-line
     this.setState({ videoRoot: this.video.el_ })
 
+    this.video.on('loadedmetadata', this.handleReady)
     this.video.on('play', this.handlePlay)
     this.video.on('pause', this.handlePause)
     this.video.on('ended', this.handleEnd)
     this.video.on('seeking', this.handleSeeking)
     this.video.on('fullscreenchange', this.handleFullscreenChange)
-    this.video.on('loadedmetadata', this.handleReady)
 
     if (onPlayerReady) {
       onPlayerReady(this.video)
@@ -153,6 +151,33 @@ export default class VideoPlayer extends PureComponent {
 
     this.startSecondsTimer()
     this.calculateFill()
+  }
+
+  handleReady = () => {
+    const { hasAutoplay, isMuted, onVideoReady } = this.props
+
+    if (isMuted) {
+      this.video.muted(true)
+    }
+
+    if (hasAutoplay) {
+      this.video.play()
+    }
+
+    this.checkBuffers()
+    this.turnOffCaptions()
+
+    if (onVideoReady) {
+      onVideoReady(this.video)
+    }
+  }
+
+  turnOffCaptions = () => {
+    const tracks = this.video.textTracks()
+
+    times(tracks.length).forEach((i) => {
+      tracks[i].mode = CC_HIDDEN
+    })
   }
 
   handlePlay = () => {
@@ -189,33 +214,6 @@ export default class VideoPlayer extends PureComponent {
     if (onSeek) {
       onSeek(this.video)
     }
-  }
-
-  handleReady = () => {
-    const {
-      hasAutoplay,
-      isMuted,
-      onVideoReady,
-    } = this.props
-
-    this.checkBuffers()
-    this.turnOffCaptions()
-
-    if (hasAutoplay && (!isSafari || isMuted)) {
-      this.video.play()
-    }
-
-    if (onVideoReady) {
-      onVideoReady(this.video)
-    }
-  }
-
-  turnOffCaptions = () => {
-    const tracks = this.video.textTracks()
-
-    times(tracks.length).forEach((i) => {
-      tracks[i].mode = CC_HIDDEN
-    })
   }
 
   handleEnd = () => {
@@ -412,8 +410,17 @@ export default class VideoPlayer extends PureComponent {
       playerId,
       videoId,
 
+      hasAutoplay,
       hasControls,
       isMuted,
+      isLooped,
+
+      // Pull out all of the props we don't want to pass along to the <video />
+      onPlayerReady,
+      onVideoReady,
+      onEnd,
+      onTimeChange,
+      onSeek,
       ...restProps
     } = this.props
 
@@ -451,8 +458,10 @@ export default class VideoPlayer extends PureComponent {
             data-account={accountId}
             data-player-id={playerId}
             data-video-id={videoId}
-            muted={isMuted}
+            autoPlay={hasAutoplay}
             controls={hasControls}
+            muted={isMuted}
+            loop={isLooped}
             {...restProps}
           />
         </div>

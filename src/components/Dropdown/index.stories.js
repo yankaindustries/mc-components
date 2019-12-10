@@ -17,14 +17,11 @@ import DropdownHeader from '../DropdownHeader'
 import DropdownBody from '../DropdownBody'
 import DropdownItem from '../DropdownItem'
 import DropdownFooter from '../DropdownFooter'
-
 import Button from '../Button'
 import Icon from '../Icons'
-
 import Sticky from '../Sticky'
 
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
-
 
 const CATEGORIES = [
   'Writing',
@@ -36,14 +33,12 @@ const CATEGORIES = [
   'Telekenesis',
 ]
 
-
 class Controlled extends PureComponent {
   state = {
     show: false,
   }
 
   toggleShow = () =>
-    console.log('toggleShow') ||
     this.setState(prevState => ({ show: !prevState.show }))
 
   render () {

@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 import { Consumer } from '../Dropdown'
 import ClickOutside from '../ClickOutside'
+import Backdrop from '../Backdrop'
 import Icon from '../Icons'
 import { PROP_TYPE_CHILDREN } from '../constants'
 import { getClosest } from '../helpers'
@@ -76,7 +77,10 @@ export default class DropdownContentControlled extends PureComponent {
           dropdownRef,
           styles,
         }) =>
-          <ClickOutside onClickOutside={this.handleClose('outside')}>
+          <ClickOutside
+            divRef={dropdownRef}
+            onClickOutside={this.handleClose('outside')}
+          >
             <div
               className={classes}
               ref={dropdownRef}
@@ -84,6 +88,10 @@ export default class DropdownContentControlled extends PureComponent {
               {...attributes}
               {...props}
             >
+              <Backdrop
+                className='mc-dropdown__backdrop'
+                kind={'dark'}
+              />
               <div className='mc-dropdown__content-container'>
                 <div className='d-block d-sm-none mc-dropdown__close'>
                   <a
@@ -98,11 +106,6 @@ export default class DropdownContentControlled extends PureComponent {
                   {children}
                 </div>
               </div>
-
-              <div
-                className='mc-dropdown__backdrop'
-                onClick={this.handleClose('backdrop')}
-              />
             </div>
           </ClickOutside>
         }
