@@ -10,15 +10,6 @@ import Icon from '../Icons'
 import { PROP_TYPE_CHILDREN } from '../constants'
 import { getClosest } from '../helpers'
 
-const toggleHtmlClassName = function (isShown) {
-  const rootHtml = document.getElementsByTagName('html')[0]
-  if (!isShown) {
-    rootHtml.classList.remove('mc-dropdown__html--open')
-  } else {
-    rootHtml.classList.add('mc-dropdown__html--open')
-  }
-}
-
 export default class DropdownContentControlled extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
@@ -48,15 +39,24 @@ export default class DropdownContentControlled extends PureComponent {
 
     this.setState({ checkedInvert: true })
 
-    toggleHtmlClassName(this.props.show)
+    this.toggleHtmlClassName(this.props.show)
   }
 
   componentDidUpdate () {
-    toggleHtmlClassName(this.props.show)
+    this.toggleHtmlClassName(this.props.show)
   }
 
   componentWillUnmount () {
-    toggleHtmlClassName(false)
+    this.toggleHtmlClassName(false)
+  }
+
+  toggleHtmlClassName (isShown) {
+    const rootHtml = document.getElementsByTagName('html')[0]
+    if (!isShown) {
+      rootHtml.classList.remove('mc-dropdown__html--open')
+    } else {
+      rootHtml.classList.add('mc-dropdown__html--open')
+    }
   }
 
   handleClose = source => (event) => {
