@@ -10,6 +10,14 @@ import Icon from '../Icons'
 import { PROP_TYPE_CHILDREN } from '../constants'
 import { getClosest } from '../helpers'
 
+const toggleHtmlClassName = function (isShown) {
+  const rootHtml = document.getElementsByTagName('html')[0]
+  if (!isShown) {
+    rootHtml.classList.remove('mc-dropdown__html--open')
+  } else {
+    rootHtml.classList.add('mc-dropdown__html--open')
+  }
+}
 
 export default class DropdownContentControlled extends PureComponent {
   static propTypes = {
@@ -39,16 +47,24 @@ export default class DropdownContentControlled extends PureComponent {
     }
 
     this.setState({ checkedInvert: true })
+
+    toggleHtmlClassName(this.props.show)
   }
 
-  handleClose = (toggle, source) => (event) => {
+  componentDidUpdate () {
+    toggleHtmlClassName(this.props.show)
+  }
+
+  componentWillUnmount () {
+    toggleHtmlClassName(false)
+  }
+
+  handleClose = source => (event) => {
     const { show, onClose } = this.props
 
     if (!show) {
       return
     }
-
-    toggle(event)
 
     onClose(source, event)
   }
@@ -78,11 +94,10 @@ export default class DropdownContentControlled extends PureComponent {
           attributes,
           dropdownRef,
           styles,
-          toggle,
         }) =>
           <ClickOutside
             divRef={dropdownRef}
-            onClickOutside={this.handleClose(toggle, 'outside')}
+            onClickOutside={this.handleClose('outside')}
           >
             <div
               className={classes}
@@ -99,7 +114,7 @@ export default class DropdownContentControlled extends PureComponent {
                 <div className='d-block d-sm-none mc-dropdown__close'>
                   <a
                     className='d-inline-block mc-p-2'
-                    onClick={this.handleClose(toggle, 'close')}
+                    onClick={this.handleClose('close')}
                   >
                     <Icon kind='close' className='mc-dropdown__close-icon' />
                   </a>
