@@ -40,7 +40,8 @@ export default class Dropdown extends PureComponent {
   }
 
   componentWillUnmount () {
-    document.body.classList.remove('mc-dropdown__body--open')
+    const rootHtml = document.getElementsByTagName('html')[0]
+    rootHtml.classList.remove('mc-dropdown__html--open')
   }
 
   componentDidUpdate (prevProps) {

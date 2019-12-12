@@ -41,12 +41,14 @@ export default class DropdownContentControlled extends PureComponent {
     this.setState({ checkedInvert: true })
   }
 
-  handleClose = source => (event) => {
+  handleClose = (toggle, source) => (event) => {
     const { show, onClose } = this.props
 
     if (!show) {
       return
     }
+
+    toggle(event)
 
     onClose(source, event)
   }
@@ -76,10 +78,11 @@ export default class DropdownContentControlled extends PureComponent {
           attributes,
           dropdownRef,
           styles,
+          toggle,
         }) =>
           <ClickOutside
             divRef={dropdownRef}
-            onClickOutside={this.handleClose('outside')}
+            onClickOutside={this.handleClose(toggle, 'outside')}
           >
             <div
               className={classes}
@@ -96,7 +99,7 @@ export default class DropdownContentControlled extends PureComponent {
                 <div className='d-block d-sm-none mc-dropdown__close'>
                   <a
                     className='d-inline-block mc-p-2'
-                    onClick={this.handleClose('close')}
+                    onClick={this.handleClose(toggle, 'close')}
                   >
                     <Icon kind='close' className='mc-dropdown__close-icon' />
                   </a>
