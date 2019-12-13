@@ -10,7 +10,6 @@ import Icon from '../Icons'
 import { PROP_TYPE_CHILDREN } from '../constants'
 import { getClosest } from '../helpers'
 
-
 export default class DropdownContentControlled extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
@@ -39,6 +38,25 @@ export default class DropdownContentControlled extends PureComponent {
     }
 
     this.setState({ checkedInvert: true })
+
+    this.toggleHtmlClassName(this.props.show)
+  }
+
+  componentDidUpdate () {
+    this.toggleHtmlClassName(this.props.show)
+  }
+
+  componentWillUnmount () {
+    this.toggleHtmlClassName(false)
+  }
+
+  toggleHtmlClassName (isShown) {
+    const rootHtml = document.getElementsByTagName('html')[0]
+    if (!isShown) {
+      rootHtml.classList.remove('mc-dropdown__html--open')
+    } else {
+      rootHtml.classList.add('mc-dropdown__html--open')
+    }
   }
 
   handleClose = source => (event) => {
