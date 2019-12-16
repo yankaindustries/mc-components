@@ -100,6 +100,7 @@ export default class DropdownContentControlled extends PureComponent {
             onClickOutside={this.handleClose('outside')}
           >
             <div
+              role='dropdown'
               className={classes}
               ref={dropdownRef}
               style={styles}

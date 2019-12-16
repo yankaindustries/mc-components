@@ -2,6 +2,7 @@
 /node_modules
 
 /dist
+/coverage
 
 # misc
 .DS_Store
