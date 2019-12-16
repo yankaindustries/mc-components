@@ -3,11 +3,11 @@ import { render, fireEvent } from '@testing-library/react'
 import propTypes from 'prop-types'
 import {
   Dropdown,
+  DropdownBody,
   DropdownToggle,
   DropdownContent,
   DropdownContentControlled,
 } from '../index'
-import DropdownBody from '../DropdownBody'
 
 describe('Dropdown', () => {
   describe('DropdownContent', () => {
@@ -107,7 +107,7 @@ describe('Dropdown', () => {
       }
     }
 
-    it('renders default dropdown with popper', () => {
+    it('renders default, controlled dropdown with popper', () => {
       // given a dropdown
       const { toggleElem, dropdownElem } = setup()
       const rootHtml = document.getElementsByTagName('html')[0]

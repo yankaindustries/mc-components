@@ -44,6 +44,14 @@
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/.jest/setup.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*js",
+      "!src/**/*.stories.js"
+    ],
+    "coverageReporters": [
+      "html"
     ]
   },
   "dependencies": {
