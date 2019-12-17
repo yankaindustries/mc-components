@@ -61,7 +61,7 @@ describe('Dropdown', () => {
   })
 
   describe('DropdownContentControlled', () => {
-    class TestControlledDropdown extends PureComponent {
+    class ControlledDropdownHarness extends PureComponent {
       state = {
         show: false,
       }
@@ -101,7 +101,7 @@ describe('Dropdown', () => {
       const contentBody = 'Some Content'
 
       const utils = render(
-        <TestControlledDropdown
+        <ControlledDropdownHarness
           toggleText={toggleText}
           contentBody={contentBody}
         />,
