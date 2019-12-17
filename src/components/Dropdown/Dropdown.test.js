@@ -158,7 +158,7 @@ describe('Dropdown Component', () => {
     })
   })
 
-  describe('DropdownBody & stuffs', () => {
+  describe('DropdownBody, header, footer & fringe', () => {
     let dropdownItemClicked
 
     beforeEach(() => {
@@ -212,7 +212,7 @@ describe('Dropdown Component', () => {
       expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeFalsy()
     })
 
-    it('renders Header, Body & Footer and closes when DropdownItem is clicked', () => {
+    it('renders Header, Body & Footer', () => {
       // given a dropdown
       const { getByText, toggleElem, dropdownElem } = setup()
       const rootHtml = document.getElementsByTagName('html')[0]
@@ -225,6 +225,16 @@ describe('Dropdown Component', () => {
       // after the toggle is clicked
       fireEvent.click(toggleElem)
       expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeTruthy()
+    })
+
+    it('remains open when DropdownItem is clicked', () => {
+      // given a dropdown
+      const { getByText, toggleElem, dropdownElem } = setup()
+      const rootHtml = document.getElementsByTagName('html')[0]
+
+      // after the toggle is clicked
+      fireEvent.click(toggleElem)
+      expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeTruthy()
 
       // clicking on the DropdownItem should NOT close
       fireEvent.click(getByText(contentBody))
@@ -232,7 +242,7 @@ describe('Dropdown Component', () => {
       expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeTruthy()
     })
 
-    it('dropdown closes when DropdownItem is clicked', () => {
+    it('dropdown closes when DropdownItem is clicked (closeOnClick)', () => {
       // given a dropdown
       const { getByText, toggleElem, dropdownElem } = setup(true)
       const rootHtml = document.getElementsByTagName('html')[0]
