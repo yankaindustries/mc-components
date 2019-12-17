@@ -232,7 +232,7 @@ describe('Dropdown Component', () => {
       expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeTruthy()
     })
 
-    it('Dropdown closes when DropdownItem is clicked', () => {
+    it('dropdown closes when DropdownItem is clicked', () => {
       // given a dropdown
       const { getByText, toggleElem, dropdownElem } = setup(true)
       const rootHtml = document.getElementsByTagName('html')[0]
