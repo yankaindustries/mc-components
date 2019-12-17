@@ -63,9 +63,13 @@ describe('Dropdown Component', () => {
 
     it('renders default dropdown and toggles', () => {
       // given a dropdown
-      const { toggleElem, dropdownElem } = setup()
+      const { toggleElem, dropdownElem, getByText } = setup()
       const rootHtml = document.getElementsByTagName('html')[0]
       expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeFalsy()
+
+      // ensure everything is getting rendered
+      expect(getByText(toggleText)).not.toBeNull()
+      expect(getByText(contentBody)).not.toBeNull()
 
       // after the toggle is clicked
       fireEvent.click(toggleElem)
@@ -144,9 +148,13 @@ describe('Dropdown Component', () => {
 
     it('renders default, controlled dropdown and toggles', () => {
       // given a dropdown
-      const { toggleElem, dropdownElem } = setup()
+      const { toggleElem, dropdownElem, getByText } = setup()
       const rootHtml = document.getElementsByTagName('html')[0]
       expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeFalsy()
+
+      // ensure everything is getting rendered
+      expect(getByText(toggleText)).not.toBeNull()
+      expect(getByText(contentBody)).not.toBeNull()
 
       // after the toggle is clicked
       fireEvent.click(toggleElem)
