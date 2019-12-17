@@ -12,34 +12,51 @@ import {
   DropdownContentControlled,
 } from '../index'
 
-describe('Dropdown', () => {
+describe('Dropdown Component', () => {
   const CLASS_DROPDOWN_ACTIVE = 'mc-dropdown--active'
   const CLASS_DROPDOWN_HTML_OPEN = 'mc-dropdown__html--open'
+
+  const toggleText = 'Click To Toggle'
+  const contentHeader = 'Some Header'
+  const contentBody = 'Some Content'
+  const contentFooter = 'Some Footer'
 
   const dropdownIsVisible = (rootHtml, dropdownElem) => (
     rootHtml.classList.contains(CLASS_DROPDOWN_HTML_OPEN) &&
     dropdownElem.classList.contains(CLASS_DROPDOWN_ACTIVE)
   )
 
-  describe('DropdownContent', () => {
-    const setup = () => {
-      const toggleText = 'Click To Toggle'
-      const contentBody = 'Some Content'
-
-      const utils = render(
-        <Dropdown>
+  describe('Basic DropdownContent', () => {
+    const renderSimpleDropdown = (
+      toggleText,
+      contentBody,
+      placement = 'bottom-start',
+    ) => (
+      <Dropdown placement={placement}>
           <DropdownToggle><span>{toggleText}</span></DropdownToggle>
           <DropdownContent>
             <DropdownBody><span>{contentBody}</span></DropdownBody>
           </DropdownContent>
-        </Dropdown>,
+        </Dropdown>
+    )
+
+    const setup = () => {
+      const utils = render(
+        renderSimpleDropdown(toggleText, contentBody),
       )
+
+      const reRenderDropdown = placement =>
+        utils.rerender(
+          renderSimpleDropdown(toggleText, contentBody, placement),
+        )
       const toggleElem = utils.getByText(toggleText)
       const dropdownElem = utils.getByRole('dropdown')
 
       return {
+        reRenderDropdown,
         toggleElem,
         dropdownElem,
+        renderSimpleDropdown,
         ...utils,
       }
     }
@@ -58,9 +75,21 @@ describe('Dropdown', () => {
       fireEvent.click(document.body)
       expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeFalsy()
     })
+
+    it('re-renders when placement is added/updated', () => {
+      // given a dropdown
+      const { getByText, reRenderDropdown } = setup()
+
+      // when re-rendered with new placement
+      reRenderDropdown('top-end')
+
+      // ensure everything is re-rendered correctly
+      expect(getByText(toggleText)).not.toBeNull()
+      expect(getByText(contentBody)).not.toBeNull()
+    })
   })
 
-  describe('DropdownContentControlled', () => {
+  describe('DropdownContentControlled with state', () => {
     class ControlledDropdownHarness extends PureComponent {
       state = {
         show: false,
@@ -97,9 +126,6 @@ describe('Dropdown', () => {
     }
 
     const setup = () => {
-      const toggleText = 'Click To Toggle'
-      const contentBody = 'Some Content'
-
       const utils = render(
         <ControlledDropdownHarness
           toggleText={toggleText}
@@ -133,10 +159,6 @@ describe('Dropdown', () => {
   })
 
   describe('DropdownBody & stuffs', () => {
-    const toggleText = 'Click To Toggle'
-    const contentHeader = 'Some Header'
-    const contentBody = 'Some Content'
-    const contentFooter = 'Some Footer'
     let dropdownItemClicked
 
     beforeEach(() => {
@@ -144,11 +166,10 @@ describe('Dropdown', () => {
     })
 
     const clickItem = () => {
-      console.log('DROPDOWN ITEM CLICKED!!!')
       dropdownItemClicked = true
     }
 
-    const setup = () => {
+    const setup = (closeOnClick = false) => {
       const utils = render(
         <Dropdown>
           <DropdownToggle><span>{toggleText}</span></DropdownToggle>
@@ -157,7 +178,7 @@ describe('Dropdown', () => {
             <DropdownBody>
               <DropdownItem
                 onClick={clickItem}
-                closeOnClick={true}
+                closeOnClick={closeOnClick}
               >
                 <span>{contentBody}</span>
               </DropdownItem>
@@ -200,6 +221,21 @@ describe('Dropdown', () => {
       expect(getByText(contentHeader)).not.toBeNull()
       expect(getByText(contentBody)).not.toBeNull()
       expect(getByText(contentFooter)).not.toBeNull()
+
+      // after the toggle is clicked
+      fireEvent.click(toggleElem)
+      expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeTruthy()
+
+      // clicking on the DropdownItem should NOT close
+      fireEvent.click(getByText(contentBody))
+      expect(dropdownItemClicked).toBeTruthy()
+      expect(dropdownIsVisible(rootHtml, dropdownElem)).toBeTruthy()
+    })
+
+    it('Dropdown closes when DropdownItem is clicked', () => {
+      // given a dropdown
+      const { getByText, toggleElem, dropdownElem } = setup(true)
+      const rootHtml = document.getElementsByTagName('html')[0]
 
       // after the toggle is clicked
       fireEvent.click(toggleElem)
