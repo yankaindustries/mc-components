@@ -22,6 +22,7 @@
     "dev:css": "mkdir -p ./dist/styles/css && nodemon -e scss,svg --watch src -x 'yarn build:css'",
     "dev:scss": "mkdir -p ./dist/styles/scss && nodemon -e scss,svg --watch src -x 'yarn build:scss'",
     "build": "yarn build:assets && yarn build:js && yarn build:styles",
+    "build-storybook": "build-storybook -c .storybook -s ./storybook-static",
     "build:assets": "npx babel-node ./build/assets.js && svgr ./src/assets/icons --out-dir ./src/components/Icons",
     "build:js": "babel ./src/components --out-dir ./dist/components --ignore '**/*.stories.js,**/*.test.js'",
     "build:css": "NODE_ENV=production mkdir -p ./dist/styles/css && node-sass ./src/styles/index.scss | postcss > ./dist/styles/css/index.css",
