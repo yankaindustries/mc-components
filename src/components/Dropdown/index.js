@@ -39,10 +39,6 @@ export default class Dropdown extends PureComponent {
     this.renderDropdown()
   }
 
-  componentWillUnmount () {
-    document.body.classList.remove('mc-dropdown__body--open')
-  }
-
   componentDidUpdate (prevProps) {
     if (prevProps.placement !== this.props.placement) {
       this.renderDropdown()
@@ -50,10 +46,7 @@ export default class Dropdown extends PureComponent {
   }
 
   toggle = (event) => {
-    const {
-      lastTimeStamp,
-      show,
-    } = this.state
+    const { lastTimeStamp } = this.state
 
     if (event.persist) {
       event.persist()
@@ -61,12 +54,6 @@ export default class Dropdown extends PureComponent {
 
     if (event.timeStamp === lastTimeStamp) {
       return
-    }
-
-    if (!show) {
-      document.body.classList.add('mc-dropdown__body--open')
-    } else {
-      document.body.classList.remove('mc-dropdown__body--open')
     }
 
     this.setState(prevState => ({
@@ -78,13 +65,12 @@ export default class Dropdown extends PureComponent {
   renderDropdown = () => {
     const { fixed, placement } = this.props
 
-
     this.tooltip = new Popper(
       findDOMNode(this.toggleRef.current),
       this.dropdownRef.current,
       {
         placement,
-        positionFixed: fixed,
+        positionFixed: fixed || window.innerWidth <= 576,
         modifiers: {
           applyStyle: {
             enabled: true,
