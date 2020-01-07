@@ -59,7 +59,6 @@ class FullscreenHandlerStory extends PureComponent {
 
   render () {
     const { isFullscreen, showModal, toasts } = this.state
-    console.log('toasts: ', toasts)
 
     return (
       <div className='container mc-sticky--container'>
@@ -92,10 +91,7 @@ class FullscreenHandlerStory extends PureComponent {
                 </div>
 
                 <FullscreenHandler>
-                  {({ fullscreenElement }) => {
-                    if (fullscreenElement) return null
-
-                    return (
+                  {({ fullscreenElement }) => !fullscreenElement && (
                       <Fragment>
                         <div className='col-6'>
                           <Button kind='tertiary' fullWidth onClick={this.toggleModal}>
@@ -110,7 +106,7 @@ class FullscreenHandlerStory extends PureComponent {
                         </div>
                       </Fragment>
                     )
-                  }}
+                  }
                 </FullscreenHandler>
               </div>
 

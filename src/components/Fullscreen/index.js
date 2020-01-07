@@ -3,12 +3,13 @@ import { bool } from 'prop-types'
 
 import { PROP_TYPE_CHILDREN } from '../constants'
 
-const prefixedTypes = ['webkit', 'moz', 'ms']
+const STATE_BROWSER_TYPES = ['webkit', 'moz', 'ms']
+const STATE_BROWSER_TYPE_DEFAULT = 'standard'
 
 const getBrowserType = function () {
-  let browserType = 'standard'
+  let browserType = STATE_BROWSER_TYPE_DEFAULT
   if (!document.fullscreenEnabled) {
-    prefixedTypes.forEach((type) => {
+    STATE_BROWSER_TYPES.forEach((type) => {
       const isSupported = !!document[`${type}FullscreenEnabled`]
       if (isSupported) {
         browserType = type
@@ -26,7 +27,7 @@ export default class Fullscreen extends PureComponent {
   }
 
   state = {
-    browserType: 'standard',
+    browserType: STATE_BROWSER_TYPE_DEFAULT,
   }
 
   fullscreenElement = React.createRef()
@@ -50,9 +51,8 @@ export default class Fullscreen extends PureComponent {
   }
 
   enterFullscreen () {
-    console.log('fullscreenElement: ', this.fullscreenElement)
     const { browserType } = this.state
-    if (browserType === 'standard') {
+    if (browserType === STATE_BROWSER_TYPE_DEFAULT) {
       this.fullscreenElement.current.requestFullscreen()
     } else {
       const methodName = `${browserType}RequestFullscreen`
@@ -62,7 +62,7 @@ export default class Fullscreen extends PureComponent {
 
   exitFullscreen () {
     const { browserType } = this.state
-    if (browserType === 'standard') {
+    if (browserType === STATE_BROWSER_TYPE_DEFAULT) {
       document.exitFullscreen()
     } else if (browserType === 'moz') {
       document.mozCancelFullscreen()
