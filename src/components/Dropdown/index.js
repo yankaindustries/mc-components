@@ -39,10 +39,6 @@ export default class Dropdown extends PureComponent {
     this.renderDropdown()
   }
 
-  componentWillUnmount () {
-    document.body.classList.remove('mc-dropdown__body--open')
-  }
-
   componentDidUpdate (prevProps) {
     if (prevProps.placement !== this.props.placement) {
       this.renderDropdown()
@@ -50,10 +46,7 @@ export default class Dropdown extends PureComponent {
   }
 
   toggle = (event) => {
-    const {
-      lastTimeStamp,
-      show,
-    } = this.state
+    const { lastTimeStamp } = this.state
 
     if (event.persist) {
       event.persist()
@@ -61,13 +54,6 @@ export default class Dropdown extends PureComponent {
 
     if (event.timeStamp === lastTimeStamp) {
       return
-    }
-
-    const rootHtml = document.getElementsByTagName('html')[0]
-    if (!show) {
-      rootHtml.classList.add('mc-dropdown__html--open')
-    } else {
-      rootHtml.classList.remove('mc-dropdown__html--open')
     }
 
     this.setState(prevState => ({
