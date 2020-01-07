@@ -23,44 +23,44 @@ import ChevronRight from '../../components/Icons/ChevronRight'
 
 const items = [
   {
-    thumbnail: '/images/instructors/thumb-rh.jpg',
-    image: '/images/instructors/full-rh.jpg',
+    thumbnail: 'images/instructors/thumb-rh.jpg',
+    image: 'images/instructors/full-rh.jpg',
     instructor: 'Ron Howard',
     class: 'Directing',
   },
   {
-    thumbnail: '/images/instructors/thumb-wh.jpg',
-    image: '/images/instructors/full-wh.jpg',
+    thumbnail: 'images/instructors/thumb-wh.jpg',
+    image: 'images/instructors/full-wh.jpg',
     instructor: 'Werner Herzog',
     class: 'Filmmaking',
   },
   {
-    thumbnail: '/images/instructors/thumb-dvf.jpg',
-    image: '/images/instructors/full-dvf.jpg',
+    thumbnail: 'images/instructors/thumb-dvf.jpg',
+    image: 'images/instructors/full-dvf.jpg',
     instructor: 'Diane Von Furstenberg',
     class: 'Building a Fashion Brand',
   },
   {
-    thumbnail: '/images/instructors/thumb-dm.jpg',
-    image: '/images/instructors/full-dm.jpg',
+    thumbnail: 'images/instructors/thumb-dm.jpg',
+    image: 'images/instructors/full-dm.jpg',
     instructor: 'deadmau5',
     class: 'Electronic Music Production',
   },
   {
-    thumbnail: '/images/instructors/thumb-slj.jpg',
-    image: '/images/instructors/full-slj.jpg',
+    thumbnail: 'images/instructors/thumb-slj.jpg',
+    image: 'images/instructors/full-slj.jpg',
     instructor: 'Samuel L. Jackson',
     class: 'Acting',
   },
   {
-    thumbnail: '/images/instructors/thumb-tk.jpg',
-    image: '/images/instructors/full-tk.jpg',
+    thumbnail: 'images/instructors/thumb-tk.jpg',
+    image: 'images/instructors/full-tk.jpg',
     instructor: 'Thomas Keller',
     class: 'Cooking Techniques',
   },
   {
-    thumbnail: '/images/instructors/thumb-sr.jpg',
-    image: '/images/instructors/full-sr.jpg',
+    thumbnail: 'images/instructors/thumb-sr.jpg',
+    image: 'images/instructors/full-sr.jpg',
     instructor: 'Shonda Rhimes',
     class: 'Writing for Television',
   },
@@ -174,22 +174,22 @@ storiesOf('Playground|Pages', module)
 
         <div className='row justify-content-center'>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='/images/in-the-news/today.svg' />
+            <img height='20' src='images/in-the-news/today.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='/images/in-the-news/nbc.svg' />
+            <img height='20' src='images/in-the-news/nbc.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='/images/in-the-news/nyt.svg' />
+            <img height='20' src='images/in-the-news/nyt.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='/images/in-the-news/bb.svg' />
+            <img height='20' src='images/in-the-news/bb.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='/images/in-the-news/espn.svg' />
+            <img height='20' src='images/in-the-news/espn.svg' />
           </div>
           <div className='col-auto mc-opacity--muted mc-text--center'>
-            <img height='20' src='/images/in-the-news/vf.svg' />
+            <img height='20' src='images/in-the-news/vf.svg' />
           </div>
         </div>
       </div>
@@ -209,7 +209,7 @@ storiesOf('Playground|Pages', module)
                   {({ hovering }) =>
                     <Tile aspectRatio={gteMD ? '21x9' : '16x9'}>
                       <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='/images/playground/tile-full-mg.jpeg' />
+                        <TileImage imageUrl='images/playground/tile-full-mg.jpeg' />
                       </AnimationHandler>
 
                       <TileOverlay />
@@ -236,7 +236,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='/images/playground/tile-aw.jpeg' />
+                    <TileImage imageUrl='images/playground/tile-aw.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -261,7 +261,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='/images/playground/tile-al.jpeg' />
+                    <TileImage imageUrl='images/playground/tile-al.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -295,7 +295,7 @@ storiesOf('Playground|Pages', module)
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
               <div className='row align-items-center small-gutters'>
                 <div className='col col-auto'>
-                  <img width='56' src='/images/playground/saying-al.png' />
+                  <img width='56' src='images/playground/saying-al.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-text--uppercase'>
@@ -316,7 +316,7 @@ storiesOf('Playground|Pages', module)
                 </div>
 
                 <div className='col-auto'>
-                  <img src='/images/playground/saying-student.png' />
+                  <img src='images/playground/saying-student.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-opacity--muted'>
@@ -331,7 +331,7 @@ storiesOf('Playground|Pages', module)
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
               <div className='row align-items-center small-gutters'>
                 <div className='col col-auto'>
-                  <img width='56' src='/images/playground/saying-gr.png' />
+                  <img width='56' src='images/playground/saying-gr.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-text--uppercase'>
@@ -352,7 +352,7 @@ storiesOf('Playground|Pages', module)
                 </div>
 
                 <div className='col-auto'>
-                  <img src='/images/playground/saying-student.png' />
+                  <img src='images/playground/saying-student.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-opacity--muted'>
@@ -367,7 +367,7 @@ storiesOf('Playground|Pages', module)
             <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
               <div className='row align-items-center small-gutters'>
                 <div className='col col-auto'>
-                  <img width='56' src='/images/playground/saying-jp.png' />
+                  <img width='56' src='images/playground/saying-jp.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6'>
@@ -387,7 +387,7 @@ storiesOf('Playground|Pages', module)
                 </div>
 
                 <div className='col-auto'>
-                  <img src='/images/playground/saying-student.png' />
+                  <img src='images/playground/saying-student.png' />
                 </div>
                 <div className='col'>
                   <h6 className='mc-text-h6 mc-opacity--muted'>
@@ -415,7 +415,7 @@ storiesOf('Playground|Pages', module)
                   {({ hovering }) =>
                     <Tile aspectRatio={gteMD ? '21x9' : '16x9'}>
                       <AnimationHandler type='ken-burns' animating={hovering}>
-                        <TileImage imageUrl='/images/playground/tile-full-sl.jpeg' />
+                        <TileImage imageUrl='images/playground/tile-full-sl.jpeg' />
                       </AnimationHandler>
 
                       <TileOverlay />
@@ -442,7 +442,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='/images/playground/tile-dn.jpeg' />
+                    <TileImage imageUrl='images/playground/tile-dn.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -467,7 +467,7 @@ storiesOf('Playground|Pages', module)
               {({ hovering }) =>
                 <Tile aspectRatio='16x9'>
                   <AnimationHandler type='ken-burns' animating={hovering}>
-                    <TileImage imageUrl='/images/playground/tile-ma.jpeg' />
+                    <TileImage imageUrl='images/playground/tile-ma.jpeg' />
                   </AnimationHandler>
 
                   <TileOverlay />
@@ -521,7 +521,7 @@ storiesOf('Playground|Pages', module)
                     <div className='mc-card mc-background--color-light mc-invert'>
                       <div className='row align-items-center small-gutters'>
                         <div className='col col-auto'>
-                          <img width='56' src='/images/instructors/thumb-mg.jpg' />
+                          <img width='56' src='images/instructors/thumb-mg.jpg' />
                         </div>
                         <div className='col'>
                           <h6 className='mc-text-h6'>
@@ -550,7 +550,7 @@ storiesOf('Playground|Pages', module)
                     <div className='mc-card mc-background--color-light mc-invert'>
                       <div className='row align-items-center small-gutters'>
                         <div className='col col-auto'>
-                          <img width='56' src='/images/instructors/thumb-avb.jpg' />
+                          <img width='56' src='images/instructors/thumb-avb.jpg' />
                         </div>
                         <div className='col'>
                           <h6 className='mc-text-h6'>
@@ -587,7 +587,7 @@ storiesOf('Playground|Pages', module)
                 <div className='mc-card mc-card--equal-height mc-background--color-light mc-invert'>
                   <div className='row align-items-center small-gutters'>
                     <div className='col col-auto'>
-                      <img width='56' src='/images/instructors/thumb-sm.jpg' />
+                      <img width='56' src='images/instructors/thumb-sm.jpg' />
                     </div>
                     <div className='col'>
                       <h6 className='mc-text-h6'>
@@ -598,7 +598,7 @@ storiesOf('Playground|Pages', module)
                     <div className='col-12'>
                       <img
                         className='mc-card__image mc-mb-4'
-                        src='/images/instructors/thumb-sm.jpg'
+                        src='images/instructors/thumb-sm.jpg'
                       />
                       <p>
                         I&apos;m told people are signing up in droves (a car
@@ -622,7 +622,7 @@ storiesOf('Playground|Pages', module)
 
       <div className='uncontainer'>
         <Background
-          element={<img src='/images/playground/learn-from-the-best.jpg' />}
+          element={<img src='images/playground/learn-from-the-best.jpg' />}
           size='cover'
         >
           <div className='mc-section mc-text--center'>
