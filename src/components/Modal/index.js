@@ -44,7 +44,8 @@ export default class Modal extends PureComponent {
     const { show } = this.props
 
     if (show) {
-      document.body.classList.add('mc-modal__body--open')
+      const rootHtml = document.getElementsByTagName('html')[0]
+      rootHtml.classList.add('mc-modal__html--open')
     }
   }
 
@@ -67,7 +68,8 @@ export default class Modal extends PureComponent {
   }
 
   componentWillUnmount () {
-    document.body.classList.remove('mc-modal__body--open')
+    const rootHtml = document.getElementsByTagName('html')[0]
+    rootHtml.classList.remove('mc-modal__html--open')
   }
 
   onKeyDown = (event) => {
