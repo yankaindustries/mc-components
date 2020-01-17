@@ -71,6 +71,7 @@ import SvgTwitter from './Twitter'
 import SvgUnmuted from './Unmuted'
 import SvgUpload from './Upload'
 import SvgWhisk from './Whisk'
+import SvgYoutube from './Youtube'
 
 export const ICONS = {
   'arrow-down': SvgArrowDown,
@@ -145,4 +146,5 @@ export const ICONS = {
   'unmuted': SvgUnmuted,
   'upload': SvgUpload,
   'whisk': SvgWhisk,
+  'youtube': SvgYoutube,
 }
