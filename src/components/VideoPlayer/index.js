@@ -25,7 +25,7 @@ const CC_HIDDEN = 'hidden'
 export default class VideoPlayer extends PureComponent {
   static propTypes = {
     accountId: PropTypes.string,
-    playerId: PropTypes.string.isRequired,
+    playerId: PropTypes.string,
     videoId: PropTypes.string.isRequired,
 
     endscreenComponent: PropTypes.func,
@@ -418,9 +418,12 @@ export default class VideoPlayer extends PureComponent {
       // Pull out all of the props we don't want to pass along to the <video />
       onPlayerReady,
       onVideoReady,
+      onPlay,
+      onPause,
       onEnd,
       onTimeChange,
       onSeek,
+      onFullscreenChange,
       ...restProps
     } = this.props
 
