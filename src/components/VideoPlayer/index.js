@@ -194,6 +194,9 @@ export default class VideoPlayer extends PureComponent {
 
   handlePause = () => {
     const { onPause } = this.props
+    if (this.video.seeking()) {
+      return
+    }
 
     this.setState({
       screen: SCREEN_PAUSE,
