@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import Backdrop from '../Backdrop'
+import FullscreenHandler from '../FullscreenHandler'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
 
@@ -47,6 +48,10 @@ export default class Modal extends PureComponent {
       const rootHtml = document.getElementsByTagName('html')[0]
       rootHtml.classList.add('mc-modal__html--open')
     }
+  }
+
+  componentWillUnmount () {
+    document.body.classList.remove('mc-modal__body--open')
   }
 
   componentDidUpdate (prevProps) {
@@ -129,18 +134,19 @@ export default class Modal extends PureComponent {
   }
 
   render () {
-    const {
-      show,
-      appendToBody,
-    } = this.props
+    if (!this.props.show) return null
 
-    if (!show) {
-      return null
+    if (this.props.appendToBody) {
+      return (
+        <FullscreenHandler>
+          {({ fullscreenElement }) => createPortal(
+            this.renderModal(),
+            fullscreenElement || document.body,
+          )}
+        </FullscreenHandler>
+      )
     }
 
-    return appendToBody ? createPortal(
-      this.renderModal(),
-      document.body,
-    ) : this.renderModal()
+    return this.renderModal()
   }
 }
