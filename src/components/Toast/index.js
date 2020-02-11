@@ -4,23 +4,29 @@ import { CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
+import FullscreenHandler from '../FullscreenHandler'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
+const getOrCreateToaster = function (parentNode) {
+  let toaster
+  const existingToaster = document.querySelectorAll('.mc-toaster')
+  if (existingToaster.length) {
+    [toaster] = existingToaster
+    const existingParent = toaster.parentNode
+    if (existingParent !== parentNode) {
+      existingParent.removeChild(toaster)
+      parentNode.appendChild(toaster)
+    }
+  } else {
+    toaster = document.createElement('div')
+    toaster.className = 'mc-toaster'
+    parentNode.appendChild(toaster)
+  }
 
-// TODO JJ: figure out if this violates best practices
-let toaster
-
-const existingToaster = document.querySelectorAll('mc-toaster')
-if (existingToaster.length) {
-  [toaster] = existingToaster
-} else {
-  toaster = document.createElement('div')
-  toaster.className = 'mc-toaster'
-  document.body.appendChild(toaster)
+  return toaster
 }
 
-
-export default class Button extends PureComponent {
+export default class Toast extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
@@ -36,11 +42,11 @@ export default class Button extends PureComponent {
     kind: 'default',
   }
 
-  containerRef = React.createRef()
-
   state = {
     show: false,
   }
+
+  containerRef = React.createRef()
 
   show = () => {
     this.setState({
@@ -88,7 +94,7 @@ export default class Button extends PureComponent {
     }
   }
 
-  render () {
+  renderToast () {
     const {
       children,
       className,
@@ -107,7 +113,7 @@ export default class Button extends PureComponent {
       [className]: className,
     })
 
-    return createPortal(
+    return (
       <CSSTransition
         addEndListener={this.endListener}
         classNames='mc-toast-'
@@ -125,8 +131,18 @@ export default class Button extends PureComponent {
             </div>
           </div>
         </div>
-      </CSSTransition>,
-      toaster,
+      </CSSTransition>
+    )
+  }
+
+  render () {
+    return (
+      <FullscreenHandler>
+        {({ fullscreenElement }) => createPortal(
+          this.renderToast(),
+          getOrCreateToaster(fullscreenElement || document.body),
+        )}
+      </FullscreenHandler>
     )
   }
 }
