@@ -48,6 +48,7 @@ export default class VideoPlayer extends PureComponent {
     onFullscreenChange: PropTypes.func,
     onError: PropTypes.func,
     onSeek: PropTypes.func,
+    onSeeked: PropTypes.func,
   }
 
   static defaultProps = {
@@ -61,7 +62,7 @@ export default class VideoPlayer extends PureComponent {
     isLooped: false,
   }
 
-  currentTime = 0
+  currentTime = undefined
 
   state = {
     screen: SCREEN_NONE,
@@ -107,8 +108,9 @@ export default class VideoPlayer extends PureComponent {
     this.video.off('pause')
     this.video.off('ended')
     this.video.off('seeking')
+    this.video.off('seeked')
     this.video.off('fullscreenchange')
-    this.video.off('loadmetadata')
+    this.video.off('loadedmetadata')
     this.video.dispose()
   }
 
@@ -143,6 +145,7 @@ export default class VideoPlayer extends PureComponent {
     this.video.on('pause', this.handlePause)
     this.video.on('ended', this.handleEnd)
     this.video.on('seeking', this.handleSeeking)
+    this.video.on('seeked', this.handleSeeked)
     this.video.on('fullscreenchange', this.handleFullscreenChange)
 
     if (onPlayerReady) {
@@ -219,8 +222,16 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
+  handleSeeked = () => {
+    const { onSeeked } = this.props
+
+    if (onSeeked) {
+      onSeeked(this.video)
+    }
+  }
+
   handleEnd = () => {
-    this.currentTime = 0
+    this.currentTime = undefined
     this.hasEnded = true
 
     const {
@@ -349,7 +360,7 @@ export default class VideoPlayer extends PureComponent {
       }
       this.video.catalog.load(video)
       this.hasEnded = false
-      this.currentTime = 0
+      this.currentTime = undefined
 
       this.video.play()
     })
@@ -360,7 +371,7 @@ export default class VideoPlayer extends PureComponent {
       this.video.on('timeupdate', () => {
         const currentTime = Math.floor(this.video.currentTime())
         const remainingTime = Math.floor(this.video.remainingTime())
-        if (this.currentTime < currentTime) {
+        if (this.currentTime === undefined || this.currentTime < currentTime) {
           this.currentTime = currentTime
           this.props.onTimeChange(currentTime, remainingTime)
         }
@@ -426,6 +437,7 @@ export default class VideoPlayer extends PureComponent {
       onEnd,
       onTimeChange,
       onSeek,
+      onSeeked,
       onFullscreenChange,
       ...restProps
     } = this.props
