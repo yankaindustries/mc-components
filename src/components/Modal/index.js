@@ -51,7 +51,8 @@ export default class Modal extends PureComponent {
   }
 
   componentWillUnmount () {
-    document.body.classList.remove('mc-modal__body--open')
+    const rootHtml = document.getElementsByTagName('html')[0]
+    rootHtml.classList.remove('mc-modal__html--open')
   }
 
   componentDidUpdate (prevProps) {
@@ -70,11 +71,6 @@ export default class Modal extends PureComponent {
         elem.scrollTop = 0
       }, 0)
     }
-  }
-
-  componentWillUnmount () {
-    const rootHtml = document.getElementsByTagName('html')[0]
-    rootHtml.classList.remove('mc-modal__html--open')
   }
 
   onKeyDown = (event) => {
