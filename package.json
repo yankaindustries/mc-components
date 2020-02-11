@@ -35,7 +35,25 @@
     "lint": "yarn lint:js && yarn lint:style",
     "preversion": "yarn lint",
     "version": "yarn build && git add -A .",
-    "postversion": "git push origin $(git symbolic-ref --short -q HEAD) && git push origin $(git symbolic-ref --short -q HEAD) --tags"
+    "postversion": "git push origin $(git symbolic-ref --short -q HEAD) && git push origin $(git symbolic-ref --short -q HEAD) --tags",
+    "test": "jest src"
+  },
+  "jest": {
+    "modulePaths": [
+      "src",
+      "node_modules"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/.jest/setup.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*js",
+      "!src/**/*.stories.js"
+    ],
+    "coverageReporters": [
+      "html"
+    ]
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -54,8 +72,8 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-react-constant-elements": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
     "@masterclass/eslint-config": "yankaindustries/eslint-config-masterclass#1.0.2",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-info": "^5.2.1",
@@ -68,8 +86,11 @@
     "@storybook/theming": "^5.2.0",
     "@svgr/cli": "^4.3.2",
     "@svgr/webpack": "^4.3.2",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-imports": "^2.0.0",
     "concurrently": "^4.1.2",
@@ -80,6 +101,8 @@
     "eslint-plugin-import": "^2.18.2",
     "file-loader": "^4.2.0",
     "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "jest-dom": "^4.0.0",
     "jsx-to-string": "^1.4.0",
     "lint-staged": "^9.2.5",
     "node-sass": "^4.12.0",
