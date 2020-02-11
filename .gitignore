@@ -2,6 +2,7 @@
 /node_modules
 
 /dist
+/coverage
 
 # misc
 .DS_Store
@@ -19,3 +20,4 @@ package-lock.json
 # IDE Sharing
 .floo
 .flooignore
+.vscode
