@@ -1,9 +1,14 @@
 import React from 'react'
-import { bool, oneOf, object } from 'prop-types'
+import PropTypes from 'prop-types'
+import { CSSTransition } from 'react-transition-group'
 import cn from 'classnames'
 
 import VideoPlayerPortalScreen from '../VideoPlayerPortalScreen'
 import { PROP_TYPE_CHILDREN } from '../constants'
+
+
+const endListener = (node, done) =>
+  node.addEventListener('transitionend', done, false)
 
 
 const VideoPlayerScreen = ({
@@ -17,26 +22,29 @@ const VideoPlayerScreen = ({
   const classNames = cn(
     'bc-player__screen',
     { [`bc-player__screen--${variation}`]: variation },
-    { 'bc-player__screen--is-open': isActive },
   )
 
   return (
     <VideoPlayerPortalScreen videoRoot={videoRoot}>
-      <div
-        className={classNames}
-        style={{ opacity: isActive ? 1 : 0 }}
+      <CSSTransition
+        appear={isActive}
+        in={isActive}
+        classNames='bc-player__screen-'
+        addEndListener={endListener}
       >
-        {children}
-      </div>
+        <div className={classNames}>
+          {children}
+        </div>
+      </CSSTransition>
     </VideoPlayerPortalScreen>
   )
 }
 
 VideoPlayerScreen.propTypes = {
   children: PROP_TYPE_CHILDREN.isRequired,
-  variation: oneOf(['endscreen', 'beforescreen', 'pausescreen']),
-  videoRoot: object,
-  isActive: bool,
+  variation: PropTypes.oneOf(['endscreen', 'beforescreen', 'pausescreen']),
+  videoRoot: PropTypes.object,
+  isActive: PropTypes.bool,
 }
 
 VideoPlayerScreen.defaultProps = {
