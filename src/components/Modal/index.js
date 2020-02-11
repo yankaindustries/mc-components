@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import Backdrop from '../Backdrop'
+import FullscreenHandler from '../FullscreenHandler'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
 
@@ -48,6 +49,10 @@ export default class Modal extends PureComponent {
     }
   }
 
+  componentWillUnmount () {
+    document.body.classList.remove('mc-modal__body--open')
+  }
+
   componentDidUpdate (prevProps) {
     const { show } = this.props
     const rootHtml = document.getElementsByTagName('html')[0]
@@ -64,10 +69,6 @@ export default class Modal extends PureComponent {
         elem.scrollTop = 0
       }, 0)
     }
-  }
-
-  componentWillUnmount () {
-    document.body.classList.remove('mc-modal__body--open')
   }
 
   onKeyDown = (event) => {
@@ -127,18 +128,19 @@ export default class Modal extends PureComponent {
   }
 
   render () {
-    const {
-      show,
-      appendToBody,
-    } = this.props
+    if (!this.props.show) return null
 
-    if (!show) {
-      return null
+    if (this.props.appendToBody) {
+      return (
+        <FullscreenHandler>
+          {({ fullscreenElement }) => createPortal(
+            this.renderModal(),
+            fullscreenElement || document.body,
+          )}
+        </FullscreenHandler>
+      )
     }
 
-    return appendToBody ? createPortal(
-      this.renderModal(),
-      document.body,
-    ) : this.renderModal()
+    return this.renderModal()
   }
 }
