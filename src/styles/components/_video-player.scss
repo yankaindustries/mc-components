@@ -41,18 +41,40 @@ $mc-video-progress-height: 0.8rem !default;
     z-index: 1;
     top: 50%;
     left: 50%;
-    opacity: 0;
-    pointer-events: none;
     width: 100%;
     height: 100%;
     // Needs scale to force overflow and "round up" pixel calculation
     // when landing on a half-pixel.
     transform: translate(-50%, -50%) scale(1.01);
-    transition: 700ms ease-out;
+    transition: opacity 700ms ease-out;
 
-    &--is-open {
+    display: none;
+    opacity: 0;
+
+    &--enter {
+      display: block;
+      opacity: 0;
+    }
+
+    &--appear,
+    &--enter-active,
+    &--enter-done {
+      display: block;
       opacity: 1;
-      pointer-events: auto;
+    }
+
+    &--exit {
+      display: block;
+      opacity: 1;
+    }
+
+    &--exit-active {
+      display: block;
+      opacity: 0;
+    }
+
+    &--exit-done {
+      display: none;
     }
   }
 
