@@ -147,6 +147,7 @@ export default class VideoPlayer extends PureComponent {
     this.video.on('seeking', this.handleSeeking)
     this.video.on('seeked', this.handleSeeked)
     this.video.on('fullscreenchange', this.handleFullscreenChange)
+    this.video.on('error', this.handleError)
 
     if (onPlayerReady) {
       onPlayerReady(this.video)
@@ -269,6 +270,15 @@ export default class VideoPlayer extends PureComponent {
 
   handleResume = () => {
     this.video.play()
+  }
+
+  handleError = () => {
+    const { onError } = this.props
+
+    if (onError) {
+      const error = this.video.error()
+      onError(error, this.video)
+    }
   }
 
   handleKeyDown = (e) => {
@@ -394,6 +404,10 @@ export default class VideoPlayer extends PureComponent {
       this.video.catalog.getVideo(
         videoId,
         (error, video) => {
+          if (error && this.props.onError) {
+            this.props.onError(error, this.video)
+            return
+          }
           this.video.catalog.load(video)
           if (hasAutoplay) {
             this.video.play()
