@@ -20,6 +20,18 @@ const Modifiers = () =>
         </h6>
       </PropExample>
 
+      <PropExample name='.mc-text--lowercase'>
+        <h6 className='mc-text-h5 mc-text--lowercase'>
+          The quick brown fox jumped over the lazy dog.
+        </h6>
+      </PropExample>
+
+      <PropExample name='.mc-text--capitalize'>
+        <h6 className='mc-text-h5 mc-text--capitalize'>
+          The quick brown fox jumped over the lazy dog.
+        </h6>
+      </PropExample>
+
       <PropExample name='.mc-text--airy'>
         <h6 className='mc-text-h5 mc-text--airy'>
           The quick brown fox jumped over the lazy dog.
@@ -66,7 +78,44 @@ const Modifiers = () =>
 
         <div className='col-12'>
           <PropExample name='.mc-text--center.mc-text-md--left'>
-            <p className='mc-text--center mc-text-md--left'>The quick brown fox jumped over the lazy dog.</p>
+            <p className='mc-text--center mc-text-md--left'>
+              The quick brown fox jumped over the lazy dog.
+            </p>
+          </PropExample>
+        </div>
+      </div>
+    </DocSection>
+
+    <DocSection
+      title='Weight'
+    >
+      <p className='mc-mb-8'>
+        Font weights should default to whatever the inherited value is from
+        the type classes, but can be overridden if required.
+      </p>
+
+      <div className='row'>
+        <div className='col-6'>
+          <PropExample name='.mc-text--bold'>
+            <p className='mc-text--bold'>This sets the font weight to 700.</p>
+          </PropExample>
+        </div>
+
+        <div className='col-6'>
+          <PropExample name='.mc-text--italic'>
+            <p className='mc-text--italic'>This sets the font style to italic.</p>
+          </PropExample>
+        </div>
+
+        <div className='col-6'>
+          <PropExample name='.mc-text--normal'>
+            <p className='mc-text--normal'>This sets the font weight to 400.</p>
+          </PropExample>
+        </div>
+
+        <div className='col-6'>
+          <PropExample name='.mc-text--light'>
+            <p className='mc-text--light'>This sets the font weight to 300.</p>
           </PropExample>
         </div>
       </div>
@@ -78,7 +127,9 @@ const Modifiers = () =>
       <p className='mc-mb-8'>
         This helper brings consistency to block heights. It even
         works when the window is resized. The sample text used is much longer
-        than number of lines needed for demonstrative purposes. The main differences between <span className='mc-code'>--1-line</span>
+        than number of lines needed for demonstrative purposes. The main
+        differences between
+        <span className='mc-code'>--1-line</span>
         and <span className='mc-code'>--1-line-max</span> is whether the space
         the text occupies is collapsed or not.  You can see an example in the
         <span className='mc-code'>--2-lines</span> section of each example
@@ -258,11 +309,13 @@ const Modifiers = () =>
 
     <DocSection
       title='Flourishes'
-      description={`
-        Fancy treatments for your typography. <br />
+      description=
+      {
+        `Fancy treatments for your typography. <br />
         If the containing element is too narrow to accomodate the flourish,
-        it will gracefully disappear.
-      `}>
+        it will gracefully disappear.`
+      }
+    >
 
       <PropExample name='.mc-text-hr'>
         <div className='row'>
