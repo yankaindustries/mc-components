@@ -198,7 +198,8 @@ export default class VideoPlayer extends PureComponent {
 
   handlePause = () => {
     const { onPause } = this.props
-    if (this.video.seeking()) {
+
+    if (this.video.seeking() || this.isAtEndOfVideo()) {
       return
     }
 
@@ -209,6 +210,13 @@ export default class VideoPlayer extends PureComponent {
     if (onPause) {
       onPause(this.video)
     }
+  }
+
+  isAtEndOfVideo = () => {
+    const duration = Math.floor(this.video.duration())
+    const position = Math.floor(this.video.currentTime())
+
+    return duration === position
   }
 
   handleSeeking = () => {
