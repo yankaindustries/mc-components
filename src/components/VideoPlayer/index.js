@@ -493,7 +493,6 @@ export default class VideoPlayer extends PureComponent {
             autoPlay={hasAutoplay}
             controls={hasControls}
             muted={isMuted}
-            loop={isLooped}
             {...restProps}
           />
         </div>
