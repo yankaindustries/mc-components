@@ -381,7 +381,7 @@ export default class VideoPlayer extends PureComponent {
       this.video.on('timeupdate', () => {
         const currentTime = Math.floor(this.video.currentTime())
         const remainingTime = Math.floor(this.video.remainingTime())
-        if (this.currentTime === undefined || this.currentTime != currentTime) {
+        if (this.currentTime === undefined || this.currentTime !== currentTime) {
           this.currentTime = currentTime
           this.props.onTimeChange(currentTime, remainingTime)
         }
