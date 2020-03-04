@@ -17,7 +17,7 @@ import TileCaption from '../TileCaption'
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
-storiesOf('utilities|AnimationHandler', module)
+storiesOf('Utilities|AnimationHandler', module)
   .add('default', withAddons({
     path: 'components/AnimationHandler/index.stories.js',
     component: AnimationHandler,

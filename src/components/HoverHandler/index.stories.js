@@ -9,7 +9,7 @@ import HoverHandler from './index'
 import Button from '../Button'
 
 
-storiesOf('utilities|HoverHandler', module)
+storiesOf('Utilities|HoverHandler', module)
   .add('default', withAddons({
     path: 'components/HoverHandler/index.stories.js',
     component: HoverHandler,
