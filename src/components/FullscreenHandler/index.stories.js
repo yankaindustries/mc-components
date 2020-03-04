@@ -159,7 +159,7 @@ class FullscreenHandlerStory extends PureComponent {
   }
 }
 
-storiesOf('utilities|FullscreenHandler', module)
+storiesOf('Utilities|FullscreenHandler', module)
   .add('default', withAddons({
     path: 'components/FullscreenHandler/index.stories.js',
     component: FullscreenHandler,

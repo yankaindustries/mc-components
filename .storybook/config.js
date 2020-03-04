@@ -3,6 +3,15 @@ import { themes } from '@storybook/theming'
 
 import './styles.scss'
 
+const categories = [
+  'Introduction',
+  'Foundation',
+  'Components',
+  'Utilities',
+  'Playground',
+  'Experimental',
+]
+
 
 addParameters({
   options: {
@@ -12,10 +21,16 @@ addParameters({
     showAddonPanel: true,
     addonPanelInRight: true,
     selectedAddonPanel: 'mc/props/panel',
-    storySort: (a, b) =>
-      a[1].kind === b[1].kind
-        ? 0
-        : a[1].id.localeCompare(b[1].id, { numeric: true }),
+    storySort: (a, b) => {
+      const aIndex = categories.indexOf(a[1].kind.split('|')[0])
+      const bIndex = categories.indexOf(b[1].kind.split('|')[0])
+
+      if (aIndex === bIndex) {
+        return 0
+      }
+
+      return aIndex - bIndex
+    }
   },
 })
 

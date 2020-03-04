@@ -9,7 +9,7 @@ import ToggleHandler from './index'
 import Button from '../Button'
 
 
-storiesOf('utilities|ToggleHandler', module)
+storiesOf('Utilities|ToggleHandler', module)
   .add('default', withAddons({
     path: 'components/ToggleHandler/index.stories.js',
     component: ToggleHandler,

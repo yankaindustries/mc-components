@@ -94,7 +94,7 @@ class ScrollHandlerStory extends PureComponent {
   }
 }
 
-storiesOf('utilities|ScrollHandler', module)
+storiesOf('Utilities|ScrollHandler', module)
   .add('default', withAddons({
     path: 'components/ScrollHandler/index.stories.js',
     component: Sticky,

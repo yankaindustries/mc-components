@@ -12,7 +12,7 @@ import TileImage from '../TileImage'
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
 
-storiesOf('utilities|ResponsiveHandler', module)
+storiesOf('Utilities|ResponsiveHandler', module)
   .add('default', withAddons({
     path: 'components/ResponsiveHandler/index.stories.js',
     component: ResponsiveHandler,
