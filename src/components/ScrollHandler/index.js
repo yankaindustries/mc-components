@@ -8,6 +8,7 @@ import { renderChildren } from '../helpers'
 export default class ScrollHandler extends PureComponent {
   static propTypes = {
     to: PropTypes.number,
+    end: PropTypes.number,
     children: PROP_TYPE_CHILDREN.isRequired,
   }
 
@@ -31,9 +32,13 @@ export default class ScrollHandler extends PureComponent {
 
   checkIfSufficientlyScrolled = () => {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop
+    const endY = this.props.end
+
+    let scrolled = scrollY > this.props.to
+    if (endY) scrolled = scrolled && (scrollY < endY)
 
     this.setState({
-      scrolled: scrollY > this.props.to,
+      scrolled,
     })
   }
 
