@@ -74,7 +74,7 @@ storiesOf('Components|Background', module)
               <Background
                 element={<img src={abstractBackground} />}
                 fit='content'
-                position='center top'
+                position='center center'
                 size='cover'
               >
                 <br />
