@@ -13,7 +13,7 @@ const Opacity = () =>
       description='The opacity utility can modify the opacity of any dom element.'
     />
 
-    <DocSection title='Color'>
+    <DocSection title='Opacities'>
       <div className='row'>
         <div className='col-md-4'>
           <PropExample name='.mc-opacity--hinted'>
