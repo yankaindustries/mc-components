@@ -45,7 +45,10 @@ $mc-color-text-invert:         #8ca1c1 !default;
 
 $mc-color-error:        $mc-color-primary !default;
 $mc-color-success:      #00c14e !default;
-$mc-color-highlight:    #fcd549 !default;
+$mc-color-reward:       #f1bd5b !default;
+$mc-color-reward-start: #f8d05e !default;
+$mc-color-reward-end:   #e5a754 !default;
+$mc-color-highlight:    $mc-color-reward !default;
 
 // External brands
 $mc-color-facebook:     #3c5a99 !default;
