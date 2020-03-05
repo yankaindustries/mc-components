@@ -18,7 +18,7 @@ const Opacity = () =>
         <div className='col-md-4'>
           <PropExample name='.mc-opacity--hinted'>
             <h6 className='mc-text-h5 mc-opacity--hinted'>
-              The quick brown fox jumped over the lazy dog.
+              The quick brown fox jumped over the lazy dog (80%).
             </h6>
           </PropExample>
         </div>
@@ -26,7 +26,7 @@ const Opacity = () =>
         <div className='col-md-4'>
           <PropExample name='.mc-opacity--muted'>
             <h6 className='mc-text-h5 mc-opacity--muted'>
-              The quick brown fox jumped over the lazy dog.
+              The quick brown fox jumped over the lazy dog (60%).
             </h6>
           </PropExample>
         </div>
@@ -34,7 +34,7 @@ const Opacity = () =>
         <div className='col-md-4'>
           <PropExample name='.mc-opacity--silenced'>
             <h6 className='mc-text-h5 mc-opacity--silenced'>
-              The quick brown fox jumped over the lazy dog.
+              The quick brown fox jumped over the lazy dog (30%).
             </h6>
           </PropExample>
         </div>
