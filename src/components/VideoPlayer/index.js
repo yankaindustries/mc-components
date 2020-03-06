@@ -165,7 +165,10 @@ export default class VideoPlayer extends PureComponent {
     }
 
     if (hasAutoplay) {
-      this.video.play()
+      const promise = this.video.play()
+      if (promise !== undefined) {
+        promise.catch(() => {})
+      }
     }
 
     this.checkBuffers()
@@ -419,7 +422,10 @@ export default class VideoPlayer extends PureComponent {
           }
           this.video.catalog.load(video)
           if (hasAutoplay) {
-            this.video.play()
+            const promise = this.video.play()
+            if (promise !== undefined) {
+              promise.catch(() => {})
+            }
           }
         },
       )
