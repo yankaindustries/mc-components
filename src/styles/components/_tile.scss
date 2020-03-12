@@ -116,6 +116,8 @@
 }
 
 .mc-tile-overlay {
+  $mc-tile-overlay-color: $mc-color-gray-100;
+
   transform: scale(1.01);
   pointer-events: none;
 
@@ -123,9 +125,9 @@
     background:
       linear-gradient(
         to top,
-        rgba($mc-color-dark, 1) 0,
-        rgba($mc-color-dark, 0.6) 25%,
-        rgba($mc-color-dark, 0) 45%
+        rgba($mc-tile-overlay-color, 1) 0,
+        rgba($mc-tile-overlay-color, 0.6) 25%,
+        rgba($mc-tile-overlay-color, 0) 45%
       ) center no-repeat;
   }
 
@@ -133,9 +135,9 @@
     background:
       linear-gradient(
         to right,
-        rgba($mc-color-dark, 1) 0,
-        rgba($mc-color-dark, 0.6) 25%,
-        rgba($mc-color-dark, 0) 45%
+        rgba($mc-tile-overlay-color, 1) 0,
+        rgba($mc-tile-overlay-color, 0.6) 25%,
+        rgba($mc-tile-overlay-color, 0) 45%
       ) center no-repeat;
   }
 
@@ -143,23 +145,23 @@
     background:
       radial-gradient(
         farthest-side at center top,
-        rgba($mc-color-dark, 0) 33%,
-        rgba($mc-color-dark, 1) 100%
+        rgba($mc-color-background, 0) 33%,
+        rgba($mc-color-background, 1) 100%
       ),
       linear-gradient(
         to right,
-        rgba($mc-color-dark, 1) 0%,
-        rgba($mc-color-dark, 0) 10%
+        rgba($mc-color-background, 1) 0%,
+        rgba($mc-color-background, 0) 10%
       ),
       linear-gradient(
         to left,
-        rgba($mc-color-dark, 1) 0%,
-        rgba($mc-color-dark, 0) 10%
+        rgba($mc-color-background, 1) 0%,
+        rgba($mc-color-background, 0) 10%
       );
   }
 
   &--solid {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba($mc-tile-overlay-color, 0.8);
   }
 }
 

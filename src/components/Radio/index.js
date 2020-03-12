@@ -49,7 +49,6 @@ export default class Radio extends PureComponent {
         className={classes}
         id={`${option}-label`}
         htmlFor={name}
-        onClick={this.handleClick}
       >
         <div>
           <span
@@ -64,6 +63,7 @@ export default class Radio extends PureComponent {
             className='mc-input-radio__realbox'
             value={option}
             disabled={disabled}
+            onClick={this.handleClick}
           />
         </div>
         <span>
