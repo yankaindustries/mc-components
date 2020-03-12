@@ -19,28 +19,22 @@ export default class TileOverlay extends PureComponent {
 
   static defaultProps = {
     type: 'gradient-bottom',
-    color: '0, 0, 0',
+    color: null,
   }
 
-  render () {
-    const {
-      children,
-      className,
-      color,
-      type,
-    } = this.props
+  getStyles = () => {
+    const { color, type } = this.props
 
-    const classes = [
-      'mc-tile__component',
-      'mc-tile-overlay',
-      `mc-tile-overlay--${type}`,
-      className || '',
-    ].join(' ')
+    if (!color) return {}
 
-    let styles = {}
+    if (type === 'solid') {
+      return {
+        background: `rgba(${color}, 0.8)`,
+      }
+    }
 
     if (type === 'gradient-bottom') {
-      styles = {
+      return {
         background: `
           linear-gradient(
             to top,
@@ -53,7 +47,7 @@ export default class TileOverlay extends PureComponent {
     }
 
     if (type === 'gradient-left') {
-      styles = {
+      return {
         background: `
           linear-gradient(
             to right,
@@ -64,6 +58,47 @@ export default class TileOverlay extends PureComponent {
         `,
       }
     }
+
+    if (type === 'spotlight') {
+      return {
+        background: `
+          radial-gradient(
+            farthest-side at center top,
+            rgba(${color}, 0) 33%,
+            rgba(${color}, 1) 100%
+          ),
+          linear-gradient(
+            to right,
+            rgba(${color}, 1) 0%,
+            rgba(${color}, 0) 10%
+          ),
+          linear-gradient(
+            to left,
+            rgba(${color}, 1) 0%,
+            rgba(${color}, 0) 10%
+          );
+        `,
+      }
+    }
+
+    return {}
+  }
+
+  render () {
+    const {
+      children,
+      className,
+      type,
+    } = this.props
+
+    const classes = [
+      'mc-tile__component',
+      'mc-tile-overlay',
+      `mc-tile-overlay--${type}`,
+      className || '',
+    ].join(' ')
+
+    const styles = this.getStyles()
 
     return (
       <div className={classes} style={styles}>

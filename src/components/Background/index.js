@@ -62,29 +62,8 @@ export default class Background extends PureComponent {
     loaded: false,
   }
 
-  componentWillUnmount () {
-    if (this.props.element) {
-      window.removeEventListener('resize', this.setSizeBy)
-    }
-  }
-
   onLoad = () => {
-    this.setSizeBy()
     this.setState({ loaded: true })
-    window.addEventListener('resize', this.setSizeBy.bind(this))
-  }
-
-  setSizeBy = () => {
-    // TODO see why sometimes the refs aren't populated, remove this check
-    if (this.container.current && this.background.current) {
-      const containerRatio =
-        this.container.current.offsetWidth / this.container.current.offsetHeight
-      const backgroundRatio =
-        this.background.current.width / this.background.current.height
-      const sizeBy = containerRatio > backgroundRatio ? 'width' : 'height'
-
-      this.setState({ sizeBy })
-    }
   }
 
   render () {
@@ -100,7 +79,6 @@ export default class Background extends PureComponent {
 
     const {
       loaded,
-      sizeBy,
     } = this.state
 
     const [x, y] = position.split(' ')
@@ -114,7 +92,6 @@ export default class Background extends PureComponent {
       [`mc-background--position-x-${x}`]: element,
       [`mc-background--position-y-${y}`]: element,
       [`mc-background--size-${size}`]: element,
-      [`mc-background--size-${size}-${sizeBy}`]: element,
     })
 
     return (
@@ -127,6 +104,10 @@ export default class Background extends PureComponent {
             className: 'mc-background__background',
             ref: this.background,
             onLoad: this.onLoad,
+            style: {
+              objectFit: size,
+              objectPosition: position,
+            },
           })}
         </div>
         <div className='mc-background__content-container'>
