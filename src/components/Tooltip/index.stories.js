@@ -179,7 +179,7 @@ class TooltipStory extends PureComponent {
 <Tooltip>
   <TooltipToggle>
     <Button>Hover Over Me</Button>
-  </ToolTipToggle>
+  </TooltipToggle>
 
   <TooltipContent>
     Hello, I am a tooltip!
@@ -197,7 +197,7 @@ class TooltipStory extends PureComponent {
 <Tooltip>
   <TooltipToggle>
     <Button>I am just the positioning reference</Button>
-  </ToolTipToggle>
+  </TooltipToggle>
 
   <TooltipContentControlled show={true}>
     Hello, I am a tooltip!
