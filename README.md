@@ -64,7 +64,7 @@ yarn dev
 ```bash
 # other project
 yarn link mc-components
-111
+```
 
 To get back to an officially released version, run this in your project:
 
