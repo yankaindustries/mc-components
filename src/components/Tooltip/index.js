@@ -81,6 +81,7 @@ export default class Tooltip extends PureComponent {
   }
 
   toggle = () => {
+    this.tooltip.update()
     this.setState(prevState => ({
       show: !prevState.show,
     }))
