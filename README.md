@@ -52,14 +52,19 @@ yarn start
 
 If you want to develop in `mc-components` and see changes compiled into your own project you can utilize `yarn link` and the `dev` script:
 
+### Inside of the mc-components directory
 ```bash
-# mc-components
+# Inside mc-components directory!
 yarn link
 yarn dev
+```
 
+### From your other project directory
+(For Masterclass employees, this is the masterclass directory):
+```bash
 # other project
 yarn link mc-components
-```
+111
 
 To get back to an officially released version, run this in your project:
 
