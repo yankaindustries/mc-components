@@ -48,6 +48,7 @@ export default class Checkbox extends PureComponent {
         className={classes}
         id={`${name}-label`}
         htmlFor={name}
+        onClick={this.handleClick}
       >
         <div>
           <span
@@ -62,7 +63,6 @@ export default class Checkbox extends PureComponent {
             className='mc-input-checkbox__realbox'
             value={checked}
             disabled={disabled}
-            onClick={this.handleClick}
           />
         </div>
         <span>
