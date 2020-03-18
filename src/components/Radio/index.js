@@ -16,12 +16,14 @@ export default class Radio extends PureComponent {
     onChange: PropTypes.func.isRequired,
   }
 
-  handleClick = () => {
+  handleClick = (e) => {
     const {
       disabled,
       option,
       onChange,
     } = this.props
+
+    e.preventDefault()
 
     return !disabled && onChange(option)
   }
@@ -49,6 +51,7 @@ export default class Radio extends PureComponent {
         className={classes}
         id={`${option}-label`}
         htmlFor={name}
+        onClick={this.handleClick}
       >
         <div>
           <span
@@ -63,7 +66,6 @@ export default class Radio extends PureComponent {
             className='mc-input-radio__realbox'
             value={option}
             disabled={disabled}
-            onClick={this.handleClick}
           />
         </div>
         <span>

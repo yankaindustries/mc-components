@@ -16,12 +16,14 @@ export default class Checkbox extends PureComponent {
     onChange: PropTypes.func.isRequired,
   }
 
-  handleClick = () => {
+  handleClick = (e) => {
     const {
       checked,
       disabled,
       onChange,
     } = this.props
+
+    e.preventDefault()
 
     return !disabled && onChange(!checked)
   }
@@ -48,6 +50,7 @@ export default class Checkbox extends PureComponent {
         className={classes}
         id={`${name}-label`}
         htmlFor={name}
+        onClick={this.handleClick}
       >
         <div>
           <span
@@ -62,7 +65,6 @@ export default class Checkbox extends PureComponent {
             className='mc-input-checkbox__realbox'
             value={checked}
             disabled={disabled}
-            onClick={this.handleClick}
           />
         </div>
         <span>
