@@ -16,12 +16,14 @@ export default class Radio extends PureComponent {
     onChange: PropTypes.func.isRequired,
   }
 
-  handleClick = () => {
+  handleClick = (e) => {
     const {
       disabled,
       option,
       onChange,
     } = this.props
+
+    e.preventDefault()
 
     return !disabled && onChange(option)
   }
