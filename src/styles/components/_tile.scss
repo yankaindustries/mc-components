@@ -118,7 +118,6 @@
 .mc-tile-overlay {
   $mc-tile-overlay-color: $mc-color-gray-100;
 
-  transform: scale(1.01);
   pointer-events: none;
 
   &--gradient-bottom {
