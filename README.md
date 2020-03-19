@@ -43,6 +43,8 @@ We use Lato as our primary font for headings and body text.  You can import it i
 
 # Development
 
+If you'd like to contribute to `mc-components`, please read the docs on [our principles](https://github.com/yankaindustries/mc-components/wiki/Component-Principles) to get familiar with the concepts that are the foundation for the component library.  After making contributions, we also have docs on how to [version, release and deploy](https://github.com/yankaindustries/mc-components/wiki/Version,-Release,-and-Deploy) if you are part of the team that can do so.
+
 `mc-components` utilizes [Storybook](https://storybook.js.org/), which provides a living version of the documentation for all components.
 
 ```bash
