@@ -188,7 +188,6 @@ export default class Carousel extends PureComponent {
         zIndex: 1,
         pointerEvents: 'none',
       }
-      console.log('peekStyles: ', peekStyles)
     }
 
     const arrows = controls
