@@ -182,6 +182,21 @@ storiesOf('Components|Carousel', module)
 
 
             <PropExample
+              name='color'
+              type='String'
+            >
+                <Carousel
+                  className='row'
+                  showCount={responsiveValues(media, 3, 2, 1)}
+                  peek
+                  color='0, 255, 0'
+                >
+                  {tiles()}
+                </Carousel>
+            </PropExample>
+
+
+            <PropExample
               name='focusOnSelect'
               type='Boolean'
             >

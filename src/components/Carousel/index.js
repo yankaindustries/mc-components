@@ -76,6 +76,7 @@ export default class Carousel extends PureComponent {
     sliderRef: PropTypes.func,
     transition: PropTypes.string,
     variableWidth: PropTypes.bool,
+    color: PropTypes.string,
   }
 
   static defaultProps = {
@@ -91,6 +92,7 @@ export default class Carousel extends PureComponent {
     showCount: 3,
     transition: TRANSITION_SLIDE,
     variableWidth: false,
+    color: '0, 0, 0',
   }
 
   arrowContainerRef = React.createRef()
@@ -149,6 +151,7 @@ export default class Carousel extends PureComponent {
       showCount,
       transition,
       variableWidth,
+      color,
       ...restProps
     } = this.props
 
@@ -166,6 +169,27 @@ export default class Carousel extends PureComponent {
       [className]: className,
       'mc-carousel__slider': true,
     })
+
+    let peekStyles
+    if (peek) {
+      peekStyles = {
+        position: 'absolute',
+        right: 0,
+        top: 0,
+        width: '120px',
+        height: '100%',
+        background: `
+          linear-gradient(
+            to left,
+            rgba(${color}, 1) 0,
+            rgba(${color}, 0) 100%
+          ) center no-repeat
+        `,
+        zIndex: 1,
+        pointerEvents: 'none',
+      }
+      console.log('peekStyles: ', peekStyles)
+    }
 
     const arrows = controls
       ? {
@@ -220,6 +244,7 @@ export default class Carousel extends PureComponent {
                 {children}
               </Slider>
             </div>
+            {peek && (<div style={peekStyles}></div>)}
 
             <div
               className='mc-carousel__arrow-container'
