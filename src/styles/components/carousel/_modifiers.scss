@@ -17,25 +17,6 @@
       @media only screen and (min-width: $mc-bp-lg) {
         padding-right: 15%;
       }
-
-      /*
-      &:after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 120px;
-        height: 100%;
-        background:
-          linear-gradient(
-            to left,
-            rgba($mc-color-dark, 1) 0,
-            rgba($mc-color-dark, 0) 100%
-          ) center no-repeat;
-        z-index: 1;
-        pointer-events: none;
-      }
-      */
     }
   }
 
