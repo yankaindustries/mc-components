@@ -228,7 +228,7 @@ export default class Carousel extends PureComponent {
                 centerMode={centered}
                 centerPadding={0}
                 fade={transition === TRANSITION_FADE}
-                focusOnSelect={focusOnSelect || peek}
+                focusOnSelect={focusOnSelect}
                 ref={this.slider}
                 slidesToScroll={scrollCount}
                 slidesToShow={variableWidth ? 1 : showCount}
