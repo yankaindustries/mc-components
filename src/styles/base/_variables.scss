@@ -9,9 +9,18 @@ $mc-font-default: "Lato", "Helvetica", "Arial", sans-serif !default; // Should b
 // Share line-height values between
 // the font definitions and the max-height
 // helper 'mc-text--2-line'
-$mc-lh-sm:  1.25 !default;
-$mc-lh-md:  1.5 !default;
-$mc-lh-lg:  1.7 !default;
+$mc-lh-headers: 1.45em !default;
+$mc-lh-lg:      1.7 !default;
+$mc-lh-md:      1.5 !default;
+$mc-lh-sm:      1.45 !default;
+$mc-lh-xs:      1.45 !default;
+
+$mc-ls-headers: 0.03em !default;
+$mc-ls-lg:      0 !default;
+$mc-ls-md:      0 !default;
+$mc-ls-sm:      0.01em !default;
+$mc-ls-xs:      0.01em !default;
+
 
 // Colors
 $mc-color-light:             #fff !default;
