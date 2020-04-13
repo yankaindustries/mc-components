@@ -36,6 +36,7 @@ import SvgInstagram from './Instagram'
 import SvgLessons from './Lessons'
 import SvgLevels from './Levels'
 import SvgLink from './Link'
+import SvgLinkedIn from './LinkedIn'
 import SvgList from './List'
 import SvgLoader from './Loader'
 import SvgLock from './Lock'
@@ -111,6 +112,7 @@ export const ICONS = {
   'lessons': SvgLessons,
   'levels': SvgLevels,
   'link': SvgLink,
+  'linked-in': SvgLinkedIn,
   'list': SvgList,
   'loader': SvgLoader,
   'lock': SvgLock,
