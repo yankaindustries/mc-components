@@ -112,7 +112,7 @@ export const ICONS = {
   'lessons': SvgLessons,
   'levels': SvgLevels,
   'link': SvgLink,
-  'linkdIn': SvgLinkedIn,
+  'linkedin': SvgLinkedIn,
   'list': SvgList,
   'loader': SvgLoader,
   'lock': SvgLock,
