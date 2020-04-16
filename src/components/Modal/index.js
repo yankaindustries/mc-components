@@ -129,16 +129,35 @@ export default class Modal extends PureComponent {
     )
   }
 
+  isDescendant = (parent, child) => {
+    let node = child.parentNode
+    while (node !== null) {
+      if (node === parent) {
+        return true
+      }
+      node = node.parentNode
+    }
+
+    return false
+  }
+
   render () {
     if (!this.props.show) return null
 
     if (this.props.appendToBody) {
       return (
         <FullscreenHandler>
-          {({ fullscreenElement }) => createPortal(
-            this.renderModal(),
-            fullscreenElement || document.body,
-          )}
+          {({ fullscreenElement }) => {
+            let rootNode
+            if (fullscreenElement &&
+            !this.isDescendant(this.container.current, fullscreenElement)) {
+              rootNode = fullscreenElement
+            } else {
+              rootNode = document.body
+            }
+
+            return createPortal(this.renderModal(), rootNode)
+          }}
         </FullscreenHandler>
       )
     }
