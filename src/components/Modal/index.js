@@ -129,22 +129,11 @@ export default class Modal extends PureComponent {
     )
   }
 
-  isDescendant = (parent, child) => {
-    let node = child.parentNode
-    while (node !== null) {
-      if (node === parent) {
-        return true
-      }
-      node = node.parentNode
-    }
-
-    return false
-  }
-
   getRootNode = (fullscreenElement) => {
     let rootNode
+
     if (fullscreenElement &&
-    !this.isDescendant(this.container.current, fullscreenElement)) {
+    fullscreenElement.closest('.mc-modal') !== this.container.current) {
       rootNode = fullscreenElement
     } else {
       rootNode = document.body
