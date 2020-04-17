@@ -45,7 +45,7 @@
     // vertically centered stuffs
     display: flex;
     align-items: center;
-    min-height: calc(100vh - 3.5rem);
+    min-height: calc(100% - 3.5rem);
   }
 
   &__content {
