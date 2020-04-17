@@ -5,6 +5,8 @@ import Highlight from 'react-highlight'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
+import packageJSON from '../../../package.json'
+
 
 storiesOf('Introduction|Introduction', module)
   .add('Getting Started', () =>
@@ -13,6 +15,8 @@ storiesOf('Introduction|Introduction', module)
         title='mc-components'
         description='UI library for for media heavy applications.'
       />
+
+      <p>Version: {packageJSON.version}</p>
 
       <DocSection title='Installation'>
         <p className='mc-mb-2'>

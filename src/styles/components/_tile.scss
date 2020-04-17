@@ -2,6 +2,9 @@
   position: relative;
   backface-visibility: hidden;
 
+  // Safari mobile issue: https://github.com/yankaindustries/mc-components/issues/705
+  transform: translateZ(0);
+
   &__content {
     position: absolute;
     top: 0;

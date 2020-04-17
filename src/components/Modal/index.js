@@ -129,6 +129,19 @@ export default class Modal extends PureComponent {
     )
   }
 
+  getRootNode = (fullscreenElement) => {
+    let rootNode
+
+    if (fullscreenElement &&
+    fullscreenElement.closest('.mc-modal') !== this.container.current) {
+      rootNode = fullscreenElement
+    } else {
+      rootNode = document.body
+    }
+
+    return rootNode
+  }
+
   render () {
     if (!this.props.show) return null
 
@@ -137,7 +150,7 @@ export default class Modal extends PureComponent {
         <FullscreenHandler>
           {({ fullscreenElement }) => createPortal(
             this.renderModal(),
-            fullscreenElement || document.body,
+            this.getRootNode(fullscreenElement),
           )}
         </FullscreenHandler>
       )
