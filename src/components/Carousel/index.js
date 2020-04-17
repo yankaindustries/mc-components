@@ -46,6 +46,7 @@ class Arrow extends PureComponent {
       <a
         className={classes}
         onClick={onPress}
+        role={`scroll-${direction}`}
       >
         <span className='mc-carousel__arrow-text'>
           {children}
