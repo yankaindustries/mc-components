@@ -157,6 +157,10 @@ $mc-video-progress-height: 0.8rem !default;
   .vjs-has-started & {
     display: none;
   }
+
+  .bc-player--beforescreen-open & {
+    display: none;
+  }
 }
 
 
