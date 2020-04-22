@@ -479,10 +479,12 @@ export default class VideoPlayer extends PureComponent {
     } = this.state
 
     const isScreenOpen = screen !== SCREEN_NONE
+    const isScreenBefore = screen === SCREEN_BEFORE
 
     const containerClasses = cn({
       'bc-player': true,
       'bc-player--screen-open': isScreenOpen,
+      'bc-player--beforescreen': isScreenBefore,
     })
 
     const playerClasses = cn({
