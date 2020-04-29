@@ -22,7 +22,7 @@ class Arrow extends PureComponent {
     className: PropTypes.string,
     direction: PropTypes.oneOf([DIRECTION_PREV, DIRECTION_NEXT]).isRequired,
     location: PropTypes.node,
-    onPress: PropTypes.func,
+    onClick: PropTypes.func,
   }
 
   render () {
@@ -31,7 +31,7 @@ class Arrow extends PureComponent {
       className,
       direction,
       location,
-      onPress,
+      onClick,
     } = this.props
 
     if (!location) { return null }
@@ -45,7 +45,7 @@ class Arrow extends PureComponent {
     return createPortal(
       <a
         className={classes}
-        onClick={onPress}
+        onClick={onClick}
         role={`scroll-${direction}`}
       >
         <span className='mc-carousel__arrow-text'>
@@ -105,30 +105,6 @@ export default class Carousel extends PureComponent {
     this.state = {
       currentSlide: props.initialSlide || 0,
     }
-  }
-
-  handlePrevClick = () => {
-    const { scrollCount } = this.props
-    const { currentSlide } = this.state
-
-    const targetSlide = currentSlide - scrollCount < 0
-      ? 0
-      : currentSlide - scrollCount
-
-    this.slider.current.slickGoTo(targetSlide)
-  }
-
-  handleNextClick = () => {
-    const { children, scrollCount, showCount } = this.props
-    const { currentSlide } = this.state
-    const childrenCount = React.Children.count(children)
-
-    const targetSlide =
-      currentSlide + showCount + scrollCount > childrenCount - 1
-        ? childrenCount - showCount
-        : currentSlide + scrollCount
-
-    this.slider.current.slickGoTo(targetSlide)
   }
 
   handleAfterChange = (index) => {
@@ -197,7 +173,6 @@ export default class Carousel extends PureComponent {
         prevArrow: (
           <Arrow
             direction={DIRECTION_PREV}
-            onPress={this.handlePrevClick}
             location={this.arrowContainerRef.current}
           >
             <ChevronLeft />
@@ -206,7 +181,6 @@ export default class Carousel extends PureComponent {
         nextArrow: (
           <Arrow
             direction={DIRECTION_NEXT}
-            onPress={this.handleNextClick}
             location={this.arrowContainerRef.current}
           >
             <ChevronRight />
