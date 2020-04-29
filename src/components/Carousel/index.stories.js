@@ -81,6 +81,7 @@ const tiles = () =>
           <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
             {item.teaches}
           </h6>
+          <p className='mc-text--uppercase mc-text-small'>This is slide {item.id}</p>
         </TileCaption>
       </Tile>
     </div>,
@@ -213,10 +214,12 @@ storiesOf('Components|Carousel', module)
               name='loop'
               type='Boolean'
             >
+              <p className='mc-text-large'>(Use your arrow keys to demo)</p>
                 <Carousel
                   className='row'
                   showCount={responsiveValues(media, 3, 2, 1)}
                   loop
+                  controls
                 >
                   {tiles()}
                 </Carousel>
