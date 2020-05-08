@@ -212,6 +212,7 @@ export default class Carousel extends PureComponent {
                 afterChange={this.handleAfterChange}
                 onInit={() => this.setState({ initialized: true })}
                 variableWidth={variableWidth}
+                lazyLoad='ondemand'
                 {...arrows}
                 {...restProps}
               >
