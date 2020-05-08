@@ -44,6 +44,8 @@ storiesOf('Components|VideoPlayer', module)
       <DocSection title='Demo'>
         <div className='row'>
           <div className='col-12'>
+            <VideoPlayer hasAutoplay hasControls />
+
             <VideoPlayer
               hasControls
               beforescreenComponent={
@@ -215,7 +217,7 @@ storiesOf('Components|VideoPlayer', module)
         >
           <div className='row'>
             <div className='col-lg-4'>
-              <VideoPlayer hasAutoplay />
+              ...
             </div>
           </div>
         </PropExample>

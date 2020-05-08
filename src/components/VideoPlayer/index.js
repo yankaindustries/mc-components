@@ -5,6 +5,8 @@ import cn from 'classnames'
 import PropTypes from 'prop-types'
 
 import VideoPlayerScreen from '../VideoPlayerScreen'
+import Button from '../Button'
+import Icon from '../Icons'
 import { renderChildren } from '../helpers'
 
 const VOLUME_INTERVAL = 0.05
@@ -67,6 +69,7 @@ export default class VideoPlayer extends PureComponent {
   state = {
     screen: SCREEN_NONE,
     fill: FILL_NONE,
+    mutedAutoplay: false,
   }
 
   constructor (props) {
@@ -166,9 +169,10 @@ export default class VideoPlayer extends PureComponent {
     }
 
     if (hasAutoplay) {
-      const promise = this.video.play()
-      if (promise !== undefined) {
-        promise.catch(() => {})
+      const play = this.video.play()
+
+      if (play.catch) {
+        play.catch(this.muteAutoplay)
       }
     }
 
@@ -178,6 +182,23 @@ export default class VideoPlayer extends PureComponent {
     if (onVideoReady) {
       onVideoReady(this.video)
     }
+  }
+
+  muteAutoplay = () => {
+    this.video.muted(true)
+    const play = this.video.play()
+
+    if (play.catch) {
+      play
+        .then(() => this.setState({ mutedAutoplay: true }))
+        .catch(() => {})
+    }
+  }
+
+  unmuteAutoplay = () => {
+    this.video.muted(false)
+
+    this.setState({ mutedAutoplay: false })
   }
 
   turnOffCaptions = () => {
@@ -552,6 +573,20 @@ export default class VideoPlayer extends PureComponent {
               isActive: screen === SCREEN_END,
             })}
           </VideoPlayerScreen>
+        }
+
+        {this.state.mutedAutoplay &&
+          <Button
+            kind='secondary'
+            className='bc-player__autoplay-unmute'
+            onClick={this.unmuteAutoplay}
+          >
+            <Icon
+              kind='muted'
+              className='mc-mr-3'
+            />
+            Tap to Unmute
+          </Button>
         }
       </div>
     )
