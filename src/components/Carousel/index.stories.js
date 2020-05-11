@@ -4,16 +4,14 @@ import { storiesOf } from '@storybook/react'
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
-import PropExample from '../../utils/PropExample'
+import CodeExample from '../../utils/CodeExample'
 
 import Carousel from '../Carousel'
+import ResponsiveHandler from '../ResponsiveHandler'
 import Tile from '../Tile'
 import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
-import ResponsiveHandler from '../ResponsiveHandler'
-
-import { responsiveValues } from '../helpers'
 
 
 const items = [
@@ -68,28 +66,6 @@ const items = [
   },
 ]
 
-const tiles = () =>
-  items.map(item =>
-    <div key={item.id} className='col-auto'>
-      <Tile>
-        <TileImage imageUrl={item.thumbnail} />
-        <TileOverlay />
-        <TileCaption>
-          <h6 className='mc-text-h6 mc-text--uppercase'>
-            {item.instructor}
-          </h6>
-          <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
-            {item.teaches}
-          </h6>
-          <p className='mc-text--uppercase mc-text-small'>This is slide {item.id}</p>
-        </TileCaption>
-      </Tile>
-    </div>,
-  )
-
-const random = (min, max) =>
-  Math.floor(min + (Math.random() * (max - min)))
-
 
 storiesOf('Components|Carousel', module)
   .add('Carousel', withAddons({
@@ -97,234 +73,117 @@ storiesOf('Components|Carousel', module)
     component: Carousel,
   })(() =>
     <ResponsiveHandler>
-      {media =>
+      {({ responsive }) =>
         <div className='container'>
           <DocHeader title='Carousel' />
 
-          <DocSection title='Props'>
-            <PropExample
-              name='autoPlay'
-              type='Boolean'
-            >
+          <DocSection title='Standard #1'>
+            <CodeExample>
+              <div className='uncontainer'>
+                <div className='container-fluid'>
+                  <Carousel
+                    className='row'
+                    showCount={responsive(1, 2, 4)}
+                    variableWidth
+                    loop
+                    controls
+                    peek
+                  >
+                    {items.map(item =>
+                      <div key={item.id} className='col-auto' style={{ width: 320 }}>
+                        <Tile>
+                          <TileImage imageUrl={item.thumbnail} />
+                          <TileOverlay />
+                          <TileCaption>
+                            <h6 className='mc-text-h6'>
+                              {item.instructor}
+                            </h6>
+                            <p className='mc-text-small mc-opacity--muted'>
+                              {item.teaches}
+                            </p>
+                          </TileCaption>
+                        </Tile>
+                      </div>,
+                    )}
+                    {items.map(item =>
+                      <div key={item.id} className='col-auto' style={{ width: 320 }}>
+                        <Tile>
+                          <TileImage imageUrl={item.thumbnail} />
+                          <TileOverlay />
+                          <TileCaption>
+                            <h6 className='mc-text-h6'>
+                              {item.instructor}
+                            </h6>
+                            <p className='mc-text-small mc-opacity--muted'>
+                              {item.teaches}
+                            </p>
+                          </TileCaption>
+                        </Tile>
+                      </div>,
+                    )}
+                  </Carousel>
+                </div>
+              </div>
+            </CodeExample>
+          </DocSection>
+
+          <DocSection title='Standard #2'>
+            <CodeExample>
               <Carousel
                 className='row'
-                showCount={responsiveValues(media, 3, 2, 1)}
-                autoPlay
+                showCount={responsive(3, 3, 4, 6)}
+                controls
+                loop
+                dots
               >
-                {tiles()}
+                {items.map(item =>
+                  <div key={item.id} className='col-auto'>
+                    <Tile aspectRatio='2x3'>
+                      <TileImage imageUrl={item.thumbnail} />
+                      <TileOverlay />
+                      <TileCaption>
+                        <h6 className='mc-text-h6'>
+                          {item.instructor}
+                        </h6>
+                        <p className='mc-text-small mc-opacity--muted'>
+                          {item.teaches}
+                        </p>
+                      </TileCaption>
+                    </Tile>
+                  </div>,
+                )}
               </Carousel>
-            </PropExample>
+            </CodeExample>
+          </DocSection>
 
-            <PropExample
-              name='centered'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  centered
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='controls'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  controls
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='dots'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  dots
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='overflow'
-              type='Boolean'
-            >
+          <DocSection title='Standard #3'>
+            <CodeExample>
               <Carousel
                 className='row'
-                showCount={responsiveValues(media, 3, 2, 1)}
-                overflow
+                showCount={1}
+                controls
+                loop
+                fade
+                dots
               >
-                {tiles()}
+                {items.map(item =>
+                  <div key={item.id} className='col-auto'>
+                    <Tile>
+                      <TileImage imageUrl={item.thumbnail} />
+                      <TileOverlay type='gradient-left' />
+                      <TileCaption position='left center' padding={10}>
+                        <h4 className='mc-text-h4'>
+                          {item.instructor}
+                        </h4>
+                        <p className='mc-text-small mc-opacity--muted'>
+                          {item.teaches}
+                        </p>
+                      </TileCaption>
+                    </Tile>
+                  </div>,
+                )}
               </Carousel>
-            </PropExample>
-
-
-            <PropExample
-              name='peek'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  peek
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-
-            <PropExample
-              name='color'
-              type='String'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  peek
-                  color='0, 255, 0'
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-
-            <PropExample
-              name='focusOnSelect'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  focusOnSelect loop
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='loop'
-              type='Boolean'
-            >
-              <p className='mc-text-large'>(Use your arrow keys to demo)</p>
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  loop
-                  controls
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='highlightOnActive'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  highlightOnActive
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='highlightOnHover'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  highlightOnHover
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='scrollCount'
-              type='Number'
-            >
-                <Carousel
-                  className='row'
-                  scrollCount={2}
-                  controls
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='showCount'
-              type='Number'
-            >
-                <Carousel
-                  className='row'
-                  showCount={2}
-                  controls
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-
-            <PropExample
-              name='transition'
-              type='String'
-            >
-                <Carousel
-                  className='row'
-                  transition='slide'
-                  controls
-                >
-                  {tiles()}
-                </Carousel>
-
-                <Carousel
-                  className='row'
-                  transition='fade'
-                  controls
-                >
-                  {tiles()}
-                </Carousel>
-            </PropExample>
-
-            <PropExample
-              name='variableWidth'
-              type='Boolean'
-            >
-                <Carousel
-                  className='row'
-                  variableWidth
-                >
-                  {items.map(item =>
-                    <div key={item.id} className='col-auto' style={{ width: random(200, 600) }}>
-                      <Tile>
-                        <TileImage imageUrl={item.thumbnail} />
-                        <TileOverlay />
-                        <TileCaption>
-                          <h6 className='mc-text-h6 mc-text--uppercase'>
-                            {item.instructor}
-                          </h6>
-                          <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
-                            {item.teaches}
-                          </h6>
-                        </TileCaption>
-                      </Tile>
-                    </div>,
-                  )}
-                </Carousel>
-            </PropExample>
+            </CodeExample>
           </DocSection>
         </div>
       }

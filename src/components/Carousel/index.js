@@ -1,61 +1,17 @@
 import React, { PureComponent } from 'react'
-import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import cn from 'classnames'
 
+import Arrow, { DIRECTION_PREV, DIRECTION_NEXT } from './Arrow'
 import ChevronLeft from '../Icons/ChevronLeft'
 import ChevronRight from '../Icons/ChevronRight'
+
 import { PROP_TYPE_CHILDREN } from '../constants'
 
 
 const TRANSITION_FADE = 'fade'
 const TRANSITION_SLIDE = 'slide'
-
-const DIRECTION_PREV = 'prev'
-const DIRECTION_NEXT = 'next'
-
-
-class Arrow extends PureComponent {
-  static propTypes = {
-    children: PROP_TYPE_CHILDREN,
-    className: PropTypes.string,
-    direction: PropTypes.oneOf([DIRECTION_PREV, DIRECTION_NEXT]).isRequired,
-    location: PropTypes.node,
-    onClick: PropTypes.func,
-  }
-
-  render () {
-    const {
-      children,
-      className,
-      direction,
-      location,
-      onClick,
-    } = this.props
-
-    if (!location) { return null }
-
-    const classes = cn({
-      [className]: className,
-      'mc-carousel__arrow': true,
-      [`mc-carousel__arrow--${direction}`]: direction,
-    })
-
-    return createPortal(
-      <a
-        className={classes}
-        onClick={onClick}
-        role={`scroll-${direction}`}
-      >
-        <span className='mc-carousel__arrow-text'>
-          {children}
-        </span>
-      </a>,
-      location,
-    )
-  }
-}
 
 
 export default class Carousel extends PureComponent {
@@ -65,6 +21,7 @@ export default class Carousel extends PureComponent {
     children: PROP_TYPE_CHILDREN,
     className: PropTypes.string,
     controls: PropTypes.bool,
+    dots: PropTypes.bool,
     focusOnSelect: PropTypes.bool,
     highlightOnActive: PropTypes.bool,
     highlightOnHover: PropTypes.bool,
@@ -102,14 +59,13 @@ export default class Carousel extends PureComponent {
     super(props)
 
     this.slider = props.sliderRef || React.createRef()
-    this.state = {
-      currentSlide: props.initialSlide || 0,
-    }
   }
 
-  handleAfterChange = (index) => {
-    this.setState({ currentSlide: index })
+  state = {
+    initialized: false,
   }
+
+  handleInit = () => this.setState({ initialized: true })
 
   render () {
     const {
@@ -118,6 +74,7 @@ export default class Carousel extends PureComponent {
       children,
       className,
       controls,
+      dots,
       focusOnSelect,
       highlightOnActive,
       highlightOnHover,
@@ -132,6 +89,10 @@ export default class Carousel extends PureComponent {
       ...restProps
     } = this.props
 
+    const {
+      initialized,
+    } = this.state
+
     const containerClasses = cn({
       'mc-carousel': true,
       'mc-carousel--centered': centered,
@@ -140,6 +101,7 @@ export default class Carousel extends PureComponent {
       'mc-carousel--overflow': overflow,
       'mc-carousel--peek': peek,
       'mc-carousel--variable-width': variableWidth,
+      'mc-carousel--dots': dots,
     })
 
     const carouselClasses = cn({
@@ -169,7 +131,7 @@ export default class Carousel extends PureComponent {
       }
     }
 
-    const arrows = controls
+    const arrowsProps = controls && initialized
       ? {
         arrows: true,
         prevArrow: (
@@ -193,6 +155,15 @@ export default class Carousel extends PureComponent {
         arrows: false,
       }
 
+    const dotsProps = dots
+      ? {
+        dots: true,
+        customPaging: () => <button />,
+      }
+      : {
+        dots: false,
+      }
+
     return (
       <div className={containerClasses}>
         <div className='mc-carousel__forced-spacing' />
@@ -211,11 +182,10 @@ export default class Carousel extends PureComponent {
                 slidesToShow={variableWidth ? 1 : adjustedShowCount}
                 infinite={loop}
                 draggable={false}
-                afterChange={this.handleAfterChange}
-                onInit={() => this.setState({ initialized: true })}
                 variableWidth={variableWidth}
-                lazyLoad='ondemand'
-                {...arrows}
+                onInit={this.handleInit}
+                {...arrowsProps}
+                {...dotsProps}
                 {...restProps}
               >
                 {children}
