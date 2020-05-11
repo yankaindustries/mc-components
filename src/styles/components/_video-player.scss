@@ -81,6 +81,14 @@ $mc-video-progress-height: 0.8rem !default;
     }
   }
 
+  &__autoplay-unmute {
+    @include step(margin, 4);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
   .c-button {
     @include mc-button;
   }
