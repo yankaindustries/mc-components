@@ -33,6 +33,10 @@ $scrollbar-max-width: 17px !default;
     position: relative;
   }
 
+  &__slider-container {
+    overflow: hidden;
+  }
+
   // The padding hack above that allows us to have
   // overflowing content on hover in tiles
   // without affecting the flow of the document
@@ -44,27 +48,16 @@ $scrollbar-max-width: 17px !default;
     margin-bottom: -1px;
   }
 
-  // We need to override slick sliders default scss
-  // so that we can have cool hover effects and not cut off
-  // tiles that overflow the slick container
   .slick-list {
     overflow: visible;
   }
 
   .slick-slide {
-    opacity: 0;
-    pointer-events: none;
     transition: opacity 250ms ease;
   }
 
-  // Align carousel items to left
   .slick-track {
     margin: 0;
-  }
-
-  .slick-active {
-    opacity: 1;
-    pointer-events: auto;
   }
 
   .slick-dots {

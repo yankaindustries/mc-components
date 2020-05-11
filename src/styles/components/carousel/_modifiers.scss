@@ -1,29 +1,4 @@
 .mc-carousel {
-  &--overflow {
-    .slick-slide {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
-
-  &--peek {
-    .mc-carousel__slider-container {
-      overflow: hidden;
-    }
-  }
-
-  &--peek,
-  &--variable-width {
-    .mc-carousel__slider-container {
-      overflow: hidden;
-    }
-
-    .slick-slide {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
-
   &--highlight-active {
     .slick-list {
       .slick-active {

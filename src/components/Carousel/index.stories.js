@@ -70,7 +70,7 @@ const items = [
 
 
 storiesOf('Components|Carousel', module)
-  .add('Carousel', withAddons({
+  .add('Summary', withAddons({
     path: 'components/Carousel/index.stories.js',
     component: Carousel,
   })(() =>
