@@ -147,7 +147,7 @@ export default class Carousel extends PureComponent {
       'mc-carousel__slider': true,
     })
 
-    const adjustedShowCount = peek ? showCount + 0.5 : showCount
+    const adjustedShowCount = peek ? showCount + 0.75 : showCount
 
     let peekStyles
     if (peek) {
