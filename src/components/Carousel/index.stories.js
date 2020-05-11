@@ -86,13 +86,13 @@ storiesOf('Components|Carousel', module)
                   <Carousel
                     className='row'
                     showCount={responsive(1, 2, 4)}
+                    controls={responsive(false, false, true)}
                     variableWidth
                     loop
-                    controls
                     peek
                   >
                     {items.map(item =>
-                      <div key={item.id} className='col-auto' style={{ width: 320 }}>
+                      <div key={item.id} className='col-auto' style={{ width: 280 }}>
                         <Tile>
                           <TileImage imageUrl={item.thumbnail} />
                           <TileOverlay />
@@ -108,7 +108,7 @@ storiesOf('Components|Carousel', module)
                       </div>,
                     )}
                     {items.map(item =>
-                      <div key={item.id} className='col-auto' style={{ width: 320 }}>
+                      <div key={item.id} className='col-auto' style={{ width: 280 }}>
                         <Tile>
                           <TileImage imageUrl={item.thumbnail} />
                           <TileOverlay />
@@ -134,7 +134,7 @@ storiesOf('Components|Carousel', module)
               <Carousel
                 className='row'
                 showCount={responsive(3, 3, 4, 6)}
-                controls
+                controls={responsive(false, false, false, true)}
                 loop
                 dots
               >
@@ -163,7 +163,8 @@ storiesOf('Components|Carousel', module)
               <Carousel
                 className='row'
                 showCount={1}
-                controls
+                controls={responsive(false, false, false, true)}
+                adaptiveHeight
                 loop
                 fade
                 dots
@@ -171,7 +172,7 @@ storiesOf('Components|Carousel', module)
                 {items.map(item =>
                   <div key={item.id} className='col-auto'>
                     <div className='row no-gutters'>
-                      <div className='col-5 d-flex'>
+                      <div className='col-lg-5 d-flex order-1 order-lg-0'>
                         <Background color='medium' className='flex-grow-1'>
                           <div className='d-flex flex-column justify-content-center mc-p-10' style={{ height: '100%' }}>
                             <div>
@@ -193,8 +194,8 @@ storiesOf('Components|Carousel', module)
                         </Background>
                       </div>
 
-                      <div className='col-7'>
-                        <Tile>
+                      <div className='col-lg-7 order-0 order-lg-1'>
+                        <Tile aspectRatio='4x3'>
                           <TileImage imageUrl={item.thumbnail} />
                         </Tile>
                       </div>

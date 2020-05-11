@@ -111,7 +111,7 @@ export default class Carousel extends PureComponent {
     if (peek) {
       peekStyles = {
         position: 'absolute',
-        right: 0,
+        right: -16,
         top: 0,
         width: '120px',
         height: '100%',

@@ -33,9 +33,9 @@ $scrollbar-max-width: 17px !default;
     position: relative;
   }
 
-  &__slider-container {
-    overflow: hidden;
-  }
+  // &__slider-container {
+  //   overflow: hidden;
+  // }
 
   // The padding hack above that allows us to have
   // overflowing content on hover in tiles
@@ -49,7 +49,8 @@ $scrollbar-max-width: 17px !default;
   }
 
   .slick-list {
-    overflow: visible;
+    overflow: hidden;
+    transition: height 250ms ease;
   }
 
   .slick-slide {
