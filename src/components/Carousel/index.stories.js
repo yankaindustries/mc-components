@@ -12,6 +12,8 @@ import Tile from '../Tile'
 import TileImage from '../TileImage'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
+import Background from '../Background'
+import Button from '../Button'
 
 
 const items = [
@@ -168,18 +170,35 @@ storiesOf('Components|Carousel', module)
               >
                 {items.map(item =>
                   <div key={item.id} className='col-auto'>
-                    <Tile>
-                      <TileImage imageUrl={item.thumbnail} />
-                      <TileOverlay type='gradient-left' />
-                      <TileCaption position='left center' padding={10}>
-                        <h4 className='mc-text-h4'>
-                          {item.instructor}
-                        </h4>
-                        <p className='mc-text-small mc-opacity--muted'>
-                          {item.teaches}
-                        </p>
-                      </TileCaption>
-                    </Tile>
+                    <div className='row no-gutters'>
+                      <div className='col-5 d-flex'>
+                        <Background color='medium' className='flex-grow-1'>
+                          <div className='d-flex flex-column justify-content-center mc-p-10' style={{ height: '100%' }}>
+                            <div>
+                              <h6 className='mc-text-h7 mc-opacity--hinted mc-mb-2'>
+                                {item.instructor}
+                              </h6>
+                              <h2 className='mc-text-h2 mc-mb-1'>
+                                {item.instructor}
+                              </h2>
+                              <p className='mc-text-large mc-opacity--muted mc-mb-6'>
+                                {item.teaches}
+                              </p>
+
+                              <Button kind='tertiary'>
+                                Details
+                              </Button>
+                            </div>
+                          </div>
+                        </Background>
+                      </div>
+
+                      <div className='col-7'>
+                        <Tile>
+                          <TileImage imageUrl={item.thumbnail} />
+                        </Tile>
+                      </div>
+                    </div>
                   </div>,
                 )}
               </Carousel>
