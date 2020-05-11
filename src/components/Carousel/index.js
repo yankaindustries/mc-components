@@ -147,6 +147,8 @@ export default class Carousel extends PureComponent {
       'mc-carousel__slider': true,
     })
 
+    const adjustedShowCount = peek ? showCount + 0.75 : showCount
+
     let peekStyles
     if (peek) {
       peekStyles = {
@@ -206,7 +208,7 @@ export default class Carousel extends PureComponent {
                 focusOnSelect={focusOnSelect}
                 ref={this.slider}
                 slidesToScroll={scrollCount}
-                slidesToShow={variableWidth ? 1 : showCount}
+                slidesToShow={variableWidth ? 1 : adjustedShowCount}
                 infinite={loop}
                 draggable={false}
                 afterChange={this.handleAfterChange}
