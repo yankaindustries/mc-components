@@ -180,6 +180,7 @@ export default class Carousel extends PureComponent {
                 draggable={false}
                 variableWidth={variableWidth}
                 onInit={this.handleInit}
+                lazyLoad='ondemand'
                 {...arrowsProps}
                 {...dotsProps}
                 {...restProps}
