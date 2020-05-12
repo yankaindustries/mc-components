@@ -107,7 +107,10 @@ export default class VideoPlayer extends PureComponent {
   }
 
   componentWillUnmount () {
-    // clean listeners and DOM
+    // Don't run cleanup if video instance doesn't exist
+    if (!this.video) { return }
+
+    // Cleanup
     this.video.off('play')
     this.video.off('pause')
     this.video.off('ended')
