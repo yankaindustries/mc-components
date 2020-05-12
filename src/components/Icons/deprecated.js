@@ -3,6 +3,6 @@ export const DEPRECATED = [
   'back-arrow',
   'check-circle',
   'logo-wordmark',
-  'play-circle',
+  'play-stroke',
   'ssl-badge',
 ]
