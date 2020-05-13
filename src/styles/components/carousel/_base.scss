@@ -2,6 +2,10 @@ $mc-carousel-centered-padding: 100px !default;
 $scrollbar-max-width: 17px !default;
 
 .mc-carousel {
+  &--dots {
+    padding-bottom: $grid-gutter-width;
+  }
+
   &__slider {
     position: relative;
     pointer-events: auto;
@@ -18,7 +22,6 @@ $scrollbar-max-width: 17px !default;
   }
 
   &__container {
-    // position: relative;
     margin: -999px calc(50% - 50vw + #{$scrollbar-max-width / 2});
     padding: 999px calc(50vw - 50% - #{$scrollbar-max-width / 2});
     overflow: hidden;
@@ -40,75 +43,49 @@ $scrollbar-max-width: 17px !default;
     margin-bottom: -1px;
   }
 
-  // We need to override slick sliders default scss
-  // so that we can have cool hover effects and not cut off
-  // tiles that overflow the slick container
   .slick-list {
-    overflow: visible;
+    overflow: hidden;
+    transition: height 250ms ease;
   }
 
   .slick-slide {
-    opacity: 0;
-    pointer-events: none;
     transition: opacity 250ms ease;
   }
 
-  // Align carousel items to left
   .slick-track {
     margin: 0;
   }
 
-  .slick-active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
   .slick-dots {
-    /* stylelint-disable */
-    display: flex !important;
-    /* stylelint-enable */
-    justify-content: center;
-    padding: $grid-gutter-width/2 0;
-
-    @media only screen and (min-width: $mc-bp-sm) {
-      padding: $grid-gutter-width-sm/2 0;
-    }
-
-    @media only screen and (min-width: $mc-bp-md) {
-      padding: $grid-gutter-width-md/2 0;
-    }
-
-    @media only screen and (min-width: $mc-bp-lg) {
-      padding: $grid-gutter-width-lg/2 0;
-    }
-
-    @media only screen and (min-width: $mc-bp-xl) {
-      padding: $grid-gutter-width-xl/2 0;
-    }
+    position: absolute;
+    left: 50%;
+    bottom: -$grid-gutter-width;
+    transform: translateX(-50%);
 
     li {
-      line-height: 0;
+      display: inline-block;
+      margin: 0 2px;
     }
 
     button {
-      background: $mc-color-gray-400;
-      width: 6px;
-      height: 6px;
-      border-radius: 6px;
-      margin: 0 4px;
-      overflow: hidden;
-      text-indent: 9999em;
-      cursor: pointer;
-      transition: background 250ms ease;
+      width: 4px;
+      height: 4px;
+      background: var(--mc-theme-text);
+      border-radius: 4px;
+      opacity: 0.6;
       outline: 0;
+      transition: opacity 250ms ease, width 500ms ease;
 
       &:hover {
-        background: $mc-color-gray-300;
+        opacity: 0.7;
       }
     }
 
-    .slick-active button {
-      background: $mc-color-gray-500;
+    .slick-active {
+      button {
+        opacity: 1;
+        width: 8px;
+      }
     }
   }
 

@@ -1,5 +1,5 @@
 import { Children, cloneElement } from 'react'
-import { isFunction } from 'lodash'
+import { isFunction, isUndefined } from 'lodash'
 
 export const ASPECT_RATIOS = [
   'auto',
@@ -70,10 +70,19 @@ export const renderChildren = (children, props) => {
   return results
 }
 
+const undefinedFallback = (...args) => {
+  const [value, ...others] = args
+
+  if (isUndefined(value)) {
+    return undefinedFallback(...others)
+  }
+
+  return value
+}
 
 export const responsiveValues = ({ gteLG, gteMD, gteSM }, lg, md, sm, xs) => {
   if (gteLG) {
-    return lg
+    return undefinedFallback(lg, md, sm, xs)
   }
 
   if (gteMD) {
@@ -84,7 +93,7 @@ export const responsiveValues = ({ gteLG, gteMD, gteSM }, lg, md, sm, xs) => {
     return sm
   }
 
-  return xs || sm || md || lg
+  return xs
 }
 
 export const getClosest = (elem, selector) => {
