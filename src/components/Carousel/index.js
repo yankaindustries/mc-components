@@ -95,8 +95,6 @@ export default class Carousel extends PureComponent {
       'mc-carousel--centered': centered,
       'mc-carousel--highlight-active': highlightOnActive,
       'mc-carousel--highlight-hover': highlightOnHover,
-      'mc-carousel--peek': peek,
-      'mc-carousel--variable-width': variableWidth,
       'mc-carousel--dots': dots,
     })
 
@@ -105,11 +103,15 @@ export default class Carousel extends PureComponent {
       'mc-carousel__slider': true,
     })
 
-    const adjustedShowCount = peek ? showCount + 0.75 : showCount
+    const showCountWithVariable = variableWidth ? 1 : showCount
+    const adjustedShowCount = peek
+      ? showCountWithVariable + 0.75
+      : showCountWithVariable
 
-    let peekStyles
-    if (peek) {
-      peekStyles = {
+    const lazyLoad = variableWidth ? false : 'ondemand'
+
+    const peekStyles = peek
+      ? {
         position: 'absolute',
         right: -16,
         top: 0,
@@ -125,7 +127,7 @@ export default class Carousel extends PureComponent {
         zIndex: 1,
         pointerEvents: 'none',
       }
-    }
+      : {}
 
     const arrowsProps = controls && initialized
       ? {
@@ -175,12 +177,12 @@ export default class Carousel extends PureComponent {
                 focusOnSelect={focusOnSelect}
                 ref={this.slider}
                 slidesToScroll={scrollCount}
-                slidesToShow={variableWidth ? 1 : adjustedShowCount}
+                slidesToShow={adjustedShowCount}
                 infinite={loop}
                 draggable={false}
                 variableWidth={variableWidth}
                 onInit={this.handleInit}
-                lazyLoad='ondemand'
+                lazyLoad={lazyLoad}
                 {...arrowsProps}
                 {...dotsProps}
                 {...restProps}

@@ -13,8 +13,6 @@ import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
 import ResponsiveHandler from '../ResponsiveHandler'
 
-import { responsiveValues } from '../helpers'
-
 
 const items = [
   {
@@ -73,16 +71,6 @@ const tiles = () =>
     <div key={item.id} className='col-auto'>
       <Tile>
         <TileImage imageUrl={item.thumbnail} />
-        <TileOverlay />
-        <TileCaption>
-          <h6 className='mc-text-h6 mc-text--uppercase'>
-            {item.instructor}
-          </h6>
-          <h6 className='mc-text-h8 mc-text--airy mc-opacity--muted'>
-            {item.teaches}
-          </h6>
-          <p className='mc-text--uppercase mc-text-small'>This is slide {item.id}</p>
-        </TileCaption>
       </Tile>
     </div>,
   )
@@ -97,7 +85,7 @@ storiesOf('Components|Carousel', module)
     component: Carousel,
   })(() =>
     <ResponsiveHandler>
-      {media =>
+      {({ responsive }) =>
         <div className='container'>
           <DocHeader title='Carousel' />
 
@@ -108,8 +96,9 @@ storiesOf('Components|Carousel', module)
             >
               <Carousel
                 className='row'
-                showCount={responsiveValues(media, 3, 2, 1)}
+                showCount={responsive(2, 2, 3, 4)}
                 autoPlay
+                controls
               >
                 {tiles()}
               </Carousel>
@@ -121,8 +110,9 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
+                  showCount={responsive(2, 2, 3, 4)}
                   centered
+                  controls
                 >
                   {tiles()}
                 </Carousel>
@@ -134,7 +124,7 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
+                  showCount={responsive(2, 2, 3, 4)}
                   controls
                 >
                   {tiles()}
@@ -147,8 +137,9 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
+                  showCount={responsive(2, 2, 3, 4)}
                   dots
+                  controls
                 >
                   {tiles()}
                 </Carousel>
@@ -160,8 +151,9 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
+                  showCount={responsive(2, 2, 3, 4)}
                   peek
+                  controls
                 >
                   {tiles()}
                 </Carousel>
@@ -174,9 +166,10 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  peek
+                  showCount={responsive(2, 2, 3, 4)}
                   color='0, 255, 0'
+                  peek
+                  controls
                 >
                   {tiles()}
                 </Carousel>
@@ -189,8 +182,9 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  focusOnSelect loop
+                  showCount={responsive(2, 2, 3, 4)}
+                  focusOnSelect
+                  loop
                 >
                   {tiles()}
                 </Carousel>
@@ -200,15 +194,14 @@ storiesOf('Components|Carousel', module)
               name='loop'
               type='Boolean'
             >
-              <p className='mc-text-large'>(Use your arrow keys to demo)</p>
-                <Carousel
-                  className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
-                  loop
-                  controls
-                >
-                  {tiles()}
-                </Carousel>
+              <Carousel
+                className='row'
+                showCount={responsive(2, 2, 3, 4)}
+                loop
+                controls
+              >
+                {tiles()}
+              </Carousel>
             </PropExample>
 
             <PropExample
@@ -217,8 +210,9 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
+                  showCount={responsive(2, 2, 3, 4)}
                   highlightOnActive
+                  controls
                 >
                   {tiles()}
                 </Carousel>
@@ -230,8 +224,9 @@ storiesOf('Components|Carousel', module)
             >
                 <Carousel
                   className='row'
-                  showCount={responsiveValues(media, 3, 2, 1)}
+                  showCount={responsive(2, 2, 3, 4)}
                   highlightOnHover
+                  controls
                 >
                   {tiles()}
                 </Carousel>
@@ -292,6 +287,7 @@ storiesOf('Components|Carousel', module)
                 <Carousel
                   className='row'
                   variableWidth
+                  controls
                 >
                   {items.map(item =>
                     <div key={item.id} className='col-auto' style={{ width: random(200, 600) }}>
