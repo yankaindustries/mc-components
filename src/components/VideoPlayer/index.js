@@ -281,7 +281,6 @@ export default class VideoPlayer extends PureComponent {
 
   handleEnd = () => {
     this.currentTime = undefined
-    this.hasEnded = true
 
     const {
       isLooped,
@@ -417,7 +416,6 @@ export default class VideoPlayer extends PureComponent {
         return
       }
       this.video.catalog.load(video)
-      this.hasEnded = false
       this.currentTime = undefined
 
       this.play()
