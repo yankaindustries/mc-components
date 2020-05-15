@@ -192,9 +192,9 @@ export default class VideoPlayer extends PureComponent {
 
   autoplay = () => {
     if (this.props.hasAutoplay) {
-      this.play()
+      this.unmuteAutoplay()
     } else {
-      this.pause()
+      this.video.pause()
     }
   }
 
@@ -211,6 +211,7 @@ export default class VideoPlayer extends PureComponent {
 
   unmuteAutoplay = () => {
     this.video.muted(false)
+    this.video.play()
 
     this.setState({ mutedAutoplay: false })
   }
@@ -310,13 +311,13 @@ export default class VideoPlayer extends PureComponent {
   }
 
   handleReplayClick = () => {
-    this.video.play()
+    this.autoplay()
 
     this.setState({ screen: SCREEN_NONE })
   }
 
   handleResume = () => {
-    this.video.play()
+    this.autoplay()
   }
 
   handleError = () => {
@@ -419,7 +420,7 @@ export default class VideoPlayer extends PureComponent {
       this.hasEnded = false
       this.currentTime = undefined
 
-      this.autoPlay()
+      this.autoplay()
     })
   }
 
