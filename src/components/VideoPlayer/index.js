@@ -178,7 +178,7 @@ export default class VideoPlayer extends PureComponent {
       const play = this.video.play()
 
       if (play.catch) {
-        play.catch(this.muteAutoplay)
+        play.catch(this.mutePlay)
       }
     }
 
@@ -192,13 +192,13 @@ export default class VideoPlayer extends PureComponent {
 
   play = () => {
     if (this.props.hasAutoplay) {
-      this.unmuteAutoplay()
+      this.unmutePlay()
     } else {
       this.video.pause()
     }
   }
 
-  muteAutoplay = () => {
+  mutePlay = () => {
     this.video.muted(true)
     const play = this.video.play()
 
@@ -209,7 +209,7 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
-  unmuteAutoplay = () => {
+  unmutePlay = () => {
     this.video.muted(false)
     this.video.play()
 
@@ -594,7 +594,7 @@ export default class VideoPlayer extends PureComponent {
           <Button
             kind='secondary'
             className='bc-player__autoplay-unmute'
-            onClick={this.unmuteAutoplay}
+            onClick={this.unmutePlay}
           >
             <Icon
               kind='muted'
