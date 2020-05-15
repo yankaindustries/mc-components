@@ -38,8 +38,9 @@ module.exports = async ({ config, mode }) => {
     test: /\.s[ac]ss$/i,
     use: [
       'style-loader',
-      'css-loader',
-      'sass-loader'
+      { loader: 'css-loader', options: { importLoaders: 1 } },
+      'postcss-loader',
+      'sass-loader',
     ],
     include: path.resolve(__dirname, '../'),
   })

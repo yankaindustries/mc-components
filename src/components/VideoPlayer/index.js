@@ -100,9 +100,12 @@ export default class VideoPlayer extends PureComponent {
   }
 
   componentDidUpdate (prevProps) {
-    if (this.props.videoId !== prevProps.videoId
-      || this.props.hasAutoplay !== prevProps.hasAutoplay) {
+    if (this.props.videoId !== prevProps.videoId) {
       this.replaceWith(this.props.videoId)
+    }
+
+    if (this.props.hasAutoplay !== prevProps.hasAutoplay) {
+      this.autoPlay()
     }
   }
 
@@ -184,6 +187,14 @@ export default class VideoPlayer extends PureComponent {
 
     if (onVideoReady) {
       onVideoReady(this.video)
+    }
+  }
+
+  autoplay = () => {
+    if (this.props.hasAutoplay) {
+      this.play()
+    } else {
+      this.pause()
     }
   }
 
@@ -408,7 +419,7 @@ export default class VideoPlayer extends PureComponent {
       this.hasEnded = false
       this.currentTime = undefined
 
-      this.video.play()
+      this.autoPlay()
     })
   }
 
