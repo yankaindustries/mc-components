@@ -100,9 +100,12 @@ export default class VideoPlayer extends PureComponent {
   }
 
   componentDidUpdate (prevProps) {
-    if (this.props.videoId !== prevProps.videoId
-      || this.props.hasAutoplay !== prevProps.hasAutoplay) {
+    if (this.props.videoId !== prevProps.videoId) {
       this.replaceWith(this.props.videoId)
+    }
+
+    if (this.props.hasAutoplay !== prevProps.hasAutoplay) {
+      this.play()
     }
   }
 
@@ -175,7 +178,7 @@ export default class VideoPlayer extends PureComponent {
       const play = this.video.play()
 
       if (play.catch) {
-        play.catch(this.muteAutoplay)
+        play.catch(this.mutePlay)
       }
     }
 
@@ -187,7 +190,15 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
-  muteAutoplay = () => {
+  play = () => {
+    if (this.props.hasAutoplay) {
+      this.unmutePlay()
+    } else {
+      this.video.pause()
+    }
+  }
+
+  mutePlay = () => {
     this.video.muted(true)
     const play = this.video.play()
 
@@ -198,8 +209,9 @@ export default class VideoPlayer extends PureComponent {
     }
   }
 
-  unmuteAutoplay = () => {
+  unmutePlay = () => {
     this.video.muted(false)
+    this.video.play()
 
     this.setState({ mutedAutoplay: false })
   }
@@ -269,7 +281,6 @@ export default class VideoPlayer extends PureComponent {
 
   handleEnd = () => {
     this.currentTime = undefined
-    this.hasEnded = true
 
     const {
       isLooped,
@@ -299,13 +310,13 @@ export default class VideoPlayer extends PureComponent {
   }
 
   handleReplayClick = () => {
-    this.video.play()
+    this.play()
 
     this.setState({ screen: SCREEN_NONE })
   }
 
   handleResume = () => {
-    this.video.play()
+    this.play()
   }
 
   handleError = () => {
@@ -405,10 +416,9 @@ export default class VideoPlayer extends PureComponent {
         return
       }
       this.video.catalog.load(video)
-      this.hasEnded = false
       this.currentTime = undefined
 
-      this.video.play()
+      this.play()
     })
   }
 
@@ -582,7 +592,7 @@ export default class VideoPlayer extends PureComponent {
           <Button
             kind='secondary'
             className='bc-player__autoplay-unmute'
-            onClick={this.unmuteAutoplay}
+            onClick={this.unmutePlay}
           >
             <Icon
               kind='muted'
