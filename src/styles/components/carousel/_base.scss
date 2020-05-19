@@ -64,27 +64,22 @@ $scrollbar-max-width: 17px !default;
 
     li {
       display: inline-block;
-      margin: 0 2px;
+      margin: 0 3px;
     }
 
     button {
       width: 4px;
       height: 4px;
-      background: var(--mc-theme-text);
+      background: $mc-color-gray-400;
       border-radius: 4px;
-      opacity: 0.6;
       outline: 0;
-      transition: opacity 250ms ease, width 500ms ease;
-
-      &:hover {
-        opacity: 0.7;
-      }
+      transition: background 250ms ease, width 500ms ease;
     }
 
     .slick-active {
       button {
-        opacity: 1;
-        width: 8px;
+        background: $mc-color-light;
+        width: 16px;
       }
     }
   }
