@@ -21,4 +21,9 @@
     color: var(--mc-theme-text);
     box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast);
   }
+
+  &--bright {
+    background: var(--mc-theme-badge-bright-bg);
+    color: var(--mc-theme-badge-bright-text);
+  }
 }
