@@ -12,6 +12,7 @@ export default class Badge extends PureComponent {
       'default',
       'primary',
       'transparent',
+      'bright',
     ]),
   }
 

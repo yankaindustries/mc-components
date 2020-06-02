@@ -32,6 +32,9 @@ export default class InvertedMirror extends PureComponent {
               color='light'
               className='mc-card mc-invert'
             >
+              <h5 className='mc-text-h5 mc-mb-7 mc-text--center'>
+                Inverted
+              </h5>
               {children}
             </Background>
           </div>
@@ -41,6 +44,9 @@ export default class InvertedMirror extends PureComponent {
               color='dark'
               className='mc-card'
             >
+              <h5 className='mc-text-h5 mc-mb-7 mc-text--center'>
+                Default
+              </h5>
               {children}
             </Background>
           </div>

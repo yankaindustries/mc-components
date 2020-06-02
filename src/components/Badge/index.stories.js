@@ -19,21 +19,27 @@ storiesOf('Components|Badge', module)
 
       <InvertedMirror>
         <div className='row mc-text--center'>
-          <div className='col-12 col-sm-4'>
+          <div className='col-12 col-sm-6'>
             <Badge>
               Default
             </Badge>
           </div>
 
-          <div className='col-12 col-sm-4'>
+          <div className='col-12 col-sm-6'>
             <Badge kind='primary'>
               Primary
             </Badge>
           </div>
 
-          <div className='col-12 col-sm-4'>
+          <div className='col-12 col-sm-6'>
             <Badge kind='transparent'>
               Transparent
+            </Badge>
+          </div>
+
+          <div className='col-12 col-sm-6'>
+            <Badge kind='bright'>
+              Bright
             </Badge>
           </div>
         </div>
