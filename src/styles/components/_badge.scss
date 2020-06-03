@@ -4,10 +4,10 @@
   color: $mc-color-light;
   border-radius: 20px;
 
-  @include step(padding-top, 1);
-  @include step(padding-right, 3);
-  @include step(padding-bottom, 1);
-  @include step(padding-left, 3);
+  padding-top: var(--mc-scale-1);
+  padding-right: var(--mc-scale-3);
+  padding-bottom: var(--mc-scale-1);
+  padding-left: var(--mc-scale-3);
 
   &--default {
     background: $mc-color-secondary;

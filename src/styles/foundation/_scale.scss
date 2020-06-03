@@ -1,0 +1,17 @@
+:root {
+  @for $i from $scale-begin through $scale-end {
+    --mc-scale-#{$i}: #{calc-step($i, $mc-step-decay-sm)};
+  }
+
+  @media (min-width: $mc-bp-md) {
+    @for $i from $scale-begin through $scale-end {
+      --mc-scale-#{$i}: #{calc-step($i, $mc-step-decay-md)};
+    }
+  }
+
+  @media (min-width: $mc-bp-lg) {
+    @for $i from $scale-begin through $scale-end {
+      --mc-scale-#{$i}: #{calc-step($i, $mc-step-decay-lg)};
+    }
+  }
+}

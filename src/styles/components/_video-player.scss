@@ -82,7 +82,7 @@ $mc-video-progress-height: 0.8rem !default;
   }
 
   &__autoplay-unmute {
-    @include step(margin, 4);
+    margin: var(--mc-scale-4);
 
     position: absolute;
     left: 0;
