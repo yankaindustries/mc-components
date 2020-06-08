@@ -213,7 +213,7 @@ class ButtonStory extends PureComponent {
                   </Button>
                 </div>
                 <div className='col-auto'>
-                  <Button kind='applepay'>
+                  <Button kind='apple'>
                     Apple pay
                   </Button>
                 </div>
