@@ -187,7 +187,7 @@ class Scale extends PureComponent {
 
           <Highlight className='language-scss mc-mb-8'>
 {`.some-container {
-  @include step(padding, 5)
+  padding: var(--mc-scale-5);
 }`}
           </Highlight>
 

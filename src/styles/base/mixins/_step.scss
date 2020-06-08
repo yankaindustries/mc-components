@@ -1,20 +1,5 @@
 @mixin step($attribute, $value, $i: false) {
   $important: if($i, "!important", "");
-  $calc-sm: calc-step($value, $mc-step-decay-sm);
-  $calc-md: calc-step($value, $mc-step-decay-md);
-  $calc-lg: calc-step($value, $mc-step-decay-lg);
 
-  #{$attribute}: $calc-sm * 1rem #{$important};
-
-  @if $calc-md != $calc-sm {
-    @media (min-width: $mc-bp-md) {
-      #{$attribute}: $calc-md * 1rem #{$important};
-    }
-  }
-
-  @if $calc-lg != $calc-sm {
-    @media (min-width: $mc-bp-lg) {
-      #{$attribute}: $calc-lg * 1rem #{$important};
-    }
-  }
+  #{$attribute}: var(--mc-scale-#{$value}) #{$important};
 }

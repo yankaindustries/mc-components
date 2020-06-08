@@ -1,9 +1,9 @@
 @mixin mc-button {
-  @include step(padding-top, 3);
-  @include step(padding-right, 5);
-  @include step(padding-bottom, 3);
-  @include step(padding-left, 5);
-  @include step(font-size, 3);
+  padding-top: var(--mc-scale-3);
+  padding-right: var(--mc-scale-5);
+  padding-bottom: var(--mc-scale-3);
+  padding-left: var(--mc-scale-5);
+  font-size: var(--mc-scale-3);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -42,10 +42,10 @@
   // Variations
 
   &--small {
-    @include step(padding-top, 1);
-    @include step(padding-bottom, 1);
-    @include step(padding-left, 3);
-    @include step(padding-right, 3);
+    padding-top: var(--mc-scale-1);
+    padding-bottom: var(--mc-scale-1);
+    padding-left: var(--mc-scale-3);
+    padding-right: var(--mc-scale-3);
   }
 
   &--full-width {
@@ -164,11 +164,11 @@
   }
 
   &--symmetrical {
-    @include step(padding, 3);
+    padding: var(--mc-scale-3);
 
     /* stylelint-disable-next-line */
     &.c-button--small {
-      @include step(padding, 1);
+      padding: var(--mc-scale-1);
     }
   }
 

@@ -78,7 +78,7 @@
     right: 0;
     top: 0;
 
-    @include step(margin, 2);
+    margin: var(--mc-scale-2);
     opacity: 0.5;
     z-index: $mc-zindex-modal + 2;
     cursor: pointer;
