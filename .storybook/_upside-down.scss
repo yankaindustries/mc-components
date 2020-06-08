@@ -55,23 +55,23 @@ a {
 }
 
 .example__heading {
-  @include step(padding-top, 8);
-  @include step(margin-bottom, 8);
+  padding-top: var(--mc-scale-8);
+  margin-bottom: var(--mc-scale-8);
 }
 
 .example__section {
-  @include step(margin-top, 8);
-  @include step(margin-bottom, 10);
+  margin-top: var(--mc-scale-8);
+  margin-bottom: var(--mc-scale-10);
 }
 
 .example__definition {
-  @include step(margin-bottom, 5);
+  margin-bottom: var(--mc-scale-5);
 }
 
 .example__render {
-  @include step(padding-top, 4);
-  @include step(padding-bottom, 4);
-  @include step(margin-bottom, 4);
+  padding-top: var(--mc-scale-4);
+  padding-bottom: var(--mc-scale-4);
+  margin-bottom: var(--mc-scale-4);
 
   .mc-theme-light,
   .mc-invert & {
@@ -80,11 +80,11 @@ a {
 }
 
 .example__trigger {
-  @include step(margin-bottom, 4);
+  margin-bottom: var(--mc-scale-4);
 }
 
 .example__code {
-  @include step(margin-bottom, 4);
+  margin-bottom: var(--mc-scale-4);
 }
 
 .example__table {
@@ -112,7 +112,7 @@ a {
   }
 
   th, td {
-    @include step(padding, 2);
+    padding: var(--mc-scale-2);
   }
 }
 
@@ -200,8 +200,8 @@ a {
     }
 
     &__box-#{$i} {
-      @include step(width, $i);
-      @include step(height, $i);
+      width: var(--mc-scale-#{$i});
+      height: var(--mc-scale-#{$i});
     }
 
     $rem-sm: calc-step($i, $mc-step-decay-sm);
@@ -310,7 +310,7 @@ a {
   position: fixed;
   right: 0;
   bottom: 0;
-  @include step(padding, 2);
+  padding: var(--mc-scale-2);
   z-index: 9999;
   display: flex;
   align-items: center;

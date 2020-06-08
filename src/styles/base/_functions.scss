@@ -50,5 +50,5 @@
   $less: (max($step - $mc-step-min-resize, 0) * $decay) / $mc-step-base;
   $value: $level * $mc-step-scale * $factor / $mc-step-base;
 
-  @return $value - $less;
+  @return $value - $less * 1rem;
 }
