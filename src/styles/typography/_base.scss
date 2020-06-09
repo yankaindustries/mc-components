@@ -70,7 +70,11 @@ a {
   }
 
   &-small {
-    @include step(font-size, 3.5);
+    // TODO JJ - Kill this at your earliest convenience
+    // This exists outside of the scale system because
+    // half steps are not supported...except in this case
+    // because design insisted on a 14px font :|
+    font-size: calc-step(3.5, $mc-step-decay-sm);
     line-height: $mc-lh-sm;
     letter-spacing: $mc-ls-sm;
   }
