@@ -159,6 +159,17 @@ storiesOf('Components|Carousel', module)
           </DocSection>
 
           <DocSection title='Standard #2 (light theme)'>
+            <p className='mc-mb-5'>
+              {'Note: This behavior requires nesting the '}
+              <span className='mc-code'>
+                mc-theme-light
+              </span>
+              {' and '}
+              <span className='mc-code'>
+                mc-theme-dark
+              </span>
+              {' helper classes.'}
+            </p>
             <div style={{ background: '#fff' }} className='mc-px-5'>
               <CodeExample>
                 <Carousel
