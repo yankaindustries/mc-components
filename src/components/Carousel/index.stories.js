@@ -158,6 +158,48 @@ storiesOf('Components|Carousel', module)
             </CodeExample>
           </DocSection>
 
+          <DocSection title='Standard #2 (light theme)'>
+            <p className='mc-mb-5'>
+              {'Note: This behavior requires nesting the '}
+              <span className='mc-code'>
+                mc-theme-light
+              </span>
+              {' and '}
+              <span className='mc-code'>
+                mc-theme-dark
+              </span>
+              {' helper classes.'}
+            </p>
+            <CodeExample>
+              <div style={{ background: '#fff' }} className='mc-p-8'>
+                <Carousel
+                  className='row mc-theme-light'
+                  showCount={responsive(3, 3, 4, 6)}
+                  controls={responsive(false, false, false, true)}
+                  loop
+                  dots
+                >
+                  {items.map(item =>
+                    <div key={item.id} className='col-auto'>
+                      <Tile aspectRatio='2x3' className='mc-theme-dark'>
+                        <TileImage imageUrl={item.thumbnail} />
+                        <TileOverlay />
+                        <TileCaption>
+                          <h6 className='mc-text-h6'>
+                            {item.instructor}
+                          </h6>
+                          <p className='mc-text-small mc-opacity--muted'>
+                            {item.teaches}
+                          </p>
+                        </TileCaption>
+                      </Tile>
+                    </div>,
+                  )}
+                </Carousel>
+              </div>
+            </CodeExample>
+          </DocSection>
+
           <DocSection title='Standard #3'>
             <CodeExample>
               <Carousel
