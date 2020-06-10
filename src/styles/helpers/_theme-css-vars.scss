@@ -16,20 +16,24 @@
   --mc-theme-badge-bright-bg:        #{$mc-color-light};
   --mc-theme-badge-bright-text:      #{$mc-color-dark};
 
-  // Dropdown colors
+  // Carousel
+  --mc-theme-carousel-dot:           #{$mc-color-gray-400};
+  --mc-theme-carousel-dot-active:    #{$mc-color-light};
+
+  // Dropdown
   --mc-theme-dropdown-backdrop:   #{rgba($mc-color-dark, 0.9)};
   --mc-theme-dropdown-border:     #{$mc-color-gray-200};
   --mc-theme-dropdown-bg:         #{$mc-color-gray-100};
   --mc-theme-dropdown-shadow:     #{$mc-color-dark};
   --mc-theme-dropdown-hover-bg:   #{$mc-color-gray-200};
 
-  // Tooltip colors
+  // Tooltip
   --mc-theme-tooltip-bg:            #{$mc-color-gray-200};
   --mc-theme-tooltip-border:        #{$mc-color-gray-400};
   --mc-theme-tooltip-arrow:         #{$mc-color-gray-400};
   --mc-theme-tooltip-arrow-after:   #{$mc-color-gray-200};
 
-  // Checkbox colors
+  // Checkbox
   --mc-theme-checkbox-bg:                 #{$mc-color-gray-100};
   --mc-theme-checkbox-border:             #{$mc-color-gray-200};
   --mc-theme-checkbox-checked:            #{$mc-color-light};
@@ -38,7 +42,7 @@
   --mc-theme-checkbox-dis-border:         #{$mc-color-gray-600};
   --mc-theme-checkbox-dis-active-border:  #{$mc-color-gray-200};
 
-  // Form element colors
+  // Form elements
   --mc-theme-form-bg:                     #{$mc-color-gray-100};
   --mc-theme-form-border:                 #{$mc-color-gray-200};
   --mc-theme-form-elem-color:             #{$mc-color-light};
@@ -79,18 +83,22 @@
   --mc-theme-badge-bright-bg:        #{$mc-color-gray-600};
   --mc-theme-badge-bright-text:      #{$mc-color-dark};
 
-  // Dropdown colors
+  // Carousel
+  --mc-theme-carousel-dot:           #{rgba($mc-color-dark, 0.6)};
+  --mc-theme-carousel-dot-active:    #{$mc-color-dark};
+
+  // Dropdown
   --mc-theme-dropdown-border:     #{$mc-color-gray-700};
   --mc-theme-dropdown-bg:         #{$mc-color-light};
   --mc-theme-dropdown-hover-bg:   #{$mc-color-gray-700};
 
-  // Tooltip colors
+  // Tooltip
   --mc-theme-tooltip-bg:            #{$mc-color-light};
   --mc-theme-tooltip-border:        #{$mc-color-gray-700};
   --mc-theme-tooltip-arrow:         #{$mc-color-gray-700};
   --mc-theme-tooltip-arrow-after:   #{$mc-color-light};
 
-  // Checkbox colors
+  // Checkbox
   --mc-theme-checkbox-bg:                 #{$mc-color-light};
   --mc-theme-checkbox-border:             #{$mc-color-gray-500};
   --mc-theme-checkbox-checked:            #{$mc-color-gray-200};
@@ -99,7 +107,7 @@
   --mc-theme-checkbox-dis-border:         #{$mc-color-gray-600};
   --mc-theme-checkbox-dis-active-border:  #{$mc-color-gray-600};
 
-  // Form element colors
+  // Form elementa
   --mc-theme-form-bg:                     #{$mc-color-light};
   --mc-theme-form-border:                 #{$mc-color-gray-500};
   --mc-theme-form-elem-color:             #{$mc-color-dark};
