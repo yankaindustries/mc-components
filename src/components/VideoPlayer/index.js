@@ -194,7 +194,7 @@ export default class VideoPlayer extends PureComponent {
     if (this.props.hasAutoplay) {
       this.unmutePlay()
     } else {
-      this.video.pause()
+      this.video.play()
     }
   }
 
