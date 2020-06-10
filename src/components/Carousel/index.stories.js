@@ -170,8 +170,8 @@ storiesOf('Components|Carousel', module)
               </span>
               {' helper classes.'}
             </p>
-            <div style={{ background: '#fff' }} className='mc-px-5'>
-              <CodeExample>
+            <CodeExample>
+              <div style={{ background: '#fff' }} className='mc-p-8'>
                 <Carousel
                   className='row mc-theme-light'
                   showCount={responsive(3, 3, 4, 6)}
@@ -196,8 +196,8 @@ storiesOf('Components|Carousel', module)
                     </div>,
                   )}
                 </Carousel>
-              </CodeExample>
-            </div>
+              </div>
+            </CodeExample>
           </DocSection>
 
           <DocSection title='Standard #3'>
