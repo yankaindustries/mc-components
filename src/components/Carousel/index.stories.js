@@ -159,10 +159,10 @@ storiesOf('Components|Carousel', module)
           </DocSection>
 
           <DocSection title='Standard #2 (light theme)'>
-            <div style={{ background: '#fff' }} className='mc-theme-light mc-px-5'>
+            <div style={{ background: '#fff' }} className='mc-px-5'>
               <CodeExample>
                 <Carousel
-                  className='row'
+                  className='row mc-theme-light'
                   showCount={responsive(3, 3, 4, 6)}
                   controls={responsive(false, false, false, true)}
                   loop
@@ -170,9 +170,9 @@ storiesOf('Components|Carousel', module)
                 >
                   {items.map(item =>
                     <div key={item.id} className='col-auto'>
-                      <Tile aspectRatio='2x3'>
+                      <Tile aspectRatio='2x3' className='mc-theme-dark'>
                         <TileImage imageUrl={item.thumbnail} />
-                        <TileOverlay color='148,154,164' />
+                        <TileOverlay />
                         <TileCaption>
                           <h6 className='mc-text-h6'>
                             {item.instructor}
