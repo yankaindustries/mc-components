@@ -3,6 +3,8 @@
     --mc-scale-#{$i}: #{calc-step($i, $mc-step-decay-sm)};
   }
 
+  --mc-scale-3-5: #{calc-step(3.5, $mc-step-decay-sm)};
+
   @media (min-width: $mc-bp-md) {
     @for $i from $scale-begin through $scale-end {
       --mc-scale-#{$i}: #{calc-step($i, $mc-step-decay-md)};
