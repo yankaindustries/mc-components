@@ -1,8 +1,8 @@
 @mixin mc-button {
   padding-top: var(--mc-scale-3);
-  padding-right: var(--mc-scale-6);
+  padding-right: var(--mc-scale-7);
   padding-bottom: var(--mc-scale-3);
-  padding-left: var(--mc-scale-6);
+  padding-left: var(--mc-scale-7);
   font-size: var(--mc-scale-3);
   display: inline-flex;
   align-items: center;
@@ -44,8 +44,8 @@
   &--small {
     padding-top: var(--mc-scale-1);
     padding-bottom: var(--mc-scale-1);
-    padding-left: var(--mc-scale-3);
-    padding-right: var(--mc-scale-3);
+    padding-left: var(--mc-scale-4);
+    padding-right: var(--mc-scale-4);
   }
 
   &--full-width {
