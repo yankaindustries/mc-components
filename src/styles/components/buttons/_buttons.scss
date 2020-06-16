@@ -1,8 +1,8 @@
 @mixin mc-button {
   padding-top: var(--mc-scale-3);
-  padding-right: var(--mc-scale-5);
+  padding-right: var(--mc-scale-6);
   padding-bottom: var(--mc-scale-3);
-  padding-left: var(--mc-scale-5);
+  padding-left: var(--mc-scale-6);
   font-size: var(--mc-scale-3);
   display: inline-flex;
   align-items: center;
@@ -12,7 +12,7 @@
   line-height: 2;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border-radius: $default-radius;
+  border-radius: var(--mc-scale-6);
   transition:
     background 250ms ease,
     box-shadow 250ms ease,
