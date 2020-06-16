@@ -3,31 +3,17 @@ import React, { PureComponent } from 'react'
 import withAddons from '../../utils/withAddons'
 import DocHeader from '../../utils/DocHeader'
 import PropExample from '../../utils/PropExample'
+import CalcSize from './CalcSize'
 
-class CalcSize extends PureComponent {
-  divRef = React.createRef()
+// extra leicht 200
+// leicht 300
+// buch 400
+// kraftig 500
+// halbfett 600
+// fett 700
+// dreiviertelfett 800
+// extra fett 900
 
-  state = {}
-
-  updateSizes = () => {
-    this.setState({
-      fontSize: window.getComputedStyle(this.divRef.current).fontSize,
-    })
-  }
-
-  componentDidMount () {
-    this.updateSizes()
-    window.addEventListener('resize', this.updateSizes)
-  }
-
-  render () {
-    return (
-      <span className='mc-code mc-opacity--muted' ref={this.divRef}>
-        {this.state.fontSize}
-      </span>
-    )
-  }
-}
 
 class Sizes extends PureComponent {
   render () {

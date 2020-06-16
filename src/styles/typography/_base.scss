@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "Sohne";
+  src:
+    url("/fonts/Sohne-Leicht.woff2") format("woff2"),
+    url("/fonts/Sohne-Leicht.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src:
+    url("/fonts/Sohne-Buch.woff2") format("woff2"),
+    url("/fonts/Sohne-Buch.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sohne";
+  src:
+    url("/fonts/Sohne-Fett.woff2") format("woff2"),
+    url("/fonts/Sohne-Fett.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+
 html {
   /* stylelint-disable-next-line declaration-no-important */
   font-size: $mc-step-base * 1px !important;
