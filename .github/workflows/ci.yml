@@ -9,6 +9,6 @@ jobs:
       - uses: CultureHQ/actions-yarn@master
         with:
           args: install
-        uses: github/super-linter@v2.0.0
+      - uses: github/super-linter@v2.0.0
         env:
           VALIDATE_ALL_CODEBASE: false
