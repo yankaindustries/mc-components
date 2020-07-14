@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: github/super-linter@v2.0.0
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          
+      - uses: CultureHQ/actions-yarn@master
+        with:
+          args: install
+      - run: yarn lint          
   Build:
     runs-on: ubuntu-latest
     steps:
