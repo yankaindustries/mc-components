@@ -204,9 +204,11 @@ a {
       height: var(--mc-scale-#{$i});
     }
 
-    $rem-sm: calc-step($i, $mc-step-decay-sm);
-    $rem-md: calc-step($i, $mc-step-decay-md);
-    $rem-lg: calc-step($i, $mc-step-decay-lg);
+    // divide by 1rem to 'strip' the unit off the function
+    // JUST for storybook.
+    $rem-sm: calc-step($i, $mc-step-decay-sm) / 1rem;
+    $rem-md: calc-step($i, $mc-step-decay-md) / 1rem;
+    $rem-lg: calc-step($i, $mc-step-decay-lg) / 1rem;
 
     &__label-#{$i}-sm-px:before {
       content: "#{$rem-sm * $mc-step-base}";
