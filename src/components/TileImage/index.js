@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
-import Background from '../Background'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
 
@@ -20,32 +20,14 @@ export default class TileImage extends PureComponent {
   render () {
     const {
       className,
-      children,
       image,
       imageUrl,
     } = this.props
 
-    const classes = [
-      'mc-tile__component',
-      'mc-tile-image',
-      className || '',
-    ].join(' ')
+    const classes = cn('mc-tile-image', className)
 
-    return (
-      <div className={classes}>
-        <Background
-          className='mc-tile-image__image'
-          element={image || <img src={imageUrl} />}
-          fit='container'
-          size='cover'
-        >
-          {children &&
-            <div className='mc-tile-image__content'>
-              {children}
-            </div>
-          }
-        </Background>
-      </div>
-    )
+    return image
+      ? React.cloneElement(image, { className: classes })
+      : <img className={classes} src={imageUrl} />
   }
 }
