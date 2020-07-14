@@ -24,27 +24,27 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.7);
+    // background: rgba(0, 0, 0, 0.7);
     transition: 200ms ease opacity;
   }
 
   &__controls-view {
     opacity: 0;
-    pointer-events: none;
 
     .mc-video--show-controls & {
       opacity: 1;
-      pointer-events: all;
     }
   }
 
   &__settings-view {
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0s 200ms, opacity 200ms ease;
 
     .mc-video--show-settings & {
       opacity: 1;
-      pointer-events: all;
+      visibility: visible;
+      transition: visibility 0s, opacity 200ms ease;
     }
   }
 
@@ -52,6 +52,7 @@
     position: absolute;
     display: flex;
     align-items: stretch;
+    pointer-events: all;
     z-index: 2;
     left: 0;
     bottom: 0;

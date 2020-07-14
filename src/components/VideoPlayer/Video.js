@@ -89,6 +89,9 @@ const Video = ({
     [videoEl],
   )
 
+  const togglePlay = () =>
+    videoEl.current[playbackState === PLAYBACK_PLAYING ? 'pause' : 'play']()
+
   let controlsTimer
 
   const handleMouseOver = () => {
@@ -109,8 +112,15 @@ const Video = ({
     setShowControls(false)
   }
 
+  const handleControlsViewClick = () => {
+    togglePlay()
+  }
+
+  const handleControlsClick = event =>
+    event.stopPropagation()
+
   const handleControlClick = () =>
-    videoEl.current[playbackState === PLAYBACK_PLAYING ? 'pause' : 'play']()
+    togglePlay()
 
   const handleScrubberInteraction = scrubber => (event) => {
     const {
@@ -165,7 +175,7 @@ const Video = ({
   const classes = cn({
     'mc-video': true,
     'mc-video--show-settings': showSettings,
-    'mc-video--show-controls': !showSettings && showControls,
+    'mc-video--show-controls': showControls,
   })
 
   return (
@@ -185,8 +195,10 @@ const Video = ({
           controls={false}
         />
 
-        <div className='mc-video__view mc-video__controls-view'>
-          <div className='mc-video__controls mc-text-small'>
+        <div className='mc-video__view mc-video__controls-view'
+          onClick={handleControlsViewClick}>
+          <div className='mc-video__controls mc-text-small'
+            onClick={handleControlsClick}>
             <div className='mc-video__control'>
               <Button
                 onClick={handleControlClick}
