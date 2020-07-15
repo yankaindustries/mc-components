@@ -1,21 +1,20 @@
-name: CI
+name: Integration
 on: pull_request
 
 jobs:
-  ci:
+  Lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install
-        uses: CultureHQ/actions-yarn@master
+      - uses: actions/checkout@v2
+      - uses: CultureHQ/actions-yarn@master
         with:
           args: install
-      - name: Lint
-        uses: github/super-linter@v2.0.0
-        env:
-          VALIDATE_ALL_CODEBASE: false
-      - name: Build
-        uses: CultureHQ/actions-yarn@master
+      - run: yarn lint          
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: CultureHQ/actions-yarn@master
         with:
-          args: build
+          args: install
+      - run: yarn build
