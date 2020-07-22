@@ -73,7 +73,6 @@ const BrightcoveVideo = ({
   return (
     <Video
       poster={poster.src}
-      controls
       {...props}
     >
       {sources.map(source =>

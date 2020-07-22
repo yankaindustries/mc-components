@@ -19,7 +19,7 @@ storiesOf('Components|VideoPlayer', module)
       />
 
       <DocSection title='Demo'>
-        <BrightcoveVideo videoId='5747090186001' autoPlay />
+        <BrightcoveVideo videoId='5747090186001' controls autoPlay />
       </DocSection>
     </div>,
   ))
