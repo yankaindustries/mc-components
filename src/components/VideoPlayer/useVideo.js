@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
 import {
-  PLAYBACK_IDLE,
-  PLAYBACK_PLAYING,
-  PLAYBACK_ERROR,
-  PLAYBACK_PAUSED,
-  PLAYBACK_ENDED,
+  STATE_IDLE,
+  STATE_PLAYING,
+  STATE_ERROR,
+  STATE_PAUSED,
+  STATE_ENDED,
 } from './Video'
 
 
@@ -16,14 +16,14 @@ const runWith = (obj, method, events) =>
 
 
 const useVideo = (videoRef, containerRef) => {
-  const [playback, setPlayback] = useState(PLAYBACK_IDLE)
+  const [state, setState] = useState(STATE_IDLE)
   const [time, setTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [buffer, setBuffer] = useState(0)
   // const [muted, setMuted] = useState(false)
   // const [volume, setVolume] = useState(1)
-  const [settings, setSettings] = useState(false)
   const [controls, setControls] = useState(false)
+  const [speed, saveSpeed] = useState(1)
   const [fullscreen, setFullscreen] = useState(false)
 
   const toggleFullscreen = () => {
@@ -35,14 +35,16 @@ const useVideo = (videoRef, containerRef) => {
   }
 
   const togglePlay = () =>
-    videoRef.current[playback === PLAYBACK_PLAYING ? 'pause' : 'play']()
-
-  const toggleSettings = () =>
-    setSettings(prevSetting => !prevSetting)
+    videoRef.current[state === STATE_PLAYING ? 'pause' : 'play']()
 
   const scrubTo = (newTime) => {
     // eslint-disable-next-line no-param-reassign
     videoRef.current.currentTime = newTime
+  }
+
+  const setSpeed = (rate) => {
+    // eslint-disable-next-line no-param-reassign
+    videoRef.current.playbackRate = rate
   }
 
   const videoEvents = {
@@ -57,24 +59,27 @@ const useVideo = (videoRef, containerRef) => {
         event.target.buffered.end(event.target.buffered.length - 1),
       )
     },
+    ratechange: function handleRateChange (event) {
+      saveSpeed(event.target.playbackRate)
+    },
     // volumechange: function handleVolumeChange (event) {
     //   setVolume(event.target.volume)
     //   setMuted(event.target.muted)
     // },
     play: function handlePlay () {
-      setPlayback(PLAYBACK_PLAYING)
+      setState(STATE_PLAYING)
     },
     pause: function handlePause () {
-      setPlayback(PLAYBACK_PAUSED)
+      setState(STATE_PAUSED)
     },
     seeking: function handleSeeking (event) {
       setTime(event.target.currentTime)
     },
     ended: function handleEnded () {
-      setPlayback(PLAYBACK_ENDED)
+      setState(STATE_ENDED)
     },
     error: function handleError () {
-      setPlayback(PLAYBACK_ERROR)
+      setState(STATE_ERROR)
     },
   }
 
@@ -101,21 +106,20 @@ const useVideo = (videoRef, containerRef) => {
   )
 
   return {
-    playback,
+    state,
     time,
     duration,
     buffer,
-    settings,
     controls,
     fullscreen,
+    speed,
 
-    setSettings,
     setControls,
     setFullscreen,
 
     scrubTo,
+    setSpeed,
     togglePlay,
-    toggleSettings,
     toggleFullscreen,
   }
 }

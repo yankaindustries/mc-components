@@ -8,6 +8,8 @@ import DocHeader from '../../utils/DocHeader'
 import DocSection from '../../utils/DocSection'
 
 
+// 5747090186001
+
 storiesOf('Components|VideoPlayer', module)
   .add('Test', withAddons({
     path: 'components/VideoPlayer/index.stories.js',
@@ -19,7 +21,11 @@ storiesOf('Components|VideoPlayer', module)
       />
 
       <DocSection title='Demo'>
-        <BrightcoveVideo videoId='5747090186001' controls autoPlay />
+        <BrightcoveVideo
+          videoId='6116577124001'
+          fit='cover'
+          controls
+        />
       </DocSection>
     </div>,
   ))

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
 
 import { VideoContext } from './Video'
 import Button from '../Button'
@@ -19,10 +18,6 @@ const VideoSettings = () => {
       </div>
     </div>
   )
-}
-
-VideoSettings.propTypes = {
-  videoRef: PropTypes.func.isRequired,
 }
 
 

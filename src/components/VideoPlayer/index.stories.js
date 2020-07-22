@@ -28,7 +28,7 @@ const screenStyle = {
 
 class VideoPlayerStory extends PureComponent {
   state = {
-    activeVideo: undefined,
+    activeVideo: '6116577124001',
   }
 
   handleTileClick = () =>

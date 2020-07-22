@@ -39,7 +39,12 @@ const mapData = (response) => {
         type: source.type || `video/${source.container.toLowerCase()}`,
       }))
 
-  const { text_tracks: tracks } = response
+  const tracks =
+    response.text_tracks
+      .map(({ srclang, ...track }) => ({
+        ...track,
+        srcLang: srclang,
+      }))
 
   return {
     poster,

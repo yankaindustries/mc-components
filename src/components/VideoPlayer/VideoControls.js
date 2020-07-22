@@ -1,13 +1,17 @@
 import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
 
 import Button from '../Button'
 import Icon from '../Icons'
+import Dropdown from '../Dropdown'
+import DropdownToggle from '../DropdownToggle'
+import DropdownContent from '../DropdownContent'
+import DropdownHeader from '../DropdownHeader'
+import DropdownBody from '../DropdownBody'
 
 import {
   VideoContext,
-  PLAYBACK_PLAYING,
-  PLAYBACK_ENDED,
+  STATE_PLAYING,
+  STATE_ENDED,
 } from './Video'
 
 
@@ -22,11 +26,12 @@ const VideoControls = () => {
     time,
     duration,
     buffer,
+    speed,
     fullscreen,
 
-    togglePlay,
     scrubTo,
-    toggleSettings,
+    setSpeed,
+    togglePlay,
     toggleFullscreen,
   } = useContext(VideoContext)
 
@@ -59,8 +64,8 @@ const VideoControls = () => {
   }
 
   const iconStates = {
-    [PLAYBACK_PLAYING]: 'pause',
-    [PLAYBACK_ENDED]: 'replay',
+    [STATE_PLAYING]: 'pause',
+    [STATE_ENDED]: 'replay',
   }
   const controlIcon = iconStates[playback] || 'play'
   const bufferPerc = `${(buffer / duration) * 100}%`
@@ -71,72 +76,89 @@ const VideoControls = () => {
 
   return (
     <div
-      className='mc-video__view mc-video__controls-view'
-      onClick={togglePlay}
+      className='mc-video__controls mc-text-small'
+      onClick={hijackClick}
     >
       <div
-        className='mc-video__controls mc-text-small'
-        onClick={hijackClick}
+        className='mc-video__scrubber mc-video__control'
+        onMouseDown={handleScrubberMouseDown}
       >
-        <div className='mc-video__control'>
-          <Button
-            onClick={togglePlay}
-            kind='link'
-            size='small'
-            symmetrical
-          >
-            <Icon kind={controlIcon} className='mc-icon mc-icon--3' />
-          </Button>
-        </div>
+        <div className='mc-video__scrubber-bar' />
+        <div className='mc-video__buffer-bar' style={{ width: bufferPerc }} />
+        <div className='mc-video__time-bar' style={{ width: timePerc }} />
+        <div className='mc-video__time-slider' style={{ left: timePerc }} />
+      </div>
 
-        <div className='mc-video__time mc-video__control'>
-          <span>{toTime(time)}</span>
-        </div>
-
-        <div
-          className='mc-video__scrubber mc-video__control'
-          onMouseDown={handleScrubberMouseDown}
+      <div className='mc-video__control'>
+        <Button
+          onClick={togglePlay}
+          kind='link'
+          size='small'
         >
-          <div className='mc-video__scrubber-bar' />
-          <div className='mc-video__buffer-bar' style={{ width: bufferPerc }} />
-          <div className='mc-video__time-bar' style={{ width: timePerc }} />
-          <div className='mc-video__time-slider' style={{ left: timePerc }} />
-        </div>
+          <Icon kind={controlIcon} className='mc-icon mc-icon--4' />
+        </Button>
+      </div>
 
-        <div className='mc-video__control mc-video__duration'>
-          <span>{toTime(duration)}</span>
-        </div>
+      <div className='mc-video__time mc-video__control'>
+        <span>{toTime(time)} / {toTime(duration)}</span>
+      </div>
 
-        <div className='mc-video__control'>
-          <Button
-            onClick={toggleSettings}
-            kind='link'
-            size='small'
-            symmetrical
-          >
-            <Icon kind='cog' className='mc-icon mc-icon--3' />
-          </Button>
-        </div>
+      <div className='mc-video__spacer' />
 
-        <div className='mc-video__control'>
-          <Button
-            onClick={toggleFullscreen}
-            kind='link'
-            size='small'
-            symmetrical
-          >
-            <Icon kind={fullscreenIcon} className='mc-icon mc-icon--3' />
-          </Button>
-        </div>
+      <div className='mc-video__control'>
+        <Dropdown placement='top-end'>
+          <DropdownToggle>
+            <Button
+              kind='link'
+              size='small'
+            >
+              <Icon kind='cog' className='mc-icon mc-icon--4' />
+            </Button>
+          </DropdownToggle>
+
+          <DropdownContent>
+            <DropdownHeader className='mc-px-4 mc-py-2 mc-text-x-small mc-opacity--muted mc-mr-3'>
+              Speed
+            </DropdownHeader>
+
+            <DropdownBody className='mc-px-4 mc-py-2'>
+              <Button
+                kind={speed === 0.5 ? 'secondary' : 'link'}
+                onClick={() => setSpeed(0.5)}
+              >
+                0.5x
+              </Button>
+
+              <Button
+                kind={speed === 1 ? 'secondary' : 'link'}
+                onClick={() => setSpeed(1)}
+              >
+                1x
+              </Button>
+
+              <Button
+                kind={speed === 2 ? 'secondary' : 'link'}
+                onClick={() => setSpeed(2)}
+              >
+                2x
+              </Button>
+            </DropdownBody>
+          </DropdownContent>
+        </Dropdown>
+      </div>
+
+      <div className='mc-video__control'>
+        <Button
+          onClick={toggleFullscreen}
+          kind='link'
+          size='small'
+
+        >
+          <Icon kind={fullscreenIcon} className='mc-icon mc-icon--4' />
+        </Button>
       </div>
     </div>
   )
-}
-
-
-VideoControls.propTypes = {
-  videoRef: PropTypes.func.isRequired,
-  containerRef: PropTypes.func.isRequired,
 }
 
 
