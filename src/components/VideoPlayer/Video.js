@@ -6,7 +6,6 @@ import useVideo from './useVideo'
 import VideoControls from './VideoControls'
 import VideoSettings from './VideoSettings'
 import VideoScreens from './VideoScreens'
-import ClickOutside from '../ClickOutside'
 
 
 export const STATE_IDLE = 'idle'
@@ -32,23 +31,11 @@ const Video = ({
 
   const video = useVideo(videoRef, containerRef)
 
-  let controlsTimer
-
   const handleMouseOver = () => {
-    clearTimeout(controlsTimer)
     video.setControls(true)
   }
 
   const handleMouseOut = () => {
-    clearTimeout(controlsTimer)
-    controlsTimer = setTimeout(
-      () => video.setControls(false),
-      3000,
-    )
-  }
-
-  const handleClickOutside = () => {
-    clearTimeout(controlsTimer)
     video.setControls(false)
   }
 
@@ -60,7 +47,6 @@ const Video = ({
 
   return (
     <VideoContext.Provider value={video}>
-      <ClickOutside onClickOutside={handleClickOutside}>
         <div
           ref={containerRef}
           className={classes}
@@ -81,7 +67,6 @@ const Video = ({
           <VideoSettings {...props} />
           <VideoScreens {...props} />
         </div>
-      </ClickOutside>
     </VideoContext.Provider>
   )
 }

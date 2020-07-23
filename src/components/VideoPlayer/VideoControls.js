@@ -13,6 +13,7 @@ import {
   STATE_PLAYING,
   STATE_ENDED,
 } from './Video'
+import Slider from './Slider'
 
 
 const toTime = seconds => new Date(seconds * 1000).toISOString().substr(14, 5)
@@ -22,7 +23,9 @@ const hijackClick = event => event.stopPropagation()
 
 const VideoControls = () => {
   const {
-    playback,
+    state,
+    muted,
+    volume,
     time,
     duration,
     buffer,
@@ -30,46 +33,27 @@ const VideoControls = () => {
     fullscreen,
 
     scrubTo,
-    setSpeed,
     togglePlay,
+    toggleMute,
+    setVolume,
+    setSpeed,
     toggleFullscreen,
   } = useContext(VideoContext)
 
-  const handleScrubberInteraction = scrubber => (event) => {
-    const {
-      left: scrubberLeft,
-      width: scrubberWidth,
-    } = scrubber.getBoundingClientRect()
-
-    const {
-      clientX: eventLeft,
-    } = event
-
-    const left = Math.min(Math.max(0, eventLeft - scrubberLeft), scrubberWidth)
-    const perc = left / scrubberWidth
-    const newTime = perc * duration
+  const handleScrub = (value) => {
+    const newTime = value * duration
 
     scrubTo(newTime)
   }
 
-  const handleScrubberMouseDown = (event) => {
-    const listener = handleScrubberInteraction(event.currentTarget)
-
-    handleScrubberInteraction(event.currentTarget)(event)
-
-    window.addEventListener('mousemove', listener)
-    window.addEventListener('mouseup', () => {
-      window.removeEventListener('mousemove', listener)
-    })
-  }
-
-  const iconStates = {
+  const playbackIcons = {
     [STATE_PLAYING]: 'pause',
     [STATE_ENDED]: 'replay',
   }
-  const controlIcon = iconStates[playback] || 'play'
-  const bufferPerc = `${(buffer / duration) * 100}%`
-  const timePerc = `${(time / duration) * 100}%`
+  const playbackIcon = playbackIcons[state] || 'play'
+
+  const volumeIcon = muted ? 'muted' : 'unmuted'
+
   const fullscreenIcon = fullscreen
     ? 'fullscreen-exit'
     : 'fullscreen'
@@ -79,24 +63,39 @@ const VideoControls = () => {
       className='mc-video__controls mc-text-small'
       onClick={hijackClick}
     >
-      <div
-        className='mc-video__scrubber mc-video__control'
-        onMouseDown={handleScrubberMouseDown}
-      >
-        <div className='mc-video__scrubber-bar' />
-        <div className='mc-video__buffer-bar' style={{ width: bufferPerc }} />
-        <div className='mc-video__time-bar' style={{ width: timePerc }} />
-        <div className='mc-video__time-slider' style={{ left: timePerc }} />
+      <div className='mc-video__scrubber'>
+        <Slider
+          value={time / duration}
+          buffer={buffer / duration}
+          onChange={handleScrub}
+        />
       </div>
 
-      <div className='mc-video__control'>
+      <div className='mc-video__playback mc-video__control'>
         <Button
           onClick={togglePlay}
           kind='link'
           size='small'
         >
-          <Icon kind={controlIcon} className='mc-icon mc-icon--4' />
+          <Icon kind={playbackIcon} className='mc-icon mc-icon--4' />
         </Button>
+      </div>
+
+      <div className='mc-video__mute mc-video__control'>
+        <Button
+          onClick={toggleMute}
+          kind='link'
+          size='small'
+        >
+          <Icon kind={volumeIcon} className='mc-icon mc-icon--4' />
+        </Button>
+
+        <div className='mc-video__volume'>
+          <Slider
+            value={volume}
+            onChange={setVolume}
+          />
+        </div>
       </div>
 
       <div className='mc-video__time mc-video__control'>

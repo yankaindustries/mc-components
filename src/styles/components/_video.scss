@@ -2,6 +2,7 @@
   @include aspect-ratio(16, 9);
   position: relative;
   background: $mc-color-dark;
+  overflow: hidden;
 
   &__video {
     position: absolute;
@@ -26,11 +27,12 @@
     bottom: 0;
     width: 100%;
     background: rgba($mc-color-dark, 0.4);
-    // opacity: 0;
-    //
-    // .mc-video--show-controls & {
-    //   opacity: 1;
-    // }
+    transform: translate(0, 120%);
+    transition: transform ease 400ms;
+
+    .mc-video--show-controls & {
+      transform: translate(0, 0);
+    }
   }
 
   &__control {
@@ -43,54 +45,43 @@
     flex: 1;
   }
 
-  &__time,
-  &__duration {
-    margin: 0 4px;
-  }
 
   &__scrubber {
     position: absolute;
     left: 0;
     bottom: 100%;
     width: 100%;
-    height: 4px;
-    transition: height ease 300ms;
+    height: 20px;
 
-    .mc-video__controls:hover & {
-      height: 16px;
+    .mc-slider {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .mc-video__controls:hover & .mc-slider {
+      height: 20px;
     }
   }
 
-  &__scrubber-bar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+  &__volume {
+    position: relative;
+    width: 60px;
     height: 100%;
-    background: rgba($mc-color-light, 0.2);
+
+    .mc-slider {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
-  &__buffer-bar,
-  &__time-bar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: rgba($mc-color-light, 0.5);
-  }
-
-  &__time-bar {
-    background: $mc-color-primary;
-  }
-
-  &__time-slider {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: $mc-color-light;
-    transform: translateX(-50%);
+  &__volume,
+  &__time,
+  &__duration {
+    margin: 0 12px;
   }
 
   &__view {
@@ -120,6 +111,45 @@
       transition: visibility 0s, opacity 200ms ease;
     }
   }
+}
 
+.mc-slider {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  transition: height ease 300ms;
 
+  &__bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($mc-color-light, 0.2);
+  }
+
+  &__buffer,
+  &__fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: rgba($mc-color-light, 0.5);
+  }
+
+  &__fill {
+    background: $mc-color-primary;
+  }
+
+  &__handle {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: calc(100% + 4px);
+    background: $mc-color-light;
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+  }
 }

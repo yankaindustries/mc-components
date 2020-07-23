@@ -20,8 +20,8 @@ const useVideo = (videoRef, containerRef) => {
   const [time, setTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [buffer, setBuffer] = useState(0)
-  // const [muted, setMuted] = useState(false)
-  // const [volume, setVolume] = useState(1)
+  const [muted, saveMuted] = useState(false)
+  const [volume, saveVolume] = useState(1)
   const [controls, setControls] = useState(false)
   const [speed, saveSpeed] = useState(1)
   const [fullscreen, setFullscreen] = useState(false)
@@ -47,6 +47,16 @@ const useVideo = (videoRef, containerRef) => {
     videoRef.current.playbackRate = rate
   }
 
+  const toggleMute = () => {
+    // eslint-disable-next-line no-param-reassign
+    videoRef.current.muted = !videoRef.current.muted
+  }
+
+  const setVolume = (level) => {
+    // eslint-disable-next-line no-param-reassign
+    videoRef.current.volume = level
+  }
+
   const videoEvents = {
     timeupdate: function handleTimeUpdate (event) {
       setTime(event.target.currentTime)
@@ -62,10 +72,15 @@ const useVideo = (videoRef, containerRef) => {
     ratechange: function handleRateChange (event) {
       saveSpeed(event.target.playbackRate)
     },
-    // volumechange: function handleVolumeChange (event) {
-    //   setVolume(event.target.volume)
-    //   setMuted(event.target.muted)
-    // },
+    volumechange: function handleVolumeChange (event) {
+      if (event.target.volume === 0 || event.target.muted) {
+        saveVolume(0)
+        saveMuted(true)
+      } else {
+        saveVolume(event.target.volume)
+        saveMuted(event.target.muted)
+      }
+    },
     play: function handlePlay () {
       setState(STATE_PLAYING)
     },
@@ -107,6 +122,8 @@ const useVideo = (videoRef, containerRef) => {
 
   return {
     state,
+    volume,
+    muted,
     time,
     duration,
     buffer,
@@ -117,9 +134,11 @@ const useVideo = (videoRef, containerRef) => {
     setControls,
     setFullscreen,
 
+    togglePlay,
+    toggleMute,
+    setVolume,
     scrubTo,
     setSpeed,
-    togglePlay,
     toggleFullscreen,
   }
 }
