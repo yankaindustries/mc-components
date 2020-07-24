@@ -4,7 +4,6 @@ import cn from 'classnames'
 
 import useVideo from './useVideo'
 import VideoControls from './VideoControls'
-import VideoSettings from './VideoSettings'
 import VideoScreens from './VideoScreens'
 
 
@@ -54,7 +53,6 @@ const Video = ({
           />
 
           <VideoControls {...props} />
-          <VideoSettings {...props} />
           <VideoScreens {...props} />
         </div>
     </VideoContext.Provider>
