@@ -56,6 +56,8 @@ export default class Dropdown extends PureComponent {
       return
     }
 
+    this.tooltip.update()
+
     this.setState(prevState => ({
       lastTimeStamp: event.timeStamp,
       show: !prevState.show,

@@ -41,6 +41,8 @@ const Video = ({
         <div
           ref={containerRef}
           className={classes}
+          onClick={video.togglePlay}
+          onDoubleClick={video.toggleFullscreen}
         >
           <video
             ref={videoRef}
@@ -49,8 +51,6 @@ const Video = ({
             preload='metadata'
             {...props}
             controls={false}
-            onClick={video.togglePlay}
-            onDoubleClick={video.toggleFullscreen}
           />
 
           <VideoControls {...props} />

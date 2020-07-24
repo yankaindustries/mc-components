@@ -97,6 +97,9 @@ const useVideo = (videoRef, containerRef) => {
     error: function handleError () {
       setState(STATE_ERROR)
     },
+    contextmenu: function handleContextMenu (event) {
+      event.preventDefault()
+    },
   }
 
   const documentEvents = {

@@ -3,6 +3,7 @@
   position: relative;
   background: $mc-color-dark;
   overflow: hidden;
+  user-select: none;
 
   &__video {
     position: absolute;
@@ -12,6 +13,7 @@
     height: 100%;
     object-fit: fit;
     z-index: 0;
+    pointer-events: none;
 
     .mc-video--cover & { object-fit: cover; }
     .mc-video--fill & { object-fit: fill; }
