@@ -1,19 +1,18 @@
 import React, { useContext } from 'react'
 
-import Button from '../Button'
-import Icon from '../Icons'
-import Dropdown from '../Dropdown'
-import DropdownToggle from '../DropdownToggle'
-import DropdownContent from '../DropdownContent'
-import DropdownHeader from '../DropdownHeader'
-import DropdownBody from '../DropdownBody'
-
 import {
   VideoContext,
   STATE_PLAYING,
   STATE_ENDED,
 } from './Video'
-import Slider from './Slider'
+import Button from '../Button'
+import Icon from '../Icons'
+import Slider from '../Slider'
+import Dropdown from '../Dropdown'
+import DropdownToggle from '../DropdownToggle'
+import DropdownContent from '../DropdownContent'
+import DropdownHeader from '../DropdownHeader'
+import DropdownBody from '../DropdownBody'
 
 
 const toTime = seconds => new Date(seconds * 1000).toISOString().substr(14, 5)
@@ -81,7 +80,7 @@ const VideoControls = () => {
         </Button>
       </div>
 
-      <div className='mc-video__mute mc-video__control'>
+      <div className='mc-video__volume mc-video__control'>
         <Button
           onClick={toggleMute}
           kind='link'
@@ -90,7 +89,7 @@ const VideoControls = () => {
           <Icon kind={volumeIcon} className='mc-icon mc-icon--4' />
         </Button>
 
-        <div className='mc-video__volume'>
+        <div className='mc-video__volume-slider'>
           <Slider
             value={volume}
             onChange={setVolume}
@@ -104,7 +103,7 @@ const VideoControls = () => {
 
       <div className='mc-video__spacer' />
 
-      <div className='mc-video__control'>
+      <div className='mc-video__settings mc-video__control'>
         <Dropdown placement='top-end'>
           <DropdownToggle>
             <Button
@@ -146,7 +145,7 @@ const VideoControls = () => {
         </Dropdown>
       </div>
 
-      <div className='mc-video__control'>
+      <div className='mc-video__fullscreen mc-video__control'>
         <Button
           onClick={toggleFullscreen}
           kind='link'

@@ -31,18 +31,9 @@ const Video = ({
 
   const video = useVideo(videoRef, containerRef)
 
-  const handleMouseOver = () => {
-    video.setControls(true)
-  }
-
-  const handleMouseOut = () => {
-    video.setControls(false)
-  }
-
   const classes = cn({
     'mc-video': true,
     [`mc-video--${fit}`]: fit,
-    'mc-video--show-controls': video.controls,
   })
 
   return (
@@ -50,8 +41,6 @@ const Video = ({
         <div
           ref={containerRef}
           className={classes}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
         >
           <video
             ref={videoRef}
@@ -61,6 +50,7 @@ const Video = ({
             {...props}
             controls={false}
             onClick={video.togglePlay}
+            onDoubleClick={video.toggleFullscreen}
           />
 
           <VideoControls {...props} />

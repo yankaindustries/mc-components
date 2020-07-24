@@ -30,7 +30,8 @@
     transform: translate(0, 120%);
     transition: transform ease 400ms;
 
-    .mc-video--show-controls & {
+    .mc-video:hover &,
+    .mc-video:active & {
       transform: translate(0, 0);
     }
   }
@@ -58,30 +59,69 @@
       left: 0;
       bottom: 0;
       width: 100%;
+
+      &__bar {
+        bottom: 0;
+        transform: none;
+      }
     }
 
-    .mc-video__controls:hover & .mc-slider {
-      height: 20px;
+    .mc-video__controls:hover &,
+    .mc-video__controls:active & {
+      .mc-slider {
+        height: 20px;
+
+        &__bar {
+          height: 100%;
+        }
+      }
     }
   }
 
   &__volume {
-    position: relative;
-    width: 60px;
-    height: 100%;
+    display: none;
 
-    .mc-slider {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+    @media (min-width: $mc-bp-md) {
+      display: flex;
+    }
+
+    &-slider {
+      position: relative;
+      width: 0;
+      height: 100%;
+      opacity: 0;
+      transition: opacity ease 200ms, width ease 200ms;
+
+      .mc-video__volume:hover &,
+      .mc-video__volume:active & {
+        width: 60px;
+        opacity: 1;
+      }
+
+      .mc-slider {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 
-  &__volume,
-  &__time,
-  &__duration {
+  &__time {
+    display: none;
     margin: 0 12px;
+
+    @media (min-width: $mc-bp-md) {
+      display: flex;
+    }
+  }
+
+  &__settings {
+    display: none;
+
+    @media (min-width: $mc-bp-md) {
+      display: block;
+    }
   }
 
   &__view {
@@ -95,7 +135,6 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    // background: rgba(0, 0, 0, 0.7);
     transition: 200ms ease opacity;
   }
 
@@ -110,46 +149,5 @@
       visibility: visible;
       transition: visibility 0s, opacity 200ms ease;
     }
-  }
-}
-
-.mc-slider {
-  position: relative;
-  width: 100%;
-  height: 4px;
-  cursor: pointer;
-  transition: height ease 300ms;
-
-  &__bar {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba($mc-color-light, 0.2);
-  }
-
-  &__buffer,
-  &__fill {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: rgba($mc-color-light, 0.5);
-  }
-
-  &__fill {
-    background: $mc-color-primary;
-  }
-
-  &__handle {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 4px;
-    height: calc(100% + 4px);
-    background: $mc-color-light;
-    border-radius: 2px;
-    transform: translate(-50%, -50%);
   }
 }

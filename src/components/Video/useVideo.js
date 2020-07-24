@@ -22,7 +22,6 @@ const useVideo = (videoRef, containerRef) => {
   const [buffer, setBuffer] = useState(0)
   const [muted, saveMuted] = useState(false)
   const [volume, saveVolume] = useState(1)
-  const [controls, setControls] = useState(false)
   const [speed, saveSpeed] = useState(1)
   const [fullscreen, setFullscreen] = useState(false)
 
@@ -55,6 +54,8 @@ const useVideo = (videoRef, containerRef) => {
   const setVolume = (level) => {
     // eslint-disable-next-line no-param-reassign
     videoRef.current.volume = level
+    // eslint-disable-next-line no-param-reassign
+    videoRef.current.muted = false
   }
 
   const videoEvents = {
@@ -127,12 +128,8 @@ const useVideo = (videoRef, containerRef) => {
     time,
     duration,
     buffer,
-    controls,
     fullscreen,
     speed,
-
-    setControls,
-    setFullscreen,
 
     togglePlay,
     toggleMute,

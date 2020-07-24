@@ -1,0 +1,41 @@
+.mc-slider {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+
+  &__bar {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    width: 100%;
+    height: 4px;
+    background: rgba($mc-color-light, 0.2);
+    transform: translateY(50%);
+    transition: height ease 300ms;
+  }
+
+  &__buffer,
+  &__fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: rgba($mc-color-light, 0.5);
+  }
+
+  &__fill {
+    background: $mc-color-primary;
+  }
+
+  &__handle {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: calc(100% + 8px);
+    background: $mc-color-light;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+  }
+}
