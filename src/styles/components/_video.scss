@@ -1,0 +1,155 @@
+.mc-video {
+  @include aspect-ratio(16, 9);
+  position: relative;
+  background: $mc-color-dark;
+  overflow: hidden;
+  user-select: none;
+
+  &__video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fit;
+    z-index: 0;
+    pointer-events: none;
+
+    .mc-video--cover & { object-fit: cover; }
+    .mc-video--fill & { object-fit: fill; }
+  }
+
+  &__controls {
+    position: absolute;
+    display: flex;
+    align-items: stretch;
+    pointer-events: all;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba($mc-color-dark, 0.4);
+    transform: translate(0, 120%);
+    transition: transform ease 400ms;
+
+    .mc-video:hover &,
+    .mc-video:active & {
+      transform: translate(0, 0);
+    }
+  }
+
+  &__control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+
+  &__scrubber {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    height: 20px;
+
+    .mc-slider {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+
+      &__bar {
+        bottom: 0;
+        transform: none;
+      }
+    }
+
+    .mc-video__controls:hover &,
+    .mc-video__controls:active & {
+      .mc-slider {
+        height: 20px;
+
+        &__bar {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &__volume {
+    display: none;
+
+    @media (min-width: $mc-bp-md) {
+      display: flex;
+    }
+
+    &-slider {
+      position: relative;
+      width: 0;
+      height: 100%;
+      opacity: 0;
+      transition: opacity ease 200ms, width ease 200ms;
+
+      .mc-video__volume:hover &,
+      .mc-video__volume:active & {
+        width: 60px;
+        opacity: 1;
+      }
+
+      .mc-slider {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__time {
+    display: none;
+    margin: 0 12px;
+
+    @media (min-width: $mc-bp-md) {
+      display: flex;
+    }
+  }
+
+  &__settings {
+    display: none;
+
+    @media (min-width: $mc-bp-md) {
+      display: block;
+    }
+  }
+
+  &__view {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: 200ms ease opacity;
+  }
+
+  &__settings-view {
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s 200ms, opacity 200ms ease;
+
+    .mc-video--show-settings & {
+      opacity: 1;
+      visibility: visible;
+      transition: visibility 0s, opacity 200ms ease;
+    }
+  }
+}
