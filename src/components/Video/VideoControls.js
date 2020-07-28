@@ -17,7 +17,7 @@ import DropdownBody from '../DropdownBody'
 
 const toTime = seconds => new Date(seconds * 1000).toISOString().substr(14, 5)
 
-const hijackClick = event => event.stopPropagation()
+const hijackEvent = event => event.stopPropagation()
 
 
 const VideoControls = () => {
@@ -60,7 +60,8 @@ const VideoControls = () => {
   return (
     <div
       className='mc-video__controls mc-text-small'
-      onClick={hijackClick}
+      onClick={hijackEvent}
+      onDoubleClick={hijackEvent}
     >
       <div className='mc-video__scrubber'>
         <Slider

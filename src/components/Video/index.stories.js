@@ -10,10 +10,11 @@ import DocHeader from '../../utils/DocHeader'
 // 5747090186001
 
 // <BrightcoveVideo
-// videoId='6116577124001'
-// fit='cover'
-// controls
+//   videoId='6116577124001'
+//   fit='cover'
+//   controls
 // />
+
 
 storiesOf('Components|Video', module)
   .add('Summary', withAddons({

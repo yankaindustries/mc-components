@@ -32,7 +32,8 @@ const Video = ({
 
   const classes = cn({
     'mc-video': true,
-    [`mc-video--${fit}`]: fit,
+    [`mc-video--fit-${fit}`]: fit,
+    [`mc-video--state-${video.state}`]: video.state,
   })
 
   return (
