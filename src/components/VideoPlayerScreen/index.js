@@ -6,7 +6,6 @@ import cn from 'classnames'
 import VideoPlayerPortalScreen from '../VideoPlayerPortalScreen'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
-
 const VideoPlayerScreen = ({
   isActive,
   variation,
@@ -26,6 +25,7 @@ const VideoPlayerScreen = ({
         appear={isActive}
         in={isActive}
         classNames='bc-player__screen-'
+        timeout={500}
       >
         <div className={classNames}>
           {children}
