@@ -63,6 +63,13 @@
       position: absolute;
       left: 0;
       width: 100%;
+
+      &__bar,
+      &__buffer,
+      &__fill {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     }
   }
 
