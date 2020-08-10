@@ -13,3 +13,5 @@ jobs:
         with:
           args: install
       - run: yarn deploy
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
