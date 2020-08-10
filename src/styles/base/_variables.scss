@@ -4,7 +4,7 @@
 // mc-font, mc-color, mc-contain, mc-asset
 
 // Fonts
-$mc-font-default: "Sohne", "Helvetica", "Arial", sans-serif !default;
+$mc-font-default: "Comic Sans MS", serif, "Sohne", "Helvetica", "Arial", sans-serif !default;
 
 // Share line-height values between
 // the font definitions and the max-height
@@ -35,15 +35,18 @@ $mc-color-gray-600:           #dbdde1 !default;
 $mc-color-gray-700:           #f3f3f3 !default;
 $mc-color-gray-800:           #f8f8f8 !default;
 
-$mc-color-primary:           rgb(242, 68, 98) !default;
+// $mc-color-primary:           rgb(242, 68, 98) !default;
+$mc-color-primary:           #0f0 !default;
 $mc-color-primary-hover:     lighten($mc-color-primary, 5%) !default;
 $mc-color-primary-active:    darken($mc-color-primary, 5%) !default;
 
-$mc-color-secondary:           $mc-color-gray-200 !default;
+// $mc-color-secondary:           $mc-color-gray-200 !default;
+$mc-color-secondary:           #ff0 !default;
 $mc-color-secondary-hover:     $mc-color-gray-300 !default;
 $mc-color-secondary-active:    $mc-color-gray-200 !default;
 
-$mc-color-tertiary:            $mc-color-gray-400 !default;
+// $mc-color-tertiary:            $mc-color-gray-400 !default;
+$mc-color-tertiary:            #f0f !default;
 $mc-color-tertiary-hover:      $mc-color-gray-300 !default;
 $mc-color-tertiary-active:     $mc-color-gray-200 !default;
 
