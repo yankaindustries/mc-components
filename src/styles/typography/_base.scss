@@ -1,3 +1,40 @@
+// 200   extra leicht      extra light
+// 300   leicht            light
+// 400   buch              book
+// 500   kraftig           strong
+// 600   halbfett          semi-fat
+// 700   fett              bold
+// 800   dreiviertelfett   three-quarter fat
+// 900   extra fett        extra fat
+
+// @font-face {
+//   font-family: "Sohne";
+//   src:
+//     url("/fonts/Sohne-Leicht.woff2") format("woff2"),
+//     url("/fonts/Sohne-Leicht.woff") format("woff");
+//   font-weight: 300;
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: "Sohne";
+//   src:
+//     url("/fonts/Sohne-Buch.woff2") format("woff2"),
+//     url("/fonts/Sohne-Buch.woff") format("woff");
+//   font-weight: 400;
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: "Sohne";
+//   src:
+//     url("/fonts/Sohne-Halbfett.woff2") format("woff2"),
+//     url("/fonts/Sohne-Halbfett.woff") format("woff");
+//   font-weight: 500;
+//   font-display: swap;
+// }
+
+
 html {
   /* stylelint-disable-next-line declaration-no-important */
   font-size: $mc-step-base * 1px !important;
@@ -52,7 +89,7 @@ a {
   &-h6,
   &-h7,
   &-h8 {
-    font-weight: 700;
+    font-weight: 500;
     line-height: $mc-lh-headers;
     letter-spacing: $mc-ls-headers;
   }
