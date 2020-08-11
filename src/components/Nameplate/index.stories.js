@@ -57,12 +57,13 @@ const NameplateStory = () =>
       <div className='row mc-text--center'>
         {instructors.map(instructor =>
           <div className='col-4' key={instructor.course}>
-            <Tile aspectRatio='16x9'>
+            <Tile aspectRatio='4x3'>
               <TileOverlay type='solid' />
-              <TileCaption position='center center'>
+              <TileCaption position='center center' padding={4}>
                 <div className='row'>
                   <div className='offset-1 col-10'>
-                    <Nameplate src={instructor.nameplate} separator />
+                    <Nameplate src={instructor.nameplate} />
+                    <div className='mc-nameplate__separator' />
                     <p className='mc-text-small'>{instructor.course}</p>
                   </div>
                 </div>
@@ -80,10 +81,11 @@ const NameplateStory = () =>
             <Tile aspectRatio='2x3'>
               <TileImage imageUrl='https://placekitten.com/600/600' />
               <TileOverlay />
-              <TileCaption position='center bottom' padding={9}>
+              <TileCaption position='center bottom' padding={4}>
                 <div className='row'>
                   <div className='offset-1 col-10'>
-                    <Nameplate src={instructor.nameplate} separator fixed />
+                    <Nameplate src={instructor.nameplate} fixed />
+                    <div className='mc-nameplate__separator' />
                     <p className='mc-text-small mc-text--2-lines'>{instructor.course}</p>
                   </div>
                 </div>

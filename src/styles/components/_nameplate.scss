@@ -2,7 +2,6 @@ $whitespace: 5% !default;
 
 .mc-nameplate {
   position: relative;
-  padding-bottom: $whitespace;
   margin-bottom: $whitespace;
 
   &.mc-nameplate--fixed {
@@ -29,13 +28,10 @@ $whitespace: 5% !default;
   }
 
   &__separator {
-    position: absolute;
-    left: 50%;
-    top: 100%;
-    display: inline-block;
+    display: block;
+    margin: ($whitespace + 2%) auto $whitespace;
     width: 6%;
     height: var(--mc-scale-1);
-    transform: translate(-50%);
     background: var(--mc-theme-text);
   }
 }
