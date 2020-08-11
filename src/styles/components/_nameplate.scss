@@ -4,20 +4,6 @@ $whitespace: 5% !default;
   position: relative;
   margin-bottom: $whitespace;
 
-  &.mc-nameplate--fixed {
-    @include aspect-ratio(21, 9);
-  }
-
-  &__content {
-    .mc-nameplate--fixed & {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
   &__image {
     width: 100% + ($whitespace * 2);
     height: 100% + ($whitespace * 2);
