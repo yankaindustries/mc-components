@@ -12,6 +12,7 @@ import TileCaption from '../TileCaption'
 import Nameplate from './'
 
 import aw from './assets/aw.png'
+import de from './assets/de.png'
 import jb from './assets/jb.png'
 import lmrc from './assets/lmrc.png'
 import mco from './assets/mco.png'
@@ -24,6 +25,11 @@ const instructors = [
     nameplate: aw,
     course: 'Teaches Creativity and Leadership',
     image: 'https://www.masterclass.com/course-images/images/3500/original/1570652247-awi_primary_2x3.jpg',
+  },
+  {
+    nameplate: de,
+    course: 'Teaches Music for Film',
+    image: 'https://www.masterclass.com/course-images/images/4798/original/1572490008-DE_cinematic_12x5.jpg',
   },
   {
     nameplate: jb,
@@ -49,6 +55,7 @@ const instructors = [
     nameplate: th,
     course: 'Teaches Skateboarding',
     image: 'https://www.masterclass.com/course-images/images/11366/original/1592437259-TH_primary_2x3.jpg',
+    hero: 'https://www.masterclass.com/course-images/images/11367/original/1592437260-TH_secondary_16x9.jpg',
   },
 ]
 
@@ -61,11 +68,11 @@ const NameplateStory = () =>
 
     <DocSection title='Hero'>
       <Tile aspectRatio='16x9' className='mc-corners--rounded' style={{ overflow: 'hidden' }}>
-        <TileImage imageUrl='https://www.masterclass.com/course-images/images/11367/original/1592437260-TH_secondary_16x9.jpg' />
+        <TileImage imageUrl={instructors[6].hero} />
         <TileCaption position='center bottom' padding={10}>
             <div className='row'>
               <div className='offset-4 col-4'>
-                <Nameplate src={instructors[5].nameplate} />
+                <Nameplate src={instructors[6].nameplate} />
               </div>
             </div>
         </TileCaption>
