@@ -1,23 +1,16 @@
 $whitespace: 5% !default;
 
 .mc-nameplate {
-  position: relative;
-  margin-bottom: $whitespace;
-
-  &__image {
-    width: 100% + ($whitespace * 2);
-    height: 100% + ($whitespace * 2);
-    margin: -$whitespace;
-    object-fit: contain;
-    object-position: bottom;
-    vertical-align: middle;
-  }
+  width: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  vertical-align: middle;
 
   &__separator {
     display: block;
-    margin: ($whitespace + 2%) auto $whitespace;
-    width: 6%;
-    height: var(--mc-scale-1);
+    margin: $whitespace/2 auto $whitespace;
+    width: $whitespace;
+    height: 0.25vw;
     background: var(--mc-theme-text);
   }
 }

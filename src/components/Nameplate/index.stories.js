@@ -104,8 +104,7 @@ const NameplateStory = () =>
               <TileCaption position='center center' padding={4}>
                 <div className='row'>
                   <div className='offset-1 col-10'>
-                    <Nameplate src={instructor.nameplate} />
-                    <div className='mc-nameplate__separator' />
+                    <Nameplate src={instructor.nameplate} separator />
                     <p className='mc-text-small'>{instructor.course}</p>
                   </div>
                 </div>
@@ -126,8 +125,7 @@ const NameplateStory = () =>
               <TileCaption position='center bottom' padding={4}>
                 <div className='row'>
                   <div className='offset-1 col-10'>
-                    <Nameplate src={instructor.nameplate} />
-                    <div className='mc-nameplate__separator' />
+                    <Nameplate src={instructor.nameplate} separator />
                     <p className='mc-text-small mc-text--2-lines'>{instructor.course}</p>
                   </div>
                 </div>
