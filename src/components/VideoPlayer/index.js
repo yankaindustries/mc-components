@@ -525,6 +525,7 @@ export default class VideoPlayer extends PureComponent {
       'bc-player__video': true,
       'bc-player__video--default': true,
       'video-js': true,
+      'vjs-tech': true,
       [`vjs-fill-${fill}`]: !!fill,
     })
 
