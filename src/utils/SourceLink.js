@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-const REPO_BASE_URL = 'https://github.com/yankaindustries/mc-components/blob/develop/src/'
+const REPO_BASE_URL = 'https://github.com/yankaindustries/mc-components/blob/main/src/'
 
 const SourceLink = ({ path }) =>
   <a
