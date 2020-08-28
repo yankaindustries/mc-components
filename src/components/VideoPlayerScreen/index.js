@@ -6,11 +6,6 @@ import cn from 'classnames'
 import VideoPlayerPortalScreen from '../VideoPlayerPortalScreen'
 import { PROP_TYPE_CHILDREN } from '../constants'
 
-
-const endListener = (node, done) =>
-  node.addEventListener('transitionend', done, false)
-
-
 const VideoPlayerScreen = ({
   isActive,
   variation,
@@ -30,7 +25,7 @@ const VideoPlayerScreen = ({
         appear={isActive}
         in={isActive}
         classNames='bc-player__screen-'
-        addEndListener={endListener}
+        timeout={500}
       >
         <div className={classNames}>
           {children}

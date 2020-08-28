@@ -35,10 +35,10 @@ The style library must also be imported manually into your root `SCSS` file.
 @import 'mc-components/dist/styles/scss/index'
 ```
 
-We use Lato as our primary font for headings and body text.  You can import it in your CSS below, or import it into your asset pipeline.
+Masterclass uses the licensed font "Sohne" as its primary font for headings and body text. You can replace the references to this font stack by updating the `$mc-font-default` variable in the style variables file.
 
 ```scss
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700")
+src/styles/base/variables.scss
 ```
 
 # Development
