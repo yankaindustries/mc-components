@@ -45,7 +45,9 @@ const Slider = ({
       <div className='mc-slider__bar'>
         <div className='mc-slider__buffer' style={{ width: bufferPerc }} />
         <div className='mc-slider__fill' style={{ width: valuePerc }} />
-        <div className='mc-slider__handle' style={{ left: valuePerc }} />
+        <div className='mc-slider__handle-container'>
+          <div className='mc-slider__handle' style={{ left: valuePerc }} />
+        </div>
       </div>
     </div>
   )

@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import useVideo from './useVideo'
-import VideoControls from './VideoControls'
-import VideoScreens from './VideoScreens'
-
+import Controls from './Controls'
 
 export const STATE_IDLE = 'idle'
 export const STATE_PLAYING = 'playing'
@@ -23,38 +21,82 @@ export const VideoContext = React.createContext()
 const Video = ({
   videoRef: passedVideoRef,
   fit = FIT_FIT,
+  initialTime,
+
+  renderControls = () => <Controls />,
+  renderIdleScreen,
+  renderPauseScreen,
+  renderEndScreen,
+
+  onLoadStart = () => {},
+  onLoadedMetadata = () => {},
+  onLoadedData = () => {},
+  onPlay = () => {},
+  onPause = () => {},
+  onEnded = () => {},
+  onTimeUpdate = () => {},
+  onSeeking = () => {},
+  onSeeked = () => {},
+  onError = () => {},
+
   ...props
 }) => {
   const videoRef = useRef(passedVideoRef)
   const containerRef = useRef(null)
+  const documentRef = useRef(document)
 
-  const video = useVideo(videoRef, containerRef)
+  const video = useVideo(videoRef, containerRef, documentRef)
+
+  const handleEvent = callback => event => callback(event, video)
+
+  const screens = {
+    [STATE_IDLE]: renderIdleScreen,
+    [STATE_PAUSED]: renderPauseScreen,
+    [STATE_ENDED]: renderEndScreen,
+  }
+
+  const renderScreen = screens[video.state]
 
   const classes = cn({
     'mc-video': true,
-    [`mc-video--${fit}`]: fit,
+    [`mc-video--fit-${fit}`]: fit,
+    [`mc-video--state-${video.state}`]: video.state,
   })
 
   return (
     <VideoContext.Provider value={video}>
-        <div
-          ref={containerRef}
-          className={classes}
-          onClick={video.togglePlay}
-          onDoubleClick={video.toggleFullscreen}
-        >
-          <video
-            ref={videoRef}
-            className='mc-video__video'
-            crossOrigin='anonymous'
-            preload='metadata'
-            {...props}
-            controls={false}
-          />
+      <div
+        ref={containerRef}
+        className={classes}
+        onClick={video.togglePlay}
+        onDoubleClick={video.toggleFullscreen}
+      >
+        <video
+          ref={videoRef}
+          className='mc-video__video'
+          crossOrigin='anonymous'
+          preload='metadata'
+          {...props}
+          onLoadStart={handleEvent(onLoadStart)}
+          onLoadedMetadata={handleEvent(onLoadedMetadata)}
+          onLoadedData={handleEvent(onLoadedData)}
+          onPlay={handleEvent(onPlay)}
+          onPause={handleEvent(onPause)}
+          onEnded={handleEvent(onEnded)}
+          onTimeUpdate={handleEvent(onTimeUpdate)}
+          onSeeking={handleEvent(onSeeking)}
+          onSeeked={handleEvent(onSeeked)}
+          onError={handleEvent(onError)}
+          controls={false}
+        />
 
-          <VideoControls {...props} />
-          <VideoScreens {...props} />
-        </div>
+        {renderControls()}
+        {renderScreen &&
+          <div className={`mc-video__view mc-video__screen-view mc-video__screen-view--${video.state}`}>
+            {renderScreen()}
+          </div>
+        }
+      </div>
     </VideoContext.Provider>
   )
 }
@@ -62,8 +104,25 @@ const Video = ({
 
 Video.propTypes = {
   children: PropTypes.any,
+  initialTime: PropTypes.number,
   fit: PropTypes.oneOf([FIT_FIT, FIT_COVER, FIT_FILL]),
   videoRef: PropTypes.func,
+
+  renderControls: PropTypes.node,
+  renderIdleScreen: PropTypes.node,
+  renderPauseScreen: PropTypes.node,
+  renderEndScreen: PropTypes.node,
+
+  onLoadStart: PropTypes.func,
+  onLoadedMetadata: PropTypes.func,
+  onLoadedData: PropTypes.func,
+  onPlay: PropTypes.func,
+  onPause: PropTypes.func,
+  onEnded: PropTypes.func,
+  onTimeUpdate: PropTypes.func,
+  onSeeking: PropTypes.func,
+  onSeeked: PropTypes.func,
+  onError: PropTypes.func,
 }
 
 
