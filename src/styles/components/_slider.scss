@@ -9,9 +9,9 @@
     left: 0;
     bottom: 50%;
     width: 100%;
-    height: 4px;
+    height: var(--mc-scale-1);
     background: rgba($mc-color-light, 0.2);
-    border-radius: 2px;
+    border-radius: calc(var(--mc-scale-1) / 2);
     transform: translateY(50%);
     transition: height ease 300ms;
   }
