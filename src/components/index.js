@@ -38,6 +38,7 @@ export { default as RadioField } from './RadioField'
 export { default as ResponsiveHandler } from './ResponsiveHandler'
 export { default as Select } from './Select'
 export { default as SelectField } from './SelectField'
+export { default as Separator } from './Separator'
 export { default as Sticky } from './Sticky'
 export { default as Textarea } from './Textarea'
 export { default as TextareaField } from './TextareaField'
@@ -50,8 +51,8 @@ export { default as TileProgress } from './TileProgress'
 export { default as TileVideo } from './TileVideo'
 export { default as Toast } from './Toast'
 export { default as ToggleHandler } from './ToggleHandler'
+export { default as Video, Source } from './Video'
 export { default as VideoPlayer } from './VideoPlayer'
-export { default as Separator } from './Separator'
 
 
 // ICONS

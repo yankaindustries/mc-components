@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import useVideo from './useVideo'
 import Controls from './Controls'
+import { renderChildren } from '../helpers'
 
 export const STATE_IDLE = 'idle'
 export const STATE_PLAYING = 'playing'
@@ -20,6 +21,8 @@ export const VideoContext = React.createContext()
 
 const Video = ({
   videoRef: passedVideoRef,
+
+  children,
   fit = FIT_FIT,
   initialTime,
 
@@ -88,7 +91,9 @@ const Video = ({
           onSeeked={handleEvent(onSeeked)}
           onError={handleEvent(onError)}
           controls={false}
-        />
+        >
+          {renderChildren(children, { videoRef })}
+        </video>
 
         {renderControls()}
         {renderScreen &&

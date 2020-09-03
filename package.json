@@ -58,6 +58,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
+    "hls.js": "^0.14.11",
     "popper.js": "^1.15.0",
     "react-select": "^3.0.5",
     "react-slick": "^0.25.2",
