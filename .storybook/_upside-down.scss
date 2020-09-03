@@ -6,7 +6,6 @@
 // yet, so they'll live here!
 
 // THE UPSIDE DOWN
-
 .mc-card {
   padding: $grid-gutter-width-xl / 2;
 
@@ -346,4 +345,39 @@ a {
       transition-delay: 0s;
     }
   }
+}
+
+
+// Font includes
+/* Sohne - Light */
+@font-face {
+  font-family: 'Sohne';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Sohne Leicht'), local('Sohne-Leicht'),
+    url('//masterclass.com/fonts/sohne-leicht.woff2') format('woff2'),
+    url('//masterclass.com/fonts/sohne-leicht.woff') format('woff');
+}
+
+/* Sohne - Regular */
+@font-face {
+  font-family: 'Sohne';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Sohne Buch'), local('Sohne-Buch'),
+    url('//masterclass.com/fonts/sohne-buch.woff2') format('woff2'),
+    url('//masterclass.com/fonts/sohne-buch.woff') format('woff');
+}
+
+/* Sohne - Bold */
+@font-face {
+  font-family: 'Sohne';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Sohne Halbfett'), local('Sohne-Halbfett'),
+    url('//masterclass.com/fonts/sohne-halbfett.woff2') format('woff2'),
+    url('//masterclass.com/fonts/sohne-halbfett.woff') format('woff');
 }

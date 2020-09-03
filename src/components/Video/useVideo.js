@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
+import useBind from './useBind'
 import {
   STATE_IDLE,
   STATE_PLAYING,
@@ -9,15 +10,16 @@ import {
 } from './Video'
 
 
-const runWith = (obj, method, events) =>
-  Object.keys(events).forEach(key =>
-    obj[method](key, events[key]),
-  )
+const SEEK_AMOUNT = 5
+const VOLUME_AMOUNT = 0.1
+
+const minMax = (value, min, max) => Math.min(Math.max(value, min), max)
 
 
-const useVideo = (videoRef, containerRef) => {
+const useVideo = (videoRef, containerRef, documentRef) => {
+  const [active, setActive] = useState(false)
   const [state, setState] = useState(STATE_IDLE)
-  const [time, setTime] = useState(0)
+  const [time, saveTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [buffer, setBuffer] = useState(0)
   const [muted, saveMuted] = useState(false)
@@ -25,20 +27,29 @@ const useVideo = (videoRef, containerRef) => {
   const [speed, saveSpeed] = useState(1)
   const [fullscreen, setFullscreen] = useState(false)
 
+  const hasStarted = () => state !== STATE_IDLE
+  const isPaused = () => state === STATE_PAUSED
+  const isPlaying = () => state === STATE_PLAYING
+
   const toggleFullscreen = () => {
-    if (document.fullscreenElement) {
+    if (fullscreen) {
       document.exitFullscreen()
     } else {
       containerRef.current.requestFullscreen()
     }
   }
 
-  const togglePlay = () =>
-    videoRef.current[state === STATE_PLAYING ? 'pause' : 'play']()
+  const togglePlay = () => {
+    videoRef.current[isPlaying() ? 'pause' : 'play']()
+  }
 
-  const scrubTo = (newTime) => {
+  const setTime = (newTime) => {
     // eslint-disable-next-line no-param-reassign
-    videoRef.current.currentTime = newTime
+    videoRef.current.currentTime = minMax(newTime, 0, duration)
+  }
+
+  const adjustTime = (amount) => {
+    setTime(videoRef.current.currentTime + amount)
   }
 
   const setSpeed = (rate) => {
@@ -53,14 +64,18 @@ const useVideo = (videoRef, containerRef) => {
 
   const setVolume = (level) => {
     // eslint-disable-next-line no-param-reassign
-    videoRef.current.volume = level
+    videoRef.current.volume = minMax(level, 0, 1)
     // eslint-disable-next-line no-param-reassign
     videoRef.current.muted = false
   }
 
-  const videoEvents = {
+  const adjustVolume = (amount) => {
+    setVolume(videoRef.current.volume + amount)
+  }
+
+  useBind(videoRef, {
     timeupdate: function handleTimeUpdate (event) {
-      setTime(event.target.currentTime)
+      saveTime(event.target.currentTime)
     },
     durationchange: function handleDurationChange (event) {
       setDuration(event.target.duration)
@@ -89,7 +104,7 @@ const useVideo = (videoRef, containerRef) => {
       setState(STATE_PAUSED)
     },
     seeking: function handleSeeking (event) {
-      setTime(event.target.currentTime)
+      saveTime(event.target.currentTime)
     },
     ended: function handleEnded () {
       setState(STATE_ENDED)
@@ -100,46 +115,71 @@ const useVideo = (videoRef, containerRef) => {
     contextmenu: function handleContextMenu (event) {
       event.preventDefault()
     },
-  }
-
-  const documentEvents = {
-    fullscreenchange: () => {
+  })
+  useBind(documentRef, {
+    click: function handleClick (event) {
+      setActive(containerRef.current.contains(event.target))
+    },
+    fullscreenchange: function handleFullscreenChange () {
       setFullscreen(!!document.fullscreenElement)
     },
-  }
+    keydown: function handleKeyDown (event) {
+      if (!active) return
 
-  useEffect(
-    () => {
-      runWith(videoRef.current, 'addEventListener', videoEvents)
-      return () => runWith(videoRef.current, 'removeEventListener', videoEvents)
+      switch (event.code) {
+        case 'Space': // SPACE
+          event.preventDefault()
+          togglePlay()
+          break
+        case 'ArrowRight':
+          event.preventDefault()
+          adjustTime(event.shiftKey ? SEEK_AMOUNT * 6 : SEEK_AMOUNT)
+          break
+        case 'ArrowLeft':
+          event.preventDefault()
+          adjustTime(event.shiftKey ? -SEEK_AMOUNT * 6 : -SEEK_AMOUNT)
+          break
+        case 'ArrowUp':
+          event.preventDefault()
+          adjustVolume(VOLUME_AMOUNT)
+          break
+        case 'ArrowDown':
+          event.preventDefault()
+          adjustVolume(-VOLUME_AMOUNT)
+          break
+        case 'KeyM':
+          event.preventDefault()
+          toggleMute()
+          break
+        default:
+          break
+      }
     },
-    [videoRef],
-  )
-
-  useEffect(
-    () => {
-      runWith(document, 'addEventListener', documentEvents)
-      return () => runWith(document, 'removeEventListener', documentEvents)
-    },
-    [containerRef],
-  )
+  }, [state, active])
 
   return {
-    state,
-    volume,
-    muted,
-    time,
-    duration,
-    buffer,
-    fullscreen,
-    speed,
+    videoRef,
+    containerRef,
 
-    togglePlay,
-    toggleMute,
-    setVolume,
-    scrubTo,
+    buffer,
+    duration,
+    fullscreen,
+    muted,
+    speed,
+    state,
+    time,
+    volume,
+
+    hasStarted,
+    isPaused,
+    isPlaying,
+
+    setTime,
     setSpeed,
+    setVolume,
     toggleFullscreen,
+    toggleMute,
+    togglePlay,
   }
 }
 
