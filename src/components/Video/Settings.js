@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { uniqBy } from 'lodash'
 
 import { VideoContext } from './Video'
 
@@ -13,9 +14,15 @@ import DropdownBody from '../DropdownBody'
 
 const Settings = () => {
   const {
+    levels,
+    level,
     speed,
+
+    setLevel,
     setSpeed,
   } = useContext(VideoContext)
+
+  const filteredLevels = uniqBy(levels, l => l.height)
 
   return (
     <div className='mc-video__settings mc-video__control'>
@@ -30,6 +37,22 @@ const Settings = () => {
         </DropdownToggle>
 
         <DropdownContent>
+          <DropdownHeader className='mc-px-4 mc-py-2 mc-text-x-small mc-opacity--muted mc-mr-3'>
+            Quality
+          </DropdownHeader>
+
+          <DropdownBody className='mc-px-4 mc-py-2'>
+            {filteredLevels.map(l =>
+              <Button
+                key={l.level}
+                kind={(level) === l.level ? 'secondary' : 'link'}
+                onClick={() => setLevel(l.level)}
+              >
+                {l.height}
+              </Button>,
+            )}
+          </DropdownBody>
+
           <DropdownHeader className='mc-px-4 mc-py-2 mc-text-x-small mc-opacity--muted mc-mr-3'>
             Speed
           </DropdownHeader>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
 
@@ -6,11 +6,13 @@ import useVideo from './useVideo'
 import Controls from './Controls'
 import { renderChildren } from '../helpers'
 
+
 export const STATE_IDLE = 'idle'
 export const STATE_PLAYING = 'playing'
 export const STATE_PAUSED = 'paused'
 export const STATE_ENDED = 'ended'
 export const STATE_ERROR = 'error'
+
 
 const FIT_FIT = 'fit'
 const FIT_COVER = 'cover'
@@ -44,11 +46,7 @@ const Video = ({
 
   ...props
 }) => {
-  const videoRef = useRef(passedVideoRef)
-  const containerRef = useRef(null)
-  const documentRef = useRef(document)
-
-  const video = useVideo(videoRef, containerRef, documentRef)
+  const video = useVideo()
 
   const handleEvent = callback => event => callback(event, video)
 
@@ -69,13 +67,13 @@ const Video = ({
   return (
     <VideoContext.Provider value={video}>
       <div
-        ref={containerRef}
+        ref={video.containerRef}
         className={classes}
         onClick={video.togglePlay}
         onDoubleClick={video.toggleFullscreen}
       >
         <video
-          ref={videoRef}
+          ref={video.videoRef}
           className='mc-video__video'
           crossOrigin='anonymous'
           preload='metadata'
@@ -92,7 +90,7 @@ const Video = ({
           onError={handleEvent(onError)}
           controls={false}
         >
-          {renderChildren(children, { videoRef })}
+          {renderChildren(children, video)}
         </video>
 
         {renderControls()}
