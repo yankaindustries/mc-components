@@ -32,7 +32,7 @@ const useVideo = () => {
   const [volume, saveVolume] = useState(1)
   const [speed, saveSpeed] = useState(1)
   const [levels, saveLevels] = useState([])
-  const [level, saveLevel] = useState(null)
+  const [level, saveLevel] = useState(-1)
   const [fullscreen, saveFullscreen] = useState(false)
 
   const hasStarted = () => state !== STATE_IDLE

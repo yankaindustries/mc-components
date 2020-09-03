@@ -48,7 +48,7 @@ const Settings = () => {
                 kind={(level) === l.level ? 'secondary' : 'link'}
                 onClick={() => setLevel(l.level)}
               >
-                {l.height}
+                {l.height}p
               </Button>,
             )}
           </DropdownBody>
