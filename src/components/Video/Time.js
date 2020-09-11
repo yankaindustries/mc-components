@@ -3,7 +3,14 @@ import React, { useContext } from 'react'
 import { VideoContext } from './Video'
 
 
-const toTime = seconds => new Date(seconds * 1000).toISOString().substr(14, 5)
+// const toTime = seconds => new Date(seconds * 1000).toISOString().substr(14, 5)
+const toTime = (seconds) => {
+  if (Number.isNaN(seconds)) return ''
+
+  const d = new Date(null)
+  d.setSeconds(seconds)
+  return d.toISOString().substr(14, 5)
+}
 
 const Time = () => {
   const {
