@@ -41,12 +41,12 @@ storiesOf('Introduction|Introduction', module)
         </p>
 
         <Highlight className='language-scss mc-mb-8'>
-          {'@import \'mc-components/src/styles/index\''}
+          {'@import \'mc-components/src/styles/index\';'}
         </Highlight>
 
         <p className='mc-mb-2'>
           Sometimes you&apos;ll need to reference color variables
-          or breakpoints. You can import the &ldquo;base&rdquo; scss
+          or breakpoints. You can import the &ldquo;base&rdquo; SCSS
           file (which does not add any weight to your page) like so:
         </p>
 
@@ -59,14 +59,14 @@ storiesOf('Introduction|Introduction', module)
         </p>
 
         <Highlight className='language-jsx mc-mb-8'>
-  {`import React from 'react'
-  import { Button } from 'mc-components'
+{`import React from 'react'
+import { Button } from 'mc-components'
 
-  const App = () => (
-    <Button>
-      Hello World
-    </Button>
-  )`}
+const App = () => (
+  <Button>
+    Hello World
+  </Button>
+)`}
         </Highlight>
       </DocSection>
     </div>,
