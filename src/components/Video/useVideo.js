@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Hls from 'hls.js'
 
 import useBind from './useBind'
 import {
@@ -16,16 +17,23 @@ const VOLUME_AMOUNT = 0.1
 const minMax = (value, min, max) => Math.min(Math.max(value, min), max)
 
 
-const useVideo = (videoRef, containerRef, documentRef) => {
-  const [active, setActive] = useState(false)
-  const [state, setState] = useState(STATE_IDLE)
+const useVideo = () => {
+  const videoRef = useRef(null)
+  const containerRef = useRef(null)
+  const documentRef = useRef(document)
+  const hlsRef = useRef(new Hls())
+
+  const [active, saveActive] = useState(false)
+  const [state, saveState] = useState(STATE_IDLE)
   const [time, saveTime] = useState(0)
-  const [duration, setDuration] = useState(0)
-  const [buffer, setBuffer] = useState(0)
+  const [duration, saveDuration] = useState(0)
+  const [buffer, saveBuffer] = useState(0)
   const [muted, saveMuted] = useState(false)
   const [volume, saveVolume] = useState(1)
   const [speed, saveSpeed] = useState(1)
-  const [fullscreen, setFullscreen] = useState(false)
+  const [levels, saveLevels] = useState([])
+  const [level, saveLevel] = useState(-1)
+  const [fullscreen, saveFullscreen] = useState(false)
 
   const hasStarted = () => state !== STATE_IDLE
   const isPaused = () => state === STATE_PAUSED
@@ -50,6 +58,11 @@ const useVideo = (videoRef, containerRef, documentRef) => {
 
   const adjustTime = (amount) => {
     setTime(videoRef.current.currentTime + amount)
+  }
+
+  const setLevel = (level) => {
+    hlsRef.current.nextLevel = level
+    saveLevel(level)
   }
 
   const setSpeed = (rate) => {
@@ -78,10 +91,10 @@ const useVideo = (videoRef, containerRef, documentRef) => {
       saveTime(event.target.currentTime)
     },
     durationchange: function handleDurationChange (event) {
-      setDuration(event.target.duration)
+      saveDuration(event.target.duration)
     },
     progress: function handleProgress (event) {
-      setBuffer(
+      saveBuffer(
         event.target.buffered.end(event.target.buffered.length - 1),
       )
     },
@@ -98,30 +111,31 @@ const useVideo = (videoRef, containerRef, documentRef) => {
       }
     },
     play: function handlePlay () {
-      setState(STATE_PLAYING)
+      saveState(STATE_PLAYING)
     },
     pause: function handlePause () {
-      setState(STATE_PAUSED)
+      saveState(STATE_PAUSED)
     },
     seeking: function handleSeeking (event) {
       saveTime(event.target.currentTime)
     },
     ended: function handleEnded () {
-      setState(STATE_ENDED)
+      saveState(STATE_ENDED)
     },
     error: function handleError () {
-      setState(STATE_ERROR)
+      saveState(STATE_ERROR)
     },
     contextmenu: function handleContextMenu (event) {
       event.preventDefault()
     },
   })
+
   useBind(documentRef, {
     click: function handleClick (event) {
-      setActive(containerRef.current.contains(event.target))
+      saveActive(containerRef.current.contains(event.target))
     },
     fullscreenchange: function handleFullscreenChange () {
-      setFullscreen(!!document.fullscreenElement)
+      saveFullscreen(!!document.fullscreenElement)
     },
     keydown: function handleKeyDown (event) {
       if (!active) return
@@ -157,13 +171,35 @@ const useVideo = (videoRef, containerRef, documentRef) => {
     },
   }, [state, active])
 
+  useEffect(
+    () => {
+      hlsRef.current.attachMedia(videoRef.current)
+
+      hlsRef.current.on(Hls.Events.MANIFEST_PARSED, (event, { levels }) => {
+        saveLevels(levels)
+      })
+
+      hlsRef.current.on(Hls.Events.LEVEL_SWITCHED, (event, { level }) => {
+        saveLevel(level)
+      })
+
+      return () => {
+        hlsRef.current.destroy()
+      }
+    },
+    [hlsRef],
+  )
+
   return {
     videoRef,
     containerRef,
+    hlsRef,
 
     buffer,
     duration,
     fullscreen,
+    level,
+    levels,
     muted,
     speed,
     state,
@@ -174,6 +210,7 @@ const useVideo = (videoRef, containerRef, documentRef) => {
     isPaused,
     isPlaying,
 
+    setLevel,
     setTime,
     setSpeed,
     setVolume,
