@@ -61,7 +61,7 @@ const useVideo = () => {
   }
 
   const setLevel = (level) => {
-    hlsRef.current.nextLevel = level
+    hlsRef.current.currentLevel = level
     saveLevel(level)
   }
 

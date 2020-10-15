@@ -42,11 +42,11 @@ const Settings = () => {
           </DropdownHeader>
 
           <DropdownBody className='mc-px-4 mc-py-2'>
-            {filteredLevels.map(l =>
+            {filteredLevels.map((l, i) =>
               <Button
                 key={l.level}
                 kind={(level) === l.level ? 'secondary' : 'link'}
-                onClick={() => setLevel(l.level)}
+                onClick={() => setLevel(i)}
               >
                 {l.height}p
               </Button>,
