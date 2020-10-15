@@ -10,12 +10,10 @@ import poster from './poster.png'
 
 
 class VideoStory extends PureComponent {
-  state = {
-
-  }
+  state = {}
 
   componentDidMount () {
-    fetch('http://mc-crucible.herokuapp.com/urls')
+    fetch('//mc-crucible.herokuapp.com/urls')
       .then(res => res.json())
       .then((urls) => {
         this.setState({
