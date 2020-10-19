@@ -46,6 +46,7 @@ import SvgLogo from './Logo'
 import SvgMagnifyingGlass from './MagnifyingGlass'
 import SvgMail from './Mail'
 import SvgMention from './Mention'
+import SvgMessenger from './Messenger'
 import SvgMore from './More'
 import SvgMuted from './Muted'
 import SvgNext from './Next'
@@ -122,6 +123,7 @@ export const ICONS = {
   'magnifying-glass': SvgMagnifyingGlass,
   'mail': SvgMail,
   'mention': SvgMention,
+  'messenger': SvgMessenger,
   'more': SvgMore,
   'muted': SvgMuted,
   'next': SvgNext,

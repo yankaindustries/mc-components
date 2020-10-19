@@ -163,6 +163,20 @@
     }
   }
 
+  &--linked-in {
+    background-color: $mc-color-linkedin;
+
+    &:not(:disabled):not(.disabled) {
+      &:hover {
+        background-color: lighten($mc-color-linkedin, 6.5%);
+      }
+
+      &:active {
+        background-color: $mc-color-linkedin;
+      }
+    }
+  }
+
   &--symmetrical {
     padding: var(--mc-scale-3);
 
@@ -210,6 +224,20 @@
 
       &:active {
         background-color: $mc-color-twitter;
+      }
+    }
+  }
+
+  &--messenger {
+    background-color: $mc-color-messenger;
+
+    &:not(:disabled):not(.disabled) {
+      &:hover {
+        background-color: lighten($mc-color-messenger, 6.5%);
+      }
+
+      &:active {
+        background-color: $mc-color-messenger;
       }
     }
   }

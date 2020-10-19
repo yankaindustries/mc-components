@@ -198,6 +198,16 @@ class ButtonStory extends PureComponent {
                   </Button>
                 </div>
                 <div className='col-auto'>
+                  <Button kind='linked-in'>
+                    Linkedin
+                  </Button>
+                </div>
+                <div className='col-auto'>
+                  <Button kind='messenger'>
+                    Messenger
+                  </Button>
+                </div>
+                <div className='col-auto'>
                   <Button kind='twitter'>
                     Twitter
                   </Button>
