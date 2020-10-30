@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import withAddons from '../../utils/withAddons'
@@ -11,11 +11,7 @@ import TileImage from '../TileImage'
 import TileVideo from '../TileVideo'
 import TileOverlay from '../TileOverlay'
 import TileCaption from '../TileCaption'
-import TileCheck from '../TileCheck'
 import TileProgress from '../TileProgress'
-import AnimationHandler from '../AnimationHandler'
-import HoverHandler from '../HoverHandler'
-import Button from '../Button'
 
 import shondaRhimesThumbnail from '../../utils/shonda-rhimes.png'
 
@@ -66,15 +62,6 @@ storiesOf('Components|Tiles', module)
         </div>
 
         <div className='col-lg-4 col-md-6'>
-          <DocSection title='TileCheck'>
-            <Tile>
-              <TileCheck checked />
-              <Placeholder />
-            </Tile>
-          </DocSection>
-        </div>
-
-        <div className='col-lg-4 col-md-6'>
           <DocSection title='TileImage'>
             <Tile>
               <TileImage imageUrl={shondaRhimesThumbnail} />
@@ -96,142 +83,6 @@ storiesOf('Components|Tiles', module)
               <Placeholder>{'value={72}'}</Placeholder>
               <TileProgress value={72}></TileProgress>
             </Tile>
-          </DocSection>
-        </div>
-      </div>
-
-      <hr />
-
-      <div className='row mc-pb-10'>
-        <div className='col-lg-4 col-md-6'>
-          <DocSection title='Animations'>
-            <HoverHandler>
-              {({ hovering }) =>
-                <Tile>
-                  <TileCheck>
-                    {() =>
-                      <Fragment>
-                        <AnimationHandler
-                          type='ken-burns'
-                          animating={hovering}
-                        >
-                          <TileImage imageUrl={shondaRhimesThumbnail} />
-                          <TileOverlay type='gradient-bottom' />
-                        </AnimationHandler>
-
-                        <AnimationHandler
-                          type='lift'
-                          animating={hovering}
-                        >
-                          <TileCaption>
-                            <h5 className='mc-text-h5'>
-                              Shonda Rhimes
-                            </h5>
-                            <p className='mc-opacity--muted'>
-                              Teaches Writing
-                            </p>
-                          </TileCaption>
-                        </AnimationHandler>
-                      </Fragment>
-                    }
-                  </TileCheck>
-                </Tile>
-              }
-            </HoverHandler>
-          </DocSection>
-        </div>
-
-        <div className='col-lg-4 col-md-6'>
-          <DocSection title='Swap'>
-            <HoverHandler>
-              {({ intent }) =>
-                <AnimationHandler
-                  type='zoom'
-                  animating={intent}
-                >
-                  <Tile>
-                    <TileImage imageUrl={shondaRhimesThumbnail} />
-
-                    {!intent &&
-                      <TileOverlay type='gradient-bottom' />
-                    }
-
-                    {intent &&
-                      <TileVideo
-                        videoId='5450137526001'
-                        autoPlay
-                        loop
-                        muted
-                      />
-                    }
-
-                    <TileCaption
-                      position={intent
-                        ? 'left below'
-                        : 'left bottom'
-                      }
-                    >
-                      <h5 className='mc-text-h5'>
-                        Shonda Rhimes
-                      </h5>
-                      <p className='mc-opacity--muted'>
-                        Teaches Writing
-                      </p>
-                    </TileCaption>
-                  </Tile>
-                </AnimationHandler>
-              }
-            </HoverHandler>
-          </DocSection>
-        </div>
-
-        <div className='col-lg-4 col-md-6'>
-          <DocSection title='Zoom Tile'>
-            <HoverHandler>
-              {({ hovering }) =>
-                <AnimationHandler
-                  type='zoom-tile'
-                  animating={hovering}
-                >
-                  <div>
-                    <Tile>
-                      <TileImage imageUrl={shondaRhimesThumbnail} />
-                      <TileOverlay />
-
-                      <TileCaption
-                        position='center bottom'
-                      >
-                        <div className='mc-tile__reveal-on-hover'>
-                          <Button secondary>Resume</Button>
-                        </div>
-                      </TileCaption>
-
-                      <TileCaption
-                        position='left below'
-                        className='mc-tile__darken-bg-on-hover'
-                      >
-                        <h5 className='mc-text-h5'>
-                          Shonda Rhimes
-                        </h5>
-                        <p className='mc-opacity--muted'>
-                          Teaches Writing
-                        </p>
-
-                        <div className='mc-tile__reveal-on-hover'>
-                          <p className={`
-                            mc-mt-2
-                            mc-text-small
-                            mc-opacity--muted
-                          `}>
-                            Some other stuff...
-                          </p>
-                        </div>
-                      </TileCaption>
-                    </Tile>
-                  </div>
-                </AnimationHandler>
-              }
-            </HoverHandler>
           </DocSection>
         </div>
       </div>
