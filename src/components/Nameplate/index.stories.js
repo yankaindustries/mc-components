@@ -17,6 +17,7 @@ import jb from './assets/jb.png'
 import lmrc from './assets/lmrc.png'
 import mco from './assets/mco.png'
 import rp from './assets/rp.png'
+import tk from './assets/tk.png'
 import th from './assets/th.png'
 
 
@@ -57,6 +58,11 @@ const instructors = [
     image: 'https://www.masterclass.com/course-images/images/11366/original/1592437259-TH_primary_2x3.jpg',
     hero: 'https://www.masterclass.com/course-images/images/11367/original/1592437260-TH_secondary_16x9.jpg',
   },
+  {
+    nameplate: tk,
+    course: 'Teaches Cooking Techniques I: Vegetables, Pasta, and Eggs',
+    image: 'https://www.masterclass.com/course-images/attachments/udbTiQSdHktKbbKRrzFBTEGd?width=200&height=300&fit=cover&dpr=2',
+  },
 ]
 
 const NameplateStory = () =>
@@ -71,7 +77,7 @@ const NameplateStory = () =>
         <TileImage imageUrl={instructors[6].hero} />
         <TileCaption position='center bottom' padding={10}>
             <div className='row'>
-              <div className='offset-4 col-4'>
+              <div className='offset-3 col-6'>
                 <Nameplate src={instructors[6].nameplate} />
               </div>
             </div>
@@ -104,8 +110,11 @@ const NameplateStory = () =>
               <TileCaption position='center center' padding={4}>
                 <div className='row'>
                   <div className='offset-1 col-10'>
-                    <Nameplate src={instructor.nameplate} separator />
-                    <p className='mc-text-small'>{instructor.course}</p>
+                    <Nameplate
+                      src={instructor.nameplate}
+                      separator
+                      subText={instructor.course}
+                    />
                   </div>
                 </div>
               </TileCaption>
@@ -125,14 +134,87 @@ const NameplateStory = () =>
               <TileCaption position='center bottom' padding={4}>
                 <div className='row'>
                   <div className='offset-1 col-10'>
-                    <Nameplate src={instructor.nameplate} separator />
-                    <p className='mc-text-small mc-text--2-lines'>{instructor.course}</p>
+                    <Nameplate
+                      src={instructor.nameplate}
+                      separator
+                      subText={instructor.course}
+                    />
                   </div>
                 </div>
               </TileCaption>
             </Tile>
           </div>,
         )}
+      </div>
+    </DocSection>
+
+    <DocSection title='Small'>
+      <div className='row mc-text--center'>
+        <div
+          className='col-4'
+          key={instructors[7].course}
+          style={{ width: '368px' }}
+        >
+          <Tile aspectRatio='4x3' className='mc-corners--rounded' style={{ overflow: 'hidden' }}>
+            <TileOverlay type='solid' />
+            <TileCaption position='center center' padding={4}>
+              <div className='row'>
+                <div className='offset-1 col-10'>
+                  <Nameplate
+                    src={instructors[7].nameplate}
+                    subText={instructors[7].course}
+                    separator
+                  />
+                </div>
+              </div>
+            </TileCaption>
+          </Tile>
+        </div>
+      </div>
+    </DocSection>
+
+    <DocSection title='Medium'>
+      <div className='mc-text--center'>
+        <div
+          key={instructors[7].course}
+          style={{ width: '500px' }}
+        >
+          <Tile aspectRatio='4x3' className='mc-corners--rounded' style={{ overflow: 'hidden' }}>
+            <TileOverlay type='solid' />
+            <TileCaption position='center center' padding={4}>
+              <div className='row'>
+                <div className='offset-1 col-10'>
+                  <Nameplate
+                    src={instructors[7].nameplate}
+                    subText={instructors[7].course}
+                    separator
+                  />
+                </div>
+              </div>
+            </TileCaption>
+          </Tile>
+        </div>
+      </div>
+    </DocSection>
+
+    <DocSection title='Large'>
+      <div className='row mc-text--center'>
+        <div className='col-12' key={instructors[7].course}>
+          <Tile aspectRatio='4x3' className='mc-corners--rounded' style={{ overflow: 'hidden' }}>
+            <TileOverlay type='solid' />
+            <TileCaption position='center center' padding={4}>
+              <div className='row'>
+                <div className='offset-1 col-10'>
+                  <Nameplate
+                    src={instructors[7].nameplate}
+                    subText={instructors[7].course}
+                    separator
+                  />
+                </div>
+              </div>
+            </TileCaption>
+          </Tile>
+        </div>
       </div>
     </DocSection>
   </div>
