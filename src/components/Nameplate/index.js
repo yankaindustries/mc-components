@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 const getSize = (width) => {
+  if (!width) { return 'unknown' }
   if (width <= 368) { return 'small' }
   if (width <= 500) { return 'medium' }
   return 'large'
@@ -36,29 +37,31 @@ const Nameplate = ({
         `mc-nameplate--${sizeClass}`,
       )}
     >
-      <img
-        src={src}
-        className='mc-nameplate__image'
-       {...props}
-      />
-
-      {separator &&
-        <div className={cn(
-          'mc-nameplate__separator',
-          `mc-nameplate__separator--${sizeClass}`,
-          )}
+      <div className='mc-nameplate__inner'>
+        <img
+          src={src}
+          className='mc-nameplate__image'
+         {...props}
         />
-      }
 
-      {subText &&
-        <h1 className={cn({
-          'mc-text-h6': sizeClass === 'small',
-          'mc-text-h4': sizeClass === 'medium',
-          'mc-text-h2': sizeClass === 'large',
-        })}>
-          {subText}
-        </h1>
-      }
+        {separator &&
+          <div className={cn(
+            'mc-nameplate__separator',
+            `mc-nameplate__separator--${sizeClass}`,
+            )}
+          />
+        }
+
+        {subText &&
+          <h1 className={cn({
+            'mc-text-h6': sizeClass === 'small',
+            'mc-text-h4': sizeClass === 'medium',
+            'mc-text-h2': sizeClass === 'large',
+          })}>
+            {subText}
+          </h1>
+        }
+      </div>
     </div>
   )
 }

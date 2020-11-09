@@ -148,58 +148,12 @@ const NameplateStory = () =>
       </div>
     </DocSection>
 
-    <DocSection title='Small'>
+    <DocSection title='Dynamic Demo'>
       <div className='row mc-text--center'>
         <div
-          className='col-4'
+          className='col-12'
           key={instructors[7].course}
-          style={{ width: '368px' }}
         >
-          <Tile aspectRatio='4x3' className='mc-corners--rounded' style={{ overflow: 'hidden' }}>
-            <TileOverlay type='solid' />
-            <TileCaption position='center center' padding={4}>
-              <div className='row'>
-                <div className='offset-1 col-10'>
-                  <Nameplate
-                    src={instructors[7].nameplate}
-                    subText={instructors[7].course}
-                    separator
-                  />
-                </div>
-              </div>
-            </TileCaption>
-          </Tile>
-        </div>
-      </div>
-    </DocSection>
-
-    <DocSection title='Medium'>
-      <div className='mc-text--center'>
-        <div
-          key={instructors[7].course}
-          style={{ width: '500px' }}
-        >
-          <Tile aspectRatio='4x3' className='mc-corners--rounded' style={{ overflow: 'hidden' }}>
-            <TileOverlay type='solid' />
-            <TileCaption position='center center' padding={4}>
-              <div className='row'>
-                <div className='offset-1 col-10'>
-                  <Nameplate
-                    src={instructors[7].nameplate}
-                    subText={instructors[7].course}
-                    separator
-                  />
-                </div>
-              </div>
-            </TileCaption>
-          </Tile>
-        </div>
-      </div>
-    </DocSection>
-
-    <DocSection title='Large'>
-      <div className='row mc-text--center'>
-        <div className='col-12' key={instructors[7].course}>
           <Tile aspectRatio='4x3' className='mc-corners--rounded' style={{ overflow: 'hidden' }}>
             <TileOverlay type='solid' />
             <TileCaption position='center center' padding={4}>

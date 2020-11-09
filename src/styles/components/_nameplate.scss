@@ -1,27 +1,27 @@
 $whitespace: 5% !default;
 
 .mc-nameplate {
-  margin: 0 auto;
   vertical-align: middle;
 
-  &--small {
-    max-width: 220px;
-  }
+  &__inner {
+    margin: 0 auto;
 
-  &--medium {
-    max-width: 368px;
-  }
+    .mc-nameplate--small & {
+      max-width: 220px;
+    }
 
-  &--large {
-    max-width: 500px;
+    .mc-nameplate--medium & {
+      max-width: 368px;
+    }
+
+    .mc-nameplate--large & {
+      max-width: 500px;
+    }
   }
 
   &__image {
     display: block;
-    margin: 0 auto;
     width: 100%;
-    object-fit: contain;
-    object-position: bottom;
   }
 
   &__separator {
