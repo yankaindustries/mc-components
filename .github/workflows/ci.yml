@@ -3,7 +3,7 @@ on: pull_request
 
 jobs:
   Lint:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: CultureHQ/actions-yarn@master
@@ -11,7 +11,7 @@ jobs:
           args: install
       - run: yarn lint
   Build:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: CultureHQ/actions-yarn@master
