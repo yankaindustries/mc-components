@@ -32,7 +32,7 @@ const Form = reduxForm({
       <div className='container'>
         <DocHeader
           title='InputField'
-          description='For use with ReduxForm. The most basic of form elements.'
+          description='For use with FinalForm. The most basic of form elements.'
         />
 
         <div className='example__section'>
