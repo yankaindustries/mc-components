@@ -1,16 +1,51 @@
 $whitespace: 5% !default;
 
 .mc-nameplate {
-  width: 100%;
-  object-fit: contain;
-  object-position: bottom;
   vertical-align: middle;
+
+  &__inner {
+    margin: 0 auto;
+
+    .mc-nameplate--small & {
+      max-width: 220px;
+    }
+
+    .mc-nameplate--medium & {
+      max-width: 368px;
+    }
+
+    .mc-nameplate--large & {
+      max-width: 500px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
 
   &__separator {
     display: block;
-    margin: $whitespace/2 auto $whitespace;
-    width: $whitespace;
-    height: 0.25vw;
+    height: 4px;
+    margin: auto;
     background: var(--mc-theme-text);
+
+    &--small {
+      @include step(margin-top, 3);
+      @include step(margin-bottom, 3);
+      width: 16px;
+    }
+
+    &--medium {
+      @include step(margin-top, 3);
+      @include step(margin-bottom, 6);
+      width: 32px;
+    }
+
+    &--large {
+      @include step(margin-top, 6);
+      @include step(margin-bottom, 6);
+      width: 32px;
+    }
   }
 }
