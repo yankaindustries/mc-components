@@ -23,6 +23,9 @@ const Form = reduxForm({
   initialValues: {
     terms: true,
   },
+  validate: () => ({
+    error: 'Something is wrong here...',
+  }),
 })(
   () =>
     <div className='container'>
@@ -56,6 +59,18 @@ const Form = reduxForm({
             lobster)
           '
         />
+
+        <hr className='mc-separator mc-mb-4' />
+
+        <Field
+          component={CheckboxField}
+          name='error'
+          label='
+            This checkbox has an error
+          '
+        />
+
+        <hr className='mc-separator mc-mb-4' />
 
         <Field
           component={CheckboxField}
