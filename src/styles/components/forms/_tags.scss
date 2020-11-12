@@ -1,0 +1,16 @@
+.mc-form-tags {
+  flex-wrap: wrap;
+
+  .mc-form-tags__inner {
+    padding: $input-padding;
+  }
+
+  .mc-form-element__element {
+    padding: 0;
+    width: auto;
+  }
+
+  .mc-badge {
+    margin-right: var(--mc-scale-3);
+  }
+}

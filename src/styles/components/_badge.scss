@@ -1,12 +1,13 @@
 .mc-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   vertical-align: middle;
   color: $mc-color-light;
   border-radius: 20px;
+  white-space: nowrap;
 
-  padding-top: var(--mc-scale-1);
+  height: var(--mc-scale-8);
   padding-right: var(--mc-scale-3);
-  padding-bottom: var(--mc-scale-1);
   padding-left: var(--mc-scale-3);
 
   &--default {
