@@ -6,11 +6,13 @@ import Badge from '../Badge'
 import Icon from '../Icons'
 
 
-const KEY_TAB = 'Tab'
-const KEY_ENTER = 'Enter'
 const KEY_ESCAPE = 'Escape'
 const KEY_BACKSPACE = 'Backspace'
+const KEY_TAB = 'Tab'
+const KEY_ENTER = 'Enter'
 const KEY_COMMA = ','
+const KEY_SEMICOLON = ';'
+const KEYS_ACCEPT = [KEY_TAB, KEY_ENTER, KEY_COMMA, KEY_SEMICOLON]
 
 const VALUE_EMPTY = ''
 
@@ -61,9 +63,7 @@ const Tags = ({
   }
 
   const handleKeyDown = (event) => {
-    if (event.key === KEY_TAB) handleAcceptDown(event)
-    if (event.key === KEY_ENTER) handleAcceptDown(event)
-    if (event.key === KEY_COMMA) handleAcceptDown(event)
+    if (KEYS_ACCEPT.includes(event.key)) handleAcceptDown(event)
     if (event.key === KEY_ESCAPE) handleEscapeDown(event)
     if (event.key === KEY_BACKSPACE) handleBackspaceDown(event)
   }
@@ -84,9 +84,9 @@ const Tags = ({
       className={containerClasses}
       onClick={handleContainerClick}
     >
-      <div className='mc-form-tags__inner'>
-        {collection.map((item, index) => (
-          <Badge key={item} kind='bright'>
+      {collection.map((item, index) => (
+        <div className='mc-form-tags__tag' key={item}>
+          <Badge kind='bright'>
             {item}
             <Icon
               kind='close'
@@ -94,20 +94,20 @@ const Tags = ({
               className='mc-icon mc-mr-n2 mc-ml-1 mc-clickable'
             />
           </Badge>
-        ))}
+        </div>
+      ))}
 
-        <input
-          type='text'
-          ref={inputRef}
-          className='mc-form-element__element'
-          onChange={handleInputChange}
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-          onKeyDown={handleKeyDown}
-          size={value.length || 1}
-          value={value}
-        />
-      </div>
+      <input
+        type='text'
+        ref={inputRef}
+        className='mc-form-element__element'
+        onChange={handleInputChange}
+        onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
+        onKeyDown={handleKeyDown}
+        size={value.length || 1}
+        value={value}
+      />
     </div>
   )
 }
