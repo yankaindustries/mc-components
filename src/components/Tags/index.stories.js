@@ -6,7 +6,7 @@ import DocHeader from '../../utils/DocHeader'
 import InvertedMirror from '../../utils/InvertedMirror'
 
 import Tags from '../Tags'
-
+import FormGroup from '../FormGroup'
 
 const TagsStory = () => {
   const [collection, setCollection] = useState(['bob@google.com', 'jill@apple.com'])
@@ -15,11 +15,23 @@ const TagsStory = () => {
     <div className='container'>
       <DocHeader
         title='Tags'
-        description='Type out a list, it\s FUN!'
+        description="Type out a list, it's FUN!"
       />
 
       <InvertedMirror>
-        <Tags collection={collection} onChange={setCollection} />
+        <FormGroup
+          label='Tags'
+          help={
+            <p>
+              Use <kbd>tab</kbd>, <kbd>enter</kbd>, <kbd>comma</kbd>
+              , or <kbd>semicolon</kbd> to finalize your text as a tag.
+            </p>
+          }
+        >
+          <Tags collection={collection} onChange={setCollection} />
+        </FormGroup>
+
+
       </InvertedMirror>
     </div>
   )
