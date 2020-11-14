@@ -1,4 +1,5 @@
 .mc-badge {
+  box-sizing: content-box;
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
@@ -6,16 +7,20 @@
   border-radius: 20px;
   white-space: nowrap;
 
-  height: var(--mc-scale-6);
+  height: var(--mc-scale-4);
+  padding-top: var(--mc-scale-1);
+  padding-bottom: var(--mc-scale-1);
   padding-right: var(--mc-scale-3);
   padding-left: var(--mc-scale-3);
 
   &--default {
-    background: $mc-color-secondary;
+    background: var(--mc-theme-badge-bg);
+    color: var(--mc-theme-badge-text);
   }
 
-  &--primary {
-    background: $mc-color-primary;
+  &--dim {
+    background: var(--mc-theme-badge-dim-bg);
+    color: var(--mc-theme-badge-dim-text);
   }
 
   &--transparent {
@@ -23,8 +28,7 @@
     box-shadow: inset 0 0 0 1px var(--mc-theme-border-contrast);
   }
 
-  &--bright {
-    background: var(--mc-theme-badge-bright-bg);
-    color: var(--mc-theme-badge-bright-text);
+  &--primary {
+    background: $mc-color-primary;
   }
 }

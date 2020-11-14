@@ -13,8 +13,10 @@
   --mc-theme-applepay-border:         none;
 
   // Badges
-  --mc-theme-badge-bright-bg:        #{$mc-color-light};
-  --mc-theme-badge-bright-text:      #{$mc-color-dark};
+  --mc-theme-badge-bg:                #{$mc-color-light};
+  --mc-theme-badge-text:              #{$mc-color-dark};
+  --mc-theme-badge-dim-bg:            #{$mc-color-gray-200};
+  --mc-theme-badge-dim-text:          #{$mc-color-light};
 
   // Carousel
   --mc-theme-carousel-dot:           #{$mc-color-gray-400};
@@ -80,8 +82,10 @@
   --mc-theme-applepay-border:         inset 0 0 0 1px #{$mc-color-dark};
 
   // Badges
-  --mc-theme-badge-bright-bg:        #{$mc-color-gray-600};
-  --mc-theme-badge-bright-text:      #{$mc-color-dark};
+  --mc-theme-badge-bg:                #{$mc-color-gray-200};
+  --mc-theme-badge-text:              #{$mc-color-light};
+  --mc-theme-badge-dim-bg:            #{$mc-color-gray-600};
+  --mc-theme-badge-dim-text:          #{$mc-color-dark};
 
   // Carousel
   --mc-theme-carousel-dot:           #{rgba($mc-color-dark, 0.6)};
