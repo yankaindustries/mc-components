@@ -86,7 +86,7 @@ const Tags = ({
     >
       {collection.map((item, index) => (
         <div className='mc-form-tags__tag' key={item}>
-          <Badge kind='default'>
+          <Badge>
             {item}
             <Icon
               kind='close'
