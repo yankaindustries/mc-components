@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Checkbox from '../Checkbox'
+import FormGroup from '../FormGroup'
 
 
 const INPUT_PROP_TYPE = PropTypes.shape({
@@ -20,13 +21,17 @@ const CheckboxField = ({
     value,
     ...input
   },
+  meta,
   ...props
 }) => (
-  <Checkbox
-    checked={!!value}
-    {...input}
-    {...props}
-  />
+  <FormGroup {...input} {...meta}>
+    <Checkbox
+      checked={!!value}
+      {...input}
+      {...meta}
+      {...props}
+    />
+  </FormGroup>
 )
 
 CheckboxField.propTypes = {

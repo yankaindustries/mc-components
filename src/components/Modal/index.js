@@ -84,10 +84,9 @@ export default class Modal extends PureComponent {
       onClose,
     } = this.props
 
-    event.preventDefault()
-    event.stopPropagation()
-
     if (onClose) {
+      event.preventDefault()
+      event.stopPropagation()
       onClose(source, event)
     }
   }
