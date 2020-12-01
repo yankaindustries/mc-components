@@ -42,7 +42,7 @@ export default class InvertedMirror extends PureComponent {
           <div className='col-md-6'>
             <Background
               color='light'
-              className='mc-card mc-invert'
+              className='mc-card mc-theme-light'
             >
               <h5 className='mc-text-h5 mc-mb-7 mc-text--center'>
                 Light Theme
