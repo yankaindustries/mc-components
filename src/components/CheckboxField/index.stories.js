@@ -23,12 +23,15 @@ const Form = reduxForm({
   initialValues: {
     terms: true,
   },
+  validate: () => ({
+    error: 'Something is wrong here...',
+  }),
 })(
   () =>
     <div className='container'>
       <DocHeader
         title='CheckboxField'
-        description='For use with ReduxForm. I agree to the terms...'
+        description='For use with FinalForm. I agree to the terms...'
       />
 
       <InvertedMirror>
@@ -56,6 +59,18 @@ const Form = reduxForm({
             lobster)
           '
         />
+
+        <hr className='mc-separator mc-mb-4' />
+
+        <Field
+          component={CheckboxField}
+          name='error'
+          label='
+            This checkbox has an error
+          '
+        />
+
+        <hr className='mc-separator mc-mb-4' />
 
         <Field
           component={CheckboxField}

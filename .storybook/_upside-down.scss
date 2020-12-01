@@ -29,6 +29,21 @@ pre {
   font-family: monospace;
 }
 
+kbd {
+  font-family: monospace;
+  display: inline-block;
+  padding: 0 0.3em;
+  background: $mc-color-gray-300;
+  border: 1px solid $mc-color-gray-400;
+  border-radius: $default-radius;
+
+  .mc-invert &,
+  .mc-theme-light & {
+    background: $mc-color-gray-600;
+    border: 1px solid $mc-color-gray-500;
+  }
+}
+
 a {
   color: inherit;
 }

@@ -10,9 +10,9 @@ export default class Badge extends PureComponent {
     className: PropTypes.string,
     kind: PropTypes.oneOf([
       'default',
-      'primary',
+      'dim',
       'transparent',
-      'bright',
+      'primary',
     ]),
   }
 
