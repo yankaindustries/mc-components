@@ -5,6 +5,11 @@
 // more cleanly.  We don't know where to put them
 // yet, so they'll live here!
 
+body {
+  background: #191919;
+}
+
+
 // THE UPSIDE DOWN
 .mc-card {
   padding: $grid-gutter-width-xl / 2;
