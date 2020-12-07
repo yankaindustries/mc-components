@@ -18,11 +18,13 @@ export default class Dropdown extends PureComponent {
   static propTypes = {
     children: PROP_TYPE_CHILDREN,
     fixed: PropTypes.bool,
+    autoFlip: PropTypes.bool,
     placement: PropTypes.string,
   }
 
   static defaultProps = {
     fixed: false,
+    autoFlip: true,
     placement: 'bottom-start',
   }
 
@@ -65,7 +67,7 @@ export default class Dropdown extends PureComponent {
   }
 
   renderDropdown = () => {
-    const { fixed, placement } = this.props
+    const { fixed, autoFlip, placement } = this.props
 
     this.tooltip = new Popper(
       findDOMNode(this.toggleRef.current),
@@ -74,6 +76,9 @@ export default class Dropdown extends PureComponent {
         placement,
         positionFixed: fixed || window.innerWidth <= 576,
         modifiers: {
+          flip: {
+            enabled: autoFlip,
+          },
           applyStyle: {
             enabled: true,
             fn: this.applyStyle,
