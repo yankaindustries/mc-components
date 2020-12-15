@@ -29,7 +29,7 @@ storiesOf('Components|Tiles/TileImage', module)
           <div className='row'>
             <div className='col-sm-6'>
               <Tile>
-                <TileImage image={<img src={shondaRhimesThumbnail} />} />
+                <TileImage imageUrl={shondaRhimesThumbnail} />
               </Tile>
             </div>
           </div>

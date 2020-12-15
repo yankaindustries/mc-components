@@ -1,0 +1,15 @@
+.mc-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: $mc-color-gray-100;
+  overflow: hidden;
+  height: 100%;
+}
+
+.mc-img-wrapper__image {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+}

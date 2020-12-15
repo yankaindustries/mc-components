@@ -77,7 +77,9 @@ storiesOf('Components|Carousel', module)
     <ResponsiveHandler>
       {({ responsive }) =>
         <div className='container'>
-          <DocHeader title='Carousel' />
+          <DocHeader
+            title='Carousel'
+          />
 
           <DocSection title='Standard #1'>
             <CodeExample>

@@ -21,7 +21,7 @@ export default class Button extends PureComponent {
     className: PropTypes.string,
     fullWidth: PropTypes.bool,
     kind: PropTypes.oneOf([
-      'applepay',
+      'apple',
       'facebook',
       'google',
       'messenger',

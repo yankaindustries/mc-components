@@ -23,7 +23,7 @@ storiesOf('Components|Separator', module)
         '
       />
 
-      <DocSection>
+      <DocSection title='Separator'>
         <InvertedMirror>
           <CodeExample>
             <div>

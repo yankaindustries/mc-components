@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import cn from 'classnames'
+import Image from '../Image'
 
 const TileImage = ({ className, image, imageUrl }) => {
   const classes = cn('mc-tile-image', className)
   return image
     ? React.cloneElement(image, { className: classes })
-    : <img className={classes} src={imageUrl} />
+    : <Image className={classes} src={imageUrl} />
 }
 
 TileImage.propTypes = {

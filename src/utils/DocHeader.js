@@ -8,7 +8,7 @@ import Badge from '../components/Badge'
 export default class DocHeader extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     experimental: PropTypes.bool,
     title: PropTypes.string.isRequired,
   }
