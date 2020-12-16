@@ -3,8 +3,7 @@ import { number, string, oneOf, oneOfType } from 'prop-types'
 import cn from 'classnames'
 import { debounce } from 'lodash'
 import resizeImage from './resize-image'
-
-const ASPECT_RATIOS = ['1x1', '2x3', '3x4', '4x3', '9x16', '16x9', '21x9']
+import { ASPECT_RATIOS } from '../helpers'
 
 export default class Image extends React.PureComponent {
   static defaultProps = {
