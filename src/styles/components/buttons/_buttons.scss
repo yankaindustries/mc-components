@@ -293,12 +293,10 @@
     &:not(:disabled):not(.disabled) {
       &:hover {
         background-color: $mc-color-apple;
-        color: $mc-color-dark;
       }
 
       &:active {
         background-color: $mc-color-apple;
-        color: $mc-color-dark;
       }
     }
   }
