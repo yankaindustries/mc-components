@@ -1,5 +1,4 @@
 // COMPONENTS
-export { default as Accordion } from './Accordion'
 export { default as AnimationHandler } from './AnimationHandler'
 export { default as Background } from './Background'
 export { default as Badge } from './Badge'
