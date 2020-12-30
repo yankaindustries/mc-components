@@ -25,7 +25,7 @@ const Tags = ({
   const inputRef = useRef(null)
   const [value, setValue] = useState(VALUE_EMPTY)
   const [focus, setFocus] = useState(false)
-  const showPlaceholder = !collection.length && placeholder
+  const placeholderText = !collection.length ? placeholder : ''
 
   const handleContainerClick = () => {
     if (!inputRef.current) return
@@ -81,11 +81,6 @@ const Tags = ({
     'mc-form-element--focus': focus,
   })
 
-  const inputClasses = cn({
-    'mc-form-element__element': true,
-    'mc-form-element__placeholder': showPlaceholder,
-  })
-
   return (
     <div
       className={containerClasses}
@@ -107,13 +102,13 @@ const Tags = ({
       <input
         type='text'
         ref={inputRef}
-        className={inputClasses}
+        className='mc-form-element__element'
         onChange={handleInputChange}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         onKeyDown={handleKeyDown}
-        size={value.length || 1}
-        placeholder={showPlaceholder ? placeholder : ''}
+        size={value.length || placeholderText.length || 1}
+        placeholder={placeholderText}
         value={value}
       />
     </div>
