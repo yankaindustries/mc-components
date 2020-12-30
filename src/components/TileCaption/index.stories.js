@@ -28,6 +28,32 @@ storiesOf('Components|Tiles/TileCaption', module)
           <div className='row'>
             <div className='col-sm-4'>
               <Tile>
+                <TileCaption position='left top'>
+                  left top
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='center top'>
+                  center top
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+            <div className='col-sm-4'>
+              <Tile>
+                <TileCaption position='right top'>
+                  right top
+                </TileCaption>
+                <Placeholder />
+              </Tile>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col-sm-4'>
+              <Tile>
                 <TileCaption position='left center'>
                   left center
                 </TileCaption>
@@ -83,32 +109,36 @@ storiesOf('Components|Tiles/TileCaption', module)
             </div>
           </div>
 
-          <div className='row'>
-            <div className='col-sm-4'>
-              <Tile>
-                <TileCaption position='left below'>
-                  left below
-                </TileCaption>
-                <Placeholder />
-              </Tile>
-            </div>
+          <hr className='mc-separator mc-my-7' />
 
-            <div className='col-sm-4'>
-              <Tile>
-                <TileCaption position='center below'>
-                  center below
-                </TileCaption>
-                <Placeholder />
-              </Tile>
-            </div>
+          <div className='mc-pb-5'>
+            <div className='row'>
+              <div className='col-sm-4'>
+                <Tile>
+                  <TileCaption position='left below'>
+                    left below
+                  </TileCaption>
+                  <Placeholder />
+                </Tile>
+              </div>
 
-            <div className='col-sm-4'>
-              <Tile>
-                <TileCaption position='right below'>
-                  right below
-                </TileCaption>
-                <Placeholder />
-              </Tile>
+              <div className='col-sm-4'>
+                <Tile>
+                  <TileCaption position='center below'>
+                    center below
+                  </TileCaption>
+                  <Placeholder />
+                </Tile>
+              </div>
+
+              <div className='col-sm-4'>
+                <Tile>
+                  <TileCaption position='right below'>
+                    right below
+                  </TileCaption>
+                  <Placeholder />
+                </Tile>
+              </div>
             </div>
           </div>
         </PropExample>
