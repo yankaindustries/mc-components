@@ -7,6 +7,10 @@
     width: auto;
   }
 
+  .mc-form-element__placeholder {
+    width: 100%;
+  }
+
   &__tag {
     padding: $input-padding;
     padding-right: 0;

@@ -28,7 +28,7 @@ const TagsStory = () => {
             </p>
           }
         >
-          <Tags collection={collection} onChange={setCollection} />
+          <Tags collection={collection} onChange={setCollection} placeholder='Placeholder...' />
         </FormGroup>
 
 

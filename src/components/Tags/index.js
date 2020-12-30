@@ -20,10 +20,12 @@ const VALUE_EMPTY = ''
 const Tags = ({
   collection = [],
   onChange = () => {},
+  placeholder = '',
 }) => {
   const inputRef = useRef(null)
   const [value, setValue] = useState(VALUE_EMPTY)
   const [focus, setFocus] = useState(false)
+  const showPlaceholder = !collection.length && placeholder
 
   const handleContainerClick = () => {
     if (!inputRef.current) return
@@ -79,6 +81,11 @@ const Tags = ({
     'mc-form-element--focus': focus,
   })
 
+  const inputClasses = cn({
+    'mc-form-element__element': true,
+    'mc-form-element__placeholder': showPlaceholder,
+  })
+
   return (
     <div
       className={containerClasses}
@@ -100,12 +107,13 @@ const Tags = ({
       <input
         type='text'
         ref={inputRef}
-        className='mc-form-element__element'
+        className={inputClasses}
         onChange={handleInputChange}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         onKeyDown={handleKeyDown}
         size={value.length || 1}
+        placeholder={showPlaceholder ? placeholder : ''}
         value={value}
       />
     </div>
@@ -115,6 +123,7 @@ const Tags = ({
 Tags.propTypes = {
   collection: PropTypes.arrayOf(PropTypes.string),
   onChange: PropTypes.func,
+  placeholder: PropTypes.string,
 }
 
 export default Tags
