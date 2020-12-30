@@ -1,11 +1,8 @@
 /* eslint react/display-name:0, react/prop-types:0 */
-import React, { Fragment } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { times } from 'lodash'
-
 import withAddons from '../../utils/withAddons'
 
-import Accordion from '../../components/Accordion'
 import AnimationHandler from '../../components/AnimationHandler'
 import Badge from '../../components/Badge'
 import Button from '../../components/Button'
@@ -77,37 +74,6 @@ const jbi = [
     instructor: 'Shonda Rhimes',
     lesson: '04. Enemy of the state? How to become a hide and seek master',
     extract: 'Do ugly vegetables taste better? Which are the most versatile herbs? Gordon shows you how to select great produce to create phenomenal dishes.',
-  },
-]
-
-const instructors = [
-  {
-    image: 'images/instructors/full-gr.jpg',
-    instructor: 'Gordon Ramsay',
-    course: 'Teaches Cooking 1',
-    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
-    color: '15, 20, 25',
-  },
-  {
-    image: 'images/instructors/full-tk.jpg',
-    instructor: 'Thomas Keller',
-    course: 'Teaches Cooking Techniques II: Meats, Stocks, and Sauces',
-    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
-    color: '5, 10, 25',
-  },
-  {
-    image: 'images/instructors/full-da.jpg',
-    instructor: 'Dominique Ansel',
-    course: 'Teaches French Pastry Fundamentals',
-    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
-    color: '0, 0, 0',
-  },
-  {
-    image: 'images/instructors/full-dakr.jpg',
-    instructor: 'David Axelrod and Karl Rove',
-    course: 'Teaches Campaign Strategy and Messaging',
-    description: 'Called the Prophet of Dystopia, Margaret Atwood is one of the most influential literary voices of our generation. Explore Margaret\'s creative process for developing ideas into novels with strong structures and nuanced characters.',
-    color: '10, 10, 20',
   },
 ]
 
@@ -257,112 +223,6 @@ storiesOf('Playground|Pages', module)
               ))}
             </Carousel>
           </div>
-
-          {times(2, () =>
-            <Fragment>
-              <h5 className={`
-                mc-text-h5
-                mc-text--airy
-                mc-mb-6
-              `}>
-                Creative Writing
-              </h5>
-
-              <Accordion
-                className='mc-mb-10'
-                aspectRatio={responsiveValues(media, '21x9', '16x9', '4x3')}
-                on='intent'
-              >
-                {instructors
-                  .slice(0, responsiveValues(media, 4, 3, 2))
-                  .map((item, key) =>
-                    ({ itemActive, parentActive }) =>
-                      <Tile
-                        aspectRatio='auto'
-                        key={key}
-                        style={{ background: `rgb(${item.color})` }}
-                        crop
-                      >
-                        <TileImage
-                          imageUrl={item.image}
-                          className={itemActive
-                            ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
-                            : 'example-offset-left-one-quarter'
-                          }
-                        />
-
-                        {!itemActive &&
-                          <TileOverlay
-                            type='gradient-bottom'
-                            color={item.color}
-                          />
-                        }
-
-                        <AnimationHandler
-                          type='hide'
-                          animating={parentActive}
-                        >
-                          <TileCaption position='center bottom'>
-                            <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                              {item.instructor}
-                            </h6>
-                            <p className='mc-text-small mc-opacity--hinted'>
-                              {item.course}
-                            </p>
-                          </TileCaption>
-                        </AnimationHandler>
-
-                        {itemActive &&
-                          <TileOverlay
-                            type='gradient-left'
-                            color={item.color}
-                            className={itemActive
-                              ? 'example-offset-left-one-quarter example-offset-left-one-quarter--active'
-                              : 'example-offset-left-one-quarter'
-                            }
-                          />
-                        }
-
-                        <AnimationHandler
-                          type='show'
-                          animating={itemActive}
-                        >
-                          <TileCaption position='left center'>
-                            <div className='row'>
-                              <div className='col-4 offset-1'>
-                                <div className='example-instructor-card-content'>
-                                  <h6 className='mc-text-h6 mc-text--airy mc-mb-2'>
-                                    {item.instructor}
-                                  </h6>
-                                  <p className='mc-text-small mc-opacity--hinted mc-mb-2'>
-                                    {item.course}
-                                  </p>
-                                  <p className='mc-text-x-small mc-mb-8'>
-                                    {item.description}
-                                  </p>
-                                  <Button
-                                    className='mc-mc-3'
-                                    fullWidth
-                                  >
-                                    Start Class
-                                  </Button>
-                                  <Button
-                                    fullWidth
-                                    kind='link'
-                                  >
-                                    Watch Trailer
-                                  </Button>
-                                </div>
-                              </div>
-                            </div>
-                          </TileCaption>
-                        </AnimationHandler>
-                      </Tile>,
-                  )
-                }
-              </Accordion>
-            </Fragment>,
-          )}
 
           <div className='uncontainer'>
             <Tile aspectRatio='21x9' className='mc-mb-10'>

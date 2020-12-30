@@ -35,7 +35,7 @@ export default class CodeExample extends PureComponent {
           {children}
         </div>
 
-        <Separator />
+        <Separator className='mc-mt-5' />
 
         <div className='example__trigger mc-text--monospace mc-text--right'>
           <a onClick={this.toggleCode}>
