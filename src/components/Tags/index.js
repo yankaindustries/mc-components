@@ -20,10 +20,12 @@ const VALUE_EMPTY = ''
 const Tags = ({
   collection = [],
   onChange = () => {},
+  placeholder = '',
 }) => {
   const inputRef = useRef(null)
   const [value, setValue] = useState(VALUE_EMPTY)
   const [focus, setFocus] = useState(false)
+  const placeholderText = !collection.length ? placeholder : ''
 
   const handleContainerClick = () => {
     if (!inputRef.current) return
@@ -105,7 +107,8 @@ const Tags = ({
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         onKeyDown={handleKeyDown}
-        size={value.length || 1}
+        size={value.length || placeholderText.length || 1}
+        placeholder={placeholderText}
         value={value}
       />
     </div>
@@ -115,6 +118,7 @@ const Tags = ({
 Tags.propTypes = {
   collection: PropTypes.arrayOf(PropTypes.string),
   onChange: PropTypes.func,
+  placeholder: PropTypes.string,
 }
 
 export default Tags
