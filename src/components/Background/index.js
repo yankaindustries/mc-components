@@ -14,8 +14,10 @@ export default class Background extends PureComponent {
       'dark',
       'medium',
       'light',
+      'light-medium',
       'transparent',
       'dim',
+      'primary',
     ]),
     element: PropTypes.oneOfType([
       PropTypes.func,
