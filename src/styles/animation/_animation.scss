@@ -106,6 +106,7 @@
 
   // Show / Hide
   $fade-duration: 200ms;
+  $delay-duration: 1000ms;
 
   &--show {
     opacity: 0;
@@ -114,6 +115,16 @@
     &.mc-animation--animating {
       opacity: 1;
       transition: opacity $fade-duration ease;
+    }
+
+    &-delayed {
+      opacity: 0;
+      transition: opacity $delay-duration ease;
+
+      &.mc-animation--animating {
+        opacity: 1;
+        transition: opacity $delay-duration ease;
+      }
     }
   }
 
@@ -124,6 +135,16 @@
     &.mc-animation--animating {
       opacity: 0;
       transition: opacity $fade-duration ease;
+    }
+
+    &-delayed {
+      opacity: 1;
+      transition: opacity $delay-duration ease;
+
+      &.mc-animation--animating {
+        opacity: 0;
+        transition: opacity $delay-duration ease;
+      }
     }
   }
 }

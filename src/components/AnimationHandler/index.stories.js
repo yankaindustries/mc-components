@@ -31,7 +31,7 @@ storiesOf('Utilities|AnimationHandler', module)
       <DocSection title='Variations'>
         <PropExample
           name='animation'
-          type='String["zoom", "lift", "ken-burns"]'
+          type='String["zoom", "lift", "ken-burns", "show", "show-delayed", "hide", "hide-delayed"]'
         >
           <div className='row'>
             <div className='col-auto'>
@@ -69,6 +69,62 @@ storiesOf('Utilities|AnimationHandler', module)
                     <div>
                       <Button tertiary>
                         Ken Burns
+                      </Button>
+                    </div>
+                  </AnimationHandler>
+                }
+              </HoverHandler>
+            </div>
+
+            <div className='col-auto'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <div>
+                    <Button tertiary>
+                      <AnimationHandler type='show' animating={hovering}>
+                        <p>Show</p>
+                      </AnimationHandler>
+                    </Button>
+                  </div>
+                }
+              </HoverHandler>
+            </div>
+
+            <div className='col-auto'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <div>
+                    <Button tertiary>
+                      <AnimationHandler type='show-delayed' animating={hovering}>
+                        <p>Show delayed</p>
+                      </AnimationHandler>
+                    </Button>
+                  </div>
+                }
+              </HoverHandler>
+            </div>
+
+            <div className='col-auto'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <AnimationHandler type='hide' animating={hovering}>
+                    <div>
+                      <Button tertiary>
+                        Hide
+                      </Button>
+                    </div>
+                  </AnimationHandler>
+                }
+              </HoverHandler>
+            </div>
+
+            <div className='col-auto'>
+              <HoverHandler>
+                {({ hovering }) =>
+                  <AnimationHandler type='hide-delayed' animating={hovering}>
+                    <div>
+                      <Button tertiary>
+                        Hide delayed
                       </Button>
                     </div>
                   </AnimationHandler>
