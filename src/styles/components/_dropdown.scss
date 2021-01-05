@@ -147,6 +147,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    transform: none !important; /* stylelint-disable-line declaration-no-important */
     overflow-x: hidden;
     overflow-y: auto;
 

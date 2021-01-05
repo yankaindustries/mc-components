@@ -14,16 +14,23 @@ export default class Checkbox extends PureComponent {
     name: PropTypes.string,
 
     onChange: PropTypes.func.isRequired,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
   }
 
-  handleClick = (e) => {
+  handleClick = (event) => {
     const {
       checked,
       disabled,
       onChange,
+      onFocus,
+      onBlur,
     } = this.props
 
-    e.preventDefault()
+    event.preventDefault()
+
+    if (onFocus) onFocus(event)
+    if (onBlur) onBlur(event)
 
     return !disabled && onChange(!checked)
   }

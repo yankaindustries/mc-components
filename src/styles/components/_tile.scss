@@ -195,6 +195,12 @@
     }
   }
 
+  &--y-top {
+    .mc-tile-caption__content {
+      align-self: flex-start;
+    }
+  }
+
   &--y-center {
     .mc-tile-caption__content {
       align-self: center;

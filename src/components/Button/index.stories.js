@@ -143,9 +143,9 @@ class ButtonStory extends PureComponent {
             <PropExample
               name='kind'
               type='string'
-              description={`
+              description="
                 Change the way your button looks by adjusting the 'kind' property.
-              `}
+              "
             >
               <div className='row'>
                 <div className='col-auto'>
@@ -335,13 +335,13 @@ class ButtonStory extends PureComponent {
                 </div>
 
                 <div className='col-6'>
-                  <Button secondary fullWidth>
+                  <Button kind='secondary' fullWidth>
                     Secondary
                   </Button>
                 </div>
 
                 <div className='col-6'>
-                  <Button tertiary fullWidth>
+                  <Button kind='tertiary' fullWidth>
                     Tertiary
                   </Button>
                 </div>
@@ -350,16 +350,14 @@ class ButtonStory extends PureComponent {
 
             <PropExample
               name='Icons'
-              description={
-                <span>
+            >
+              <p className='mc-mb-4'>
                   You can embed icons using the
                   {' '}
                   <span className='mc-code'>Icon</span>
                   {' '}
                   component.
-                </span>
-              }
-            >
+              </p>
               <div className='row'>
                 <div className='col-auto'>
                   <Button>
