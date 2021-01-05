@@ -26,10 +26,10 @@ const CheckboxField = ({
 }) => (
   <FormGroup {...input} {...meta}>
     <Checkbox
-      checked={!!value}
       {...input}
       {...meta}
       {...props}
+      checked={!!value}
     />
   </FormGroup>
 )
